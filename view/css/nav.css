@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #1b1b1b;
+}
+
+nav::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav .logo {
+    float: left;
+    text-decoration: none;
+    color: white;
+    font-size: 27px;
+    line-height: 70px;
+    font-weight: 600;
+    padding: 0 60px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    background: #1b1b1b;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 20px;
+}
+
+nav ul li a:hover {
+    color: cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+}
+
+nav .fas {
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+nav .fa-caret-right {
+    margin-left: 40px;
+    font-size: 15px;
+}
+
+nav input[type='checkbox'],
+nav .icon i {
+    display: none;
+}
+
+nav .fa-sign-in-alt {
+    font-size: 16px;
+    margin: 0 0 0 5px;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 824px) {
+    nav ul {
+        margin-right: 20px;
+    }
+    nav ul li a {
+        padding: 8px 10px;
+    }
+    nav .logo {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    nav {
+        height: 70px;
+    }
+    nav ul {
+        margin-right: 0;
+        float: right;
+        width: 50%;
+        background: rgba(27, 27, 27, .99);
+        text-align: center;
+    }
+    nav .logo {
+        padding: 0 60px;
+        width: 100%;
+    }
+    nav ul li a {
+        padding: 8px 20px;
+    }
+    nav ul li {
+        background: transparent;
+        display: inline-block;
+        width: 100%;
+    }
+    nav ul li:hover {
+        box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+    }
+    nav .icon i {
+        display: block;
+        color: white;
+        position: absolute;
+        right: 50px;
+        line-height: 70px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    nav label .hide {
+        display: none;
+    }
+    nav ul li a:hover {
+        box-shadow: none;
+    }
+    nav ul {
+        display: none;
+    }
+    [id^=btn]:checked+ul {
+        display: block;
+    }
+}
