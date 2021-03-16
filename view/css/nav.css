@@ -108,14 +108,19 @@ nav .fa-sign-in-alt {
     nav ul li:hover {
         box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
     }
+    nav .icon {
+        display: block;
+        margin-top: 23px;
+        width: 22px;
+        height: 25px;
+        position: absolute;
+        right: 50px;
+        cursor: pointer;
+    }
     nav .icon i {
         display: block;
         color: white;
-        position: absolute;
-        right: 50px;
-        line-height: 70px;
         font-size: 25px;
-        cursor: pointer;
     }
     nav label .hide {
         display: none;
@@ -138,7 +143,7 @@ nav .fa-sign-in-alt {
     nav ul {
         width: 100%;
     }
-    nav .icon i {
+    nav .icon {
         right: 20px;
     }
 }
