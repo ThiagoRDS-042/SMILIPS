@@ -64,13 +64,13 @@ nav .icon i {
 
 nav .fa-sign-in-alt {
     font-size: 16px;
-    margin: 0 0 0 5px;
+    margin-right: 5px;
 }
 
 
 /* Responsividade */
 
-@media (max-width: 824px) {
+@media (max-width: 843px) {
     nav ul {
         margin-right: 20px;
     }
@@ -82,7 +82,7 @@ nav .fa-sign-in-alt {
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 663px) {
     nav {
         height: 70px;
     }
@@ -128,5 +128,17 @@ nav .fa-sign-in-alt {
     }
     [id^=btn]:checked+ul {
         display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    nav .logo {
+        padding: 0 20px;
+    }
+    nav ul {
+        width: 100%;
+    }
+    nav .icon i {
+        right: 20px;
     }
 }
