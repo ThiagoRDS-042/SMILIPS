@@ -57,7 +57,7 @@ nav .fa-caret-right {
     font-size: 15px;
 }
 
-nav input[type='checkbox'],
+nav #btn,
 nav .icon i {
     display: none;
 }
@@ -131,8 +131,9 @@ nav .fa-sign-in-alt {
     nav ul {
         display: none;
     }
-    [id^=btn]:checked+ul {
+    nav #btn:checked~ul {
         display: block;
+        z-index: 1;
     }
 }
 

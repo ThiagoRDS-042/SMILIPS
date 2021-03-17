@@ -1,7 +1,7 @@
 // pesquisando/pegando o span mais opçoes, o filtro todo e os filtros escondidos 
-let btnMore = document.querySelector('#filter span');
+let btnMore = document.querySelector('#filter .more span');
 let filter = document.querySelector('#filter');
-let more = document.querySelectorAll('#filter .hide');
+let inputs = document.querySelectorAll('.field-input');
 
 // inicializando um contador
 let count = 0;
@@ -10,13 +10,68 @@ let count = 0;
 btnMore.addEventListener('click', () => {
     // se o contador for par aumente o tamanho do filtro
     if (count % 2 === 0) {
-        filter.style.height = '350px'
+        inputs[1].classList.toggle('hidden');
+        inputs[2].classList.toggle('hidden');
+        filter.style.height = '315px';
+        btnMore.style.top = '285px';
         btnMore.innerHTML = '<i class="fas fa-search-plus"></i>Menos Opções';
         // se nao volte ao valor inicial, mesma coisa com o texto
     } else {
-        filter.style.height = '200px';
+        inputs[1].classList.toggle('hidden');
+        inputs[2].classList.toggle('hidden');
+        filter.style.height = '180px';
+        btnMore.style.top = '155px';
         btnMore.innerHTML = '<i class="fas fa-search-plus"></i>Mais Opções';
     }
     // incrementando o contador
     count++;
 });
+
+
+//filtro
+let selects = document.querySelectorAll('.select');
+let listsOptions = document.querySelectorAll('.list-options');
+
+let optionsListType = document.querySelectorAll('.option.type');
+let optionsListCidade = document.querySelectorAll('.option.cidade');
+let optionsListBairro = document.querySelectorAll('.option.bairro');
+let optionsListDormitorio = document.querySelectorAll('.option.dormitorio');
+let optionsListSuite = document.querySelectorAll('.option.suite');
+let optionsListGaragem = document.querySelectorAll('.option.garagem');
+let optionsListValorI = document.querySelectorAll('.option.valorI');
+let optionsListValorF = document.querySelectorAll('.option.valorF');
+let optionsListArea = document.querySelectorAll('.option.area');
+
+
+selects.forEach((select, index) => {
+    select.addEventListener('click', () => {
+        listsOptions[index].classList.toggle('active');
+    });
+});
+
+function editSelect(listOptions, index) {
+    listOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            selects[index].innerHTML = option.querySelector('span').innerHTML;
+            listsOptions[index].classList.remove('active');
+        });
+    });
+}
+
+editSelect(optionsListType, 0);
+
+editSelect(optionsListCidade, 1);
+
+editSelect(optionsListBairro, 2);
+
+editSelect(optionsListDormitorio, 3);
+
+editSelect(optionsListSuite, 4);
+
+editSelect(optionsListGaragem, 5);
+
+editSelect(optionsListValorI, 6);
+
+editSelect(optionsListValorF, 7);
+
+editSelect(optionsListArea, 8);
