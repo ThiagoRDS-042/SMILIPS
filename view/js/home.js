@@ -12,15 +12,13 @@ btnMore.addEventListener('click', () => {
     if (count % 2 === 0) {
         inputs[1].classList.toggle('hidden');
         inputs[2].classList.toggle('hidden');
-        filter.style.height = '315px';
-        btnMore.style.top = '285px';
+        filter.style.height = '330px';
         btnMore.innerHTML = '<i class="fas fa-search-plus"></i>Menos Opções';
         // se nao volte ao valor inicial, mesma coisa com o texto
     } else {
         inputs[1].classList.toggle('hidden');
         inputs[2].classList.toggle('hidden');
-        filter.style.height = '180px';
-        btnMore.style.top = '155px';
+        filter.style.height = '200px';
         btnMore.innerHTML = '<i class="fas fa-search-plus"></i>Mais Opções';
     }
     // incrementando o contador

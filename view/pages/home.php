@@ -123,7 +123,7 @@
 
                          <div class="select-box">
 
-                              <div class="list-options">
+                              <div class="list-options scrol">
 
                                    <label for="d1">
                                         <div class="option dormitorio">
@@ -168,7 +168,7 @@
 
                          <div class="select-box">
 
-                              <div class="list-options">
+                              <div class="list-options scrol">
 
                                    <label for="s1">
                                         <div class="option suite">
@@ -213,7 +213,7 @@
 
                          <div class="select-box">
 
-                              <div class="list-options">
+                              <div class="list-options scrol">
 
                                    <label for="g1">
                                         <div class="option garagem">
@@ -262,7 +262,7 @@
 
                          <div class="select-box">
 
-                              <div class="list-options">
+                              <div class="list-options scrol">
 
                                    <label for="400i">
                                         <div class="option valorI">
@@ -363,7 +363,7 @@
 
                          <div class="select-box">
 
-                              <div class="list-options">
+                              <div class="list-options scrol">
 
                                    <label for="400f">
                                         <div class="option valorF">
@@ -464,7 +464,7 @@
 
                          <div class="select-box">
 
-                              <div class="list-options">
+                              <div class="list-options scrol">
 
                                    <label for="50">
                                         <div class="option area">

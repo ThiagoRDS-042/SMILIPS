@@ -5,18 +5,18 @@
 
 main {
     position: relative;
-    height: 90vh;
+    height: 80vh;
     width: 100%;
     background: rgb(134, 129, 129);
 }
 
 main #filter {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -30%);
     width: 700px;
-    height: 180px;
+    height: 200px;
     text-align: center;
     background: rgba(255, 255, 255, .5);
     border-radius: 10px;
@@ -61,7 +61,7 @@ main #filter .search button {
 main .field-input {
     display: flex;
     width: 90%;
-    margin: auto;
+    margin: 10px auto 0 auto;
     min-height: 60px;
 }
 
@@ -75,17 +75,18 @@ main #filter .field-input .select-box {
 main #filter .field-input .select-box .list-options {
     background: #fff;
     color: #333;
-    margin-top: 3px;
     max-height: 0;
     text-align: left;
     width: 100%;
+    margin-top: 3px;
     opacity: 0;
     transition: .4s;
     border-radius: 8px;
     overflow: hidden;
-    order: 4;
+    order: 1;
     z-index: 4;
     border: 1px solid #cccccc;
+    pointer-events: none;
 }
 
 main #filter .field-input .select {
@@ -113,7 +114,11 @@ main #filter .field-input .select::after {
 
 main #filter .field-input .select-box .list-options.active {
     max-height: 168px;
+    pointer-events: all;
     opacity: 1;
+}
+
+main #filter .field-input .select-box .list-options.scrol.active {
     overflow-y: scroll;
 }
 
@@ -138,6 +143,7 @@ main #filter .field-input .select-box .select {
 }
 
 main #filter .field-input .select-box .option {
+    text-align: left;
     padding: 12px 24px 12px 0;
     cursor: pointer;
 }
@@ -178,7 +184,7 @@ main #filter .field-input:nth-child(4) {
     transition: .2s;
 }
 
-main #filter .field-input:nth-child(3) .list-options {
+main #filter .field-input:nth-child(4) .list-options {
     z-index: 2;
 }
 
@@ -196,9 +202,17 @@ main #filter .field-input:nth-child(4).hidden {
     transition-delay: .2s;
 }
 
+main #filter #check {
+    display: none;
+}
+
+main #filter .more #check:checked~label span {
+    top: 300px;
+}
+
 main #filter .more span {
     position: absolute;
-    top: 155px;
+    top: 170px;
     left: 50%;
     transform: translateX(-50%);
     display: inline-block;
@@ -214,6 +228,68 @@ main #filter span i {
     margin-right: 3px;
 }
 
-main #filter #check {
-    display: none;
+
+/* resposividade */
+
+@media (max-width: 740px) {
+    main #filter {
+        width: 80%;
+        min-width: 378px;
+    }
+    main #filter .search input {
+        width: 73%;
+    }
+    main #filter .field-input {
+        margin: 0 2.5%;
+        width: 95%;
+    }
+    main #filter .field-input .select-box {
+        margin: 10px auto;
+    }
+    main #filter .field-input .select-box .select {
+        font-size: 14px;
+        min-width: 108px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+    }
+    main #filter .field-input .select::after {
+        top: 5px;
+        right: 0;
+    }
+    main #filter .field-input .select-box .option {
+        padding: 5px 5px 5px 0;
+        font-size: 14px;
+    }
+    main #filter .field-input .select-box .list-options.active+.select::after {
+        top: -6px;
+    }
+    main #filter .field-input .select-box {
+        margin: 0 5px;
+    }
+    main #filter .field-input:nth-child(3),
+    main #filter .field-input:nth-child(4) {
+        left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    main #filter .search input {
+        width: 70%;
+        margin-right: 10px;
+    }
+    main #filter .search button {
+        width: auto;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 560px) {
+    main #filter .search {
+        width: 96%;
+        margin: 0 auto;
+    }
+    main #filter .field-input .select-box .option {
+        font-size: 13px;
+    }
 }
