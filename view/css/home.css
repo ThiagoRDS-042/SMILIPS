@@ -113,7 +113,7 @@ main #filter .field-input .select::after {
 }
 
 main #filter .field-input .select-box .list-options.active {
-    max-height: 168px;
+    max-height: 172px;
     pointer-events: all;
     opacity: 1;
 }
