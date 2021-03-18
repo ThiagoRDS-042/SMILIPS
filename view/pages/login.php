@@ -14,7 +14,6 @@
         ?>
     </header>
 
-
     <main>
         <div class="middle">
             <h1>Login</h1>
@@ -33,7 +32,7 @@
                 </div>
 
                 <div class="txt-bottom">
-                    <p>Não tem uma conta?<a href="#"> Cadastre-se</a></p>
+                    <p>Não tem uma conta?<a href="/SMILIPS/view/pages/usuario/cadastro.php"> Cadastre-se</a></p>
                 </div>
 
             </form>
