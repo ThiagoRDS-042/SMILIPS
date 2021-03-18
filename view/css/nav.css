@@ -14,12 +14,15 @@ nav::after {
 
 nav .logo {
     float: left;
+    padding: 0 60px;
+}
+
+nav .logo a {
     text-decoration: none;
     color: white;
     font-size: 27px;
     line-height: 70px;
     font-weight: 600;
-    padding: 0 60px;
 }
 
 nav ul {
@@ -57,7 +60,7 @@ nav .fa-caret-right {
     font-size: 15px;
 }
 
-nav #btn,
+nav #menu,
 nav .icon i {
     display: none;
 }
@@ -128,16 +131,13 @@ nav .fa-sign-in-alt {
     nav ul li a:hover {
         box-shadow: none;
     }
-    nav ul {
-        display: none;
-    }
-    nav #btn:checked~ul {
+    nav #menu:checked~ul {
         display: block;
-        z-index: 1;
+        z-index: 2;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     nav .logo {
         padding: 0 20px;
     }

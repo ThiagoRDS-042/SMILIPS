@@ -27,9 +27,11 @@ btnMore.addEventListener('click', () => {
 
 
 //filtro
+// pegando os 'selects' e as listas de 'options'
 let selects = document.querySelectorAll('.select');
 let listsOptions = document.querySelectorAll('.list-options');
 
+// pegando cada lista de option de cada select no caso tem 9 selects
 let optionsListType = document.querySelectorAll('.option.type');
 let optionsListCidade = document.querySelectorAll('.option.cidade');
 let optionsListBairro = document.querySelectorAll('.option.bairro');
@@ -40,13 +42,14 @@ let optionsListValorI = document.querySelectorAll('.option.valorI');
 let optionsListValorF = document.querySelectorAll('.option.valorF');
 let optionsListArea = document.querySelectorAll('.option.area');
 
-
+// add e removendo  a classe active cada vez q clicar no select
 selects.forEach((select, index) => {
     select.addEventListener('click', () => {
         listsOptions[index].classList.toggle('active');
     });
 });
 
+// abrindo cada lista de options de acordo com cada select e alterando o valor do select de acordo com o option clicado
 function editSelect(listOptions, index) {
     listOptions.forEach(option => {
         option.addEventListener('click', () => {
@@ -56,6 +59,7 @@ function editSelect(listOptions, index) {
     });
 }
 
+// cahamando a funcao para cada select
 editSelect(optionsListType, 0);
 
 editSelect(optionsListCidade, 1);
