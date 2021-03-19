@@ -1,7 +1,23 @@
 .success {
+    color: #055160;
+    background-color: #cff4fc;
+    border-color: #b6effb;
+}
+
+.danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.notify {
+    color: #664d03;
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+}
+
+.alert {
     position: absolute;
-    background: #2ecc71;
-    color: white;
     text-align: center;
     font-size: 18px;
     font-weight: 600;
@@ -9,4 +25,16 @@
     width: 100%;
     line-height: 50px;
     user-select: none;
+    animation: animate 5s infinite;
+    animation-delay: 4s;
+    transition: 1s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }

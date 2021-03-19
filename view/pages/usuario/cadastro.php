@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="button-field">
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit" name="save">Cadastrar</button>
                 </div>
 
             </form>
