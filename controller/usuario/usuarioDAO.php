@@ -1,6 +1,6 @@
 <?php
     require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
-
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
 
     //pegando os campos passados
     $nome = $_POST['nome'];
@@ -14,5 +14,6 @@
 
     $conexao->query("INSERT INTO usuario(nomeUsuario, cpf_cnpj, emailUsuario, senhaUsuario, endereco, bairro, complemento, telefone) VALUES ('$nome','$cpf_cnpj', '$email', '$senha', '$endereco', '$bairro', '$complemento', '$telefone')") or die($conexao->error);
 
+    exibirMsg("Cadastro bem Sucedido!", "success");
     header("location:/SMILIPS/view/pages/usuario/cadastro.php");
 ?>

@@ -4,7 +4,7 @@
 
 main {
     background: linear-gradient(180deg, rgb(119, 116, 116), #cccccc);
-    height: 100vh;
+    height: 110vh;
     position: relative;
 }
 
@@ -47,7 +47,7 @@ main .form-cad .input-container {
 
 main .form-cad .input-container .input-field {
     position: relative;
-    width: 40%;
+    width: 45%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@ main .form-cad .input-container .input-field input {
     border-radius: 5px;
     border: none;
     outline: none;
-    padding: 18px 10px;
+    padding: 18px 35px 18px 10px;
     font-size: 18px;
     color: #333;
 }
@@ -71,14 +71,10 @@ main .form-cad .input-container .input-field label {
     padding: 0 0 10px 3px;
 }
 
-main .form-cad .input-container .input-field .visible {
-    padding: 18px 25px 18px 10px;
-}
-
 main .form-cad .input-container .input-field i {
     position: absolute;
     top: 80%;
-    right: 5px;
+    right: 8px;
     transform: translateY(-80%);
     color: #ccc;
     cursor: pointer;
@@ -86,6 +82,23 @@ main .form-cad .input-container .input-field i {
 
 main .form-cad .input-container .input-field .active~i {
     color: #217fbe;
+}
+
+main .form-cad .input-container .input-field .active~span {
+    color: #217fbe;
+    border-color: #217fbe;
+}
+
+main .form-cad .input-container .input-field .counter {
+    position: absolute;
+    right: 3px;
+    top: 37px;
+    font-size: 16px;
+    color: #ccc;
+    border-left: 1px solid #ccc;
+    display: inline-block;
+    width: 30px;
+    padding-left: 5px;
 }
 
 main .form-cad .button-field {

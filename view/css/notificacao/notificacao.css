@@ -1,0 +1,12 @@
+.success {
+    position: absolute;
+    background: #2ecc71;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    user-select: none;
+}

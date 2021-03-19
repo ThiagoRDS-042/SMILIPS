@@ -1,23 +1,43 @@
 // capturando o campo de senha e o icone de visualizar
-let senha = document.querySelector('.form-cad .input-container .input-field input[type=password]');
+let inputs = document.querySelectorAll('.form-cad .input-container .input-field input');
+let counters = document.querySelectorAll('.form-cad .input-container .input-field .counter');
+let passord = document.querySelector('.form-cad .input-container .input-field input[type=password]');
 let btn = document.querySelector('.form-cad .input-container .input-field i');
+let maxLengths = [];
+
+inputs.forEach(input => {
+    maxLengths.push(input.attributes.maxlength.value);
+});
+
+inputs.forEach((input, index) => {
+    input.addEventListener('keyup', () => {
+        if (index < 3) {
+            counters[index].innerText = String(Number(maxLengths[index]) - Number(input.value.length));
+        } else if (index > 3) {
+            counters[index - 1].innerText = String(Number(maxLengths[index]) - Number(input.value.length));
+        }
+    });
+});
 
 // add um envento de click para mudar o tipo deinput de password para text
 btn.addEventListener('click', () => {
-    senha.type == 'password' ? senha.type = 'text' : senha.type = 'password';
-    senha.focus();
+    passord.type == 'password' ? passord.type = 'text' : passord.type = 'password';
+    passord.focus();
 });
 
-// se o input tiver focu e estiver vazio add a clase togle
-senha.addEventListener('focus', () => {
-    if (senha.value == '') {
-        senha.classList.toggle('active');
-    }
-});
-// inverso da de cima ou seja quando o campo perde o focu
-senha.addEventListener('blur', () => {
-    if (senha.value == '') {
-        senha.classList.toggle('active');
-    }
 
+inputs.forEach(input => {
+    // se o input tiver focu e estiver vazio add a classe togle
+    input.addEventListener('focus', () => {
+        if (input.value == '') {
+            input.classList.toggle('active');
+        }
+    });
+    // inverso da de cima ou seja quando o campo perde o focu
+    input.addEventListener('blur', () => {
+        if (input.value == '') {
+            input.classList.toggle('active');
+        }
+
+    });
 });

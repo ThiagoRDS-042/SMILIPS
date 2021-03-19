@@ -11,10 +11,16 @@
     <header>
         <?php
             require_once('/xampp/htdocs/SMILIPS/view/nav.html');
+            if(!isset($_SESSION)){
+                session_start();
+            }
         ?>
     </header>
 
     <main>
+        <?php
+            require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+        ?>
 
         <div class="form-cad">
             <span>Preencha todos os campos obrigatórios (*)</span>
@@ -27,12 +33,14 @@
                    
                     <div class="input-field">
                         <label>Nome*</label>
-                        <input type="text" name="nome">
+                        <input type="text" name="nome"  maxlength="100"> 
+                        <span class="counter">100</span>
                     </div>
 
                     <div class="input-field">
                         <label>CPF/CNPJ*</label>
-                        <input type="text" name="cpf_cnpj">
+                        <input type="text" name="cpf_cnpj" maxlength="19">
+                        <span class="counter">19</span>
                     </div>
 
                 </div>
@@ -41,12 +49,13 @@
 
                     <div class="input-field">
                         <label>Email*</label>
-                        <input type="email" name="email">
+                        <input type="email" name="email"  maxlength="100">
+                        <span class="counter">100</span>
                     </div>
 
                     <div class="input-field">
                         <label>Senha*</label>
-                        <input type="password" name="senha" class="visible">
+                        <input type="password" name="senha"  maxlength="35">
                         <i class="fa fa-eye"></i>
                     </div>
 
@@ -56,12 +65,14 @@
 
                     <div class="input-field">
                         <label>Telefone*</label>
-                        <input type="text" name="telefone">
+                        <input type="text" name="telefone"  maxlength="20">
+                        <span class="counter">20</span>
                     </div>
 
                     <div class="input-field">
                         <label>Endereço*</label>
-                        <input type="text" name="endereco">
+                        <input type="text" name="endereco"  maxlength="45">
+                        <span class="counter">45</span>
                     </div>
 
                 </div>
@@ -70,12 +81,14 @@
 
                     <div class="input-field">
                         <label>Bairro*</label>
-                        <input type="text" name="bairro">
+                        <input type="text" name="bairro"  maxlength="45">
+                        <span class="counter">45</span>
                     </div>
 
                     <div class="input-field">
                         <label>Complemento</label>
-                        <input type="text" name="complemento">
+                        <input type="text" name="complemento"  maxlength="45">
+                        <span class="counter">45</span>
                     </div>
 
                 </div>
