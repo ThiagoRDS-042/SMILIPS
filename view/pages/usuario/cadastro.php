@@ -1,3 +1,8 @@
+<?php
+    require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+    usuarioLogadoNEntra();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,7 +15,7 @@
 <body>
     <header>
         <?php
-            require_once('/xampp/htdocs/SMILIPS/view/nav.html');
+            require_once('/xampp/htdocs/SMILIPS/view/nav.php');
             if(!isset($_SESSION)){
                 session_start();
             }

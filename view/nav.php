@@ -1,3 +1,8 @@
+<?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+?>
 <link rel="stylesheet" href="/SMILIPS/view/css/nav.css">
 <nav>
     <div class="logo">
@@ -19,13 +24,18 @@
         <li><a href="#">Ajuda</a></li>
         <li><a href="#">Contato</a></li>
         <li>
-            <a href="/SMILIPS/view/pages/login.php">
-                <i class="fas fa-sign-in-alt "></i></i>Login
-            </a>
+            <?php if (isset($_SESSION['usuarioID'])) : ?>
+                <a href="/SMILIPS/view/pages/usuario/home.php">
+                <?php  $primeiroNome = preg_split('/\s/', $_SESSION['nomeUsuario']); ?>
+                    <i class="far fa-user"></i></i>  <?php echo $primeiroNome[0]; ?>
+                </a>
+            <?php else : ?>
+                <a href="/SMILIPS/view/pages/login.php">
+                    <i class="fas fa-sign-in-alt "></i></i>Login
+                </a>
+            <?php endif; ?>
         </li>
     </ul>
-
-
 
 </nav>
 

@@ -11,7 +11,7 @@
 <body>
      <header>
           <?php
-               require_once('/xampp/htdocs/SMILIPS/view/nav.html');
+               require_once('/xampp/htdocs/SMILIPS/view/nav.php');
           ?>
      </header>
 

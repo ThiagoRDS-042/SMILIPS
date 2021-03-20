@@ -4,12 +4,12 @@
 
     if(isset($_POST['save']) and $_POST['nome'] != null and $_POST['cpf_cnpj'] != null and $_POST['email'] != null and $_POST['senha'] != null and $_POST['endereco'] != null and $_POST['bairro'] != null and $_POST['telefone'] != null){
         
-        $senha = md5($_POST['senha']);
+        $senha = $_POST['senha'];
         $cpf_cnpj = $_POST['cpf_cnpj'];
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
 
-        if(preg_match("/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])/", $senha) and (preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj) or preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj)) and preg_match("/^(\+\d{2}\s)(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone) >= 8 and preg_match("/.{3}+@.+\..{3}+/", $email)){
+        if(preg_match("/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])/", $senha) and (preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj) or preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj)) and preg_match("/.{3}+@.+\..{3}+/", $email) and preg_match("/^(\+\d{2}\s)?(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone)){
             
             $emailValido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
             $cpf_cnpjValido = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj'");
@@ -18,6 +18,7 @@
             if ($emailValido->num_rows <= 0 and $cpf_cnpjValido->num_rows <= 0) {
                 //pegando os campos passados
                 $nome = $_POST['nome'];
+                $senha = md5($senha);
                 $endereco = $_POST['endereco'];
                 $bairro = $_POST['bairro'];
                 $complemento = $_POST['complemento'];
@@ -33,7 +34,7 @@
             }
         }else{
             exibirMsg("Dados Inválidos!", "danger");
-                header("location:/SMILIPS/view/pages/usuario/cadastro.php");
+            header("location:/SMILIPS/view/pages/usuario/cadastro.php");
         }
         
     }else{
