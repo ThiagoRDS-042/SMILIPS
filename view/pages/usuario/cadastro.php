@@ -33,14 +33,15 @@
                    
                     <div class="input-field">
                         <label>Nome*</label>
-                        <input type="text" name="nome"  maxlength="100"> 
+                        <input type="text" name="nome"  maxlength="100">
                         <span class="counter">100</span>
                     </div>
 
                     <div class="input-field">
                         <label>CPF/CNPJ*</label>
-                        <input type="text" name="cpf_cnpj" maxlength="19">
-                        <span class="counter">19</span>
+                        <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj">
+                        <span id="msgCpf_cnpj" class="msg"></span>
+                        <span class="counter">18</span>
                     </div>
 
                 </div>
@@ -49,13 +50,15 @@
 
                     <div class="input-field">
                         <label>Email*</label>
-                        <input type="email" name="email"  maxlength="100">
+                        <input type="email" name="email" id="email"  maxlength="100">
+                        <span id="msgEmail" class="msg"></span>
                         <span class="counter">100</span>
                     </div>
 
                     <div class="input-field">
                         <label>Senha*</label>
-                        <input type="password" name="senha"  maxlength="35">
+                        <input type="password" name="senha"  maxlength="35" id="senha">
+                        <span id="msgSenha" class="msg"></span>
                         <i class="fa fa-eye"></i>
                     </div>
 
@@ -65,7 +68,8 @@
 
                     <div class="input-field">
                         <label>Telefone*</label>
-                        <input type="text" name="telefone"  maxlength="20">
+                        <input type="text" name="telefone"  maxlength="20" id="telefone">
+                        <span id="msgTelefone" class="msg"></span>
                         <span class="counter">20</span>
                     </div>
 
@@ -107,6 +111,11 @@
         require_once('/xampp/htdocs/SMILIPS/view/footer.html');
     ?>
 
-<script src="/SMILIPS/view/js/usuario/cadastro.js"></script>
+    <script src="/SMILIPS/view/js/usuario/cadastro.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarEmail.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarCpf_cnpj.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarTelefone.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarSenha.js"></script>
 </body>
 </html>

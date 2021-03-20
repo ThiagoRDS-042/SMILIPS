@@ -26,6 +26,7 @@ main .form-cad span {
     top: -25px;
     font-size: 12px;
     color: #333;
+    user-select: none;
 }
 
 main .form-cad h1 {
@@ -78,6 +79,12 @@ main .form-cad .input-container .input-field i {
     transform: translateY(-80%);
     color: #ccc;
     cursor: pointer;
+}
+
+main .form-cad .input-container .input-field .msg {
+    position: absolute;
+    top: 108%;
+    left: 10px;
 }
 
 main .form-cad .input-container .input-field .active~i {

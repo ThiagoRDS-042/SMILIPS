@@ -4,12 +4,13 @@
 
     if(isset($_POST['save']) and $_POST['nome'] != null and $_POST['cpf_cnpj'] != null and $_POST['email'] != null and $_POST['senha'] != null and $_POST['endereco'] != null and $_POST['bairro'] != null and $_POST['telefone'] != null){
         
-        $senha = $_POST['senha'];
+        $senha = md5($_POST['senha']);
+        $cpf_cnpj = $_POST['cpf_cnpj'];
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
 
-        if(strlen($senha) >= 8){
-            $email = $_POST['email'];
-            $cpf_cnpj = $_POST['cpf_cnpj'];
-    
+        if(preg_match("/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])/", $senha) and (preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj) or preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj)) and preg_match("/^(\+\d{2}\s)(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone) >= 8 and preg_match("/.{3}+@.+\..{3}+/", $email)){
+            
             $emailValido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
             $cpf_cnpjValido = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj'");
     
@@ -20,7 +21,6 @@
                 $endereco = $_POST['endereco'];
                 $bairro = $_POST['bairro'];
                 $complemento = $_POST['complemento'];
-                $telefone = $_POST['telefone'];
     
                 $conexao->query("INSERT INTO usuario(nomeUsuario, cpf_cnpj, emailUsuario, senhaUsuario, endereco, bairro, complemento, telefone) VALUES ('$nome','$cpf_cnpj', '$email', '$senha', '$endereco', '$bairro', '$complemento', '$telefone')") or die($conexao->error);
     
@@ -32,7 +32,7 @@
                 header("location:/SMILIPS/view/pages/usuario/cadastro.php");
             }
         }else{
-            exibirMsg("Senha Inválida!", "danger");
+            exibirMsg("Dados Inválidos!", "danger");
                 header("location:/SMILIPS/view/pages/usuario/cadastro.php");
         }
         
