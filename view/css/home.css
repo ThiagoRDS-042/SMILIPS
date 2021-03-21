@@ -7,7 +7,8 @@ main {
     position: relative;
     height: 80vh;
     width: 100%;
-    background: rgb(134, 129, 129);
+    margin: 2px 0;
+    background: #5292b3;
 }
 
 main #filter {
@@ -54,8 +55,14 @@ main #filter .search button {
     cursor: pointer;
     outline: none;
     border: none;
-    background: #b41217;
+    background: linear-gradient(120deg, #3498db, #8e44ad);
+    background-size: 200%;
+    transition: .5s;
     color: white;
+}
+
+main #filter .search button:hover {
+    background-position: right;
 }
 
 main .field-input {
@@ -216,7 +223,7 @@ main #filter .more span {
     left: 50%;
     transform: translateX(-50%);
     display: inline-block;
-    color: #b41217;
+    color: #0984e3;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;

@@ -1,11 +1,29 @@
 * {
     font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
 }
 
 main {
-    background: linear-gradient(180deg, rgb(119, 116, 116), #cccccc);
+    background: linear-gradient(120deg, #3498db, #8e44ad);
     height: 110vh;
     position: relative;
+    border: 1px solid transparent;
+}
+
+.voltar {
+    width: 60px;
+    height: 30px;
+    margin: 15px;
+}
+
+.voltar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.voltar a i {
+    font-size: 14px;
 }
 
 main .form-cad {

@@ -13,19 +13,14 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <header>
-        <?php
-            require_once('/xampp/htdocs/SMILIPS/view/nav.php');
-            if(!isset($_SESSION)){
-                session_start();
-            }
-        ?>
-    </header>
 
     <main>
         <?php
             require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
         ?>
+        <div class="voltar">
+            <a href="/SMILIPS/view/pages/login.php"><i class="fas fa-chevron-left"></i> Voltar</a>
+        </div>
 
         <div class="form-cad">
             <span>Preencha todos os campos obrigatórios (*)</span>
@@ -111,10 +106,6 @@
         </div>
 
     </main>
-    
-    <?php
-        require_once('/xampp/htdocs/SMILIPS/view/footer.html');
-    ?>
 
     <script src="/SMILIPS/view/js/usuario/cadastro.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

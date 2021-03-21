@@ -38,24 +38,3 @@ email.blur(function buscar() {
         }
     });
 });
-
-email.focus(function buscar() {
-    $.ajax({
-        url: '/SMILIPS/controller/usuario/campoValido.php',
-        type: 'POST',
-        dataType: 'html',
-        data: {
-            "email": email.val()
-        },
-        success: function(msg) {
-            if ($(".input-field #email").val() != '') {
-                $(".input-field #msgEmail").html(msg);
-                if (msg == '<font color= "#055160"><b>Email Válido!</b></font>') {
-                    $(".input-field #email").css({ 'box-shadow': '1px 2px 3px #2ecc71' });
-                } else {
-                    $(".input-field #email").css({ 'box-shadow': '1px 2px 3px #e74c3c' });
-                }
-            }
-        }
-    });
-});

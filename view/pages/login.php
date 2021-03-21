@@ -13,20 +13,14 @@
     <title>Login</title>
 </head>
 <body>
-    <header>
-        <?php
-            require_once('/xampp/htdocs/SMILIPS/view/nav.php');
-            if(!isset($_SESSION)){
-                session_start();
-            }
-        ?>
-
-    </header>
-
+    
     <main>
         <?php
             require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
         ?>
+        <div class="voltar">
+            <a href="/SMILIPS/view/pages/home.php"><i class="fas fa-chevron-left"></i> Voltar</a>
+        </div>
         <div class="middle">
             <h1>Login</h1>
             <form action="/SMILIPS/controller/autenticar/autenticar.php" method="POST">
@@ -51,10 +45,6 @@
         </div>
 
     </main>
-
-    <?php
-        require_once('/xampp/htdocs/SMILIPS/view/footer.html');
-    ?>
 
     <script src="/SMILIPS/view/js/login.js"></script>
 </body>

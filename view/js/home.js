@@ -13,7 +13,7 @@ btnMore.addEventListener('click', () => {
         inputs[1].classList.toggle('hidden');
         inputs[2].classList.toggle('hidden');
         filter.style.height = '330px';
-        btnMore.innerHTML = '<i class="fas fa-search-plus"></i>Menos Opções';
+        btnMore.innerHTML = '<i class="fas fa-search-minus"></i>Menos Opções';
         // se nao volte ao valor inicial, mesma coisa com o texto
     } else {
         inputs[1].classList.toggle('hidden');
