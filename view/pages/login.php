@@ -25,11 +25,11 @@
             <h1>Login</h1>
             <form action="/SMILIPS/controller/autenticar/autenticar.php" method="POST">
                 <div class="field-input">
-                    <input type="text" name="email">
+                    <input type="text" name="email" required>
                     <span data-placeholder="Email"></span>
                 </div>
                 <div class="field-input">
-                    <input type="password" class="visible" name="senha">
+                    <input type="password" class="visible" name="senha" required>
                     <span data-placeholder="Senha"></span>
                     <i class="fa fa-eye"></i>
                 </div>
