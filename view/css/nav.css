@@ -3,9 +3,13 @@
 }
 
 nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     height: 80px;
-    background: linear-gradient(120deg, #3498db, #8e44ad);
+    background: #3498db;
     line-height: 80px;
+    border-bottom: 2px solid white;
 }
 
 nav::after {
@@ -126,12 +130,14 @@ nav .fa-sign-in-alt {
         height: 70px;
     }
     nav ul {
-        margin: 2px 0 0 0;
+        margin-right: 0;
         float: right;
         height: 475px;
         width: 50%;
-        background: linear-gradient(45deg, #3498db, #8e44ad);
+        background: #3498db;
         text-align: center;
+        border-bottom: 2px solid white;
+        border-left: 2px solid white;
     }
     nav .logo {
         padding: 0 60px;
@@ -178,6 +184,9 @@ nav .fa-sign-in-alt {
     nav ul li a:hover {
         box-shadow: none;
     }
+    nav ul {
+        display: none;
+    }
     nav #menu:checked~ul {
         display: block;
         z-index: 2;
@@ -192,8 +201,9 @@ nav .fa-sign-in-alt {
         font-size: 20px;
     }
     nav ul {
-        background: linear-gradient(90deg, #3498db, #8e44ad);
+        background: #3498db;
         width: 100%;
+        border-left: none;
     }
     nav .icon {
         right: 20px;

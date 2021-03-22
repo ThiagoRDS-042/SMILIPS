@@ -1,6 +1,7 @@
 footer {
     height: 180px;
     background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    border-top: 2px solid white;
 }
 
 footer>div {
@@ -56,11 +57,16 @@ footer .middle .circle:nth-child(4):hover>.icon {
 footer .middle .circle .icon i {
     font-size: 25px;
     line-height: 60px;
+    color: #333;
     transition: all .3s ease-out;
 }
 
 footer .middle .circle:hover>.icon i {
     color: #fff;
+}
+
+footer .middle .circle a {
+    text-decoration: none;
 }
 
 footer .middle .circle span {
@@ -69,19 +75,19 @@ footer .middle .circle span {
     margin-left: 5px;
 }
 
-footer .middle .circle:nth-child(1):hover>span {
+footer .middle .circle:nth-child(1):hover>a {
     color: #4267b2;
 }
 
-footer .middle .circle:nth-child(2):hover>span {
+footer .middle .circle:nth-child(2):hover>a {
     color: #1DA1F2;
 }
 
-footer .middle .circle:nth-child(3):hover>span {
+footer .middle .circle:nth-child(3):hover>a {
     color: #E1306C;
 }
 
-footer .middle .circle:nth-child(4):hover>span {
+footer .middle .circle:nth-child(4):hover>a {
     color: #0077B5;
 }
 
@@ -92,7 +98,7 @@ footer .text {
     height: 60px;
     display: flex;
     flex-direction: column;
-    font-size: 14px;
+    font-size: 13px;
     color: #606060;
     user-select: none;
     pointer-events: none;

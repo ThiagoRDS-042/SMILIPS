@@ -530,6 +530,34 @@
                </div>
           </form>
      </main>
+
+     <section>
+          <h2>O que você procura?</h2>
+          <div class="selecao">
+               <div class="card-selecao">
+                    <p>Anuncie seu Imóvel</p>
+                    <div class="circle">
+                         <a href="#"><img src="/SMILIPS/view/images/imovel.jpg" alt="Imóvel"></a>
+                    </div>
+               </div>
+               <div class="card-selecao">
+                    <p>Poste suas Propagandas</p>
+                    <div class="circle">
+                         <a href="#"><img src="/SMILIPS/view/images/anunciante.jpg" alt="Anunciante"></a>
+                    </div>
+               </div>
+               <div class="card-selecao">
+                    <p>Divulge seus Serviços</p>
+                    <div class="circle">
+                         <a href="#"><img src="/SMILIPS/view/images/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <div class="sect">
+
+     </div>
     
      <?php
           require_once('/xampp/htdocs/SMILIPS/view/footer.html');

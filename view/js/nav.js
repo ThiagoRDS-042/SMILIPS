@@ -7,3 +7,10 @@ icon.addEventListener('click', () => {
     icons[0].classList.toggle('hide');
     icons[1].classList.toggle('hide');
 });
+
+
+
+window.addEventListener('scroll', () => {
+    let section = document.querySelector('section');
+    section.classList.toggle('sticky', window.scrollY > 230)
+})
