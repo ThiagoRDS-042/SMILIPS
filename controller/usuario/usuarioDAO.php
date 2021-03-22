@@ -26,20 +26,20 @@
                 $conexao->query("INSERT INTO usuario(nomeUsuario, cpf_cnpj, emailUsuario, senhaUsuario, endereco, bairro, complemento, telefone) VALUES ('$nome','$cpf_cnpj', '$email', '$senha', '$endereco', '$bairro', '$complemento', '$telefone')") or die($conexao->error);
     
                 exibirMsg("Cadastro bem Sucedido!", "success");
-                header("location:/SMILIPS/view/pages/usuario/cadastro.php");
+                header("location:/SMILIPS/view/pages/cadastro.php");
             }
             else{
                 exibirMsg("Email ou CPF/CNPJ já cadastrados", "danger");
-                header("location:/SMILIPS/view/pages/usuario/cadastro.php");
+                header("location:/SMILIPS/view/pages/cadastro.php");
             }
         }else{
             exibirMsg("Dados Inválidos!", "danger");
-            header("location:/SMILIPS/view/pages/usuario/cadastro.php");
+            header("location:/SMILIPS/view/pages/cadastro.php");
         }
         
     }else{
         exibirMsg("Preencha todos os campos obrigatórios!", "danger");
-        header("location:/SMILIPS/view/pages/usuario/cadastro.php");
+        header("location:/SMILIPS/view/pages/cadastro.php");
     }
 
 

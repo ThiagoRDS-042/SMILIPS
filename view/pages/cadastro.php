@@ -9,7 +9,7 @@
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/head.html');
     ?>
-    <link rel="stylesheet" href="/SMILIPS/view/css/usuario/cadastro.css">
+    <link rel="stylesheet" href="/SMILIPS/view/css/cadastro.css">
     <title>Cadastro</title>
 </head>
 <body>

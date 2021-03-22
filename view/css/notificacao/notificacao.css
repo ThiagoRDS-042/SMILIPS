@@ -28,6 +28,7 @@
     animation: animate 5s infinite;
     animation-delay: 4s;
     transition: 1s;
+    z-index: 1;
 }
 
 @keyframes animate {
