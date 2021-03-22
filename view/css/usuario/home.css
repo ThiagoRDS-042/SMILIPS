@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #6843d1;
+}
+
+.logo a {
+    color: #fff !important;
+    border: 3px solid #fff !important;
+}
+
+.logo a::before,
+.logo a::after {
+    background-color: #6843d1 !important;
+}
+
 .menu-container {
     display: flex;
     align-items: center;

@@ -6,11 +6,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
      <?php
         require_once('/xampp/htdocs/SMILIPS/view/head.html');
      ?>
      <link rel="stylesheet" href="/SMILIPS/view/css/home.css">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
      <title>Home</title>
 </head>
 <body>

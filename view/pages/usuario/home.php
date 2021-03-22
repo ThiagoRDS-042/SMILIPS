@@ -14,6 +14,10 @@
 </head>
 <body>
 
+    <?php
+        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.html');
+    ?>
+
     <div class="menu-container">
         <?php
             require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.html');

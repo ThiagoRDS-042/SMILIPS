@@ -1,3 +1,8 @@
+<?php
+    require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+    usuarioLogadoEntra();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

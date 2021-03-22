@@ -20,3 +20,133 @@
 .toggle i {
     color: #fff !important;
 }
+
+.title-perfil {
+    width: 220px;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title-perfil h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #6843d1;
+}
+
+.perfil {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    width: 80%;
+    height: 500px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.perfil .img-user {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 20px;
+    overflow: hidden;
+}
+
+.perfil .img-user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.perfil .img-user span {
+    position: absolute;
+    top: 83%;
+    left: 175px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #522fb3;
+    font-size: 20px;
+    font-family: 'Motserrat', sans-serif;
+    font-weight: 600;
+}
+
+.content {
+    width: 55%;
+    height: 80%;
+}
+
+.perfil .info-user {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.perfil .info-user .field-edit {
+    position: relative;
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px auto;
+}
+
+.perfil .info-user .field-edit input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    margin-top: 6px;
+    color: #333;
+}
+
+.perfil .info-user .field-edit span::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 0;
+    color: #522fb3;
+    font-weight: 600;
+    transition: .5s
+}
+
+.perfil .info-user .field-edit span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 101%;
+    transform: scaleX(0);
+    height: 2px;
+    background: linear-gradient(120deg, #3498db, #8e44ad);
+    transition: .5s;
+}
+
+.perfil .info-user .field-edit .focus+span::after {
+    transform: scaleX(1);
+}
+
+.content .editar {
+    width: 20%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 12px auto;
+}
+
+.content .editar button {
+    font-size: 18px;
+    font-weight: 600;
+    background: #522fb3;
+    color: white;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}

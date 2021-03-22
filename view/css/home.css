@@ -238,7 +238,6 @@ main #filter span i {
 
 section {
     position: relative;
-    z-index: -1;
 }
 
 section h2 {
@@ -281,8 +280,8 @@ section .selecao .circle {
     border-radius: 50%;
     padding: 5px;
     background: #fff;
-    cursor: pointer;
     user-select: none;
+    cursor: pointer;
 }
 
 section .selecao p {
