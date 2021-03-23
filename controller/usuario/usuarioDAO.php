@@ -38,19 +38,43 @@
         }
         
     }else if(isset($_POST['editar'])){
+        
         $id = $_POST['id'];
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $cpf_cnpj = $_POST['cpf_cnpj'];
-        $telefone = $_POST['telefone'];
-        $endereco = $_POST['endereco'];
-        $bairro = $_POST['bairro'];
 
-        if($nome != null and $email != null and $cpf_cnpj != null and $telefone != null and $endereco != null and $bairro != null){
-            $complemento = $_POST['complemento'];
-            $conexao->query("UPDATE usuario SET nomeUsuario = '$nome', cpf_cnpj = '$cpf_cnpj', emailUsuario = '$email', endereco = '$endereco', bairro = '$bairro', complemento = '$complemento', telefone = '$telefone' WHERE usuarioID = '$id'") or die($conexao->error);
-            exibirMsg("Edição bem Sucedida!", "success");
-            header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+        if($_POST['nome'] != null and $_POST['email'] != null and $_POST['cpf_cnpj'] != null and $_POST['telefone'] != null and $_POST['endereco'] != null and $_POST['bairro'] != null){
+            
+            $email = $_POST['email'];
+            $cpf_cnpj = $_POST['cpf_cnpj'];
+            $telefone = $_POST['telefone'];
+            
+            if((preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj) or preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj)) and preg_match("/.{3}+@.+\..{3}+/", $email) and preg_match("/^(\+\d{2}\s)?(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone)){
+
+                $emailValido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email' and usuarioID = '$id'");
+                $cpf_cnpjValido = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj' and usuarioID = '$id'");
+
+                $emailInvalido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
+                $cpf_cnpjInvalido = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj'");
+
+                if (($emailValido->num_rows > 0 and $cpf_cnpjValido->num_rows > 0) or ($emailInvalido->num_rows <= 0 and $cpf_cnpjInvalido->num_rows <= 0)) {
+
+                    $nome = $_POST['nome'];
+                    $endereco = $_POST['endereco'];
+                    $bairro = $_POST['bairro'];
+                    $complemento = $_POST['complemento'];
+
+                    $conexao->query("UPDATE usuario SET nomeUsuario = '$nome', cpf_cnpj = '$cpf_cnpj', emailUsuario = '$email', endereco = '$endereco', bairro = '$bairro', complemento = '$complemento', telefone = '$telefone' WHERE usuarioID = '$id'") or die($conexao->error);
+                    
+                    exibirMsg("Edição bem Sucedida!", "success");
+                    header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+
+                }else{
+                    exibirMsg("Email ou CPF/CNPJ já cadastrados", "danger");
+                    header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+                }
+            }else{
+                exibirMsg("Dados Inválidos!", "danger");
+                header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+            }
         }else{
             exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
