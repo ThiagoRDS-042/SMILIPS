@@ -87,6 +87,10 @@
         
     </main>
 
+    <?php
+        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
+    ?>
+
     <script src="/SMILIPS/view/js/usuario/perfil.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarEmail.js"></script>

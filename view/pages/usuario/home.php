@@ -28,5 +28,9 @@
             <h1>Bem Vindo! <?php echo $nome[0]; ?></h1>
         </div>
     </div>
+
+    <?php
+        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
+    ?>
 </body>
 </html>

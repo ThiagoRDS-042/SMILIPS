@@ -1,7 +1,7 @@
 .menu {
     position: fixed;
-    top: 70%;
-    transform: translateY(-70%);
+    top: 65%;
+    transform: translateY(-65%);
     margin-left: 10px;
     z-index: 2;
 }

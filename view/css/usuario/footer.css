@@ -1,0 +1,26 @@
+footer {
+    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    border-top: 1px solid rgba(128, 128, 128, .5);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .text {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: #606060;
+    user-select: none;
+    pointer-events: none;
+}
+
+footer .text span {
+    color: #b41217;
+}
