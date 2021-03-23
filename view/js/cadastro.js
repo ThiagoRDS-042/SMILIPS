@@ -21,9 +21,18 @@ inputs.forEach((input, index) => {
 
 // add um envento de click para mudar o tipo deinput de password para text
 btn.addEventListener('click', () => {
-    passord.type == 'password' ? passord.type = 'text' : passord.type = 'password';
+    if (passord.type == 'password') {
+        passord.type = 'text';
+        btn.classList.remove('fa-eye');
+        btn.classList.add('fa-eye-slash');
+    } else {
+        passord.type = 'password';
+        btn.classList.add('fa-eye');
+        btn.classList.remove('fa-eye-slash');
+    }
     passord.focus();
 });
+
 
 
 inputs.forEach(input => {

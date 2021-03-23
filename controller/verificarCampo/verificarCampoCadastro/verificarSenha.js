@@ -21,6 +21,9 @@ senha.blur(function buscar() {
     if (/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/.test(senha.val())) {
         $(".input-field #msgSenha").html('');
         $(".input-field #senha").css({ 'box-shadow': 'none' });
+    } else if (senha.val() == '') {
+        $(".input-field #msgSenha").html('');
+        $(".input-field #senha").css({ 'box-shadow': 'none' });
     } else {
         $(".input-field #msgSenha").html('<font color="#842029"><b>Senha Inválida!</b></font>');
         $(".input-field #senha").css({ 'box-shadow': '1px 2px 3px #e74c3c' });
