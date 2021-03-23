@@ -1,6 +1,7 @@
 header {
     width: 100%;
     height: 80px;
+    line-height: 80px;
     background: #fff;
     box-shadow: 0 5px 15px #ccc;
     position: fixed;
@@ -9,8 +10,8 @@ header {
 }
 
 .logo {
-    margin: 30px 15px;
     float: left;
+    margin-left: 10px;
 }
 
 .logo a {
@@ -58,10 +59,10 @@ header {
     height: 50px;
     float: right;
     border-radius: 50%;
-    margin: 10px;
     cursor: pointer;
     overflow: hidden;
     background: #ccc;
+    margin: 12px 10px;
 }
 
 .user img {

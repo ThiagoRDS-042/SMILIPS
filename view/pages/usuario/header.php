@@ -1,7 +1,8 @@
+
 <link rel="stylesheet" href="/SMILIPS/view/css/usuario/header.css">
 <header>
     <div class="logo">
-        <a href="#">SMILIPS</a>
+        <a href="/SMILIPS/view/pages/home.php">SMILIPS</a>
     </div>
 
     <div class="user">

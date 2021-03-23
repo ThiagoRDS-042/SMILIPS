@@ -1,14 +1,9 @@
-<?php
-    require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
-    usuarioLogadoNEntra();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
      <?php
-        require_once('/xampp/htdocs/SMILIPS/view/head.html');
+        require_once('/xampp/htdocs/SMILIPS/view/head.php');
      ?>
      <link rel="stylesheet" href="/SMILIPS/view/css/home.css">
      <title>Home</title>
@@ -16,7 +11,7 @@
 <body>
      <header>
           <?php
-               require_once('/xampp/htdocs/SMILIPS/view/nav.html');
+               require_once('/xampp/htdocs/SMILIPS/view/nav.php');
           ?>
      </header>
 
@@ -565,7 +560,7 @@
      </div>
     
      <?php
-          require_once('/xampp/htdocs/SMILIPS/view/footer.html');
+          require_once('/xampp/htdocs/SMILIPS/view/footer.php');
      ?>
      <script src="/SMILIPS/view/js/home.js"></script>
 </body>

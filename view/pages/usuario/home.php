@@ -7,7 +7,7 @@
 <html lang="pt-BR">
 <head>
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/head.html');
+        require_once('/xampp/htdocs/SMILIPS/view/head.php');
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/home.css">
     <title>Home</title>
@@ -15,7 +15,7 @@
 <body>
 
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.html');
+        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
     ?>
 
     <div class="menu-container">

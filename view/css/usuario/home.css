@@ -2,29 +2,15 @@
     box-sizing: border-box;
 }
 
-header {
-    background: #6843d1 !important;
-}
-
 body {
-    background: #6843d1;
-}
-
-.logo a {
-    color: #fff !important;
-    border: 3px solid #fff !important;
-}
-
-.logo a::before,
-.logo a::after {
-    background-color: #6843d1 !important;
+    background: #fff;
 }
 
 .menu-container {
     display: flex;
     align-items: center;
     height: 150vh;
-    background: #6843d1;
+    background: #fff;
 }
 
 .menu-container .nome {
@@ -32,7 +18,7 @@ body {
     top: 20%;
     transform: translateY(-10%);
     font-size: 24px;
-    color: white;
+    color: #9b59b6;
     text-align: center;
     width: 50%;
     margin: 0 25%;

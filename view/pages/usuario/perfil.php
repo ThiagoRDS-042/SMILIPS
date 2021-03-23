@@ -7,7 +7,7 @@
 <html lang="pt-BR">
 <head>
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/head.html');
+        require_once('/xampp/htdocs/SMILIPS/view/head.php');
         require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/perfil.css">
@@ -16,7 +16,7 @@
 <body>
 
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.html');
+        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
     ?>
     
     <section>

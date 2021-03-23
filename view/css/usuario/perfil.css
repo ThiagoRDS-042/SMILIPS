@@ -8,29 +8,6 @@ main {
     height: 130vh;
 }
 
-.menu .navigation {
-    background: #6843cf !important;
-}
-
-.menu .navigation ul li:hover {
-    background: #522fb3 !important;
-}
-
-.menu .navigation ul li a {
-    color: #fff !important;
-}
-
-.toggle {
-    background: #6843d1 !important;
-    border: 5px solid white !important;
-    width: 40px !important;
-    height: 40px !important;
-}
-
-.toggle i {
-    color: #fff !important;
-}
-
 .title-perfil {
     width: 80%;
     min-width: 220px;

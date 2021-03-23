@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="/SMILIPS/view/css/footer.css">
 <footer>
     <div>
