@@ -3,6 +3,8 @@ header {
     height: 80px;
     background: transparent;
     position: fixed;
+    top: 0;
+    z-index: 2;
 }
 
 .logo {

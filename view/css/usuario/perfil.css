@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    background: #fff;
+    width: 100%;
+    height: 120vh;
+}
+
 .menu .navigation {
     background: #6843cf !important;
 }
@@ -13,8 +23,8 @@
 .toggle {
     background: #6843d1 !important;
     border: 5px solid white !important;
-    width: 30px !important;
-    height: 30px !important;
+    width: 40px !important;
+    height: 40px !important;
 }
 
 .toggle i {
@@ -22,11 +32,12 @@
 }
 
 .title-perfil {
-    width: 220px;
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 80%;
+    min-width: 220px;
+    z-index: 1;
+    color: #fff;
+    margin: 70px 0 0 150px;
+    text-align: center;
 }
 
 .title-perfil h1 {
@@ -37,7 +48,7 @@
 
 .perfil {
     position: absolute;
-    top: 100px;
+    top: 105px;
     left: 150px;
     width: 80%;
     height: 500px;
@@ -49,11 +60,11 @@
 }
 
 .perfil .img-user {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background: #ccc;
-    margin: 0 20px;
+    margin: auto;
     overflow: hidden;
 }
 
@@ -65,8 +76,8 @@
 
 .perfil .img-user span {
     position: absolute;
-    top: 83%;
-    left: 175px;
+    top: 73.5%;
+    left: 13%;
     padding: 5px;
     border-radius: 5px;
     color: #522fb3;
@@ -76,7 +87,8 @@
 }
 
 .content {
-    width: 55%;
+    margin: auto;
+    width: 60%;
     height: 80%;
 }
 
@@ -136,6 +148,7 @@
     height: 35px;
     border-radius: 5px;
     margin: 12px auto;
+    min-width: 80px;
 }
 
 .content .editar button {
@@ -149,4 +162,47 @@
     height: 100%;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+    .perfil {
+        flex-direction: column;
+        height: 700px;
+    }
+    .perfil .img-user {
+        width: 200px;
+        margin: 20px auto;
+    }
+    .perfil .img-user img {
+        width: 100%;
+        height: 100%;
+    }
+    .perfil .img-user span {
+        top: 186px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+    }
+    .content {
+        width: 80%;
+    }
+    .content .editar {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 850px) {
+    .perfil,
+    .title-perfil {
+        width: 70%;
+    }
+}
+
+@media (max-width: 580px) {
+    .perfil {
+        left: 120px;
+    }
+    .title-perfil {
+        margin-left: 120px;
+    }
 }

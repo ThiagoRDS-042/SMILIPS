@@ -32,7 +32,7 @@
             <div class="img-user">
                 <a href="#">
                     <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário">
-                    <span><i class="far fa-edit"></i> Editar</span>
+                    <span><i class="far fa-edit"></i>Editar</span>
                 </a>
             </div>
             <div class="content">
