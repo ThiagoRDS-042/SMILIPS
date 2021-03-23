@@ -37,6 +37,22 @@
             header("location:/SMILIPS/view/pages/cadastro.php");
         }
         
+    }else if(isset($_POST['editar'])){
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $cpf_cnpj = $_POST['cpf_cnpj'];
+        $telefone = $_POST['telefone'];
+        $endereco = $_POST['endereco'];
+        $bairro = $_POST['bairro'];
+
+        if($nome != null and $email != null and $cpf_cnpj != null and $telefone != null and $edndereco != null and $bairro != null){
+            $complemento = $_POST['complemento'];
+
+        }else{
+            exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
+            header("location:/SMILIPS/view/pages/usuario/perfil.php");
+        }
+
     }else{
         exibirMsg("Preencha todos os campos obrigatórios!", "danger");
         header("location:/SMILIPS/view/pages/cadastro.php");

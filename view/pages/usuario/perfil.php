@@ -13,10 +13,11 @@
     <title>Perfil</title>
 </head>
 <body>
+
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.html');
     ?>
-
+    
     <section>
         <?php
             require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.html');
@@ -24,11 +25,15 @@
     </section>
 
     <main>
+        
         <div class="title-perfil">     
             <h1>Informações Pessoais</h1>
         </div>
 
         <div class="perfil">
+            <?php
+                require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+            ?>
             <div class="img-user">
                 <a href="#">
                     <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário">
@@ -36,40 +41,40 @@
                 </a>
             </div>
             <div class="content">
-                <form action="#" method="post">
+                <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
                     <div class="info-user">
                         <div class="field-edit">
-                            <input type="text">
-                            <span data-placeholder="Nome"></span>
+                            <input type="text" name="nome">
+                            <span data-placeholder="Nome*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text">
-                            <span data-placeholder="CPF/CNPJ"></span>
+                            <input type="text" name="cpf_cnpj">
+                            <span data-placeholder="CPF/CNPJ*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text">
-                            <span data-placeholder="Email"></span>
+                            <input type="text" name="email">
+                            <span data-placeholder="Email*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text">
-                            <span data-placeholder="Telefone"></span>
+                            <input type="text" name="telefone">
+                            <span data-placeholder="Telefone*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text">
-                            <span data-placeholder="Endereco"></span>
+                            <input type="text" name="endereco">
+                            <span data-placeholder="Endereco*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text">
-                            <span data-placeholder="Bairro"></span>
+                            <input type="text" name="bairro">
+                            <span data-placeholder="Bairro*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text">
+                            <input type="text" name="comlemento">
                             <span data-placeholder="Complemento"></span>
                         </div>
                         
                     </div>
                     <div class="editar">
-                        <button>Editar</button>
+                        <button type="submit" name="editar">Editar</button>
                     </div>
                 </form>
             </div>

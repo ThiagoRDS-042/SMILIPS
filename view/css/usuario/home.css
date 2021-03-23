@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+header {
+    background: #6843d1 !important;
+}
+
 body {
     background: #6843d1;
 }
@@ -25,7 +29,7 @@ body {
 
 .menu-container .nome {
     position: absolute;
-    top: 10%;
+    top: 20%;
     transform: translateY(-10%);
     font-size: 24px;
     color: white;

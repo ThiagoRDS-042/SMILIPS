@@ -5,7 +5,7 @@
 main {
     background: #fff;
     width: 100%;
-    height: 120vh;
+    height: 130vh;
 }
 
 .menu .navigation {
@@ -36,7 +36,7 @@ main {
     min-width: 220px;
     z-index: 1;
     color: #fff;
-    margin: 70px 0 0 150px;
+    margin: 110px 0 0 150px;
     text-align: center;
 }
 
@@ -48,10 +48,10 @@ main {
 
 .perfil {
     position: absolute;
-    top: 105px;
+    top: 140px;
     left: 150px;
     width: 80%;
-    height: 500px;
+    height: 520px;
     border-radius: 5px;
     border: 1px solid #ccc;
     display: flex;
@@ -76,7 +76,7 @@ main {
 
 .perfil .img-user span {
     position: absolute;
-    top: 73.5%;
+    top: 73%;
     left: 13%;
     padding: 5px;
     border-radius: 5px;
@@ -89,7 +89,7 @@ main {
 .content {
     margin: auto;
     width: 60%;
-    height: 80%;
+    height: 75%;
 }
 
 .perfil .info-user {
@@ -131,8 +131,8 @@ main {
 .perfil .info-user .field-edit span::after {
     content: '';
     position: absolute;
-    bottom: 5px;
-    width: 101%;
+    bottom: 6px;
+    width: 100%;
     transform: scaleX(0);
     height: 2px;
     background: linear-gradient(120deg, #3498db, #8e44ad);
@@ -167,18 +167,19 @@ main {
 @media (max-width: 1080px) {
     .perfil {
         flex-direction: column;
-        height: 700px;
+        height: 755px;
     }
     .perfil .img-user {
         width: 200px;
-        margin: 20px auto;
+        height: 250px;
+        margin: 55px auto 20px auto;
     }
     .perfil .img-user img {
         width: 100%;
         height: 100%;
     }
     .perfil .img-user span {
-        top: 186px;
+        top: 228px;
         left: 50%;
         transform: translateX(-50%);
         font-size: 16px;
