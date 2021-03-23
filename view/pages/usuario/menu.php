@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="/SMILIPS/view/css/usuario/menu.css">
 <div class="menu">
     <div class="navigation">
@@ -9,7 +10,7 @@
                 </a>
             </li>
             <li>
-                <a href="/SMILIPS/view/pages/usuario/perfil.php">
+                <a href="/SMILIPS/view/pages/usuario/perfil.php?consultar=<?php echo $_SESSION['usuarioID'] ?>">
                     <span class="icon"><i class="fa fa-user"></i></span>
                     <span class="title">Profile</span>
                 </a>

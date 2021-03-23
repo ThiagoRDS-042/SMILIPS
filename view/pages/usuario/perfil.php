@@ -8,6 +8,7 @@
 <head>
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/head.html');
+        require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/perfil.css">
     <title>Perfil</title>
@@ -20,7 +21,7 @@
     
     <section>
         <?php
-            require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.html');
+            require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
         ?>
     </section>
 
@@ -43,32 +44,33 @@
             <div class="content">
                 <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
                     <div class="info-user">
+                        <input type="hidden" name="id" value="<?php echo $id ?>">
                         <div class="field-edit">
-                            <input type="text" name="nome">
+                            <input type="text" class="focus" name="nome" value="<?php echo $nomeUsuario ?>">
                             <span data-placeholder="Nome*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" name="cpf_cnpj">
+                            <input type="text" class="focus" name="cpf_cnpj" value="<?php echo $cpf_cnpj ?>">
                             <span data-placeholder="CPF/CNPJ*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" name="email">
+                            <input type="text" class="focus" name="email" value="<?php echo $emailUsuario ?>">
                             <span data-placeholder="Email*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" name="telefone">
+                            <input type="text" class="focus" name="telefone" value="<?php echo $telefone ?>">
                             <span data-placeholder="Telefone*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" name="endereco">
+                            <input type="text" class="focus" name="endereco" value="<?php echo $endereco ?>">
                             <span data-placeholder="Endereco*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" name="bairro">
+                            <input type="text" class="focus" name="bairro" value="<?php echo $bairro ?>">
                             <span data-placeholder="Bairro*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" name="comlemento">
+                            <input type="text" class="focus" name="complemento" value="<?php echo $complemento ?>">
                             <span data-placeholder="Complemento"></span>
                         </div>
                         

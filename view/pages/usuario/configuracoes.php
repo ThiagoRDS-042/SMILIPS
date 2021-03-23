@@ -15,7 +15,7 @@
 <body>
 
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.html');
+        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
     ?>
     
 </body>

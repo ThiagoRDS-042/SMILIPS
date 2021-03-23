@@ -38,6 +38,7 @@
         }
         
     }else if(isset($_POST['editar'])){
+        $id = $_POST['id'];
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $cpf_cnpj = $_POST['cpf_cnpj'];
@@ -45,12 +46,14 @@
         $endereco = $_POST['endereco'];
         $bairro = $_POST['bairro'];
 
-        if($nome != null and $email != null and $cpf_cnpj != null and $telefone != null and $edndereco != null and $bairro != null){
+        if($nome != null and $email != null and $cpf_cnpj != null and $telefone != null and $endereco != null and $bairro != null){
             $complemento = $_POST['complemento'];
-
+            $conexao->query("UPDATE usuario SET nomeUsuario = '$nome', cpf_cnpj = '$cpf_cnpj', emailUsuario = '$email', endereco = '$endereco', bairro = '$bairro', complemento = '$complemento', telefone = '$telefone' WHERE usuarioID = '$id'") or die($conexao->error);
+            exibirMsg("Edição bem Sucedida!", "success");
+            header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }else{
             exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
-            header("location:/SMILIPS/view/pages/usuario/perfil.php");
+            header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }
 
     }else{
