@@ -79,7 +79,7 @@
                         
                     </div>
                     <div class="editar">
-                        <button type="submit" name="editar">Editar</button>
+                        <button type="submit" name="editarInfo">Editar</button>
                     </div>
                 </form>
             </div>

@@ -2,7 +2,7 @@ let senha = $('#senha');
 
 senha.keyup(function buscar() {
 
-    if (/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])/.test(senha.val())) {
+    if (/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/.test(senha.val())) {
 
         $(".input-field #msgSenha").html('<font color="#055160"><b>Senha Válida!</b></font>');
         $(".input-field #senha").css({ 'box-shadow': '1px 2px 3px #2ecc71' });
@@ -18,7 +18,7 @@ senha.keyup(function buscar() {
 
 senha.blur(function buscar() {
 
-    if (/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])/.test(senha.val())) {
+    if (/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/.test(senha.val())) {
         $(".input-field #msgSenha").html('');
         $(".input-field #senha").css({ 'box-shadow': 'none' });
     } else {

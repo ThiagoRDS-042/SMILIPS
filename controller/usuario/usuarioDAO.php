@@ -9,7 +9,7 @@
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
 
-        if(preg_match("/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])/", $senha) and (preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj) or preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj)) and preg_match("/.{3}+@.+\..{3}+/", $email) and preg_match("/^(\+\d{2}\s)?(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone)){
+        if(preg_match("/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/", $senha) and (preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj) or preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj)) and preg_match("/.{3}+@.+\..{3}+/", $email) and preg_match("/^(\+\d{2}\s)?(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone)){
             
             $emailValido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
             $cpf_cnpjValido = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj'");
@@ -37,7 +37,7 @@
             header("location:/SMILIPS/view/pages/cadastro.php");
         }
         
-    }else if(isset($_POST['editar'])){
+    }else if(isset($_POST['editarInfo'])){
         
         $id = $_POST['id'];
 
@@ -80,6 +80,30 @@
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }
 
+    }else if(isset($_POST['editarSenha'])){
+        $id = $_POST['id'];
+
+        if($_POST['senha1'] != null and $_POST['senha2'] != null){
+            if($_POST['senha1'] == $_POST['senha2']){
+                if(preg_match("/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/", $_POST['senha1'])){
+                    
+                    $senha = md5($_POST['senha1']);
+                    $conexao->query("UPDATE usuario SET senhaUsuario = '$senha' WHERE usuarioID = '$id'") or die($conexao->error);
+                    
+                    exibirMsg("Senha Editada com Sucesso!", "success");
+                    header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
+                }else{
+                    exibirMsg("Senha Inválida!", "danger");
+                    header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
+                }
+            }else{
+                exibirMsg("Senhas Diferentes!", "danger");
+                header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
+            }
+        }else{
+            exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
+            header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
+        }
     }else{
         exibirMsg("Preencha todos os campos obrigatórios!", "danger");
         header("location:/SMILIPS/view/pages/cadastro.php");

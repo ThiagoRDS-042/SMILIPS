@@ -1,22 +1,7 @@
-.menu .navigation {
-    background: #6843cf !important;
+* {
+    box-sizing: border-box;
 }
 
-.menu .navigation ul li:hover {
-    background: #522fb3 !important;
-}
-
-.menu .navigation ul li a {
-    color: #fff !important;
-}
-
-.toggle {
-    background: #6843d1 !important;
-    border: 5px solid white !important;
-    width: 30px !important;
-    height: 30px !important;
-}
-
-.toggle i {
-    color: #fff !important;
+main {
+    height: 100vh;
 }

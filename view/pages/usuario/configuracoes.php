@@ -14,9 +14,15 @@
 </head>
 <body>
 
+    <?php   
+        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
+    ?>
+
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
     ?>
+
+    <main></main>
 
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');

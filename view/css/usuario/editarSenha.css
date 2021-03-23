@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    height: 100vh;
+}
+
+main .alert {
+    top: 80px;
+}
+
+form {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    width: 30%;
+    height: 60vh;
+}
+
+.editar-senha {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.editar-senha h1 {
+    min-width: 120px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #6843d1;
+    margin: 0 0 1px 5px;
+}
+
+.editar-senha .content {
+    width: 100%;
+    height: 100%;
+    min-width: 226px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.editar-senha .content .card {
+    height: 50%;
+}
+
+.editar-senha .content label {
+    position: relative;
+    top: 15px;
+    left: 5%;
+    color: #6843d1;
+    font-weight: 600;
+}
+
+.editar-senha .content .field-senha {
+    position: relative;
+    width: 90%;
+    height: 60%;
+    margin: 20px auto;
+}
+
+.editar-senha .content .field-senha input {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 17px;
+    color: #333;
+    padding-right: 30px;
+}
+
+.editar-senha .content .field-senha .info::before {
+    content: attr(data-placerholder);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    transition: .5s;
+}
+
+.editar-senha .content .field-senha input:focus+.info::before,
+.editar-senha .content .field-senha input:valid+.info::before {
+    top: 18%;
+    transform: translateY(-18%);
+    color: #3498db;
+}
+
+.editar-senha .content .field-senha .info::after {
+    content: '';
+    position: absolute;
+    top: 59.5px;
+    width: 100%;
+    height: 1px;
+    background: #3498db;
+    transition: .5s;
+    transform: scale(0);
+}
+
+.editar-senha .content .field-senha input:focus+span::after,
+.editar-senha .content .field-senha input:valid+span::after {
+    transform: scale(1);
+}
+
+.editar-senha .content .field-senha .msg {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    font-size: 14px;
+}
+
+.editar-senha .content .field-senha i {
+    color: #ccc;
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.editar-senha .content .field-senha input:focus~i,
+.editar-senha .content .field-senha input:valid~i {
+    color: #3498db;
+}
+
+form button {
+    width: 30%;
+    min-width: 70px;
+    height: 40px;
+    border-radius: 5px;
+    background: #3498db;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 10px 35%;
+    transition: .5s;
+}
+
+form button:hover {
+    background: #6843d1;
+}
+
+@media (max-width: 950px) {
+    .editar-senha h1 {
+        margin: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .editar-senha h1 {
+        font-size: 20px;
+        margin-left: 60px;
+    }
+    .editar-senha .content label {
+        font-size: 14px;
+    }
+    form button {
+        margin-left: 80px;
+    }
+}
