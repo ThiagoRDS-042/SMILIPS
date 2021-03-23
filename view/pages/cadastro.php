@@ -109,9 +109,9 @@
 
     <script src="/SMILIPS/view/js/usuario/cadastro.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/SMILIPS/controller/verificarCampo/verificarEmail.js"></script>
-    <script src="/SMILIPS/controller/verificarCampo/verificarCpf_cnpj.js"></script>
-    <script src="/SMILIPS/controller/verificarCampo/verificarTelefone.js"></script>
-    <script src="/SMILIPS/controller/verificarCampo/verificarSenha.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarEmail.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarCpf_cnpj.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarTelefone.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarSenha.js"></script>
 </body>
 </html>

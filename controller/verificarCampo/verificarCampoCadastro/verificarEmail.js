@@ -2,7 +2,7 @@ let email = $('#email');
 
 email.keyup(function buscar() {
     $.ajax({
-        url: '/SMILIPS/controller/usuario/campoValido.php',
+        url: '/SMILIPS/controller/usuario/campoValidoCadastro.php',
         type: 'POST',
         dataType: 'html',
         data: {
@@ -21,7 +21,7 @@ email.keyup(function buscar() {
 
 email.blur(function buscar() {
     $.ajax({
-        url: '/SMILIPS/controller/usuario/campoValido.php',
+        url: '/SMILIPS/controller/usuario/campoValidoCadastro.php',
         type: 'POST',
         dataType: 'html',
         data: {

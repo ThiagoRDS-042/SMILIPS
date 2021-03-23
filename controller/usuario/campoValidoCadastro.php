@@ -1,7 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 
-//mesma coisa la do hospital, poram aqui verifico o numrero do sus ao inves do cnes
 if (isset($_POST['email'])) {
 
     $email = $_POST['email'];

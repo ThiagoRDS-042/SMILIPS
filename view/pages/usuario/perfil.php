@@ -44,34 +44,37 @@
             <div class="content">
                 <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
                     <div class="info-user">
-                        <input type="hidden" name="id" value="<?php echo $id ?>">
+                        <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
                         <div class="field-edit">
                             <input type="text" class="focus" name="nome" value="<?php echo $nomeUsuario ?>">
-                            <span data-placeholder="Nome*"></span>
+                            <span class="info" data-placeholder="Nome*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" class="focus" name="cpf_cnpj" value="<?php echo $cpf_cnpj ?>">
-                            <span data-placeholder="CPF/CNPJ*"></span>
+                            <input type="text" class="focus" name="cpf_cnpj" id="cpf_cnpj" value="<?php echo $cpf_cnpj ?>">
+                            <span class="info" data-placeholder="CPF/CNPJ*"></span>
+                            <span id="msgCpf_cnpj" class="msg"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" class="focus" name="email" value="<?php echo $emailUsuario ?>">
-                            <span data-placeholder="Email*"></span>
+                            <input type="text" class="focus" name="email" id="email" value="<?php echo $emailUsuario ?>">
+                            <span class="info" data-placeholder="Email*"></span>
+                            <span id="msgEmail" class="msg"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" class="focus" name="telefone" value="<?php echo $telefone ?>">
-                            <span data-placeholder="Telefone*"></span>
+                            <input type="text" class="focus" name="telefone" id="telefone" value="<?php echo $telefone ?>">
+                            <span class="info" data-placeholder="Telefone*"></span>
+                            <span id="msgTelefone" class="msg"></span>
                         </div>
                         <div class="field-edit">
                             <input type="text" class="focus" name="endereco" value="<?php echo $endereco ?>">
-                            <span data-placeholder="Endereco*"></span>
+                            <span class="info" data-placeholder="Endereco*"></span>
                         </div>
                         <div class="field-edit">
                             <input type="text" class="focus" name="bairro" value="<?php echo $bairro ?>">
-                            <span data-placeholder="Bairro*"></span>
+                            <span class="info" data-placeholder="Bairro*"></span>
                         </div>
                         <div class="field-edit">
                             <input type="text" class="focus" name="complemento" value="<?php echo $complemento ?>">
-                            <span data-placeholder="Complemento"></span>
+                            <span class="info" data-placeholder="Complemento"></span>
                         </div>
                         
                     </div>
@@ -85,6 +88,9 @@
     </main>
 
     <script src="/SMILIPS/view/js/usuario/perfil.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarEmail.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarCpf_cnpj.js"></script>
+    <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarTelefone.js"></script>
 </body>
 </html>

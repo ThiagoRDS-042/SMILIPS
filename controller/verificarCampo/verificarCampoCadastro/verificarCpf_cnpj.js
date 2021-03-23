@@ -2,7 +2,7 @@ let cpf_cnpj = $('#cpf_cnpj');
 
 cpf_cnpj.keyup(function buscar() {
     $.ajax({
-        url: '/SMILIPS/controller/usuario/campoValido.php',
+        url: '/SMILIPS/controller/usuario/campoValidoCadastro.php',
         type: 'POST',
         dataType: 'html',
         data: {
@@ -21,7 +21,7 @@ cpf_cnpj.keyup(function buscar() {
 
 cpf_cnpj.blur(function buscar() {
     $.ajax({
-        url: '/SMILIPS/controller/usuario/campoValido.php',
+        url: '/SMILIPS/controller/usuario/campoValidoCadastro.php',
         type: 'POST',
         dataType: 'html',
         data: {
