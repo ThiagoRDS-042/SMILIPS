@@ -82,8 +82,8 @@ main {
     width: 310px;
     height: 150px;
     border-radius: 5px;
-    background: #ecf0f1;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+    background: #fff;
+    box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
     transition: .3s;
     opacity: 0;
     z-index: 2;
@@ -97,7 +97,7 @@ main {
     left: 47%;
     width: 20px;
     height: 20px;
-    background: #ecf0f1;
+    background: #fff;
     transform: rotate(45deg);
     z-index: 1;
     pointer-events: none;

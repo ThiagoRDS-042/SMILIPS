@@ -21,13 +21,14 @@ inputs.forEach(input => {
     });
 });
 
-let img = document.querySelector('.perfil .img-user');
+let btnCancel = document.querySelector('.btn-cancelar');
+let btnFechar = document.querySelector('.title-escolher-img i');
+let checkbox = document.querySelector('input[type=checkbox]');
 
-img.addEventListener('click', () => {
-    let largura = (screen.width * 40) / 100;
-    let altura = (screen.height * 50) / 100;
-    let topo = (screen.height * 25) / 100;
-    let esquerda = (screen.width * 30) / 100;
+btnCancel.addEventListener('click', () => {
+    checkbox.checked = false;
+});
 
-    window.open('/SMILIPS/view/pages/usuario/escolherImg.php', '', 'width=' + largura + ',height=' + altura + ',top=' + topo + ',left=' + esquerda + ',right=' + esquerda);
+btnFechar.addEventListener('click', () => {
+    checkbox.checked = false;
 });
