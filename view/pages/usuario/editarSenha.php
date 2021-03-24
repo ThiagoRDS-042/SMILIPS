@@ -8,7 +8,7 @@
 <head>
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/head.php');
-        require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
+        // require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/editarSenha.css">
     <title>Editar Senha</title>
@@ -33,7 +33,7 @@
                 <h1>Editar Senha</h1>
                 <div class="content">
                     <div class="card">
-                        <input type="hidden" name="id" value="<?php echo $id ?>">
+                        <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
                         <label>Digite sua Nova Senha</label>
                         <div class="field-senha">
                             <input type="password" name="senha1" id="senha1" class="senha" required>

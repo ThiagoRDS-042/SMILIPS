@@ -104,6 +104,13 @@
             exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
             header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
         }
+    }else if(isset($_POST['deletar'])){
+
+        $id = $_POST['id'];
+        $conexao->query("DELETE FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
+
+        exibirMsg("Conta Deletada!", "danger");
+        require_once('/xampp/htdocs/SMILIPS/controller/autenticar/sair.php');
     }else{
         exibirMsg("Preencha todos os campos obrigatórios!", "danger");
         header("location:/SMILIPS/view/pages/cadastro.php");

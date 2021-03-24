@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="menu-senha">
-                <a href="/SMILIPS/view/pages/usuario/editarSenha.php?consultar=<?php echo $_SESSION['usuarioID'] ?>">
+                <a href="/SMILIPS/view/pages/usuario/editarSenha.php">
                     <span class="icon"><i class="fa fa-lock"></i></span>
                     <span class="title">Password</span>
                 </a>

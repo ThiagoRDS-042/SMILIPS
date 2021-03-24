@@ -9,3 +9,166 @@ main {
 .menu-config {
     background: #42229b !important;
 }
+
+.deletar-conta {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 60%;
+    height: 130px;
+    margin-left: 60px;
+    min-width: 220px;
+}
+
+.deletar-conta h1 {
+    height: 20%;
+    font-size: 24px;
+    font-weight: 600;
+    color: #6843d1;
+    margin-left: 5px;
+}
+
+.deletar-conta .btn-deletar {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.deletar-conta .btn-deletar form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deletar-conta .btn-deletar input[type=checkbox] {
+    display: none;
+}
+
+.deletar-conta .btn-deletar h1 {
+    width: 150px;
+    height: 40px;
+    background: #e74c3c;
+    color: white;
+    font-size: 20px;
+    border: 2px solid #e74c3c;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 600;
+    user-select: none;
+    text-align: center;
+    line-height: 35px;
+    z-index: 3;
+}
+
+.deletar-conta .btn-deletar h1:hover {
+    background: white;
+    color: #e74c3c;
+}
+
+.deletar-conta .btn-deletar h1:active {
+    background: #ccc;
+}
+
+.deletar-conta .btn-deletar .msg-deletar {
+    position: absolute;
+    top: 70px;
+    width: 310px;
+    height: 150px;
+    border-radius: 5px;
+    background: #ecf0f1;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+    transition: .3s;
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.deletar-conta .btn-deletar .msg-deletar::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 47%;
+    width: 20px;
+    height: 20px;
+    background: #ecf0f1;
+    transform: rotate(45deg);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.deletar-conta .btn-deletar .msg-deletar h1 {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    pointer-events: none;
+    width: 100%;
+    margin: 0;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px;
+}
+
+.deletar-conta .btn-deletar .msg-deletar .confirm,
+.deletar-conta .btn-deletar .msg-deletar .cancel {
+    position: absolute;
+    bottom: 10px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.deletar-conta .btn-deletar .msg-deletar .confirm {
+    right: 20px;
+    width: 60px;
+    background: #27ae60;
+    border: 2px solid #27ae60;
+}
+
+.deletar-conta .btn-deletar .msg-deletar .cancel {
+    left: 20px;
+    width: 90px;
+    background: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+.deletar-conta .btn-deletar .msg-deletar .confirm:hover {
+    background: white;
+    color: #27ae60;
+}
+
+.deletar-conta .btn-deletar .msg-deletar .cancel:hover {
+    background: white;
+    color: #e74c3c;
+}
+
+.deletar-conta .btn-deletar .msg-deletar .confirm:active,
+.deletar-conta .btn-deletar .msg-deletar .cancel:active {
+    background: #ccc;
+}
+
+.deletar-conta .btn-deletar input[type=checkbox]:checked~.msg-deletar {
+    top: 90px;
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media (max-width: 500px) {
+    .deletar-conta .btn-deletar .msg-deletar {
+        width: 220px;
+    }
+    .deletar-conta .btn-deletar .msg-deletar h1 {
+        font-size: 14px;
+    }
+}
