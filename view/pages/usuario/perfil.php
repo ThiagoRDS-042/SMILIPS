@@ -36,10 +36,8 @@
                 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
             ?>
             <div class="img-user">
-                <a href="#">
-                    <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário">
-                    <span><i class="fas fa-camera"></i></span>
-                </a>
+                <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário">
+                <span><i class="fas fa-camera"></i></span>
             </div>
             <div class="content">
                 <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">

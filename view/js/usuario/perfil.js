@@ -20,3 +20,14 @@ inputs.forEach(input => {
         }
     });
 });
+
+let img = document.querySelector('.perfil .img-user');
+
+img.addEventListener('click', () => {
+    let largura = (screen.width * 40) / 100;
+    let altura = (screen.height * 50) / 100;
+    let topo = (screen.height * 25) / 100;
+    let esquerda = (screen.width * 30) / 100;
+
+    window.open('/SMILIPS/view/pages/usuario/escolherImg.php', '', 'width=' + largura + ',height=' + altura + ',top=' + topo + ',left=' + esquerda + ',right=' + esquerda);
+});
