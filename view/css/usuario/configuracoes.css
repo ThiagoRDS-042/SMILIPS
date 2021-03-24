@@ -5,3 +5,7 @@
 main {
     height: 100vh;
 }
+
+.menu-config {
+    background: #42229b !important;
+}

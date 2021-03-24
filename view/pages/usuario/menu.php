@@ -3,13 +3,13 @@
 <div class="menu">
     <div class="navigation">
         <ul>
-            <li>
+            <li class="menu-home">
                 <a href="/SMILIPS/view/pages/usuario/home.php">
                     <span class="icon"><i class="fa fa-home"></i></span>
                     <span class="title">Home</span>
                 </a>
             </li>
-            <li>
+            <li class="menu-perfil">
                 <a href="/SMILIPS/view/pages/usuario/perfil.php?consultar=<?php echo $_SESSION['usuarioID'] ?>">
                     <span class="icon"><i class="fa fa-user"></i></span>
                     <span class="title">Profile</span>
@@ -27,13 +27,13 @@
                     <span class="title">Help</span>
                 </a>
             </li>
-            <li>
+            <li class="menu-config">
                 <a href="/SMILIPS/view/pages/usuario/configuracoes.php">
                     <span class="icon"><i class="fa fa-cog"></i></span>
                     <span class="title">Setting</span>
                 </a>
             </li>
-            <li>
+            <li class="menu-senha">
                 <a href="/SMILIPS/view/pages/usuario/editarSenha.php?consultar=<?php echo $_SESSION['usuarioID'] ?>">
                     <span class="icon"><i class="fa fa-lock"></i></span>
                     <span class="title">Password</span>

@@ -8,6 +8,10 @@ main {
     height: 130vh;
 }
 
+.menu-perfil {
+    background: #42229b !important;
+}
+
 .title-perfil {
     width: 80%;
     min-width: 220px;

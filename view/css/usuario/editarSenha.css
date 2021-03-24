@@ -6,6 +6,10 @@ main {
     height: 100vh;
 }
 
+.menu-senha {
+    background: #42229b !important;
+}
+
 main .alert {
     top: 80px;
 }
