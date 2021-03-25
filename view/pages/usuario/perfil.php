@@ -35,13 +35,16 @@
             <?php
                 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
             ?>
-            <label for="btn">
-                <div class="img-user">
-                    <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário">
-                    <span class="selecionar"><input type="file" name="perfil" id="btn"></span>
-                    <span><i class="fas fa-camera"></i></span>
-                </div>
-            </label>
+            <form action="#" method="post" class="form-img">
+                <label for="btn">
+                    <div class="img-user">
+                        <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário">
+                        <span class="selecionar"><input type="file" name="perfil" id="btn"></span>
+                        <span><i class="fas fa-camera"></i></span>
+                    </div>
+                </label>
+                <button type="submit">Salvar Foto</button>
+            </form>
             <div class="content">
                 <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
                     <div class="info-user">
@@ -80,7 +83,7 @@
                         
                     </div>
                     <div class="editar">
-                        <button type="submit" name="editarInfo">Editar</button>
+                        <button type="submit" name="editarInfo">Salvar</button>
                     </div>
                 </form>
             </div>
