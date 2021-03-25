@@ -9,7 +9,7 @@
 
     <div class="user">
         <?php if($ftPerfilHeader != null): ?>
-            <a href="/SMILIPS/view/pages/usuario/perfil.php?consultar=<?php echo $_SESSION['usuarioID'] ?>"><img src="data:image;base64,<?php echo $ftPerfilHeader ?>" alt="Imagem do Usuário"></a>
+            <a href="/SMILIPS/view/pages/usuario/perfil.php?consultar=<?php echo $_SESSION['usuarioID'] ?>"><img src="/SMILIPS/controller/usuario/imgPerfil.php" alt="Imagem do Usuário"></a>
         <?php else: ?>
             <a href="/SMILIPS/view/pages/usuario/perfil.php?consultar=<?php echo $_SESSION['usuarioID'] ?>"><img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário"></a>
         <?php endif; ?>

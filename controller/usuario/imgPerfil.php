@@ -1,0 +1,16 @@
+<?php
+    require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
+
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    
+    $id = $_SESSION['usuarioID'];
+
+    $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
+
+	$row = mysqli_fetch_array($usuario);
+
+	Header( "Content-type: image/gif");
+	echo $row['ftPerfil'];
+?>
