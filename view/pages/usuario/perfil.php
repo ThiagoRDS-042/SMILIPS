@@ -35,15 +35,20 @@
             <?php
                 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
             ?>
-            <form action="#" method="post" class="form-img">
+            <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post" class="form-img" enctype="multipart/form-data">
                 <label for="btn">
                     <div class="img-user">
-                        <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário">
-                        <span class="selecionar"><input type="file" name="perfil" id="btn"></span>
+                        <?php if($ftPerfil != null): ?>
+                            <img src="data:image;base64,<?php echo $ftPerfil ?>" alt="Imagem do Usuário" class="preview-img">
+                        <?php else: ?>
+                            <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário" class="preview-img">
+                        <?php endif; ?>
+                        <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+                        <span class="selecionar"><input type="file" name="ft-perfil" id="btn" class="file-chooser"></span>
                         <span><i class="fas fa-camera"></i></span>
                     </div>
                 </label>
-                <button type="submit">Salvar Foto</button>
+                <button type="submit" name="editarImg">Salvar Foto</button>
             </form>
             <div class="content">
                 <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">

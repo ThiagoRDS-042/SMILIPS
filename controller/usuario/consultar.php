@@ -8,6 +8,7 @@
     $bairro = "";
     $endereco = "";
     $complemento = "";
+    $ftPerfil = "";
 
     if (isset($_GET['consultar'])) {
         $id = $_GET['consultar'];
@@ -24,6 +25,7 @@
             $endereco = $usuario['endereco'];
             $complemento = $usuario['complemento'];
             $telefone = $usuario['telefone'];
+            $ftPerfil = $usuario['ftPerfil'];
         }
     }
 ?>

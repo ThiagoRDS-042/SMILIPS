@@ -19,6 +19,7 @@
             $_SESSION['emailUsuario'] = $usuario['emailUsuario'];
             $_SESSION['senhaUsuario'] = $usuario['senhaUsuario'];
             $_SESSION['nomeUsuario'] = $usuario['nomeUsuario'];
+            $_SESSION['ftPerfil'] = $usuario['ftPerfil'];
             header("location:/SMILIPS/view/pages/usuario/home.php");
         } else {
             exibirMsg("Dados Inválidos!", "danger");

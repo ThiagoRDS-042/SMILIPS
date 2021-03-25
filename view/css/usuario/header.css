@@ -55,14 +55,16 @@ header {
 }
 
 .user {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     float: right;
     border-radius: 50%;
     cursor: pointer;
     overflow: hidden;
     background: #ccc;
     margin: 12px 10px;
+    border: 2px solid #ecf0f1;
+    box-shadow: rgb(0 0 0 / 20%) 0 4px 8px;
 }
 
 .user img {

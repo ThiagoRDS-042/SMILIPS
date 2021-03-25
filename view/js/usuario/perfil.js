@@ -20,3 +20,21 @@ inputs.forEach(input => {
         }
     });
 });
+
+
+let previewImg = document.querySelector('.preview-img');
+let fileChooser = document.querySelector('.file-chooser');
+
+fileChooser.addEventListener('change', e => {
+    let fileToUpload = e.target.files.item(0);
+    let reader = new FileReader();
+
+    // evento disparado quando o reader terminar de ler 
+    reader.addEventListener('load', e => {
+        previewImg.src = e.target.result;
+    });
+    // solicita ao reader que leia o arquivo 
+    // transformando-o para DataURL. 
+    // Isso disparará o evento reader.onload.
+    reader.readAsDataURL(fileToUpload);
+});

@@ -104,6 +104,31 @@
             exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
             header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
         }
+    }else if(isset($_POST['editarImg'])){
+        $id = $_POST['id'];
+
+        if($_FILES['ft-perfil'] != null){
+
+            preg_match("/\.(png|jpg|jpeg)$/i", $_FILES['ft-perfil']['name'], $extensao);
+            if($extensao){
+
+                $image = addslashes($_FILES['ft-perfil']['tmp_name']);
+                $image = file_get_contents($image);
+                $image = base64_encode($image);
+        
+                $conexao->query("UPDATE  usuario SET ftPerfil = '$image' WHERE usuarioID = '$id'") or die($conexao->error);
+        
+                exibirMsg("Foto Salva Com Sucesso!", "success");
+                header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+            }else{
+                exibirMsg("Extensão Inválida!", "danger");
+                header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+            }
+        }else{
+            exibirMsg("Escolha uma Imagem antes de tentar Salvar!", "danger");
+            header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+        }
+
     }else if(isset($_POST['deletar'])){
 
         $id = $_POST['id'];
