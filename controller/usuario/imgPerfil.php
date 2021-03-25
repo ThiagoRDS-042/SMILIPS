@@ -9,8 +9,9 @@
 
     $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
 
-	$row = mysqli_fetch_array($usuario);
+    $usuario = $usuario->fetch_array();
 
 	Header( "Content-type: image/gif");
-	echo $row['ftPerfil'];
+    
+	echo $usuario['ftPerfil'];
 ?>
