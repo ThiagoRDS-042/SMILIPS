@@ -27,5 +27,11 @@
             $telefone = $usuario['telefone'];
             $ftPerfil = $usuario['ftPerfil'];
         }
+    }else{
+        $id = $_SESSION['usuarioID'];
+
+        $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
+        $usuario = $usuario->fetch_array();
+        $ftPerfil = $usuario['ftPerfil'];
     }
 ?>

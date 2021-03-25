@@ -113,27 +113,23 @@
             preg_match("/\.(png|jpg|jpeg)$/i", $_FILES['ft-perfil']['name'], $extensao);
             if($extensao){
 
-                // criando um caminho para a imagem
-                $caminho = time().'.jpg';
                 $ftPerfil = $_FILES['ft-perfil'];
+                $caminhoTemp = $_FILES['ft-perfil']['tmp_name'];
 
-                // movendo a imagem
-                if (move_uploaded_file($ftPerfil['tmp_name'], $caminho)) {
-                    // Obtém o tamanho do arquivo para a leitura
-                    $tamanhoImg = filesize($caminho);
-                    // fopen() - Abre um arquivo ou URL, nesse caso o 'r' especifica que o arquivo esta sendo aberto somente para leitura
-                    // fread() - Leitura binary-safe de arquivo, Retorna a string lida ou false em caso de erro.
-                    // addslashes() - Adiciona barras a uma string, Retorna uma string com barras adicionadas antes de caracteres que precisam ser escapados
-                    $ftPerfil  = addslashes(fread(fopen($caminho, "r"), $tamanhoImg));
+                // Obtém o tamanho do arquivo para a leitura
+                $tamanhoImg = filesize($caminhoTemp);
+                // fopen() - Abre um arquivo ou URL, nesse caso o 'r' especifica que o arquivo esta sendo aberto somente para leitura
+                // fread() - Leitura binary-safe de arquivo, Retorna a string lida ou false em caso de erro.
+                // addslashes() - Adiciona barras a uma string, Retorna uma string com barras adicionadas antes de caracteres que precisam ser escapados
+                $handle = fopen($caminhoTemp, "r");
+                $ftPerfil  = addslashes(fread($handle, $tamanhoImg));
 
-                    $conexao->query("UPDATE  usuario SET ftPerfil = '$ftPerfil' WHERE usuarioID = '$id'") or die($conexao->error);
+                $conexao->query("UPDATE  usuario SET ftPerfil = '$ftPerfil' WHERE usuarioID = '$id'") or die($conexao->error);
                     
-                    // excluir o arquivo (imagem) que eu movi
-                    unlink($caminho);
+                fclose($handle);
 
-                    exibirMsg("Foto Salva Com Sucesso!", "success");
-                    header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
-                }     
+                exibirMsg("Foto Salva Com Sucesso!", "success");
+                header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id"); 
             }else{
                 exibirMsg("Extensão Inválida!", "danger");
                 header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
