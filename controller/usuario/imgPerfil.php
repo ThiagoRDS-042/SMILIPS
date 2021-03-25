@@ -11,7 +11,7 @@
 
     $usuario = $usuario->fetch_array();
 
-	Header( "Content-type: image/gif");
+	Header("Content-type: image/jpg");
     
 	echo $usuario['ftPerfil'];
 ?>
