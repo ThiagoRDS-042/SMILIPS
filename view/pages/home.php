@@ -15,7 +15,7 @@
           ?>
      </header>
 
-     <main>
+     <main> 
           <form action="#" method="post">
                <div id="filter">
                     <div class="search">

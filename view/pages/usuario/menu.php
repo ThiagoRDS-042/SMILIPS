@@ -12,37 +12,37 @@
             <li class="menu-perfil">
                 <a href="/SMILIPS/view/pages/usuario/perfil.php?consultar=<?php echo $_SESSION['usuarioID'] ?>">
                     <span class="icon"><i class="fa fa-user"></i></span>
-                    <span class="title">Profile</span>
+                    <span class="title">Perfil</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fa fa-comment"></i></span>
-                    <span class="title">Message</span>
+                    <span class="title">Mensagens</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fa fa-question-circle"></i></span>
-                    <span class="title">Help</span>
+                    <span class="title">Ajuda</span>
                 </a>
             </li>
             <li class="menu-config">
                 <a href="/SMILIPS/view/pages/usuario/configuracoes.php">
                     <span class="icon"><i class="fa fa-cog"></i></span>
-                    <span class="title">Setting</span>
+                    <span class="title">Configurações</span>
                 </a>
             </li>
             <li class="menu-senha">
                 <a href="/SMILIPS/view/pages/usuario/editarSenha.php">
                     <span class="icon"><i class="fa fa-lock"></i></span>
-                    <span class="title">Password</span>
+                    <span class="title">Senha</span>
                 </a>
             </li>
             <li>
                 <a href="/SMILIPS/controller/autenticar/sair.php">
                     <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
-                    <span class="title">Sign Out</span>
+                    <span class="title">Sair</span>
                 </a>
             </li>
         </ul>

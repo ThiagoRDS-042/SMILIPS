@@ -20,15 +20,3 @@ inputs.forEach(input => {
         }
     });
 });
-
-let btnCancel = document.querySelector('.btn-cancelar');
-let btnFechar = document.querySelector('.title-escolher-img i');
-let checkbox = document.querySelector('input[type=checkbox]');
-
-btnCancel.addEventListener('click', () => {
-    checkbox.checked = false;
-});
-
-btnFechar.addEventListener('click', () => {
-    checkbox.checked = false;
-});

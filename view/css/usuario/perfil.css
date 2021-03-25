@@ -77,119 +77,11 @@ main {
     cursor: pointer;
 }
 
-.perfil .escolher-img {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 60vh;
-    min-width: 400px;
-    min-height: 100px;
-    background: #fff;
-    z-index: 1;
-    box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
-    opacity: 0;
-    transition: .5s;
-    pointer-events: none;
+.perfil .img-user .selecionar {
+    display: none;
 }
 
-.perfil .escolher-img .title-escolher-img {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    align-items: center;
-}
-
-.perfil .escolher-img .title-escolher-img h1 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #42229b;
-    padding: 0 10px;
-}
-
-.perfil .escolher-img .title-escolher-img i {
-    position: absolute;
-    right: 10px;
-    font-size: 22px;
-    color: #42229b;
-    cursor: pointer;
-}
-
-.perfil .escolher-img .content-escolher-img {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.perfil .escolher-img .content-escolher-img i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 150px;
-    color: #ecf0f1;
-    z-index: -1;
-}
-
-.perfil .escolher-img .footer-escolher-img {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    border-top: 1px solid #ccc;
-    display: flex;
-    align-items: center;
-}
-
-.perfil .escolher-img .footer-escolher-img button {
-    height: 30px;
-    cursor: pointer;
-    outline: none;
-    font-size: 16px;
-    color: white;
-    border-radius: 5px;
-    position: absolute;
-    transition: .5s;
-}
-
-.perfil .escolher-img .footer-escolher-img .btn-cancelar {
-    background: #e74c3c;
-    border: 2px solid #e74c3c;
-    left: 20px;
-}
-
-.perfil .escolher-img .footer-escolher-img .btn-selecionar {
-    background: #2ecc71;
-    border: 2px solid #2ecc71;
-    right: 20px;
-}
-
-.perfil .escolher-img .footer-escolher-img .btn-cancelar:hover {
-    background: white;
-    color: #e74c3c;
-}
-
-.perfil .escolher-img .footer-escolher-img .btn-selecionar:hover {
-    background: white;
-    color: #2ecc71;
-}
-
-.perfil .escolher-img .footer-escolher-img .btn-selecionar:active,
-.perfil .escolher-img .footer-escolher-img .btn-cancelar:active {
-    background: #bdc3c7;
-}
-
-.perfil input[type=checkbox]:checked~.escolher-img {
-    top: 50%;
-    opacity: 1;
-    pointer-events: all;
-}
-
-.content {
+.perfil .content {
     margin: auto;
     width: 60%;
     height: 75%;
@@ -301,7 +193,7 @@ main {
     .perfil input[type=checkbox]:checked~.escolher-img {
         top: 30%;
     }
-    .content {
+    .perfil .content {
         width: 80%;
     }
     .content .editar {
