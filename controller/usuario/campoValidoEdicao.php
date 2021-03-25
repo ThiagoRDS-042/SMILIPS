@@ -41,4 +41,21 @@ if(isset($_POST['cpf_cnpj'])){
     }
 }
 
+if(isset($_POST['senhaAtual'])){
+
+    $id = $_POST['id'];
+    $senhaAtual = $_POST['senhaAtual'];
+
+    $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'");
+    $usuario = $usuario->fetch_array();
+
+    $senhaUsuario = $usuario['senhaUsuario'];
+
+    if($senhaUsuario == md5($senhaAtual)){
+        echo '<font color="#2ecc71"><b>Senha Válida!</b></font>';
+    }else{
+        echo '<font color="#e74c3c"><b>Senha Inválida!</b></font>';
+    }
+}
+
 ?>
