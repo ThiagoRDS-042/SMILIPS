@@ -6,6 +6,16 @@ body {
     background: #fff;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    background: #666;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(34, 34, 34);
+    border-radius: 5px;
+}
+
 .menu-container {
     display: flex;
     align-items: center;

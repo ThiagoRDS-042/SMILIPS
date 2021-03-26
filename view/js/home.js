@@ -77,3 +77,9 @@ editSelect(optionsListValorI, 6);
 editSelect(optionsListValorF, 7);
 
 editSelect(optionsListArea, 8);
+
+
+window.addEventListener('scroll', () => {
+    let section = document.querySelector('section.oqProcura');
+    section.classList.toggle('sticky', window.scrollY > 580)
+})

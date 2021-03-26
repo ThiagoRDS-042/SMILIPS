@@ -15,6 +15,23 @@
           ?>
      </header>
 
+     <section class="banner">
+          <figure>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propaganda1.jpg" alt="">
+               </a>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propaganda2.jpeg" alt="">
+               </a>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propaganda3.jpeg" alt="">
+               </a>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propaganda1.jpg" alt="">
+               </a>
+          </figure>
+     </section>
+
      <main> 
           <form action="#" method="post">
                <div id="filter">
@@ -531,7 +548,7 @@
           </form>
      </main>
 
-     <section>
+     <section class="oqProcura">
           <h2>O que você procura?</h2>
           <div class="selecao">
                <div class="card-selecao">
@@ -555,10 +572,9 @@
           </div>
      </section>
 
-     <div class="sect">
+     <section class="recomendacoes">
 
-     </div>
-    
+     </section>
      <?php
           require_once('/xampp/htdocs/SMILIPS/view/footer.php');
      ?>

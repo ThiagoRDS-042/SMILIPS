@@ -4,24 +4,79 @@
 
 body {
     height: 1080px;
-    background: #fff;
+    background: #ecf0f1;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #2d3436;
+    border-radius: 5px;
+}
+
+section.banner {
+    position: relative;
+    top: 80px;
+    height: 350px;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+}
+
+section.banner figure {
+    position: relative;
+    width: 400%;
+    height: 100%;
+    animation: 15s banner infinite linear;
+}
+
+section.banner figure a img {
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+@keyframes banner {
+    0% {
+        left: 0;
+    }
+    28% {
+        left: 0;
+    }
+    33% {
+        left: -100%;
+    }
+    61% {
+        left: -100%;
+    }
+    66% {
+        left: -200%;
+    }
+    94% {
+        left: -200%;
+    }
+    100% {
+        left: -300%;
+    }
 }
 
 main {
     position: relative;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
 }
 
 main #filter {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -55%);
     width: 700px;
     height: 200px;
     text-align: center;
-    background: #3498db;
+    background: rgb(41, 128, 185);
     border-radius: 10px;
     transition: .5s;
 }
@@ -58,11 +113,11 @@ main #filter .search button {
     outline: none;
     border: none;
     background: #fff;
-    color: #3498db;
+    color: #2980b9;
 }
 
 main #filter .search button:active {
-    color: #2980b9;
+    color: #1d6ca0;
     background: #ecf0f1;
 }
 
@@ -136,12 +191,12 @@ main #filter .field-input .select-box .list-options.active+.select::after {
 
 main #filter .field-input .select-box .list-options::-webkit-scrollbar {
     width: 8px;
-    background: #b3b0b0;
+    background: #55efc4;
     border-radius: 0 8px 8px 0;
 }
 
 main #filter .field-input .select-box .list-options::-webkit-scrollbar-thumb {
-    background: rgb(128, 120, 120);
+    background: #00b894;
     border-radius: 0 8px 8px 0;
 }
 
@@ -157,7 +212,7 @@ main #filter .field-input .select-box .option {
 }
 
 main #filter .field-input .select-box .option:hover {
-    background: #d3d1d1;
+    background: #81ecec;
 }
 
 main #filter .field-input .select-box label {
@@ -236,11 +291,11 @@ main #filter span i {
     margin-right: 3px;
 }
 
-section {
+section.oqProcura {
     position: relative;
 }
 
-section h2 {
+section.oqProcura h2 {
     position: absolute;
     top: -30px;
     left: 50%;
@@ -256,16 +311,19 @@ section.sticky h2 {
     opacity: 1;
 }
 
-section .selecao {
+section.oqProcura .selecao {
     width: 100%;
     height: 300px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #3498db;
+    background: #2980b9;
+    border: 1px solid white;
+    border-left: none;
+    border-right: none;
 }
 
-section .selecao .card-selecao {
+section.oqProcura .selecao .card-selecao {
     width: 210px;
     height: 200px;
     display: flex;
@@ -274,7 +332,7 @@ section .selecao .card-selecao {
     flex-direction: column;
 }
 
-section .selecao .circle {
+section.oqProcura .selecao .circle {
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -284,21 +342,21 @@ section .selecao .circle {
     cursor: pointer;
 }
 
-section .selecao p {
+section.oqProcura .selecao p {
     font-size: 20px;
     color: #fff;
     font-weight: 600;
     margin: 60px 0 10px 0;
 }
 
-section .selecao .circle img {
+section.oqProcura .selecao .circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.sect {
+section.recomendacoes {
     height: 200px;
 }
 
@@ -344,6 +402,12 @@ section .selecao .circle img {
     main #filter .field-input:nth-child(3),
     main #filter .field-input:nth-child(4) {
         left: 0;
+    }
+}
+
+@media (max-width: 685px) {
+    section.banner {
+        top: 70px;
     }
 }
 

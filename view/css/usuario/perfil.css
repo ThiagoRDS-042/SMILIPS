@@ -2,6 +2,16 @@
     box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #2d3436;
+    border-radius: 5px;
+}
+
 main {
     background: #fff;
     width: 100%;
