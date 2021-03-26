@@ -9,6 +9,7 @@
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/head.php');
         require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
+        consultarSituacao();
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/configuracoes.css">
     <title>Configurações</title>
@@ -24,19 +25,35 @@
     ?>
 
     <main>
-        <div class="deletar-conta">
+        <?php
+            if (!isset($_SESSION)) {
+                session_start();
+            }
+            require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+        ?>
+
+        <div class="desativar-conta">
             <h1>Ações</h1>
-            <div class="btn-deletar">
+            <div class="btn-desativar">
                 <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
-                    <input type="checkbox" id="deletar">
-                    <label for="deletar">
-                        <h1>Deletar Conta</h1>
+                    <input type="checkbox" id="desativar">
+                    <label for="desativar">
+                        <?php if($situacao == 'ativado'): ?>
+                            <h1 class="title-desativar">Desativar Conta</h1>
+                        <?php else: ?>
+                            <h1 class="title-ativar">Ativar Conta</h1>
+                        <?php endif; ?>
                     </label>
 
-                    <div class="msg-deletar">
-                        <h1>Deseja Realmente excluir sua Conta?</h1>
-                        <button class="confirm" type="submit" name="deletar">Sim</button>
+                    <div class="msg-desativar">
+                         <?php if($situacao == 'ativado'): ?>
+                            <h1>Deseja Realmente Desativar sua Conta?</h1>
+                            <button class="confirm" type="submit" name="desativar">Sim</button>
+                        <?php else: ?>
+                            <h1>Deseja Realmente Ativar sua Conta?</h1>
+                            <button class="confirm" type="submit" name="ativar">Sim</button>
+                        <?php endif; ?>
                         <button class="cancel" type="button">Cancelar</button>
                     </div>
                 </form>

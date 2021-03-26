@@ -1,5 +1,6 @@
 <?php
     require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
+    consultarFtPerfil();
 ?>
 <link rel="stylesheet" href="/SMILIPS/view/css/usuario/header.css">
 <header>

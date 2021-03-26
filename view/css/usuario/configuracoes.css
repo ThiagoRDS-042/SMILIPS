@@ -4,11 +4,11 @@
 
 body::-webkit-scrollbar {
     width: 10px;
-    background: #666;
+    background: #636e72;
 }
 
 body::-webkit-scrollbar-thumb {
-    background: rgb(34, 34, 34);
+    background: #2d3436;
     border-radius: 5px;
 }
 
@@ -16,11 +16,15 @@ main {
     height: 100vh;
 }
 
+main .alert {
+    top: 80px;
+}
+
 .menu-config {
     background: #42229b !important;
 }
 
-.deletar-conta {
+.desativar-conta {
     position: absolute;
     top: 30%;
     left: 50%;
@@ -31,7 +35,7 @@ main {
     min-width: 220px;
 }
 
-.deletar-conta h1 {
+.desativar-conta h1 {
     height: 20%;
     font-size: 24px;
     font-weight: 600;
@@ -39,7 +43,7 @@ main {
     margin-left: 5px;
 }
 
-.deletar-conta .btn-deletar {
+.desativar-conta .btn-desativar {
     position: relative;
     width: 100%;
     height: 80%;
@@ -47,7 +51,7 @@ main {
     border-radius: 5px;
 }
 
-.deletar-conta .btn-deletar form {
+.desativar-conta .btn-desativar form {
     position: relative;
     width: 100%;
     height: 100%;
@@ -56,17 +60,15 @@ main {
     align-items: center;
 }
 
-.deletar-conta .btn-deletar input[type=checkbox] {
+.desativar-conta .btn-desativar input[type=checkbox] {
     display: none;
 }
 
-.deletar-conta .btn-deletar h1 {
-    width: 150px;
+.desativar-conta .btn-desativar h1 {
+    width: 160px;
     height: 40px;
-    background: #e74c3c;
     color: white;
     font-size: 20px;
-    border: 2px solid #e74c3c;
     border-radius: 5px;
     cursor: pointer;
     transition: .5s;
@@ -77,16 +79,31 @@ main {
     z-index: 3;
 }
 
-.deletar-conta .btn-deletar h1:hover {
+.desativar-conta .btn-desativar .title-desativar {
+    background: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+.desativar-conta .btn-desativar .title-ativar {
+    background: #27ae60;
+    border: 2px solid #27ae60;
+}
+
+.desativar-conta .btn-desativar .title-desativar:hover {
     background: white;
     color: #e74c3c;
 }
 
-.deletar-conta .btn-deletar h1:active {
+.desativar-conta .btn-desativar .title-ativar:hover {
+    background: white;
+    color: #27ae60;
+}
+
+.desativar-conta .btn-desativar h1:active {
     background: #ccc;
 }
 
-.deletar-conta .btn-deletar .msg-deletar {
+.desativar-conta .btn-desativar .msg-desativar {
     position: absolute;
     top: 70px;
     width: 310px;
@@ -96,24 +113,23 @@ main {
     box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
     transition: .3s;
     opacity: 0;
-    z-index: 2;
     pointer-events: none;
 }
 
-.deletar-conta .btn-deletar .msg-deletar::before {
+.desativar-conta .btn-desativar .msg-desativar::before {
     content: '';
     position: absolute;
-    top: -10px;
+    top: -8px;
     left: 47%;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     background: #fff;
     transform: rotate(45deg);
     z-index: 1;
     pointer-events: none;
 }
 
-.deletar-conta .btn-deletar .msg-deletar h1 {
+.desativar-conta .btn-desativar .msg-desativar h1 {
     background: transparent;
     border: none;
     font-size: 18px;
@@ -126,8 +142,8 @@ main {
     border-radius: 0px;
 }
 
-.deletar-conta .btn-deletar .msg-deletar .confirm,
-.deletar-conta .btn-deletar .msg-deletar .cancel {
+.desativar-conta .btn-desativar .msg-desativar .confirm,
+.desativar-conta .btn-desativar .msg-desativar .cancel {
     position: absolute;
     bottom: 10px;
     height: 30px;
@@ -139,46 +155,46 @@ main {
     transition: .5s;
 }
 
-.deletar-conta .btn-deletar .msg-deletar .confirm {
+.desativar-conta .btn-desativar .msg-desativar .confirm {
     right: 20px;
     width: 60px;
     background: #27ae60;
     border: 2px solid #27ae60;
 }
 
-.deletar-conta .btn-deletar .msg-deletar .cancel {
+.desativar-conta .btn-desativar .msg-desativar .cancel {
     left: 20px;
     width: 90px;
     background: #e74c3c;
     border: 2px solid #e74c3c;
 }
 
-.deletar-conta .btn-deletar .msg-deletar .confirm:hover {
+.desativar-conta .btn-desativar .msg-desativar .confirm:hover {
     background: white;
     color: #27ae60;
 }
 
-.deletar-conta .btn-deletar .msg-deletar .cancel:hover {
+.desativar-conta .btn-desativar .msg-desativar .cancel:hover {
     background: white;
     color: #e74c3c;
 }
 
-.deletar-conta .btn-deletar .msg-deletar .confirm:active,
-.deletar-conta .btn-deletar .msg-deletar .cancel:active {
+.desativar-conta .btn-desativar .msg-desativar .confirm:active,
+.desativar-conta .btn-desativar .msg-desativar .cancel:active {
     background: #ccc;
 }
 
-.deletar-conta .btn-deletar input[type=checkbox]:checked~.msg-deletar {
+.desativar-conta .btn-desativar input[type=checkbox]:checked~.msg-desativar {
     top: 90px;
     opacity: 1;
     pointer-events: all;
 }
 
 @media (max-width: 500px) {
-    .deletar-conta .btn-deletar .msg-deletar {
+    .desativar-conta .btn-desativar .msg-desativar {
         width: 220px;
     }
-    .deletar-conta .btn-deletar .msg-deletar h1 {
+    .desativar-conta .btn-desativar .msg-desativar h1 {
         font-size: 14px;
     }
 }

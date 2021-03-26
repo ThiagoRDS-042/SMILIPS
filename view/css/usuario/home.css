@@ -8,11 +8,11 @@ body {
 
 body::-webkit-scrollbar {
     width: 10px;
-    background: #666;
+    background: #636e72;
 }
 
 body::-webkit-scrollbar-thumb {
-    background: rgb(34, 34, 34);
+    background: #2d3436;
     border-radius: 5px;
 }
 

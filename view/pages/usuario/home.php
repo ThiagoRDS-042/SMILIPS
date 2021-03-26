@@ -8,6 +8,8 @@
 <head>
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/head.php');
+        require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
+        consultarNome();
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/home.css">
     <title>Home</title>
@@ -24,7 +26,7 @@
         ?>
 
         <div class="nome">
-            <?php $nome = preg_split('/\s/', $_SESSION['nomeUsuario']); ?>
+            <?php $nome = preg_split('/\s/', $nomeUsuario); ?>
             <h1>Bem Vindo! <?php echo $nome[0]; ?></h1>
         </div>
     </div>

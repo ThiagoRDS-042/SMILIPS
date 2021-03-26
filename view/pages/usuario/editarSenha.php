@@ -8,7 +8,6 @@
 <head>
     <?php
         require_once('/xampp/htdocs/SMILIPS/view/head.php');
-        // require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/editarSenha.css">
     <title>Editar Senha</title>

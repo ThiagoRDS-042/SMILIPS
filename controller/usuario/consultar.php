@@ -9,6 +9,7 @@
     $endereco = "";
     $complemento = "";
     $ftPerfil = "";
+    $situacao = "";
 
     if (isset($_GET['consultar'])) {
         $id = $_GET['consultar'];
@@ -27,11 +28,33 @@
             $telefone = $usuario['telefone'];
             $ftPerfil = $usuario['ftPerfil'];
         }
-    }else{
+    }
+
+    function consultarFtPerfil(){
+        global $conexao, $ftPerfil;
         $id = $_SESSION['usuarioID'];
 
         $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
         $usuario = $usuario->fetch_array();
         $ftPerfil = $usuario['ftPerfil'];
     }
+
+    function consultarSituacao(){
+        global $conexao, $situacao;
+        $id = $_SESSION['usuarioID'];
+
+        $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
+        $usuario = $usuario->fetch_array();
+        $situacao = $usuario['situacao'];
+    }
+
+    function consultarNome(){
+        global $conexao, $nomeUsuario;
+        $id = $_SESSION['usuarioID'];
+
+        $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
+        $usuario = $usuario->fetch_array();
+        $nomeUsuario = $usuario['nomeUsuario'];
+    }
+    
 ?>

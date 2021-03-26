@@ -22,8 +22,9 @@
                 $endereco = $_POST['endereco'];
                 $bairro = $_POST['bairro'];
                 $complemento = $_POST['complemento'];
+                $situacao = 'ativado';
     
-                $conexao->query("INSERT INTO usuario(nomeUsuario, cpf_cnpj, emailUsuario, senhaUsuario, endereco, bairro, complemento, telefone) VALUES ('$nome','$cpf_cnpj', '$email', '$senha', '$endereco', '$bairro', '$complemento', '$telefone')") or die($conexao->error);
+                $conexao->query("INSERT INTO usuario(nomeUsuario, cpf_cnpj, emailUsuario, senhaUsuario, endereco, bairro, complemento, telefone, situacao) VALUES ('$nome','$cpf_cnpj', '$email', '$senha', '$endereco', '$bairro', '$complemento', '$telefone', '$situacao')") or die($conexao->error);
     
                 exibirMsg("Cadastro bem Sucedido!", "success");
                 header("location:/SMILIPS/view/pages/cadastro.php");
@@ -139,13 +140,21 @@
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }
 
-    }else if(isset($_POST['deletar'])){
-
+    }else if(isset($_POST['desativar'])){
         $id = $_POST['id'];
-        $conexao->query("DELETE FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
 
-        exibirMsg("Conta Deletada!", "danger");
-        require_once('/xampp/htdocs/SMILIPS/controller/autenticar/sair.php');
+        $conexao->query("UPDATE usuario SET situacao = 'desativado' WHERE usuarioID = '$id'") or die($conexao->error);
+
+        exibirMsg("Conta Desativada!, Você Perderá o Acesso a Algumas Funções do Sistema", "danger");
+        header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
+
+    }else if(isset($_POST['ativar'])){
+        $id = $_POST['id'];
+
+        $conexao->query("UPDATE usuario SET situacao = 'ativado' WHERE usuarioID = '$id'") or die($conexao->error);
+
+        exibirMsg("Conta Ativa!", "success");
+        header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
     }else{
         exibirMsg("Preencha todos os campos obrigatórios!", "danger");
         header("location:/SMILIPS/view/pages/cadastro.php");
