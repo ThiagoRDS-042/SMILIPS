@@ -8,10 +8,14 @@
         $senha = md5($_POST['senha']);
 
         $usuario = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email' AND senhaUsuario= '$senha'") or die($conexao->error);
-       
+
         //verificando se é um hospital ou usuario ou os dados invalidos
         if ($usuario->num_rows > 0) {
             $usuario = $usuario->fetch_assoc();
+
+            if($usuario['situacao'] == 'desativada'){
+                $conexao->query("UPDATE usuario SET situacao = 'ativada' WHERE emailUsuario = '$email' AND senhaUsuario= '$senha'") or die($conexao->error);
+            }
             if (!isset($_SESSION)) {
                 session_start();
             }

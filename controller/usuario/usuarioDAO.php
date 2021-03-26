@@ -143,24 +143,23 @@
     }else if(isset($_POST['desativar'])){
         $id = $_POST['id'];
 
-        $conexao->query("UPDATE usuario SET situacao = 'desativado' WHERE usuarioID = '$id'") or die($conexao->error);
+        $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
+        $usuario = $usuario->fetch_assoc();
 
-        exibirMsg("Conta Desativada!, Você Perderá o Acesso a Algumas Funções do Sistema", "danger");
-        header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
+        if(md5($_POST['senha']) == $usuario['senhaUsuario']){
+            $conexao->query("UPDATE usuario SET situacao = 'desativada' WHERE usuarioID = '$id'") or die($conexao->error);
 
-    }else if(isset($_POST['ativar'])){
-        $id = $_POST['id'];
+            exibirMsg("Conta Desativada!", "danger");
+            require_once('/xampp/htdocs/SMILIPS/controller/autenticar/sair.php');
+        }else{
 
-        $conexao->query("UPDATE usuario SET situacao = 'ativado' WHERE usuarioID = '$id'") or die($conexao->error);
+            exibirMsg("Senha Incorreta!", "danger");
+            header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
 
-        exibirMsg("Conta Ativa!", "success");
-        header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
+        }
     }else{
         exibirMsg("Preencha todos os campos obrigatórios!", "danger");
         header("location:/SMILIPS/view/pages/cadastro.php");
     }
-
-
-
     
 ?>

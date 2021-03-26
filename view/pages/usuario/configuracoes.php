@@ -39,21 +39,13 @@
                     <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
                     <input type="checkbox" id="desativar">
                     <label for="desativar">
-                        <?php if($situacao == 'ativado'): ?>
-                            <h1 class="title-desativar">Desativar Conta</h1>
-                        <?php else: ?>
-                            <h1 class="title-ativar">Ativar Conta</h1>
-                        <?php endif; ?>
+                        <h1 class="title-desativar">Desativar Conta</h1>
                     </label>
 
                     <div class="msg-desativar">
-                         <?php if($situacao == 'ativado'): ?>
-                            <h1>Deseja Realmente Desativar sua Conta?</h1>
-                            <button class="confirm" type="submit" name="desativar">Sim</button>
-                        <?php else: ?>
-                            <h1>Deseja Realmente Ativar sua Conta?</h1>
-                            <button class="confirm" type="submit" name="ativar">Sim</button>
-                        <?php endif; ?>
+                        <h1>Digite sua Senha</h1>
+                        <input type="password" class="msg-content" name="senha">
+                        <button class="confirm" type="submit" name="desativar">Confirmar</button>
                         <button class="cancel" type="button">Cancelar</button>
                     </div>
                 </form>

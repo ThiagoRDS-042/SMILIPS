@@ -77,26 +77,13 @@ main .alert {
     text-align: center;
     line-height: 35px;
     z-index: 3;
-}
-
-.desativar-conta .btn-desativar .title-desativar {
     background: #e74c3c;
     border: 2px solid #e74c3c;
 }
 
-.desativar-conta .btn-desativar .title-ativar {
-    background: #27ae60;
-    border: 2px solid #27ae60;
-}
-
-.desativar-conta .btn-desativar .title-desativar:hover {
+.desativar-conta .btn-desativar h1:hover {
     background: white;
     color: #e74c3c;
-}
-
-.desativar-conta .btn-desativar .title-ativar:hover {
-    background: white;
-    color: #27ae60;
 }
 
 .desativar-conta .btn-desativar h1:active {
@@ -107,7 +94,7 @@ main .alert {
     position: absolute;
     top: 70px;
     width: 310px;
-    height: 150px;
+    height: 200px;
     border-radius: 5px;
     background: #fff;
     box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
@@ -142,6 +129,17 @@ main .alert {
     border-radius: 0px;
 }
 
+.desativar-conta .btn-desativar .msg-desativar .msg-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+    border: 1px solid #333;
+    height: 35px;
+    font-size: 16px;
+}
+
 .desativar-conta .btn-desativar .msg-desativar .confirm,
 .desativar-conta .btn-desativar .msg-desativar .cancel {
     position: absolute;
@@ -153,18 +151,17 @@ main .alert {
     outline: none;
     cursor: pointer;
     transition: .5s;
+    width: 100px;
 }
 
 .desativar-conta .btn-desativar .msg-desativar .confirm {
     right: 20px;
-    width: 60px;
     background: #27ae60;
     border: 2px solid #27ae60;
 }
 
 .desativar-conta .btn-desativar .msg-desativar .cancel {
     left: 20px;
-    width: 90px;
     background: #e74c3c;
     border: 2px solid #e74c3c;
 }
