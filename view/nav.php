@@ -25,6 +25,7 @@
         <li><a href="#">Ajuda</a></li>
         <li><a href="#">Contato</a></li>
         <li>
+            <!-- se existir a variavel de sessao usuarioID coloque no nav o nome do usuario se nao coloque login -->
             <?php if (isset($_SESSION['usuarioID'])) : ?>
                 <a href="/SMILIPS/view/pages/usuario/home.php">
                     <?php $primeiroNome = preg_split('/\s/', $_SESSION['nomeUsuario'])?>

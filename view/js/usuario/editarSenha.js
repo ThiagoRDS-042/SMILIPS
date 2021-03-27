@@ -2,7 +2,7 @@
 let senhas = document.querySelectorAll('input[type=password]');
 let btns = document.querySelectorAll('.field-senha i');
 
-// add um envento de click para mudar o tipo de input de password para text
+// add um envento de click para mudar o tipo de input de password para text e o tipo de icone de visualizacao
 btns.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         if (senhas[index].type == 'password') {

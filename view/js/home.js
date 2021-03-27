@@ -79,6 +79,7 @@ editSelect(optionsListValorF, 7);
 editSelect(optionsListArea, 8);
 
 
+//add evento de scroll ao objeto window, e add a classe sticky a section se o scroly da pagina for maior q 580
 window.addEventListener('scroll', () => {
     let section = document.querySelector('section.oqProcura');
     section.classList.toggle('sticky', window.scrollY > 580)

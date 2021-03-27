@@ -2,7 +2,7 @@
 let senha = document.querySelector('.middle .field-input input[type=password]');
 let btn = document.querySelector('.middle .field-input i');
 
-// add um envento de click para mudar o tipo deinput de password para text
+// add um envento de click para mudar o tipo de input de password para text e alternando o icone de visualizacao
 btn.addEventListener('click', () => {
     if (senha.type == 'password') {
         senha.type = 'text';

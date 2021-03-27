@@ -38,7 +38,9 @@
             <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post" class="form-img" enctype="multipart/form-data">
                 <label for="btn">
                     <div class="img-user">
+                        <!-- se o usuario tem um ft de perfil cadastrada exiba ela se nao exiba a padrao do sistema -->
                         <?php if($ftPerfil != null): ?>
+                            <!-- passando o caminho da pagina que exibe o img de perfil do usuario -->
                             <img src="/SMILIPS/controller/usuario/imgPerfil.php" alt="Imagem do Usuário" class="preview-img">
                         <?php else: ?>
                             <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário" class="preview-img">
