@@ -27,26 +27,6 @@ if (isset($_POST['email'])) {
     }
 }
 
-if(isset($_POST['cpf_cnpj'])){
-    //mesma cois do acima porem agora para cpf ou cnpj
-    $cpf_cnpj = $_POST['cpf_cnpj'];
-    $id = $_POST['id'];
-    $usuario = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj' and usuarioID = '$id'");
-    $usuarioCpf_cnpj = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj'");
-    
-    if ($usuario->num_rows > 0) {
-        echo '<i class="fas fa-check" style= "color:#27ae60;"></i>';
-    }else if($usuarioCpf_cnpj->num_rows > 0){
-        echo '<i class="fas fa-check" style= "color:#e74c3c;"></i>'; 
-    }else if($cpf_cnpj == null){
-        echo '<i class="fas fa-check" style= "color:#e74c3c;"></i>'; 
-    }else if((preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj)) or (preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj))){
-        echo '<i class="fas fa-check" style= "color:#27ae60;"></i>';
-    } else {
-        echo '<i class="fas fa-check" style= "color:#e74c3c;"></i>'; 
-    }
-}
-
 if(isset($_POST['senhaAtual'])){
 
     $id = $_POST['id'];
@@ -58,7 +38,7 @@ if(isset($_POST['senhaAtual'])){
     $senhaUsuario = $usuario['senhaUsuario'];
 
     if($senhaUsuario == md5($senhaAtual)){
-        echo '<font color="#2ecc71"><b>Senha Válida!</b></font>';
+        echo '<font color="#27ae60"><b>Senha Válida!</b></font>';
     }else{
         echo '<font color="#e74c3c"><b>Senha Inválida!</b></font>';
     }

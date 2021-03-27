@@ -2,11 +2,11 @@
     require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
     $id = "";
     $nomeUsuario = "";
-    $cpf_cnpj = "";
     $emailUsuario = "";
     $telefone = "";
     $bairro = "";
-    $endereco = "";
+    $rua = "";
+    $numero = '';
     $complemento = "";
     $ftPerfil = "";
     $situacao = "";
@@ -24,10 +24,10 @@
             // capturando os dados
             $id = $usuario['usuarioID'];
             $nomeUsuario = $usuario['nomeUsuario'];
-            $cpf_cnpj = $usuario['cpf_cnpj'];
             $emailUsuario = $usuario['emailUsuario'];
             $bairro = $usuario['bairro'];
-            $endereco = $usuario['endereco'];
+            $rua = $usuario['rua'];
+            $numero = $usuario['numero'];
             $complemento = $usuario['complemento'];
             $telefone = $usuario['telefone'];
             $ftPerfil = $usuario['ftPerfil'];

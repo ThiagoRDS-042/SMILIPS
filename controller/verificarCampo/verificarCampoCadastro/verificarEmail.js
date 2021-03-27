@@ -20,7 +20,7 @@ email.keyup(function buscar() {
         success: function(msg) {
             //passando para o campo msgEmail a mensagem retornada da url anterior
             $(".input-field #msgEmail").html(msg);
-            if (msg == '<font color= "#055160"><b>Email Válido!</b></font>') {
+            if (msg == '<font color= "#27ae60"><b>Email Válido!</b></font>') {
                 //atribuindo stilos ao campo email
                 $(".input-field #email").css({ 'box-shadow': '1px 2px 3px #2ecc71' });
             } else {
@@ -41,7 +41,7 @@ email.blur(function buscar() {
             "email": email.val()
         },
         success: function(msg) {
-            if (msg == '<font color= "#055160"><b>Email Válido!</b></font>' || msg == '<font color= "#842029"><b>Email Inválido! (Preencha o Campo)</b></font>') {
+            if (msg == '<font color= "#27ae60"><b>Email Válido!</b></font>' || msg == '<font color= "#e74c3c"><b>Email Inválido! (Preencha o Campo)</b></font>') {
                 $(".input-field #msgEmail").html('');
                 $(".input-field #email").css({ 'box-shadow': 'none' });
             } else {

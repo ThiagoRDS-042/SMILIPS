@@ -32,7 +32,7 @@ senhaAtual.addEventListener('blur', () => {
             "id": userID.value
         },
         success: function(msg) {
-            if (msg == '<font color="#2ecc71"><b>Senha Válida!</b></font>') {
+            if (msg == '<font color="#27ae60"><b>Senha Válida!</b></font>') {
                 $("#msgSenhaAtual").html('');
             } else if ($("#senhaAtual").val() == '') {
                 $("#msgSenhaAtual").html('');
@@ -59,7 +59,7 @@ passwords.forEach((senha, index) => {
                 if (/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/.test(senha.value)) {
                     //se o formato da senha e valido
                     if (passwords[0].value != '' && passwords[1].value != '') {
-                        //se ambas as senhas n estai nulas
+                        //se ambas as senhas n estao nulas
                         if (passwords[0].value == passwords[1].value) {
                             //se ambas sao iguais
                             msgs[0].innerHTML = '<font color="#2ecc71"><b>Senhas Igauis!</b></font>';

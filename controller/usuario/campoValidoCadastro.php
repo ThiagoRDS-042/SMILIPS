@@ -13,15 +13,15 @@
         // verificando se retornou algo
         if ($usuario->num_rows > 0) {
             //se retornou email ja existe
-            echo '<font color= "#842029"><b>Email Inválido! (já Existente)</b></font>';   
+            echo '<font color= "#e74c3c"><b>Email Inválido! (já Existente)</b></font>';   
         }else if($email == null){
             // verificando se o campo esta nulo
-            echo '<font color= "#842029"><b>Email Inválido! (Preencha o Campo)</b></font>';   
+            echo '<font color= "#e74c3c"><b>Email Inválido! (Preencha o Campo)</b></font>';   
         }else if(!preg_match("/.{3}+@.+\..{3}+/", $email)){
             //validando o formato
-            echo '<font color= "#842029"><b>Email Inválido! (Formato Inválido)</b></font>';
+            echo '<font color= "#e74c3c"><b>Email Inválido! (Formato Inválido)</b></font>';
         } else {
-            echo '<font color= "#055160"><b>Email Válido!</b></font>';
+            echo '<font color= "#27ae60"><b>Email Válido!</b></font>';
         }
     }
 ?>

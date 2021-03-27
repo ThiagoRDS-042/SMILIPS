@@ -61,11 +61,6 @@
                             <span class="info" data-placeholder="Nome*"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" class="focus" name="cpf_cnpj" id="cpf_cnpj" value="<?php echo $cpf_cnpj ?>">
-                            <span class="info" data-placeholder="CPF/CNPJ*"></span>
-                            <span id="msgCpf_cnpj" class="msg"></span>
-                        </div>
-                        <div class="field-edit">
                             <input type="text" class="focus" name="email" id="email" value="<?php echo $emailUsuario ?>">
                             <span class="info" data-placeholder="Email*"></span>
                             <span id="msgEmail" class="msg"></span>
@@ -76,12 +71,16 @@
                             <span id="msgTelefone" class="msg"></span>
                         </div>
                         <div class="field-edit">
-                            <input type="text" class="focus" name="endereco" value="<?php echo $endereco ?>">
-                            <span class="info" data-placeholder="Endereco*"></span>
+                            <input type="text" class="focus" name="rua" value="<?php echo $rua ?>">
+                            <span class="info" data-placeholder="Rua*"></span>
                         </div>
                         <div class="field-edit">
                             <input type="text" class="focus" name="bairro" value="<?php echo $bairro ?>">
                             <span class="info" data-placeholder="Bairro*"></span>
+                        </div>
+                        <div class="field-edit">
+                            <input type="text" class="focus" name="numero" value="<?php echo $numero ?>">
+                            <span class="info" data-placeholder="Número*"></span>
                         </div>
                         <div class="field-edit">
                             <input type="text" class="focus" name="complemento" value="<?php echo $complemento ?>">
@@ -105,7 +104,6 @@
     <script src="/SMILIPS/view/js/usuario/perfil.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarEmail.js"></script>
-    <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarCpf_cnpj.js"></script>
     <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarTelefone.js"></script>
 </body>
 </html>

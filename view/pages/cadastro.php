@@ -80,15 +80,15 @@
                     <div class="confirm-senha">
                         <div class="input-field">
                             <label>Senha*</label>
-                            <input type="password" name="senha1"  maxlength="35" id="senha1">
-                            <span id="msgSenha1" class="msg"></span>
+                            <input type="password" name="senha1"  maxlength="35" id="senha1" class="senha">
+                            <span id="msgSenha1" class="msg msg-senha"></span>
                             <i class="fa fa-eye"></i>
                         </div>
 
                         <div class="input-field">
                             <label>Confirmar Senha*</label>
-                            <input type="password" name="senha2"  maxlength="35" id="senha2">
-                            <span id="msgSenha2" class="msg"></span>
+                            <input type="password" name="senha2"  maxlength="35" id="senha2" class="senha">
+                            <span id="msgSenha2" class="msg msg-senha"></span>
                             <i class="fa fa-eye"></i>
                         </div>
                     </div>
@@ -108,7 +108,6 @@
     <script src="/SMILIPS/view/js/cadastro.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarEmail.js"></script>
-    <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarCpf_cnpj.js"></script>
     <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarTelefone.js"></script>
     <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarSenha.js"></script>
 </body>
