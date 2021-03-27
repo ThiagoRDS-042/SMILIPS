@@ -1,4 +1,5 @@
 let telefone = $('#telefone');
+//como ja expliquei nas paginas anteriores, e ambas as funcoes sao muito semelhantes na explicarei aqui novamente
 
 telefone.keyup(function buscar() {
 

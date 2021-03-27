@@ -1,20 +1,26 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 
+//praticamente mesma coisa da pagina anterior so q agora para os campos de edicao
 if (isset($_POST['email'])) {
 
     $email = $_POST['email'];
     $id = $_POST['id'];
+    //agora eu verifico se o email ja existe e se o emial pertence ou nao ao usuario q pretende modificar
     $usuario = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email' and usuarioID = '$id'");
     $usuarioEmail = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
 
     if ($usuario->num_rows > 0) {
+        // se o email existe mais se trata do email do proprio usuario ele e valido
         echo '<i class="fas fa-check" style= "color:#27ae60;"></i>';
     }else if($usuarioEmail->num_rows > 0){
+        //se o email ja existe e n pretence a esse usuario ele e invalido
         echo '<i class="fas fa-check" style= "color:#e74c3c;"></i>'; 
     }else if($email == null){
+        //verificando se o campo esta nulo
         echo '<i class="fas fa-check" style= "color:#e74c3c;"></i>'; 
     }else if(!preg_match("/.{3}+@.+\..{3}+/", $email)){
+        //validando o formato
         echo '<i class="fas fa-check" style= "color:#e74c3c;"></i>';
     } else {
         echo '<i class="fas fa-check" style= "color:#27ae60;"></i>';
@@ -22,7 +28,7 @@ if (isset($_POST['email'])) {
 }
 
 if(isset($_POST['cpf_cnpj'])){
-    
+    //mesma cois do acima porem agora para cpf ou cnpj
     $cpf_cnpj = $_POST['cpf_cnpj'];
     $id = $_POST['id'];
     $usuario = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj' and usuarioID = '$id'");

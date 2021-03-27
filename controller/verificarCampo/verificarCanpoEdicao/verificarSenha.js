@@ -50,13 +50,18 @@ senhaAtual.addEventListener('blur', () => {
 passwords.forEach((senha, index) => {
     senha.addEventListener('click', () => {
         if (senhaAtual.value == '' || msgSenhaAtual.children[0]) {
+            // se a senha atual e invalida ou nula
             senhaAtual.focus();
         } else {
 
+            //ao digitar no campo
             senha.addEventListener('keyup', () => {
                 if (/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/.test(senha.value)) {
+                    //se o formato da senha e valido
                     if (passwords[0].value != '' && passwords[1].value != '') {
+                        //se ambas as senhas n estai nulas
                         if (passwords[0].value == passwords[1].value) {
+                            //se ambas sao iguais
                             msgs[0].innerHTML = '<font color="#2ecc71"><b>Senhas Igauis!</b></font>';
                             msgs[1].innerHTML = '<font color="#2ecc71"><b>Senhas Igauis!</b></font>';
                         } else {
@@ -72,6 +77,7 @@ passwords.forEach((senha, index) => {
                 }
             });
 
+            //ao campo perder focu
             senha.addEventListener('blur', () => {
                 if (/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/.test(senha.value)) {
                     if (passwords[0].value != '' && passwords[1].value != '') {

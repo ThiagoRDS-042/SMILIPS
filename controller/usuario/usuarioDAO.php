@@ -2,6 +2,7 @@
     require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
 
+    //verificando se a varivel save exite e se os campos obrigatorios foram preencidos
     if(isset($_POST['save']) and $_POST['nome'] != null and $_POST['cpf_cnpj'] != null and $_POST['email'] != null and $_POST['senha'] != null and $_POST['endereco'] != null and $_POST['bairro'] != null and $_POST['telefone'] != null){
         
         $senha = $_POST['senha'];
@@ -9,6 +10,7 @@
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
 
+        //verificando (com regex) se os campos em questao possuem formatos validos
         if(preg_match("/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/", $senha) and (preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj) or preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj)) and preg_match("/.{3}+@.+\..{3}+/", $email) and preg_match("/^(\+\d{2}\s)?(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone)){
             
             $emailValido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
@@ -24,30 +26,37 @@
                 $complemento = $_POST['complemento'];
                 $situacao = 'ativado';
     
+                //salvando o usurio
                 $conexao->query("INSERT INTO usuario(nomeUsuario, cpf_cnpj, emailUsuario, senhaUsuario, endereco, bairro, complemento, telefone, situacao) VALUES ('$nome','$cpf_cnpj', '$email', '$senha', '$endereco', '$bairro', '$complemento', '$telefone', '$situacao')") or die($conexao->error);
     
+                //volta pra tela de cadastro e exibi a mesnsagem
                 exibirMsg("Cadastro bem Sucedido!", "success");
                 header("location:/SMILIPS/view/pages/cadastro.php");
             }
             else{
+                //caso o email ou cpf/cnpj ja exista, volta pra tela de cadastro e exibi a mesnsagem
                 exibirMsg("Email ou CPF/CNPJ já cadastrados", "danger");
                 header("location:/SMILIPS/view/pages/cadastro.php");
             }
         }else{
+             //caso dos sejam invalidos, volta pra tela de cadastro e exibi a mesnsagem
             exibirMsg("Dados Inválidos!", "danger");
             header("location:/SMILIPS/view/pages/cadastro.php");
         }
         
+    //verificando se a variavel editarinfo existe
     }else if(isset($_POST['editarInfo'])){
-        
+        //pegando o id do usuario
         $id = $_POST['id'];
 
+        // verificando se os campos foram preenchidos
         if($_POST['nome'] != null and $_POST['email'] != null and $_POST['cpf_cnpj'] != null and $_POST['telefone'] != null and $_POST['endereco'] != null and $_POST['bairro'] != null){
             
             $email = $_POST['email'];
             $cpf_cnpj = $_POST['cpf_cnpj'];
             $telefone = $_POST['telefone'];
             
+            //verificando se tem formatos validos
             if((preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/", $cpf_cnpj) or preg_match("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/", $cpf_cnpj)) and preg_match("/.{3}+@.+\..{3}+/", $email) and preg_match("/^(\+\d{2}\s)?(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone)){
 
                 $emailValido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email' and usuarioID = '$id'");
@@ -56,6 +65,7 @@
                 $emailInvalido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
                 $cpf_cnpjInvalido = $conexao->query("SELECT * FROM usuario WHERE cpf_cnpj = '$cpf_cnpj'");
 
+                //verificando se ja existe e caso ja existam se pertencem ao usuario em questao
                 if (($emailValido->num_rows > 0 and $cpf_cnpjValido->num_rows > 0) or ($emailInvalido->num_rows <= 0 and $cpf_cnpjInvalido->num_rows <= 0)) {
 
                     $nome = $_POST['nome'];
@@ -63,51 +73,72 @@
                     $bairro = $_POST['bairro'];
                     $complemento = $_POST['complemento'];
 
+                    //atualizando os dados do usuario
                     $conexao->query("UPDATE usuario SET nomeUsuario = '$nome', cpf_cnpj = '$cpf_cnpj', emailUsuario = '$email', endereco = '$endereco', bairro = '$bairro', complemento = '$complemento', telefone = '$telefone' WHERE usuarioID = '$id'") or die($conexao->error);
                     
+                    // voltando para a tela de perfil com a varivel consultar e seu id e exibindo a mensagem
                     exibirMsg("Edição bem Sucedida!", "success");
                     header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
 
                 }else{
+                    //se ja existe o email ou cpf/cnpj
                     exibirMsg("Email ou CPF/CNPJ já cadastrados", "danger");
                     header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
                 }
             }else{
+                // se os dados sao invalidos
                 exibirMsg("Dados Inválidos!", "danger");
                 header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
             }
         }else{
+            //se ha campos obrigatorios em branco
             exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }
 
+    //verificando se a variavel editarsenha existe
     }else if(isset($_POST['editarSenha'])){
+        //pegando o id do usuario
         $id = $_POST['id'];
 
+        //verificando se a senha1 e senha2 foram preenchidas
         if($_POST['senha1'] != null and $_POST['senha2'] != null){
+            // se sao iguais
             if($_POST['senha1'] == $_POST['senha2']){
+                // se sao validas
                 if(preg_match("/(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/", $_POST['senha1'])){
                     
+                    //convertendo em md5
                     $senha = md5($_POST['senha1']);
+
+                    //atualizando a senha do usuario
                     $conexao->query("UPDATE usuario SET senhaUsuario = '$senha' WHERE usuarioID = '$id'") or die($conexao->error);
                     
+                    //volta pra tela de editar senha e exiindo a mensgem
                     exibirMsg("Senha Editada com Sucesso!", "success");
-                    header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
+                    header("location:/SMILIPS/view/pages/usuario/editarSenha.php");
                 }else{
+                    //se a senha e invalida
                     exibirMsg("Senha Inválida!", "danger");
-                    header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
+                    header("location:/SMILIPS/view/pages/usuario/editarSenha.php");
                 }
             }else{
+                //se as senha sao diferentes
                 exibirMsg("Senhas Diferentes!", "danger");
-                header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
+                header("location:/SMILIPS/view/pages/usuario/editarSenha.php");
             }
         }else{
+            // se a campos em branco
             exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
-            header("location:/SMILIPS/view/pages/usuario/editarSenha.php?consultar=$id");
+            header("location:/SMILIPS/view/pages/usuario/editarSenha.php");
         }
+
+    //verificando se a variavel editarimg esixte
     }else if(isset($_POST['editarImg'])){
+        //pegando o id do usuario
         $id = $_POST['id'];
 
+        //verificando se o foi enviado algum arquivo pelo input de type file
         if(isset($_FILES['ft-perfil']['name']) && $_FILES['ft-perfil']['error'] == 0){
 
             // verificando se a ocorrencias dentro da estensao do arquivo, e armazenando em $extensao
@@ -125,39 +156,51 @@
                 $handle = fopen($caminhoTemp, "r");
                 $ftPerfil  = addslashes(fread($handle, $tamanhoImg));
 
+                // atualizando a foto de perfil do usuario
                 $conexao->query("UPDATE  usuario SET ftPerfil = '$ftPerfil' WHERE usuarioID = '$id'") or die($conexao->error);
-                    
+                
+                // dando close no fopen para parar a leitura do arquivo
                 fclose($handle);
 
+                //volta pra pagina de perfil com a varivel consultar e o id do usuario e exibe a mensagem
                 exibirMsg("Foto Salva Com Sucesso!", "success");
                 header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id"); 
             }else{
+                // se a extensao do arquivo selecionado e invalida
                 exibirMsg("Extensão Inválida!", "danger");
                 header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
             }
         }else{
+            //se nao doi selecionado nenhum arquivo
             exibirMsg("Escolha uma Imagem antes de tentar Salvar!", "danger");
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }
 
+    //verificando se a variavel desativar existe
     }else if(isset($_POST['desativar'])){
+        //pegando o id do usuario
         $id = $_POST['id'];
 
+        //consultando os dados do usaurio
         $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
+        //transfromando em array
         $usuario = $usuario->fetch_assoc();
 
+        // verificando se a senha passada e igual a senha cadastrada no banco de dados
         if(md5($_POST['senha']) == $usuario['senhaUsuario']){
+            // atualizando o campo situacao na tabela usuario
             $conexao->query("UPDATE usuario SET situacao = 'desativada' WHERE usuarioID = '$id'") or die($conexao->error);
 
+            //dando um require em sair e exibindo a mensagem
             exibirMsg("Conta Desativada!", "danger");
             require_once('/xampp/htdocs/SMILIPS/controller/autenticar/sair.php');
         }else{
-
+            //se a senha for diferente da do DB
             exibirMsg("Senha Incorreta!", "danger");
             header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
-
         }
     }else{
+        //caso ao salvar aja dados obrigatorios em branco
         exibirMsg("Preencha todos os campos obrigatórios!", "danger");
         header("location:/SMILIPS/view/pages/cadastro.php");
     }

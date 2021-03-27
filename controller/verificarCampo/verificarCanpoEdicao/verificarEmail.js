@@ -1,6 +1,6 @@
 let email = $('#email');
 let id = $('#id');
-
+// ja explicado anteriormente porem a gora ao campo de edicao
 email.keyup(function buscar() {
     $.ajax({
         url: '/SMILIPS/controller/usuario/campoValidoEdicao.php',
