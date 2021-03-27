@@ -38,15 +38,37 @@
                     </div>
 
                     <div class="input-field">
-                        <label>CPF/CNPJ*</label>
-                        <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj">
-                        <span id="msgCpf_cnpj" class="msg"></span>
-                        <span class="counter">18</span>
+                        <label>Telefone*</label>
+                        <input type="text" name="telefone"  maxlength="20" id="telefone">
+                        <span id="msgTelefone" class="msg"></span>
+                        <span class="counter">20</span>
                     </div>
 
-                </div>
+                    <div class="input-field">
+                        <label>Rua*</label>
+                        <input type="text" name="rua"  maxlength="45">
+                        <span class="counter">45</span>
+                    </div>
 
-                <div class="input-container">
+                    <div class="endereco">
+                        <div class="input-field">
+                            <label>Bairro*</label>
+                            <input type="text" name="bairro"  maxlength="45">
+                            <span class="counter">45</span>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Número*</label>
+                            <input type="text" name="numero"  maxlength="5">
+                            <span class="counter">5</span>
+                        </div>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Complemento</label>
+                        <input type="text" name="complemento"  maxlength="45">
+                        <span class="counter">45</span>
+                    </div>
 
                     <div class="input-field">
                         <label>Email*</label>
@@ -55,44 +77,20 @@
                         <span class="counter">100</span>
                     </div>
 
-                    <div class="input-field">
-                        <label>Senha*</label>
-                        <input type="password" name="senha"  maxlength="35" id="senha">
-                        <span id="msgSenha" class="msg"></span>
-                        <i class="fa fa-eye"></i>
-                    </div>
+                    <div class="confirm-senha">
+                        <div class="input-field">
+                            <label>Senha*</label>
+                            <input type="password" name="senha1"  maxlength="35" id="senha1">
+                            <span id="msgSenha1" class="msg"></span>
+                            <i class="fa fa-eye"></i>
+                        </div>
 
-                </div>
-
-                <div class="input-container">
-
-                    <div class="input-field">
-                        <label>Telefone*</label>
-                        <input type="text" name="telefone"  maxlength="20" id="telefone">
-                        <span id="msgTelefone" class="msg"></span>
-                        <span class="counter">20</span>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Endereço*</label>
-                        <input type="text" name="endereco"  maxlength="45">
-                        <span class="counter">45</span>
-                    </div>
-
-                </div>
-
-                <div class="input-container">
-
-                    <div class="input-field">
-                        <label>Bairro*</label>
-                        <input type="text" name="bairro"  maxlength="45">
-                        <span class="counter">45</span>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Complemento</label>
-                        <input type="text" name="complemento"  maxlength="45">
-                        <span class="counter">45</span>
+                        <div class="input-field">
+                            <label>Confirmar Senha*</label>
+                            <input type="password" name="senha2"  maxlength="35" id="senha2">
+                            <span id="msgSenha2" class="msg"></span>
+                            <i class="fa fa-eye"></i>
+                        </div>
                     </div>
 
                 </div>
