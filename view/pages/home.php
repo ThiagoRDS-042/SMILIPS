@@ -15,23 +15,6 @@
           ?>
      </header>
 
-     <section class="banner">
-          <figure>
-               <a href="#">
-                    <img src="/SMILIPS/view/images/propaganda1.jpg" alt="">
-               </a>
-               <a href="#">
-                    <img src="/SMILIPS/view/images/propaganda2.jpeg" alt="">
-               </a>
-               <a href="#">
-                    <img src="/SMILIPS/view/images/propaganda3.jpeg" alt="">
-               </a>
-               <a href="#">
-                    <img src="/SMILIPS/view/images/propaganda1.jpg" alt="">
-               </a>
-          </figure>
-     </section>
-
      <main> 
           <form action="#" method="post">
                <div id="filter">
@@ -548,32 +531,179 @@
           </form>
      </main>
 
+     <section class="banner">
+          <figure>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propagandas/propaganda1.jpg" alt="">
+               </a>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propagandas/propaganda2.jpeg" alt="">
+               </a>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propagandas/propaganda3.jpeg" alt="">
+               </a>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propagandas/propaganda4.jpeg" alt="">
+               </a>
+               <a href="#">
+                    <img src="/SMILIPS/view/images/propagandas/propaganda1.jpg" alt="">
+               </a>
+          </figure>
+     </section>
+
+     <section class="recomendacoes">
+          <h1>Recomendados para Você</h1>
+          <div class="container-card">
+               <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
+               <div class="list-card">
+                    <div class="list-card-slider">
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/1.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">
+                                   <h3>R$ 2.600<span>/mês</span></h3>
+                                   <p>Casa com 3 Quartos e 2 banheiros para Alugar, 230 m²
+                                   Rua Doutor Mário Pinto, 125</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/2.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">
+                                   <h3>R$ 1.500<span>/mês</span></h3>
+                                   <p>Casa com 3 Quartos e 2 banheiros , 125 m²
+                                        Rua Santo Antônio da Vargem Alegre , 150</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/3.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">                  
+                                   <h3>R$ 2.800<span>/mês</span></h3>
+                                   <p>Casa térrea no condominio alphaville em ribeiro, 150 m²
+                                        com 3 Quartos e 2 banheiros</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/5.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">
+                                   <h3>R$ 750<span>/mês</span></h3>
+                                   <p>Casa na Cidade Nova, 50 m²
+                                        com 2 Quartos e 2 banheiros</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/4.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">                  
+                                   <h3>R$ 1.000<span>/mês</span></h3>
+                                   <p>Casa no condomínio Senhor do Bomfim, 150 m²
+                                        com 4 Quartos e 2 banheiros</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/6.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">
+                                   <h3>R$ 250<span>/mês</span></h3>
+                                   <p>Casa na Vila Três Bodegas, 25 m²
+                                        com 2 Quartos e 2 banheiros</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/7.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">
+                                   <h3>R$ 350<span>/mês</span></h3>
+                                   <p>Casa na Vila Três Bodegas, 30 m²
+                                        com 3 Quartos e 2 banheiros</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/8.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">                  
+                                   <h3>R$ 500<span>/mês</span></h3>
+                                   <p>Casa na Rua São Geraldo, n 2
+                                        30 m² com 2 Quartos e 2 banheiros</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+
+                         <div class="card">
+                              <div class="image">
+                                   <img src="/SMILIPS/view/images/recomendacoes/9.jpg" alt="Imovél">
+                              </div>
+                              <div class="detalhes">
+                                   <h3>R$ 800<span>/mês</span></h3>
+                                   <p>Casa na rua Senhor do Bomfim, n 25
+                                        35 m² com 2 Quartos e 2 banheiros</p>
+                                   <a href="#">Ver Detalhes</a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
+          </div>
+     </section>
+
      <section class="oqProcura">
           <h2>O que você procura?</h2>
           <div class="selecao">
                <div class="card-selecao">
                     <p>Anuncie seu Imóvel</p>
                     <div class="circle">
-                         <a href="#"><img src="/SMILIPS/view/images/imovel.jpg" alt="Imóvel"></a>
+                         <?php if(isset($_SESSION['usuarioID'])): ?>
+                              <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
+                         <?php else: ?>
+                              <a href="/SMILIPS/view/pages/login.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
+                         <?php endif; ?>
                     </div>
                </div>
                <div class="card-selecao">
                     <p>Poste suas Propagandas</p>
                     <div class="circle">
-                         <a href="#"><img src="/SMILIPS/view/images/anunciante.jpg" alt="Anunciante"></a>
+                         <?php if(isset($_SESSION['usuarioID'])): ?>
+                              <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Anunciante"></a>
+                         <?php else: ?>
+                              <a href="/SMILIPS/view/pages/login.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Anunciante"></a>
+                         <?php endif; ?>               
                     </div>
                </div>
                <div class="card-selecao">
                     <p>Divulge seus Serviços</p>
                     <div class="circle">
-                         <a href="#"><img src="/SMILIPS/view/images/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
+                         <?php if(isset($_SESSION['usuarioID'])): ?>
+                              <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
+                         <?php else: ?>
+                              <a href="/SMILIPS/view/pages/login.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
+                         <?php endif; ?> 
                     </div>
                </div>
           </div>
-     </section>
-
-     <section class="recomendacoes">
-
      </section>
      <?php
           require_once('/xampp/htdocs/SMILIPS/view/footer.php');

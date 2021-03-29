@@ -5,9 +5,9 @@
 nav {
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     height: 80px;
-    background: #3498db;
+    background: #ff6914;
     line-height: 80px;
     border-bottom: 2px solid white;
 }
@@ -43,7 +43,7 @@ nav .logo a::before {
     position: absolute;
     width: 14px;
     height: 2px;
-    background: #3498db;
+    background: #ff6914;
     transform: skewX(50deg);
     transition: .4s linear;
 }
@@ -87,7 +87,7 @@ nav ul li a {
 
 nav ul li a:hover {
     border-radius: 5px;
-    box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+    box-shadow: 0 0 5px white, 0 0 5px white;
 }
 
 nav .fas {
@@ -134,7 +134,7 @@ nav .fa-sign-in-alt {
         float: right;
         height: 480px;
         width: 50%;
-        background: #3498db;
+        background: #ff6914;
         text-align: center;
         border-bottom: 2px solid white;
         border-left: 2px solid white;
@@ -161,7 +161,7 @@ nav .fa-sign-in-alt {
         height: 16.5%;
     }
     nav ul li:hover {
-        box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+        box-shadow: 0 0 5px white, 0 0 5px white;
     }
     nav .icon {
         display: block;
@@ -200,7 +200,6 @@ nav .fa-sign-in-alt {
         font-size: 20px;
     }
     nav ul {
-        background: #3498db;
         width: 100%;
         border-left: none;
     }

@@ -43,7 +43,7 @@
                             <!-- passando o caminho da pagina que exibe o img de perfil do usuario -->
                             <img src="/SMILIPS/controller/usuario/imgPerfil.php" alt="Imagem do Usuário" class="preview-img">
                         <?php else: ?>
-                            <img src="/SMILIPS/view/images/user.png" alt="Imagem do Usuário" class="preview-img">
+                            <img src="/SMILIPS/view/images/usuario/user.png" alt="Imagem do Usuário" class="preview-img">
                         <?php endif; ?>
                         <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
                         <span class="selecionar"><input type="file" name="ft-perfil" id="btn" class="file-chooser"></span>
