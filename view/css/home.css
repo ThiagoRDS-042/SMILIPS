@@ -441,7 +441,7 @@ section.oqProcura .selecao {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #771FD2;
+    background: #ff5e57;
     border: 1px solid white;
     border-left: none;
     border-right: none;
@@ -470,7 +470,7 @@ section.oqProcura .selecao p {
     font-size: 20px;
     color: #fff;
     font-weight: 600;
-    margin: 60px 0 10px 0;
+    margin: 50px 0 20px 0;
 }
 
 section.oqProcura .selecao .circle img {
