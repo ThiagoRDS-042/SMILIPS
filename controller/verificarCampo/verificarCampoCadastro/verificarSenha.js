@@ -65,7 +65,7 @@ passwords.forEach((senha, index) => {
             msgs[index].innerHTML = '';
             senha.style = 'box-shadow: none';
         } else {
-            msgs[index].innerHTML = '<font color="#842029"><b>Senha Inválida! (Necessário 8+ Caracteres Alfanumericos)</b></font>';
+            msgs[index].innerHTML = '<font color="#e74c3c"><b>Senha Inválida! (Necessário 8+ Caracteres Alfanumericos)</b></font>';
             senha.style = 'box-shadow: 1px 2px 3px #e74c3c;';
         }
     });
