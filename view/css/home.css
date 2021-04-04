@@ -1,567 +1,566 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    height: 1080px;
-    background: url('/SMILIPS/view/images/backgrounds/backgroundBody.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+  height: 1080px;
+  background: url("/SMILIPS/view/images/backgrounds/backgroundBody.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 body::-webkit-scrollbar {
-    width: 10px;
-    background: #636e72;
+  width: 10px;
+  background: #636e72;
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #2d3436;
-    border-radius: 5px;
+  background: #2d3436;
+  border-radius: 5px;
 }
 
 main {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background: rgba(0, 0, 0, .5);
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 main #filter {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -55%);
-    width: 700px;
-    height: 200px;
-    text-align: center;
-    background: rgba(0, 0, 0, .7);
-    border-radius: 10px;
-    transition: .5s;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 700px;
+  height: 200px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  transition: 0.5s;
 }
 
 main #filter .search {
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
 }
 
 main #filter .search input {
-    width: 70%;
-    height: 35px;
-    padding: 10px;
-    margin-right: 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
+  width: 70%;
+  height: 35px;
+  padding: 10px;
+  margin-right: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
 
 main #filter .search input::-webkit-input-placeholder {
-    color: #333;
+  color: #333;
 }
 
 main #filter .search button {
-    width: auto;
-    height: 35px;
-    padding: 0 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: #771FD2;
-    color: white;
+  width: auto;
+  height: 35px;
+  padding: 0 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: #771fd2;
+  color: white;
 }
 
 main #filter .search button:active {
-    background: #56139e;
+  background: #56139e;
 }
 
 main .field-input {
-    display: flex;
-    width: 90%;
-    margin: 10px auto 0 auto;
-    min-height: 60px;
+  display: flex;
+  width: 90%;
+  margin: 10px auto 0 auto;
+  min-height: 60px;
 }
 
 main #filter .field-input .select-box {
-    display: flex;
-    margin: 0 auto;
-    width: 180px;
-    flex-direction: column;
+  display: flex;
+  margin: 0 auto;
+  width: 180px;
+  flex-direction: column;
 }
 
 main #filter .field-input .select-box .list-options {
-    background: #fff;
-    color: #333;
-    max-height: 0;
-    text-align: left;
-    width: 100%;
-    margin-top: 3px;
-    opacity: 0;
-    transition: .4s;
-    border-radius: 8px;
-    overflow: hidden;
-    order: 1;
-    z-index: 4;
-    border: 1px solid #cccccc;
-    pointer-events: none;
+  background: #fff;
+  color: #333;
+  max-height: 0;
+  text-align: left;
+  width: 100%;
+  margin-top: 3px;
+  opacity: 0;
+  transition: 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 1;
+  z-index: 4;
+  border: 1px solid #cccccc;
+  pointer-events: none;
 }
 
 main #filter .field-input .select {
-    background: #fff;
-    border-radius: 8px;
-    color: #333;
-    position: relative;
-    order: 0;
-    text-align: left;
+  background: #fff;
+  border-radius: 8px;
+  color: #333;
+  position: relative;
+  order: 0;
+  text-align: left;
 }
 
 main #filter .field-input .select::after {
-    content: "\f078";
-    font-family: fontAwesome;
-    line-height: 42px;
-    text-align: center;
-    color: #333;
-    position: absolute;
-    height: 100%;
-    width: 32px;
-    right: 5px;
-    top: 0;
-    transition: .4s;
+  content: "\f078";
+  font-family: fontAwesome;
+  line-height: 42px;
+  text-align: center;
+  color: #333;
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 5px;
+  top: 0;
+  transition: 0.4s;
 }
 
 main #filter .field-input .select-box .list-options.active {
-    max-height: 172px;
-    pointer-events: all;
-    opacity: 1;
+  max-height: 172px;
+  pointer-events: all;
+  opacity: 1;
 }
 
 main #filter .field-input .select-box .list-options.scrol.active {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
-main #filter .field-input .select-box .list-options.active+.select::after {
-    transform: rotateX(180deg);
+main #filter .field-input .select-box .list-options.active + .select::after {
+  transform: rotateX(180deg);
 }
 
 main #filter .field-input .select-box .list-options::-webkit-scrollbar {
-    width: 8px;
-    background: #636e72;
-    border-radius: 0 8px 8px 0;
+  width: 8px;
+  background: #636e72;
+  border-radius: 0 8px 8px 0;
 }
 
 main #filter .field-input .select-box .list-options::-webkit-scrollbar-thumb {
-    background: #2d3436;
-    border-radius: 0 8px 8px 0;
+  background: #2d3436;
+  border-radius: 0 8px 8px 0;
 }
 
 main #filter .field-input .select-box .select {
-    padding: 12px 24px 12px 20px;
-    cursor: pointer;
+  padding: 12px 24px 12px 20px;
+  cursor: pointer;
 }
 
 main #filter .field-input .select-box .option {
-    text-align: left;
-    padding: 12px 24px 12px 0;
-    cursor: pointer;
+  text-align: left;
+  padding: 12px 24px 12px 0;
+  cursor: pointer;
 }
 
 main #filter .field-input .select-box .option:hover {
-    background: #ccc;
+  background: #ccc;
 }
 
 main #filter .field-input .select-box label {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 main #filter .field-input .select-box .option .radio {
-    visibility: hidden;
-    opacity: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 
 main #filter .field-input:nth-child(3) {
-    position: absolute;
-    top: 150px;
-    left: 36px;
-    visibility: hidden;
-    opacity: 0;
-    transition: .2s;
-    transition-delay: .1s;
+  position: absolute;
+  top: 150px;
+  left: 36px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  transition-delay: 0.1s;
 }
 
 main #filter .field-input:nth-child(3) .list-options {
-    z-index: 3;
+  z-index: 3;
 }
 
 main #filter .field-input:nth-child(4) {
-    position: absolute;
-    top: 220px;
-    left: 36px;
-    visibility: hidden;
-    opacity: 0;
-    transition: .2s;
+  position: absolute;
+  top: 220px;
+  left: 36px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
 }
 
 main #filter .field-input:nth-child(4) .list-options {
-    z-index: 2;
+  z-index: 2;
 }
 
 main #filter .field-input:nth-child(3).hidden {
-    visibility: visible;
-    opacity: 1;
-    transition: .5s;
-    transition-delay: .1s;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  transition-delay: 0.1s;
 }
 
 main #filter .field-input:nth-child(4).hidden {
-    visibility: visible;
-    opacity: 1;
-    transition: .5s;
-    transition-delay: .2s;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  transition-delay: 0.2s;
 }
 
 main #filter #check {
-    display: none;
+  display: none;
 }
 
-main #filter .more #check:checked~label span {
-    top: 300px;
+main #filter .more #check:checked ~ label span {
+  top: 300px;
 }
 
 main #filter .more span {
-    position: absolute;
-    top: 170px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .5s;
+  position: absolute;
+  top: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 main #filter span i {
-    font-size: 12px;
-    margin-right: 3px;
+  font-size: 12px;
+  margin-right: 3px;
 }
 
 section.banner {
-    height: 350px;
-    overflow: hidden;
-    border-bottom: 2px solid white;
-    border-top: 2px solid white;
-    z-index: 2;
+  height: 350px;
+  overflow: hidden;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  z-index: 2;
 }
 
 section.banner figure {
-    position: relative;
-    width: 500%;
-    height: 100%;
-    animation: 20s banner infinite;
+  position: relative;
+  width: 500%;
+  height: 100%;
+  animation: 20s banner infinite;
 }
 
 section.banner figure a img {
-    width: 20%;
-    height: 100%;
-    float: left;
+  width: 20%;
+  height: 100%;
+  float: left;
 }
 
 @keyframes banner {
-    0% {
-        left: 0;
-    }
-    20% {
-        left: 0;
-    }
-    25% {
-        left: -100%;
-    }
-    45% {
-        left: -100%;
-    }
-    50% {
-        left: -200%;
-    }
-    70% {
-        left: -200%;
-    }
-    75% {
-        left: -300%;
-    }
-    95% {
-        left: -300%;
-    }
-    100% {
-        left: -400%;
-    }
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
 }
 
 section.recomendacoes {
-    height: 650px;
-    position: relative;
-    background: white;
-    border: 1px solid transparent;
+  height: 650px;
+  position: relative;
+  background: white;
+  border: 1px solid transparent;
 }
 
 section.recomendacoes h1 {
-    text-align: center;
-    margin-top: 70px;
-    font-size: 28px;
+  text-align: center;
+  margin-top: 70px;
+  font-size: 28px;
 }
 
 section.recomendacoes .container-card {
-    width: 80%;
-    margin: 60px auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 360px;
+  width: 80%;
+  margin: 60px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 360px;
 }
 
 section.recomendacoes .container-card .list-card {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    height: 360px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 360px;
 }
 
 section.recomendacoes .container-card .list-card .list-card-slider {
-    position: relative;
-    left: 0;
-    display: flex;
-    transition: .5s;
+  position: relative;
+  left: 0;
+  display: flex;
+  transition: 0.5s;
 }
 
 section.recomendacoes .container-card .icon-voltar,
 section.recomendacoes .container-card .icon-proximo {
-    font-size: 20px;
-    color: #771FD2;
-    cursor: pointer;
+  font-size: 20px;
+  color: #771fd2;
+  cursor: pointer;
 }
 
 section.recomendacoes .container-card .card {
-    border: 2px solid #ebebeb;
-    min-width: 280px;
-    height: 350px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 0 4px;
-    background: white;
+  border: 2px solid #ebebeb;
+  min-width: 280px;
+  height: 350px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 4px;
+  background: white;
 }
 
 section.recomendacoes .container-card .card:hover {
-    box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
 }
 
 section.recomendacoes .container-card .card .image {
-    width: 100%;
-    height: 170px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+  width: 100%;
+  height: 170px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 section.recomendacoes .container-card .card .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 section.recomendacoes .container-card .card .detalhes {
-    position: relative;
-    margin-top: 20px;
-    height: 160px;
-    line-height: 19px;
-    text-align: center;
-    padding: 10px;
+  position: relative;
+  margin-top: 20px;
+  height: 160px;
+  line-height: 19px;
+  text-align: center;
+  padding: 10px;
 }
 
 section.recomendacoes .container-card .card .detalhes h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 section.recomendacoes .container-card .card .detalhes h3 span {
-    font-size: 18px;
-    font-weight: normal;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 section.recomendacoes .container-card .card .detalhes p {
-    margin-top: 20px;
-    font-size: 16px;
-    text-align: justify;
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: justify;
 }
 
 section.recomendacoes .container-card .card .detalhes a {
-    position: absolute;
-    bottom: 10px;
-    color: #333;
-    text-decoration: none;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 18px;
-    font-weight: 600;
+  position: absolute;
+  bottom: 10px;
+  color: #333;
+  text-decoration: none;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 600;
 }
 
 section.recomendacoes .container-card .card .detalhes a:hover {
-    color: #771FD2;
+  color: #771fd2;
 }
 
 section.oqProcura {
-    position: relative;
+  position: relative;
 }
 
 section.oqProcura h2 {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 28px;
-    opacity: 0;
-    color: #fff;
-    transition: .5s;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  opacity: 0;
+  color: #fff;
+  transition: 0.5s;
 }
 
 section.sticky h2 {
-    top: 20px;
-    opacity: 1;
+  top: 20px;
+  opacity: 1;
 }
 
 section.oqProcura .selecao {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background: #ff5e57;
-    border: 1px solid white;
-    border-left: none;
-    border-right: none;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #ff5e57;
+  border: 1px solid white;
+  border-left: none;
+  border-right: none;
 }
 
 section.oqProcura .selecao .card-selecao {
-    width: 210px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 210px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 section.oqProcura .selecao .circle {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    padding: 5px;
-    background: #fff;
-    user-select: none;
-    cursor: pointer;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  padding: 5px;
+  background: #fff;
+  user-select: none;
+  cursor: pointer;
 }
 
 section.oqProcura .selecao p {
-    font-size: 20px;
-    color: #fff;
-    font-weight: 600;
-    margin: 50px 0 20px 0;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  margin: 50px 0 20px 0;
 }
 
 section.oqProcura .selecao .circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
-
 
 /* resposividade */
 
 @media (max-width: 740px) {
-    main #filter {
-        width: 80%;
-        min-width: 378px;
-    }
-    main #filter .search input {
-        width: 73%;
-    }
-    main #filter .field-input {
-        margin: 0 2.5%;
-        width: 95%;
-    }
-    main #filter .field-input .select-box {
-        margin: 10px auto;
-    }
-    main #filter .field-input .select-box .select {
-        font-size: 14px;
-        min-width: 108px;
-        height: 56px;
-        display: flex;
-        align-items: center;
-    }
-    main #filter .field-input .select::after {
-        top: 5px;
-        right: 0;
-    }
-    main #filter .field-input .select-box .option {
-        padding: 5px 5px 5px 0;
-        font-size: 14px;
-    }
-    main #filter .field-input .select-box .list-options.active+.select::after {
-        top: -6px;
-    }
-    main #filter .field-input .select-box {
-        margin: 0 5px;
-    }
-    main #filter .field-input:nth-child(3),
-    main #filter .field-input:nth-child(4) {
-        left: 0;
-    }
+  main #filter {
+    width: 80%;
+    min-width: 378px;
+  }
+  main #filter .search input {
+    width: 73%;
+  }
+  main #filter .field-input {
+    margin: 0 2.5%;
+    width: 95%;
+  }
+  main #filter .field-input .select-box {
+    margin: 10px auto;
+  }
+  main #filter .field-input .select-box .select {
+    font-size: 14px;
+    min-width: 108px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+  }
+  main #filter .field-input .select::after {
+    top: 5px;
+    right: 0;
+  }
+  main #filter .field-input .select-box .option {
+    padding: 5px 5px 5px 0;
+    font-size: 14px;
+  }
+  main #filter .field-input .select-box .list-options.active + .select::after {
+    top: -6px;
+  }
+  main #filter .field-input .select-box {
+    margin: 0 5px;
+  }
+  main #filter .field-input:nth-child(3),
+  main #filter .field-input:nth-child(4) {
+    left: 0;
+  }
 }
 
 @media (max-width: 685px) {
-    section.banner {
-        top: 70px;
-    }
+  section.banner {
+    top: 70px;
+  }
 }
 
 @media (max-width: 640px) {
-    main #filter .search input {
-        width: 70%;
-        margin-right: 10px;
-    }
-    main #filter .search button {
-        width: auto;
-        min-width: 80px;
-    }
-    section .selecao {
-        height: 250px;
-    }
-    section h2 {
-        font-size: 24px;
-    }
-    section .selecao .circle {
-        width: 120px;
-        height: 120px;
-    }
-    section .selecao p {
-        font-size: 13px;
-        margin-bottom: 10px;
-    }
+  main #filter .search input {
+    width: 70%;
+    margin-right: 10px;
+  }
+  main #filter .search button {
+    width: auto;
+    min-width: 80px;
+  }
+  section .selecao {
+    height: 250px;
+  }
+  section h2 {
+    font-size: 24px;
+  }
+  section .selecao .circle {
+    width: 120px;
+    height: 120px;
+  }
+  section .selecao p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 560px) {
-    main #filter .search {
-        width: 96%;
-        margin: 0 auto;
-    }
-    main #filter .field-input .select-box .option {
-        font-size: 13px;
-    }
+  main #filter .search {
+    width: 96%;
+    margin: 0 auto;
+  }
+  main #filter .field-input .select-box .option {
+    font-size: 13px;
+  }
 }
