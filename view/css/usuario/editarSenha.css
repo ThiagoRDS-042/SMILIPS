@@ -175,7 +175,7 @@ form button:hover {
 
 @media (max-width: 700px) {
   .editar-senha h1 {
-    font-size: 20px;
+    font-size: 19px;
     margin-left: 60px;
   }
   .editar-senha .content label {

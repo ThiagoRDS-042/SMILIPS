@@ -188,7 +188,7 @@ main .alert {
 
 @media (max-width: 500px) {
   .desativar-conta .btn-desativar .msg-desativar {
-    width: 220px;
+    width: 255px;
   }
   .desativar-conta .btn-desativar .msg-desativar h1 {
     font-size: 14px;
