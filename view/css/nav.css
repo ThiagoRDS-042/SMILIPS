@@ -1,209 +1,211 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 nav {
-    position: fixed;
-    width: 100%;
-    z-index: 3;
-    height: 80px;
-    background: #ff6914;
-    line-height: 80px;
-    border-bottom: 2px solid white;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  height: 80px;
+  background: #ff6914;
+  line-height: 80px;
+  border-bottom: 2px solid white;
 }
 
 nav::after {
-    content: '';
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 nav .logo {
-    float: left;
-    padding: 0 50px;
-    height: 80px;
-    line-height: 85px;
+  float: left;
+  padding: 0 50px;
+  height: 80px;
+  line-height: 85px;
 }
 
 nav .logo a {
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-size: 27px;
-    line-height: 70px;
-    font-weight: 600;
-    padding: 8px;
-    border: 2px solid white;
-    border-radius: 5px;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 27px;
+  line-height: 70px;
+  font-weight: 600;
+  padding: 8px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
 }
 
 nav .logo a::after,
 nav .logo a::before {
-    content: '';
-    position: absolute;
-    width: 14px;
-    height: 2px;
-    background: #ff6914;
-    transform: skewX(50deg);
-    transition: .4s linear;
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background: #ff6914;
+  transform: skewX(50deg);
+  transition: 0.4s linear;
 }
 
 nav .logo a::before {
-    top: -2px;
-    left: 10px;
+  top: -2px;
+  left: 10px;
 }
 
 nav .logo a::after {
-    bottom: -2px;
-    right: 10px;
+  bottom: -2px;
+  right: 10px;
 }
 
 nav .logo a:hover::before {
-    left: 80%;
+  left: 80%;
 }
 
 nav .logo a:hover::after {
-    right: 80%;
+  right: 80%;
 }
 
 nav ul {
-    float: right;
-    margin-right: 20px;
-    position: relative;
+  float: right;
+  margin-right: 20px;
+  position: relative;
 }
 
 nav ul li {
-    display: inline-block;
-    background: transparent;
+  display: inline-block;
+  background: transparent;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    line-height: 70px;
-    font-size: 18px;
-    padding: 8px 20px;
+  color: white;
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 18px;
+  padding: 8px 20px;
+  font-family: "Montserrat", sans-serif;
 }
 
 nav ul li a:hover {
-    border-radius: 5px;
-    box-shadow: 0 0 5px white, 0 0 5px white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px white, 0 0 5px white;
 }
 
 nav .fas {
-    margin-left: 5px;
-    font-size: 15px;
+  margin-left: 5px;
+  font-size: 15px;
 }
 
 nav .fa-caret-right {
-    margin-left: 40px;
-    font-size: 15px;
+  margin-left: 40px;
+  font-size: 15px;
 }
 
 nav #menu,
 nav .icon i {
-    display: none;
+  display: none;
 }
 
 nav .fa-sign-in-alt {
-    font-size: 16px;
-    margin-right: 5px;
+  font-size: 16px;
+  margin-right: 5px;
 }
-
 
 /* Responsividade */
 
 @media (max-width: 850px) {
-    nav ul {
-        margin-right: 20px;
-    }
-    nav ul li a {
-        padding: 8px 10px;
-    }
-    nav .logo {
-        padding: 0 30px;
-    }
+  nav ul {
+    margin-right: 20px;
+  }
+  nav ul li a {
+    padding: 8px 10px;
+  }
+  nav .logo {
+    padding: 0 30px;
+  }
 }
 
 @media (max-width: 685px) {
-    nav {
-        height: 70px;
-    }
-    nav ul {
-        margin-right: 0;
-        float: right;
-        height: 480px;
-        width: 50%;
-        background: #ff6914;
-        text-align: center;
-        border-bottom: 2px solid white;
-        border-left: 2px solid white;
-    }
-    nav .logo {
-        padding: 0 60px;
-        width: 100%;
-        height: 70px;
-        line-height: 70px;
-    }
-    nav .logo a {
-        font-size: 24px;
-    }
-    nav ul li a {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-    }
-    nav ul li {
-        background: transparent;
-        display: inline-block;
-        width: 100%;
-        height: 16.5%;
-    }
-    nav ul li:hover {
-        box-shadow: 0 0 5px white, 0 0 5px white;
-    }
-    nav .icon {
-        display: block;
-        margin-top: 23px;
-        width: 22px;
-        height: 25px;
-        position: absolute;
-        right: 50px;
-        cursor: pointer;
-    }
-    nav .icon i {
-        display: block;
-        color: white;
-        font-size: 25px;
-    }
-    nav label .hide {
-        display: none;
-    }
-    nav ul li a:hover {
-        box-shadow: none;
-    }
-    nav ul {
-        display: none;
-    }
-    nav #menu:checked~ul {
-        display: block;
-        z-index: 2;
-    }
+  nav {
+    height: 70px;
+  }
+  nav ul {
+    margin-right: 0;
+    float: right;
+    height: 480px;
+    width: 50%;
+    background: #ff6914;
+    text-align: center;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+  }
+  nav .logo {
+    padding: 0 60px;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+  }
+  nav .logo a {
+    font-size: 24px;
+  }
+  nav ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  nav ul li {
+    background: transparent;
+    display: inline-block;
+    width: 100%;
+    height: 16.5%;
+  }
+  nav ul li:hover {
+    box-shadow: 0 0 5px white, 0 0 5px white;
+  }
+  nav .icon {
+    display: block;
+    margin-top: 23px;
+    width: 22px;
+    height: 25px;
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+  }
+  nav .icon i {
+    display: block;
+    color: white;
+    font-size: 25px;
+  }
+  nav label .hide {
+    display: none;
+  }
+  nav ul li a:hover {
+    box-shadow: none;
+  }
+  nav ul {
+    display: none;
+  }
+  nav #menu:checked ~ ul {
+    display: block;
+    z-index: 2;
+  }
 }
 
 @media (max-width: 450px) {
-    nav .logo {
-        padding: 0 20px;
-    }
-    nav .logo a {
-        font-size: 20px;
-    }
-    nav ul {
-        width: 100%;
-        border-left: none;
-    }
-    nav .icon {
-        right: 20px;
-    }
+  nav .logo {
+    padding: 0 20px;
+  }
+  nav .logo a {
+    font-size: 20px;
+  }
+  nav ul {
+    width: 100%;
+    border-left: none;
+  }
+  nav .icon {
+    right: 20px;
+  }
 }

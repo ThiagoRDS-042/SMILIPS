@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   background: #fff;
 }
@@ -29,30 +25,29 @@ main .nome {
   top: 20%;
   transform: translateY(-10%);
   font-size: 24px;
-  color: #9b59b6;
+  font-weight: bold;
+  color: #ef2d56;
+  margin-left: 100px;
 }
 main .card-container {
   position: relative;
   width: 75%;
-  height: 35vh;
+  height: 218px;
   display: flex;
-  /* border: 1px solid black; */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 100px;
 }
 
 main .card-container .card {
   width: 30%;
   height: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 0 1.5%;
   cursor: pointer;
-}
-main .card-container .card:hover {
-  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+  min-width: 210px;
+  margin: 3px;
 }
 
 main .card-container .card .title {
-  border-bottom: 1px solid #ccc;
   height: 40px;
   width: 100%;
   line-height: 40px;
@@ -60,22 +55,59 @@ main .card-container .card .title {
 }
 main .card-container .card .title a {
   text-decoration: none;
-  font-size: 16px;
-  color: #9b59b6;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+main .card-container .card .image {
+  width: 100%;
+  height: 178px;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+main .card-container .card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .menu-home {
-  background: #42229b !important;
+  background: #be5041 !important;
 }
 
-@media (max-width: 450px) {
-  main .nome {
-    left: 120px;
+@media (max-width: 876px) {
+  main {
+    height: 120vh;
+  }
+
+  main .card-container {
+    margin-left: 110px;
+    height: 500px;
+    top: 60px;
+  }
+  main .card-container .card {
+    height: 50%;
   }
 }
 
-@media (max-width: 370px) {
-  main a {
-    margin-left: 60px;
+@media (max-width: 590px) {
+  main {
+    height: 150vh;
+  }
+  main .card-container {
+    height: 720px;
+  }
+  main .card-container .card {
+    height: 33%;
+  }
+}
+
+@media (max-width: 500px) {
+  main .card-container {
+    width: 60%;
   }
 }

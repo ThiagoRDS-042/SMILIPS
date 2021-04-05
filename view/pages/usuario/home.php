@@ -26,7 +26,7 @@ usuarioLogadoEntra();
   <main>
     <div class="nome">
       <?php $nome = preg_split('/\s/', $nomeUsuario); ?>
-      <h1>Bem Vindo! <?php echo $nome[0]; ?></h1>
+      <h1>Bem Vindo, <?php echo $nome[0]; ?></h1>
     </div>
 
     <div class="card-container">
@@ -35,7 +35,7 @@ usuarioLogadoEntra();
           <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Cadastrar Imóvel</a>
         </div>
         <div class="image">
-          <img src="" alt="">
+          <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de um Imóvel">
         </div>
       </div>
       <div class="card">
@@ -43,7 +43,7 @@ usuarioLogadoEntra();
           <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Seja Nosso Parceiro</a>
         </div>
         <div class="image">
-          <img src="" alt="">
+          <img src="/SMILIPS/view/images/usuario/parceiros.png" alt="Imagem de Parceria">
         </div>
       </div>
       <div class="card">
@@ -51,7 +51,7 @@ usuarioLogadoEntra();
           <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Torne-se um Prestador de Serviço</a>
         </div>
         <div class="image">
-          <img src="" alt="">
+          <img src="/SMILIPS/view/images/usuario/prestadorServico.png" alt="Imagem de Prestação de Serviço">
         </div>
       </div>
     </div>

@@ -1,121 +1,122 @@
 footer {
-    height: 180px;
-    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
-    border-top: 2px solid white;
+  height: 180px;
+  background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+  border-top: 2px solid white;
+  font-family: "Montserrat", sans-serif;
 }
 
-footer>div {
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+footer > div {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer .middle .circle {
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    margin: 10px 5px;
-    background: #fff;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
-    transition: all .3s ease-out;
-    overflow: hidden;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 10px 5px;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  overflow: hidden;
 }
 
 footer .middle .circle:hover {
-    width: 180px;
+  width: 190px;
 }
 
 footer .middle .circle .icon {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    text-align: center;
-    transition: all .3s ease-out;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease-out;
 }
 
-footer .middle .circle:nth-child(1):hover>.icon {
-    background: #4267b2;
+footer .middle .circle:nth-child(1):hover > .icon {
+  background: #4267b2;
 }
 
-footer .middle .circle:nth-child(2):hover>.icon {
-    background: #1DA1F2;
+footer .middle .circle:nth-child(2):hover > .icon {
+  background: #1da1f2;
 }
 
-footer .middle .circle:nth-child(3):hover>.icon {
-    background: #E1306C;
+footer .middle .circle:nth-child(3):hover > .icon {
+  background: #e1306c;
 }
 
-footer .middle .circle:nth-child(4):hover>.icon {
-    background: #0077B5;
+footer .middle .circle:nth-child(4):hover > .icon {
+  background: #0077b5;
 }
 
 footer .middle .circle .icon i {
-    font-size: 25px;
-    line-height: 60px;
-    color: #333;
-    transition: all .3s ease-out;
+  font-size: 25px;
+  line-height: 60px;
+  color: #333;
+  transition: all 0.3s ease-out;
 }
 
-footer .middle .circle:hover>.icon i {
-    color: #fff;
+footer .middle .circle:hover > .icon i {
+  color: #fff;
 }
 
 footer .middle .circle a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 footer .middle .circle span {
-    font-size: 22px;
-    font-weight: 550;
-    margin-left: 5px;
+  font-size: 22px;
+  font-weight: 550;
+  margin-left: 5px;
 }
 
-footer .middle .circle:nth-child(1):hover>a {
-    color: #4267b2;
+footer .middle .circle:nth-child(1):hover > a {
+  color: #4267b2;
 }
 
-footer .middle .circle:nth-child(2):hover>a {
-    color: #1DA1F2;
+footer .middle .circle:nth-child(2):hover > a {
+  color: #1da1f2;
 }
 
-footer .middle .circle:nth-child(3):hover>a {
-    color: #E1306C;
+footer .middle .circle:nth-child(3):hover > a {
+  color: #e1306c;
 }
 
-footer .middle .circle:nth-child(4):hover>a {
-    color: #0077B5;
+footer .middle .circle:nth-child(4):hover > a {
+  color: #0077b5;
 }
 
 footer .text {
-    margin: auto;
-    width: 80%;
-    border-top: 1px solid rgba(128, 128, 128, .5);
-    height: 55px;
-    display: flex;
-    flex-direction: column;
-    font-size: 13px;
-    color: #606060;
-    user-select: none;
-    pointer-events: none;
+  margin: auto;
+  width: 80%;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #606060;
+  user-select: none;
+  pointer-events: none;
 }
 
 footer .text span {
-    color: #b41217;
+  color: #b41217;
 }
 
 @media (max-width: 430px) {
-    footer {
-        height: 360px;
-    }
-    footer>div {
-        height: 300px;
-    }
-    footer .middle .circle {
-        display: block;
-    }
+  footer {
+    height: 360px;
+  }
+  footer > div {
+    height: 300px;
+  }
+  footer .middle .circle {
+    display: block;
+  }
 }

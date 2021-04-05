@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   height: 1080px;
   background: url("/SMILIPS/view/images/backgrounds/backgroundBody.png");
@@ -312,6 +308,7 @@ section.recomendacoes h1 {
   text-align: center;
   margin-top: 70px;
   font-size: 28px;
+  font-family: "Montserrat", sans-serif;
 }
 
 section.recomendacoes .container-card {
@@ -329,6 +326,7 @@ section.recomendacoes .container-card .list-card {
   align-items: center;
   overflow: hidden;
   height: 360px;
+  font-family: "Montserrat", sans-serif;
 }
 
 section.recomendacoes .container-card .list-card .list-card-slider {
@@ -428,6 +426,7 @@ section.oqProcura h2 {
   opacity: 0;
   color: #fff;
   transition: 0.5s;
+  font-family: "Montserrat", sans-serif;
 }
 
 section.sticky h2 {
@@ -454,11 +453,12 @@ section.oqProcura .selecao .card-selecao {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: "Montserrat", sans-serif;
 }
 
 section.oqProcura .selecao .circle {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   padding: 5px;
   background: #fff;
@@ -467,7 +467,7 @@ section.oqProcura .selecao .circle {
 }
 
 section.oqProcura .selecao p {
-  font-size: 20px;
+  font-size: 17px;
   color: #fff;
   font-weight: 600;
   margin: 50px 0 20px 0;
