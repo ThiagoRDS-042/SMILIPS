@@ -35,7 +35,7 @@ main .alert {
   height: 20%;
   font-size: 24px;
   font-weight: 600;
-  color: #6843d1;
+  color: #ef2d56;
   margin-left: 5px;
 }
 
@@ -61,7 +61,7 @@ main .alert {
 }
 
 .desativar-conta .btn-desativar h1 {
-  width: 160px;
+  width: 170px;
   height: 40px;
   color: white;
   font-size: 20px;
