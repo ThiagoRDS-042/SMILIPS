@@ -1,35 +1,37 @@
 <?php
-    require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
-    usuarioLogadoEntra();
+require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+usuarioLogadoEntra();
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/head.php');
-        require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
-        consultarSituacao();
+    require_once('/xampp/htdocs/SMILIPS/view/head.php');
+    require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
+    consultarSituacao();
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/configuracoes.css">
     <title>Configurações</title>
 </head>
+
 <body>
 
-    <?php   
-        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
     ?>
 
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
+    require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
     ?>
 
     <main>
         <?php
-            if (!isset($_SESSION)) {
-                session_start();
-            }
-            require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
         ?>
 
         <div class="desativar-conta">
@@ -44,6 +46,7 @@
 
                     <div class="msg-desativar">
                         <h1>Digite sua Senha</h1>
+                        <span><i class="fas fa-unlock-alt"></i></span>
                         <input type="password" class="msg-content" name="senha">
                         <button class="confirm" type="submit" name="desativar">Confirmar</button>
                         <button class="cancel" type="button">Cancelar</button>
@@ -54,10 +57,11 @@
     </main>
 
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
+    require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
     ?>
 
     <script src="/SMILIPS/view/js/usuario/configuracoes.js"></script>
-    
+
 </body>
+
 </html>

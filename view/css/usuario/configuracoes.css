@@ -134,6 +134,19 @@ main .alert {
   border: 1px solid #333;
   height: 35px;
   font-size: 16px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.desativar-conta .btn-desativar .msg-desativar span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ccc;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 100px;
 }
 
 .desativar-conta .btn-desativar .msg-desativar .confirm,
