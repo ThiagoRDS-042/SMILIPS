@@ -185,9 +185,13 @@ main .alert {
   color: #e74c3c;
 }
 
-.desativar-conta .btn-desativar .msg-desativar .confirm:active,
 .desativar-conta .btn-desativar .msg-desativar .cancel:active {
   background: #ccc;
+  color: #e74c3c;
+}
+.desativar-conta .btn-desativar .msg-desativar .confirm:active {
+  background: #ccc;
+  color: #27ae60;
 }
 
 .desativar-conta
