@@ -1,47 +1,47 @@
 // capturando todos os inputs
-let inputs = document.querySelectorAll('.perfil .content .info-user .field-edit input');
+let inputs = document.querySelectorAll(
+  ".perfil .content .info-user .field-edit input"
+);
 
-if (inputs[6].value == '') {
-    //removendo a classe focus do 7 input
-    inputs[6].classList.remove('focus')
+if (inputs[6].value == "") {
+  //removendo a classe focus do 7 input
+  inputs[6].classList.remove("focus");
 }
 
 // agindo sobre cada input
-inputs.forEach(input => {
-    // se o input tiver focu e estiver vazio add a clase togle
-    input.addEventListener('focus', () => {
-        if (input.value == '') {
-            input.classList.add('focus');
-        }
-    });
-    // inverso da de cima ou seja quando o campo perde o focu
-    input.addEventListener('blur', () => {
-        if (input.value == '') {
-            input.classList.remove('focus');
-        }
-    });
+inputs.forEach((input) => {
+  // se o input tiver focu e estiver vazio add a clase togle
+  input.addEventListener("focus", () => {
+    if (input.value == "") {
+      input.classList.add("focus");
+    }
+  });
+  // inverso da de cima ou seja quando o campo perde o focu
+  input.addEventListener("blur", () => {
+    if (input.value == "") {
+      input.classList.remove("focus");
+    }
+  });
 });
 
-
-let previewImg = document.querySelector('.preview-img');
-let fileChooser = document.querySelector('.file-chooser');
+let previewImg = document.querySelector(".preview-img");
+let fileChooser = document.querySelector(".file-chooser");
 
 //acionado um evento ao ocorrer uma alteração de valor do elemento pelo usuário
-fileChooser.addEventListener('change', e => {
+fileChooser.addEventListener("change", (e) => {
+  // e = evento, e.target o input de type file, e.target.files.item(0) a imagem selecionada
+  //add a variavel fileToUpload o imagem selecionada
+  let fileToUpload = e.target.files.item(0);
+  //ler o conteudo do arquivo selecionado, lembrando q de maneira assincrona
+  let reader = new FileReader();
 
-    // e = evento, e.target o input de type file, e.target.files.item(0) a imagem selecionada
-    //add a variavel fileToUpload o imagem selecionada
-    let fileToUpload = e.target.files.item(0);
-    //ler o conteudo do arquivo selecionado, lembrando q de maneira assincrona
-    let reader = new FileReader();
-
-    // evento disparado quando o reader terminar de ler 
-    reader.addEventListener('load', e => {
-        //dps de ler e converter o arquivo para DataURL joga dentro do src da img
-        previewImg.src = e.target.result;
-    });
-    // solicita ao reader que leia o arquivo 
-    // transformando-o para DataURL. 
-    // Isso disparará o evento reader.onload.
-    reader.readAsDataURL(fileToUpload);
+  // evento disparado quando o reader terminar de ler
+  reader.addEventListener("load", (e) => {
+    //dps de ler e converter o arquivo para DataURL joga dentro do src da img
+    previewImg.src = e.target.result;
+  });
+  // solicita ao reader que leia o arquivo
+  // transformando-o para DataURL.
+  // Isso disparará o evento reader.onload.
+  reader.readAsDataURL(fileToUpload);
 });

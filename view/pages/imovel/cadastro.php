@@ -10,7 +10,7 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/usuario/imovel/cadastro.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/imovel/cadastro.css">
   <title>Cadastro de Imóvel</title>
 </head>
 
@@ -28,7 +28,13 @@ usuarioLogadoEntra();
     ?>
   </section>
 
-  <main></main>
+  <main>
+    <form action="/SMILIPS/controller/usuario/teste.php" method="post" enctype="multipart/form-data">
+      <input type="file" multiple="multiple" name="image[]" id="image">
+      <button type="submit" name="cadastro-imovel">enviar</button>
+    </form>
+
+  </main>
 
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');

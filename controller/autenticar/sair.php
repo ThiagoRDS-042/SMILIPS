@@ -10,7 +10,10 @@
         unset($_SESSION['senhaUsuario']);
         unset($_SESSION['nomeUsuario']);
     }
+    else if(isset($_SESSION['idAdm'])){
+        unset($_SESSION['idAdm']);
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+    }
     // redirecinando
     header("location:/SMILIPS/view/pages/login.php");
-
-?>

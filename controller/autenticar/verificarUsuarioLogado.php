@@ -17,4 +17,9 @@
             header("location:/SMILIPS/view/pages/login.php");
         }
     }
-?>
+
+    function admLogadoEntra(){
+        if (!isset($_SESSION['idAdm']) and !isset($_SESSION['email']) and !isset($_SESSION['senha'])) {
+            header("location:/SMILIPS/view/pages/login.php");
+        }
+    }

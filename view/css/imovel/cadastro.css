@@ -16,6 +16,7 @@ h1 {
 }
 
 main {
+  position: relative;
   height: 100vh;
 }
 
@@ -27,4 +28,10 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: #2d3436;
   border-radius: 5px;
+}
+main form {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
 }
