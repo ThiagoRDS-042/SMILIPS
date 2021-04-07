@@ -115,7 +115,7 @@ nav .fa-sign-in-alt {
 
 /* Responsividade */
 
-@media (max-width: 850px) {
+@media (max-width: 860px) {
   nav ul {
     margin-right: 20px;
   }
@@ -127,7 +127,7 @@ nav .fa-sign-in-alt {
   }
 }
 
-@media (max-width: 685px) {
+@media (max-width: 701px) {
   nav {
     height: 70px;
   }

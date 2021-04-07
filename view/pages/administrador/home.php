@@ -2,18 +2,30 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php
+  require_once('/xampp/htdocs/SMILIPS/view/head.php');
+  ?>
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/home.css">
   <title>Administrador</title>
 </head>
 
 <body>
 
-  <h1>Adninistrador</h1>
+  <?php
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  ?>
 
-  <a href="/SMILIPS/controller/autenticar/sair.php">sair</a>
+  <main>
+    <h1>Adninistrador</h1>
 
+    <a href="/SMILIPS/controller/autenticar/sair.php">sair</a>
+  </main>
+
+
+  <?php
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  ?>
 </body>
 
 </html>
