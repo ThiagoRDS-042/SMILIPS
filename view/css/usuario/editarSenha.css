@@ -40,7 +40,7 @@ form {
   min-width: 120px;
   font-size: 24px;
   font-weight: 600;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
   margin: 0 0 1px 5px;
 }
 
@@ -60,7 +60,7 @@ form {
   position: relative;
   top: 10px;
   left: 5%;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
   font-weight: 600;
 }
 
@@ -97,7 +97,7 @@ form {
 .editar-senha .content .field-senha input:focus + .info::before,
 .editar-senha .content .field-senha input:valid + .info::before {
   top: 15%;
-  color: #f07993;
+  color: rgb(107, 107, 107);
 }
 
 .editar-senha .content .field-senha .info::after {
@@ -105,8 +105,8 @@ form {
   position: absolute;
   top: 50px;
   width: 100%;
-  height: 1px;
-  background: #f07993;
+  height: 2px;
+  background: linear-gradient(120deg, rgb(107, 107, 107), rgb(70, 69, 69));
   transition: 0.5s;
   transform: scale(0);
 }
@@ -135,7 +135,7 @@ form {
 
 .editar-senha .content .field-senha input:focus ~ i,
 .editar-senha .content .field-senha input:valid ~ i {
-  color: #f07993;
+  color: rgb(107, 107, 107);
 }
 
 form button {

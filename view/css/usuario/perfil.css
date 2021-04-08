@@ -30,7 +30,7 @@ main {
 .title-perfil h1 {
   font-size: 24px;
   font-weight: 600;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
 }
 
 .perfil {
@@ -151,7 +151,7 @@ main {
   content: attr(data-placeholder);
   position: absolute;
   top: 5px;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
   font-weight: 600;
   transition: 0.5s;
 }
@@ -163,7 +163,7 @@ main {
   width: 100%;
   transform: scaleX(0);
   height: 2px;
-  background: linear-gradient(120deg, #ef2d56, #c1292e);
+  background: linear-gradient(120deg, rgb(107, 107, 107), rgb(70, 69, 69));
   transition: 0.5s;
 }
 
