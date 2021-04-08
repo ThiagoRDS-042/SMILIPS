@@ -1,5 +1,6 @@
 main {
   height: 100vh;
+  position: relative;
 }
 
 .menu-home {
@@ -14,4 +15,14 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: #2d3436;
   border-radius: 5px;
+}
+
+main h1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  font-size: 24px;
+  font-weight: 600;
+  color: #ef2d56;
 }

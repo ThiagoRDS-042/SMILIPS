@@ -22,8 +22,7 @@ admLogadoEntra();
   ?>
 
   <main>
-
-
+    <h1>Bem Vindo, Administrador</h1>
   </main>
 
 
