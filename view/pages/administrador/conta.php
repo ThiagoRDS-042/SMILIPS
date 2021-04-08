@@ -10,8 +10,8 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/home.css">
-  <title>Administrador</title>
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/conta.css">
+  <title>Conta</title>
 </head>
 
 <body>

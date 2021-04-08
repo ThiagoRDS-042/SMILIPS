@@ -9,19 +9,13 @@
                 </a>
             </li>
             <li class="menu-perfil">
-                <a href="#">
+                <a href="/SMILIPS/view/pages/administrador/conta.php">
                     <span class="icon"><i class="fa fa-user"></i></span>
-                    <span class="title">Perfil</span>
-                </a>
-            </li>
-            <li class="menu-senha">
-                <a href="#">
-                    <span class="icon"><i class="fa fa-lock"></i></span>
-                    <span class="title">Senha</span>
+                    <span class="title">Conta</span>
                 </a>
             </li>
             <li class="menu-config">
-                <a href="#">
+                <a href="/SMILIPS/view/pages/administrador/configuracoes.php">
                     <span class="icon"><i class="fa fa-cog"></i></span>
                     <span class="title">Configurações</span>
                 </a>

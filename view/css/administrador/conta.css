@@ -1,9 +1,9 @@
-main {
-  height: 100vh;
+.menu-perfil {
+  background: #be5041 !important;
 }
 
-.menu-home {
-  background: #be5041 !important;
+main {
+  height: 100vh;
 }
 
 body::-webkit-scrollbar {
