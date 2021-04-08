@@ -32,7 +32,7 @@ main .edit-info h1 {
   padding: 10px 0;
   font-size: 24px;
   font-weight: 600;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
 }
 
 main .edit-info form {
@@ -80,7 +80,7 @@ main .edit-info form .field-input span::before {
 main .edit-info form .field-input input:focus + span::before,
 main .edit-info form .field-input input:valid + span::before {
   top: 5px;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
 }
 
 main .edit-info form .field-input span::after {
@@ -90,7 +90,7 @@ main .edit-info form .field-input span::after {
   top: 68.5%;
   width: 66%;
   height: 2px;
-  background: linear-gradient(120deg, #ef2d56, #c1292e);
+  background: linear-gradient(120deg, rgb(107, 107, 107), rgb(70, 69, 69));
   transition: 0.5s;
   transform: scale(0);
 }
@@ -111,7 +111,7 @@ main .edit-info form .field-input i {
 main .edit-info form .field-input input:focus ~ i,
 main .edit-info form .field-input input:valid ~ i {
   transform: translateY(-15%);
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
 }
 
 main .edit-info form .field-button {

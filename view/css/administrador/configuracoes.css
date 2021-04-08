@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
   height: 20%;
   font-size: 24px;
   font-weight: 600;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
   margin-left: 5px;
 }
 

@@ -17,12 +17,34 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-main h1 {
+main > h1 {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -30%);
   font-size: 24px;
   font-weight: 600;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
+}
+
+main .cad-plano {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  margin: auto;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+}
+
+main .cad-plano .card {
+  border: 1px solid black;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
