@@ -207,6 +207,14 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         exibirMsg("Senha Incorreta!", "danger");
         header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
     }
+} else if (isset($_GET['notificacao_imoveis'])) {
+    $msg = $_GET['notificacao_imoveis'];
+    if ($msg == "Formato ou Tamanho de Arquivo Inválido!") {
+        exibirMsg("Formato ou Tamanho de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG. Tamanhos Suportados = até 1000KB)", "danger");
+    } else {
+        exibirMsg("Número de Imagens Selecionadas Inválido! (Suporte = 3 à 10)", "danger");
+    }
+    header("location:/SMILIPS/view/pages/imovel/cadastro.php");
 } else {
     //caso ao salvar aja dados obrigatorios em branco
     exibirMsg("Preencha todos os campos obrigatórios!", "danger");

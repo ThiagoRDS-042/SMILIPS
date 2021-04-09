@@ -43,21 +43,22 @@ input.addEventListener("change", function previewFiles() {
       formatValidet.push(/\.(jpe?g|png|gif)$/i.test(element.name));
       sizeValidet.push(element.size <= 1022924);
     }
-    if (files.length > 2 && files.length < 11) {
-      if (
-        formatValidet.every((elemnt) => elemnt == true) &&
-        sizeValidet.every((elemnt) => elemnt == true)
-      ) {
+
+    if (
+      formatValidet.every((elemnt) => elemnt == true) &&
+      sizeValidet.every((elemnt) => elemnt == true)
+    ) {
+      if ((files.length > 2 && files.length < 11) || files.length == 0) {
         for (const element of files) {
           readAndPreview(element);
         }
       } else {
-        alert(
-          "Formato ou Tamanho de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG. Tamanhos Suportados = até 1000KB)"
-        );
+        location =
+          "/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imoveis=Número de Imagens Selecionadas Inválido!";
       }
     } else {
-      alert("Número de Imagens Selecionadas Inválido! (Suporte = 3 à 10))");
+      location =
+        "/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imoveis=Formato ou Tamanho de Arquivo Inválido!";
     }
 
     setTimeout(() => {
@@ -66,10 +67,18 @@ input.addEventListener("change", function previewFiles() {
         ? container.classList.add("active")
         : container.classList.remove("active");
 
-      const form = document.querySelector("form");
+      const div = document.querySelector(".select-img");
+      const icon = document.querySelector(".far");
+      const h1 = document.querySelector(".select-img h1");
       document.querySelector(".preview-img")
-        ? form.classList.add("active")
-        : form.classList.remove("active");
+        ? (div.classList.add("active"),
+          icon.classList.add("active"),
+          h1.classList.add("active"),
+          (h1.innerText = "Alterar Imagens"))
+        : (div.classList.remove("active"),
+          icon.classList.remove("active"),
+          h1.classList.remove("active"),
+          (h1.innerText = "Selecionar Imagens"));
     }, 10);
   }
 });

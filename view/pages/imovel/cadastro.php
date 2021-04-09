@@ -29,6 +29,9 @@ usuarioLogadoEntra();
   </section>
 
   <main>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
     <div class="container-img">
       <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
       <div class="list-img">
@@ -40,7 +43,14 @@ usuarioLogadoEntra();
     </div>
 
     <form action="/SMILIPS/controller/usuario/teste.php" method="post" enctype="multipart/form-data">
-      <input type="file" multiple name="image[]" id="image">
+      <label for="btn">
+        <div class="select-img">
+          <i class="far fa-images"></i>
+          <h1>Selecionar Imgens</h1>
+        </div>
+
+        <input type="file" multiple name="image[]" id="btn">
+      </label>
       <button type="submit" name="cadastro-imovel">enviar</button>
     </form>
 

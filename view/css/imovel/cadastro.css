@@ -5,9 +5,9 @@
   justify-content: center;
 }
 
-h1 {
+.container > h1 {
   position: absolute;
-  top: 20%;
+  top: 22%;
   font-weight: 600;
   flex: 1;
   font-size: 24px;
@@ -28,6 +28,65 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: #2d3436;
   border-radius: 5px;
+}
+
+main form {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  transition: 0.5s;
+}
+
+main .select-img {
+  width: 450px;
+  height: 300px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  position: relative;
+  transition: 0.5s;
+}
+main .select-img.active {
+  border: none;
+}
+
+main form input[type="file"] {
+  display: none;
+}
+main .select-img i {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  color: #ecf0f1;
+  font-size: 200px;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.2s;
+}
+main .select-img .far.active {
+  opacity: 0;
+  pointer-events: none;
+}
+
+main .select-img h1 {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -85%);
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: #01baef;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+main .select-img h1.active {
+  top: 100%;
 }
 
 main .container-img {
@@ -89,16 +148,4 @@ main .container-img .preview-img img {
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
-}
-
-main form {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -30%);
-  transition: 0.5s;
-}
-
-main form.active {
-  top: 65%;
 }
