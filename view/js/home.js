@@ -87,54 +87,10 @@ window.addEventListener("scroll", () => {
 let btnProximo = document.querySelector(".icon-proximo");
 let btnVoltar = document.querySelector(".icon-voltar");
 let slider = document.querySelector(".list-card-slider");
-let cont = 0;
+let cards = document.querySelectorAll(".list-card-slider .card");
 
-btnProximo.addEventListener("click", () => {
-  if (cont == 0) {
-    slider.style.left = "-290px";
-    cont++;
-  } else if (cont == 1) {
-    slider.style.left = "-577px";
-    cont++;
-  } else if (cont == 2) {
-    slider.style.left = "-865px";
-    cont++;
-  } else if (cont == 3) {
-    slider.style.left = "-1152px";
-    cont++;
-  } else if (cont == 4) {
-    slider.style.left = "-1440px";
-    cont++;
-  } else if (cont == 5) {
-    slider.style.left = "-1730px";
-    cont++;
-  } else {
-    slider.style.left = "0";
-    cont = 0;
-  }
-});
+// importando modulos
+import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";
 
-btnVoltar.addEventListener("click", () => {
-  if (cont == 0) {
-    slider.style.left = "-1730px";
-    cont = 6;
-  } else if (cont == 6) {
-    slider.style.left = "-1440px";
-    cont = 5;
-  } else if (cont == 5) {
-    slider.style.left = "-1152px";
-    cont = 4;
-  } else if (cont == 4) {
-    slider.style.left = "-865px";
-    cont = 3;
-  } else if (cont == 3) {
-    slider.style.left = "-577px";
-    cont = 2;
-  } else if (cont == 2) {
-    slider.style.left = "-290px";
-    cont = 1;
-  } else if (cont == 1) {
-    slider.style.left = "0";
-    cont = 0;
-  }
-});
+btnProximo.addEventListener("click", () => avancar(-290, cards, slider, 3));
+btnVoltar.addEventListener("click", () => retornar(290, cards, slider, 3));

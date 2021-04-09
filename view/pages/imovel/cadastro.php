@@ -60,7 +60,7 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
   ?>
 
-  <script src="/SMILIPS/view/js/imovel/previewImoveis.js"></script>
+  <script src="/SMILIPS/view/js/imovel/previewImoveis.js" type="module"></script>
 </body>
 
 </html>

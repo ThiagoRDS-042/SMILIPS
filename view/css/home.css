@@ -312,7 +312,7 @@ section.recomendacoes h1 {
 }
 
 section.recomendacoes .container-card {
-  width: 80%;
+  width: 1000px;
   margin: 60px auto;
   display: flex;
   justify-content: space-evenly;
@@ -321,7 +321,7 @@ section.recomendacoes .container-card {
 }
 
 section.recomendacoes .container-card .list-card {
-  width: 80%;
+  width: 870px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -345,11 +345,11 @@ section.recomendacoes .container-card .icon-proximo {
 
 section.recomendacoes .container-card .card {
   border: 2px solid #ebebeb;
-  min-width: 280px;
+  width: 280px;
   height: 350px;
   cursor: pointer;
   border-radius: 5px;
-  margin: 0 4px;
+  margin: 0 5px;
   background: white;
 }
 

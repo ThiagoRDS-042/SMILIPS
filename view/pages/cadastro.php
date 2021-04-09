@@ -107,7 +107,7 @@ usuarioLogadoNEntra();
 
     </main>
 
-    <script src="/SMILIPS/view/js/cadastro.js"></script>
+    <script src="/SMILIPS/view/js/cadastro.js" type="module"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarEmail.js"></script>
     <script src="/SMILIPS/controller/verificarCampo/verificarCampoCadastro/verificarTelefone.js"></script>

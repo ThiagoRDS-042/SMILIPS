@@ -70,6 +70,7 @@ input.addEventListener("change", function previewFiles() {
       const div = document.querySelector(".select-img");
       const icon = document.querySelector(".far");
       const h1 = document.querySelector(".select-img h1");
+      const slider = document.querySelector(".list-img-slider");
       document.querySelector(".preview-img")
         ? (div.classList.add("active"),
           icon.classList.add("active"),
@@ -78,260 +79,42 @@ input.addEventListener("change", function previewFiles() {
         : (div.classList.remove("active"),
           icon.classList.remove("active"),
           h1.classList.remove("active"),
-          (h1.innerText = "Selecionar Imagens"));
+          (h1.innerText = "Selecionar Imagens"),
+          (slider.style.left = "0"),
+          (cont = 0));
     }, 10);
   }
 });
 
-let btnProximo = document.querySelector(".icon-proximo");
-let btnVoltar = document.querySelector(".icon-voltar");
-let slider = document.querySelector(".list-img-slider");
+const btnProximo = document.querySelector(".icon-proximo");
+const btnVoltar = document.querySelector(".icon-voltar");
+const slider = document.querySelector(".list-img-slider");
 let cont = 0;
 
-btnProximo.addEventListener("click", () => {
-  if (files.length < 4 || files.length > 10) {
-  } else if (files.length == 4) {
-    if (cont == 0) {
-      slider.style.left = "-260px";
-      cont++;
-    } else {
-      slider.style.left = "0";
-      cont = 0;
-    }
-  } else if (files.length == 5) {
-    if (cont == 0) {
-      slider.style.left = "-260px";
-      cont++;
-    } else if (cont == 1) {
-      slider.style.left = "-520px";
-      cont++;
-    } else {
-      slider.style.left = "0";
-      cont = 0;
-    }
-  } else if (files.length == 6) {
-    if (cont == 0) {
-      slider.style.left = "-260px";
-      cont++;
-    } else if (cont == 1) {
-      slider.style.left = "-520px";
-      cont++;
-    } else if (cont == 2) {
-      slider.style.left = "-780px";
-      cont++;
-    } else {
-      slider.style.left = "0";
-      cont = 0;
-    }
-  } else if (files.length == 7) {
-    if (cont == 0) {
-      slider.style.left = "-260px";
-      cont++;
-    } else if (cont == 1) {
-      slider.style.left = "-520px";
-      cont++;
-    } else if (cont == 2) {
-      slider.style.left = "-780px";
-      cont++;
-    } else if (cont == 3) {
-      slider.style.left = "-1040px";
-      cont++;
-    } else {
-      slider.style.left = "0";
-      cont = 0;
-    }
-  } else if (files.length == 8) {
-    if (cont == 0) {
-      slider.style.left = "-260px";
-      cont++;
-    } else if (cont == 1) {
-      slider.style.left = "-520px";
-      cont++;
-    } else if (cont == 2) {
-      slider.style.left = "-780px";
-      cont++;
-    } else if (cont == 3) {
-      slider.style.left = "-1040px";
-      cont++;
-    } else if (cont == 4) {
-      slider.style.left = "-1300px";
-      cont++;
-    } else {
-      slider.style.left = "0";
-      cont = 0;
-    }
-  } else if (files.length == 9) {
-    if (cont == 0) {
-      slider.style.left = "-260px";
-      cont++;
-    } else if (cont == 1) {
-      slider.style.left = "-520px";
-      cont++;
-    } else if (cont == 2) {
-      slider.style.left = "-780px";
-      cont++;
-    } else if (cont == 3) {
-      slider.style.left = "-1040px";
-      cont++;
-    } else if (cont == 4) {
-      slider.style.left = "-1300px";
-      cont++;
-    } else if (cont == 5) {
-      slider.style.left = "-1560px";
-      cont++;
-    } else {
-      slider.style.left = "0";
-      cont = 0;
-    }
+function avancar(deslocamento, arquivos, sliders, qtdCards) {
+  let file_size = arquivos.length - qtdCards;
+  let stylePixel = Number(sliders.style.left.replace(/px/, ""));
+  if (cont < file_size) {
+    sliders.style.left = `${stylePixel + deslocamento}px`;
+    cont++;
   } else {
-    if (cont == 0) {
-      slider.style.left = "-260px";
-      cont++;
-    } else if (cont == 1) {
-      slider.style.left = "-520px";
-      cont++;
-    } else if (cont == 2) {
-      slider.style.left = "-780px";
-      cont++;
-    } else if (cont == 3) {
-      slider.style.left = "-1040px";
-      cont++;
-    } else if (cont == 4) {
-      slider.style.left = "-1300px";
-      cont++;
-    } else if (cont == 5) {
-      slider.style.left = "-1560px";
-      cont++;
-    } else if (cont == 6) {
-      slider.style.left = "-1820px";
-      cont++;
-    } else {
-      slider.style.left = "0";
-      cont = 0;
-    }
+    sliders.style.left = "0";
+    cont = 0;
   }
-});
+}
 
-btnVoltar.addEventListener("click", () => {
-  if (files.length < 4 || files.length > 10) {
-  } else if (files.length == 4) {
-    if (cont == 1) {
-      slider.style.left = "0";
-      cont = 0;
-    } else {
-      slider.style.left = "-260px";
-      cont = 1;
-    }
-  } else if (files.length == 5) {
-    if (cont == 2) {
-      slider.style.left = "-260px";
-      cont = 1;
-    } else if (cont == 1) {
-      slider.style.left = "0";
-      cont = 0;
-    } else {
-      slider.style.left = "-520px";
-      cont = 2;
-    }
-  } else if (files.length == 6) {
-    if (cont == 3) {
-      slider.style.left = "-520px";
-      cont = 2;
-    } else if (cont == 2) {
-      slider.style.left = "-260px";
-      cont = 1;
-    } else if (cont == 1) {
-      slider.style.left = "0";
-      cont = 0;
-    } else {
-      slider.style.left = "-780px";
-      cont = 3;
-    }
-  } else if (files.length == 7) {
-    if (cont == 4) {
-      slider.style.left = "-780px";
-      cont = 3;
-    } else if (cont == 3) {
-      slider.style.left = "-520px";
-      cont = 2;
-    } else if (cont == 2) {
-      slider.style.left = "-260px";
-      cont = 1;
-    } else if (cont == 1) {
-      slider.style.left = "0";
-      cont = 0;
-    } else {
-      slider.style.left = "-1040px";
-      cont = 4;
-    }
-  } else if (files.length == 8) {
-    if (cont == 5) {
-      slider.style.left = "-1040px";
-      cont = 4;
-    } else if (cont == 4) {
-      slider.style.left = "-780px";
-      cont = 3;
-    } else if (cont == 3) {
-      slider.style.left = "-520px";
-      cont = 2;
-    } else if (cont == 2) {
-      slider.style.left = "-260px";
-      cont = 1;
-    } else if (cont == 1) {
-      slider.style.left = "0";
-      cont = 0;
-    } else {
-      slider.style.left = "-1300px";
-      cont = 5;
-    }
-  } else if (files.length == 9) {
-    if (cont == 6) {
-      slider.style.left = "-1300px";
-      cont = 5;
-    } else if (cont == 5) {
-      slider.style.left = "-1040px";
-      cont = 4;
-    } else if (cont == 4) {
-      slider.style.left = "-780px";
-      cont = 3;
-    } else if (cont == 3) {
-      slider.style.left = "-520px";
-      cont = 2;
-    } else if (cont == 2) {
-      slider.style.left = "-260px";
-      cont = 1;
-    } else if (cont == 1) {
-      slider.style.left = "0";
-      cont = 0;
-    } else {
-      slider.style.left = "-1560px";
-      cont = 6;
-    }
+function retornar(deslocamento, arquivos, sliders, qtdCards) {
+  let file_size = arquivos.length - qtdCards;
+  let stylePixel = Number(sliders.style.left.replace(/px/, ""));
+  if (cont <= file_size && cont > 0) {
+    sliders.style.left = `${stylePixel + deslocamento}px`;
+    cont--;
   } else {
-    if (cont == 7) {
-      slider.style.left = "-1560px";
-      cont = 6;
-    } else if (cont == 6) {
-      slider.style.left = "-1300px";
-      cont = 5;
-    } else if (cont == 5) {
-      slider.style.left = "-1040px";
-      cont = 4;
-    } else if (cont == 4) {
-      slider.style.left = "-780px";
-      cont = 3;
-    } else if (cont == 3) {
-      slider.style.left = "-520px";
-      cont = 2;
-    } else if (cont == 2) {
-      slider.style.left = "-260px";
-      cont = 1;
-    } else if (cont == 1) {
-      slider.style.left = "0";
-      cont = 0;
-    } else {
-      slider.style.left = "-1820px";
-      cont = 7;
-    }
+    sliders.style.left = `-${deslocamento * file_size}px`;
+    cont = file_size;
   }
-});
+}
+
+btnProximo.addEventListener("click", () => avancar(-260, files, slider, 3));
+
+btnVoltar.addEventListener("click", () => retornar(260, files, slider, 3));

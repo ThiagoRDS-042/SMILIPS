@@ -1,22 +1,24 @@
 <?php
-    require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
-    usuarioLogadoNEntra();
+require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+usuarioLogadoNEntra();
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <?php
-        require_once('/xampp/htdocs/SMILIPS/view/head.php');
+    require_once('/xampp/htdocs/SMILIPS/view/head.php');
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/login.css">
     <title>Login</title>
 </head>
+
 <body>
-    
+
     <main>
         <?php
-            require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+        require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
         ?>
         <div class="voltar">
             <a href="/SMILIPS/view/pages/home.php"><i class="fas fa-chevron-left"></i> Voltar</a>
@@ -46,7 +48,7 @@
 
     </main>
 
-    <script src="/SMILIPS/view/js/login.js"></script>
+    <script src="/SMILIPS/view/js/login.js" type="module"></script>
 </body>
 
 </html>
