@@ -40,18 +40,21 @@ main .card-container {
 }
 
 main .card-container .card {
-  width: 30%;
-  height: 100%;
+  width: 320px;
+  height: 218px;
   cursor: pointer;
   min-width: 210px;
-  margin: 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 3px;
 }
 
 main .card-container .card .title {
-  height: 40px;
+  height: 36px;
   width: 100%;
-  line-height: 40px;
+  line-height: 36px;
   text-align: center;
+  border-top: 1px solid #ccc;
 }
 main .card-container .card .title a {
   text-decoration: none;
@@ -60,54 +63,67 @@ main .card-container .card .title a {
   font-weight: bold;
 }
 
-main .card-container .card .image {
+main .card-container .card .content {
   width: 100%;
   height: 178px;
   display: flex;
+}
+main .card-container .card .content .text-content {
+  width: 60%;
+  height: 100%;
+  padding: 10px 0 10px 10px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 5px;
+  line-height: 19px;
+}
+
+main .card-container .card .content .text-content h2 {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+main .card-container .card .content .text-content p {
+  color: #333;
+  font-size: 15px;
+}
+
+main .card-container .card .image {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
 }
 
 main .card-container .card .image img {
   width: 100%;
-  height: 100%;
+  height: 57%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 
 .menu-home {
   background: #be5041 !important;
 }
 
-@media (max-width: 876px) {
+@media (max-width: 1306px) {
   main {
     height: 120vh;
   }
-
   main .card-container {
-    margin-left: 110px;
     height: 500px;
     top: 60px;
   }
-  main .card-container .card {
-    height: 50%;
-  }
 }
 
-@media (max-width: 590px) {
+@media (max-width: 881px) {
   main {
     height: 150vh;
   }
   main .card-container {
     height: 720px;
-  }
-  main .card-container .card {
-    height: 33%;
-  }
-}
-
-@media (max-width: 500px) {
-  main .card-container {
-    width: 60%;
   }
 }

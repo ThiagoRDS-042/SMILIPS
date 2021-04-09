@@ -31,27 +31,45 @@ usuarioLogadoEntra();
 
     <div class="card-container">
       <div class="card">
+        <div class="content">
+          <div class="text-content">
+            <h2>Cadastrar Imóvel</h2>
+            <p>Cadastrar Imóvel, Cadastrar Imóvel, Cadastrar Imóvel, Cadastrar Imóvel</p>
+          </div>
+          <div class="image">
+            <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de um Imóvel">
+          </div>
+        </div>
         <div class="title">
           <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Cadastrar Imóvel</a>
         </div>
-        <div class="image">
-          <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de um Imóvel">
-        </div>
       </div>
       <div class="card">
+        <div class="content">
+          <div class="text-content">
+            <h2>Seja Nosso Parceiro</h2>
+            <p>Seja Nosso Parceiro, Seja Nosso Parceiro,Seja Nosso Parceiro,Seja Nosso</p>
+          </div>
+          <div class="image">
+            <img src="/SMILIPS/view/images/usuario/parceiros.png" alt="Imagem de Parceria">
+          </div>
+        </div>
         <div class="title">
           <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Seja Nosso Parceiro</a>
         </div>
-        <div class="image">
-          <img src="/SMILIPS/view/images/usuario/parceiros.png" alt="Imagem de Parceria">
-        </div>
       </div>
       <div class="card">
+        <div class="content">
+          <div class="text-content">
+            <h2>Torne-se um Prestador de Serviço</h2>
+            <p>Torne-se um Prestador de Serviço, Torne-se um Prestador de Serviço</p>
+          </div>
+          <div class="image">
+            <img src="/SMILIPS/view/images/usuario/prestadorServico.png" alt="Imagem de Prestação de Serviço">
+          </div>
+        </div>
         <div class="title">
           <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Torne-se um Prestador de Serviço</a>
-        </div>
-        <div class="image">
-          <img src="/SMILIPS/view/images/usuario/prestadorServico.png" alt="Imagem de Prestação de Serviço">
         </div>
       </div>
     </div>
