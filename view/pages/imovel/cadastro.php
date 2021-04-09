@@ -29,8 +29,18 @@ usuarioLogadoEntra();
   </section>
 
   <main>
+    <div class="container-img">
+      <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
+      <div class="list-img">
+        <div class="list-img-slider preview">
+
+        </div>
+      </div>
+      <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
+    </div>
+
     <form action="/SMILIPS/controller/usuario/teste.php" method="post" enctype="multipart/form-data">
-      <input type="file" multiple="multiple" name="image[]" id="image">
+      <input type="file" multiple name="image[]" id="image">
       <button type="submit" name="cadastro-imovel">enviar</button>
     </form>
 
@@ -39,6 +49,8 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
   ?>
+
+  <script src="/SMILIPS/view/js/imovel/previewImoveis.js"></script>
 </body>
 
 </html>

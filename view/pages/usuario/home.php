@@ -41,7 +41,7 @@ usuarioLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Cadastrar Imóvel</a>
+          <a href="/SMILIPS/view/pages/imovel/cadastro.php">Cadastrar Imóvel</a>
         </div>
       </div>
       <div class="card">
