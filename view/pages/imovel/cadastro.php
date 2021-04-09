@@ -41,12 +41,12 @@ usuarioLogadoEntra();
       </div>
       <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
     </div>
-
-    <form action="/SMILIPS/controller/usuario/teste.php" method="post" enctype="multipart/form-data">
+    <!--/SMILIPS/controller/usuario/teste.php -->
+    <form action="#" method="post" enctype="multipart/form-data">
       <label for="btn">
         <div class="select-img">
           <i class="far fa-images"></i>
-          <h1>Selecionar Imgens</h1>
+          <h1>Selecionar Imagens</h1>
         </div>
 
         <input type="file" multiple name="image[]" id="btn">
