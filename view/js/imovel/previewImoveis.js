@@ -115,6 +115,18 @@ function retornar(deslocamento, arquivos, sliders, qtdCards) {
   }
 }
 
-btnProximo.addEventListener("click", () => avancar(-260, files, slider, 3));
+btnProximo.addEventListener("click", () => {
+  window.innerWidth <= 765
+    ? avancar(-260, files, slider, 1)
+    : window.innerWidth <= 1000
+    ? avancar(-260, files, slider, 2)
+    : avancar(-260, files, slider, 3);
+});
 
-btnVoltar.addEventListener("click", () => retornar(260, files, slider, 3));
+btnVoltar.addEventListener("click", () => {
+  window.innerWidth <= 765
+    ? retornar(260, files, slider, 1)
+    : window.innerWidth <= 1000
+    ? retornar(260, files, slider, 2)
+    : retornar(260, files, slider, 3);
+});

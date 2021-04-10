@@ -92,5 +92,17 @@ let cards = document.querySelectorAll(".list-card-slider .card");
 // importando modulos
 import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";
 
-btnProximo.addEventListener("click", () => avancar(-290, cards, slider, 3));
-btnVoltar.addEventListener("click", () => retornar(290, cards, slider, 3));
+btnProximo.addEventListener("click", () => {
+  window.innerWidth <= 765
+    ? avancar(-290, cards, slider, 1)
+    : window.innerWidth <= 1000
+    ? avancar(-290, cards, slider, 2)
+    : avancar(-290, cards, slider, 3);
+});
+btnVoltar.addEventListener("click", () => {
+  window.innerWidth <= 765
+    ? retornar(290, cards, slider, 1)
+    : window.innerWidth <= 1000
+    ? retornar(290, cards, slider, 2)
+    : retornar(290, cards, slider, 3);
+});

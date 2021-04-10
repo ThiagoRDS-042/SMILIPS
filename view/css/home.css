@@ -483,6 +483,15 @@ section.oqProcura .selecao .circle img {
 
 /* resposividade */
 
+@media (max-width: 1000px) {
+  section.recomendacoes .container-card {
+    width: 710px;
+  }
+  section.recomendacoes .container-card .list-card {
+    width: 580px;
+  }
+}
+
 @media (max-width: 740px) {
   main #filter {
     width: 80%;
@@ -522,6 +531,12 @@ section.oqProcura .selecao .circle img {
   main #filter .field-input:nth-child(3),
   main #filter .field-input:nth-child(4) {
     left: 0;
+  }
+  section.recomendacoes .container-card {
+    width: 400px;
+  }
+  section.recomendacoes .container-card .list-card {
+    width: 290px;
   }
 }
 

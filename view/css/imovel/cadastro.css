@@ -47,8 +47,11 @@ main .select-img {
   border: 2px solid #ccc;
   position: relative;
   transition: 0.5s;
+  pointer-events: all;
 }
 main .select-img.active {
+  z-index: 1;
+  width: 223px;
   border: none;
 }
 
@@ -77,7 +80,8 @@ main .select-img h1 {
   top: 85%;
   left: 50%;
   transform: translate(-50%, -85%);
-  padding: 10px 14.5px;
+  padding: 10px 0;
+  text-align: center;
   border-radius: 5px;
   background: #01baef;
   border: 3px solid #01baef;
@@ -101,7 +105,7 @@ main .select-img h1:active {
 }
 
 main .select-img h1.active {
-  top: 100%;
+  top: 97%;
 }
 
 main .container-img {
@@ -117,6 +121,7 @@ main .container-img {
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
+  z-index: 2;
 }
 main .container-img.active {
   opacity: 1;
@@ -132,6 +137,7 @@ main .container-img .list-img {
   font-family: "Montserrat", sans-serif;
   transition: 0.5s;
 }
+
 main .container-img .list-img .list-img-slider {
   position: relative;
   left: 0;
@@ -153,6 +159,7 @@ main .container-img .preview-img {
   margin: 0 5px;
   cursor: pointer;
   border-radius: 5px;
+  /* z-index: 5; */
 }
 
 main .container-img .preview-img :hover {
