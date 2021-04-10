@@ -40,13 +40,8 @@ usuarioLogadoEntra();
       <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post" class="form-img" enctype="multipart/form-data">
         <label for="btn">
           <div class="img-user">
-            <!-- se o usuario tem um ft de perfil cadastrada exiba ela se nao exiba a padrao do sistema -->
-            <?php if ($ftPerfil != null) : ?>
-              <!-- passando o caminho da pagina que exibe o img de perfil do usuario -->
-              <img src="/SMILIPS/controller/usuario/imgPerfil.php" alt="Imagem do Usuário" class="preview-img">
-            <?php else : ?>
-              <img src="/SMILIPS/view/images/usuario/user.png" alt="Imagem do Usuário" class="preview-img">
-            <?php endif; ?>
+            <!-- passando o caminho da pagina que exibe o img de perfil do usuario -->
+            <img src="/SMILIPS/controller/usuario/imgPerfil.php" alt="Imagem do Usuário" class="preview-img">
             <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
             <span class="selecionar"><input type="file" name="ft-perfil" id="btn" class="file-chooser"></span>
             <span><i class="fas fa-camera"></i></span>

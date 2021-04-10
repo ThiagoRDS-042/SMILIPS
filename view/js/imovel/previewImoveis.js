@@ -54,11 +54,11 @@ input.addEventListener("change", function previewFiles() {
         }
       } else {
         location =
-          "/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imoveis=Número de Imagens Selecionadas Inválido!";
+          "/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs=Número de Imagens Selecionadas Inválido!";
       }
     } else {
       location =
-        "/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imoveis=Formato ou Tamanho de Arquivo Inválido!";
+        "/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs=Formato ou Tamanho de Arquivo Inválido!";
     }
 
     setTimeout(() => {

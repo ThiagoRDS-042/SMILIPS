@@ -29,8 +29,14 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 $numero = $_POST['numero'];
                 $situacao = 'ativada';
 
+                $tamanho = filesize("/xampp/htdocs/SMILIPS/view/images/Usuario/user.png");
+                $handle = fopen("/xampp/htdocs/SMILIPS/view/images/Usuario/user.png", "r");
+                $ftPerfil  = addslashes(fread($handle, $tamanho));
+
                 //salvando o usurio
-                $conexao->query("INSERT INTO usuario(nomeUsuario, emailUsuario, senhaUsuario, rua, bairro, complemento, telefone, numero, situacao) VALUES ('$nome', '$email', '$senha1', '$rua', '$bairro', '$complemento', '$telefone', '$numero', '$situacao')") or die($conexao->error);
+                $conexao->query("INSERT INTO usuario(nomeUsuario, emailUsuario, senhaUsuario, rua, bairro, complemento, telefone, numero, situacao, ftPerfil) VALUES ('$nome', '$email', '$senha1', '$rua', '$bairro', '$complemento', '$telefone', '$numero', '$situacao', '$ftPerfil')") or die($conexao->error);
+
+                fclose($handle);
 
                 //volta pra tela de cadastro e exibi a mesnsagem
                 exibirMsg("Cadastro bem Sucedido!", "success");
@@ -207,14 +213,23 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         exibirMsg("Senha Incorreta!", "danger");
         header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
     }
-} else if (isset($_GET['notificacao_imoveis'])) {
-    $msg = $_GET['notificacao_imoveis'];
+} else if (isset($_GET['notificacao_imgs'])) {
+    $msg = $_GET['notificacao_imgs'];
     if ($msg == "Formato ou Tamanho de Arquivo Inválido!") {
         exibirMsg("Formato ou Tamanho de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG. Tamanhos Suportados = até 1000KB)", "danger");
-    } else {
+        header("location:/SMILIPS/view/pages/imovel/cadastro.php");
+    } else if ($msg == "Número de Imagens Selecionadas Inválido!") {
         exibirMsg("Número de Imagens Selecionadas Inválido! (Suporte = 3 à 10)", "danger");
+        header("location:/SMILIPS/view/pages/imovel/cadastro.php");
+    } else if ($msg == "Formato de Arquivo Inválido!") {
+        $id = $_GET['id'];
+        exibirMsg("Formato de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG)", "danger");
+        header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+    } else {
+        $id = $_GET['id'];
+        exibirMsg("Selecione uma Imagem!", "danger");
+        header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
     }
-    header("location:/SMILIPS/view/pages/imovel/cadastro.php");
 } else {
     //caso ao salvar aja dados obrigatorios em branco
     exibirMsg("Preencha todos os campos obrigatórios!", "danger");

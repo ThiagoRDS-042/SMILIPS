@@ -1,13 +1,14 @@
 .container {
   width: 100%;
   height: 80px;
-  display: flex;
-  justify-content: center;
 }
 
 .container > h1 {
   position: absolute;
   top: 22%;
+  left: 50%;
+  width: 222px;
+  transform: translateX(-50%);
   font-weight: 600;
   flex: 1;
   font-size: 24px;
@@ -84,6 +85,7 @@ main .select-img h1 {
   font-size: 20px;
   font-weight: 600;
   transition: 0.5s;
+  width: 223px;
 }
 
 main .select-img h1:hover {
@@ -128,6 +130,7 @@ main .container-img .list-img {
   align-items: center;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
+  transition: 0.5s;
 }
 main .container-img .list-img .list-img-slider {
   position: relative;
@@ -190,4 +193,53 @@ main form button[type="submit"]:active {
   background: white;
   color: #0703ff;
   transition: 0.1s;
+}
+
+@media (max-width: 1200px) {
+  main form {
+    left: 55%;
+  }
+  main .container-img {
+    left: 55%;
+  }
+  .container > h1 {
+    left: 55%;
+  }
+}
+
+@media (max-width: 1000px) {
+  main .container-img {
+    width: 590px;
+  }
+  main .container-img .list-img {
+    width: 522px;
+  }
+}
+
+@media (max-width: 855px) {
+  main form {
+    left: 57%;
+  }
+  main .container-img {
+    left: 57%;
+  }
+  .container > h1 {
+    left: 57%;
+  }
+}
+
+@media (max-width: 765px) {
+  main .container-img {
+    left: 57%;
+    width: 330px;
+  }
+  main .container-img .list-img {
+    width: 262px;
+  }
+}
+
+@media (max-width: 620px) {
+  main .select-img {
+    width: 350px;
+  }
 }
