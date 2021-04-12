@@ -164,7 +164,7 @@
 
                               </div>
 
-                              <div class="select">Dormitório</div>
+                              <div class="select">Quarto</div>
 
                          </div>
 
@@ -209,7 +209,7 @@
 
                               </div>
 
-                              <div class="select">Suíte</div>
+                              <div class="select">Banheiro</div>
 
                          </div>
 

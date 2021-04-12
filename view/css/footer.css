@@ -109,7 +109,7 @@ footer .text span {
   color: #b41217;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 437px) {
   footer {
     height: 360px;
   }
