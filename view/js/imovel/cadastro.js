@@ -16,3 +16,26 @@ function editSelect(listOption) {
 }
 
 editSelect(optionsListType);
+
+const complemento = document.querySelector("input.complemento");
+const textarea = document.querySelector("textarea#descricao");
+
+complemento.addEventListener("focus", () => {
+  complemento.classList.add("valid");
+});
+
+complemento.addEventListener("blur", () => {
+  if (complemento.value == "") {
+    complemento.classList.remove("valid");
+  }
+});
+
+textarea.addEventListener("focus", () => {
+  textarea.classList.add("valid");
+});
+
+textarea.addEventListener("blur", () => {
+  if (textarea.value == "") {
+    textarea.classList.remove("valid");
+  }
+});

@@ -80,7 +80,7 @@ usuarioLogadoEntra();
 
           </div>
 
-          <div class="select">Tipos de imovéis</div>
+          <div class="select">Tipo de imóvel</div>
 
         </div>
       </div>
@@ -88,29 +88,59 @@ usuarioLogadoEntra();
       <div class="endereco">
         <h1>Endereço do Imóvel:</h1>
         <div class="field-input">
-          <input type="text" name="endereco" required>
-          <span data-placeholder="Endereço"></span>
+          <input type="text" name="endereco" required class="obrigatorio">
+          <span data-placeholder="Endereço" class="info_field"></span>
         </div>
         <div class="field-input">
-          <input type="text" name="bairro" required>
-          <span data-placeholder="Bairro"></span>
+          <input type="text" name="bairro" required class="obrigatorio">
+          <span data-placeholder="Bairro" class="info_field"></span>
         </div>
         <div class="field-duo">
           <div class="field-input">
-            <input type="text" name="complemento" required>
-            <span data-placeholder="Complemento"></span>
+            <input type="text" name="complemento" class="complemento">
+            <span data-placeholder="Complemento" class="info_field"></span>
           </div>
           <div class="field-input">
-            <input type="text" name="numero" required>
-            <span data-placeholder="Número"></span>
+            <input type="text" name="numero" required class="obrigatorio">
+            <span data-placeholder="Número" class="info_field"></span>
           </div>
+        </div>
+      </div>
+
+      <div class="detalhes-imovel">
+        <h1>Detalhes do Imóvel:</h1>
+        <div class="field-duo">
+          <div class="field-input">
+            <input type="text" name="qtdQuarto" required class="obrigatorio">
+            <span data-placeholder="Quarto" class="info_field"></span>
+          </div>
+          <div class="field-input">
+            <input type="text" name="qtdBanheiro" required class="obrigatorio">
+            <span data-placeholder="Banheiro" class="info_field"></span>
+          </div>
+        </div>
+
+        <div class="field-duo">
+          <div class="field-input">
+            <input type="text" name="qtdGgaragem" required class="obrigatorio">
+            <span data-placeholder="Garagem" class="info_field"></span>
+          </div>
+          <div class="field-input">
+            <input type="text" name="area" required class="obrigatorio">
+            <span data-placeholder="Area" class="info_field"></span>
+          </div>
+        </div>
+
+        <div class="field-input">
+          <textarea name="descricao" id="descricao" cols="30" rows="6"></textarea>
+          <span data-placeholder="Descrição" class="descri info_field"></span>
         </div>
       </div>
 
       <div class="value-imovel">
         <h1>Valor do Imóvel:</h1>
         <div class="field-input">
-          <input type="text" name="valor" id="value" required>
+          <input type="text" name="valor" required class="obrigatorio">
           <span data-placeholder="Valor do Imóvel" class="info_field"></span>
           <span data-placeholder=",00" class="reais"></span>
         </div>

@@ -3,6 +3,7 @@
   height: 80px;
 }
 
+/* Titulo da pagina */
 .container > h1 {
   position: absolute;
   top: 22%;
@@ -10,17 +11,18 @@
   width: 222px;
   transform: translateX(-50%);
   font-weight: 600;
-  flex: 1;
   font-size: 24px;
   color: #ef2d56;
   font-family: "Montserrat", sans-serif;
 }
 
+/* main */
 main {
   position: relative;
-  height: 200vh;
+  height: 250vh;
 }
 
+/* scrol */
 body::-webkit-scrollbar {
   width: 10px;
   background: #636e72;
@@ -31,17 +33,18 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
+/* form */
 main form {
   position: absolute;
-  top: 25%;
+  top: 35%;
   left: 50%;
-  transform: translate(-50%, -25%);
+  transform: translate(-50%, -35%);
   transition: 0.5s;
-  height: 900px;
+  height: 1280px;
   width: 450px;
-  /* border: 1px solid black; */
 }
 
+/* h1s do form */
 main form h1 {
   font-size: 20px;
   font-weight: 600;
@@ -49,6 +52,7 @@ main form h1 {
   margin: 20px 0;
 }
 
+/* tipo imovel */
 main .type-imovel .select-box {
   display: flex;
   margin: 0 auto;
@@ -131,32 +135,61 @@ main .type-imovel .select-box .option .radio {
   opacity: 0;
 }
 
-main .endereco {
-  width: 100%;
-  z-index: 1;
-  position: absolute;
-  top: 150px;
-}
-
-main .endereco .field-input {
+main .field-input {
   width: 100%;
   height: 40px;
   margin-bottom: 20px;
   position: relative;
 }
 
-main .endereco .field-duo {
+main .field-duo {
   width: 100%;
   height: 40px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-main .endereco .field-duo .field-input {
+
+main .field-duo .field-input {
   width: 47%;
 }
 
-main .endereco .field-input input {
+main .field-input .info_field::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  background: #fff;
+  padding: 0 5px;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+main .field-input .obrigatorio:focus ~ .info_field::before,
+main .field-input .complemento:focus ~ .info_field::before,
+main .field-input textarea:focus ~ .info_field::before {
+  color: #01baef;
+}
+
+main .field-input .obrigatorio:focus,
+main .field-input .complemento:focus {
+  border-color: #01baef;
+}
+
+main .field-input .obrigatorio:focus ~ .info_field::before,
+main .field-input textarea.valid ~ .info_field::before,
+main .field-input input.complemento.valid ~ .info_field::before,
+main .field-input textarea.valid ~ .info_field::before,
+main .field-input input.complemento.valid ~ .info_field::before,
+main .field-input .obrigatorio:valid ~ .info_field::before {
+  top: 0;
+  left: 5px;
+  font-size: 14px;
+}
+
+main .field-input input {
   font-size: 16px;
   width: 100%;
   height: 38px;
@@ -169,82 +202,69 @@ main .endereco .field-input input {
   transition: 0.5s;
 }
 
-main .endereco .field-input span::before {
-  content: attr(data-placeholder);
+/* endereco imovel */
+main .endereco {
+  width: 100%;
+  z-index: 1;
   position: absolute;
-  left: 10px;
+  top: 150px;
+}
+
+main .endereco .complemento:valid ~ .info_field::before {
   top: 50%;
-  transform: translateY(-50%);
-  color: #ccc;
-  background: #fff;
-  padding: 0 5px;
-  transition: 0.5s;
+  left: 10px;
+  font-size: 16px;
 }
 
-main .endereco .field-input input:focus ~ span::before {
-  color: #01baef;
-}
-
-main .endereco .field-input input:focus {
-  border-color: #01baef;
-}
-main .endereco .field-input input:focus ~ span::before,
-main .endereco .field-input input:valid ~ span::before {
-  top: 0;
-  left: 5px;
-  font-size: 14px;
-}
-
-main .value-imovel {
+/* detalhes imovel */
+main .detalhes-imovel {
   position: absolute;
   top: 400px;
   width: 100%;
 }
 
-main .value-imovel .field-input {
-  position: relative;
-  height: 40px;
-  width: 100%;
-}
-
-main .value-imovel .field-input input {
+main .detalhes-imovel > .field-input textarea {
   font-size: 16px;
   width: 100%;
-  height: 38px;
   color: #333;
-  padding: 0 50px 0 10px;
+  padding: 5px 10px;
   margin-top: 1px;
   border: 2px solid #ccc;
   border-radius: 5px;
   outline: none;
   transition: 0.5s;
-  text-align: right;
+  resize: none;
 }
 
-main .value-imovel .field-input .info_field::before {
-  content: attr(data-placeholder);
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #ccc;
-  background: #fff;
-  padding: 0 5px;
-  transition: 0.5s;
+main .detalhes-imovel > .field-input textarea::-webkit-scrollbar {
+  width: 8px;
+  background: #636e72;
+  border-radius: 0 4px 4px 0;
 }
 
-main .value-imovel .field-input input:focus ~ .info_field::before {
-  color: #01baef;
+main .detalhes-imovel > .field-input textarea::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 0 5px 5px 0;
 }
 
-main .value-imovel .field-input input:focus {
+main .detalhes-imovel > .field-input textarea:focus {
   border-color: #01baef;
 }
-main .value-imovel .field-input input:focus ~ .info_field::before,
-main .value-imovel .field-input input:valid ~ .info_field::before {
-  top: 0;
-  left: 5px;
-  font-size: 14px;
+
+main .detalhes-imovel .field-input .descri::before {
+  top: 100%;
+}
+
+/* valor imovel */
+main .value-imovel {
+  position: absolute;
+  top: 750px;
+  width: 100%;
+}
+
+main .value-imovel input {
+  text-align: right;
+  padding-right: 50px;
 }
 
 main .value-imovel .field-input .reais::before {
@@ -263,11 +283,11 @@ main .value-imovel .field-input .reais::before {
   line-height: 34px;
 }
 
+/* imagens imovel */
 main .img-imovel {
   position: absolute;
-  top: 520px;
+  bottom: 0;
   width: 100%;
-  /* border: 1px solid black; */
   height: 380px;
 }
 
@@ -346,7 +366,7 @@ main .select-img h1.active {
 
 main .container-img {
   position: absolute;
-  top: 69%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -69%);
   width: 850px;
@@ -420,7 +440,7 @@ main form button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   position: absolute;
-  bottom: -10%;
+  bottom: -7%;
   left: 50%;
   transform: translate(-50%, -10%);
   transition: 0.5s;

@@ -60,7 +60,7 @@
 
                               </div>
 
-                              <div class="select">Tipos de imovéis</div>
+                              <div class="select">Tipos de imóveis</div>
 
                          </div>
 
