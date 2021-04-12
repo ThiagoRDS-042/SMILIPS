@@ -18,7 +18,7 @@
 
 main {
   position: relative;
-  height: 100vh;
+  height: 200vh;
 }
 
 body::-webkit-scrollbar {
@@ -33,10 +33,242 @@ body::-webkit-scrollbar-thumb {
 
 main form {
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -25%);
   transition: 0.5s;
+  height: 900px;
+  width: 450px;
+  /* border: 1px solid black; */
+}
+
+main form h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(107, 107, 107);
+  margin: 20px 0;
+}
+
+main .type-imovel .select-box {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  flex-direction: column;
+}
+
+main .type-imovel .select-box .list-options {
+  background: #fff;
+  color: #333;
+  max-height: 0;
+  text-align: left;
+  width: 100%;
+  margin-top: 3px;
+  opacity: 0;
+  transition: 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 1;
+  z-index: 4;
+  border: 2px solid #ccc;
+  pointer-events: none;
+}
+
+main .type-imovel .select {
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  position: relative;
+  order: 0;
+  text-align: left;
+}
+
+main .type-imovel .select::after {
+  content: "\f078";
+  font-family: fontAwesome;
+  line-height: 42px;
+  text-align: center;
+  color: #333;
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 5px;
+  top: 0;
+  transition: 0.4s;
+}
+
+main .type-imovel .select-box .list-options.active {
+  max-height: 172px;
+  pointer-events: all;
+  opacity: 1;
+}
+
+main .type-imovel .select-box .list-options.active + .select::after {
+  transform: rotateX(180deg);
+}
+
+main .type-imovel .select-box .select {
+  padding: 12px 24px 12px 20px;
+  cursor: pointer;
+}
+
+main .type-imovel .select-box .option {
+  text-align: left;
+  padding: 12px 24px 12px 0;
+  cursor: pointer;
+}
+
+main .type-imovel .select-box .option:hover {
+  background: #ecf0f1;
+}
+
+main .type-imovel .select-box label {
+  cursor: pointer;
+}
+
+main .type-imovel .select-box .option .radio {
+  visibility: hidden;
+  opacity: 0;
+}
+
+main .endereco {
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 150px;
+}
+
+main .endereco .field-input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+main .endereco .field-duo {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+main .endereco .field-duo .field-input {
+  width: 47%;
+}
+
+main .endereco .field-input input {
+  font-size: 16px;
+  width: 100%;
+  height: 38px;
+  color: #333;
+  padding: 0 10px;
+  margin-top: 1px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+}
+
+main .endereco .field-input span::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  background: #fff;
+  padding: 0 5px;
+  transition: 0.5s;
+}
+
+main .endereco .field-input input:focus ~ span::before {
+  color: #01baef;
+}
+
+main .endereco .field-input input:focus {
+  border-color: #01baef;
+}
+main .endereco .field-input input:focus ~ span::before,
+main .endereco .field-input input:valid ~ span::before {
+  top: 0;
+  left: 5px;
+  font-size: 14px;
+}
+
+main .value-imovel {
+  position: absolute;
+  top: 400px;
+  width: 100%;
+}
+
+main .value-imovel .field-input {
+  position: relative;
+  height: 40px;
+  width: 100%;
+}
+
+main .value-imovel .field-input input {
+  font-size: 16px;
+  width: 100%;
+  height: 38px;
+  color: #333;
+  padding: 0 50px 0 10px;
+  margin-top: 1px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+  text-align: right;
+}
+
+main .value-imovel .field-input .info_field::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  background: #fff;
+  padding: 0 5px;
+  transition: 0.5s;
+}
+
+main .value-imovel .field-input input:focus ~ .info_field::before {
+  color: #01baef;
+}
+
+main .value-imovel .field-input input:focus {
+  border-color: #01baef;
+}
+main .value-imovel .field-input input:focus ~ .info_field::before,
+main .value-imovel .field-input input:valid ~ .info_field::before {
+  top: 0;
+  left: 5px;
+  font-size: 14px;
+}
+
+main .value-imovel .field-input .reais::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+  border: 2px solid #ccc;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #ecf0f1;
+  padding: 0 10px;
+  height: 34px;
+  line-height: 34px;
+}
+
+main .img-imovel {
+  position: absolute;
+  top: 520px;
+  width: 100%;
+  /* border: 1px solid black; */
+  height: 380px;
 }
 
 main .select-img {
@@ -45,12 +277,15 @@ main .select-img {
   cursor: pointer;
   border-radius: 5px;
   border: 2px solid #ccc;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   transition: 0.5s;
   pointer-events: all;
 }
+
 main .select-img.active {
-  z-index: 1;
   width: 223px;
   border: none;
 }
@@ -58,6 +293,7 @@ main .select-img.active {
 main form input[type="file"] {
   display: none;
 }
+
 main .select-img i {
   position: absolute;
   top: 20%;
@@ -105,14 +341,14 @@ main .select-img h1:active {
 }
 
 main .select-img h1.active {
-  top: 97%;
+  top: 91%;
 }
 
 main .container-img {
   position: absolute;
-  top: 30%;
+  top: 69%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -69%);
   width: 850px;
   height: 270px;
   display: flex;
@@ -123,6 +359,7 @@ main .container-img {
   transition: 0.5s;
   z-index: 2;
 }
+
 main .container-img.active {
   opacity: 1;
   pointer-events: all;
@@ -159,7 +396,6 @@ main .container-img .preview-img {
   margin: 0 5px;
   cursor: pointer;
   border-radius: 5px;
-  /* z-index: 5; */
 }
 
 main .container-img .preview-img :hover {
@@ -184,9 +420,9 @@ main form button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   position: absolute;
-  bottom: -30%;
+  bottom: -10%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -10%);
   transition: 0.5s;
 }
 
@@ -246,6 +482,9 @@ main form button[type="submit"]:active {
 }
 
 @media (max-width: 620px) {
+  main form {
+    width: 350px;
+  }
   main .select-img {
     width: 350px;
   }
