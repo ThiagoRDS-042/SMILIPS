@@ -25,46 +25,68 @@ admLogadoEntra();
     <h1>Bem Vindo, Administrador</h1>
 
     <div class="container-planos">
-      <div class="card">
-        <div class="content">
-          <div class="text-content">
-            <h2>Planos</h2>
-            <p>Cadastre, Edite, Pesquise e Exclua Planos</p>
+
+      <div class="list_card">
+        <div class="card">
+          <div class="content">
+            <div class="text-content">
+              <h2>Planos</h2>
+              <p>Cadastre, Edite, Pesquise e Exclua Planos</p>
+            </div>
+            <div class="image">
+              <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+            </div>
           </div>
-          <div class="image">
-            <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+          <div class="title">
+            <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Planos</a>
           </div>
         </div>
-        <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Planos</a>
+
+        <div class="card">
+          <div class="content">
+            <div class="text-content">
+              <h2>Tipos de Serviços</h2>
+              <p>Cadastre, Edite, Pesquise e Exclua Tipos de Serviços</p>
+            </div>
+            <div class="image">
+              <img src="/SMILIPS/view/images/usuario/parceiros.png" alt="Imagem de Tipos de Serviços">
+            </div>
+          </div>
+          <div class="title">
+            <a href="/SMILIPS/view/pages/administrador/manterTiposDeServicos.php">Gerenciar Tipos de Serviços</a>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="content">
-          <div class="text-content">
-            <h2>Tipos de Serviços</h2>
-            <p>Cadastre, Edite, Pesquise e Exclua Tipos de Serviços</p>
+
+      <div class="list_card">
+        <div class="card">
+          <div class="content">
+            <div class="text-content">
+              <h2>Usuários</h2>
+              <p>Cadastre, Edite, Pesquise e Exclua Usuários</p>
+            </div>
+            <div class="image">
+              <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+            </div>
           </div>
-          <div class="image">
-            <img src="/SMILIPS/view/images/usuario/parceiros.png" alt="Imagem de Tipos de Serviços">
-          </div>
-        </div>
-        <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/manterTiposDeServicos.php">Gerenciar Tipos de Serviços</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <div class="text-content">
-            <h2>Usuários</h2>
-            <p>Cadastre, Edite, Pesquise e Exclua Usuários</p>
-          </div>
-          <div class="image">
-            <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+          <div class="title">
+            <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Usuários</a>
           </div>
         </div>
-        <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Usuários</a>
+
+        <div class="card">
+          <div class="content">
+            <div class="text-content">
+              <h2>Administradores</h2>
+              <p>Cadastre, Edite, Pesquise e Exclua Administradores</p>
+            </div>
+            <div class="image">
+              <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+            </div>
+          </div>
+          <div class="title">
+            <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Administradores</a>
+          </div>
         </div>
       </div>
     </div>

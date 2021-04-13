@@ -37,7 +37,7 @@ usuarioLogadoEntra();
             <p>Cadastrar Imóvel, Cadastrar Imóvel, Cadastrar Imóvel, Cadastrar Imóvel</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de um Imóvel">
+            <img src="/SMILIPS/view/images/usuario/imovel.jpg" alt="Imagem de Anúncio de um Imóvel">
           </div>
         </div>
         <div class="title">
@@ -65,7 +65,7 @@ usuarioLogadoEntra();
             <p>Torne-se um Prestador de Serviço, Torne-se um Prestador de Serviço</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/prestadorServico.png" alt="Imagem de Prestação de Serviço">
+            <img src="/SMILIPS/view/images/usuario/prestadorServico.jpg" alt="Imagem de Prestação de Serviço">
           </div>
         </div>
         <div class="title">

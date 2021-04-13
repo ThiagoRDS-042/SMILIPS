@@ -41,7 +41,7 @@ main .card-container .card {
   width: 320px;
   height: 218px;
   cursor: pointer;
-  min-width: 210px;
+  min-width: 320px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 0 3px;

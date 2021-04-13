@@ -1,6 +1,6 @@
 main {
   height: 100vh;
-  min-height: 625px;
+  min-height: 750px;
   border: 1px solid transparent;
 }
 
@@ -19,8 +19,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 main > h1 {
-  margin-top: 150px;
-  width: 100%;
+  width: 75%;
+  min-width: 310px;
+  margin: 150px auto 0 auto;
   text-align: center;
   font-size: 24px;
   font-weight: 600;
@@ -29,18 +30,21 @@ main > h1 {
 
 main .container-planos {
   width: 75%;
-  height: 238px;
+  height: 480px;
+  margin: 50px auto;
+}
+
+main .container-planos .list_card {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin: 50px auto;
 }
 
 main .container-planos .card {
   width: 320px;
   height: 218px;
   cursor: pointer;
-  min-width: 210px;
+  min-width: 320px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 10px 5px;
@@ -113,26 +117,18 @@ main .container-planos .card .image img {
   border-radius: 50%;
 }
 
-@media (max-width: 1324px) {
+@media (max-width: 887px) {
   main {
-    min-height: 726px;
+    min-height: 1230px;
   }
   main .container-planos {
-    height: 476px;
-  }
-}
-@media (max-width: 884px) {
-  main {
-    min-height: 970px;
-  }
-  main .container-planos {
-    height: 720px;
+    height: 953px;
   }
 }
 
 @media (max-width: 650px) {
   main > h1 {
-    margin-left: 40px;
+    margin-left: 110px;
   }
   main .container-planos {
     margin-left: 110px;
