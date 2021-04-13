@@ -40,7 +40,7 @@ main form {
   transform: translate(-50%, -10%);
   transition: 0.5s;
   height: 1280px;
-  width: 450px;
+  width: 850px;
 }
 
 /* h1s do form */
@@ -291,7 +291,7 @@ main .img-imovel {
 }
 
 main .select-img {
-  width: 450px;
+  width: 100%;
   height: 300px;
   cursor: pointer;
   border-radius: 5px;
@@ -365,10 +365,10 @@ main .select-img h1.active {
 
 main .container-img {
   position: absolute;
-  top: 80%;
+  bottom: 40px;
   left: 50%;
-  transform: translate(-50%, -69%);
-  width: 850px;
+  transform: translateX(-50%);
+  width: 100%;
   height: 270px;
   display: flex;
   justify-content: space-evenly;
@@ -461,16 +461,13 @@ main form button[type="submit"]:active {
   main form {
     left: 55%;
   }
-  main .container-img {
-    left: 55%;
-  }
   .container > h1 {
     left: 55%;
   }
 }
 
 @media (max-width: 1000px) {
-  main .container-img {
+  main form {
     width: 590px;
   }
   main .container-img .list-img {
@@ -482,29 +479,16 @@ main form button[type="submit"]:active {
   main form {
     left: 57%;
   }
-  main .container-img {
-    left: 57%;
-  }
   .container > h1 {
     left: 57%;
   }
 }
 
 @media (max-width: 765px) {
-  main .container-img {
-    left: 57%;
-    width: 330px;
-  }
-  main .container-img .list-img {
-    width: 262px;
-  }
-}
-
-@media (max-width: 620px) {
   main form {
     width: 350px;
   }
-  main .select-img {
-    width: 350px;
+  main .container-img .list-img {
+    width: 262px;
   }
 }

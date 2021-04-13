@@ -33,15 +33,6 @@ usuarioLogadoEntra();
     <?php
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
     ?>
-    <div class="container-img">
-      <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
-      <div class="list-img">
-        <div class="list-img-slider preview">
-
-        </div>
-      </div>
-      <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
-    </div>
     <!--/SMILIPS/controller/usuario/teste.php -->
     <form action="#" method="post" enctype="multipart/form-data">
       <div class="type-imovel">
@@ -144,6 +135,16 @@ usuarioLogadoEntra();
           <span data-placeholder="Valor do Imóvel" class="info_field"></span>
           <span data-placeholder=",00" class="reais"></span>
         </div>
+      </div>
+
+      <div class="container-img">
+        <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
+        <div class="list-img">
+          <div class="list-img-slider preview">
+
+          </div>
+        </div>
+        <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
       </div>
 
       <div class="img-imovel">
