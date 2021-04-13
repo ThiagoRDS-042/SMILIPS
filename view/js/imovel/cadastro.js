@@ -39,3 +39,11 @@ textarea.addEventListener("blur", () => {
     textarea.classList.remove("valid");
   }
 });
+
+const inputs = document.querySelectorAll(".numerico");
+
+inputs.forEach((input) => {
+  input.addEventListener("blur", () => {
+    input.value = !isNaN(input.value) ? input.value : "";
+  });
+});

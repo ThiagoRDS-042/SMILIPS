@@ -92,7 +92,7 @@ usuarioLogadoEntra();
             <span data-placeholder="Complemento" class="info_field"></span>
           </div>
           <div class="field-input">
-            <input type="text" name="numero" required class="obrigatorio">
+            <input type="text" name="numero" required class="obrigatorio numerico">
             <span data-placeholder="Número" class="info_field"></span>
           </div>
         </div>
@@ -102,18 +102,18 @@ usuarioLogadoEntra();
         <h1>Detalhes do Imóvel:</h1>
         <div class="field-duo">
           <div class="field-input">
-            <input type="text" name="qtdQuarto" required class="obrigatorio">
+            <input type="text" name="qtdQuarto" required class="obrigatorio numerico">
             <span data-placeholder="Quarto" class="info_field"></span>
           </div>
           <div class="field-input">
-            <input type="text" name="qtdBanheiro" required class="obrigatorio">
+            <input type="text" name="qtdBanheiro" required class="obrigatorio numerico">
             <span data-placeholder="Banheiro" class="info_field"></span>
           </div>
         </div>
 
         <div class="field-duo">
           <div class="field-input">
-            <input type="text" name="qtdGaragem" required class="obrigatorio">
+            <input type="text" name="qtdGaragem" required class="obrigatorio numerico">
             <span data-placeholder="Garagem" class="info_field"></span>
           </div>
           <div class="field-input">
@@ -131,7 +131,7 @@ usuarioLogadoEntra();
       <div class="value-imovel">
         <h1>Valor do Imóvel:</h1>
         <div class="field-input">
-          <input type="text" name="valor" required class="obrigatorio">
+          <input type="text" name="valor" required class="obrigatorio numerico">
           <span data-placeholder="Valor do Imóvel" class="info_field"></span>
           <span data-placeholder=",00" class="reais"></span>
         </div>
