@@ -3,8 +3,8 @@
 }
 
 main {
-  position: relative;
   height: 100vh;
+  min-height: 555px;
 }
 
 body::-webkit-scrollbar {
@@ -18,10 +18,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 main .edit-info {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -70%);
+  margin: 150px auto 0 auto;
   width: 30%;
   height: 400px;
   text-align: center;
@@ -141,10 +138,4 @@ main .edit-info form .field-button button:hover {
 
 main .edit-info form .field-button button:active {
   color: #ccc;
-}
-
-@media (max-width: 585px) {
-  main .edit-info {
-    transform: translate(-65%, -70%);
-  }
 }

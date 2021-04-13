@@ -22,7 +22,7 @@
 main {
   border: 1px solid transparent;
   position: relative;
-  height: 250vh;
+  height: 100vh;
   min-height: 1400px;
 }
 

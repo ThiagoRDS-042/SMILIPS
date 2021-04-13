@@ -13,7 +13,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
-  height: 90vh;
+  height: 100vh;
   min-height: 594px;
   background: #fff;
   border: 1px solid transparent;
@@ -29,7 +29,6 @@ main .nome {
 }
 
 main .card-container {
-  position: relative;
   width: 75%;
   height: 218px;
   display: flex;
@@ -110,7 +109,6 @@ main .card-container .card .image img {
 
 @media (max-width: 1306px) {
   main {
-    height: 120vh;
     min-height: 740px;
   }
   main .card-container {
@@ -120,7 +118,6 @@ main .card-container .card .image img {
 
 @media (max-width: 881px) {
   main {
-    height: 150vh;
     min-height: 955px;
   }
   main .card-container {

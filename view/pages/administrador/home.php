@@ -24,16 +24,35 @@ admLogadoEntra();
   <main>
     <h1>Bem Vindo, Administrador</h1>
 
-    <div class="cad-plano">
-
+    <div class="container-planos">
       <div class="card">
-        <h1>Gerenciar Planos</h1>
+        <div class="content">
+          <div class="text-content">
+            <h2>Planos</h2>
+            <p>Cadastre, Edite, Pesquise e Exclua Planos</p>
+          </div>
+          <div class="image">
+            <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+          </div>
+        </div>
+        <div class="title">
+          <a href="#">Gerenciar Planos</a>
+        </div>
       </div>
-
       <div class="card">
-        <h1>Gerenciar Tipos de Serviços</h1>
+        <div class="content">
+          <div class="text-content">
+            <h2>Tipos de Serviços</h2>
+            <p>Cadastre, Edite, Pesquise e Exclua Tipos de Serviços</p>
+          </div>
+          <div class="image">
+            <img src="/SMILIPS/view/images/usuario/parceiros.png" alt="Imagem de Tipos de Serviços">
+          </div>
+        </div>
+        <div class="title">
+          <a href="#">Gerenciar Tipos de Serviços</a>
+        </div>
       </div>
-
     </div>
   </main>
 

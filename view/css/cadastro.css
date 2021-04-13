@@ -5,10 +5,19 @@
 
 main {
   background: linear-gradient(120deg, #3498db, #8e44ad);
-  height: 150vh;
+  height: 100vh;
   min-height: 900px;
   position: relative;
   border: 1px solid transparent;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
 }
 
 .voltar {

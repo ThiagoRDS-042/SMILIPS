@@ -205,7 +205,6 @@ main {
 
 @media (max-width: 1080px) {
   main {
-    height: 150vh;
     min-height: 883px;
   }
   .perfil {
