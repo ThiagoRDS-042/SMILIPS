@@ -14,7 +14,7 @@
   margin: 150px auto 0 auto;
   font-weight: 600;
   font-size: 24px;
-  color: #ef2d56;
+  color: rgb(107, 107, 107);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -314,6 +314,19 @@ main .select-img.active {
   border: none;
 }
 
+main .select-img span {
+  position: absolute;
+  bottom: -20px;
+  color: #ccc;
+  font-size: 14px;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+main .select-img.active span {
+  opacity: 0;
+}
+
 main form input[type="file"] {
   display: none;
 }
@@ -444,7 +457,7 @@ main form button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   position: absolute;
-  bottom: -7%;
+  bottom: -7.5%;
   left: 50%;
   transform: translate(-50%, -10%);
   transition: 0.5s;
@@ -495,5 +508,8 @@ main form button[type="submit"]:active {
   }
   main .container-img .list-img {
     width: 262px;
+  }
+  main .select-img span {
+    bottom: -35px;
   }
 }

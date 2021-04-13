@@ -33,7 +33,7 @@ usuarioLogadoEntra();
   </section>
 
   <main>
-    <form action="/SMILIPS/controller/usuario/usuarioDAO.php " method="post" enctype="multipart/form-data">
+    <form action="/SMILIPS/controller/imovel/imovelDAO.php " method="post" enctype="multipart/form-data">
       <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
       <div class="type-imovel">
         <h1>Tipo de Imóvel:</h1>
@@ -152,6 +152,7 @@ usuarioLogadoEntra();
         <label for="btn">
           <div class="select-img">
             <i class="far fa-images"></i>
+            <span>Formatos Suportados: PNG, JPG e JPEG, Tamanho Suportado: até 1000 KB.</span>
             <h1>Selecionar Imagens</h1>
           </div>
 

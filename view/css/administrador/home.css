@@ -46,6 +46,14 @@ main .container-planos .card {
   margin: 10px 5px;
 }
 
+main .container-planos .card:hover {
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+main .container-planos .card:hover .title a {
+  color: #771fd2;
+}
+
 main .container-planos .card .title {
   height: 36px;
   width: 100%;
@@ -82,6 +90,7 @@ main .container-planos .card .content .text-content h2 {
   color: #333;
   font-weight: bold;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 main .container-planos .card .content .text-content p {
@@ -104,12 +113,20 @@ main .container-planos .card .image img {
   border-radius: 50%;
 }
 
-@media (max-width: 895px) {
+@media (max-width: 1324px) {
   main {
     min-height: 726px;
   }
   main .container-planos {
     height: 476px;
+  }
+}
+@media (max-width: 884px) {
+  main {
+    min-height: 970px;
+  }
+  main .container-planos {
+    height: 720px;
   }
 }
 

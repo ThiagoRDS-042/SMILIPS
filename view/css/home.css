@@ -357,6 +357,9 @@ section.recomendacoes .container-card .card {
 section.recomendacoes .container-card .card:hover {
   box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
 }
+section.recomendacoes .container-card .card:hover .detalhes a {
+  color: #771fd2;
+}
 
 section.recomendacoes .container-card .card .image {
   width: 100%;
@@ -408,10 +411,6 @@ section.recomendacoes .container-card .card .detalhes a {
   transform: translateX(-50%);
   font-size: 18px;
   font-weight: 600;
-}
-
-section.recomendacoes .container-card .card .detalhes a:hover {
-  color: #771fd2;
 }
 
 section.oqProcura {

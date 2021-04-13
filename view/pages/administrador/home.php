@@ -36,7 +36,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="#">Gerenciar Planos</a>
+          <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Planos</a>
         </div>
       </div>
       <div class="card">
@@ -50,7 +50,21 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="#">Gerenciar Tipos de Serviços</a>
+          <a href="/SMILIPS/view/pages/administrador/manterTiposDeServicos.php">Gerenciar Tipos de Serviços</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="text-content">
+            <h2>Usuários</h2>
+            <p>Cadastre, Edite, Pesquise e Exclua Usuários</p>
+          </div>
+          <div class="image">
+            <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+          </div>
+        </div>
+        <div class="title">
+          <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Usuários</a>
         </div>
       </div>
     </div>
@@ -60,6 +74,8 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
   ?>
+
+  <script src="/SMILIPS/view/js/administrador/home.js"></script>
 </body>
 
 </html>
