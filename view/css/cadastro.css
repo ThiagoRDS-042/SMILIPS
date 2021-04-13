@@ -6,6 +6,7 @@
 main {
   background: linear-gradient(120deg, #3498db, #8e44ad);
   height: 150vh;
+  min-height: 900px;
   position: relative;
   border: 1px solid transparent;
 }

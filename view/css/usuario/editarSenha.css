@@ -9,7 +9,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
+  border: 1px solid transparent;
   height: 100vh;
+  min-height: 620px;
 }
 
 .menu-senha {
@@ -21,17 +23,14 @@ main .alert {
 }
 
 form {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -65%);
   width: 30%;
-  height: 60vh;
+  height: 375px;
+  margin: 150px auto;
 }
 
 .editar-senha {
   width: 100%;
-  height: 60vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }

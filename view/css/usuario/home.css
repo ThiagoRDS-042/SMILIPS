@@ -13,22 +13,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 90vh;
+  min-height: 594px;
   background: #fff;
+  border: 1px solid transparent;
 }
 
 main .nome {
-  position: absolute;
-  top: 20%;
-  transform: translateY(-10%);
+  width: 500px;
+  text-align: center;
+  margin: 150px auto 0 auto;
   font-size: 24px;
   font-weight: bold;
   color: rgb(107, 107, 107);
-  margin-left: 100px;
 }
+
 main .card-container {
   position: relative;
   width: 75%;
@@ -36,8 +35,7 @@ main .card-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-left: 100px;
-  margin-top: 50px;
+  margin: 50px auto;
 }
 
 main .card-container .card {
@@ -113,18 +111,28 @@ main .card-container .card .image img {
 @media (max-width: 1306px) {
   main {
     height: 120vh;
+    min-height: 740px;
   }
   main .card-container {
     height: 500px;
-    top: 60px;
   }
 }
 
 @media (max-width: 881px) {
   main {
     height: 150vh;
+    min-height: 955px;
   }
   main .card-container {
     height: 720px;
+  }
+}
+
+@media (max-width: 550px) {
+  main .nome {
+    margin-left: 50px;
+  }
+  main .card-container {
+    margin-left: 110px;
   }
 }

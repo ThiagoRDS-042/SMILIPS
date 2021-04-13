@@ -94,3 +94,33 @@
 .hide {
   display: none;
 }
+
+@media (max-height: 565px) {
+  .menu .navigation {
+    width: 60px;
+    height: 280px;
+  }
+  .menu .navigation.active {
+    width: 170px;
+  }
+  .menu .navigation ul li a .icon {
+    height: 40px;
+    line-height: 45px;
+    min-width: 60px;
+  }
+  .menu .navigation ul li a .title {
+    height: 40px;
+    line-height: 40px;
+  }
+  .menu .navigation ul li a .icon .fa,
+  .menu .navigation ul li a .icon .fas {
+    font-size: 20px;
+  }
+  .toggle {
+    width: 35px;
+    height: 35px;
+  }
+  .toggle i {
+    line-height: 25px;
+  }
+}

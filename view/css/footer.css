@@ -76,19 +76,19 @@ footer .middle .circle span {
   margin-left: 5px;
 }
 
-footer .middle .circle:nth-child(1):hover > a {
+footer .middle .circle:nth-child(1) > a {
   color: #4267b2;
 }
 
-footer .middle .circle:nth-child(2):hover > a {
+footer .middle .circle:nth-child(2) > a {
   color: #1da1f2;
 }
 
-footer .middle .circle:nth-child(3):hover > a {
+footer .middle .circle:nth-child(3) > a {
   color: #e1306c;
 }
 
-footer .middle .circle:nth-child(4):hover > a {
+footer .middle .circle:nth-child(4) > a {
   color: #0077b5;
 }
 

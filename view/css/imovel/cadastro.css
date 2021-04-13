@@ -1,15 +1,12 @@
 .container {
   width: 100%;
-  height: 80px;
+  height: 40px;
 }
 
 /* Titulo da pagina */
 .container > h1 {
-  position: absolute;
-  top: 22%;
-  left: 50%;
   width: 222px;
-  transform: translateX(-50%);
+  margin: 150px auto 0 auto;
   font-weight: 600;
   font-size: 24px;
   color: #ef2d56;
@@ -18,8 +15,10 @@
 
 /* main */
 main {
+  border: 1px solid transparent;
   position: relative;
   height: 250vh;
+  min-height: 1400px;
 }
 
 /* scrol */
@@ -36,9 +35,9 @@ body::-webkit-scrollbar-thumb {
 /* form */
 main form {
   position: absolute;
-  top: 35%;
+  top: 10%;
   left: 50%;
-  transform: translate(-50%, -35%);
+  transform: translate(-50%, -10%);
   transition: 0.5s;
   height: 1280px;
   width: 450px;

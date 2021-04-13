@@ -5,7 +5,8 @@
 
 main {
   background: linear-gradient(120deg, #3498db, #8e44ad);
-  height: 99.7vh;
+  min-height: 555px;
+  height: 100vh;
   position: relative;
   border: 1px solid transparent;
 }
@@ -31,6 +32,7 @@ main {
 
 main .middle {
   width: 400px;
+  min-width: 301px;
   height: 400px;
   padding: 40px;
   border-radius: 10px;

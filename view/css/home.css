@@ -20,6 +20,7 @@ body::-webkit-scrollbar-thumb {
 main {
   position: relative;
   height: 100vh;
+  min-height: 400px;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -546,7 +547,7 @@ section.oqProcura .selecao .circle img {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   main #filter .search input {
     width: 70%;
     margin-right: 10px;
@@ -573,7 +574,7 @@ section.oqProcura .selecao .circle img {
   }
 }
 
-@media (max-width: 437px) {
+@media (max-width: 429px) {
   section.oqProcura .selecao {
     height: 820px;
   }
