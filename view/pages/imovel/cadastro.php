@@ -21,6 +21,9 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
   ?>
   <div class="container">
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
     <h1>Cadastro de Imóvel</h1>
   </div>
   <section>
@@ -30,11 +33,8 @@ usuarioLogadoEntra();
   </section>
 
   <main>
-    <?php
-    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
-    ?>
-    <!--/SMILIPS/controller/usuario/teste.php -->
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="/SMILIPS/controller/usuario/usuarioDAO.php " method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
       <div class="type-imovel">
         <h1>Tipo de Imóvel:</h1>
         <div class="select-box">
@@ -113,7 +113,7 @@ usuarioLogadoEntra();
 
         <div class="field-duo">
           <div class="field-input">
-            <input type="text" name="qtdGgaragem" required class="obrigatorio">
+            <input type="text" name="qtdGaragem" required class="obrigatorio">
             <span data-placeholder="Garagem" class="info_field"></span>
           </div>
           <div class="field-input">
