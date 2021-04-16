@@ -11,6 +11,8 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
   consultarNome();
+  require_once('/xampp/htdocs/SMILIPS/controller/imovel/consultar.php');
+  consultarImovelUser();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/usuario/home.css">
   <title>Home</title>
@@ -29,7 +31,7 @@ usuarioLogadoEntra();
       <h1>Bem Vindo, <?php echo $nome[0]; ?></h1>
     </div>
 
-    <div class="card-container">
+    <section class="card-container">
       <div class="card">
         <div class="content">
           <div class="text-content">
@@ -72,7 +74,37 @@ usuarioLogadoEntra();
           <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Torne-se um Prestador de Serviço</a>
         </div>
       </div>
-    </div>
+    </section>
+    <?php if ($imovel->num_rows > 0) : ?>
+      <section class="your-imoveis">
+        <h1>Seus Imóveis</h1>
+        <div class="container-imovel">
+          <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
+          <div class="list-imovel">
+            <div class="cards-imovel">
+
+              <?php for ($i = 0; $i < count($arrayImgImovel); $i++) : ?>
+
+                <div class="card">
+                  <div class="image">
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($arrayImgImovel[$i]['imagem']) ?>" alt="Imovél">
+                  </div>
+                  <div class="detalhes">
+                    <h3>R$ <?php echo $arrayImovel[$i]['valorAluguel'] ?><span>/mês</span></h3>
+                    <p><?php echo $arrayImovel[$i]['tipo'] ?> com <?php echo $arrayImovel[$i]['qtdQuarto'] ?> Quartos e <?php echo $arrayImovel[$i]['qtdBanheiro'] ?> banheiros para Alugar, <?php echo $arrayImovel[$i]['area'] ?>
+                      <?php echo $arrayImovel[$i]['rua'] ?>.</p>
+                    <a href="#">Editar</a>
+                  </div>
+                </div>
+              <?php endfor; ?>
+
+            </div>
+          </div>
+          <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
+        </div>
+      </section>
+    <?php else : ?>
+    <?php endif; ?>
 
   </main>
 
@@ -80,7 +112,7 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
   ?>
 
-  <script src="/SMILIPS/view/js/usuario/home.js"></script>
+  <script src="/SMILIPS/view/js/usuario/home.js" type="module"></script>
 </body>
 
 </html>
