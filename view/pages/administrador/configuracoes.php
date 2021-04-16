@@ -22,24 +22,7 @@ admLogadoEntra();
   ?>
 
   <main>
-    <div class="excluir-conta">
-      <h1>Ações</h1>
-      <div class="btn-excluir">
-        <form action="#" method="post">
-          <input type="hidden" name="id" value="<?php echo $_SESSION['idAdm'] ?>">
-          <input type="checkbox" id="excluir">
-          <label for="excluir">
-            <h1 class="title-excluir">Excluir Conta</h1>
-          </label>
 
-          <div class="msg-excluir">
-            <h1>Deseja Realmente Excluir sua Conta?</h1>
-            <button class="confirm" type="submit" name="excluir">Confirmar</button>
-            <button class="cancel" type="button">Cancelar</button>
-          </div>
-        </form>
-      </div>
-    </div>
 
   </main>
 

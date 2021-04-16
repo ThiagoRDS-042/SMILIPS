@@ -9,9 +9,15 @@
                 </a>
             </li>
             <li class="menu-perfil">
-                <a href="/SMILIPS/view/pages/administrador/conta.php">
+                <a href="/SMILIPS/view/pages/administrador/conta.php?consultar=<?php echo $_SESSION['idAdm'] ?>">
                     <span class="icon"><i class="fa fa-user"></i></span>
                     <span class="title">Conta</span>
+                </a>
+            </li>
+            <li class="menu-senha">
+                <a href="/SMILIPS/view/pages/administrador/editarSenha.php">
+                    <span class="icon"><i class="fa fa-lock"></i></span>
+                    <span class="title">Senha</span>
                 </a>
             </li>
             <li class="menu-config">

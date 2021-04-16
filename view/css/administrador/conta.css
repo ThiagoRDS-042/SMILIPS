@@ -1,10 +1,14 @@
 .menu-perfil {
   background: #be5041 !important;
 }
+.alert {
+  top: 80px !important;
+}
 
 main {
   height: 100vh;
-  min-height: 555px;
+  min-height: 300px;
+  border: 1px solid transparent;
 }
 
 body::-webkit-scrollbar {
@@ -19,8 +23,8 @@ body::-webkit-scrollbar-thumb {
 
 main .edit-info {
   margin: 150px auto 0 auto;
-  width: 30%;
-  height: 400px;
+  width: 40%;
+  height: 200px;
   text-align: center;
 }
 
@@ -35,57 +39,53 @@ main .edit-info h1 {
 main .edit-info form {
   width: 90%;
   min-width: 275px;
-  height: 90%;
+  height: 150px;
   margin: auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 main .edit-info form .field-input {
   position: relative;
   width: 100%;
-  height: 20%;
-  margin: 10px 0;
+  height: 90px;
+  margin: 20px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
+
 main .edit-info form .field-input input {
-  width: 66%;
+  width: 80%;
   height: 30px;
   border: none;
   outline: none;
   border-bottom: 2px solid #ccc;
   color: #333;
 }
-main .edit-info form .field-input input.senha {
-  padding-right: 25px;
-}
 
 main .edit-info form .field-input span::before {
   content: attr(data-placeholder);
   position: absolute;
-  left: 17%;
-  top: 25px;
+  left: 10%;
+  top: 35px;
   color: #ccc;
   transition: 0.5s;
+  pointer-events: none;
 }
 
 main .edit-info form .field-input input:focus + span::before,
 main .edit-info form .field-input input:valid + span::before {
-  top: 5px;
+  top: 15px;
   color: rgb(107, 107, 107);
 }
 
 main .edit-info form .field-input span::after {
   content: "";
   position: absolute;
-  left: 17%;
-  top: 68.5%;
-  width: 66%;
+  left: 10%;
+  top: 65%;
+  width: 80%;
   height: 2px;
   background: linear-gradient(120deg, rgb(107, 107, 107), rgb(70, 69, 69));
   transition: 0.5s;
@@ -111,13 +111,21 @@ main .edit-info form .field-input input:valid ~ i {
   color: rgb(107, 107, 107);
 }
 
+main .edit-info form .field-input .msg {
+  position: absolute;
+  top: 35px;
+  right: 10%;
+}
+
 main .edit-info form .field-button {
   width: 100%;
   height: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;
 }
+
 main .edit-info form .field-button button {
   width: 120px;
   height: 35px;

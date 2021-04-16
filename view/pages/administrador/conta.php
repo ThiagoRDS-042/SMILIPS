@@ -19,31 +19,23 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/administrador/consultar.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
   ?>
 
   <main>
     <div class="edit-info">
-      <h1>Editar Conta</h1>
-      <form action="#" method="POST">
+      <h1>Editar E-mail</h1>
+      <form action="/SMILIPS/controller/administrador/administradorDAO.php" method="POST">
+        <input type="hidden" name="id" id="idAdm" value="<?php echo $id ?>">
         <div class="field-input">
-          <input type="text" name="email" required>
+          <input type="text" name="email" id="email" required value="<?php echo $email ?>">
           <span data-placeholder="Email"></span>
-        </div>
-
-        <div class="field-input">
-          <input type="password" name="senhaAtual" required class="senha">
-          <span data-placeholder="Senha Atual"></span>
-          <i class="fa fa-eye"></i>
-        </div>
-
-        <div class="field-input">
-          <input type="password" name="senhaNova" required class="senha">
-          <span data-placeholder="Nova Senha"></span>
-          <i class="fa fa-eye"></i>
+          <span id="msgEmail" class="msg"></span>
         </div>
 
         <div class="field-button">
-          <button type="submit">Salvar</button>
+          <button type="submit" name="editar-email">Salvar</button>
         </div>
       </form>
     </div>
@@ -56,6 +48,8 @@ admLogadoEntra();
   ?>
 
   <script src="/SMILIPS/view/js/administrador/conta.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarEmail.js"></script>
 </body>
 
 </html>

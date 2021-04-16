@@ -5,6 +5,6 @@
     </div>
 
     <div class="adm">
-        <a href="/SMILIPS/view/pages/administrador/conta.php">ADM</a>
+        <a href="/SMILIPS/view/pages/administrador/conta.php?consultar=<?php echo $_SESSION['idAdm'] ?>">ADM</a>
     </div>
 </header>

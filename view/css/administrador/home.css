@@ -1,6 +1,6 @@
 main {
   height: 100vh;
-  min-height: 750px;
+  min-height: 400px;
   border: 1px solid transparent;
 }
 
@@ -30,11 +30,8 @@ main > h1 {
 
 main .container-planos {
   width: 75%;
-  height: 480px;
-  margin: 50px auto;
-}
-
-main .container-planos .list_card {
+  height: 300px;
+  margin: 40px auto;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -117,12 +114,21 @@ main .container-planos .card .image img {
   border-radius: 50%;
 }
 
-@media (max-width: 887px) {
+@media (max-width: 1321px) {
   main {
-    min-height: 1230px;
+    min-height: 750px;
   }
   main .container-planos {
-    height: 953px;
+    height: 480px;
+  }
+}
+
+@media (max-width: 891px) {
+  main {
+    min-height: 1000px;
+  }
+  main .container-planos {
+    height: 750px;
   }
 }
 

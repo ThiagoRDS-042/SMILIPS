@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll("main .card");
+// redirecionando ao clicar nos cards na tela inicial do usuario
 cards.forEach((card) => {
   card.addEventListener("click", () => {
     card === cards[0]

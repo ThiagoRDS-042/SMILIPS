@@ -42,7 +42,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 exibirMsg("Cadastro bem Sucedido!", "success");
                 header("location:/SMILIPS/view/pages/cadastro.php");
             } else {
-                //caso o email ou cpf/cnpj ja exista, volta pra tela de cadastro e exibi a mesnsagem
+                //caso o email ja exista, volta pra tela de cadastro e exibi a mesnsagem
                 exibirMsg("Email já Cadastrado", "danger");
                 header("location:/SMILIPS/view/pages/cadastro.php");
             }
@@ -72,10 +72,11 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         if (preg_match("/.{3}+@.+\..{3}+/", $email) and preg_match("/^(\+\d{2}\s)?(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/", $telefone)) {
 
             $emailValido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email' and usuarioID = '$id'");
-            $emailInvalido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
+            $emailUsuarioInvalido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
+            $emailAdmInvalido = $conexao->query("SELECT * FROM administrador WHERE email = '$email'");
 
             //verificando se ja existe e caso ja existam se pertencem ao usuario em questao
-            if ($emailValido->num_rows > 0 or $emailInvalido->num_rows <= 0) {
+            if ($emailValido->num_rows > 0 or ($emailUsuarioInvalido->num_rows <= 0 && $emailAdmInvalido->num_rows <= 0)) {
 
                 $nome = $_POST['nome'];
                 $rua = $_POST['rua'];
