@@ -43,21 +43,21 @@ usuarioLogadoEntra();
 
             <label for="apartamento">
               <div class="option type">
-                <input type="radio" class="radio" id="apartamento" name="type" value="apartamento" />
+                <input type="radio" class="radio" id="apartamento" name="type" value="Apartamento" />
                 <span>Apartamento</span>
               </div>
             </label>
 
             <label for="residencial">
               <div class="option type">
-                <input type="radio" class="radio" id="residencial" name="type" value="residencial" />
+                <input type="radio" class="radio" id="residencial" name="type" value="Residencial" />
                 <span>Residencial</span>
               </div>
             </label>
 
             <label for="comercial">
               <div class="option type">
-                <input type="radio" class="radio" id="comercial" name="type" value="comercial" />
+                <input type="radio" class="radio" id="comercial" name="type" value="Comercial" />
                 <span>Comercial</span>
               </div>
             </label>

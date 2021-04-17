@@ -232,6 +232,10 @@ section.your-imoveis .container-imovel .card .detalhes a {
   font-weight: 600;
 }
 
+section.your-imoveis .container-imovel .card .detalhes a i {
+  font-size: 16px;
+}
+
 @media (max-width: 1306px) {
   main .card-container {
     height: 500px;

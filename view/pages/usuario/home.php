@@ -93,7 +93,7 @@ usuarioLogadoEntra();
                     <h3>R$ <?php echo $arrayImovel[$i]['valorAluguel'] ?><span>/mês</span></h3>
                     <p><?php echo $arrayImovel[$i]['tipo'] ?> com <?php echo $arrayImovel[$i]['qtdQuarto'] ?> Quartos e <?php echo $arrayImovel[$i]['qtdBanheiro'] ?> banheiros para Alugar, <?php echo $arrayImovel[$i]['area'] ?>
                       <?php echo $arrayImovel[$i]['rua'] ?>.</p>
-                    <a href="#">Editar</a>
+                    <a href="/SMILIPS/view/pages/usuario/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Editar <i class="fas fa-pencil-alt"></i></a>
                   </div>
                 </div>
               <?php endfor; ?>
