@@ -79,21 +79,21 @@ usuarioLogadoEntra();
       <div class="endereco">
         <h1>Endereço do Imóvel:</h1>
         <div class="field-input">
-          <input type="text" name="endereco" required class="obrigatorio">
-          <span data-placeholder="Endereço" class="info_field"></span>
-        </div>
-        <div class="field-input">
           <input type="text" name="bairro" required class="obrigatorio">
           <span data-placeholder="Bairro" class="info_field"></span>
         </div>
+        <div class="field-input">
+          <input type="text" name="endereco" required class="obrigatorio">
+          <span data-placeholder="Rua" class="info_field"></span>
+        </div>
         <div class="field-duo">
-          <div class="field-input">
-            <input type="text" name="complemento" class="complemento">
-            <span data-placeholder="Complemento" class="info_field"></span>
-          </div>
           <div class="field-input">
             <input type="text" name="numero" required class="obrigatorio numerico">
             <span data-placeholder="Número" class="info_field"></span>
+          </div>
+          <div class="field-input">
+            <input type="text" name="complemento" class="complemento">
+            <span data-placeholder="Complemento" class="info_field"></span>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@ usuarioLogadoEntra();
   ?>
 
   <script src="/SMILIPS/view/js/imovel/previewImoveis.js" type="module"></script>
-  <script src="/SMILIPS/view/js/imovel/cadastro.js"></script>
+  <script src="/SMILIPS/view/js/imovel/cadastro.js" type="module"></script>
 </body>
 
 </html>

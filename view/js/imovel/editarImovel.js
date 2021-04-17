@@ -35,3 +35,27 @@ files.forEach((file, index) => {
     }
   });
 });
+
+const complemento = document.querySelector("input.complemento");
+const textarea = document.querySelector("textarea#descricao");
+
+import { focusValidElement } from "/SMILIPS/view/js/modules/focusValid.js";
+
+focusValidElement(complemento);
+focusValidElement(textarea);
+
+const inputs = document.querySelectorAll(".numerico");
+
+import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
+
+validarTipoNumerico(inputs);
+
+const select = document.querySelector(".select");
+const listsOption = document.querySelector(".list-options");
+const optionsListType = document.querySelectorAll(".option.type");
+
+import { addClass, editSelect } from "/SMILIPS/view/js/modules/select.js";
+
+addClass(select, listsOption);
+
+editSelect(optionsListType, select, listsOption);

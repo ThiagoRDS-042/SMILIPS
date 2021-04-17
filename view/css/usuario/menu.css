@@ -3,7 +3,7 @@
   top: 65%;
   transform: translateY(-65%);
   margin-left: 10px;
-  z-index: 3;
+  z-index: 5;
 }
 
 .menu .navigation {

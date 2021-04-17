@@ -20,30 +20,13 @@ editSelect(optionsListType);
 const complemento = document.querySelector("input.complemento");
 const textarea = document.querySelector("textarea#descricao");
 
-complemento.addEventListener("focus", () => {
-  complemento.classList.add("valid");
-});
+import { focusValidElement } from "/SMILIPS/view/js/modules/focusValid.js";
 
-complemento.addEventListener("blur", () => {
-  if (complemento.value == "") {
-    complemento.classList.remove("valid");
-  }
-});
-
-textarea.addEventListener("focus", () => {
-  textarea.classList.add("valid");
-});
-
-textarea.addEventListener("blur", () => {
-  if (textarea.value == "") {
-    textarea.classList.remove("valid");
-  }
-});
+focusValidElement(complemento);
+focusValidElement(textarea);
 
 const inputs = document.querySelectorAll(".numerico");
 
-inputs.forEach((input) => {
-  input.addEventListener("blur", () => {
-    input.value = !isNaN(input.value) ? input.value : "";
-  });
-});
+import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
+
+validarTipoNumerico(inputs);
