@@ -21,17 +21,13 @@ files.forEach((file, index) => {
             previewImgs[index].src = e.target.result;
           });
         } else {
-          console.log(id);
-          // location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs=Formato de Arquivo Inválido!&&id=${id}`;
+          location = `/SMILIPS/controller/imovel/imovelDAO.php?notificacao_imgs_edicao=Tamanho de Arquivo Inválido!&&id=${id}`;
         }
       } else {
-        console.log(id);
-        // location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs=Formato de Arquivo Inválido!&&id=${id}`;
+        location = `/SMILIPS/controller/imovel/imovelDAO.php?notificacao_imgs_edicao=Formato de Arquivo Inválido!&&id=${id}`;
       }
     } else {
-      console.log(id);
       previewImgs[index].src = array[index];
-      // location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs=Selecione uma Imagem!&&id=${id}`;
     }
   });
 });
@@ -59,3 +55,18 @@ import { addClass, editSelect } from "/SMILIPS/view/js/modules/select.js";
 addClass(select, listsOption);
 
 editSelect(optionsListType, select, listsOption);
+
+// texarea
+const input = document.querySelector("#descricao");
+const counter = document.querySelector(".counter");
+const maxlength = input.attributes.maxlength.value;
+
+//acionando evente ao digitar no input
+input.addEventListener("keyup", () => {
+  //converto os maxlengths para number subtraio e converto de novo para sting e add ao contador
+  counter.innerText = String(Number(maxlength) - Number(input.value.length));
+});
+
+if (input.value != "") {
+  counter.innerText = String(Number(maxlength) - Number(input.value.length));
+}

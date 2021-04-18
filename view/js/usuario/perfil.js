@@ -49,12 +49,12 @@ fileChooser.addEventListener("change", (e) => {
     } else {
       let id = document.querySelector("#id");
       id = id.value;
-      location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs=Formato de Arquivo Inválido!&&id=${id}`;
+      location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs_perfil=Formato de Arquivo Inválido!&&id=${id}`;
     }
   } else {
     let id = document.querySelector("#id");
     id = id.value;
     previewImg.src = "/SMILIPS/controller/usuario/imgPerfil.php";
-    location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs=Selecione uma Imagem!&&id=${id}`;
+    location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs_perfil=Selecione uma Imagem!&&id=${id}`;
   }
 });

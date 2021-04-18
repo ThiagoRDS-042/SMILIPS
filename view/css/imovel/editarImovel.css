@@ -13,6 +13,10 @@ main {
   min-height: 100vh;
 }
 
+main .alert {
+  top: 80px;
+}
+
 main h1 {
   width: 80%;
   margin: 150px auto 0 auto;
@@ -185,6 +189,17 @@ main
   textarea:focus
   ~ .info-field::before {
   top: 0;
+  font-size: 14px;
+  color: #01baef;
+}
+
+main
+  .info-imovel
+  .type-imv
+  .detalhes
+  .field-input.desc
+  textarea:focus
+  ~ .counter {
   color: #01baef;
 }
 
@@ -210,6 +225,7 @@ main
   textarea.valid
   ~ .info-field::before {
   top: 0;
+  font-size: 14px;
 }
 
 main .info-imovel .type-imv .detalhes .field-input input:focus,
@@ -237,12 +253,14 @@ main .info-imovel .type-imv .detalhes .comodos .field-for .field-input {
 main .info-imovel .type-imv .detalhes .comodos .desc {
   margin-top: 30px;
   width: 100%;
+  height: 86px;
+  position: relative;
 }
 main .info-imovel .type-imv .detalhes .comodos .desc textarea {
   font-size: 16px;
   width: 100%;
   color: #333;
-  padding: 5px 10px;
+  padding: 10px 12px 0 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
   outline: none;
@@ -271,6 +289,13 @@ main
   textarea::-webkit-scrollbar-thumb {
   background: #2d3436;
   border-radius: 0 5px 5px 0;
+}
+
+main .info-imovel .type-imv .detalhes .comodos .desc .counter {
+  position: absolute;
+  bottom: 4px;
+  right: 12px;
+  color: #ccc;
 }
 
 main .info-imovel .type-imv .detalhes .type-value {
@@ -313,7 +338,7 @@ main .type-value .select {
   background: #fff;
   border: 2px solid #ccc;
   border-radius: 8px;
-  color: #ccc;
+  color: #333;
   position: relative;
   order: 0;
   text-align: left;
@@ -322,12 +347,23 @@ main .type-value .select {
   cursor: pointer;
 }
 
+main .type-value .select::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  background: white;
+  padding: 0 3px;
+  color: #ccc;
+  font-size: 14px;
+}
+
 main .type-value .select::after {
   content: "\f078";
   font-family: fontAwesome;
   line-height: 42px;
   text-align: center;
-  color: #ccc;
+  color: #333;
   position: absolute;
   height: 100%;
   width: 32px;
@@ -341,13 +377,9 @@ main .type-value .select-box .list-options.active {
   pointer-events: all;
   opacity: 1;
 }
-main .type-value .select-box .list-options.active + .select {
-  color: #333;
-}
 
 main .type-value .select-box .list-options.active + .select::after {
   top: 3px;
-  color: #333;
   transform: rotateX(180deg);
 }
 

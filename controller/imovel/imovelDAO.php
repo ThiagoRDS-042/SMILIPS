@@ -2,22 +2,30 @@
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
 
-if (isset($_GET['notificacao_imgs'])) {
-  $msg = $_GET['notificacao_imgs'];
+if (isset($_GET['notificacao_imgs_cadastro'])) {
+  $msg = $_GET['notificacao_imgs_cadastro'];
+
   if ($msg == "Formato ou Tamanho de Arquivo Inválido!") {
+
     exibirMsg("Formato ou Tamanho de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG. Tamanhos Suportados = até 1000KB)", "danger");
     header("location:/SMILIPS/view/pages/imovel/cadastro.php");
-  } else if ($msg == "Número de Imagens Selecionadas Inválido!") {
+  } else {
+
     exibirMsg("Número de Imagens Selecionadas Inválido! (Suporte = 3 à 10)", "danger");
     header("location:/SMILIPS/view/pages/imovel/cadastro.php");
-  } else if ($msg == "Formato de Arquivo Inválido!") {
-    $id = $_GET['id'];
-    exibirMsg("Formato de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG)", "danger");
-    header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+  }
+} else if (isset($_GET['notificacao_imgs_edicao'])) {
+  $msg = $_GET['notificacao_imgs_edicao'];
+  $id = $_GET['id'];
+
+  if ($msg == "Tamanho de Arquivo Inválido!") {
+
+    exibirMsg("Tamanho de Arquivo Inválido! (Tamanhos Suportados = até 1000KB)", "danger");
+    header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
   } else {
-    $id = $_GET['id'];
-    exibirMsg("Selecione uma Imagem!", "danger");
-    header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+
+    exibirMsg("Fortato de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG)", "danger");
+    header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
   }
 } else if (isset($_POST['cadastro-imovel'])) {
   $tipo_imovel = $_POST['type'];
@@ -43,7 +51,7 @@ if (isset($_GET['notificacao_imgs'])) {
       $valor = $_POST['valor'];
       $id = $_POST['id'];
 
-      $conexao->query("INSERT INTO imovel(rua, cidade, bairro, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, usuarioID) VALUES('$rua', 'Icó', '$bairro', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$id')") or die($conexao->error);
+      $conexao->query("INSERT INTO imovel(rua, numero, cidade, bairro, complemento, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, usuarioID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$id')") or die($conexao->error);
 
       $imovel = $conexao->query("SELECT MAX(imovelID) FROM imovel") or die($conexao->error);
       $imovel = $imovel->fetch_array();

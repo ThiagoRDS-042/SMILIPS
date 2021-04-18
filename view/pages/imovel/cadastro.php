@@ -160,7 +160,7 @@ usuarioLogadoEntra();
         </label>
       </div>
 
-      <button type="submit" name="cadastro-imovel">enviar</button>
+      <button type="submit" name="cadastro-imovel">Salvar</button>
     </form>
 
   </main>

@@ -214,6 +214,17 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         exibirMsg("Senha Incorreta!", "danger");
         header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
     }
+} else if (isset($_GET['notificacao_imgs_perfil'])) {
+    $msg = $_GET['notificacao_imgs_perfil'];
+    if ($msg == "Formato de Arquivo Inválido!") {
+        $id = $_GET['id'];
+        exibirMsg("Formato de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG)", "danger");
+        header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+    } else {
+        $id = $_GET['id'];
+        exibirMsg("Selecione uma Imagem!", "danger");
+        header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
+    }
 } else {
     //caso ao salvar aja dados obrigatorios em branco
     exibirMsg("Preencha todos os campos obrigatórios!", "danger");

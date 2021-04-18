@@ -8,6 +8,10 @@ function focusValidElement(element) {
       element.classList.remove("valid");
     }
   });
+
+  if (element.value != "") {
+    element.classList.add("valid");
+  }
 }
 
 export { focusValidElement };

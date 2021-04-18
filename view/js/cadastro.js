@@ -1,17 +1,17 @@
 // capturando todos os inputs os contadores o campo de senha e o icone de visualizacao
-let inputs = document.querySelectorAll(
+const inputs = document.querySelectorAll(
   ".form-cad .input-container .input-field input"
 );
-let counters = document.querySelectorAll(
+const counters = document.querySelectorAll(
   ".form-cad .input-container .input-field .counter"
 );
-let passords = document.querySelectorAll(
+const passords = document.querySelectorAll(
   ".form-cad .input-container .input-field input[type=password]"
 );
-let btns = document.querySelectorAll(
+const btns = document.querySelectorAll(
   ".form-cad .input-container .input-field i"
 );
-let maxLengths = [];
+const maxLengths = [];
 
 // atribuindo valores ao array maxlengths de acordo com o atributo maxkength dos inputs
 inputs.forEach((input) => {
