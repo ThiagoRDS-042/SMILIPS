@@ -31,10 +31,13 @@ function consultarImgsImovel()
   $imgImovel = '';
 
   global $conexao, $imovel, $imgImovel;
-  $id = $_GET['imovelID'];
+  $idImovel = $_GET['imovelID'];
+  $idUsuario = $_SESSION['usuarioID'];
 
-  $imovel = $conexao->query("SELECT * FROM imovel  WHERE imovelID = '$id'") or die($conexao->error);
+  $imovel = $conexao->query("SELECT * FROM imovel  WHERE imovelID = '$idImovel' AND usuarioID = '$idUsuario'") or die($conexao->error);
   $imovel = $imovel->fetch_assoc();
 
-  $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $imovel['imovelID']) or die($conexao->error);
+  if ($imovel) {
+    $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $imovel['imovelID']) or die($conexao->error);
+  }
 }

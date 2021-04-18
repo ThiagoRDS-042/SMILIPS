@@ -1,7 +1,10 @@
 // capturando todos os inputs
-let inputs = document.querySelectorAll(
+const inputs = document.querySelectorAll(
   ".perfil .content .info-user .field-edit input"
 );
+
+let id = document.querySelector("#id");
+id = id.value;
 
 if (inputs[6].value == "") {
   //removendo a classe focus do 7 input
@@ -47,13 +50,9 @@ fileChooser.addEventListener("change", (e) => {
       // Isso disparará o evento reader.onload.
       reader.readAsDataURL(fileToUpload);
     } else {
-      let id = document.querySelector("#id");
-      id = id.value;
       location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs_perfil=Formato de Arquivo Inválido!&&id=${id}`;
     }
   } else {
-    let id = document.querySelector("#id");
-    id = id.value;
     previewImg.src = "/SMILIPS/controller/usuario/imgPerfil.php";
     location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs_perfil=Selecione uma Imagem!&&id=${id}`;
   }

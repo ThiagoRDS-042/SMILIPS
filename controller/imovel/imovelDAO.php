@@ -80,4 +80,51 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
     exibirMsg("Selecione um Tipo de Imóvel!", "danger");
     header("location:/SMILIPS/view/pages/imovel/cadastro.php");
   }
+} else if (isset($_POST['editar-imovel'])) {
+
+  $id = $_POST['id'];
+  $rua = $_POST['rua'];
+  $numero = $_POST['numero'];
+  $bairro = $_POST['bairro'];
+  $complemento = $_POST['complemento'];
+  $qtdQuarto = $_POST['qtdQuarto'];
+  $qtdBanheiro = $_POST['qtdBanheiro'];
+  $qtdGaragem = $_POST['qtdGaragem'];
+  $area = $_POST['area'];
+  $descricao = $_POST['descricao'];
+  $tipo = $_POST['type'];
+  $valor = $_POST['valor'];
+
+  $nomeImagens = [];
+  $imagens = '';
+  $imagensJaCadastradas = [];
+  $idImagens = [];
+
+  $conexao->query("UPDATE imovel SET rua = '$rua', numero = '$numero', bairro = '$bairro', complemento = '$complemento', qtdQuarto = '$qtdQuarto', qtdBanheiro = '$qtdBanheiro', qtdGaragem = '$qtdGaragem', area = '$area', descricao = '$descricao', tipo = '$tipo', valorAluguel = '$valor' WHERE imovelID = '$id'") or die($conexao->error);
+
+  $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = '$id'") or die($conexao->error);
+
+  while ($row = $imgImovel->fetch_assoc()) {
+    $nomeImagens[] = "imagem" . $row['imgImovelID'];
+    $imagensJaCadastradas[] = $row['imagem'];
+    $idImagens[] = $row['imgImovelID'];
+  }
+
+  for ($i = 0; $i < count($nomeImagens); $i++) {
+    if ($_FILES[$nomeImagens[$i]]['error'] == 0) {
+      $imagens = $_FILES[$nomeImagens[$i]];
+      $caminhoTemp = $imagens['tmp_name'];
+      $tamanhoImg = $imagens['size'];
+      $handle = fopen($caminhoTemp, "r");
+      $imagens  = addslashes(fread($handle, $tamanhoImg));
+      fclose($handle);
+    } else {
+      $imagens = addslashes($imagensJaCadastradas[$i]);
+    }
+    $idImgImovel = $idImagens[$i];
+    $conexao->query("UPDATE imgImovel SET imagem = '$imagens' WHERE imgImovelID = '$idImgImovel'") or die($conexao->error);
+  }
+
+  exibirMsg("Imóvel Editado com Sucesso!", "success");
+  header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
 }
