@@ -20,9 +20,6 @@ if (isset($_POST['email'])) {
     } else if ($email == null) {
         //verificando se o campo esta nulo
         echo '<i class="fas fa-check" style= "color:#e74c3c;"></i>';
-    } else if (!preg_match("/.{3}+@.+\..{3}+/", $email)) {
-        //validando o formato
-        echo '<i class="fas fa-check" style= "color:#e74c3c;"></i>';
     } else {
         echo '<i class="fas fa-check" style= "color:#27ae60;"></i>';
     }

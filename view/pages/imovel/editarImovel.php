@@ -31,9 +31,31 @@ usuarioLogadoEntra();
 
     <?php if ($imovel) : ?>
       <h1>Editar Imóvel</h1>
+      <input type="checkbox" id="btn_excluir">
+      <label for="btn_excluir" class="btn">
+        <span class="icon-delete"><i class="fas fa-trash-alt"></i></span>
+      </label>
+      <div class="btn_excluir">
+        <div class="title">
+          <h1>Deseja Realmente Excluir seu Imóvel?</h1>
+        </div>
+        <form action="/SMILIPS/controller/imovel/imovelDAO.php" method="POST" class="excluir">
+          <div class="senha">
+            <input type="hidden" value="<?php echo $imovel['imovelID'] ?>" name="imovelID">
+            <input type="hidden" value="<?php echo $_SESSION['usuarioID'] ?>" name="usuarioID">
+            <input type="password" name="senha">
+            <i class="fa fa-eye"></i>
+            <span data-placeholder="Senha"></span>
+            <span class="icon_senha"><i class="fas fa-unlock-alt"></i></span>
+          </div>
+          <div class="buttons">
+            <button type="button">Cancelar</button>
+            <Button type="submit" name="excluir-imovel">Confirmar</Button>
+          </div>
+        </form>
+      </div>
 
       <form action="/SMILIPS/controller/imovel/imovelDAO.php" method="post" class="info-imovel" enctype="multipart/form-data">
-        <span class="icon-delete"><i class="fas fa-trash-alt"></i></span>
         <h1>Imagens do Imóvel</h1>
         <div class="imgs-imovel">
           <input type="hidden" name="id" value="<?php echo $imovel['imovelID'] ?>" id="id">

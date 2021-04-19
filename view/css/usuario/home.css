@@ -18,6 +18,10 @@ main {
   border: 1px solid transparent;
 }
 
+main .alert {
+  top: 80px;
+}
+
 main .nome {
   width: 500px;
   text-align: center;

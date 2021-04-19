@@ -1,6 +1,6 @@
 // pegando o span que contem os dois icones
-let icon = document.querySelector("nav .icon");
-let icons = document.querySelectorAll("nav .icon i");
+const icon = document.querySelector("nav .icon");
+const icons = document.querySelectorAll("nav .icon i");
 
 // add um evento de click no span para alternar de icone
 icon.addEventListener("click", () => {

@@ -129,10 +129,30 @@ main .alert {
   left: 50%;
   transform: translate(-50%, -50%);
   outline: none;
-  border: 1px solid #333;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0 25px 0 5px;
+  width: 66%;
   height: 35px;
   font-size: 16px;
   background: rgba(255, 255, 255, 0.6);
+}
+
+.desativar-conta .btn-desativar .msg-desativar .msg-content:focus {
+  border-color: #01baef;
+}
+
+.desativar-conta .btn-desativar .msg-desativar i {
+  color: #ccc;
+  position: absolute;
+  right: 19%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.desativar-conta .btn-desativar .msg-content:focus + i {
+  color: #01baef;
 }
 
 .desativar-conta .btn-desativar .msg-desativar span {

@@ -7,20 +7,15 @@ if (isset($_POST['editar-email'])) {
   $id = $_POST['id'];
   $email = $_POST['email'];
 
-  if (preg_match("/.{3}+@.+\..{3}+/", $email)) {
-    $emailInvalido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
+  $emailInvalido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
 
-    if ($emailInvalido->num_rows <= 0) {
-      $conexao->query("UPDATE administrador SET email = '$email' WHERE administradorID = '$id'") or die($conexao->error);
+  if ($emailInvalido->num_rows <= 0) {
+    $conexao->query("UPDATE administrador SET email = '$email' WHERE administradorID = '$id'") or die($conexao->error);
 
-      exibirMsg("Email Atualizado com Sucesso!", "success");
-      header("location:/SMILIPS/view/pages/administrador/conta.php?consultar=$id");
-    } else {
-      exibirMsg("Email já Cadastrado!", "danger");
-      header("location:/SMILIPS/view/pages/administrador/conta.php?consultar=$id");
-    }
+    exibirMsg("Email Atualizado com Sucesso!", "success");
+    header("location:/SMILIPS/view/pages/administrador/conta.php?consultar=$id");
   } else {
-    exibirMsg("Formato de E-mail Inválido!", "danger");
+    exibirMsg("Email já Cadastrado!", "danger");
     header("location:/SMILIPS/view/pages/administrador/conta.php?consultar=$id");
   }
 } else if (isset($_POST['editarSenha'])) {

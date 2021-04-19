@@ -1,7 +1,7 @@
 // pesquisando/pegando o span mais opçoes, o filtro todo e os filtros escondidos
-let btnMore = document.querySelector("#filter .more span");
-let filter = document.querySelector("#filter");
-let inputs = document.querySelectorAll(".field-input");
+const btnMore = document.querySelector("#filter .more span");
+const filter = document.querySelector("#filter");
+const inputs = document.querySelectorAll(".field-input");
 
 // inicializando um contador
 let count = 0;
@@ -27,19 +27,19 @@ btnMore.addEventListener("click", () => {
 
 //filtro
 // pegando os 'selects' e as listas de 'options'
-let selects = document.querySelectorAll(".select");
-let listsOptions = document.querySelectorAll(".list-options");
+const selects = document.querySelectorAll(".select");
+const listsOptions = document.querySelectorAll(".list-options");
 
 // pegando cada lista de option de cada select no caso tem 9 selects
-let optionsListType = document.querySelectorAll(".option.type");
-let optionsListCidade = document.querySelectorAll(".option.cidade");
-let optionsListBairro = document.querySelectorAll(".option.bairro");
-let optionsListDormitorio = document.querySelectorAll(".option.dormitorio");
-let optionsListSuite = document.querySelectorAll(".option.suite");
-let optionsListGaragem = document.querySelectorAll(".option.garagem");
-let optionsListValorI = document.querySelectorAll(".option.valorI");
-let optionsListValorF = document.querySelectorAll(".option.valorF");
-let optionsListArea = document.querySelectorAll(".option.area");
+const optionsListType = document.querySelectorAll(".option.type");
+const optionsListCidade = document.querySelectorAll(".option.cidade");
+const optionsListBairro = document.querySelectorAll(".option.bairro");
+const optionsListDormitorio = document.querySelectorAll(".option.dormitorio");
+const optionsListSuite = document.querySelectorAll(".option.suite");
+const optionsListGaragem = document.querySelectorAll(".option.garagem");
+const optionsListValorI = document.querySelectorAll(".option.valorI");
+const optionsListValorF = document.querySelectorAll(".option.valorF");
+const optionsListArea = document.querySelectorAll(".option.area");
 
 // add e removendo  a classe active cada vez q clicar no select
 selects.forEach((select, index) => {
@@ -79,15 +79,15 @@ editSelect(optionsListArea, 8);
 
 //add evento de scroll ao objeto window, e add a classe sticky a section se o scroly da pagina for maior q 580
 window.addEventListener("scroll", () => {
-  let section = document.querySelector("section.oqProcura");
+  const section = document.querySelector("section.oqProcura");
   section.classList.toggle("sticky", window.scrollY > 1180);
 });
 
 //recomendações
-let btnProximo = document.querySelector(".icon-proximo");
-let btnVoltar = document.querySelector(".icon-voltar");
-let slider = document.querySelector(".list-card-slider");
-let cards = document.querySelectorAll(".list-card-slider .card");
+const btnProximo = document.querySelector(".icon-proximo");
+const btnVoltar = document.querySelector(".icon-voltar");
+const slider = document.querySelector(".list-card-slider");
+const cards = document.querySelectorAll(".list-card-slider .card");
 
 // importando modulos
 import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";

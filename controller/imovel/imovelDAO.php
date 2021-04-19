@@ -127,4 +127,22 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
 
   exibirMsg("Imóvel Editado com Sucesso!", "success");
   header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
+} else if (isset($_POST['excluir-imovel'])) {
+  $senha = md5($_POST['senha']);
+  $idUser = $_POST['usuarioID'];
+  $idImovel = $_POST['imovelID'];
+
+  $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
+  $usuario = $usuario->fetch_assoc();
+
+  if ($senha == $usuario['senhaUsuario']) {
+
+    $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
+
+    exibirMsg("Imóvel Excluído com Sucesso!", "success");
+    header("location:/SMILIPS/view/pages/usuario/home.php");
+  } else {
+    exibirMsg("Senha Inválida!", "danger");
+    header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$idImovel");
+  }
 }

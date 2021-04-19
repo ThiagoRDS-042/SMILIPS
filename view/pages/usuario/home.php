@@ -26,6 +26,9 @@ usuarioLogadoEntra();
   ?>
 
   <main>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
     <div class="nome">
       <?php $nome = preg_split('/\s/', $nomeUsuario); ?>
       <h1>Bem Vindo, <?php echo $nome[0]; ?></h1>
@@ -53,7 +56,7 @@ usuarioLogadoEntra();
             <p>Seja Nosso Parceiro, Seja Nosso Parceiro,Seja Nosso Parceiro,Seja Nosso</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/parceiros.png" alt="Imagem de Parceria">
+            <img src="/SMILIPS/view/images/usuario/parceiros.jpg" alt="Imagem de Parceria">
           </div>
         </div>
         <div class="title">

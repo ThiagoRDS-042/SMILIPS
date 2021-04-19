@@ -48,6 +48,7 @@ usuarioLogadoEntra();
                         <h1>Digite sua Senha</h1>
                         <span><i class="fas fa-unlock-alt"></i></span>
                         <input type="password" class="msg-content" name="senha">
+                        <i class="fa fa-eye"></i>
                         <button class="confirm" type="submit" name="desativar">Confirmar</button>
                         <button class="cancel" type="button">Cancelar</button>
                     </div>
@@ -60,7 +61,7 @@ usuarioLogadoEntra();
     require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
     ?>
 
-    <script src="/SMILIPS/view/js/usuario/configuracoes.js"></script>
+    <script src="/SMILIPS/view/js/usuario/configuracoes.js" type="module"></script>
 
 </body>
 
