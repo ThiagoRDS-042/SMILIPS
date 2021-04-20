@@ -29,7 +29,7 @@ usuarioLogadoNEntra();
 
             <h1>Cadastro</h1>
 
-            <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
+            <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post">
 
                 <div class="input-container">
 

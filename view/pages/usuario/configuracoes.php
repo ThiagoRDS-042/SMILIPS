@@ -9,7 +9,7 @@ usuarioLogadoEntra();
 <head>
     <?php
     require_once('/xampp/htdocs/SMILIPS/view/head.php');
-    require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
+    require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
     consultarSituacao();
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/configuracoes.css">
@@ -37,7 +37,7 @@ usuarioLogadoEntra();
         <div class="desativar-conta">
             <h1>Ações</h1>
             <div class="btn-desativar">
-                <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
+                <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
                     <input type="checkbox" id="desativar">
                     <label for="desativar">

@@ -19,14 +19,14 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
-  require_once('/xampp/htdocs/SMILIPS/controller/administrador/consultar.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/administrador/consultar.php');
   require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
   ?>
 
   <main>
     <div class="edit-info">
       <h1>Editar E-mail</h1>
-      <form action="/SMILIPS/controller/administrador/administradorDAO.php" method="POST">
+      <form action="/SMILIPS/controller/DAO/administrador/administradorDAO.php" method="POST">
         <input type="hidden" name="id" id="idAdm" value="<?php echo $id ?>">
         <div class="field-input">
           <input type="text" name="email" id="email" required value="<?php echo $email ?>">

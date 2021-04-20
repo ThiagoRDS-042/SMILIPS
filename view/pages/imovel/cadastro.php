@@ -33,7 +33,7 @@ usuarioLogadoEntra();
   </section>
 
   <main>
-    <form action="/SMILIPS/controller/imovel/imovelDAO.php" method="post" enctype="multipart/form-data">
+    <form action="/SMILIPS/controller/DAO/imovel/imovelDAO.php" method="post" enctype="multipart/form-data">
       <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
       <div class="type-imovel">
         <h1>Tipo de Imóvel:</h1>

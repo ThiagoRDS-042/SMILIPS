@@ -19,7 +19,7 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
-  require_once('/xampp/htdocs/SMILIPS/controller/imovel/consultar.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   consultarImgsImovel();
   ?>
 
@@ -39,7 +39,7 @@ usuarioLogadoEntra();
         <div class="title">
           <h1>Deseja Realmente Excluir seu Imóvel?</h1>
         </div>
-        <form action="/SMILIPS/controller/imovel/imovelDAO.php" method="POST" class="excluir">
+        <form action="/SMILIPS/controller/DAO/imovel/imovelDAO.php" method="POST" class="excluir">
           <div class="senha">
             <input type="hidden" value="<?php echo $imovel['imovelID'] ?>" name="imovelID">
             <input type="hidden" value="<?php echo $_SESSION['usuarioID'] ?>" name="usuarioID">
@@ -55,7 +55,7 @@ usuarioLogadoEntra();
         </form>
       </div>
 
-      <form action="/SMILIPS/controller/imovel/imovelDAO.php" method="post" class="info-imovel" enctype="multipart/form-data">
+      <form action="/SMILIPS/controller/DAO/imovel/imovelDAO.php" method="post" class="info-imovel" enctype="multipart/form-data">
         <h1>Imagens do Imóvel</h1>
         <div class="imgs-imovel">
           <input type="hidden" name="id" value="<?php echo $imovel['imovelID'] ?>" id="id">

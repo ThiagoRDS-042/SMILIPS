@@ -9,7 +9,7 @@ usuarioLogadoEntra();
 <head>
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/head.php');
-  require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/usuario/perfil.css">
   <title>Perfil</title>
@@ -37,11 +37,11 @@ usuarioLogadoEntra();
       <?php
       require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
       ?>
-      <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post" class="form-img" enctype="multipart/form-data">
+      <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post" class="form-img" enctype="multipart/form-data">
         <label for="btn">
           <div class="img-user">
             <!-- passando o caminho da pagina que exibe o img de perfil do usuario -->
-            <img src="/SMILIPS/controller/usuario/imgPerfil.php" alt="Imagem do Usuário" class="preview-img">
+            <img src="/SMILIPS/controller/DAO/usuario/imgPerfil.php" alt="Imagem do Usuário" class="preview-img">
             <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
             <span class="selecionar"><input type="file" name="ft-perfil" id="btn" class="file-chooser"></span>
             <span><i class="fas fa-camera"></i></span>
@@ -50,7 +50,7 @@ usuarioLogadoEntra();
         <button type="submit" name="editarImg">Salvar Foto</button>
       </form>
       <div class="content">
-        <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
+        <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post">
           <div class="info-user">
             <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
             <div class="field-edit">

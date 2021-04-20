@@ -9,9 +9,9 @@ usuarioLogadoEntra();
 <head>
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/head.php');
-  require_once('/xampp/htdocs/SMILIPS/controller/usuario/consultar.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
   consultarNome();
-  require_once('/xampp/htdocs/SMILIPS/controller/imovel/consultar.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   consultarImovelUser();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/usuario/home.css">

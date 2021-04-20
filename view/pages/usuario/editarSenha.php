@@ -29,7 +29,7 @@ usuarioLogadoEntra();
         require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
         ?>
 
-        <form action="/SMILIPS/controller/usuario/usuarioDAO.php" method="post">
+        <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post">
             <div class="editar-senha">
                 <h1>Editar Senha</h1>
                 <div class="content">
