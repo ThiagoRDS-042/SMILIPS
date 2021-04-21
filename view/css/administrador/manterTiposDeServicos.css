@@ -13,9 +13,10 @@ main .alert {
 }
 
 main h1 {
-  width: 100%;
+  min-width: 330px;
+  width: 60%;
+  margin: 150px auto 0 auto;
   text-align: center;
-  margin-top: 150px;
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
@@ -34,6 +35,7 @@ body::-webkit-scrollbar-thumb {
 
 main .cad-tipos-de-servicos {
   width: 60%;
+  min-width: 330px;
   height: 150px;
   margin: 40px auto;
 }
@@ -47,7 +49,8 @@ main .cad-tipos-de-servicos form {
 }
 
 main .cad-tipos-de-servicos input {
-  width: 350px;
+  width: 80%;
+  min-width: 302px;
   height: 35px;
   padding: 10px;
   font-size: 16px;
@@ -89,12 +92,14 @@ main .cad-tipos-de-servicos button:active {
 }
 
 main .list-tipos-de-servicos {
+  min-width: 330px;
   width: 60%;
   margin: auto;
 }
 
 main .list-tipos-de-servicos table {
   width: 80%;
+  min-width: 302px;
   margin: 20px auto;
 }
 
@@ -132,4 +137,18 @@ main .list-tipos-de-servicos table tr td i.fa-trash-alt {
 
 main .list-tipos-de-servicos table tr td i.fa-pencil-alt {
   color: #2ecc71;
+}
+
+@media (max-width: 650px) {
+  main h1 {
+    margin: 150px 15% 0 25%;
+  }
+
+  main .cad-tipos-de-servicos {
+    margin: 40px 15% 40px 25%;
+  }
+
+  main .list-tipos-de-servicos {
+    margin: 0 15% 20px 25%;
+  }
 }
