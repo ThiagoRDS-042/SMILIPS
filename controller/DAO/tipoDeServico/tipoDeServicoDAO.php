@@ -15,4 +15,19 @@ if (isset($_POST['salvar'])) {
     exibirMsg("Preencha o Campo Antes de Salvar!", "danger");
     header("location:/SMILIPS/view/pages/administrador/manterTiposDeServicos.php");
   }
+} else if (isset($_GET['excluir'])) {
+  $id = $_GET['excluir'];
+
+  $conexao->query("DELETE FROM tipoDeServico WHERE tipoDeServicoID = '$id'") or die($conexao->error);
+
+  exibirMsg("Tipo de Serviço Excluído com Sucesso!", "success");
+  header("location:/SMILIPS/view/pages/administrador/manterTiposDeServicos.php");
+} else if (isset($_POST['editar'])) {
+  $id = $_POST['id'];
+  $tipoDeServico = $_POST['tipo-de-servico'];
+
+  $conexao->query("UPDATE tipoDeServico SET tipoDeServico = '$tipoDeServico' WHERE tipoDeServicoID = '$id'") or die($conexao->error);
+
+  exibirMsg("Tipo de Serviço Editado com Sucesso!", "success");
+  header("location:/SMILIPS/view/pages/administrador/manterTiposDeServicos.php");
 }

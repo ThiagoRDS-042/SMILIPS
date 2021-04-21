@@ -4,7 +4,7 @@ body {
 
 main {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   border: 1px solid transparent;
 }
 
@@ -32,13 +32,13 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-main .tipos-de-servicos {
+main .cad-tipos-de-servicos {
   width: 60%;
-  height: 200px;
+  height: 150px;
   margin: 40px auto;
 }
 
-main .tipos-de-servicos form {
+main .cad-tipos-de-servicos form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ main .tipos-de-servicos form {
   justify-content: center;
 }
 
-main .tipos-de-servicos input {
+main .cad-tipos-de-servicos input {
   width: 350px;
   height: 35px;
   padding: 10px;
@@ -58,11 +58,11 @@ main .tipos-de-servicos input {
   transition: 0.5s;
 }
 
-main .tipos-de-servicos input:focus {
+main .cad-tipos-de-servicos input:focus {
   border-color: #01baef;
 }
 
-main .tipos-de-servicos button {
+main .cad-tipos-de-servicos button {
   width: 80px;
   height: 35px;
   border-radius: 5px;
@@ -77,13 +77,59 @@ main .tipos-de-servicos button {
   transition: 0.5s;
 }
 
-main .tipos-de-servicos button:hover {
+main .cad-tipos-de-servicos button:hover {
   background: white;
   color: #01baef;
 }
 
-main .tipos-de-servicos button:active {
+main .cad-tipos-de-servicos button:active {
   border: 3px solid #038bb1;
   color: #038bb1;
   background: white;
+}
+
+main .list-tipos-de-servicos {
+  width: 60%;
+  margin: auto;
+}
+
+main .list-tipos-de-servicos table {
+  width: 80%;
+  margin: 20px auto;
+}
+
+main .list-tipos-de-servicos table caption {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat", sans-serif;
+}
+
+main .list-tipos-de-servicos table tr {
+  border: 2px solid #ccc;
+  height: 40px;
+  line-height: 40px;
+}
+
+main .list-tipos-de-servicos table thead tr th {
+  font-weight: bold;
+}
+
+main .list-tipos-de-servicos table tr th,
+main .list-tipos-de-servicos table tbody tr td {
+  border: 2px solid #ccc;
+  text-align: center;
+}
+
+main .list-tipos-de-servicos table tr td i {
+  cursor: pointer;
+}
+
+main .list-tipos-de-servicos table tr td i.fa-trash-alt {
+  color: #e74c3c;
+}
+
+main .list-tipos-de-servicos table tr td i.fa-pencil-alt {
+  color: #2ecc71;
 }
