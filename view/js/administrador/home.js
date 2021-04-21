@@ -5,8 +5,7 @@ cards.forEach((card) => {
     card === cards[0]
       ? (location = "/SMILIPS/view/pages/administrador/manterPlanos.php")
       : card === cards[1]
-      ? (location =
-          "/SMILIPS/view/pages/administrador/manterTiposDeServicos.php")
+      ? (location = "/SMILIPS/view/pages/administrador/manterServicos.php")
       : card === cards[2]
       ? (location = "/SMILIPS/view/pages/administrador/gerenciarUsuarios.php")
       : (location =

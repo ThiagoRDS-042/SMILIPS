@@ -33,14 +33,14 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-main .cad-tipos-de-servicos {
+main .cad-servicos {
   width: 60%;
   min-width: 330px;
   height: 150px;
   margin: 40px auto;
 }
 
-main .cad-tipos-de-servicos form {
+main .cad-servicos form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -48,8 +48,8 @@ main .cad-tipos-de-servicos form {
   justify-content: center;
 }
 
-main .cad-tipos-de-servicos input {
-  width: 80%;
+main .cad-servicos input {
+  width: 60%;
   min-width: 302px;
   height: 35px;
   padding: 10px;
@@ -61,11 +61,11 @@ main .cad-tipos-de-servicos input {
   transition: 0.5s;
 }
 
-main .cad-tipos-de-servicos input:focus {
+main .cad-servicos input:focus {
   border-color: #01baef;
 }
 
-main .cad-tipos-de-servicos button {
+main .cad-servicos button {
   width: 80px;
   height: 35px;
   border-radius: 5px;
@@ -80,30 +80,30 @@ main .cad-tipos-de-servicos button {
   transition: 0.5s;
 }
 
-main .cad-tipos-de-servicos button:hover {
+main .cad-servicos button:hover {
   background: white;
   color: #01baef;
 }
 
-main .cad-tipos-de-servicos button:active {
+main .cad-servicos button:active {
   border: 3px solid #038bb1;
   color: #038bb1;
   background: white;
 }
 
-main .list-tipos-de-servicos {
+main .list-servicos {
   min-width: 330px;
   width: 60%;
   margin: auto;
 }
 
-main .list-tipos-de-servicos table {
+main .list-servicos table {
   width: 80%;
   min-width: 302px;
   margin: 20px auto;
 }
 
-main .list-tipos-de-servicos table caption {
+main .list-servicos table caption {
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 20px;
@@ -111,31 +111,31 @@ main .list-tipos-de-servicos table caption {
   font-family: "Montserrat", sans-serif;
 }
 
-main .list-tipos-de-servicos table tr {
+main .list-servicos table tr {
   border: 2px solid #ccc;
   height: 40px;
   line-height: 40px;
 }
 
-main .list-tipos-de-servicos table thead tr th {
+main .list-servicos table thead tr th {
   font-weight: bold;
 }
 
-main .list-tipos-de-servicos table tr th,
-main .list-tipos-de-servicos table tbody tr td {
+main .list-servicos table tr th,
+main .list-servicos table tbody tr td {
   border: 2px solid #ccc;
   text-align: center;
 }
 
-main .list-tipos-de-servicos table tr td i {
+main .list-servicos table tr td i {
   cursor: pointer;
 }
 
-main .list-tipos-de-servicos table tr td i.fa-trash-alt {
+main .list-servicos table tr td i.fa-trash-alt {
   color: #e74c3c;
 }
 
-main .list-tipos-de-servicos table tr td i.fa-pencil-alt {
+main .list-servicos table tr td i.fa-pencil-alt {
   color: #2ecc71;
 }
 
@@ -144,11 +144,11 @@ main .list-tipos-de-servicos table tr td i.fa-pencil-alt {
     margin: 150px 15% 0 25%;
   }
 
-  main .cad-tipos-de-servicos {
+  main .cad-servicos {
     margin: 40px 15% 40px 25%;
   }
 
-  main .list-tipos-de-servicos {
+  main .list-servicos {
     margin: 0 15% 20px 25%;
   }
 }

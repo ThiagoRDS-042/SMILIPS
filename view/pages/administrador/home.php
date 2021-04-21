@@ -51,7 +51,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/manterTiposDeServicos.php">Gerenciar Tipos de Serviços</a>
+          <a href="/SMILIPS/view/pages/administrador/manterServicos.php">Gerenciar Tipos de Serviços</a>
         </div>
       </div>
 
