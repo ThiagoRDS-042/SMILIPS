@@ -128,6 +128,8 @@ main .list-servicos table tbody tr td {
 }
 
 main .list-servicos table tr td i {
+  font-size: 20px;
+  line-height: 40px;
   cursor: pointer;
 }
 

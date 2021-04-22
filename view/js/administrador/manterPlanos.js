@@ -11,6 +11,12 @@ inputDescricao.addEventListener("keyup", () => {
   );
 });
 
+if (inputDescricao.value != "") {
+  counter.innerText = String(
+    Number(maxlength) - Number(inputDescricao.value.length)
+  );
+}
+
 import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
 
 const inputNumero = document.querySelectorAll(".numerico");
