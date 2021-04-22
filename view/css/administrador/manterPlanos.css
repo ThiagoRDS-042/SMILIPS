@@ -208,33 +208,114 @@ main .list-planos .planos .card {
   margin: 30px 5px 0 5px;
   border: 2px solid #ccc;
   width: 300px;
-  min-width: 200px;
   height: 350px;
   border-radius: 5px;
   position: relative;
-  background: #ecf0f1;
-}
-
-main .list-planos .planos .card::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  bottom: 2px;
-  width: 50%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.05);
-  pointer-events: none;
+  background: #fff;
+  overflow: hidden;
 }
 
 main .list-planos .planos .card:hover {
   box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+  border: 1px solid #ccc;
+}
+
+main .list-planos .planos .card .efect {
+  transition: 0.5s linear;
+  opacity: 0;
+}
+
+main .list-planos .planos .card:hover .efect {
+  opacity: 1;
+}
+
+.planos .card .efect:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #771fd2);
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.planos .card .efect:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #771fd2);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.planos .card .efect:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, transparent, #771fd2);
+  animation: animate3 1s linear infinite;
+}
+
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.planos .card .efect:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #771fd2);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 main .list-planos .planos .card .nome {
   width: 100%;
   border-bottom: 2px solid #ccc;
   height: 50px;
+  transition: 0.9s;
+}
+
+main .list-planos .planos .card:hover .nome {
+  border-color: #771fd2;
 }
 
 main .list-planos .planos .card .nome h1 {
@@ -289,6 +370,11 @@ main .list-planos .planos .card .acoes {
   justify-content: space-around;
   align-items: center;
   border-top: 2px solid #ccc;
+  transition: 0.9s;
+}
+
+main .list-planos .planos .card:hover .acoes {
+  border-color: #771fd2;
 }
 
 main .list-planos .planos .card .acoes i {

@@ -81,6 +81,10 @@ admLogadoEntra();
         <div class="planos">
           <?php while ($row = $planos->fetch_assoc()) : ?>
             <div class="card">
+              <span class="efect"></span>
+              <span class="efect"></span>
+              <span class="efect"></span>
+              <span class="efect"></span>
               <div class="nome">
                 <h1><?php echo $row['nome'] ?></h1>
               </div>
