@@ -29,51 +29,61 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   }
 } else if (isset($_POST['cadastro-imovel'])) {
   $tipo_imovel = $_POST['type'];
+  $qtdQuarto = $_POST['qtdQuarto'];
+  $qtdBanheiro = $_POST['qtdBanheiro'];
 
   if ($tipo_imovel) {
-    $existe = false;
-    for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
-      if (isset($_FILES['image']['name'][$i]) && $_FILES['image']['error'][$i] == 0) {
-        $existe = true;
+
+    if ($qtdQuarto >= 1 && $qtdBanheiro >= 1) {
+
+      $error = false;
+      for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
+        if (isset($_FILES['image']['name'][$i]) && $_FILES['image']['error'][$i] == 0) {
+          $error = true;
+        }
       }
-    }
-    if ($existe) {
-      $rua = $_POST['endereco'];
-      $bairro = $_POST['bairro'];
-      $bairro = $_POST['bairro'];
-      $complemento = $_POST['complemento'];
-      $numero = $_POST['numero'];
-      $qtdQuarto = $_POST['qtdQuarto'];
-      $qtdBanheiro = $_POST['qtdBanheiro'];
-      $qtdGaragem = $_POST['qtdGaragem'];
-      $area = $_POST['area'];
-      $descricao = $_POST['descricao'];
-      $valor = $_POST['valor'];
-      $id = $_POST['id'];
+      if ($error) {
+        $rua = $_POST['endereco'];
+        $bairro = $_POST['bairro'];
+        $bairro = $_POST['bairro'];
+        $complemento = $_POST['complemento'];
+        $numero = $_POST['numero'];
+        $qtdGaragem = $_POST['qtdGaragem'];
+        $descricao = $_POST['descricao'];
+        $valor = $_POST['valor'];
+        $id = $_POST['id'];
 
-      $conexao->query("INSERT INTO imovel(rua, numero, cidade, bairro, complemento, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, usuarioID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$id')") or die($conexao->error);
+        $area = $_POST['area'];
+        preg_match("/(\d+)/", $area, $area);
+        $area = $area[0] . " M²";
 
-      $imovel = $conexao->query("SELECT MAX(imovelID) FROM imovel") or die($conexao->error);
-      $imovel = $imovel->fetch_array();
-      $idImovel =  $imovel[0];
+        $conexao->query("INSERT INTO imovel(rua, numero, cidade, bairro, complemento, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, usuarioID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$id')") or die($conexao->error);
 
-      $imgs_imovel = $_FILES['image'];
+        $imovel = $conexao->query("SELECT MAX(imovelID) FROM imovel") or die($conexao->error);
+        $imovel = $imovel->fetch_array();
+        $idImovel =  $imovel[0];
 
-      for ($j = 0; $j < count($imgs_imovel['name']); $j++) {
-        $caminhoTemp = $imgs_imovel['tmp_name'][$j];
-        $tamanhoImg = $imgs_imovel['size'][$j];
+        $imgs_imovel = $_FILES['image'];
 
-        $handle = fopen($caminhoTemp, "r");
-        $image  = addslashes(fread($handle, $tamanhoImg));
-        $conexao->query("INSERT INTO imgImovel(imagem, imovelID) VALUES('$image', '$idImovel')") or die($conexao->error);
+        for ($j = 0; $j < count($imgs_imovel['name']); $j++) {
+          $caminhoTemp = $imgs_imovel['tmp_name'][$j];
+          $tamanhoImg = $imgs_imovel['size'][$j];
 
-        fclose($handle);
+          $handle = fopen($caminhoTemp, "r");
+          $image  = addslashes(fread($handle, $tamanhoImg));
+          $conexao->query("INSERT INTO imgImovel(imagem, imovelID) VALUES('$image', '$idImovel')") or die($conexao->error);
+
+          fclose($handle);
+        }
+
+        exibirMsg("Imóvel Cadastrado com Sucesso!", "success");
+        header("location:/SMILIPS/view/pages/imovel/cadastro.php");
+      } else {
+        exibirMsg("Selecione Imagens do Imóvel!", "danger");
+        header("location:/SMILIPS/view/pages/imovel/cadastro.php");
       }
-
-      exibirMsg("Imóvel Cadastrado com Sucesso!", "success");
-      header("location:/SMILIPS/view/pages/imovel/cadastro.php");
     } else {
-      exibirMsg("Selecione Imagens do Imóvel!", "danger");
+      exibirMsg("Número de Quarto(s) ou Nanheiro(s) Inválido! (Necessário pelo menos um quarto e um banheiro!)", "danger");
       header("location:/SMILIPS/view/pages/imovel/cadastro.php");
     }
   } else {
@@ -90,10 +100,13 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   $qtdQuarto = $_POST['qtdQuarto'];
   $qtdBanheiro = $_POST['qtdBanheiro'];
   $qtdGaragem = $_POST['qtdGaragem'];
-  $area = $_POST['area'];
   $descricao = $_POST['descricao'];
   $tipo = $_POST['type'];
   $valor = $_POST['valor'];
+
+  $area = $_POST['area'];
+  preg_match("/(\d+)/", $area, $area);
+  $area = $area[0] . " M²";
 
   $nomeImagens = [];
   $imagens = '';

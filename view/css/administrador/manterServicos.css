@@ -37,7 +37,7 @@ main .cad-servicos {
   width: 60%;
   min-width: 330px;
   height: 150px;
-  margin: 40px auto;
+  margin: 40px auto 80px auto;
 }
 
 main .cad-servicos form {
@@ -95,6 +95,7 @@ main .list-servicos {
   min-width: 330px;
   width: 60%;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 main .list-servicos table {

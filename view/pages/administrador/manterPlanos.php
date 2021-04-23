@@ -89,7 +89,7 @@ admLogadoEntra();
                 <h1><?php echo $row['nome'] ?></h1>
               </div>
               <div class="valor">
-                <p>R$ <?php echo $row['valor'] ?>,00<span>/Mês</span></p>
+                <p>R$ <?php echo $row['valor'] ?>,00</p>
               </div>
               <div class="descricao">
                 <p><?php echo $row['descricao'] ?></p>

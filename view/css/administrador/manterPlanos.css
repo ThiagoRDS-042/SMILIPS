@@ -211,13 +211,12 @@ main .list-planos .planos .card {
   height: 350px;
   border-radius: 5px;
   position: relative;
-  background: #fff;
+  background: #ecf0f1;
   overflow: hidden;
 }
 
 main .list-planos .planos .card:hover {
   box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
-  border: 1px solid #ccc;
 }
 
 main .list-planos .planos .card .efect {
@@ -332,7 +331,7 @@ main .list-planos .planos .card:hover .nome h1 {
 
 main .list-planos .planos .card .valor {
   width: 100%;
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -344,14 +343,10 @@ main .list-planos .planos .card .valor p {
   font-weight: bold;
 }
 
-main .list-planos .planos .card .valor p span {
-  font-size: 14px;
-}
-
 main .list-planos .planos .card .descricao {
   width: 100%;
-  height: 180px;
-  padding: 20px 10px;
+  height: 190px;
+  padding: 20px;
   display: flex;
   align-items: flex-start;
   justify-content: center;

@@ -38,11 +38,11 @@ usuarioLogadoEntra();
       <div class="card">
         <div class="content">
           <div class="text-content">
-            <h2>Cadastrar Imóvel</h2>
+            <h2>Anuncie seu Imóvel</h2>
             <p>Cadastrar Imóvel, Cadastrar Imóvel, Cadastrar Imóvel, Cadastrar Imóvel</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/imovel.jpg" alt="Imagem de Anúncio de um Imóvel">
+            <img src="/SMILIPS/view/images/usuario/imovel.jpg" alt="Icone de Anúncio de um Imóvel">
           </div>
         </div>
         <div class="title">
@@ -56,11 +56,11 @@ usuarioLogadoEntra();
             <p>Seja Nosso Parceiro, Seja Nosso Parceiro,Seja Nosso Parceiro,Seja Nosso</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/parceiros.jpg" alt="Imagem de Parceria">
+            <img src="/SMILIPS/view/images/usuario/parceiros.jpg" alt="Icone de Parceria">
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Seja Nosso Parceiro</a>
+          <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Cadastrar Anúncio</a>
         </div>
       </div>
       <div class="card">
@@ -70,11 +70,11 @@ usuarioLogadoEntra();
             <p>Torne-se um Prestador de Serviço, Torne-se um Prestador de Serviço</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/prestadorServico.jpg" alt="Imagem de Prestação de Serviço">
+            <img src="/SMILIPS/view/images/usuario/prestadorServico.jpg" alt="Icone de Prestação de Serviço">
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Torne-se um Prestador de Serviço</a>
+          <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Cadastrar Serviço</a>
         </div>
       </div>
     </section>
@@ -93,9 +93,39 @@ usuarioLogadoEntra();
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($arrayImgImovel[$i]['imagem']) ?>" alt="Imovél">
                   </div>
                   <div class="detalhes">
+                    <?php
+                    $detalhes = $arrayImovel[$i]['tipo'];
+                    $qtdQuarto = $arrayImovel[$i]['qtdQuarto'];
+                    $qtdBanheiro = $arrayImovel[$i]['qtdBanheiro'];
+                    $qtdGaregem = $arrayImovel[$i]['qtdGaragem'];
+                    $area = $arrayImovel[$i]['area'];
+                    $bairro = $arrayImovel[$i]['bairro'];
+                    $rua = $arrayImovel[$i]['rua'];
+                    $numero = $arrayImovel[$i]['numero'];
+
+                    if ($qtdQuarto == 1) {
+                      $detalhes .= " com $qtdQuarto quarto, ";
+                    } else if ($qtdQuarto > 0) {
+                      $detalhes .= " com $qtdQuarto quartos, ";
+                    }
+
+                    if ($qtdBanheiro == 1) {
+                      $detalhes .= "$qtdBanheiro banheiro, ";
+                    } else if ($qtdBanheiro > 0) {
+                      $detalhes .= "$qtdBanheiro banheiros, ";
+                    }
+
+                    if ($qtdGaregem == 1) {
+                      $detalhes .= "$qtdGaregem garagem, ";
+                    } else if ($qtdGaregem > 0) {
+                      $detalhes .= "$qtdGaregem garagens, ";
+                    }
+
+                    $detalhes .= "com $area para alugar em $bairro, rua $rua, número $numero.";
+                    ?>
+
                     <h3>R$ <?php echo $arrayImovel[$i]['valorAluguel'] ?><span>/mês</span></h3>
-                    <p><?php echo $arrayImovel[$i]['tipo'] ?> com <?php echo $arrayImovel[$i]['qtdQuarto'] ?> Quartos e <?php echo $arrayImovel[$i]['qtdBanheiro'] ?> banheiros para Alugar, <?php echo $arrayImovel[$i]['area'] ?>
-                      <?php echo $arrayImovel[$i]['rua'] ?>.</p>
+                    <p><?php echo $detalhes ?></p>
                     <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Editar <i class="fas fa-pencil-alt"></i></a>
                   </div>
                 </div>

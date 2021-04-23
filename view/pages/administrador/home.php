@@ -29,10 +29,13 @@ admLogadoEntra();
         <div class="content">
           <div class="text-content">
             <h2>Planos</h2>
-            <p>Cadastre, Edite, Pesquise e Exclua Planos</p>
+            <p>Cadastre</p>
+            <p>Edite</p>
+            <p>Exclua</p>
+            <p>Pesquise</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+            <img src="/SMILIPS/view/images/administrador/plano.png" alt="Icone de Planos">
           </div>
         </div>
         <div class="title">
@@ -44,10 +47,13 @@ admLogadoEntra();
         <div class="content">
           <div class="text-content">
             <h2>Tipos de Serviços</h2>
-            <p>Cadastre, Edite, Pesquise e Exclua Tipos de Serviços</p>
+            <p>Cadastre</p>
+            <p>Edite</p>
+            <p>Exclua</p>
+            <p>Pesquise</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/parceiros.png" alt="Imagem de Tipos de Serviços">
+            <img src="/SMILIPS/view/images/administrador/service.png" alt="Icone de Serviços">
           </div>
         </div>
         <div class="title">
@@ -59,10 +65,13 @@ admLogadoEntra();
         <div class="content">
           <div class="text-content">
             <h2>Usuários</h2>
-            <p>Cadastre, Edite, Pesquise e Exclua Usuários</p>
+            <p>Cadastre</p>
+            <p>Edite</p>
+            <p>Exclua</p>
+            <p>Pesquise</p>
           </div>
           <div class="image">
-            <img src="/SMILIPS/view/images/usuario/imovel.png" alt="Imagem de Planos">
+            <img src="/SMILIPS/view/images/administrador/users.png" alt="Icone de Usuários">
           </div>
         </div>
         <div class="title">
