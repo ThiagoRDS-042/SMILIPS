@@ -82,7 +82,7 @@ admLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
   ?>
 
-  <script src="/SMILIPS/view/js/administrador/manterTiposDeServicos.js"></script>
+  <script src="/SMILIPS/view/js/administrador/manterTiposDeServicos.js" type="module"></script>
 </body>
 
 </html>

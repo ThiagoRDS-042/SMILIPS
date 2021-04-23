@@ -22,3 +22,16 @@ import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js"
 const inputNumero = document.querySelectorAll(".numerico");
 
 validarTipoNumerico(inputNumero);
+
+import {
+  selecionarUm,
+  fecharPopupExcruir,
+} from "/SMILIPS/view/js/modules/checarCheckbox.js";
+
+const checkboxs = document.querySelectorAll(".acoes input[type=checkbox]");
+const incosDelete = document.querySelectorAll(".acoes i.fa-trash-alt");
+const btnsNao = document.querySelectorAll(".acoes .excluir .btnNao");
+
+selecionarUm(incosDelete, checkboxs);
+
+fecharPopupExcruir(btnsNao, checkboxs);

@@ -34,7 +34,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .cad-plano {
-  width: 60%;
+  width: 70%;
   margin: 20px auto;
   min-width: 372px;
   border-radius: 5px;
@@ -181,7 +181,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 main .list-planos {
-  width: 60%;
+  width: 70%;
   margin: 100px auto 40px auto;
   min-width: 372px;
   border-radius: 5px;
@@ -377,15 +377,117 @@ main .list-planos .planos .card:hover .acoes {
   border-color: #771fd2;
 }
 
-main .list-planos .planos .card .acoes i {
-  font-size: 26px;
+main .list-planos .planos .card .acoes input[type="checkbox"] {
+  display: none;
 }
 
-main .list-planos .planos .card .acoes a:first-child i {
+main .list-planos .planos .card .acoes i {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 26px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+main .list-planos .planos .card .acoes i:hover {
+  background: #ecf0f1;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+main .list-planos .planos .card .acoes a i {
   color: #2ecc71;
 }
 
-main .list-planos .planos .card .acoes a:last-child i {
+main .list-planos .planos .card .acoes label i {
+  color: #e74c3c;
+}
+
+main
+  .list-planos
+  .planos
+  .card
+  .acoes
+  input[type="checkbox"]:checked
+  ~ .excluir {
+  opacity: 1;
+  pointer-events: all;
+  bottom: 40%;
+}
+
+main .list-planos .planos .card .acoes .excluir {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 90px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: 0.5s;
+  opacity: 0;
+  pointer-events: none;
+  background: #fff;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+main .list-planos .planos .card .acoes .excluir h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat", sans-serif;
+  width: auto;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+main .list-planos .planos .card .acoes .excluir button {
+  width: 40px;
+  height: 25px;
+  outline: none;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+main .list-planos .planos .card .acoes .excluir button a {
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+main .list-planos .planos .card .acoes .excluir .btnSim {
+  left: 10px;
+  border-color: #2ecc71;
+  background: #2ecc71;
+}
+
+main .list-planos .planos .card .acoes .excluir .btnSim:hover {
+  background: #fff;
+}
+
+main .list-planos .planos .card .acoes .excluir .btnSim:hover a {
+  color: #2ecc71;
+}
+
+main .list-planos .planos .card .acoes .excluir .btnNao {
+  right: 10px;
+  border-color: #e74c3c;
+  background: #e74c3c;
+}
+
+main .list-planos .planos .card .acoes .excluir .btnNao:hover {
+  background: #fff;
   color: #e74c3c;
 }
 

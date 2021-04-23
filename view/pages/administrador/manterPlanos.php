@@ -96,7 +96,15 @@ admLogadoEntra();
               </div>
               <div class="acoes">
                 <a href="/SMILIPS/view/pages/administrador/manterPlanos.php?editar=<?php echo $row['planoID'] ?>"><i class=" fas fa-pencil-alt"></i></a>
-                <a href="/SMILIPS/controller/DAO/plano/planoDAO.php?excluir=<?php echo $row['planoID'] ?>"><i class=" fas fa-trash-alt"></i></a>
+                <input type="checkbox" id="<?php echo $row['planoID'] ?>">
+                <label for="<?php echo $row['planoID'] ?>">
+                  <i class=" fas fa-trash-alt"></i>
+                </label>
+                <div class="excluir">
+                  <h3>Excluir?</h3>
+                  <button class="btnSim"><a href="/SMILIPS/controller/DAO/plano/planoDAO.php?excluir=<?php echo $row['planoID'] ?>">Sim</a></button>
+                  <button class="btnNao">Não</button>
+                </div>
               </div>
 
             </div>
