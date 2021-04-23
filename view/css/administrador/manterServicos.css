@@ -127,6 +127,114 @@ main .list-servicos table tbody tr td {
   text-align: center;
 }
 
+main .list-servicos table tbody tr td:last-child {
+  position: relative;
+}
+
+main .list-servicos table tbody tr td:last-child input[type="checkbox"] {
+  display: none;
+}
+
+main
+  .list-servicos
+  table
+  tbody
+  tr
+  td:last-child
+  input[type="checkbox"]:checked
+  ~ .excluir {
+  opacity: 1;
+  pointer-events: all;
+  right: -150px;
+}
+
+main .list-servicos table tbody tr td .excluir {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 130px;
+  height: 80px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: 0.5s;
+  opacity: 0;
+  pointer-events: none;
+  background: #fff;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+main .list-servicos table tbody tr td .excluir::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: -7px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background: #fff;
+  border: 2px solid #ccc;
+  border-top: none;
+  border-right: none;
+}
+
+main .list-servicos table tbody tr td .excluir h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat", sans-serif;
+  width: auto;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+main .list-servicos table tbody tr td .excluir button {
+  width: 40px;
+  height: 25px;
+  outline: none;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+main .list-servicos table tbody tr td .excluir button a {
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+main .list-servicos table tbody tr td .excluir .btnSim {
+  left: 10px;
+  border-color: #2ecc71;
+  background: #2ecc71;
+}
+
+main .list-servicos table tbody tr td .excluir .btnSim:hover {
+  background: #fff;
+}
+
+main .list-servicos table tbody tr td .excluir .btnSim:hover a {
+  color: #2ecc71;
+}
+
+main .list-servicos table tbody tr td .excluir .btnNao {
+  right: 10px;
+  border-color: #e74c3c;
+  background: #e74c3c;
+}
+
+main .list-servicos table tbody tr td .excluir .btnNao:hover {
+  background: #fff;
+  color: #e74c3c;
+}
+
 main .list-servicos table tr td i {
   font-size: 20px;
   line-height: 40px;
@@ -152,5 +260,27 @@ main .list-servicos table tr td i.fa-pencil-alt {
 
   main .list-servicos {
     margin: 0 15% 20px 25%;
+  }
+
+  main
+    .list-servicos
+    table
+    tbody
+    tr
+    td:last-child
+    input[type="checkbox"]:checked
+    ~ .excluir {
+    right: 60px;
+  }
+
+  main .list-servicos table tbody tr td .excluir {
+    right: -10px;
+  }
+
+  main .list-servicos table tbody tr td .excluir::before {
+    left: 122px;
+    border: 2px solid #ccc;
+    border-bottom: none;
+    border-left: none;
   }
 }

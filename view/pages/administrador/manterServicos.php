@@ -56,7 +56,18 @@ admLogadoEntra();
               <tr>
                 <td><?php echo $row['servico'] ?></td>
                 <td><a href="/SMILIPS/view/pages/administrador/manterServicos.php?editar=<?php echo $row['servicoID'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
-                <td><a href="/SMILIPS/controller/DAO/servico/servicoDAO.php?excluir=<?php echo $row['servicoID'] ?>"><i class="fas fa-trash-alt"></i></a></td>
+                <td>
+                  <!-- <a href="/SMILIPS/controller/DAO/servico/servicoDAO.php?excluir=< echo $row['servicoID'] ?>"><i class="fas fa-trash-alt"></i></a> -->
+                  <input type="checkbox" id="<?php echo $row['servicoID'] ?>">
+                  <label for="<?php echo $row['servicoID'] ?>">
+                    <i class="fas fa-trash-alt"></i>
+                  </label>
+                  <div class="excluir">
+                    <h3>Exlcuir?</h3>
+                    <button class="btnSim"><a href="/SMILIPS/controller/DAO/servico/servicoDAO.php?excluir=<?php echo $row['servicoID'] ?>">Sim</a></button>
+                    <button class="btnNao">Não</button>
+                  </div>
+                </td>
               </tr>
             <?php endwhile; ?>
 
