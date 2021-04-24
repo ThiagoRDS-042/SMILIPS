@@ -1,12 +1,13 @@
+// importando a funcao
 import trocarIconeSenha from "/SMILIPS/view/js/modules/trocarIconeSenha.js";
 
+// capturando o campo de senha, icone de visualizar, o botao de cancel e o checkbox
 const btnCancel = document.querySelector(".cancel");
 const checkbox = document.querySelector("input[type=checkbox]");
-// capturando o campo de senha e o icone de visualizar
 const senhas = document.querySelectorAll(".msg-content");
 const btns = document.querySelectorAll(".msg-desativar .fa");
 
-// se clicar no botao cancelar o checkbox e desmarcado
+// se clicar no botao cancelar o checkbox e desmarcado e reseta o input
 btnCancel.addEventListener("click", () => {
   checkbox.checked = false;
   senhas.forEach((senha, index) => {

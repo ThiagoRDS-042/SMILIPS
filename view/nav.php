@@ -1,4 +1,6 @@
 <?php
+
+// inicaindo uma sessao caso n exista uma
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -25,16 +27,18 @@ if (!isset($_SESSION)) {
         <li><a href="#">Ajuda</a></li>
         <li><a href="#">Contato</a></li>
         <li>
-            <!-- se existir a variavel de sessao usuarioID coloque no nav o nome do usuario se nao coloque login -->
+            <!-- se existir a variavel de sessao usuarioID coloque no nav o nome do usuario -->
             <?php if (isset($_SESSION['usuarioID'])) : ?>
                 <a href="/SMILIPS/view/pages/usuario/home.php">
                     <?php $primeiroNome = preg_split('/\s/', $_SESSION['nomeUsuario']) ?>
                     <i class="far fa-user"></i> <?php echo $primeiroNome[0] ?>
                 </a>
+                <!-- se n, se existe a variavel de sessao idAdm coloque o nome ADM no nav-->
             <?php elseif (isset($_SESSION['idAdm'])) : ?>
                 <a href="/SMILIPS/view/pages/administrador/home.php">
                     <i class="fas fa-tools"></i> ADM
                 </a>
+                <!-- se n, coloca o nome login -->
             <?php else : ?>
                 <a href="/SMILIPS/view/pages/login.php">
                     <i class="fas fa-sign-in-alt "></i></i>Login

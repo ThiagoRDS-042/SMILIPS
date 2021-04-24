@@ -3,6 +3,7 @@ const inputs = document.querySelectorAll(
   ".perfil .content .info-user .field-edit input"
 );
 
+// capturando o id
 let id = document.querySelector("#id");
 id = id.value;
 
@@ -27,18 +28,19 @@ inputs.forEach((input) => {
   });
 });
 
-let previewImg = document.querySelector(".preview-img");
-let fileChooser = document.querySelector(".file-chooser");
+// capturando a div de preview e o input do tipo file
+const previewImg = document.querySelector(".preview-img");
+const fileChooser = document.querySelector(".file-chooser");
 
 //acionado um evento ao ocorrer uma alteração de valor do elemento pelo usuário
 fileChooser.addEventListener("change", (e) => {
   // e = evento, e.target o input de type file, e.target.files.item(0) a imagem selecionada
   //add a variavel fileToUpload o imagem selecionada
-  let fileToUpload = e.target.files.item(0);
+  const fileToUpload = e.target.files.item(0);
   if (fileToUpload) {
     if (/\.(jpe?g|png|gif)$/i.test(fileToUpload.name)) {
       //ler o conteudo do arquivo selecionado, lembrando q de maneira assincrona
-      let reader = new FileReader();
+      const reader = new FileReader();
 
       // evento disparado quando o reader terminar de ler
       reader.addEventListener("load", (e) => {
@@ -50,9 +52,11 @@ fileChooser.addEventListener("change", (e) => {
       // Isso disparará o evento reader.onload.
       reader.readAsDataURL(fileToUpload);
     } else {
+      // caso o formato seja invalido, redireciona para a pagina usuarioDAO.php, passando um variavel get
       location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs_perfil=Formato de Arquivo Inválido!&&id=${id}`;
     }
   } else {
+    // caso n selecione nenhuma img, redireciona para a pagina usuarioDAO.php, passando um variavel get, e alterando a img do preview para a q esta no DB
     previewImg.src = "/SMILIPS/controller/usuario/imgPerfil.php";
     location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs_perfil=Selecione uma Imagem!&&id=${id}`;
   }

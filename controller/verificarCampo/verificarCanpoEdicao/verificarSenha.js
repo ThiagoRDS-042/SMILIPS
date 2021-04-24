@@ -6,7 +6,7 @@ const idAdm = document.querySelector("#idAdm");
 const senhaAtual = document.querySelector(".senhaAtual");
 const msgSenhaAtual = document.querySelector(".msgAtual");
 
-// verificar senha atual se é correta
+// verificar senha atual se é correta, verifica se e um adm ou usuario
 senhaAtual.addEventListener("keyup", () => {
   const url = userID
     ? "/SMILIPS/controller/usuario/campoValidoEdicao.php"
@@ -90,7 +90,7 @@ passwords.forEach((senha, index) => {
         }
       });
 
-      //ao campo perder focu
+      //ao campo perder foco
       senha.addEventListener("blur", () => {
         if (
           /(?=^\w{8,35}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])/.test(senha.value)

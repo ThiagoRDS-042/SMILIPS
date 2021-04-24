@@ -35,11 +35,9 @@ input.addEventListener("change", function previewFiles() {
   }
 
   if (files) {
-    // chamando a funcao passando cada elemento (file) que esta contido em files
     let formatValidet = [];
     let sizeValidet = [];
     for (const element of files) {
-      // readAndPreview(element);
       formatValidet.push(/\.(jpe?g|png|gif)$/i.test(element.name));
       sizeValidet.push(element.size <= 1022924);
     }

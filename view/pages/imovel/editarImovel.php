@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de usuarioLogadoEntra(), pra n exibir essa tela caso o usuario n esteja logado
 usuarioLogadoEntra();
 ?>
 
@@ -20,6 +21,7 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
+  // chamando a funcao   consultarImgsImovel() para retornar todas as imgs do imovel em questao
   consultarImgsImovel();
   ?>
 
@@ -29,6 +31,7 @@ usuarioLogadoEntra();
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
     ?>
 
+    <!-- se o imovel existir exiba isso, se n, n exibe a msn citada la em baixo -->
     <?php if ($imovel) : ?>
       <h1>Editar Imóvel</h1>
       <input type="checkbox" id="btn_excluir">
@@ -41,6 +44,7 @@ usuarioLogadoEntra();
         </div>
         <form action="/SMILIPS/controller/DAO/imovel/imovelDAO.php" method="POST" class="excluir">
           <div class="senha">
+            <!-- passando o id do imovel e do usuario para os inputs -->
             <input type="hidden" value="<?php echo $imovel['imovelID'] ?>" name="imovelID">
             <input type="hidden" value="<?php echo $_SESSION['usuarioID'] ?>" name="usuarioID">
             <input type="password" name="senha">
@@ -59,6 +63,7 @@ usuarioLogadoEntra();
         <h1>Imagens do Imóvel</h1>
         <div class="imgs-imovel">
           <input type="hidden" name="id" value="<?php echo $imovel['imovelID'] ?>" id="id">
+          <!-- enquanto tiver imgsimoveis, exiba um card para cada img -->
           <?php while ($row = $imgImovel->fetch_assoc()) : ?>
             <label for="<?php echo $row['imgImovelID'] ?>">
               <input type="file" name="imagem<?php echo $row['imgImovelID'] ?>" id="<?php echo $row['imgImovelID'] ?>">
@@ -67,10 +72,12 @@ usuarioLogadoEntra();
                 <span class="icon"><i class="fas fa-camera"></i></span>
               </div>
             </label>
+            <!-- finalizando o while -->
           <?php endwhile; ?>
           <span class="obs">Formatos Suportados: PNG, JPG e JPEG, Tamanho Suportado: até 1000 KB.</span>
         </div>
 
+        <!-- apartir daqui vai estar atribuindo os valores tetornados do DB para os respectivos inputs -->
         <div class="type-imv">
           <h1>Detalhes do Imóvel</h1>
           <div class="detalhes">
@@ -141,7 +148,7 @@ usuarioLogadoEntra();
 
             <div class="type-value">
               <div class="select-box">
-
+                <!-- aqui verifica-se qual o tipo de imovel cadastrado no DB para tornalo checked -->
                 <div class="list-options">
 
                   <label for="apartamento">

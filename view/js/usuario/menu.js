@@ -1,8 +1,9 @@
+// capturando os elementos da DOM
 const toggle = document.querySelector(".toggle");
 const icons = document.querySelectorAll(".toggle i");
 const navegation = document.querySelector(".navigation");
 
-// alternado de icones e de tamanho do navigation
+// adicionando/removendo a classe hide do icon e adicionando/removendo a classe active do navegation e toggle, sempre que o toggle e clicado
 toggle.addEventListener("click", () => {
   icons.forEach((icon) => {
     icon.classList.toggle("hide");

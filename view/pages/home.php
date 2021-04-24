@@ -678,6 +678,7 @@
                <div class="card-selecao">
                     <p>Anuncie seu Imóvel</p>
                     <div class="circle">
+                         <!-- se o usuario estiver logado rederecione ele para a pagina de anunciar imoves, se n, redirecione para a pagina de login -->
                          <?php if (isset($_SESSION['usuarioID'])) : ?>
                               <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
                          <?php else : ?>
@@ -688,6 +689,7 @@
                <div class="card-selecao">
                     <p>Poste suas Propagandas</p>
                     <div class="circle">
+                         <!-- se o usuario estiver logado rederecione ele para a pagina de anunciar propagandas, se n, redirecione para a pagina de login -->
                          <?php if (isset($_SESSION['usuarioID'])) : ?>
                               <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Anunciante"></a>
                          <?php else : ?>
@@ -698,6 +700,7 @@
                <div class="card-selecao">
                     <p>Divulge seus Serviços</p>
                     <div class="circle">
+                         <!-- se o usuario estiver logado rederecione ele para a pagina de anunciar servicos, se n, redirecione para a pagina de login -->
                          <?php if (isset($_SESSION['usuarioID'])) : ?>
                               <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
                          <?php else : ?>

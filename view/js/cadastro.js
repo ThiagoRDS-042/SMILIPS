@@ -1,4 +1,4 @@
-// importando modulo
+// importando a funcao
 import trocarIconeSenha from "/SMILIPS/view/js/modules/trocarIconeSenha.js";
 
 // capturando todos os inputs os contadores o campo de senha e o icone de visualizacao

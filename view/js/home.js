@@ -86,12 +86,13 @@ window.addEventListener("scroll", () => {
   section.classList.toggle("sticky", window.scrollY > 1180);
 });
 
-//recomendações
+// capturando os elementos da DOM
 const btnProximo = document.querySelector(".icon-proximo");
 const btnVoltar = document.querySelector(".icon-voltar");
 const slider = document.querySelector(".list-card-slider");
 const cards = document.querySelectorAll(".list-card-slider .card");
 
+// chamando a funcao de avancar ao clicar no btnproximo de a cordo com o largura da tela
 btnProximo.addEventListener("click", () => {
   window.innerWidth <= 765
     ? avancar(-290, cards, slider, 1)
@@ -99,6 +100,8 @@ btnProximo.addEventListener("click", () => {
     ? avancar(-290, cards, slider, 2)
     : avancar(-290, cards, slider, 3);
 });
+
+// chamando a funcao de voltar ao clicar no btnvoltar de a cordo com o largura da tela
 btnVoltar.addEventListener("click", () => {
   window.innerWidth <= 765
     ? retornar(290, cards, slider, 1)

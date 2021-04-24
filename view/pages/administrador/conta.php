@@ -47,7 +47,6 @@ admLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
   ?>
 
-  <script src="/SMILIPS/view/js/administrador/conta.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="/SMILIPS/controller/verificarCampo/verificarCanpoEdicao/verificarEmail.js"></script>
 </body>

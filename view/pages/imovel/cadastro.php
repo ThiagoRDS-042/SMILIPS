@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de usuarioLogadoEntra(), pra n exibir essa tela caso o usuario n esteja logado
 usuarioLogadoEntra();
 ?>
 
@@ -34,6 +35,7 @@ usuarioLogadoEntra();
 
   <main>
     <form action="/SMILIPS/controller/DAO/imovel/imovelDAO.php" method="post" enctype="multipart/form-data">
+      <!-- passando o id do usuario para o input -->
       <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
       <div class="type-imovel">
         <h1>Tipo de Imóvel:</h1>
