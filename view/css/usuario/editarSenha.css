@@ -10,8 +10,7 @@ body::-webkit-scrollbar-thumb {
 
 main {
   border: 1px solid transparent;
-  height: 100vh;
-  min-height: 620px;
+  min-height: 100vh;
 }
 
 .menu-senha {
@@ -25,7 +24,8 @@ main .alert {
 form {
   width: 30%;
   height: 375px;
-  margin: 150px auto;
+  min-width: 226px;
+  margin: 120px auto 80px auto;
 }
 
 .editar-senha {
@@ -36,11 +36,11 @@ form {
 }
 
 .editar-senha h1 {
-  min-width: 120px;
+  width: 100%;
+  min-width: 226px;
   font-size: 24px;
   font-weight: 600;
   color: rgb(107, 107, 107);
-  margin: 0 0 1px 5px;
 }
 
 .editar-senha .content {
@@ -167,21 +167,18 @@ form button:hover {
   }
 }
 
-@media (max-width: 950px) {
-  .editar-senha h1 {
-    margin: auto;
-  }
-}
-
 @media (max-width: 700px) {
   .editar-senha h1 {
     font-size: 19px;
-    margin-left: 60px;
+    text-align: center;
   }
   .editar-senha .content label {
     font-size: 14px;
   }
-  form button {
-    margin-left: 80px;
+}
+
+@media (max-width: 500px) {
+  form {
+    margin-left: 30%;
   }
 }

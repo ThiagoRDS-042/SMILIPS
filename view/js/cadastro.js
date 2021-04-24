@@ -1,3 +1,6 @@
+// importando modulo
+import trocarIconeSenha from "/SMILIPS/view/js/modules/trocarIconeSenha.js";
+
 // capturando todos os inputs os contadores o campo de senha e o icone de visualizacao
 const inputs = document.querySelectorAll(
   ".form-cad .input-container .input-field input"
@@ -5,7 +8,7 @@ const inputs = document.querySelectorAll(
 const counters = document.querySelectorAll(
   ".form-cad .input-container .input-field .counter"
 );
-const passords = document.querySelectorAll(
+const passwords = document.querySelectorAll(
   ".form-cad .input-container .input-field input[type=password]"
 );
 const btns = document.querySelectorAll(
@@ -31,9 +34,6 @@ inputs.forEach((input, index) => {
     }
   });
 });
-
-// importando modulo
-import trocarIconeSenha from "/SMILIPS/view/js/modules/trocarIconeSenha.js";
 
 // add um envento de click para mudar o tipo de input de password para text e alternando o icone de visualizacao
 btns.forEach((btn, index) =>

@@ -3,8 +3,7 @@
 }
 
 main {
-  height: 100vh;
-  min-height: 400px;
+  min-height: 100vh;
   border: 1px solid transparent;
 }
 

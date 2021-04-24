@@ -124,3 +124,9 @@
     line-height: 25px;
   }
 }
+
+@media (max-height: 415px) {
+  .menu {
+    top: 70%;
+  }
+}

@@ -1,3 +1,9 @@
+import {
+  fecharPopupExcruir,
+  selecionarUm,
+} from "/SMILIPS/view/js/modules/checarCheckbox.js";
+import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
+
 // texarea
 const inputDescricao = document.querySelector("#descricao");
 const counter = document.querySelector(".counter");
@@ -17,16 +23,9 @@ if (inputDescricao.value != "") {
   );
 }
 
-import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
-
 const inputNumero = document.querySelectorAll(".numerico");
 
 validarTipoNumerico(inputNumero);
-
-import {
-  selecionarUm,
-  fecharPopupExcruir,
-} from "/SMILIPS/view/js/modules/checarCheckbox.js";
 
 const checkboxs = document.querySelectorAll(".acoes input[type=checkbox]");
 const incosDelete = document.querySelectorAll(".acoes i.fa-trash-alt");

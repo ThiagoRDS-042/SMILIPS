@@ -1,3 +1,6 @@
+// importando modulos
+import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";
+
 // pesquisando/pegando o span mais opçoes, o filtro todo e os filtros escondidos
 const btnMore = document.querySelector("#filter .more span");
 const filter = document.querySelector("#filter");
@@ -88,9 +91,6 @@ const btnProximo = document.querySelector(".icon-proximo");
 const btnVoltar = document.querySelector(".icon-voltar");
 const slider = document.querySelector(".list-card-slider");
 const cards = document.querySelectorAll(".list-card-slider .card");
-
-// importando modulos
-import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";
 
 btnProximo.addEventListener("click", () => {
   window.innerWidth <= 765

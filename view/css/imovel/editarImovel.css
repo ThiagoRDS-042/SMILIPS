@@ -602,10 +602,10 @@ main .info-imovel .btn-enviar button:active {
 
 @media (max-width: 670px) {
   main .info-imovel {
-    margin: 40px 5% 50px 20%;
+    margin: 40px 7% 50px 18%;
   }
   main h1 {
-    margin: 150px 5% 0 20%;
+    margin: 150px 7% 0 18%;
   }
   main .info-imovel h1 {
     margin: auto;
@@ -615,7 +615,7 @@ main .info-imovel .btn-enviar button:active {
     font-size: 12px;
   }
   main .btn .icon-delete {
-    right: 5%;
+    right: 7%;
   }
 
   main .btn_excluir {

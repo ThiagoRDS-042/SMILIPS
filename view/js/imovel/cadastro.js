@@ -1,3 +1,6 @@
+import { focusValidElement } from "/SMILIPS/view/js/modules/focusValid.js";
+import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
+
 const select = document.querySelector(".select");
 const listsOption = document.querySelector(".list-options");
 const optionsListType = document.querySelectorAll(".option.type");
@@ -20,13 +23,9 @@ editSelect(optionsListType);
 const complemento = document.querySelector("input.complemento");
 const textarea = document.querySelector("textarea#descricao");
 
-import { focusValidElement } from "/SMILIPS/view/js/modules/focusValid.js";
-
 focusValidElement(complemento);
 focusValidElement(textarea);
 
 const inputs = document.querySelectorAll(".numerico");
-
-import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
 
 validarTipoNumerico(inputs);

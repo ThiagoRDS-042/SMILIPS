@@ -18,30 +18,42 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
-  position: relative;
   height: 100vh;
-  min-height: 400px;
+  min-height: 469px;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main #filter {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -55%);
+  position: relative;
   width: 700px;
+  min-width: 392px;
   height: 200px;
   text-align: center;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   transition: 0.5s;
+  margin-top: 70px;
 }
 
 main #filter .search {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   height: 80px;
-  line-height: 80px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 main #filter .search input {
@@ -300,7 +312,6 @@ section.banner figure a img {
 
 section.recomendacoes {
   height: 650px;
-  position: relative;
   background: white;
   border: 1px solid transparent;
 }
@@ -493,12 +504,20 @@ section.oqProcura .selecao .circle img {
 }
 
 @media (max-width: 740px) {
+  main {
+    text-align: center;
+  }
   main #filter {
     width: 80%;
-    min-width: 378px;
+    margin: 70px auto 0 auto;
+  }
+  main #filter .search {
+    margin: 0 2.5%;
+    width: 95%;
+    padding: 0 6px;
   }
   main #filter .search input {
-    width: 73%;
+    width: 70%;
   }
   main #filter .field-input {
     margin: 0 2.5%;
@@ -547,13 +566,8 @@ section.oqProcura .selecao .circle img {
 }
 
 @media (max-width: 639px) {
-  main #filter .search input {
-    width: 70%;
-    margin-right: 10px;
-  }
-  main #filter .search button {
-    width: auto;
-    min-width: 80px;
+  main #filter {
+    margin: 70px auto 0 auto;
   }
   section.oqProcura .selecao {
     height: 600px;
@@ -565,7 +579,7 @@ section.oqProcura .selecao .circle img {
 
 @media (max-width: 560px) {
   main #filter .search {
-    width: 96%;
+    width: 95%;
     margin: 0 auto;
   }
   main #filter .field-input .select-box .option {

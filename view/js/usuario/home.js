@@ -1,4 +1,8 @@
+// importando modulos
+import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";
+
 const cards = document.querySelectorAll("main .card-container .card");
+
 cards.forEach((card) => {
   card.addEventListener("click", () => {
     card === cards[0]
@@ -13,9 +17,6 @@ const btnProximo = document.querySelector(".icon-proximo");
 const btnVoltar = document.querySelector(".icon-voltar");
 const slider = document.querySelector(".cards-imovel");
 const cards_imovel = document.querySelectorAll(".list-imovel .card");
-
-// importando modulos
-import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";
 
 btnProximo.addEventListener("click", () => {
   window.innerWidth <= 881

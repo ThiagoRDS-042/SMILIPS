@@ -10,12 +10,14 @@
 
 /* Titulo da pagina */
 .container > h1 {
-  width: 222px;
+  width: 50%;
+  min-width: 222px;
   margin: 150px auto 0 auto;
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
   font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 /* main */
@@ -480,7 +482,7 @@ main form button[type="submit"]:active {
     left: 55%;
   }
   .container > h1 {
-    left: 55%;
+    margin-left: 30%;
   }
 }
 
@@ -495,9 +497,6 @@ main form button[type="submit"]:active {
 
 @media (max-width: 855px) {
   main form {
-    left: 57%;
-  }
-  .container > h1 {
     left: 57%;
   }
 }

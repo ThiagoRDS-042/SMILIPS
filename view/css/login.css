@@ -5,10 +5,11 @@
 
 main {
   background: linear-gradient(120deg, #3498db, #8e44ad);
-  min-height: 555px;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
-  border: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .voltar {
@@ -38,11 +39,8 @@ main .middle {
   border-radius: 10px;
   background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
   z-index: 1;
+  margin: 70px;
 }
 
 main .middle h1 {

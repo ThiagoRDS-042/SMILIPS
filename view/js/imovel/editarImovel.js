@@ -1,3 +1,8 @@
+import { focusValidElement } from "/SMILIPS/view/js/modules/focusValid.js";
+import { addClass, editSelect } from "/SMILIPS/view/js/modules/select.js";
+import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
+import trocarIconeSenha from "/SMILIPS/view/js/modules/trocarIconeSenha.js";
+
 const previewImgs = document.querySelectorAll(".preview-img");
 const files = document.querySelectorAll("input[type=file]");
 const array = [];
@@ -35,22 +40,16 @@ files.forEach((file, index) => {
 const complemento = document.querySelector("input.complemento");
 const textarea = document.querySelector("textarea#descricao");
 
-import { focusValidElement } from "/SMILIPS/view/js/modules/focusValid.js";
-
 focusValidElement(complemento);
 focusValidElement(textarea);
 
 const inputsNumericos = document.querySelectorAll(".numerico");
-
-import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
 
 validarTipoNumerico(inputsNumericos);
 
 const select = document.querySelector(".select");
 const listsOption = document.querySelector(".list-options");
 const optionsListType = document.querySelectorAll(".option.type");
-
-import { addClass, editSelect } from "/SMILIPS/view/js/modules/select.js";
 
 addClass(select, listsOption);
 
@@ -74,9 +73,6 @@ if (inputDescricao.value != "") {
     Number(maxlength) - Number(inputDescricao.value.length)
   );
 }
-
-// add um envento de click para mudar o tipo de input de password para text e o tipo de icone de visualizacao
-import trocarIconeSenha from "/SMILIPS/view/js/modules/trocarIconeSenha.js";
 
 // buttons excluir imovel
 const btnCancel = document.querySelector("button[type=button]");
