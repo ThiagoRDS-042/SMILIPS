@@ -82,7 +82,6 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
-  line-height: 70px;
   font-size: 18px;
   padding: 8px 20px;
   font-family: "Montserrat", sans-serif;
@@ -150,12 +149,6 @@ nav .fa-sign-in-alt {
   nav .logo a {
     font-size: 24px;
   }
-  nav ul li a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-  }
   nav ul li {
     background: transparent;
     display: inline-block;
@@ -164,6 +157,12 @@ nav .fa-sign-in-alt {
   }
   nav ul li:hover {
     box-shadow: 0 0 5px white, 0 0 5px white;
+  }
+  nav ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
   }
   nav .icon {
     display: block;
@@ -194,7 +193,7 @@ nav .fa-sign-in-alt {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 450px) and (max-width: 701px) {
   nav .logo {
     padding: 0 20px;
   }
@@ -207,5 +206,27 @@ nav .fa-sign-in-alt {
   }
   nav .icon {
     right: 20px;
+  }
+}
+
+@media (max-height: 550px) and (max-width: 701px) {
+  nav ul {
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+  }
+  nav ul li {
+    display: flex;
+    height: 16.5%;
+  }
+  nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-height: 350px) {
+  nav ul li a {
+    font-size: 16px;
   }
 }

@@ -10,8 +10,7 @@ body::-webkit-scrollbar-thumb {
 
 main {
   border: 1px solid transparent;
-  height: 100vh;
-  min-height: 620px;
+  min-height: 100vh;
 }
 
 .menu-senha {
@@ -25,7 +24,7 @@ main .alert {
 form {
   width: 30%;
   height: 375px;
-  margin: 150px auto;
+  margin: 150px auto 80px auto;
 }
 
 .editar-senha {

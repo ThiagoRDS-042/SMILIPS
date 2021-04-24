@@ -488,14 +488,14 @@ main .list-planos .planos .card .acoes .excluir .btnNao:hover {
 
 @media (max-width: 700px) {
   main h1 {
-    margin: 150px 15% 20px 25%;
+    margin: 150px 17% 20px 23%;
   }
 
   .cad-plano {
-    margin: 20px 15% 20px 25%;
+    margin: 20px 17% 20px 23%;
   }
 
   main .list-planos {
-    margin: 100px 15% 40px 25%;
+    margin: 100px 17% 40px 23%;
   }
 }

@@ -6,8 +6,7 @@
 }
 
 main {
-  height: 100vh;
-  min-height: 300px;
+  min-height: 100vh;
   border: 1px solid transparent;
 }
 
@@ -22,9 +21,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 main .edit-info {
-  margin: 150px auto 0 auto;
+  margin: 150px auto 80px auto;
   width: 40%;
-  height: 200px;
   text-align: center;
 }
 

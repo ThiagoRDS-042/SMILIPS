@@ -163,9 +163,3 @@ main .middle .field-button i {
   margin-right: 5px;
   font-size: 16px;
 }
-
-@media (max-width: 470px) {
-  main .middle {
-    width: 70%;
-  }
-}

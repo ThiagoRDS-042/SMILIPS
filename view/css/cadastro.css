@@ -4,13 +4,16 @@
 }
 
 main {
+  width: 100%;
+  position: relative;
   background: linear-gradient(120deg, #3498db, #8e44ad);
   min-height: 100vh;
-  position: relative;
+  border: 1px solid transparent;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 body::-webkit-scrollbar {
   width: 10px;
   background: #636e72;
@@ -47,7 +50,7 @@ main .form-cad {
   border-radius: 10px;
   background: linear-gradient(315deg, #eeeaea 0%, #d7e1ec 74%);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin: 70px;
+  margin: 70px 0;
 }
 
 main .form-cad span {
@@ -191,7 +194,7 @@ main .form-cad .button-field button:hover {
 @media (max-width: 670px) {
   main .form-cad {
     width: 90%;
-    min-width: 350px;
+    min-width: 400px;
   }
   main .form-cad .input-container .input-field {
     width: 90%;
