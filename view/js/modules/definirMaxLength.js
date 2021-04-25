@@ -7,6 +7,7 @@ function definirMaxLength(inputDescricao, counter, maxlength) {
     );
   });
 
+  // se o input tiver algum valor faça o mesmo q a cima
   if (inputDescricao.value != "") {
     counter.innerText = String(
       Number(maxlength) - Number(inputDescricao.value.length)
@@ -14,4 +15,5 @@ function definirMaxLength(inputDescricao, counter, maxlength) {
   }
 }
 
+// exportando a funcao
 export default definirMaxLength;
