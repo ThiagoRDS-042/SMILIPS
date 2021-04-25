@@ -97,7 +97,8 @@ main .card-container .card .content .text-content h2 {
 
 main .card-container .card .content .text-content p {
   color: #333;
-  font-size: 15px;
+  font-size: 13px;
+  text-align: justify;
 }
 
 main .card-container .card .image {

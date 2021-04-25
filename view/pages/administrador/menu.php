@@ -9,6 +9,7 @@
                 </a>
             </li>
             <li class="menu-perfil">
+                <!-- passando o id do adm para a variavel get -->
                 <a href="/SMILIPS/view/pages/administrador/conta.php?consultar=<?php echo $_SESSION['idAdm'] ?>">
                     <span class="icon"><i class="fa fa-user"></i></span>
                     <span class="title">Conta</span>

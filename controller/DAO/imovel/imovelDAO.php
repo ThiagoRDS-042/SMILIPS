@@ -5,6 +5,7 @@ require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
 if (isset($_GET['notificacao_imgs_cadastro'])) {
   $msg = $_GET['notificacao_imgs_cadastro'];
 
+  // retornando as msn de cadastro das imgs do imovel
   if ($msg == "Formato ou Tamanho de Arquivo Inválido!") {
 
     exibirMsg("Formato ou Tamanho de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG. Tamanhos Suportados = até 1000KB)", "danger");
@@ -18,6 +19,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   $msg = $_GET['notificacao_imgs_edicao'];
   $id = $_GET['id'];
 
+  // retornando as msn de edicao das imgs do imovel
   if ($msg == "Tamanho de Arquivo Inválido!") {
 
     exibirMsg("Tamanho de Arquivo Inválido! (Tamanhos Suportados = até 1000KB)", "danger");
@@ -32,16 +34,20 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   $qtdQuarto = $_POST['qtdQuarto'];
   $qtdBanheiro = $_POST['qtdBanheiro'];
 
+  // verificando se foi passado o tipo de imovel
   if ($tipo_imovel) {
 
+    // verificando se foi passado o pelo menos 1 banheiro e 1 quarto
     if ($qtdQuarto >= 1 && $qtdBanheiro >= 1) {
 
       $error = false;
+      // verificando se foi enviada alguma img
       for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
         if (isset($_FILES['image']['name'][$i]) && $_FILES['image']['error'][$i] == 0) {
           $error = true;
         }
       }
+
       if ($error) {
         $rua = $_POST['endereco'];
         $bairro = $_POST['bairro'];
@@ -53,26 +59,37 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
         $valor = $_POST['valor'];
         $id = $_POST['id'];
 
+        // usando regex para add o M² depois dos numeros
         $area = $_POST['area'];
         preg_match("/(\d+)/", $area, $area);
         $area = $area[0] . " M²";
 
+        // cadastrando o imovel
         $conexao->query("INSERT INTO imovel(rua, numero, cidade, bairro, complemento, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, usuarioID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$id')") or die($conexao->error);
 
+        // pegando o id do ultimo imovel cadastrado, tranformando em array e armazenando o id na variavel idImovel
         $imovel = $conexao->query("SELECT MAX(imovelID) FROM imovel") or die($conexao->error);
         $imovel = $imovel->fetch_array();
         $idImovel =  $imovel[0];
 
+        // pegando as imgs passadas
         $imgs_imovel = $_FILES['image'];
 
+        // cadastrando cada img com o for
         for ($j = 0; $j < count($imgs_imovel['name']); $j++) {
           $caminhoTemp = $imgs_imovel['tmp_name'][$j];
           $tamanhoImg = $imgs_imovel['size'][$j];
 
+          // abrindo o arquivo para leitura
           $handle = fopen($caminhoTemp, "r");
+
+          // converte o binario para string e add barras antes de caracteres especiais
           $image  = addslashes(fread($handle, $tamanhoImg));
+
+          // cadastra as imgs
           $conexao->query("INSERT INTO imgImovel(imagem, imovelID) VALUES('$image', '$idImovel')") or die($conexao->error);
 
+          // fecha o arquivo aberto
           fclose($handle);
         }
 
@@ -104,6 +121,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   $tipo = $_POST['type'];
   $valor = $_POST['valor'];
 
+  // usando regex para add o M² depois dos numeros
   $area = $_POST['area'];
   preg_match("/(\d+)/", $area, $area);
   $area = $area[0] . " M²";
@@ -113,16 +131,20 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   $imagensJaCadastradas = [];
   $idImagens = [];
 
+  // att a tabela de imovel
   $conexao->query("UPDATE imovel SET rua = '$rua', numero = '$numero', bairro = '$bairro', complemento = '$complemento', qtdQuarto = '$qtdQuarto', qtdBanheiro = '$qtdBanheiro', qtdGaragem = '$qtdGaragem', area = '$area', descricao = '$descricao', tipo = '$tipo', valorAluguel = '$valor' WHERE imovelID = '$id'") or die($conexao->error);
 
+  // pegando todos as img do imovel
   $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = '$id'") or die($conexao->error);
 
+  // pegando o nome o codigo da imagem e o id de cada img
   while ($row = $imgImovel->fetch_assoc()) {
     $nomeImagens[] = "imagem" . $row['imgImovelID'];
     $imagensJaCadastradas[] = $row['imagem'];
     $idImagens[] = $row['imgImovelID'];
   }
 
+  // fazendo a mesma coisa do cadastro so q com cada img
   for ($i = 0; $i < count($nomeImagens); $i++) {
     if ($_FILES[$nomeImagens[$i]]['error'] == 0) {
       $imagens = $_FILES[$nomeImagens[$i]];
@@ -135,6 +157,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
       $imagens = addslashes($imagensJaCadastradas[$i]);
     }
     $idImgImovel = $idImagens[$i];
+    // att a tabela de imgImovel
     $conexao->query("UPDATE imgImovel SET imagem = '$imagens' WHERE imgImovelID = '$idImgImovel'") or die($conexao->error);
   }
 
@@ -145,11 +168,14 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   $idUser = $_POST['usuarioID'];
   $idImovel = $_POST['imovelID'];
 
+  // pesquisando um usuario pelo id passado e transformando em array
   $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
   $usuario = $usuario->fetch_assoc();
 
+  // comparando se a senha digitada e igual a cadastrada no DB
   if ($senha == $usuario['senhaUsuario']) {
 
+    // excluindo o imovel pelo id
     $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
 
     exibirMsg("Imóvel Excluído com Sucesso!", "success");

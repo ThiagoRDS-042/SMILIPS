@@ -5,6 +5,7 @@
     </div>
 
     <div class="adm">
+        <!-- passando a variavel get o id do adm -->
         <a href="/SMILIPS/view/pages/administrador/conta.php?consultar=<?php echo $_SESSION['idAdm'] ?>">ADM</a>
     </div>
 </header>

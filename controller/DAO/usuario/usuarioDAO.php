@@ -124,7 +124,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 //atualizando a senha do usuario
                 $conexao->query("UPDATE usuario SET senhaUsuario = '$senha' WHERE usuarioID = '$id'") or die($conexao->error);
 
-                //volta pra tela de editar senha e exiindo a mensgem
+                //volta pra tela de editar senha e exibi a mensgem
                 exibirMsg("Senha Editada com Sucesso!", "success");
                 header("location:/SMILIPS/view/pages/usuario/editarSenha.php");
             } else {
@@ -215,6 +215,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         header("location:/SMILIPS/view/pages/usuario/configuracoes.php");
     }
 } else if (isset($_GET['notificacao_imgs_perfil'])) {
+    // exibindo as mensagens das imagens de perfil do usuario
     $msg = $_GET['notificacao_imgs_perfil'];
     if ($msg == "Formato de Arquivo Inválido!") {
         $id = $_GET['id'];

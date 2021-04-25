@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de usuarioLogadoEntra(), pra n exibir essa tela caso o usuario n esteja logado
 usuarioLogadoEntra();
 ?>
 
@@ -43,6 +44,7 @@ usuarioLogadoEntra();
                         </div>
                     </div>
                     <div class="card">
+                        <!-- adicionando o id do usuario ao input -->
                         <input type="hidden" name="id" id="id" value="<?php echo $_SESSION['usuarioID'] ?>">
                         <label>Digite sua Nova Senha</label>
                         <div class="field-senha">

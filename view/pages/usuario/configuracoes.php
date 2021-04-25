@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de usuarioLogadoEntra(), pra n exibir essa tela caso o usuario n esteja logado
 usuarioLogadoEntra();
 ?>
 
@@ -10,6 +11,7 @@ usuarioLogadoEntra();
     <?php
     require_once('/xampp/htdocs/SMILIPS/view/head.php');
     require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
+    // chama o metodo consultar situacao
     consultarSituacao();
     ?>
     <link rel="stylesheet" href="/SMILIPS/view/css/usuario/configuracoes.css">
@@ -28,6 +30,7 @@ usuarioLogadoEntra();
 
     <main>
         <?php
+        // cria uma sessao se ja n existir uma
         if (!isset($_SESSION)) {
             session_start();
         }
@@ -38,6 +41,7 @@ usuarioLogadoEntra();
             <h1>Ações</h1>
             <div class="btn-desativar">
                 <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post">
+                    <!-- adicionando o id do usuario ao input -->
                     <input type="hidden" name="id" value="<?php echo $_SESSION['usuarioID'] ?>">
                     <input type="checkbox" id="desativar">
                     <label for="desativar">

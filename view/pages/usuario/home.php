@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de usuarioLogadoEntra(), pra n exibir essa tela caso o usuario n esteja logado
 usuarioLogadoEntra();
 ?>
 
@@ -10,8 +11,10 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
+  // chamando a funcao consultar nome
   consultarNome();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
+  // chamando a funcao consultarImovelUser
   consultarImovelUser();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/usuario/home.css">
@@ -30,6 +33,7 @@ usuarioLogadoEntra();
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
     ?>
     <div class="nome">
+      <!-- exibindo o nome do usaurio -->
       <?php $nome = preg_split('/\s/', $nomeUsuario); ?>
       <h1>Bem Vindo, <?php echo $nome[0]; ?></h1>
     </div>
@@ -39,7 +43,7 @@ usuarioLogadoEntra();
         <div class="content">
           <div class="text-content">
             <h2>Anuncie seu Imóvel</h2>
-            <p>Cadastrar Imóvel, Cadastrar Imóvel, Cadastrar Imóvel, Cadastrar Imóvel</p>
+            <p>Anuncie seu Imovel de forma prática, confiável e digital e totalmente livre de burocracia. Seu anúncio fica ainda mais atrativo.</p>
           </div>
           <div class="image">
             <img src="/SMILIPS/view/images/usuario/imovel.jpg" alt="Icone de Anúncio de um Imóvel">
@@ -53,7 +57,7 @@ usuarioLogadoEntra();
         <div class="content">
           <div class="text-content">
             <h2>Seja Nosso Parceiro</h2>
-            <p>Seja Nosso Parceiro, Seja Nosso Parceiro,Seja Nosso Parceiro,Seja Nosso</p>
+            <p>Anuncie sua empresa e aumente a visibilidade de seus negócios e esteja onde o público está. As suas oportunidades começam aqui!</p>
           </div>
           <div class="image">
             <img src="/SMILIPS/view/images/usuario/parceiros.jpg" alt="Icone de Parceria">
@@ -67,7 +71,7 @@ usuarioLogadoEntra();
         <div class="content">
           <div class="text-content">
             <h2>Torne-se um Prestador de Serviço</h2>
-            <p>Torne-se um Prestador de Serviço, Torne-se um Prestador de Serviço</p>
+            <p>Anuncie seus serviços e seja autônomo, encontre pessoas interessadas no que você faz e ganhe dinheiro e visibilidade.</p>
           </div>
           <div class="image">
             <img src="/SMILIPS/view/images/usuario/prestadorServico.jpg" alt="Icone de Prestação de Serviço">
@@ -78,6 +82,8 @@ usuarioLogadoEntra();
         </div>
       </div>
     </section>
+
+    <!-- se o usuario tiver algum imovel cadastrado, mostra os imoveis e seus detalhes  -->
     <?php if ($imovel->num_rows > 0) : ?>
       <section class="your-imoveis">
         <h1>Seus Imóveis</h1>
@@ -86,14 +92,17 @@ usuarioLogadoEntra();
           <div class="list-imovel">
             <div class="cards-imovel">
 
+              <!-- criando um card para cada imovel cadastrado com todas as info do imovel -->
               <?php for ($i = 0; $i < count($arrayImgImovel); $i++) : ?>
 
                 <div class="card">
                   <div class="image">
+                    <!-- exibindo a img -->
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($arrayImgImovel[$i]['imagem']) ?>" alt="Imovél">
                   </div>
                   <div class="detalhes">
                     <?php
+                    // estruturando os detalhes do imovel em uma so variavel
                     $detalhes = $arrayImovel[$i]['tipo'];
                     $qtdQuarto = $arrayImovel[$i]['qtdQuarto'];
                     $qtdBanheiro = $arrayImovel[$i]['qtdBanheiro'];
@@ -124,7 +133,10 @@ usuarioLogadoEntra();
                     $detalhes .= "com $area para alugar em $bairro, rua $rua, número $numero.";
                     ?>
 
+                    <!-- exibindo o valor do alugel do imovel -->
                     <h3>R$ <?php echo $arrayImovel[$i]['valorAluguel'] ?><span>/mês</span></h3>
+
+                    <!-- exibindo os detalhes criado a cima -->
                     <p><?php echo $detalhes ?></p>
                     <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Editar <i class="fas fa-pencil-alt"></i></a>
                   </div>
@@ -136,7 +148,6 @@ usuarioLogadoEntra();
           <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
         </div>
       </section>
-    <?php else : ?>
     <?php endif; ?>
 
   </main>

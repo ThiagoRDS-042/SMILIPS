@@ -1,7 +1,7 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 
-//praticamente mesma coisa da pagina anterior so q agora para os campos de edicao
+// praticamente mesma coisa da pagina anterior so q agora para os campos de edicao
 if (isset($_POST['email'])) {
 
     $email = $_POST['email'];
@@ -29,6 +29,7 @@ if (isset($_POST['email'])) {
 }
 
 if (isset($_POST['senhaAtual'])) {
+    //verificando se a senha digita e igaul a senha salva no DB
 
     $id = $_POST['id'];
     $senhaAtual = $_POST['senhaAtual'];

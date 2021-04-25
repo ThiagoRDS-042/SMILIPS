@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de admLogadoEntra(), pra n exibir essa tela caso o adm n esteja logado
 admLogadoEntra();
 ?>
 
@@ -10,6 +11,7 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/plano/consultar.php');
+  // chamando a funcao de consultar
   consultar();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/administrador/manterPlanos.css">
@@ -33,6 +35,7 @@ admLogadoEntra();
       <form action="/SMILIPS/controller/DAO/plano/planoDAO.php" method="POST">
         <div class="field-duo">
           <div class="field-input">
+            <!-- se a variavel get editar exisitir passe o id e o nome do plano para os campos -->
             <?php if (isset($_GET['editar'])) : ?>
               <input type="hidden" name="id" value="<?php echo $plano['planoID'] ?>">
               <input type="text" name="nome" required value="<?php echo $plano['nome'] ?>">
@@ -42,6 +45,7 @@ admLogadoEntra();
             <span class="info-field" data-placeholder="Nome"></span>
           </div>
           <div class="field-input">
+            <!-- se a variavel get editar exisitir passe o valor do plano para o input -->
             <?php if (isset($_GET['editar'])) : ?>
               <input type="text" name="valor" required class="numerico" value="<?php echo $plano['valor'] ?>">
             <?php else : ?>
@@ -52,6 +56,7 @@ admLogadoEntra();
         </div>
 
         <div class="field-input">
+          <!-- se a variavel get editar exisitir passe o valor do plano para o input -->
           <?php if (isset($_GET['editar'])) : ?>
             <textarea name="descricao" id="descricao" cols="30" rows="4" required maxlength="250"><?php echo $plano['descricao']; ?></textarea>
           <?php else : ?>
@@ -62,6 +67,7 @@ admLogadoEntra();
         </div>
 
         <div class="field-button">
+          <!-- se a variavel get editar exisitr altere o nome do botao de salvar para editar -->
           <?php if (isset($_GET['editar'])) : ?>
             <button name="editar" type="submit">Salvar</button>
           <?php else : ?>
@@ -72,6 +78,7 @@ admLogadoEntra();
 
     </section>
 
+    <!-- se tiver planos cadastrados exiba eles -->
     <?php if ($planos->num_rows > 0) : ?>
       <section class="list-planos">
         <div class="title">
@@ -79,6 +86,8 @@ admLogadoEntra();
         </div>
 
         <div class="planos">
+
+          <!-- cria cards para cada plano cadastrado no DB -->
           <?php while ($row = $planos->fetch_assoc()) : ?>
             <div class="card">
               <span class="efect"></span>
@@ -86,16 +95,23 @@ admLogadoEntra();
               <span class="efect"></span>
               <span class="efect"></span>
               <div class="nome">
+                <!-- passando o nome do plano -->
                 <h1><?php echo $row['nome'] ?></h1>
               </div>
               <div class="valor">
+                <!-- passando o valor do plano -->
                 <p>R$ <?php echo $row['valor'] ?>,00</p>
               </div>
               <div class="descricao">
+                <!-- passando a descricao do plano -->
                 <p><?php echo $row['descricao'] ?></p>
               </div>
               <div class="acoes">
+
+                <!-- passando a varival get o id do plano para a edicao -->
                 <a href="/SMILIPS/view/pages/administrador/manterPlanos.php?editar=<?php echo $row['planoID'] ?>"><i class=" fas fa-pencil-alt"></i></a>
+
+                <!-- cada icone de excluir possui um label q quando clicado aciona o checkbox e exibe o popup de exclusao -->
                 <input type="checkbox" id="<?php echo $row['planoID'] ?>">
                 <label for="<?php echo $row['planoID'] ?>">
                   <i class=" fas fa-trash-alt"></i>
@@ -108,10 +124,14 @@ admLogadoEntra();
               </div>
 
             </div>
+
+            <!-- finalizando o while -->
           <?php endwhile; ?>
         </div>
 
       </section>
+
+      <!-- finalizando o if -->
     <?php endif; ?>
   </main>
 

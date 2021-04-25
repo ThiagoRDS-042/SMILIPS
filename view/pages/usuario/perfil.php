@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de usuarioLogadoEntra(), pra n exibir essa tela caso o usuario n esteja logado
 usuarioLogadoEntra();
 ?>
 
@@ -40,8 +41,11 @@ usuarioLogadoEntra();
       <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post" class="form-img" enctype="multipart/form-data">
         <label for="btn">
           <div class="img-user">
+
             <!-- passando o caminho da pagina que exibe o img de perfil do usuario -->
             <img src="/SMILIPS/controller/DAO/usuario/imgPerfil.php" alt="Imagem do Usuário" class="preview-img">
+
+            <!-- passando o id do usuario ao input -->
             <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
             <span class="selecionar"><input type="file" name="ft-perfil" id="btn" class="file-chooser"></span>
             <span><i class="fas fa-camera"></i></span>
@@ -52,6 +56,8 @@ usuarioLogadoEntra();
       <div class="content">
         <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post">
           <div class="info-user">
+
+            <!-- passando todos os dados do usuario para os campos -->
             <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
             <div class="field-edit">
               <input type="text" class="focus" name="nome" value="<?php echo $nomeUsuario ?>">

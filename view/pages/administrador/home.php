@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de admLogadoEntra(), pra n exibir essa tela caso o adm n esteja logado
 admLogadoEntra();
 ?>
 

@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de admLogadoEntra(), pra n exibir essa tela caso o adm n esteja logado
 admLogadoEntra();
 ?>
 
@@ -19,6 +20,7 @@ admLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/servico/consultar.php');
+  // chamando a funcao consultar
   consultar();
   ?>
 
@@ -29,6 +31,7 @@ admLogadoEntra();
     <h1>Cadastrar Tipos de Serviços</h1>
     <section class="cad-servicos">
       <form action="/SMILIPS/controller/DAO/servico/servicoDAO.php" method="POST">
+        <!-- mesma coisa da pagina de manterPlanos, se a variavel get editar existir, atribuia valores aos campos e mude o nome do botao de salvar para editar -->
         <?php if (isset($_GET['editar'])) : ?>
           <input type="hidden" name="id" value="<?php echo $servico['servicoID'] ?>">
           <input type="text" name="servico" value="<?php echo $servico['servico'] ?>">
@@ -40,6 +43,7 @@ admLogadoEntra();
       </form>
     </section>
 
+    <!-- se tiver servicos cadastrados exiba eles -->
     <?php if ($servicos->num_rows > 0) : ?>
       <section class="list-servicos">
         <table>
@@ -52,12 +56,14 @@ admLogadoEntra();
             </tr>
           </thead>
           <tbody>
+
+            <!-- cria uma linha na tabela para cada servico -->
             <?php while ($row = $servicos->fetch_assoc()) : ?>
               <tr>
                 <td><?php echo $row['servico'] ?></td>
                 <td><a href="/SMILIPS/view/pages/administrador/manterServicos.php?editar=<?php echo $row['servicoID'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
                 <td>
-                  <!-- <a href="/SMILIPS/controller/DAO/servico/servicoDAO.php?excluir=< echo $row['servicoID'] ?>"><i class="fas fa-trash-alt"></i></a> -->
+                  <!-- mesma coisa da pagina manterPlanos, tendo um label e checkbox para cada icone de exclusao q quando clicado abre o popup de exclusao -->
                   <input type="checkbox" id="<?php echo $row['servicoID'] ?>">
                   <label for="<?php echo $row['servicoID'] ?>">
                     <i class="fas fa-trash-alt"></i>

@@ -1,5 +1,6 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
+// chamando a funcao de admLogadoEntra(), pra n exibir essa tela caso o adm n esteja logado
 admLogadoEntra();
 ?>
 
@@ -26,6 +27,7 @@ admLogadoEntra();
   <main>
     <div class="edit-info">
       <h1>Editar E-mail</h1>
+      <!-- passando o id e o email do adm para os campos -->
       <form action="/SMILIPS/controller/DAO/administrador/administradorDAO.php" method="POST">
         <input type="hidden" name="id" id="idAdm" value="<?php echo $id ?>">
         <div class="field-input">

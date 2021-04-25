@@ -7,9 +7,12 @@ if (isset($_POST['editar-email'])) {
   $id = $_POST['id'];
   $email = $_POST['email'];
 
+  // pesquisando um usuario pelo email
   $emailInvalido = $conexao->query("SELECT * FROM usuario WHERE emailUsuario = '$email'");
 
+  // se n existir o email
   if ($emailInvalido->num_rows <= 0) {
+    // att a tabela de adm com o email passado apartir do id
     $conexao->query("UPDATE administrador SET email = '$email' WHERE administradorID = '$id'") or die($conexao->error);
 
     exibirMsg("Email Atualizado com Sucesso!", "success");
@@ -32,10 +35,10 @@ if (isset($_POST['editar-email'])) {
         //convertendo em md5
         $senha = md5($_POST['senha1']);
 
-        //atualizando a senha do usuario
+        //atualizando a senha do adm
         $conexao->query("UPDATE administrador SET senha = '$senha' WHERE administradorID = '$id'") or die($conexao->error);
 
-        //volta pra tela de editar senha e exiindo a mensgem
+        //volta pra tela de editar senha e exibi a mensgem
         exibirMsg("Senha Editada com Sucesso!", "success");
         header("location:/SMILIPS/view/pages/administrador/editarSenha.php");
       } else {
