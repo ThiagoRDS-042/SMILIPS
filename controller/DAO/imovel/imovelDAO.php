@@ -64,6 +64,9 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
         preg_match("/(\d+)/", $area, $area);
         $area = $area[0] . " M²";
 
+        $valor = str_replace('.', '', $valor);
+        echo $valor;
+
         // cadastrando o imovel
         $conexao->query("INSERT INTO imovel(rua, numero, cidade, bairro, complemento, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, usuarioID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$id')") or die($conexao->error);
 
