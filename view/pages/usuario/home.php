@@ -9,7 +9,7 @@ usuarioLogadoEntra();
 
 <head>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/head.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
   // chamando a funcao consultar nome
   consultarNome();
@@ -95,7 +95,7 @@ usuarioLogadoEntra();
               <!-- criando um card para cada imovel cadastrado com todas as info do imovel -->
               <?php for ($i = 0; $i < count($arrayImgImovel); $i++) : ?>
 
-                <div class="card">
+                <div class="card <?php if ($arrayImovel[$i]['situacao'] != 'Ativado') : ?> nAtivado <?php endif; ?>">
                   <div class="image">
                     <!-- exibindo a img -->
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($arrayImgImovel[$i]['imagem']) ?>" alt="Imovél">
@@ -138,7 +138,7 @@ usuarioLogadoEntra();
 
                     <!-- exibindo os detalhes criado a cima -->
                     <p><?php echo $detalhes ?></p>
-                    <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Editar <i class="fas fa-pencil-alt"></i></a>
+                    <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Detalhes <i class="fas fa-pencil-alt"></i></a>
                   </div>
                 </div>
               <?php endfor; ?>

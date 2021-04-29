@@ -6,10 +6,10 @@ if (!isset($_SESSION)) {
 }
 
 ?>
-<link rel="stylesheet" href="/SMILIPS/view/css/nav.css">
+<link rel="stylesheet" href="/SMILIPS/view/css/sistema/nav.css">
 <nav>
     <div class="logo">
-        <a href="/SMILIPS/view/pages/home.php">SMILIPS</a>
+        <a href="/SMILIPS/view/pages/sistema/home.php">SMILIPS</a>
     </div>
     <input type="checkbox" id="menu">
     <label for="menu" class="icon">
@@ -17,7 +17,7 @@ if (!isset($_SESSION)) {
         <i class="fas fa-times hide "></i>
     </label>
     <ul>
-        <li><a href="/SMILIPS/view/pages/home.php">Home</a></li>
+        <li><a href="/SMILIPS/view/pages/sistema/home.php">Home</a></li>
         <li>
             <a href="#">Imóveis</a>
         </li>
@@ -40,7 +40,7 @@ if (!isset($_SESSION)) {
                 </a>
                 <!-- se n, coloca o nome login -->
             <?php else : ?>
-                <a href="/SMILIPS/view/pages/login.php">
+                <a href="/SMILIPS/view/pages/sistema/login.php">
                     <i class="fas fa-sign-in-alt "></i></i>Login
                 </a>
             <?php endif; ?>

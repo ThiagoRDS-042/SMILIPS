@@ -9,7 +9,7 @@ admLogadoEntra();
 
 <head>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/head.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/plano/consultar.php');
   // chamando a funcao de consultar
   consultar();

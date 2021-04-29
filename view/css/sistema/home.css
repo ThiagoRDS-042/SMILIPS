@@ -1,6 +1,4 @@
 body {
-  /* height: 1080px; */
-  background: url("/SMILIPS/view/images/backgrounds/backgroundBody.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -21,10 +19,24 @@ main {
   height: 100vh;
   min-height: 469px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: url("/SMILIPS/view/images/backgrounds/backgroundBody.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 main form {
@@ -57,7 +69,7 @@ main #filter .search {
 }
 
 main #filter .search input {
-  width: 70%;
+  width: 90%;
   height: 35px;
   padding: 10px;
   margin-right: 20px;
@@ -515,9 +527,6 @@ section.oqProcura .selecao .circle img {
     margin: 0 2.5%;
     width: 95%;
     padding: 0 6px;
-  }
-  main #filter .search input {
-    width: 70%;
   }
   main #filter .field-input {
     margin: 0 2.5%;

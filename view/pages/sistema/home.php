@@ -4,16 +4,16 @@
 <head>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
      <?php
-     require_once('/xampp/htdocs/SMILIPS/view/head.php');
+     require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
      ?>
-     <link rel="stylesheet" href="/SMILIPS/view/css/home.css">
+     <link rel="stylesheet" href="/SMILIPS/view/css/sistema/home.css">
      <title>Home</title>
 </head>
 
 <body>
      <header>
           <?php
-          require_once('/xampp/htdocs/SMILIPS/view/nav.php');
+          require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/nav.php');
           ?>
      </header>
 
@@ -711,7 +711,7 @@
           </div>
      </section>
      <?php
-     require_once('/xampp/htdocs/SMILIPS/view/footer.php');
+     require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/footer.php');
      ?>
      <script src="/SMILIPS/view/js/home.js" type="module"></script>
 </body>

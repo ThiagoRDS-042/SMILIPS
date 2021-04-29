@@ -48,6 +48,7 @@ main .card-container .card {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 0 3px;
+  position: relative;
 }
 
 main .card-container .card:hover {
@@ -176,6 +177,10 @@ section.your-imoveis .container-imovel .card {
   border-radius: 5px;
   margin: 0 5px;
   background: white;
+}
+
+section.your-imoveis .container-imovel .card.nAtivado {
+  opacity: 0.5;
 }
 
 section.your-imoveis .container-imovel .card:hover {

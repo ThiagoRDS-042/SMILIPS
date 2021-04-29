@@ -10,7 +10,7 @@ usuarioLogadoEntra();
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/head.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/imovel/editarImovel.css">
   <title>Editar Imóvel</title>
@@ -33,17 +33,40 @@ usuarioLogadoEntra();
 
     <!-- se o imovel existir exiba isso, se n, n exibe a msn citada la em baixo -->
     <?php if ($imovel) : ?>
-      <h1>Editar Imóvel</h1>
+      <?php if ($imovel['situacao'] == 'Ativado') : ?>
+        <h1>Editar Imóvel</h1>
+      <?php elseif ($imovel['situacao'] == 'Desativado') : ?>
+        <h1>Imovel Desativado</h1>
+      <?php else : ?>
+        <h1>Imóvel em Ánalise</h1>
+      <?php endif; ?>
       <input type="checkbox" id="btn_excluir">
       <label for="btn_excluir" class="btn">
-        <span class="icon-delete"><i class="fas fa-trash-alt"></i></span>
+        <?php if ($imovel['situacao'] == 'Desativado') : ?>
+          <span class="icon-habilitar"><i class="fas fa-check-double"></i></span>
+        <?php else : ?>
+          <span class="icon-delete"><i class="fas fa-trash-alt"></i></span>
+        <?php endif; ?>
       </label>
       <div class="btn_excluir">
         <div class="title">
-          <h1>Deseja Realmente Excluir seu Imóvel?</h1>
+          <?php if ($imovel['situacao'] == 'Ativado') : ?>
+            <h1>Desativar Imóvel?</h1>
+          <?php elseif ($imovel['situacao'] == 'Desativado') : ?>
+            <h1>Ativar Imóvel?</h1>
+          <?php else : ?>
+            <h1>Excluir Imóvel?</h1>
+          <?php endif; ?>
         </div>
         <form action="/SMILIPS/controller/DAO/imovel/imovelDAO.php" method="POST" class="excluir">
           <div class="senha">
+            <?php if ($imovel['situacao'] == 'Ativado') : ?>
+              <input type="hidden" value="Desativado" name="situacao">
+            <?php elseif ($imovel['situacao'] == 'Desativado') : ?>
+              <input type="hidden" value="Ativado" name="situacao">
+            <?php else : ?>
+              <input type="hidden" value="Em Progresso" name="situacao">
+            <?php endif; ?>
             <!-- passando o id do imovel e do usuario para os inputs -->
             <input type="hidden" value="<?php echo $imovel['imovelID'] ?>" name="imovelID">
             <input type="hidden" value="<?php echo $_SESSION['usuarioID'] ?>" name="usuarioID">
@@ -54,7 +77,7 @@ usuarioLogadoEntra();
           </div>
           <div class="buttons">
             <button type="button">Cancelar</button>
-            <Button type="submit" name="excluir-imovel">Confirmar</Button>
+            <Button type="submit" name="situacao-imovel">Confirmar</Button>
           </div>
         </form>
       </div>

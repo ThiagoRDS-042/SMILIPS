@@ -9,7 +9,7 @@ usuarioLogadoEntra();
 
 <head>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/head.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/usuario/perfil.css">

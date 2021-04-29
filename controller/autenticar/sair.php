@@ -15,4 +15,4 @@ if (isset($_SESSION['usuarioID'])) {
     unset($_SESSION['senha']);
 }
 // redirecinando
-header("location:/SMILIPS/view/pages/login.php");
+header("location:/SMILIPS/view/pages/sistema/login.php");

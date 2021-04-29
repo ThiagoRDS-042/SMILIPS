@@ -58,6 +58,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
         $descricao = $_POST['descricao'];
         $valor = $_POST['valor'];
         $id = $_POST['id'];
+        $situacao = 'Em Progresso';
 
         // usando regex para add o M² depois dos numeros
         $area = $_POST['area'];
@@ -68,7 +69,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
         echo $valor;
 
         // cadastrando o imovel
-        $conexao->query("INSERT INTO imovel(rua, numero, cidade, bairro, complemento, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, usuarioID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$id')") or die($conexao->error);
+        $conexao->query("INSERT INTO imovel(rua, numero, cidade, bairro, complemento, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, situacao, usuarioID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$situacao', '$id')") or die($conexao->error);
 
         // pegando o id do ultimo imovel cadastrado, tranformando em array e armazenando o id na variavel idImovel
         $imovel = $conexao->query("SELECT MAX(imovelID) FROM imovel") or die($conexao->error);
@@ -166,10 +167,11 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
 
   exibirMsg("Imóvel Editado com Sucesso!", "success");
   header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
-} else if (isset($_POST['excluir-imovel'])) {
+} else if (isset($_POST['situacao-imovel'])) {
   $senha = md5($_POST['senha']);
   $idUser = $_POST['usuarioID'];
   $idImovel = $_POST['imovelID'];
+  $situacao = $_POST['situacao'];
 
   // pesquisando um usuario pelo id passado e transformando em array
   $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
@@ -178,13 +180,24 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   // comparando se a senha digitada e igual a cadastrada no DB
   if ($senha == $usuario['senhaUsuario']) {
 
-    // excluindo o imovel pelo id
-    $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
+    if ($situacao == 'Em Progresso') {
+      // excluindo o imovel pelo id
+      $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
+      exibirMsg("Imóvel Excluido com Sucesso!", "success");
+    } else {
+      $conexao->query("UPDATE imovel SET situacao = '$situacao' WHERE imovelID = '$idImovel'") or die($conexao->error);
+    }
 
-    exibirMsg("Imóvel Excluído com Sucesso!", "success");
+    if ($situacao == 'Ativado') {
+      exibirMsg("Imóvel Ativado com Sucesso!", "success");
+    } else if ($situacao == 'Desativado') {
+      exibirMsg("Imóvel Desativado com Sucesso!", "success");
+    }
+
     header("location:/SMILIPS/view/pages/usuario/home.php");
   } else {
     exibirMsg("Senha Inválida!", "danger");
     header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$idImovel");
   }
+} else if (isset($_POST['ativar-imovel'])) {
 }

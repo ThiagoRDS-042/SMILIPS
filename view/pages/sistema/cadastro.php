@@ -9,9 +9,9 @@ usuarioLogadoNEntra();
 
 <head>
     <?php
-    require_once('/xampp/htdocs/SMILIPS/view/head.php');
+    require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
     ?>
-    <link rel="stylesheet" href="/SMILIPS/view/css/cadastro.css">
+    <link rel="stylesheet" href="/SMILIPS/view/css/sistema/cadastro.css">
     <title>Cadastro</title>
 </head>
 
@@ -22,7 +22,7 @@ usuarioLogadoNEntra();
         require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
         ?>
         <div class="voltar">
-            <a href="/SMILIPS/view/pages/login.php"><i class="fas fa-chevron-left"></i> Voltar</a>
+            <a href="/SMILIPS/view/pages/sistema/login.php"><i class="fas fa-chevron-left"></i> Voltar</a>
         </div>
 
         <div class="form-cad">

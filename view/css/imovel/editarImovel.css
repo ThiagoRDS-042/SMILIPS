@@ -49,6 +49,16 @@ main .btn .icon-delete {
   z-index: 2;
 }
 
+main .btn .icon-habilitar {
+  position: absolute;
+  top: 200px;
+  right: 8%;
+  font-size: 30px;
+  color: #2ecc71;
+  cursor: pointer;
+  z-index: 2;
+}
+
 main .btn_excluir {
   width: 310px;
   height: 200px;

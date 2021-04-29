@@ -9,9 +9,9 @@ usuarioLogadoNEntra();
 
 <head>
     <?php
-    require_once('/xampp/htdocs/SMILIPS/view/head.php');
+    require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
     ?>
-    <link rel="stylesheet" href="/SMILIPS/view/css/login.css">
+    <link rel="stylesheet" href="/SMILIPS/view/css/sistema/login.css">
     <title>Login</title>
 </head>
 
@@ -22,7 +22,7 @@ usuarioLogadoNEntra();
         require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
         ?>
         <div class="voltar">
-            <a href="/SMILIPS/view/pages/home.php"><i class="fas fa-chevron-left"></i> Voltar</a>
+            <a href="/SMILIPS/view/pages/sistema/home.php"><i class="fas fa-chevron-left"></i> Voltar</a>
         </div>
         <div class="middle">
             <h1>Login</h1>
@@ -41,7 +41,7 @@ usuarioLogadoNEntra();
                 </div>
 
                 <div class="txt-bottom">
-                    <p>Não tem uma conta?<a href="/SMILIPS/view/pages/cadastro.php"> Cadastre-se</a></p>
+                    <p>Não tem uma conta?<a href="/SMILIPS/view/pages/sistema/cadastro.php"> Cadastre-se</a></p>
                 </div>
 
             </form>

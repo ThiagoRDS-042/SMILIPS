@@ -10,7 +10,8 @@ cards.forEach((card) => {
       ? (location = "/SMILIPS/view/pages/administrador/manterServicos.php")
       : card === cards[2]
       ? (location = "/SMILIPS/view/pages/administrador/gerenciarUsuarios.php")
-      : (location =
-          "/SMILIPS/view/pages/administrador/gerenciarAdministradores.php");
+      : card === cards[3]
+      ? (location = "/SMILIPS/view/pages/administrador/imoveis.php")
+      : (location = "/SMILIPS/view/pages/administrador/denuncias.php");
   });
 });

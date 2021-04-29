@@ -9,7 +9,7 @@ admLogadoEntra();
 
 <head>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/head.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/administrador/home.css">
   <title>Administrador</title>
@@ -28,13 +28,6 @@ admLogadoEntra();
     <div class="container-planos">
       <div class="card">
         <div class="content">
-          <div class="text-content">
-            <h2>Planos</h2>
-            <p>Cadastre</p>
-            <p>Edite</p>
-            <p>Exclua</p>
-            <p>Pesquise</p>
-          </div>
           <div class="image">
             <img src="/SMILIPS/view/images/administrador/plano.png" alt="Icone de Planos">
           </div>
@@ -46,13 +39,6 @@ admLogadoEntra();
 
       <div class="card">
         <div class="content">
-          <div class="text-content">
-            <h2>Tipos de Serviços</h2>
-            <p>Cadastre</p>
-            <p>Edite</p>
-            <p>Exclua</p>
-            <p>Pesquise</p>
-          </div>
           <div class="image">
             <img src="/SMILIPS/view/images/administrador/service.png" alt="Icone de Serviços">
           </div>
@@ -64,19 +50,34 @@ admLogadoEntra();
 
       <div class="card">
         <div class="content">
-          <div class="text-content">
-            <h2>Usuários</h2>
-            <p>Cadastre</p>
-            <p>Edite</p>
-            <p>Exclua</p>
-            <p>Pesquise</p>
-          </div>
           <div class="image">
             <img src="/SMILIPS/view/images/administrador/users.png" alt="Icone de Usuários">
           </div>
         </div>
         <div class="title">
           <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Usuários</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="image">
+            <img src="/SMILIPS/view/images/administrador/imovel.png" alt="Icone de Imóveis">
+          </div>
+        </div>
+        <div class="title">
+          <a href="/SMILIPS/view/pages/administrador/imoveis.php">Gerenciar Imóveis</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="image">
+            <img src="/SMILIPS/view/images/administrador/denuncia.png" alt="Icone de Denuncias">
+          </div>
+        </div>
+        <div class="title">
+          <a href="/SMILIPS/view/pages/administrador/denuncias.php">Gerenciar Denuncias</a>
         </div>
       </div>
     </div>

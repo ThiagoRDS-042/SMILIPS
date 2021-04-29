@@ -8,9 +8,14 @@ nav {
   width: 100%;
   z-index: 3;
   height: 80px;
-  background: #ff6914;
+  background: rgba(0, 0, 0, 0.5);
   line-height: 80px;
   border-bottom: 2px solid white;
+  transition: 0.4s;
+}
+
+nav.active {
+  background: #ff6914;
 }
 
 nav::after {
@@ -45,9 +50,14 @@ nav .logo a::before {
   position: absolute;
   width: 14px;
   height: 2px;
-  background: #ff6914;
+  background: rgb(60, 60, 60);
   transform: skewX(50deg);
   transition: 0.4s linear;
+}
+
+nav.active .logo a::after,
+nav.active .logo a::before {
+  background: #ff6914;
 }
 
 nav .logo a::before {
@@ -135,10 +145,14 @@ nav .fa-sign-in-alt {
     float: right;
     height: 480px;
     width: 50%;
-    background: #ff6914;
+    background: rgba(0, 0, 0, 0.6);
     text-align: center;
     border-bottom: 2px solid white;
     border-left: 2px solid white;
+    transition: 0.4s;
+  }
+  nav.active ul {
+    background: #ff6914;
   }
   nav .logo {
     padding: 0 60px;

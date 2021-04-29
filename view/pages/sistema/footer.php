@@ -1,5 +1,4 @@
-
-<link rel="stylesheet" href="/SMILIPS/view/css/footer.css">
+<link rel="stylesheet" href="/SMILIPS/view/css/sistema/footer.css">
 <footer>
     <div>
         <div class="middle">

@@ -9,7 +9,7 @@ admLogadoEntra();
 
 <head>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/head.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/administrador/manterServicos.css">
   <title>Manter Tipos de Serviços</title>

@@ -11,8 +11,8 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/gerenciarUsuarios.css">
-  <title>Gerenciar Usuários</title>
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/denuncias.css">
+  <title>Gerenciar Denuncias</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@ admLogadoEntra();
   ?>
 
   <main>
-    <h1>Gerenciar Usuários</h1>
+    <h1>Gerenciar Denuncias</h1>
   </main>
 
 
