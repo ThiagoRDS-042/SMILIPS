@@ -53,10 +53,10 @@ if (isset($_POST['autenticar']) and $_POST['email'] != null and $_POST['senha'] 
     } else {
         // exibindo a mensagem de dados invalidos na tela de login
         exibirMsg("Dados Inválidos!", "danger");
-        header("location:/SMILIPS/view/pages/login.php");
+        header("location:/SMILIPS/view/pages/sistema/login.php");
     }
 } else {
     // exibindo a mensagem de preencha todos os campos na tela de login
-    exibirMsg("Preencha Todos os Campos!", "notify");
-    header("location:/SMILIPS/view/pages/login.php");
+    exibirMsg("Preencha Todos os Campos!", "danger");
+    header("location:/SMILIPS/view/pages/sistema/login.php");
 }

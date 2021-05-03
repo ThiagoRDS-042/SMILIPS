@@ -6,7 +6,7 @@
 main {
   width: 100%;
   position: relative;
-  background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+  background: #fff;
   min-height: 100vh;
   border: 1px solid transparent;
   display: flex;
@@ -49,9 +49,8 @@ main .form-cad {
   height: 790px;
   padding: 40px 20px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(215, 225, 236, 0.7);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  box-shadow: rgb(0 0 0 / 20%) 0 4px 10px 5px;
   margin: 70px 0;
 }
 
@@ -158,7 +157,7 @@ main .form-cad .input-container .input-field .msg {
 
 main .form-cad .input-container .input-field .counter {
   position: absolute;
-  right: 3px;
+  right: 5px;
   top: 37px;
   font-size: 16px;
   color: #ccc;

@@ -138,7 +138,13 @@ usuarioLogadoEntra();
 
                     <!-- exibindo os detalhes criado a cima -->
                     <p><?php echo $detalhes ?></p>
-                    <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Detalhes <i class="fas fa-pencil-alt"></i></a>
+                    <?php if ($arrayImovel[$i]['situacao'] == 'Ativado') : ?>
+                      <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Detalhes <i class="fas fa-pencil-alt"></i></a>
+                    <?php elseif ($arrayImovel[$i]['situacao'] == 'Desativado') : ?>
+                      <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Ativar</a>
+                    <?php else : ?>
+                      <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Em Progresso</a>
+                    <?php endif; ?>
                   </div>
                 </div>
               <?php endfor; ?>
