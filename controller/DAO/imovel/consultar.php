@@ -32,18 +32,22 @@ function consultarImovelUser()
 function consultarImgsImovel()
 {
   $imgImovel = '';
+  $usuario = '';
 
-  global $conexao, $imovel, $imgImovel;
+  global $conexao, $imovel, $imgImovel, $usuario;
   $idImovel = $_GET['imovelID'];
   $idUsuario = $_SESSION['usuarioID'];
 
   if (isset($_SESSION['idAdm'])) {
     $imovel = $conexao->query("SELECT * FROM imovel  WHERE imovelID = '$idImovel'") or die($conexao->error);
+    $imovel = $imovel->fetch_assoc();
+
+    $usuario = $conexao->query("SELECT * FROM usuario  WHERE usuarioID = " . $imovel['usuarioID']) or die($conexao->error);
+    $usuario = $usuario->fetch_assoc();
   } else {
     $imovel = $conexao->query("SELECT * FROM imovel  WHERE imovelID = '$idImovel' AND usuarioID = '$idUsuario'") or die($conexao->error);
+    $imovel = $imovel->fetch_assoc();
   }
-
-  $imovel = $imovel->fetch_assoc();
 
   if ($imovel) {
     $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $imovel['imovelID']) or die($conexao->error);

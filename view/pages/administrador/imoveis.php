@@ -25,6 +25,9 @@ admLogadoEntra();
   ?>
 
   <main>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
     <h1>Gerenciar Imóveis</h1>
 
     <!-- se o usuario tiver algum imovel cadastrado, mostra os imoveis e seus detalhes  -->

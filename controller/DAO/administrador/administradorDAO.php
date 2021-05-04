@@ -56,4 +56,18 @@ if (isset($_POST['editar-email'])) {
     exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
     header("location:/SMILIPS/view/pages/administrador/editarSenha.php");
   }
+} else if (isset($_POST['analisar'])) {
+
+  $analise = $_POST['analisar'];
+  $id = $_POST['id'];
+
+  if ($analise == 'excluir') {
+    $conexao->query("DELETE FROM imovel WHERE imovelID = '$id'") or die($conexao->error);
+    exibirMsg("Imóvel Excluído!", "danger");
+  } else {
+    $conexao->query("UPDATE imovel set situacao = 'Ativado' WHERE imovelID = '$id'") or die($conexao->error);
+    exibirMsg("Imóvel Ativado!", "success");
+  }
+
+  header("location:/SMILIPS/view/pages/administrador/imoveis.php");
 }

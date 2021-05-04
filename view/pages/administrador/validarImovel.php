@@ -46,12 +46,12 @@ admLogadoEntra();
 
           <div class="field-duo">
             <div class="rua">
-              <p>adasdasdasdas</p>
+              <p><?php echo $imovel['rua'] ?></p>
               <span>Rua</span>
             </div>
 
             <div class="numero">
-              <p>123</p>
+              <p><?php echo $imovel['numero'] ?></p>
               <span>Número</span>
             </div>
 
@@ -60,12 +60,16 @@ admLogadoEntra();
           <div class="field-duo">
 
             <div class="bairro">
-              <p>adasd as dasdas</p>
+              <p><?php echo $imovel['bairro'] ?></p>
               <span>Bairro</span>
             </div>
 
             <div class="complemento">
-              <p>adas das dasdasss sssss</p>
+              <?php if ($imovel['complemento'] == '') : ?>
+                <p>Não Informado!</p>
+              <?php else : ?>
+                <p><?php echo $imovel['complemento'] ?></p>
+              <?php endif; ?>
               <span>Complemento</span>
             </div>
           </div>
@@ -75,25 +79,29 @@ admLogadoEntra();
         <div class="detalhes">
           <div class="field-quadruplo">
             <div class="quarto">
-              <p>4</p>
+              <p><?php echo $imovel['qtdQuarto'] ?></p>
               <span>Quartos</span>
             </div>
             <div class="banheiro">
-              <p>4</p>
+              <p><?php echo $imovel['qtdBanheiro'] ?></p>
               <span>Banheiros</span>
             </div>
             <div class="garagem">
-              <p>4</p>
+              <p><?php echo $imovel['qtdGaragem'] ?></p>
               <span>Garagens</span>
             </div>
             <div class="area">
-              <p>4 M²</p>
+              <p><?php echo $imovel['area'] ?></p>
               <span>Área</span>
             </div>
           </div>
           <div class="field">
             <div class="descricao">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <?php if ($imovel['complemento'] == '') : ?>
+                <p>Não Informado!</p>
+              <?php else : ?>
+                <p><?php echo $imovel['descricao'] ?></p>
+              <?php endif; ?>
               <span>Descrição</span>
             </div>
           </div>
@@ -104,7 +112,7 @@ admLogadoEntra();
         <div class="valor">
           <div class="field">
             <div class="valor-imovel">
-              <p>R$ 1500,00</p>
+              <p>R$ <?php echo $imovel['valorAluguel'] ?>,00</p>
               <span>Valor</span>
             </div>
           </div>
@@ -114,13 +122,60 @@ admLogadoEntra();
 
       <h1>Detalhes do Proprietário</h1>
       <div class="detalhes-proprietario">
+        <div class="img-perfil">
+          <img src="data:image/jpeg;base64,<?php echo base64_encode($usuario['ftPerfil']) ?>" alt="">
+        </div>
+        <div class="info-user">
+          <div class="field-duo">
+            <div class="nome">
+              <p><?php echo $usuario['nomeUsuario'] ?></p>
+              <span>Nome</span>
+            </div>
+            <div class="telefone">
+              <p><?php echo $usuario['telefone'] ?></p>
+              <span>Telefone</span>
+            </div>
+          </div>
 
+          <div class="field-duo">
+            <div class="rua">
+              <p><?php echo $usuario['rua'] ?></p>
+              <span>Rua</span>
+            </div>
+            <div class="numero">
+              <p><?php echo $usuario['numero'] ?></p>
+              <span>Número</span>
+            </div>
+          </div>
+
+          <div class="field-duo">
+            <div class="bairro">
+              <p><?php echo $usuario['bairro'] ?></p>
+              <span>Bairro</span>
+            </div>
+            <div class="complemento">
+              <?php if ($usuario['complemento'] == '') : ?>
+                <p>Não Informado!</p>
+              <?php else : ?>
+                <p><?php echo $usuario['complemento'] ?></p>
+              <?php endif; ?>
+              <span>Complemento</span>
+            </div>
+          </div>
+
+          <div class="field-duo">
+            <div class="email">
+              <p><?php echo $usuario['emailUsuario'] ?></p>
+              <span>E-mail</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <form action="#" method="post">
+      <form action="/SMILIPS/controller/DAO/administrador/administradorDAO.php" method="post">
         <input type="hidden" name="id" value="<?php echo $imovel['imovelID'] ?>" id="id">
-        <button type="submit" name="invalidar">Inválidar</button>
-        <button type="submit" name="validar">Válidar</button>
+        <button type="submit" name="analisar" value="excluir">Inválidar</button>
+        <button type="submit" name="analisar" value="validar">Válidar</button>
       </form>
     </section>
   </main>
