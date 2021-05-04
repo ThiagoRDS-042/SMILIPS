@@ -5,7 +5,6 @@ require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 function consultarImovelUser()
 {
 
-  $imovel = '';
   $arrayImgImovel = '';
   $arrayImovel = '';
   $imgImovel = '';
@@ -13,7 +12,12 @@ function consultarImovelUser()
   global $conexao, $imovel, $arrayImgImovel, $arrayImovel;
   $id = $_SESSION['usuarioID'];
 
-  $imovel = $conexao->query("SELECT * FROM imovel  WHERE usuarioID = '$id'") or die($conexao->error);
+  if (isset($_SESSION['idAdm'])) {
+    $imovel = $conexao->query("SELECT * FROM imovel WHERE situacao = 'Em Progresso'") or die($conexao->error);
+  } else {
+    $imovel = $conexao->query("SELECT * FROM imovel  WHERE usuarioID = '$id'") or die($conexao->error);
+  }
+
   $arrayImgImovel = [];
   $arrayImovel = [];
 
@@ -27,14 +31,18 @@ function consultarImovelUser()
 
 function consultarImgsImovel()
 {
-  $imovel = '';
   $imgImovel = '';
 
   global $conexao, $imovel, $imgImovel;
   $idImovel = $_GET['imovelID'];
   $idUsuario = $_SESSION['usuarioID'];
 
-  $imovel = $conexao->query("SELECT * FROM imovel  WHERE imovelID = '$idImovel' AND usuarioID = '$idUsuario'") or die($conexao->error);
+  if (isset($_SESSION['idAdm'])) {
+    $imovel = $conexao->query("SELECT * FROM imovel  WHERE imovelID = '$idImovel'") or die($conexao->error);
+  } else {
+    $imovel = $conexao->query("SELECT * FROM imovel  WHERE imovelID = '$idImovel' AND usuarioID = '$idUsuario'") or die($conexao->error);
+  }
+
   $imovel = $imovel->fetch_assoc();
 
   if ($imovel) {
