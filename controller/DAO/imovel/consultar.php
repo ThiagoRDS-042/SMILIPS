@@ -15,7 +15,7 @@ function consultarImovelUser()
   if (isset($_SESSION['idAdm'])) {
     $imovel = $conexao->query("SELECT * FROM imovel WHERE situacao = 'Em Progresso'") or die($conexao->error);
   } else {
-    $imovel = $conexao->query("SELECT * FROM imovel  WHERE usuarioID = '$id'") or die($conexao->error);
+    $imovel = $conexao->query("SELECT * FROM imovel  WHERE usuarioID = '$id' ORDER BY situacao ASC") or die($conexao->error);
   }
 
   $arrayImgImovel = [];
