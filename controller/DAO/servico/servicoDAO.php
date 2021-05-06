@@ -2,40 +2,24 @@
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
 
-// se salvar existir
+
 if (isset($_POST['salvar'])) {
-  // se o servico foi passado cadastra, se n, retorna a msn
-  if ($_POST['servico'] != '') {
-    $servico = $_POST['servico'];
+  $tipoServico = $_POST['type'];
 
-    // cadastre o servico passado no DB
-    $conexao->query("INSERT INTO servico (servico) VALUES ('$servico')") or die($conexao->error);
+  if ($tipoServico) {
+    $usuarioID = $_POST['idUser'];
+    $descricao = $_POST['descricao'];
 
-    exibirMsg("Serviço Cadastrado com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
+    $tipoServico = $conexao->query("SELECT * FROM tipoServico WHERE tipoServico = '$tipoServico'") or die($conexao->error);
+    $tipoServico = $tipoServico->fetch_assoc();
+    $tipoServicoID = $tipoServico['tipoServicoID'];
+
+    $conexao->query("INSERT INTO servico (descricao, tipoServicoID, usuarioID) VALUES ('$descricao', '$usuarioID', '$tipoServicoID')") or die($conexao->error);
+
+    exibirMsg("Serviço Cadastrado!", "success");
+    header("location:/SMILIPS/view/pages/servicos/cadastro.php");
   } else {
-
-    exibirMsg("Preencha o Campo Antes de Salvar!", "danger");
-    header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
+    exibirMsg("Selecione um Tipo de Serviço!", "danger");
+    header("location:/SMILIPS/view/pages/servicos/cadastro.php");
   }
-  // se excluir existir
-} else if (isset($_GET['excluir'])) {
-  $id = $_GET['excluir'];
-
-  // delete o servico do DB apartir do id passado
-  $conexao->query("DELETE FROM servico WHERE servicoID = '$id'") or die($conexao->error);
-
-  exibirMsg("Serviço Excluído com Sucesso!", "success");
-  header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
-
-  // se editar existir
-} else if (isset($_POST['editar'])) {
-  $id = $_POST['id'];
-  $servico = $_POST['servico'];
-
-  // atualize o servico setando os valores das variaveis a cima para a tabela de servico apartir do id passado
-  $conexao->query("UPDATE servico SET servico = '$servico' WHERE servicoID = '$id'") or die($conexao->error);
-
-  exibirMsg("Serviço Editado com Sucesso!", "success");
-  header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
 }

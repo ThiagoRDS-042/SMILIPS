@@ -64,7 +64,7 @@ usuarioLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Cadastrar Anúncio</a>
+          <a href="#">Cadastrar Anúncio</a>
         </div>
       </div>
       <div class="card">
@@ -78,7 +78,7 @@ usuarioLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/usuario/imovel/cadastro.php">Cadastrar Serviço</a>
+          <a href="/SMILIPS/view/pages/servicos/cadastro.php">Cadastrar Serviço</a>
         </div>
       </div>
     </section>
@@ -143,7 +143,7 @@ usuarioLogadoEntra();
                     <?php elseif ($arrayImovel[$i]['situacao'] == 'Desativado') : ?>
                       <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Ativar</a>
                     <?php else : ?>
-                      <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Em Progresso</a>
+                      <a href="/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Em Ánalise</a>
                     <?php endif; ?>
                   </div>
                 </div>

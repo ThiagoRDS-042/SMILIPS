@@ -152,7 +152,7 @@ admLogadoEntra();
                     <?php elseif ($arrayImovel[$i]['situacao'] == 'Desativado') : ?>
                       <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Ativar</a>
                     <?php else : ?>
-                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Em Progresso</a>
+                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Em Ánalise</a>
                     <?php endif; ?>
                   </div>
                 </div>

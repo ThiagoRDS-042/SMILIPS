@@ -19,7 +19,7 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
-  require_once('/xampp/htdocs/SMILIPS/controller/DAO/servico/consultar.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/tipoServico/consultar.php');
   // chamando a funcao consultar
   consultar();
   ?>
@@ -30,11 +30,11 @@ admLogadoEntra();
     ?>
     <h1>Cadastrar Tipos de Serviços</h1>
     <section class="cad-servicos">
-      <form action="/SMILIPS/controller/DAO/servico/servicoDAO.php" method="POST">
+      <form action="/SMILIPS/controller/DAO/tipoServico/tipoServicoDAO.php" method="POST">
         <!-- mesma coisa da pagina de manterPlanos, se a variavel get editar existir, atribuia valores aos campos e mude o nome do botao de salvar para editar -->
         <?php if (isset($_GET['editar'])) : ?>
-          <input type="hidden" name="id" value="<?php echo $servico['servicoID'] ?>">
-          <input type="text" name="servico" value="<?php echo $servico['servico'] ?>">
+          <input type="hidden" name="id" value="<?php echo $tipoServico['tipoServicoID'] ?>">
+          <input type="text" name="servico" value="<?php echo $tipoServico['tipoServicoID'] ?>">
           <button type="submit" name="editar">Salvar</button>
         <?php else : ?>
           <input type="text" name="servico">
@@ -44,7 +44,7 @@ admLogadoEntra();
     </section>
 
     <!-- se tiver servicos cadastrados exiba eles -->
-    <?php if ($servicos->num_rows > 0) : ?>
+    <?php if ($tipoServicos->num_rows > 0) : ?>
       <section class="list-servicos">
         <table>
           <caption>Tipos de Serviços Cadastrados</caption>
@@ -58,19 +58,19 @@ admLogadoEntra();
           <tbody>
 
             <!-- cria uma linha na tabela para cada servico -->
-            <?php while ($row = $servicos->fetch_assoc()) : ?>
+            <?php while ($row = $tipoServicos->fetch_assoc()) : ?>
               <tr>
-                <td><?php echo $row['servico'] ?></td>
-                <td><a href="/SMILIPS/view/pages/administrador/manterServicos.php?editar=<?php echo $row['servicoID'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
+                <td><?php echo $row['tipoServico'] ?></td>
+                <td><a href="/SMILIPS/view/pages/administrador/manterServicos.php?editar=<?php echo $row['tipoServicoID'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
                 <td>
                   <!-- mesma coisa da pagina manterPlanos, tendo um label e checkbox para cada icone de exclusao q quando clicado abre o popup de exclusao -->
-                  <input type="checkbox" id="<?php echo $row['servicoID'] ?>">
-                  <label for="<?php echo $row['servicoID'] ?>">
+                  <input type="checkbox" id="<?php echo $row['tipoServicoID'] ?>">
+                  <label for="<?php echo $row['tipoServicoID'] ?>">
                     <i class="fas fa-trash-alt"></i>
                   </label>
                   <div class="excluir">
                     <h3>Exlcuir?</h3>
-                    <button class="btnSim"><a href="/SMILIPS/controller/DAO/servico/servicoDAO.php?excluir=<?php echo $row['servicoID'] ?>">Sim</a></button>
+                    <button class="btnSim"><a href="/SMILIPS/controller/DAO/tipoServico/tipoServicoDAO.php?excluir=<?php echo $row['tipoServicoID'] ?>">Sim</a></button>
                     <button class="btnNao">Não</button>
                   </div>
                 </td>

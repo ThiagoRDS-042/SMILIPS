@@ -1,0 +1,234 @@
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid transparent;
+}
+
+main .alert {
+  top: 80px;
+}
+
+main h1 {
+  width: 408px;
+  text-align: center;
+  margin: 150px auto 0 auto;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat", sans-serif;
+}
+
+section.cad-servico {
+  width: 70%;
+  min-width: 408px;
+  height: 300px;
+  margin: 40px auto;
+  position: relative;
+}
+
+section.cad-servico form {
+  width: 100%;
+}
+
+main .type-servico .select-box {
+  display: flex;
+  margin: 0 auto;
+  width: 60%;
+  min-width: 408px;
+  flex-direction: column;
+}
+
+main .type-servico .select-box .list-options {
+  background: #fff;
+  color: #333;
+  max-height: 0;
+  text-align: left;
+  width: 100%;
+  margin-top: 3px;
+  opacity: 0;
+  transition: 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 1;
+  z-index: 4;
+  border: 2px solid #ccc;
+  pointer-events: none;
+}
+
+main .type-servico .select {
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  position: relative;
+  order: 0;
+  text-align: left;
+}
+
+main .type-servico .select::after {
+  content: "\f078";
+  font-family: fontAwesome;
+  line-height: 42px;
+  text-align: center;
+  color: #333;
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 5px;
+  top: 0;
+  transition: 0.4s;
+}
+
+main .type-servico .select-box .list-options.active {
+  max-height: 172px;
+  pointer-events: all;
+  opacity: 1;
+}
+
+main .type-servico .select-box .list-options.active + .select::after {
+  transform: rotateX(180deg);
+}
+
+main .type-servico .select-box .select {
+  padding: 12px 24px 12px 20px;
+  cursor: pointer;
+}
+
+main .type-servico .select-box .option {
+  text-align: left;
+  padding: 12px 24px 12px 0;
+  cursor: pointer;
+}
+
+main .type-servico .select-box .option:hover {
+  background: #ecf0f1;
+}
+
+main .type-servico .select-box label {
+  cursor: pointer;
+}
+
+main .type-servico .select-box .option .radio {
+  visibility: hidden;
+  opacity: 0;
+}
+
+main .cad-servico .descricao {
+  width: 60%;
+  min-width: 408px;
+  margin: auto;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+main .cad-servico .descricao textarea {
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+  margin-top: 1px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+  resize: none;
+}
+
+main .cad-servico .descricao textarea::-webkit-scrollbar {
+  width: 8px;
+  background: #636e72;
+  border-radius: 0 4px 4px 0;
+}
+
+main .cad-servico .descricao textarea::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 0 5px 5px 0;
+}
+
+main .cad-servico .descricao textarea:focus {
+  border-color: #01baef;
+}
+
+main .cad-servico .descricao .info_field::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 40%;
+  left: 5px;
+  background: white;
+  padding: 0 3px;
+  color: #ccc;
+  transition: 0.5s;
+}
+
+main .cad-servico .descricao textarea:focus ~ .info_field::before {
+  color: #01baef;
+  top: -5px;
+}
+
+main .cad-servico .descricao textarea:valid ~ .info_field::before {
+  top: -5px;
+}
+
+main .cad-servico .descricao .contador {
+  position: absolute;
+  right: 12px;
+  bottom: 5px;
+  color: #ccc;
+}
+
+main .cad-servico .descricao textarea:focus ~ .contador {
+  color: #01baef;
+}
+
+main .cad-servico button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 40px;
+  background: #01baef;
+  border: 3px solid #01baef;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+main .cad-servico button:hover {
+  background: white;
+  color: #01baef;
+}
+
+main .cad-servico button:active {
+  background: white;
+  color: #088fb4;
+  border: 3px solid #088fb4;
+}
+
+@media (max-width: 700px) {
+  section.cad-servico,
+  main h1 {
+    margin-left: 20%;
+    margin-right: 10%;
+  }
+}
