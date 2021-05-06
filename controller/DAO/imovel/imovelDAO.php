@@ -23,11 +23,19 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   if ($msg == "Tamanho de Arquivo Inválido!") {
 
     exibirMsg("Tamanho de Arquivo Inválido! (Tamanhos Suportados = até 1000KB)", "danger");
-    header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
+    if (isset($_SESSION['idAdm'])) {
+      header("location:/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=$id");
+    } else {
+      header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
+    }
   } else {
 
     exibirMsg("Fortato de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG)", "danger");
-    header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
+    if (isset($_SESSION['idAdm'])) {
+      header("location:/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=$id");
+    } else {
+      header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
+    }
   }
 } else if (isset($_POST['cadastro-imovel'])) {
   $tipo_imovel = $_POST['type'];
@@ -166,38 +174,47 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   }
 
   exibirMsg("Imóvel Editado com Sucesso!", "success");
-  header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
+  if (isset($_SESSION['idAdm'])) {
+    header("location:/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=$id");
+  } else {
+    header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
+  }
 } else if (isset($_POST['situacao-imovel'])) {
-  $senha = md5($_POST['senha']);
   $idUser = $_POST['usuarioID'];
   $idImovel = $_POST['imovelID'];
   $situacao = $_POST['situacao'];
 
-  // pesquisando um usuario pelo id passado e transformando em array
-  $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
-  $usuario = $usuario->fetch_assoc();
+  if (isset($_SESSION['usuarioID'])) {
+    $senha = md5($_POST['senha']);
 
-  // comparando se a senha digitada e igual a cadastrada no DB
-  if ($senha == $usuario['senhaUsuario']) {
+    // pesquisando um usuario pelo id passado e transformando em array
+    $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
+    $usuario = $usuario->fetch_assoc();
+    // comparando se a senha digitada e igual a cadastrada no DB
+    if ($senha == $usuario['senhaUsuario']) {
 
-    if ($situacao == 'Em Progresso') {
-      // excluindo o imovel pelo id
-      $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
-      exibirMsg("Imóvel Excluido com Sucesso!", "success");
+      if ($situacao == 'Em Progresso') {
+        // excluindo o imovel pelo id
+        $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
+        exibirMsg("Imóvel Excluido com Sucesso!", "success");
+      } else {
+        $conexao->query("UPDATE imovel SET situacao = '$situacao' WHERE imovelID = '$idImovel'") or die($conexao->error);
+      }
+
+      if ($situacao == 'Ativado') {
+        exibirMsg("Imóvel Ativado com Sucesso!", "success");
+      } else if ($situacao == 'Desativado') {
+        exibirMsg("Imóvel Desativado com Sucesso!", "success");
+      }
+
+      header("location:/SMILIPS/view/pages/usuario/home.php");
     } else {
-      $conexao->query("UPDATE imovel SET situacao = '$situacao' WHERE imovelID = '$idImovel'") or die($conexao->error);
+      exibirMsg("Senha Inválida!", "danger");
+      header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$idImovel");
     }
-
-    if ($situacao == 'Ativado') {
-      exibirMsg("Imóvel Ativado com Sucesso!", "success");
-    } else if ($situacao == 'Desativado') {
-      exibirMsg("Imóvel Desativado com Sucesso!", "success");
-    }
-
-    header("location:/SMILIPS/view/pages/usuario/home.php");
   } else {
-    exibirMsg("Senha Inválida!", "danger");
-    header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$idImovel");
+    $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
+    exibirMsg("Imóvel Excluido com Sucesso!", "success");
+    header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$idUser");
   }
-} else if (isset($_POST['ativar-imovel'])) {
 }

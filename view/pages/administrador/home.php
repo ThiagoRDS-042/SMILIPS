@@ -55,7 +55,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Usuários</a>
+          <a href="/SMILIPS/view/pages/administrador/usuarios.php">Gerenciar Usuários</a>
         </div>
       </div>
 

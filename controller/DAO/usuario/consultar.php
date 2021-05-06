@@ -73,3 +73,10 @@ function consultarNome()
     $usuario = $usuario->fetch_array();
     $nomeUsuario = $usuario['nomeUsuario'];
 }
+
+function consultarUsuarios()
+{
+    global $conexao, $usuarios;
+
+    $usuarios = $conexao->query("SELECT * FROM usuario") or die($conexao->error);
+}

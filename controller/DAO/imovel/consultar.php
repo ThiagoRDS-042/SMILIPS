@@ -10,9 +10,16 @@ function consultarImovelUser()
   $imgImovel = '';
 
   global $conexao, $imovel, $arrayImgImovel, $arrayImovel;
-  $id = $_SESSION['usuarioID'];
 
-  if (isset($_SESSION['idAdm'])) {
+  if (isset($_GET['consultar'])) {
+    $id = $_GET['consultar'];
+  } else {
+    $id = $_SESSION['usuarioID'];
+  }
+
+  if (isset($_GET['consultar'])) {
+    $imovel = $conexao->query("SELECT * FROM imovel  WHERE usuarioID = '$id' ORDER BY situacao ASC") or die($conexao->error);
+  } else if (isset($_SESSION['idAdm'])) {
     $imovel = $conexao->query("SELECT * FROM imovel WHERE situacao = 'Em Progresso'") or die($conexao->error);
   } else {
     $imovel = $conexao->query("SELECT * FROM imovel  WHERE usuarioID = '$id' ORDER BY situacao ASC") or die($conexao->error);

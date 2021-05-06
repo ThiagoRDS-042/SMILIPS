@@ -1,0 +1,382 @@
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid transparent;
+}
+
+main .alert {
+  top: 80px;
+}
+
+main h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 130px;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat", sans-serif;
+}
+
+.perfil {
+  position: relative;
+  width: 80%;
+  min-width: 390px;
+  margin: 20px auto;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.perfil input[type="checkbox"] {
+  display: none;
+}
+
+.perfil .form-img {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.perfil .form-img button {
+  position: absolute;
+  bottom: -17%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  min-width: 120px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  background: #01baef;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.perfil .form-img button:active {
+  color: #bdc3c7;
+}
+
+.perfil .img-user {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #ecf0f1;
+  border: 2px solid #ecf0f1;
+  overflow: hidden;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+.perfil .img-user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.perfil .img-user span {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.perfil .img-user .selecionar {
+  opacity: 0;
+}
+
+.perfil .content {
+  margin: auto;
+  width: 60%;
+  height: 75%;
+}
+
+.perfil .info-user {
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.perfil .info-user .field-edit {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px auto;
+}
+
+.perfil .info-user .field-edit input {
+  width: 100%;
+  height: 25px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  margin-top: 20px;
+  color: #333;
+  padding-right: 20px;
+}
+
+.perfil .info-user .field-edit .info::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 5px;
+  color: rgb(107, 107, 107);
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.perfil .info-user .field-edit .info::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  background: linear-gradient(120deg, rgb(107, 107, 107), rgb(70, 69, 69));
+  transition: 0.5s;
+}
+
+.perfil .info-user .field-edit .focus + .info::after {
+  transform: scaleX(1);
+}
+
+.perfil .info-user .field-edit .msg {
+  position: absolute;
+  top: 26px;
+  right: 0;
+}
+
+.content .editar {
+  width: 20%;
+  height: 35px;
+  border-radius: 5px;
+  margin: 12px auto;
+  min-width: 80px;
+}
+
+.content .editar button {
+  font-size: 18px;
+  font-weight: 600;
+  background: #01baef;
+  color: white;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.content .editar button:active {
+  color: #bdc3c7;
+}
+
+@media (max-width: 1080px) {
+  .perfil {
+    flex-direction: column;
+  }
+  .perfil .form-img {
+    width: 220px;
+    height: 220px;
+    margin: 55px auto 20px auto;
+  }
+  .perfil .form-img button {
+    bottom: -24%;
+  }
+  .perfil .img-user span {
+    bottom: 5px;
+    font-size: 35px;
+  }
+  .perfil .info-user {
+    margin: 55px auto 0 auto;
+  }
+  .perfil input[type="checkbox"]:checked ~ .escolher-img {
+    top: 30%;
+  }
+  .perfil .content {
+    width: 80%;
+  }
+  .content .editar {
+    margin: 20px auto;
+  }
+}
+
+section.your-imoveis {
+  width: 100%;
+  margin: 50px 0;
+}
+
+section.your-imoveis h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat", sans-serif;
+  margin: 80px 0 20px 0;
+}
+
+section.your-imoveis .container-imovel {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 370px;
+}
+
+section.your-imoveis .container-imovel .list-imovel {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  max-width: 875px;
+}
+
+section.your-imoveis .container-imovel .list-imovel .cards-imovel {
+  position: relative;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s;
+  height: 100%;
+}
+
+section.your-imoveis .container-imovel .icon-voltar,
+section.your-imoveis .container-imovel .icon-proximo {
+  font-size: 20px;
+  color: #771fd2;
+  cursor: pointer;
+}
+
+section.your-imoveis .container-imovel .card {
+  border: 2px solid #ebebeb;
+  width: 280px;
+  height: 350px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+  background: white;
+}
+
+section.your-imoveis .container-imovel .card.nAtivado {
+  opacity: 0.5;
+}
+
+section.your-imoveis .container-imovel .card:hover {
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+section.your-imoveis .container-imovel .card:hover .detalhes a {
+  color: #771fd2;
+}
+
+section.your-imoveis .container-imovel .card .image {
+  width: 100%;
+  height: 170px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid #ccc;
+}
+
+section.your-imoveis .container-imovel .card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+section.your-imoveis .container-imovel .card .detalhes {
+  position: relative;
+  height: 160px;
+  line-height: 19px;
+  text-align: center;
+  padding: 10px;
+}
+
+section.your-imoveis .container-imovel .card .detalhes h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+section.your-imoveis .container-imovel .card .detalhes h3 span {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+section.your-imoveis .container-imovel .card .detalhes p {
+  font-size: 16px;
+  text-align: justify;
+}
+
+section.your-imoveis .container-imovel .card .detalhes a {
+  position: absolute;
+  bottom: -5px;
+  color: #333;
+  text-decoration: none;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+section.your-imoveis .container-imovel .card .detalhes a i {
+  font-size: 16px;
+}
+
+@media (max-width: 1306px) {
+  main .card-container {
+    height: 500px;
+  }
+  section.your-imoveis .container-imovel {
+    width: 610px;
+  }
+}
+
+@media (max-width: 881px) {
+  main .card-container {
+    height: 720px;
+  }
+  section.your-imoveis .container-imovel {
+    width: 320px;
+  }
+  .perfil,
+  main h1,
+  section.your-imoveis {
+    width: 70%;
+    margin-left: 20%;
+    margin-right: 10%;
+  }
+}

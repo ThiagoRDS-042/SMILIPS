@@ -53,11 +53,11 @@ fileChooser.addEventListener("change", (e) => {
       reader.readAsDataURL(fileToUpload);
     } else {
       // caso o formato seja invalido, redireciona para a pagina usuarioDAO.php, passando um variavel get
-      location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs_perfil=Formato de Arquivo Inválido!&&id=${id}`;
+      location = `/SMILIPS/controller/DAO/usuario/usuarioDAO.php?notificacao_imgs_perfil=Formato de Arquivo Inválido!&&id=${id}`;
     }
   } else {
     // caso n selecione nenhuma img, redireciona para a pagina usuarioDAO.php, passando um variavel get, e alterando a img do preview para a q esta no DB
     previewImg.src = "/SMILIPS/controller/usuario/imgPerfil.php";
-    location = `/SMILIPS/controller/usuario/usuarioDAO.php?notificacao_imgs_perfil=Selecione uma Imagem!&&id=${id}`;
+    location = `/SMILIPS/controller/DAO/usuario/usuarioDAO.php?notificacao_imgs_perfil=Selecione uma Imagem!&&id=${id}`;
   }
 });

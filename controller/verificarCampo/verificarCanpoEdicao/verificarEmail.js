@@ -5,8 +5,8 @@ const idAdm = $("#idAdm");
 // ja explicado anteriormente porem a gora ao campo de edicao e tb verifica caso e um adm ou usuario
 email.keyup(function buscar() {
   const url = idUser.val()
-    ? "/SMILIPS/controller/usuario/campoValidoEdicao.php"
-    : "/SMILIPS/controller/administrador/campoValidoEdicao.php";
+    ? "/SMILIPS/controller/DAO/usuario/campoValidoEdicao.php"
+    : "/SMILIPS/controller/DAO/administrador/campoValidoEdicao.php";
   const id = idUser.val() ? idUser.val() : idAdm.val();
 
   $.ajax({
@@ -25,8 +25,8 @@ email.keyup(function buscar() {
 
 email.blur(function buscar() {
   const url = idUser.val()
-    ? "/SMILIPS/controller/usuario/campoValidoEdicao.php"
-    : "/SMILIPS/controller/administrador/campoValidoEdicao.php";
+    ? "/SMILIPS/controller/DAO/usuario/campoValidoEdicao.php"
+    : "/SMILIPS/controller/DAO/administrador/campoValidoEdicao.php";
   const id = idUser.val() ? idUser.val() : idAdm.val();
 
   $.ajax({

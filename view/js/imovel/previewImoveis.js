@@ -58,12 +58,12 @@ input.addEventListener("change", function previewFiles() {
       } else {
         // redirecionando e passando variavel get de notificacao de img
         location =
-          "/SMILIPS/controller/imovel/imovelDAO.php?notificacao_imgs_cadastro=Número de Imagens Selecionadas Inválido!";
+          "/SMILIPS/controller/DAOimovel/imovelDAO.php?notificacao_imgs_cadastro=Número de Imagens Selecionadas Inválido!";
       }
     } else {
       // redirecionando e passando variavel get de notificacao de img
       location =
-        "/SMILIPS/controller/imovel/imovelDAO.php?notificacao_imgs_cadastro=Formato ou Tamanho de Arquivo Inválido!";
+        "/SMILIPS/controller/DAO/imovel/imovelDAO.php?notificacao_imgs_cadastro=Formato ou Tamanho de Arquivo Inválido!";
     }
 
     // editando a visualizacao da caixa de selecao de img e do btn salvar

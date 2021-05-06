@@ -7,7 +7,7 @@ email.keyup(function buscar() {
   //usando a funcao ajax
   $.ajax({
     //url pra de onde virar as informacoes
-    url: "/SMILIPS/controller/usuario/campoValidoCadastro.php",
+    url: "/SMILIPS/controller/DAO/usuario/campoValidoCadastro.php",
     //tipo de envio
     type: "POST",
     //tipo de dado
@@ -33,7 +33,7 @@ email.keyup(function buscar() {
 //msma da de cima mas agora acionando a funcao ao campo email perder focu
 email.blur(function buscar() {
   $.ajax({
-    url: "/SMILIPS/controller/usuario/campoValidoCadastro.php",
+    url: "/SMILIPS/controller/DAO/usuario/campoValidoCadastro.php",
     type: "POST",
     dataType: "html",
     data: {

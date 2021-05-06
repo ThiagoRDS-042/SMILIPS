@@ -9,8 +9,8 @@ const msgSenhaAtual = document.querySelector(".msgAtual");
 // verificar senha atual se é correta, verifica se e um adm ou usuario
 senhaAtual.addEventListener("keyup", () => {
   const url = userID
-    ? "/SMILIPS/controller/usuario/campoValidoEdicao.php"
-    : "/SMILIPS/controller/administrador/campoValidoEdicao.php";
+    ? "/SMILIPS/controller/DAO/usuario/campoValidoEdicao.php"
+    : "/SMILIPS/controller/DAO/administrador/campoValidoEdicao.php";
   const id = userID ? userID.value : idAdm.value;
 
   $.ajax({
@@ -29,8 +29,8 @@ senhaAtual.addEventListener("keyup", () => {
 
 senhaAtual.addEventListener("blur", () => {
   const url = userID
-    ? "/SMILIPS/controller/usuario/campoValidoEdicao.php"
-    : "/SMILIPS/controller/administrador/campoValidoEdicao.php";
+    ? "/SMILIPS/controller/DAO/usuario/campoValidoEdicao.php"
+    : "/SMILIPS/controller/DAO/administrador/campoValidoEdicao.php";
   const id = userID ? userID.value : idAdm.value;
 
   $.ajax({
