@@ -49,7 +49,7 @@ usuarioLogadoNEntra();
 
     </main>
 
-    <script src="/SMILIPS/view/js/login.js" type="module"></script>
+    <script src="/SMILIPS/view/js/sistema/login.js" type="module"></script>
 </body>
 
 </html>

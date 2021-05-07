@@ -11,7 +11,7 @@ cards.forEach((card) => {
       ? (location = "/SMILIPS/view/pages/imovel/cadastro.php")
       : card === cards[1]
       ? (location = "#")
-      : (location = "/SMILIPS/view/pages/servicos/cadastro.php");
+      : (location = "/SMILIPS/view/pages/servico/cadastro.php");
   });
 });
 

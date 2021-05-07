@@ -16,6 +16,9 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarImovelUser();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/servico/consultar.php');
+  // chamando a funcao consultarImovelUser
+  consultarServico();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/usuario/home.css">
   <title>Home</title>
@@ -78,7 +81,7 @@ usuarioLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/servicos/cadastro.php">Cadastrar Serviço</a>
+          <a href="/SMILIPS/view/pages/servico/cadastro.php">Cadastrar Serviço</a>
         </div>
       </div>
     </section>
@@ -153,6 +156,34 @@ usuarioLogadoEntra();
           </div>
           <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
         </div>
+      </section>
+    <?php endif; ?>
+
+    <?php if (count($arrayServicos) > 0) : ?>
+      <section class="your-services">
+        <h1>Seus Serviços</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de Serviço</th>
+              <th>Descrição</th>
+              <th>Editar</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <?php for ($i = 0; $i < count($arrayServicos); $i++) : ?>
+              <tr>
+                <td><?php echo $arrayTipoServicos[$i] ?></td>
+                <td><?php echo $arrayServicos[$i] ?></td>
+                <td><a href="/SMILIPS/view/pages/servico/gerenciarServico.php?editar=<?php echo $arrayIdServicos[$i] ?>"><i class="fas fa-pencil-alt"></i></a></td>
+              </tr>
+            <?php endfor; ?>
+          </tbody>
+
+        </table>
+
       </section>
     <?php endif; ?>
 

@@ -12,7 +12,7 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/servicos/cadastro.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/servico/cadastro.css">
   <title>Cadastro de Serviços</title>
 </head>
 
@@ -29,7 +29,6 @@ usuarioLogadoEntra();
     <?php
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
     ?>
-
     <h1>Cadastro de Serviços</h1>
 
     <section class="cad-servico">

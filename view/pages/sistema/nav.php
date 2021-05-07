@@ -49,4 +49,4 @@ if (!isset($_SESSION)) {
 
 </nav>
 
-<script src="/SMILIPS/view/js/nav.js "></script>
+<script src="/SMILIPS/view/js/sistema/nav.js "></script>

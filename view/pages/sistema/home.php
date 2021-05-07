@@ -713,7 +713,7 @@
      <?php
      require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/footer.php');
      ?>
-     <script src="/SMILIPS/view/js/home.js" type="module"></script>
+     <script src="/SMILIPS/view/js/sistema/home.js" type="module"></script>
 </body>
 
 </html>
