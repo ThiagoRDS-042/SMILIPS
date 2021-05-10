@@ -273,6 +273,10 @@ main section.your-services table tr {
   border: 2px solid #ccc;
 }
 
+main section.your-services table tr.servico-desativado {
+  opacity: 0.5;
+}
+
 main section.your-services table thead tr th {
   font-weight: bold;
 }

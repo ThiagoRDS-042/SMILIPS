@@ -174,12 +174,17 @@ usuarioLogadoEntra();
 
           <tbody>
             <?php for ($i = 0; $i < count($arrayServicos); $i++) : ?>
-              <tr>
-                <td><?php echo $arrayTipoServicos[$i] ?></td>
+              <?php if ($arraySituacao[$i] == 'Desativado') : ?>
+                <tr class="servico-desativado">
+                  <td><?php echo $arrayTipoServicos[$i] ?> (Desativado)</td>
+                <?php else : ?>
+                <tr>
+                  <td><?php echo $arrayTipoServicos[$i] ?></td>
+                <?php endif; ?>
                 <td><?php echo $arrayServicos[$i] ?></td>
                 <td><a href="/SMILIPS/view/pages/servico/gerenciarServico.php?editar=<?php echo $arrayIdServicos[$i] ?>"><i class="fas fa-pencil-alt"></i></a></td>
-              </tr>
-            <?php endfor; ?>
+                </tr>
+              <?php endfor; ?>
           </tbody>
 
         </table>

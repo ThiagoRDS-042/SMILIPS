@@ -4,11 +4,12 @@ require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 
 function consultarServico()
 {
-  global $conexao, $arrayServicos, $arrayTipoServicos, $arrayIdServicos;
+  global $conexao, $arrayServicos, $arrayTipoServicos, $arrayIdServicos, $arraySituacao;
   $id = $_SESSION['usuarioID'];
   $arrayServicos = [];
   $arrayTipoServicos = [];
   $arrayIdServicos = [];
+  $arraySituacao = [];
 
   $servico = $conexao->query("SELECT * FROM servico WHERE usuarioID = '$id'") or die($conexao->error);
 
@@ -20,5 +21,17 @@ function consultarServico()
     $arrayIdServicos[] = $row['servicoID'];
     $arrayServicos[] = $row['descricao'];
     $arrayTipoServicos[] = $tipoServico['tipoServico'];
+    $arraySituacao[] = $row['situacao'];
   }
+}
+
+if (isset($_GET['editar'])) {
+  $id = $_GET['editar'];
+
+  $editarServico = $conexao->query("SELECT * FROM servico WHERE servicoID = '$id'") or die($conexao->error);
+  $editarServico = $editarServico->fetch_assoc();
+  $idTipoServico =  $editarServico['tipoServicoID'];
+
+  $servicoTipo = $conexao->query("SELECT * FROM tipoServico WHERE tipoServicoID = '$idTipoServico'") or die($conexao->error);
+  $servicoTipo = $servicoTipo->fetch_assoc();
 }

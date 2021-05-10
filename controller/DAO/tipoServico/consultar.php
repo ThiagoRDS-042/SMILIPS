@@ -15,5 +15,5 @@ if (isset($_GET['editar'])) {
   $id = $_GET['editar'];
 
   $tipoServico = $conexao->query("SELECT * FROM tipoServico WHERE tipoServicoID = '$id'") or die($conexao->error);
-  $tipoServico = $servico->fetch_assoc();
+  $tipoServico = $tipoServico->fetch_assoc();
 }

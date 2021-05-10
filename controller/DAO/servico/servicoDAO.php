@@ -17,7 +17,7 @@ if (isset($_POST['salvar'])) {
     $servicoValido = $conexao->query("SELECT * FROM servico WHERE usuarioID = '$idUsuario' AND tipoServicoID = '$tipoServicoID'") or die($conexao->error);
 
     if ($servicoValido->num_rows == 0) {
-      $conexao->query("INSERT INTO servico (descricao, tipoServicoID, usuarioID) VALUES ('$descricao', '$tipoServicoID', '$idUsuario')") or die($conexao->error);
+      $conexao->query("INSERT INTO servico (descricao, situacao, tipoServicoID, usuarioID) VALUES ('$descricao', 'Ativado', '$tipoServicoID', '$idUsuario')") or die($conexao->error);
 
       exibirMsg("Serviço Cadastrado!", "success");
       header("location:/SMILIPS/view/pages/usuario/home.php");
@@ -28,5 +28,45 @@ if (isset($_POST['salvar'])) {
   } else {
     exibirMsg("Selecione um Tipo de Serviço!", "danger");
     header("location:/SMILIPS/view/pages/servico/cadastro.php");
+  }
+} else if (isset($_POST['editar'])) {
+  $idServico = $_POST['idServico'];
+  $idUsuario = $_POST['idUsuario'];
+  $tipoServico = $_POST['type'];
+  $descricao = $_POST['descricao'];
+
+  $tipoServicoID = $conexao->query("SELECT * FROM tipoServico WHERE tipoServico = '$tipoServico'") or die($conexao->error);
+  $tipoServicoID = $tipoServicoID->fetch_assoc();
+  $tipoServicoID = $tipoServicoID['tipoServicoID'];
+
+  $servicoCadastrado = $conexao->query("SELECT * FROM servico WHERE tipoServicoID = '$tipoServicoID' AND usuarioID = '$idUsuario'") or die($conexao->error);
+
+  if ($servicoCadastrado->num_rows == 0) {
+    $conexao->query("UPDATE servico SET tipoServicoID = '$tipoServicoID', descricao = '$descricao' WHERE servicoID = '$idServico'") or die($conexao->error);
+
+    exibirMsg("Serviço Atualizado com Sucesso!", "success");
+    header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
+  } else {
+    exibirMsg("Serviço Já Existente!", "danger");
+    header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
+  }
+} else if (isset($_POST['desativar-ativar'])) {
+  $situacao = $_POST['desativar-ativar'];
+  $id = $_POST['idServico'];
+  $idUsuario = $_POST['idUsuario'];
+  $senha = md5($_POST['senha']);
+
+  $senhaUsuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUsuario'") or die($conexao->error);
+  $senhaUsuario = $senhaUsuario->fetch_assoc();
+  $senhaUsuario = $senhaUsuario['senhaUsuario'];
+
+  if ($senhaUsuario == $senha) {
+    $conexao->query("UPDATE servico SET situacao = '$situacao' WHERE servicoID = '$id'") or die($conexao->error);
+
+    exibirMsg("Serviço $situacao com Sucesso!", "success");
+    header("location:/SMILIPS/view/pages/usuario/home.php");
+  } else {
+    exibirMsg("Senha Incorreta!", "danger");
+    header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$id");
   }
 }
