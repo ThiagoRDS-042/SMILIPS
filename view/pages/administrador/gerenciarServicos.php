@@ -1,7 +1,7 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
-// chamando a funcao de usuarioLogadoEntra(), pra n exibir essa tela caso o usuario n esteja logado
-usuarioLogadoEntra();
+// chamando a funcao de admLogadoEntra(), pra n exibir essa tela caso o adm n esteja logado
+admLogadoEntra();
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +12,14 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/servico/gerenciarServico.css">
-  <title>Gerenciar Serviço</title>
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/gerenciarServicos.css">
+  <title>Gerenciar Serviços</title>
 </head>
 
 <body>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/tipoServico/consultar.php');
   // chamando a funcao consultar
   consultar();
@@ -31,7 +31,7 @@ usuarioLogadoEntra();
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
     ?>
 
-    <h1>Editar Serviço</h1>
+    <h1>Gerenciar Serviço</h1>
 
     <section class="edit-services">
       <form action="/SMILIPS/controller/DAO/servico/servicoDAO.php" method="post">
@@ -61,8 +61,8 @@ usuarioLogadoEntra();
 
         <div class="descricao">
           <input type="hidden" name="idTipoServico" value="<?php echo  $tipoServico['tipoServicoID'] ?>">
-          <input type="hidden" name="idServico" value="<?php echo $_GET['editar'] ?>">
-          <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['usuarioID'] ?>">
+          <input type="hidden" name="idServico" value="<?php echo $_GET['servicoID'] ?>">
+          <input type="hidden" name="idUsuario" value="<?php echo $_GET['usuarioID'] ?>">
           <textarea name="descricao" id="descricao" cols="30" rows="5" required maxlength="250"><?php echo $editarServico['descricao'] ?></textarea>
           <span data-placeholder="Descrição" class="info_field"></span>
           <span class="contador">250</span>
@@ -71,31 +71,13 @@ usuarioLogadoEntra();
         <button type="submit" name="editar">Salvar</button>
         <input type="checkbox" id="desativar">
         <label for="desativar">
-          <?php if ($editarServico['situacao'] == 'Ativado') : ?>
-            <h3 name="desativar-ativar" value="Desativado">Desativar</h3>
-          <?php else : ?>
-            <h3 name="desativar-ativar" value="Ativado">Ativar</h3>
-          <?php endif; ?>
+          <h3 name="desativar-ativar" value="Excluir">Excluir</h3>
         </label>
 
         <div class="desativar">
-          <?php if ($editarServico['situacao'] == 'Ativado') : ?>
-            <h1>Deseja Desativar?</h1>
-          <?php else : ?>
-            <h1>Deseja Ativar?</h1>
-          <?php endif; ?>
-
-          <input type="password" name="senha">
-          <span><i class="fas fa-unlock-alt"></i></span>
-          <span data-placeholder="Senha" class="info-input"></span>
-          <i class="fa fa-eye"></i>
-
-          <?php if ($editarServico['situacao'] == 'Ativado') : ?>
-            <button type="submit" name="desativar-ativar" value="Desativado">Sim</button>
-          <?php else : ?>
-            <button type="submit" name="desativar-ativar" value="Ativado">Sim</button>
-          <?php endif; ?>
-
+          <h1>Deseja Excluir?</h1>
+          <span><i class="fas fa-trash-alt"></i></span>
+          <button type="submit" name="desativar-ativar" value="Excluir">Sim</button>
           <button type="button">Não</button>
         </div>
 
@@ -105,7 +87,7 @@ usuarioLogadoEntra();
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
   ?>
 
   <script src="/SMILIPS/view/js/servico/gerenciar.js" type="module"></script>

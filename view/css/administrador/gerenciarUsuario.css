@@ -356,6 +356,54 @@ section.your-imoveis .container-imovel .card .detalhes a i {
   font-size: 16px;
 }
 
+section.your-services {
+  border: 1px solid transparent;
+  margin-bottom: 40px;
+}
+
+section.your-services h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat", sans-serif;
+  margin: 20px 0;
+}
+
+main section.your-services table {
+  max-width: 80%;
+  width: 80%;
+  min-width: 450px;
+  margin: 30px auto;
+  color: #333;
+}
+
+main section.your-services table tr {
+  border: 2px solid #ccc;
+}
+
+main section.your-services table tr.servico-desativado {
+  opacity: 0.5;
+}
+
+main section.your-services table thead tr th {
+  font-weight: bold;
+}
+
+main section.your-services table tr th,
+main section.your-services table tbody tr td {
+  border: 2px solid #ccc;
+  text-align: center;
+  padding: 15px;
+  vertical-align: middle;
+}
+
+main table tbody tr td:last-child a {
+  text-decoration: none;
+  color: #2ecc71;
+  font-size: 20px;
+}
+
 @media (max-width: 1306px) {
   main .card-container {
     height: 500px;
@@ -374,7 +422,9 @@ section.your-imoveis .container-imovel .card .detalhes a i {
   }
   .perfil,
   main h1,
-  section.your-imoveis {
+  section.your-imoveis,
+  main section.your-services table,
+  section.your-services h1 {
     width: 70%;
     margin-left: 20%;
     margin-right: 10%;

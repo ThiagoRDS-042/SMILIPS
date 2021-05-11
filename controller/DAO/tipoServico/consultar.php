@@ -11,9 +11,17 @@ function consultar()
 }
 
 // se a variavel get editar existir, consulte no DB um servico pelo id passado e transforme em array
-if (isset($_GET['editar'])) {
-  $id = $_GET['editar'];
+if (isset($_GET['editar']) || isset($_GET['servicoID'])) {
+  if (isset($_GET['servicoID'])) {
+    $id = $_GET['servicoID'];
+  } else {
+    $id = $_GET['editar'];
+  }
 
-  $tipoServico = $conexao->query("SELECT * FROM tipoServico WHERE tipoServicoID = '$id'") or die($conexao->error);
+  $servico = $conexao->query("SELECT * FROM servico WHERE servicoID = '$id'") or die($conexao->error);
+  $servico = $servico->fetch_assoc();
+  $idServicoTipo = $servico['tipoServicoID'];
+
+  $tipoServico = $conexao->query("SELECT * FROM tipoServico WHERE tipoServicoID = '$idServicoTipo'") or die($conexao->error);
   $tipoServico = $tipoServico->fetch_assoc();
 }

@@ -161,7 +161,7 @@ main .middle .txt-bottom a {
 
 main .middle .field-input i {
   position: absolute;
-  color: #ccc;
+  color: rgb(158, 158, 158);
   top: 50%;
   right: 10px;
   cursor: pointer;

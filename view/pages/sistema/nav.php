@@ -18,13 +18,8 @@ if (!isset($_SESSION)) {
     </label>
     <ul>
         <li><a href="/SMILIPS/view/pages/sistema/home.php">Home</a></li>
-        <li>
-            <a href="#">Imóveis</a>
-        </li>
-        <li>
-            <a href="#">Sobre</a>
-        </li>
-        <li><a href="#">Ajuda</a></li>
+        <li><a href="#">Imóveis</a></li>
+        <li><a href="#">Serviços</a></li>
         <li><a href="#">Contato</a></li>
         <li>
             <!-- se existir a variavel de sessao usuarioID coloque no nav o nome do usuario -->

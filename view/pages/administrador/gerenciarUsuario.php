@@ -23,6 +23,9 @@ admLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarImovelUser();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/servico/consultar.php');
+  // chamando a funcao consultarImovelUser
+  consultarServico();
   ?>
 
   <main>
@@ -164,6 +167,37 @@ admLogadoEntra();
         </div>
       </section>
     <?php endif; ?>
+
+    <section class="your-services">
+      <h1>Serviços do Usuário</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de Serviço</th>
+            <th>Descrição</th>
+            <th>Editar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <?php for ($i = 0; $i < count($arrayServicos); $i++) : ?>
+            <?php if ($arraySituacao[$i] == 'Desativado') : ?>
+              <tr class="servico-desativado">
+                <td><?php echo $arrayTipoServicos[$i] ?> (Desativado)</td>
+              <?php else : ?>
+              <tr>
+                <td><?php echo $arrayTipoServicos[$i] ?></td>
+              <?php endif; ?>
+              <td><?php echo $arrayServicos[$i] ?></td>
+              <td><a href="/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=<?php echo $arrayIdServicos[$i] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
+              </tr>
+            <?php endfor; ?>
+        </tbody>
+
+      </table>
+
+    </section>
 
   </main>
 

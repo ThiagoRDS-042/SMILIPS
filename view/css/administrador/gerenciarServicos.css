@@ -1,0 +1,371 @@
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid transparent;
+}
+
+main .alert {
+  top: 80px;
+}
+
+main h1 {
+  width: 410px;
+  text-align: center;
+  margin: 150px auto 0 auto;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat", sans-serif;
+}
+
+main .edit-services {
+  width: 70%;
+  min-width: 410px;
+  height: 280px;
+  margin: 20px auto;
+  position: relative;
+}
+
+main .type-servico .select-box {
+  display: flex;
+  margin: 0 auto;
+  width: 60%;
+  min-width: 408px;
+  flex-direction: column;
+}
+
+main .type-servico .select-box .list-options {
+  background: #fff;
+  color: #333;
+  max-height: 0;
+  text-align: left;
+  width: 100%;
+  margin-top: 3px;
+  opacity: 0;
+  transition: 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 1;
+  z-index: 4;
+  border: 2px solid #ccc;
+  pointer-events: none;
+}
+
+main .type-servico .select {
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  position: relative;
+  order: 0;
+  text-align: left;
+}
+
+main .type-servico .select::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  background: white;
+  padding: 0 3px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+main .type-servico .select::after {
+  content: "\f078";
+  font-family: fontAwesome;
+  line-height: 42px;
+  text-align: center;
+  color: #333;
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 5px;
+  top: 0;
+  transition: 0.4s;
+}
+
+main .type-servico .select-box .list-options.active {
+  max-height: 172px;
+  pointer-events: all;
+  opacity: 1;
+}
+
+main .type-servico .select-box .list-options.active + .select::after {
+  transform: rotateX(180deg);
+}
+
+main .type-servico .select-box .select {
+  padding: 12px 24px 12px 20px;
+  cursor: pointer;
+}
+
+main .type-servico .select-box .option {
+  text-align: left;
+  padding: 12px 24px 12px 0;
+  cursor: pointer;
+}
+
+main .type-servico .select-box .option:hover {
+  background: #ecf0f1;
+}
+
+main .type-servico .select-box label {
+  cursor: pointer;
+}
+
+main .type-servico .select-box .option .radio {
+  visibility: hidden;
+  opacity: 0;
+}
+
+main .edit-services .descricao {
+  width: 60%;
+  min-width: 408px;
+  margin: auto;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+main .edit-services .descricao textarea {
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+  margin-top: 1px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+  resize: none;
+}
+
+main .edit-services .descricao textarea::-webkit-scrollbar {
+  width: 8px;
+  background: #636e72;
+  border-radius: 0 4px 4px 0;
+}
+
+main .edit-services .descricao textarea::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 0 5px 5px 0;
+}
+
+main .edit-services .descricao textarea:focus {
+  border-color: #01baef;
+}
+
+main .edit-services .descricao .info_field::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 40%;
+  left: 5px;
+  background: white;
+  padding: 0 3px;
+  color: #ccc;
+  transition: 0.5s;
+}
+
+main .edit-services .descricao textarea:focus ~ .info_field::before {
+  color: #01baef;
+  top: -5px;
+}
+
+main .edit-services .descricao textarea:valid ~ .info_field::before {
+  top: -5px;
+}
+
+main .edit-services .descricao .contador {
+  position: absolute;
+  right: 12px;
+  bottom: 5px;
+  color: #ccc;
+}
+
+main .edit-services .descricao textarea:focus ~ .contador {
+  color: #01baef;
+}
+
+main .edit-services button {
+  position: absolute;
+  bottom: 20px;
+  width: 110px;
+  height: 40px;
+  background: #01baef;
+  border: 3px solid #01baef;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+main .edit-services h3 {
+  position: absolute;
+  bottom: 20px;
+  width: 110px;
+  height: 40px;
+  background: #01baef;
+  border: 3px solid #01baef;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
+  line-height: 34px;
+}
+
+main .edit-services button[name="editar"] {
+  right: 20%;
+}
+
+main .edit-services h3[value="Excluir"] {
+  left: 20%;
+  background: #e74c3c;
+  border: 3px solid #e74c3c;
+}
+
+main .edit-services button[name="editar"]:hover {
+  background: white;
+  color: #01baef;
+}
+
+main .edit-services h3[value="Excluir"]:hover {
+  background: white;
+  color: #e74c3c;
+}
+
+main .edit-services button[name="editar"]:active {
+  background: white;
+  color: #088fb4;
+  border: 3px solid #088fb4;
+}
+
+main .edit-services h3[value="Excluir"]:active {
+  background: white;
+  color: #a3362a;
+  border: 3px solid #a3362a;
+}
+
+main .edit-services input[type="checkbox"] {
+  display: none;
+}
+
+main .edit-services input[type="checkbox"]:checked ~ .desativar {
+  opacity: 1;
+  pointer-events: all;
+  top: 0;
+}
+
+main .edit-services .desativar {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 150px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+  transition: 0.5s;
+}
+
+main .edit-services .desativar h1 {
+  margin: 0;
+  font-size: 18px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+main .edit-services .desativar span i {
+  font-size: 60px;
+  color: #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .edit-services .desativar button {
+  width: 50px;
+  height: 28px;
+  position: absolute;
+  bottom: 8px;
+  font-size: 16px;
+}
+
+main .edit-services .desativar button[type="submit"] {
+  right: 10px;
+  background: #2ecc71;
+  border-color: #2ecc71;
+}
+
+main .edit-services .desativar button[type="button"] {
+  left: 10px;
+  background: #e74c3c;
+  border-color: #e74c3c;
+}
+
+main .edit-services .desativar button[type="submit"]:hover {
+  background: white;
+  color: #2ecc71;
+}
+
+main .edit-services .desativar button[type="button"]:hover {
+  background: white;
+  color: #e74c3c;
+}
+
+main .edit-services .desativar button[type="submit"]:active {
+  background: white;
+  color: #229251;
+  border-color: #229251;
+}
+
+main .edit-services .desativar button[type="button"]:active {
+  background: white;
+  color: #a5382c;
+  border-color: #a5382c;
+}
+
+@media (max-width: 700px) {
+  section.edit-services,
+  main h1 {
+    margin-left: 20%;
+    margin-right: 10%;
+  }
+
+  main .edit-services button[name="editar"] {
+    right: 10%;
+  }
+
+  main .edit-services h3[name="desativar-ativar"] {
+    left: 10%;
+  }
+}

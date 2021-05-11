@@ -39,34 +39,64 @@ if (isset($_POST['salvar'])) {
   $tipoServicoID = $tipoServicoID->fetch_assoc();
   $tipoServicoID = $tipoServicoID['tipoServicoID'];
 
-  $servicoCadastrado = $conexao->query("SELECT * FROM servico WHERE tipoServicoID = '$tipoServicoID' AND usuarioID = '$idUsuario'") or die($conexao->error);
-
-  if ($servicoCadastrado->num_rows == 0) {
+  if ($_POST['idTipoServico'] == $tipoServicoID) {
     $conexao->query("UPDATE servico SET tipoServicoID = '$tipoServicoID', descricao = '$descricao' WHERE servicoID = '$idServico'") or die($conexao->error);
 
     exibirMsg("Serviço Atualizado com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
+    if (isset($_SESSION['idAdm'])) {
+      header("location:/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
+    } else {
+      header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
+    }
   } else {
-    exibirMsg("Serviço Já Existente!", "danger");
-    header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
+    $servicoCadastrado = $conexao->query("SELECT * FROM servico WHERE tipoServicoID = '$tipoServicoID' AND usuarioID = '$idUsuario'") or die($conexao->error);
+
+    if ($servicoCadastrado->num_rows == 0) {
+      $conexao->query("UPDATE servico SET tipoServicoID = '$tipoServicoID', descricao = '$descricao' WHERE servicoID = '$idServico'") or die($conexao->error);
+
+      exibirMsg("Serviço Atualizado com Sucesso!", "success");
+      if (isset($_SESSION['idAdm'])) {
+        header("location:/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
+      } else {
+        header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
+      }
+    } else {
+      exibirMsg("Serviço Já Existente!", "danger");
+      if (isset($_SESSION['idAdm'])) {
+        header("location:/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
+      } else {
+        header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
+      }
+    }
   }
 } else if (isset($_POST['desativar-ativar'])) {
-  $situacao = $_POST['desativar-ativar'];
-  $id = $_POST['idServico'];
-  $idUsuario = $_POST['idUsuario'];
-  $senha = md5($_POST['senha']);
 
-  $senhaUsuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUsuario'") or die($conexao->error);
-  $senhaUsuario = $senhaUsuario->fetch_assoc();
-  $senhaUsuario = $senhaUsuario['senhaUsuario'];
+  if ($_POST['desativar-ativar'] == 'Excluir') {
+    $id = $_POST['idServico'];
+    $idUsuario = $_POST['idUsuario'];
 
-  if ($senhaUsuario == $senha) {
-    $conexao->query("UPDATE servico SET situacao = '$situacao' WHERE servicoID = '$id'") or die($conexao->error);
+    $conexao->query("DELETE FROM servico WHERE servicoID = '$id'") or die($conexao->error);
 
-    exibirMsg("Serviço $situacao com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/usuario/home.php");
+    exibirMsg("Serviço Excluido com Sucesso!", "success");
+    header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$idUsuario");
   } else {
-    exibirMsg("Senha Incorreta!", "danger");
-    header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$id");
+    $situacao = $_POST['desativar-ativar'];
+    $id = $_POST['idServico'];
+    $idUsuario = $_POST['idUsuario'];
+    $senha = md5($_POST['senha']);
+
+    $senhaUsuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUsuario'") or die($conexao->error);
+    $senhaUsuario = $senhaUsuario->fetch_assoc();
+    $senhaUsuario = $senhaUsuario['senhaUsuario'];
+
+    if ($senhaUsuario == $senha) {
+      $conexao->query("UPDATE servico SET situacao = '$situacao' WHERE servicoID = '$id'") or die($conexao->error);
+
+      exibirMsg("Serviço $situacao com Sucesso!", "success");
+      header("location:/SMILIPS/view/pages/usuario/home.php");
+    } else {
+      exibirMsg("Senha Incorreta!", "danger");
+      header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$id");
+    }
   }
 }

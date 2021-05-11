@@ -5,7 +5,12 @@ require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 function consultarServico()
 {
   global $conexao, $arrayServicos, $arrayTipoServicos, $arrayIdServicos, $arraySituacao;
-  $id = $_SESSION['usuarioID'];
+  if (isset($_SESSION['idAdm'])) {
+    $id = $_GET['consultar'];
+  } else {
+    $id = $_SESSION['usuarioID'];
+  }
+
   $arrayServicos = [];
   $arrayTipoServicos = [];
   $arrayIdServicos = [];
@@ -25,8 +30,12 @@ function consultarServico()
   }
 }
 
-if (isset($_GET['editar'])) {
-  $id = $_GET['editar'];
+if (isset($_GET['servicoID']) || isset($_GET['editar'])) {
+  if (isset($_GET['servicoID'])) {
+    $id = $_GET['servicoID'];
+  } else {
+    $id = $_GET['editar'];
+  }
 
   $editarServico = $conexao->query("SELECT * FROM servico WHERE servicoID = '$id'") or die($conexao->error);
   $editarServico = $editarServico->fetch_assoc();
