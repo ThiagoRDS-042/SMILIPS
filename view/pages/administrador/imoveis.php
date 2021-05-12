@@ -33,7 +33,7 @@ admLogadoEntra();
     <!-- se o usuario tiver algum imovel cadastrado, mostra os imoveis e seus detalhes  -->
     <?php if ($imovel->num_rows > 0) : ?>
       <section class="your-imoveis">
-        <h1>Imóveis Em Processo de Ánalise</h1>
+        <h1>Imóveis em Processo de Analise</h1>
         <div class="container-imovel">
           <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
           <div class="list-imovel">

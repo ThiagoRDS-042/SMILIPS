@@ -107,7 +107,7 @@ admLogadoEntra();
               <!-- criando um card para cada imovel cadastrado com todas as info do imovel -->
               <?php for ($i = 0; $i < count($arrayImgImovel); $i++) : ?>
 
-                <div class="card <?php if ($arrayImovel[$i]['situacao'] != 'Ativado') : ?> nAtivado <?php endif; ?>">
+                <div class="card">
                   <div class="image">
                     <!-- exibindo a img -->
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($arrayImgImovel[$i]['imagem']) ?>" alt="Imovél">
@@ -151,11 +151,11 @@ admLogadoEntra();
                     <!-- exibindo os detalhes criado a cima -->
                     <p><?php echo $detalhes ?></p>
                     <?php if ($arrayImovel[$i]['situacao'] == 'Ativado') : ?>
-                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Detalhes <i class="fas fa-pencil-alt"></i></a>
+                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Ativado</a>
                     <?php elseif ($arrayImovel[$i]['situacao'] == 'Desativado') : ?>
-                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Ativar</a>
+                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Desativado</a>
                     <?php else : ?>
-                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Em Ánalise</a>
+                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Em Analise</a>
                     <?php endif; ?>
                   </div>
                 </div>

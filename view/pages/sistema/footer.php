@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="text">
-        <p>&copy; 2021 <span>SMILPS</span> - Todos os direitos reservados</p>
+        <p><span>SMILPS</span> &copy; 2021 - Todos os direitos reservados</p>
         <p>Desenvolvido pelos autores - equipe do PI</p>
     </div>
 </footer>

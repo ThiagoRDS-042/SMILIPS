@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montsserat";
   box-sizing: border-box;
 }
 
@@ -29,7 +31,7 @@ header {
   border: 3px solid #fff;
   padding: 5px;
   border-radius: 5px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montsserat";
 }
 
 .logo a::before,

@@ -174,8 +174,28 @@ admLogadoEntra();
 
       <form action="/SMILIPS/controller/DAO/administrador/administradorDAO.php" method="post">
         <input type="hidden" name="id" value="<?php echo $imovel['imovelID'] ?>" id="id">
-        <button type="submit" name="analisar" value="excluir">Inválidar</button>
+        <input type="checkbox" id="imovel_invalido">
+        <label for="imovel_invalido">
+          <h3 name="analisar" value="excluir">Inválidar</h3>
+        </label>
+        <!-- <button type="submit" name="analisar" value="excluir">Inválidar</button> -->
         <button type="submit" name="analisar" value="validar">Válidar</button>
+
+        <div class="msg_imovel">
+          <div class="title">
+            <h1>Inválidar Imóvel?</h1>
+          </div>
+
+          <div class="content">
+            <textarea name="descricao" id="descricao" cols="30" rows="5" required maxlength="250"></textarea>
+            <span data-placeholder='Motivo'></span>
+          </div>
+
+          <div class="buttons">
+            <button type="button" name="cancelar">Cancelar</button>
+            <button type="submit" name="analisar" value="excluir">Confirmar</button>
+          </div>
+        </div>
       </form>
     </section>
   </main>
@@ -184,6 +204,8 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
   ?>
+
+  <script src="/SMILIPS/view/js/administrador/validarImovel.js" type="module"></script>
 </body>
 
 </html>

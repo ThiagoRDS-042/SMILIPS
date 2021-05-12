@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
 body {
   background-size: cover;
   background-repeat: no-repeat;
@@ -181,7 +183,7 @@ main #filter .field-input .select-box .list-options::-webkit-scrollbar-thumb {
 }
 
 main #filter .field-input .select-box .select {
-  padding: 12px 24px 12px 20px;
+  padding: 12px 24px 12px 10px;
   cursor: pointer;
 }
 
@@ -491,7 +493,7 @@ section.oqProcura .selecao .circle {
 }
 
 section.oqProcura .selecao p {
-  font-size: 17px;
+  font-size: 16px;
   color: #fff;
   font-weight: 600;
   margin: 50px 0 20px 0;
@@ -521,6 +523,7 @@ section.oqProcura .selecao .circle img {
   }
   main #filter {
     width: 80%;
+    min-width: 450px;
     margin: 70px auto 0 auto;
   }
   main #filter .search {
@@ -537,7 +540,7 @@ section.oqProcura .selecao .circle img {
   }
   main #filter .field-input .select-box .select {
     font-size: 14px;
-    min-width: 108px;
+    min-width: 133px;
     height: 56px;
     display: flex;
     align-items: center;

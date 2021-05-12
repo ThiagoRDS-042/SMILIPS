@@ -219,7 +219,7 @@ admLogadoEntra();
         </div>
       </form>
     <?php else : ?>
-      <h1>Você não Possui Imóveis Cadastrados! :(</h1>
+      <h1>O Usuário não Possui Imóveis Cadastrados! :(</h1>
     <?php endif; ?>
   </main>
 

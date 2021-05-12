@@ -62,8 +62,17 @@ if (isset($_POST['editar-email'])) {
   $id = $_POST['id'];
 
   if ($analise == 'excluir') {
+    $usuarioID = $conexao->query("SELECT * FROM imovel WHERE imovelID = '$id'") or die($conexao->error);
+    $usuarioID = $usuarioID->fetch_assoc();
+    $usuarioID = $usuarioID['usuarioID'];
+
+    $descricao = $_POST['descricao'];
+
     $conexao->query("DELETE FROM imovel WHERE imovelID = '$id'") or die($conexao->error);
-    exibirMsg("Imóvel Excluído!", "danger");
+
+    $conexao->query("INSERT INTO msgImovelInvalido (mensagem, usuarioID) VALUES ('$descricao', '$usuarioID')") or die($conexao->error);
+
+    exibirMsg("Imóvel Excluído!", "success");
   } else {
     $conexao->query("UPDATE imovel set situacao = 'Ativado' WHERE imovelID = '$id'") or die($conexao->error);
     exibirMsg("Imóvel Ativado!", "success");

@@ -13,6 +13,8 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
   // chamando a funcao consultar nome
   consultarNome();
+  // chamando a funcao consultar msg  
+  consultarMsgImovelInvalido();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarImovelUser();
