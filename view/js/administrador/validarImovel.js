@@ -8,3 +8,13 @@ const btnscancelar = document.querySelectorAll(
 
 // chamando as funcoes importadas passando as variveis a cima pelo parametro
 fecharPopupExcruir(btnscancelar, checkboxs);
+
+const textarea = document.querySelector("#descricao");
+
+textarea.addEventListener("blur", () => {
+  if (textarea.value != "") {
+    textarea.classList.add("valid");
+  } else {
+    textarea.classList.remove("valid");
+  }
+});

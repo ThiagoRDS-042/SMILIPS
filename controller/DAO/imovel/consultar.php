@@ -60,3 +60,19 @@ function consultarImgsImovel()
     $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $imovel['imovelID']) or die($conexao->error);
   }
 }
+
+function consultarImoveis()
+{
+  global $conexao, $matrizImoveis, $matrizImgsImovel;
+
+  $imoveis = $conexao->query("SELECT * FROM imovel WHERE situacao = 'Ativado'") or die($conexao->error);
+
+  for ($i = 0; $i < $imoveis->num_rows; $i++) {
+    $matrizImoveis[] = $imoveis->fetch_assoc();
+    $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $matrizImoveis[$i]['imovelID']) or die($conexao->error);
+
+    for ($j = 0; $j < $imgsImovel->num_rows; $j++) {
+      $matrizImgsImovel[] = $imgsImovel->fetch_assoc();
+    }
+  }
+}

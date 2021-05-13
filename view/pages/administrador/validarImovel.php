@@ -187,7 +187,7 @@ admLogadoEntra();
           </div>
 
           <div class="content">
-            <textarea name="descricao" id="descricao" cols="30" rows="5" required maxlength="250"></textarea>
+            <textarea name="descricao" id="descricao" cols="30" rows="5" maxlength="250"></textarea>
             <span data-placeholder='Motivo'></span>
           </div>
 

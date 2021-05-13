@@ -1,0 +1,132 @@
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
+}
+
+nav {
+  background: #ff6914 !important;
+  box-shadow: 0 5px 15px #ccc;
+}
+
+nav .logo a::after,
+nav .logo a::before {
+  background: #ff6914 !important;
+}
+
+main {
+  width: 100%;
+  min-width: 400px;
+  min-height: 100vh;
+  border: 1px solid transparent;
+}
+
+main h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(107, 107, 107);
+  font-family: "Montserrat";
+}
+
+main .imoveis_disponiveis {
+  width: 542px;
+  margin: 40px auto;
+}
+
+main .imoveis_disponiveis .card_imovel {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+main .imoveis_disponiveis .card_imovel:hover {
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+main .imoveis_disponiveis .card_imovel .image {
+  width: 538px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 2px solid #ccc;
+}
+
+main .imoveis_disponiveis .card_imovel .image .imgs {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  display: flex;
+  transition: 0.5s;
+}
+
+main .imoveis_disponiveis .card_imovel .image .imgs img {
+  width: 538px;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: optimizeQuality;
+}
+
+main .imoveis_disponiveis .card_imovel .image span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #bdc3c7;
+  font-size: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+main .imoveis_disponiveis .card_imovel .image .icon-voltar {
+  left: -30px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+main .imoveis_disponiveis .card_imovel .image .icon-proximo {
+  right: -30px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+main .imoveis_disponiveis .card_imovel .image:hover span {
+  opacity: 1;
+  pointer-events: all;
+}
+
+main .imoveis_disponiveis .card_imovel .image:hover .icon-voltar {
+  left: 0;
+}
+
+main .imoveis_disponiveis .card_imovel .image:hover .icon-proximo {
+  right: 0;
+}
+
+main .imoveis_disponiveis .card_imovel .descricao {
+  width: 100%;
+  /* background: red; */
+  height: 250px;
+}
+
+@media (max-width: 701px) {
+  nav ul {
+    background: #ff6914 !important;
+  }
+}

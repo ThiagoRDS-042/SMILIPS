@@ -18,7 +18,7 @@ if (!isset($_SESSION)) {
     </label>
     <ul>
         <li><a href="/SMILIPS/view/pages/sistema/home.php">Home</a></li>
-        <li><a href="#">Imóveis</a></li>
+        <li><a href="/SMILIPS/view/pages/sistema/imoveis.php">Imóveis</a></li>
         <li><a href="#">Serviços</a></li>
         <li><a href="#">Contato</a></li>
         <li>

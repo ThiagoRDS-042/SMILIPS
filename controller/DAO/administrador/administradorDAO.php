@@ -1,6 +1,10 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
+if (!isset($_SESSION)) {
+  session_start();
+}
+
 
 if (isset($_POST['editar-email'])) {
   //pegando o id do usuario

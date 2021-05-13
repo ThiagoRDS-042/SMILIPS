@@ -1,6 +1,9 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
+if (!isset($_SESSION)) {
+  session_start();
+}
 
 if (isset($_GET['notificacao_imgs_cadastro'])) {
   $msg = $_GET['notificacao_imgs_cadastro'];
@@ -186,7 +189,6 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
 
   if (isset($_SESSION['usuarioID'])) {
     $senha = md5($_POST['senha']);
-
     // pesquisando um usuario pelo id passado e transformando em array
     $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
     $usuario = $usuario->fetch_assoc();

@@ -1,6 +1,9 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 //verificando se a varivel save exite e se os campos obrigatorios foram preencidos
 if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null and $_POST['senha1'] != null and $_POST['senha2'] != null and $_POST['rua'] != null and $_POST['bairro'] != null and $_POST['numero'] != null and $_POST['telefone'] != null) {

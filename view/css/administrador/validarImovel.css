@@ -361,7 +361,7 @@ main h1 {
   color: #01baef;
 }
 
-.info-imovel form .msg_imovel .content textarea:valid ~ span::before {
+.info-imovel form .msg_imovel .content textarea.valid ~ span::before {
   top: 16%;
 }
 

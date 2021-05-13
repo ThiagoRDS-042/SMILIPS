@@ -1,6 +1,9 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
+if (!isset($_SESSION)) {
+  session_start();
+}
 
 // se salvar existir
 if (isset($_POST['salvar'])) {
