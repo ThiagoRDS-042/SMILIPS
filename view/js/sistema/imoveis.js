@@ -49,9 +49,13 @@ imoveis.forEach((imovel) => {
   btnsProximo.forEach((btnProximo) => {
     btnProximo.addEventListener("click", () => {
       if (cards.length > 5) {
-        avancar(-538, cards, slider, cards.length - 4);
+        window.innerWidth <= 565
+          ? avancar(-296, cards, slider, cards.length - 4)
+          : avancar(-538, cards, slider, cards.length - 4);
       } else {
-        avancar(-538, cards, slider, 1);
+        window.innerWidth <= 565
+          ? avancar(-296, cards, slider, 1)
+          : avancar(-538, cards, slider, 1);
       }
     });
   });
@@ -59,9 +63,13 @@ imoveis.forEach((imovel) => {
   btnsVoltar.forEach((btnVoltar) => {
     btnVoltar.addEventListener("click", () => {
       if (cards.length > 5) {
-        retornar(538, cards, slider, cards.length - 4);
+        window.innerWidth <= 565
+          ? avancar(296, cards, slider, cards.length - 4)
+          : avancar(538, cards, slider, cards.length - 4);
       } else {
-        retornar(538, cards, slider, 1);
+        window.innerWidth <= 565
+          ? avancar(296, cards, slider, 1)
+          : avancar(538, cards, slider, 1);
       }
     });
   });

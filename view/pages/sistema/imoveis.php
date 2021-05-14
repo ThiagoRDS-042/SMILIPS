@@ -36,7 +36,47 @@
             </div>
           </div>
           <div class="descricao">
+            <div class="value">
+              <p>R$ <?php echo number_format($matrizImoveis[$i]['valorAluguel'], 0, ',', '.'); ?> <span>/Mês</span></p>
+            </div>
 
+            <?php
+            if ($matrizImoveis[$i]['qtdQuarto'] > 1) {
+              $matrizImoveis[$i]['qtdQuarto'] .= ' Quartos';
+            } else {
+              $matrizImoveis[$i]['qtdQuarto'] .= ' Quarto';
+            }
+            if ($matrizImoveis[$i]['qtdBanheiro'] > 1) {
+              $matrizImoveis[$i]['qtdBanheiro'] .= ' Banheiros';
+            } else {
+              $matrizImoveis[$i]['qtdBanheiro'] .= ' Banheiro';
+            }
+            if ($matrizImoveis[$i]['qtdGaragem'] > 1) {
+              $matrizImoveis[$i]['qtdGaragem'] .= ' Garagens';
+            } else {
+              $matrizImoveis[$i]['qtdGaragem'] .= ' Garagen';
+            }
+
+            if ($matrizImoveis[$i]['tipo'] == 'Residencial') {
+              $matrizImoveis[$i]['tipo'] = 'Residencia';
+            } else if ($matrizImoveis[$i]['tipo'] == 'Comercial') {
+              $matrizImoveis[$i]['tipo'] = 'Ponto Comercial';
+            }
+            ?>
+
+            <div class="desc">
+              <p><?php echo $matrizImoveis[$i]['tipo']; ?> com <?php echo $matrizImoveis[$i]['qtdQuarto']; ?> para Aluguel, <?php echo $matrizImoveis[$i]['area']; ?></p>
+            </div>
+
+            <div class="end">
+              <p><?php echo $matrizImoveis[$i]['rua']; ?> - <?php echo $matrizImoveis[$i]['numero']; ?>, <?php echo $matrizImoveis[$i]['cidade']; ?></p>
+            </div>
+            <div class="info">
+              <p><?php echo $matrizImoveis[$i]['area']; ?> <?php echo $matrizImoveis[$i]['qtdQuarto']; ?> <?php echo $matrizImoveis[$i]['qtdBanheiro']; ?> <?php echo $matrizImoveis[$i]['qtdGaragem']; ?></p>
+            </div>
+            <div class="detalhes">
+              <a href="#">Detalhes</a>
+            </div>
           </div>
         </div>
       <?php endfor; ?>
