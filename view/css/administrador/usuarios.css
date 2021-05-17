@@ -21,7 +21,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 main table {
@@ -39,12 +39,14 @@ main table tr {
 
 main table thead tr th {
   font-weight: bold;
+  font-family: "Rubik", sans-serif;
 }
 
 main table tr th,
 main table tbody tr td {
   border: 2px solid #ccc;
   text-align: center;
+  font-family: "Open Sans", sans-serif;
 }
 
 main table tbody tr td:last-child a {

@@ -29,7 +29,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 section.your-imoveis {
@@ -84,6 +84,7 @@ section.your-imoveis .container-imovel .card {
   border-radius: 5px;
   margin: 0 5px;
   background: white;
+  font-family: "Rubik", sans-serif;
 }
 
 section.your-imoveis .container-imovel .card:hover {
@@ -132,6 +133,7 @@ section.your-imoveis .container-imovel .card .detalhes h3 span {
 section.your-imoveis .container-imovel .card .detalhes p {
   font-size: 16px;
   text-align: justify;
+  font-family: "Open Sans", sans-serif;
 }
 
 section.your-imoveis .container-imovel .card .detalhes a {

@@ -4,6 +4,7 @@
   transform: translateY(-60%);
   margin-left: 10px;
   z-index: 2;
+  font-family: "Rubik", sans-serif;
 }
 
 .menu .navigation {

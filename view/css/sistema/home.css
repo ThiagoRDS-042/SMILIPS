@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 body {
   background-size: cover;
@@ -58,6 +59,7 @@ main #filter {
   border-radius: 10px;
   transition: 0.5s;
   margin-top: 70px;
+  font-family: "Rubik", sans-serif;
 }
 
 main #filter .search {
@@ -188,9 +190,15 @@ main #filter .field-input .select-box .select {
 }
 
 main #filter .field-input .select-box .option {
-  text-align: left;
   padding: 12px 24px 12px 0;
   cursor: pointer;
+  position: relative;
+}
+
+main #filter .field-input .select-box .option span {
+  width: 100%;
+  position: absolute;
+  left: 10px;
 }
 
 main #filter .field-input .select-box .option:hover {
@@ -334,7 +342,7 @@ section.recomendacoes h1 {
   text-align: center;
   margin-top: 70px;
   font-size: 28px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 section.recomendacoes .container-card {
@@ -352,7 +360,7 @@ section.recomendacoes .container-card .list-card {
   align-items: center;
   overflow: hidden;
   height: 360px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 section.recomendacoes .container-card .list-card .list-card-slider {
@@ -451,7 +459,7 @@ section.oqProcura h2 {
   opacity: 0;
   color: #fff;
   transition: 0.5s;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 section.sticky h2 {
@@ -479,7 +487,7 @@ section.oqProcura .selecao .card-selecao {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 section.oqProcura .selecao .circle {

@@ -16,7 +16,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 main .alert {
@@ -82,6 +82,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 16px;
   padding: 0 10px;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 .cad-plano .field-input textarea {
@@ -111,6 +112,7 @@ body::-webkit-scrollbar-thumb {
   right: 12px;
   bottom: 5px;
   color: #ccc;
+  font-family: "Rubik", sans-serif;
 }
 
 .cad-plano .field-input input:focus ~ .counter,
@@ -130,6 +132,7 @@ body::-webkit-scrollbar-thumb {
   color: #ccc;
   font-size: 16px;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 .cad-plano .field-input input:focus ~ .info-field::before,
@@ -167,6 +170,7 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
   outline: none;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 .cad-plano .field-button button:hover {
@@ -341,6 +345,7 @@ main .list-planos .planos .card .valor p {
   font-size: 16px;
   color: #333;
   font-weight: bold;
+  font-family: "Rubik", sans-serif;
 }
 
 main .list-planos .planos .card .descricao {
@@ -356,6 +361,7 @@ main .list-planos .planos .card .descricao p {
   text-align: justify;
   font-size: 16px;
   color: #333;
+  font-family: "Open Sans", sans-serif;
 }
 
 main .list-planos .planos .card .acoes {

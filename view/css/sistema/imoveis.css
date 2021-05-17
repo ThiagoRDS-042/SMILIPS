@@ -8,6 +8,12 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
+/* 
+  font-family: "Poppins", sans-serif; 
+  font-family: "Rubik", sans-serif;
+  font-family: "Open Sans", sans-serif;
+*/
+
 nav {
   background: #ff6914 !important;
   box-shadow: 0 5px 15px #ccc;
@@ -32,7 +38,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat";
+  font-family: "Poppins", sans-serif;
 }
 
 main .imoveis_disponiveis {
@@ -47,6 +53,7 @@ main .imoveis_disponiveis .card_imovel {
   border-radius: 5px;
   margin-bottom: 40px;
   cursor: pointer;
+  font-family: "Rubik", sans-serif;
 }
 
 main .imoveis_disponiveis .card_imovel:hover {
@@ -177,6 +184,7 @@ main .imoveis_disponiveis .card_imovel .descricao .info {
   align-items: center;
   text-align: center;
   color: #333;
+  font-family: "Open Sans", sans-serif;
 }
 
 main .imoveis_disponiveis .card_imovel .descricao .detalhes {

@@ -682,7 +682,7 @@
                          <?php if (isset($_SESSION['usuarioID'])) : ?>
                               <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
                          <?php else : ?>
-                              <a href="/SMILIPS/view/pages/login.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
+                              <a href="/SMILIPS/view/pages/sistema/login.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
                          <?php endif; ?>
                     </div>
                </div>
@@ -693,7 +693,7 @@
                          <?php if (isset($_SESSION['usuarioID'])) : ?>
                               <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Anunciante"></a>
                          <?php else : ?>
-                              <a href="/SMILIPS/view/pages/login.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Anunciante"></a>
+                              <a href="/SMILIPS/view/pages/sistema/login.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Anunciante"></a>
                          <?php endif; ?>
                     </div>
                </div>
@@ -704,7 +704,7 @@
                          <?php if (isset($_SESSION['usuarioID'])) : ?>
                               <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
                          <?php else : ?>
-                              <a href="/SMILIPS/view/pages/login.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
+                              <a href="/SMILIPS/view/pages/sistema/login.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
                          <?php endif; ?>
                     </div>
                </div>

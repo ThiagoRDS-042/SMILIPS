@@ -96,9 +96,10 @@ admLogadoEntra();
     </div>
 
     <?php if ($imovel->num_rows > 0) : ?>
-      <h1>Imóveis do Usuário</h1>
+
       <!-- se o usuario tiver algum imovel cadastrado, mostra os imoveis e seus detalhes  -->
       <section class="your-imoveis">
+        <h1>Imóveis do Usuário</h1>
         <div class="container-imovel">
           <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
           <div class="list-imovel">
@@ -168,36 +169,38 @@ admLogadoEntra();
       </section>
     <?php endif; ?>
 
-    <section class="your-services">
-      <h1>Serviços do Usuário</h1>
+    <?php if (count($arrayServicos) != 0) : ?>
+      <section class="your-services">
+        <h1>Serviços do Usuário</h1>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Tipo de Serviço</th>
-            <th>Descrição</th>
-            <th>Editar</th>
-          </tr>
-        </thead>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de Serviço</th>
+              <th>Descrição</th>
+              <th>Editar</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <?php for ($i = 0; $i < count($arrayServicos); $i++) : ?>
-            <?php if ($arraySituacao[$i] == 'Desativado') : ?>
-              <tr class="servico-desativado">
-                <td><?php echo $arrayTipoServicos[$i] ?> (Desativado)</td>
-              <?php else : ?>
-              <tr>
-                <td><?php echo $arrayTipoServicos[$i] ?></td>
-              <?php endif; ?>
-              <td><?php echo $arrayServicos[$i] ?></td>
-              <td><a href="/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=<?php echo $arrayIdServicos[$i] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
-              </tr>
-            <?php endfor; ?>
-        </tbody>
+          <tbody>
+            <?php for ($i = 0; $i < count($arrayServicos); $i++) : ?>
+              <?php if ($arraySituacao[$i] == 'Desativado') : ?>
+                <tr class="servico-desativado">
+                  <td><?php echo $arrayTipoServicos[$i] ?> (Desativado)</td>
+                <?php else : ?>
+                <tr>
+                  <td><?php echo $arrayTipoServicos[$i] ?></td>
+                <?php endif; ?>
+                <td><?php echo $arrayServicos[$i] ?></td>
+                <td><a href="/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=<?php echo $arrayIdServicos[$i] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
+                </tr>
+              <?php endfor; ?>
+          </tbody>
 
-      </table>
+        </table>
 
-    </section>
+      </section>
+    <?php endif; ?>
 
   </main>
 

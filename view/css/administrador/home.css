@@ -25,6 +25,7 @@ main > h1 {
   font-size: 24px;
   font-weight: 600;
   color: rgb(107, 107, 107);
+  font-family: "Poppins", sans-serif;
 }
 
 main .container-planos {
@@ -43,6 +44,7 @@ main .container-planos .card {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 20px 5px;
+  font-family: "Rubik", sans-serif;
 }
 
 main .container-planos .card:hover {

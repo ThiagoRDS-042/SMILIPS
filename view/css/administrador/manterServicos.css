@@ -20,7 +20,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -59,6 +59,7 @@ main .cad-servicos input {
   border: 2px solid #ccc;
   border-radius: 5px;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .cad-servicos input:focus {
@@ -78,6 +79,7 @@ main .cad-servicos button {
   margin-top: 30px;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .cad-servicos button:hover {
@@ -109,7 +111,7 @@ main .list-servicos table caption {
   font-weight: 600;
   font-size: 20px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 main .list-servicos table tr {
@@ -120,12 +122,14 @@ main .list-servicos table tr {
 
 main .list-servicos table thead tr th {
   font-weight: bold;
+  font-family: "Rubik", sans-serif;
 }
 
 main .list-servicos table tr th,
 main .list-servicos table tbody tr td {
   border: 2px solid #ccc;
   text-align: center;
+  font-family: "Open Sans", sans-serif;
 }
 
 main .list-servicos table tbody tr td:last-child {
@@ -183,7 +187,7 @@ main .list-servicos table tbody tr td .excluir h3 {
   font-size: 14px;
   font-weight: bold;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   width: auto;
   height: 30px;
   line-height: 30px;
@@ -203,6 +207,7 @@ main .list-servicos table tbody tr td .excluir button {
   color: white;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .list-servicos table tbody tr td .excluir button a {

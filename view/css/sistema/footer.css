@@ -2,7 +2,7 @@ footer {
   height: 180px;
   background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
   border-top: 2px solid white;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 footer > div {
@@ -72,7 +72,7 @@ footer .middle .circle a {
 
 footer .middle .circle span {
   font-size: 22px;
-  font-weight: 550;
+  font-weight: 600;
   margin-left: 5px;
 }
 

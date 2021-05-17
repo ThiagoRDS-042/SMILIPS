@@ -29,7 +29,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 main .edit-services {
@@ -38,6 +38,7 @@ main .edit-services {
   height: 280px;
   margin: 20px auto;
   position: relative;
+  font-family: "Rubik", sans-serif;
 }
 
 main .type-servico .select-box {
@@ -155,6 +156,7 @@ main .edit-services .descricao textarea {
   outline: none;
   transition: 0.5s;
   resize: none;
+  font-family: "Rubik", sans-serif;
 }
 
 main .edit-services .descricao textarea::-webkit-scrollbar {
@@ -181,6 +183,7 @@ main .edit-services .descricao .info_field::before {
   padding: 0 3px;
   color: #ccc;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .edit-services .descricao textarea:focus ~ .info_field::before {
@@ -217,6 +220,7 @@ main .edit-services button {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .edit-services h3 {

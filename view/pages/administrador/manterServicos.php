@@ -33,8 +33,8 @@ admLogadoEntra();
       <form action="/SMILIPS/controller/DAO/tipoServico/tipoServicoDAO.php" method="POST">
         <!-- mesma coisa da pagina de manterPlanos, se a variavel get editar existir, atribuia valores aos campos e mude o nome do botao de salvar para editar -->
         <?php if (isset($_GET['editar'])) : ?>
-          <input type="hidden" name="id" value="<?php echo $tipoServico['tipoServicoID'] ?>">
-          <input type="text" name="servico" value="<?php echo $tipoServico['tipoServicoID'] ?>">
+          <input type="hidden" name="id" value="<?php echo $_GET['editar'] ?>">
+          <input type="text" name="servico" value="<?php echo $tipoServico['tipoServico'] ?>">
           <button type="submit" name="editar">Salvar</button>
         <?php else : ?>
           <input type="text" name="servico">

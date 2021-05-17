@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
 * {
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
 }
 
 nav {
@@ -41,7 +42,8 @@ nav .logo a {
   padding: 8px;
   border: 2px solid white;
   border-radius: 5px;
-  font-family: "Montserrat", sans-serif;
+  font-family: -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 nav .logo a::after,
@@ -94,7 +96,8 @@ nav ul li a {
   text-decoration: none;
   font-size: 18px;
   padding: 8px 20px;
-  font-family: "Montserrat", sans-serif;
+  font-family: -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 nav ul li a:hover {

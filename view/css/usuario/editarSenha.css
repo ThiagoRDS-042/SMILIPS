@@ -41,6 +41,7 @@ form {
   font-size: 24px;
   font-weight: 600;
   color: rgb(107, 107, 107);
+  font-family: "Poppins", sans-serif;
 }
 
 .editar-senha .content {
@@ -53,6 +54,7 @@ form {
 
 .editar-senha .content .card {
   height: 33%;
+  font-family: "Rubik", sans-serif;
 }
 
 .editar-senha .content label {
@@ -82,6 +84,7 @@ form {
   font-size: 17px;
   color: #333;
   padding-right: 30px;
+  font-family: "Rubik", sans-serif;
 }
 
 .editar-senha .content .field-senha .info::before {
@@ -92,6 +95,7 @@ form {
   color: #ccc;
   transition: 0.5s;
   pointer-events: none;
+  font-family: "Rubik", sans-serif;
 }
 
 .editar-senha .content .field-senha input:focus + .info::before,
@@ -152,6 +156,7 @@ form button {
   outline: none;
   margin: 10px 35%;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 form button:hover {

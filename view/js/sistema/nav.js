@@ -12,7 +12,7 @@ window.addEventListener("scroll", () => {
   const nav = document.querySelector("nav");
   const a = document.querySelector("nav a");
 
-  if (window.scrollY > 650) {
+  if (window.scrollY > 570) {
     // nav.style.background = "#ff6914";
     nav.classList.add("active");
   } else {

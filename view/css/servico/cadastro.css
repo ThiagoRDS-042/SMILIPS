@@ -29,7 +29,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 section.cad-servico {
@@ -38,6 +38,7 @@ section.cad-servico {
   height: 300px;
   margin: 40px auto;
   position: relative;
+  font-family: "Rubik", sans-serif;
 }
 
 section.cad-servico form {
@@ -148,6 +149,7 @@ main .cad-servico .descricao textarea {
   outline: none;
   transition: 0.5s;
   resize: none;
+  font-family: "Rubik", sans-serif;
 }
 
 main .cad-servico .descricao textarea::-webkit-scrollbar {
@@ -174,6 +176,7 @@ main .cad-servico .descricao .info_field::before {
   padding: 0 3px;
   color: #ccc;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .cad-servico .descricao textarea:focus ~ .info_field::before {
@@ -212,6 +215,7 @@ main .cad-servico button {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .cad-servico button:hover {

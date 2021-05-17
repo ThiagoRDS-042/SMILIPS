@@ -29,7 +29,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat";
+  font-family: "Poppins", sans-serif;
 }
 
 main .info-imovel {
@@ -104,52 +104,6 @@ main .btn_excluir .senha {
   transform: translate(-50%, -50%);
 }
 
-main .btn_excluir input {
-  width: 66%;
-  margin-left: 17%;
-  height: 35px;
-  outline: none;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  padding: 0 5px;
-  background: rgba(255, 255, 255, 0.5);
-  transition: 0.5s;
-  font-size: 16px;
-}
-
-main .btn_excluir input:focus {
-  border-color: #01baef;
-}
-
-main .btn_excluir span::before {
-  content: attr(data-placeholder);
-  position: absolute;
-  top: -8px;
-  left: 17%;
-  background: #fff;
-  padding: 0 3px;
-  font-size: 14px;
-  color: #ccc;
-  transition: 0.5s;
-}
-
-main .btn_excluir input:focus ~ span::before {
-  color: #01baef;
-}
-
-main .btn_excluir .senha .fa {
-  color: #ccc;
-  position: absolute;
-  right: 18.5%;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-main .btn_excluir input:focus + .fa {
-  color: #01baef;
-}
-
 main .btn_excluir .icon_senha {
   position: absolute;
   top: 50%;
@@ -179,6 +133,7 @@ main .btn_excluir .buttons button {
   position: absolute;
   bottom: 10px;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .btn_excluir .buttons button:first-child {
@@ -276,6 +231,7 @@ main .info-imovel .imgs-imovel .obs {
   bottom: -20px;
   color: #ccc;
   font-size: 14px;
+  font-family: "Rubik", sans-serif;
 }
 
 main .info-imovel .type-imv {
@@ -321,6 +277,7 @@ main .info-imovel .type-imv .detalhes .field-input input {
   font-size: 16px;
   color: #333;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .info-imovel .type-imv .detalhes .field-input.end {
@@ -342,6 +299,7 @@ main .info-imovel .type-imv .detalhes .field-input .info-field::before {
   transition: 0.5s;
   background: white;
   padding: 0 3px;
+  font-family: "Rubik", sans-serif;
 }
 
 main
@@ -436,6 +394,7 @@ main .info-imovel .type-imv .detalhes .comodos .desc textarea {
   outline: none;
   transition: 0.5s;
   resize: none;
+  font-family: "Rubik", sans-serif;
 }
 
 main
@@ -485,6 +444,7 @@ main .type-value .select-box {
   width: 48%;
   height: 40px;
   flex-direction: column;
+  font-family: "Rubik", sans-serif;
 }
 
 main .type-value .select-box .list-options {
@@ -590,6 +550,7 @@ main .info-imovel .btn-enviar button {
   color: white;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .info-imovel .btn-enviar button:hover {

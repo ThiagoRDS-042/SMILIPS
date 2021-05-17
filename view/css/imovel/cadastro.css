@@ -20,7 +20,7 @@ body {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
@@ -68,6 +68,7 @@ main .type-imovel .select-box {
   margin: 0 auto;
   width: 100%;
   flex-direction: column;
+  font-family: "Rubik", sans-serif;
 }
 
 main .type-imovel .select-box .list-options {
@@ -175,6 +176,7 @@ main .field-input .info_field::before {
   padding: 0 5px;
   transition: 0.5s;
   pointer-events: none;
+  font-family: "Rubik", sans-serif;
 }
 
 main .field-input .obrigatorio:focus ~ .info_field::before,
@@ -210,6 +212,7 @@ main .field-input input {
   border-radius: 5px;
   outline: none;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 /* endereco imovel */
@@ -244,6 +247,7 @@ main .detalhes-imovel > .field-input textarea {
   outline: none;
   transition: 0.5s;
   resize: none;
+  font-family: "Rubik", sans-serif;
 }
 
 main .detalhes-imovel > .field-input textarea::-webkit-scrollbar {
@@ -310,6 +314,7 @@ main .select-img span {
   font-size: 14px;
   opacity: 1;
   transition: 0.5s;
+  font-family: "Open Sans", sans-serif;
 }
 
 main .select-img.active span {
@@ -352,6 +357,7 @@ main .select-img h1 {
   font-weight: 600;
   transition: 0.5s;
   width: 223px;
+  font-family: "Rubik", sans-serif;
 }
 
 main .select-img h1:hover {
@@ -450,6 +456,7 @@ main form button[type="submit"] {
   left: 50%;
   transform: translate(-50%, -10%);
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main form button[type="submit"]:hover {

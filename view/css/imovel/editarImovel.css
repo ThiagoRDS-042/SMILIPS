@@ -24,7 +24,7 @@ main h1 {
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
@@ -111,6 +111,7 @@ main .btn_excluir input {
   background: rgba(255, 255, 255, 0.5);
   transition: 0.5s;
   font-size: 16px;
+  font-family: "Rubik", sans-serif;
 }
 
 main .btn_excluir input:focus {
@@ -127,6 +128,7 @@ main .btn_excluir span::before {
   font-size: 14px;
   color: #ccc;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .btn_excluir input:focus ~ span::before {
@@ -175,6 +177,7 @@ main .btn_excluir .buttons button {
   position: absolute;
   bottom: 10px;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .btn_excluir .buttons button:first-child {
@@ -272,6 +275,7 @@ main .info-imovel .imgs-imovel .obs {
   bottom: -20px;
   color: #ccc;
   font-size: 14px;
+  font-family: "Open Sans", sans-serif;
 }
 
 main .info-imovel .type-imv {
@@ -284,6 +288,7 @@ main .info-imovel .type-imv .detalhes {
   max-width: 100%;
   border: 2px solid #ccc;
   border-radius: 5px;
+  font-family: "Rubik", sans-serif;
 }
 
 main .info-imovel .type-imv .detalhes .endereco-imovel {
@@ -317,6 +322,7 @@ main .info-imovel .type-imv .detalhes .field-input input {
   font-size: 16px;
   color: #333;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .info-imovel .type-imv .detalhes .field-input.end {
@@ -338,6 +344,7 @@ main .info-imovel .type-imv .detalhes .field-input .info-field::before {
   transition: 0.5s;
   background: white;
   padding: 0 3px;
+  font-family: "Rubik", sans-serif;
 }
 
 main
@@ -586,6 +593,7 @@ main .info-imovel .btn-enviar button {
   color: white;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .info-imovel .btn-enviar button:hover {

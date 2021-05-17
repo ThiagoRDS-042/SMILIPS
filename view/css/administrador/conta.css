@@ -1,6 +1,7 @@
 .menu-perfil {
   background: #be5041 !important;
 }
+
 .alert {
   top: 80px !important;
 }
@@ -32,6 +33,7 @@ main .edit-info h1 {
   font-size: 24px;
   font-weight: 600;
   color: rgb(107, 107, 107);
+  font-family: "Poppins", sans-serif;
 }
 
 main .edit-info form {
@@ -51,6 +53,7 @@ main .edit-info form .field-input {
   justify-content: center;
   border-radius: 10px;
   border: 1px solid #ccc;
+  font-family: "Rubik", sans-serif;
 }
 
 main .edit-info form .field-input input {
@@ -60,6 +63,7 @@ main .edit-info form .field-input input {
   outline: none;
   border-bottom: 2px solid #ccc;
   color: #333;
+  font-family: "Rubik", sans-serif;
 }
 
 main .edit-info form .field-input span::before {
@@ -70,6 +74,7 @@ main .edit-info form .field-input span::before {
   color: #ccc;
   transition: 0.5s;
   pointer-events: none;
+  font-family: "Rubik", sans-serif;
 }
 
 main .edit-info form .field-input input:focus + span::before,
@@ -136,6 +141,7 @@ main .edit-info form .field-button button {
   font-size: 18px;
   font-weight: 600;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
 main .edit-info form .field-button button:hover {

@@ -29,6 +29,7 @@ main .nome {
   font-size: 24px;
   font-weight: bold;
   color: rgb(107, 107, 107);
+  font-family: "Poppins", sans-serif;
 }
 
 main .card-container {
@@ -49,6 +50,7 @@ main .card-container .card {
   border-radius: 5px;
   margin: 0 3px;
   position: relative;
+  font-family: "Rubik", sans-serif;
 }
 
 main .card-container .card:hover {
@@ -101,6 +103,7 @@ main .card-container .card .content .text-content p {
   color: #333;
   font-size: 13px;
   text-align: justify;
+  font-family: "Open Sans", sans-serif;
 }
 
 main .card-container .card .image {
@@ -131,7 +134,7 @@ section.your-imoveis h1 {
   font-size: 24px;
   font-weight: bold;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 80px 0 20px 0;
 }
 
@@ -149,7 +152,6 @@ section.your-imoveis .container-imovel .list-imovel {
   align-items: center;
   overflow: hidden;
   height: 100%;
-  font-family: "Montserrat", sans-serif;
   max-width: 875px;
 }
 
@@ -177,6 +179,7 @@ section.your-imoveis .container-imovel .card {
   cursor: pointer;
   border-radius: 5px;
   margin: 0 5px;
+  font-family: "Rubik", sans-serif;
   background: white;
 }
 
@@ -230,6 +233,7 @@ section.your-imoveis .container-imovel .card .detalhes h3 span {
 section.your-imoveis .container-imovel .card .detalhes p {
   font-size: 16px;
   text-align: justify;
+  font-family: "Open Sans", sans-serif;
 }
 
 section.your-imoveis .container-imovel .card .detalhes a {
@@ -257,7 +261,7 @@ section.your-services h1 {
   font-size: 24px;
   font-weight: bold;
   color: rgb(107, 107, 107);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 20px 0;
 }
 
@@ -279,6 +283,7 @@ main section.your-services table tr.servico-desativado {
 
 main section.your-services table thead tr th {
   font-weight: bold;
+  font-family: "Rubik", sans-serif;
 }
 
 main section.your-services table tr th,
@@ -287,6 +292,7 @@ main section.your-services table tbody tr td {
   text-align: center;
   padding: 15px;
   vertical-align: middle;
+  font-family: "Open Sans", sans-serif;
 }
 
 main table tbody tr td:last-child a {

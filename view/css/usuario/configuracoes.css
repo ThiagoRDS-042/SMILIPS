@@ -34,6 +34,7 @@ main .alert {
   font-weight: 600;
   color: rgb(107, 107, 107);
   margin-left: 5px;
+  font-family: "Poppins", sans-serif;
 }
 
 .desativar-conta .btn-desativar {
@@ -72,6 +73,7 @@ main .alert {
   z-index: 3;
   background: #e74c3c;
   border: 2px solid #e74c3c;
+  font-family: "Rubik", sans-serif;
 }
 
 .desativar-conta .btn-desativar h1:hover {
@@ -121,6 +123,7 @@ main .alert {
   color: #333;
   border-bottom: 1px solid #ccc;
   border-radius: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
 .desativar-conta .btn-desativar .msg-desativar .msg-content {
@@ -136,6 +139,7 @@ main .alert {
   height: 35px;
   font-size: 16px;
   background: rgba(255, 255, 255, 0.6);
+  font-family: "Rubik", sans-serif;
 }
 
 .desativar-conta .btn-desativar .msg-desativar .msg-content:focus {
@@ -180,6 +184,7 @@ main .alert {
   cursor: pointer;
   transition: 0.5s;
   width: 100px;
+  font-family: "Rubik", sans-serif;
 }
 
 .desativar-conta .btn-desativar .msg-desativar .confirm {
