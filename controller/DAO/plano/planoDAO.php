@@ -11,9 +11,10 @@ if (isset($_POST['salvar'])) {
   $nome = $_POST['nome'];
   $valor = $_POST['valor'];
   $descricao = $_POST['descricao'];
+  $duracao = $_POST['duracao'];
 
   // cadastre o plano passado no DB
-  $conexao->query("INSERT INTO plano (nome, descricao, valor) VALUES ('$nome', '$descricao', '$valor')") or die($conexao->error);
+  $conexao->query("INSERT INTO plano (nome, descricao, valor, duracao) VALUES ('$nome', '$descricao', '$valor', '$duracao')") or die($conexao->error);
 
   exibirMsg("Plano Cadastrado com Sucesso!", "success");
   header("location:/SMILIPS/view/pages/administrador/manterPlanos.php");

@@ -69,7 +69,7 @@ usuarioLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="#">Cadastrar Anúncio</a>
+          <a href="/SMILIPS/view/pages/propaganda/cadastro.php">Cadastrar Anúncio</a>
         </div>
       </div>
       <div class="card">

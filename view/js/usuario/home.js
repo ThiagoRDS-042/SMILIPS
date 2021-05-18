@@ -10,7 +10,7 @@ cards.forEach((card) => {
     card === cards[0]
       ? (location = "/SMILIPS/view/pages/imovel/cadastro.php")
       : card === cards[1]
-      ? (location = "#")
+      ? (location = "/SMILIPS/view/pages/propaganda/cadastro.php")
       : (location = "/SMILIPS/view/pages/servico/cadastro.php");
   });
 });

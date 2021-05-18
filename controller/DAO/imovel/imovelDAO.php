@@ -108,7 +108,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
           fclose($handle);
         }
 
-        exibirMsg("Imóvel Cadastrado com Sucesso!", "success");
+        exibirMsg("Imóvel Enviado para a Analise!", "success");
         header("location:/SMILIPS/view/pages/imovel/cadastro.php");
       } else {
         exibirMsg("Selecione Imagens do Imóvel!", "danger");

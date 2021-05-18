@@ -21,6 +21,16 @@
   <main>
     <h1>Imóveis</h1>
 
+    <input type="checkbox" id="btnFiltro">
+    <label for="btnFiltro">
+      <h3><i class="fas fa-angle-left"></i> filtro</h3>
+    </label>
+
+
+    <div class="filtro">
+      <p>filtro</p>
+    </div>
+
     <section class="imoveis_disponiveis">
       <?php for ($i = 0; $i < count($matrizImoveis); $i++) : ?>
         <div class="card_imovel">
