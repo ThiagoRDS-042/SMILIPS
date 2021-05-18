@@ -33,8 +33,8 @@ main h1 {
 }
 
 main form {
-  width: 60%;
-  height: 300px;
+  width: 50%;
+  height: 350px;
   margin: 20px auto;
   position: relative;
 }
@@ -96,6 +96,13 @@ main form button {
   bottom: -50px;
   transform: translateX(-50%);
   font-family: "Rubik", sans-serif;
+  transition: 0.5s;
+}
+
+main form button:hover,
+main form button:active {
+  background: white;
+  color: #01baef;
 }
 
 @media (max-width: 805px) {
@@ -107,5 +114,8 @@ main form button {
 @media (max-width: 700px) {
   main form .cad_anuncio span {
     font-size: 10px;
+  }
+  main form {
+    height: 300px;
   }
 }

@@ -21,6 +21,9 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/servico/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarServico();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
+  // chamando a funcao consultarImovelUser
+  consultarPropagandasUser();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/usuario/home.css">
   <title>Home</title>
@@ -193,6 +196,33 @@ usuarioLogadoEntra();
 
       </section>
     <?php endif; ?>
+
+    <section class="your-adverts">
+      <h1>Suas Propagandas</h1>
+
+      <div class="adverts">
+        <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
+        <div class="adverts-container">
+          <div class="cards-propaganda">
+            <?php while ($row = $propagandas->fetch_assoc()) : ?>
+              <div class="card <?php echo $row['situacao'] ?>">
+                <div class="image">
+                  <img src="data:image/jpeg;base64,<?php echo base64_encode($row['propaganda']) ?>" alt="image">
+                </div>
+                <?php if ($row['situacao'] == 'Desativado') : ?>
+                  <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Ativar</a>
+                <?php elseif ($row['situacao'] == 'Ativado') : ?>
+                  <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Detalhes</a>
+                <?php else : ?>
+                  <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Em Analise</a>
+                <?php endif; ?>
+              </div>
+            <?php endwhile; ?>
+          </div>
+        </div>
+        <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
+      </div>
+    </section>
 
   </main>
 
