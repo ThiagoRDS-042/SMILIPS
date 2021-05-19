@@ -51,29 +51,22 @@ const sliderPropaganda = document.querySelector(
 );
 const cards_propaganda = document.querySelectorAll(".your-adverts .card");
 
-console.log(btnProximo, btnVoltar, slider, cards_imovel);
-
 // chamando a funcao de avancar ao clicar no btnproximo de a cordo com o largura da tela
 btnProximoPropaganda.addEventListener("click", () => {
   window.innerWidth <= 881
-    ? avancarPropaganda(-285, cards_propaganda, sliderPropaganda, 1)
+    ? avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 1)
     : window.innerWidth <= 1306
-    ? avancarPropaganda(-285, cards_propaganda, sliderPropaganda, 2)
-    : avancarPropaganda(
-        -285,
-        cardcards_propagandas_imovel,
-        sliderPropaganda,
-        3
-      );
+    ? avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 2)
+    : avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 3);
 });
 
 // chamando a funcao de voltar ao clicar no btnvoltar de a cordo com o largura da tela
 btnVoltarPropaganda.addEventListener("click", () => {
   window.innerWidth <= 881
-    ? retornarPropaganda(285, cards_propaganda, sliderPropaganda, 1)
+    ? retornarPropaganda(290, cards_propaganda, sliderPropaganda, 1)
     : window.innerWidth <= 1306
-    ? retornarPropaganda(285, cards_propaganda, sliderPropaganda, 2)
-    : retornarPropaganda(285, cards_propaganda, sliderPropaganda, 3);
+    ? retornarPropaganda(290, cards_propaganda, sliderPropaganda, 2)
+    : retornarPropaganda(290, cards_propaganda, sliderPropaganda, 3);
 });
 
 let cont = 0;

@@ -38,7 +38,7 @@ fileChooser.addEventListener("change", (e) => {
   //add a variavel fileToUpload o imagem selecionada
   const fileToUpload = e.target.files.item(0);
   if (fileToUpload) {
-    if (/\.(jpe?g|png|gif)$/i.test(fileToUpload.name)) {
+    if (/\.(jpe?g|png)$/i.test(fileToUpload.name)) {
       //ler o conteudo do arquivo selecionado, lembrando q de maneira assincrona
       const reader = new FileReader();
 

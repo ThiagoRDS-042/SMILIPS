@@ -53,6 +53,11 @@ main .card-container .card {
   font-family: "Rubik", sans-serif;
 }
 
+main .card-container .card.Em,
+.card.Desativada {
+  opacity: 0.5;
+}
+
 main .card-container .card:hover {
   box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
 }

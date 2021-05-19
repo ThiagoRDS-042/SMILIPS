@@ -93,6 +93,20 @@ function consultarMsgImovelInvalido()
     if ($msgImovelInvalido->num_rows > 0) {
         $msgImovelInvalido = $msgImovelInvalido->fetch_assoc();
         $msgImovelInvalido = $msgImovelInvalido['mensagem'];
-        exibirMsg("Seu Imóvel não foi Aceito por apresentar $msgImovelInvalido", "danger");
+        // exibirMsg("Seu Imóvel não foi Aceito por apresentar $msgImovelInvalido", "danger");
+    }
+}
+
+function consultarPlanoUsuario()
+{
+    $id = $_SESSION['usuarioID'];
+
+    global $conexao, $planoUsuario;
+
+    $planoUsuario = $conexao->query("SELECT * FROM usuarioPropaganda WHERE usuarioID = '$id'") or die($conexao->error);
+
+    if ($planoUsuario->num_rows == 0) {
+        exibirMsg("Escolha e Efetive um Plano para poder Cadastrar Anuncios!", "danger");
+        header("location:/SMILIPS/view/pages/plano/escolherPlano.php");
     }
 }

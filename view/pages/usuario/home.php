@@ -209,9 +209,9 @@ usuarioLogadoEntra();
                 <div class="image">
                   <img src="data:image/jpeg;base64,<?php echo base64_encode($row['propaganda']) ?>" alt="image">
                 </div>
-                <?php if ($row['situacao'] == 'Desativado') : ?>
+                <?php if ($row['situacao'] == 'Desativada') : ?>
                   <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Ativar</a>
-                <?php elseif ($row['situacao'] == 'Ativado') : ?>
+                <?php elseif ($row['situacao'] == 'Ativada') : ?>
                   <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Detalhes</a>
                 <?php else : ?>
                   <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Em Analise</a>

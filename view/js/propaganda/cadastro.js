@@ -9,7 +9,7 @@ file.addEventListener("change", (e) => {
   //add a variavel fileToUpload o imagem selecionada
   const fileToUpload = e.target.files.item(0);
   if (fileToUpload) {
-    if (/\.(jpe?g|png|gif)$/i.test(fileToUpload.name)) {
+    if (/\.(jpe?g|png)$/i.test(fileToUpload.name)) {
       if (fileToUpload.size <= 1022924) {
         icon.style.display = "none";
         preview.style.display = "block";

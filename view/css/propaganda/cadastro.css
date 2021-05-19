@@ -23,9 +23,9 @@ main .alert {
 }
 
 main h1 {
-  width: 100%;
+  min-width: 100%;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 130px;
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);
@@ -34,7 +34,7 @@ main h1 {
 
 main form {
   width: 50%;
-  height: 350px;
+  height: 400px;
   margin: 20px auto;
   position: relative;
 }
@@ -103,6 +103,10 @@ main form button:hover,
 main form button:active {
   background: white;
   color: #01baef;
+}
+
+footer {
+  margin-top: 40px;
 }
 
 @media (max-width: 805px) {

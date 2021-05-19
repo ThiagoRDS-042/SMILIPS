@@ -37,5 +37,57 @@ if (isset($_POST['salvar'])) {
   } else {
     exibirMsg("Formato de Arquivo Inválido! (Formato Suportado = PNG, JPG, JPEG)", "danger");
   }
-  header("location:/SMILIPS/view/pages/propaganda/cadastro.php");
+
+  if (isset($_GET['editar'])) {
+    $id = $_GET['editar'];
+    header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+  } else {
+    header("location:/SMILIPS/view/pages/propaganda/cadastro.php");
+  }
+} else if (isset($_POST['editar'])) {
+  if (isset($_FILES['propaganda']['name']) && $_FILES['propaganda']['error'] == 0) {
+    $id = $_POST['id'];
+    $situacao = 'Em Analise';
+    $propaganda = $_FILES['propaganda'];
+
+    $caminhoTemp = $propaganda['tmp_name'];
+    $tamanhoImg = $propaganda['size'];
+
+    $handle = fopen($caminhoTemp, "r");
+    $propaganda  = addslashes(fread($handle, $tamanhoImg));
+
+    //salvando o usurio
+    $conexao->query("UPDATE propaganda SET propaganda = '$propaganda', situacao = '$situacao' WHERE propagandaID = '$id'") or die($conexao->error);
+
+    fclose($handle);
+
+    exibirMsg("Propaganda Enviada para a Analise!", "success");
+    header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+  } else {
+    $id = $_POST['id'];
+    exibirMsg("Propaganda Atualizada com Sucesso!", "success");
+    header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+  }
+} else if (isset($_POST['situacao'])) {
+  $situacao = $_POST['situacao'];
+  $id  = $_POST['id'];
+  $idUser = $_SESSION['usuarioID'];
+  $senha = md5($_POST['senha']);
+
+  $senhaUsuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
+  $senhaUsuario = $senhaUsuario->fetch_assoc();
+  $senhaUsuario = $senhaUsuario['senhaUsuario'];
+
+  if ($senha == $senhaUsuario) {
+    if ($situacao == 'Excluida') {
+      $conexao->query("DELETE FROM propaganda WHERE propagandaID = '$id'") or die($conexao->error);
+    } else {
+      $conexao->query("UPDATE propaganda SET situacao = '$situacao' WHERE propagandaID = '$id'") or die($conexao->error);
+    }
+    exibirMsg("Propaganda $situacao com Sucesso!", "success");
+    header("location:/SMILIPS/view/pages/usuario/home.php");
+  } else {
+    exibirMsg("Senha Invalida!", "danger");
+    header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+  }
 }

@@ -40,7 +40,7 @@ input.addEventListener("change", function previewFiles() {
     const sizeValidet = [];
     for (const element of files) {
       // interando cada posicao do array com as validações de formato e tamanho da img
-      formatValidet.push(/\.(jpe?g|png|gif)$/i.test(element.name));
+      formatValidet.push(/\.(jpe?g|png)$/i.test(element.name));
       sizeValidet.push(element.size <= 1022924);
     }
 
