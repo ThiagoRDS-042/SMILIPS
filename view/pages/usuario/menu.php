@@ -16,22 +16,16 @@
                     <span class="title">Perfil</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fa fa-comment"></i></span>
-                    <span class="title">Mensagens</span>
+            <li class="menu-config">
+                <a href="/SMILIPS/view/pages/usuario/configuracoes.php">
+                    <span class="icon"><i class="fa fa-cog"></i></span>
+                    <span class="title">Configurações</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fa fa-question-circle"></i></span>
                     <span class="title">Ajuda</span>
-                </a>
-            </li>
-            <li class="menu-config">
-                <a href="/SMILIPS/view/pages/usuario/configuracoes.php">
-                    <span class="icon"><i class="fa fa-cog"></i></span>
-                    <span class="title">Configurações</span>
                 </a>
             </li>
             <li class="menu-senha">

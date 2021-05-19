@@ -57,7 +57,11 @@ usuarioLogadoEntra();
                         <button class="cancel" type="button">Cancelar</button>
                     </div>
                 </form>
+                <div class="escolher_plano">
+                    <a href="/SMILIPS/view/pages/plano/escolherPlano.php"><button>Escolher Plano</button></a>
+                </div>
             </div>
+
         </div>
     </main>
 

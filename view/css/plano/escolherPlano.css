@@ -23,3 +23,125 @@ main h1 {
   color: rgb(107, 107, 107);
   font-family: "Poppins", sans-serif;
 }
+
+main .planos {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  flex-wrap: wrap;
+}
+
+main .planos .card {
+  width: 250px;
+  height: 300px;
+  margin: 20px 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+main .planos .card > span {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  font-size: 30px;
+  font-weight: bold;
+  transition: 0.5s;
+  color: #ccc;
+  opacity: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+main .planos .card:hover > span {
+  top: 0;
+  opacity: 1;
+  color: black;
+}
+
+main .planos .card .title {
+  height: 40px;
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .planos .card .title p {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+main .planos .card .valor {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+main .planos .card .valor p {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+}
+
+main .planos .card .valor p span {
+  font-size: 16px;
+}
+
+main .planos .card .descricao {
+  width: 100%;
+  height: 170px;
+
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+main .planos .card .descricao p {
+  color: #333;
+  font-size: 16px;
+  text-align: justify;
+  font-family: "Rubik", sans-serif;
+}
+
+main .planos .card .btn {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+main .planos .card .btn button {
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  background: white;
+  color: #3498db;
+  border: 3px solid #3498db;
+  outline: none;
+
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+main .planos .card .btn button:hover,
+main .planos .card .btn button:active {
+  background: #3498db;
+  color: white;
+}

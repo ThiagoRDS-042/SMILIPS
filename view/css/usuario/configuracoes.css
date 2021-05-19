@@ -23,7 +23,7 @@ main .alert {
 
 .desativar-conta {
   width: 60%;
-  height: 130px;
+  height: 180px;
   margin: 150px auto 0 auto;
   min-width: 220px;
 }
@@ -40,7 +40,7 @@ main .alert {
 .desativar-conta .btn-desativar {
   position: relative;
   width: 100%;
-  height: 80%;
+  height: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -48,10 +48,42 @@ main .alert {
 .desativar-conta .btn-desativar form {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.desativar-conta .btn-desativar .escolher_plano {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.desativar-conta .btn-desativar .escolher_plano button {
+  width: 170px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 600;
+  user-select: none;
+  text-align: center;
+  line-height: 35px;
+  z-index: 3;
+  background: #3498db;
+  border: 2px solid #3498db;
+  font-family: "Rubik", sans-serif;
+}
+
+.desativar-conta .btn-desativar .escolher_plano button:hover,
+.desativar-conta .btn-desativar .escolher_plano button:active {
+  background: white;
+  color: #3498db;
 }
 
 .desativar-conta .btn-desativar input[type="checkbox"] {
@@ -76,13 +108,10 @@ main .alert {
   font-family: "Rubik", sans-serif;
 }
 
-.desativar-conta .btn-desativar h1:hover {
+.desativar-conta .btn-desativar h1:hover,
+.desativar-conta .btn-desativar h1:active {
   background: white;
   color: #e74c3c;
-}
-
-.desativar-conta .btn-desativar h1:active {
-  background: #ccc;
 }
 
 .desativar-conta .btn-desativar .msg-desativar {

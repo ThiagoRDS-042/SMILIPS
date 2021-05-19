@@ -23,6 +23,69 @@ usuarioLogadoEntra();
 
   <main>
     <h1>Escolher Plano</h1>
+
+    <section class="planos">
+      <div class="card">
+        <span>1</span>
+        <div class="title">
+          <p>Premium</p>
+        </div>
+
+        <div class="valor">
+          <p>R$ 2.250/<span>MES</span></p>
+        </div>
+
+        <div class="descricao">
+          <p>asda asd asda sd asdasdasd d asmdha a as h hahd ja uas a ojajiyhu yu uhg g u gui t t ygu guy i.</p>
+        </div>
+
+        <div class="btn">
+          <button>Selecionar</button>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <span>2</span>
+        <div class="title">
+          <p>Basic</p>
+        </div>
+
+        <div class="valor">
+          <p>R$ 2.250/<span>MES</span></p>
+        </div>
+
+        <div class="descricao">
+          <p>asda asd asda sd asdasdasd d asmdha a as h hahd ja uas a ojajiyhu yu uhg g u gui t t ygu guy i.</p>
+        </div>
+
+        <div class="btn">
+          <button>Selecionar</button>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <span>3</span>
+        <div class="title">
+          <p>Comum</p>
+        </div>
+
+        <div class="valor">
+          <p>R$ 2.250/<span>MES</span></p>
+        </div>
+
+        <div class="descricao">
+          <p>asda asd asda sd asdasdasd d asmdha a as h hahd ja uas a ojajiyhu yu uhg g u gui t t ygu guy i.</p>
+        </div>
+
+        <div class="btn">
+          <button>Selecionar</button>
+        </div>
+
+      </div>
+
+    </section>
   </main>
 
 
