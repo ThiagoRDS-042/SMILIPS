@@ -14,6 +14,10 @@ main {
   border: 1px solid transparent;
 }
 
+main .alert {
+  top: 80px;
+}
+
 main h1 {
   width: 100%;
   text-align: center;
@@ -30,20 +34,36 @@ main .planos {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border: 1px solid black;
   flex-wrap: wrap;
 }
 
 main .planos .card {
-  width: 250px;
-  height: 300px;
+  width: 280px;
+  height: 330px;
   margin: 20px 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
   position: relative;
+  overflow: hidden;
 }
 
-main .planos .card > span {
+main .planos .card:hover {
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+/* main .planos .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  background: rgba(0, 0, 0, 0.1);
+} */
+
+main .planos .card .numeracao {
   width: 40px;
   height: 40px;
   display: flex;
@@ -60,10 +80,96 @@ main .planos .card > span {
   font-family: "Poppins", sans-serif;
 }
 
-main .planos .card:hover > span {
+main .planos .card:hover .numeracao {
   top: 0;
   opacity: 1;
-  color: black;
+  color: white;
+}
+
+.planos .card .efect {
+  opacity: 0;
+}
+
+main .planos .card:hover .efect {
+  opacity: 1;
+}
+
+.planos .card .efect:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #771fd2);
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.planos .card .efect:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #771fd2);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.planos .card .efect:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, transparent, #771fd2);
+  animation: animate3 1s linear infinite;
+}
+
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.planos .card .efect:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #771fd2);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 main .planos .card .title {
@@ -73,6 +179,11 @@ main .planos .card .title {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
+}
+
+main .planos .card:hover .title {
+  background: #2980b9;
 }
 
 main .planos .card .title p {
@@ -80,6 +191,10 @@ main .planos .card .title p {
   font-size: 20px;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
+}
+
+main .planos .card:hover .title p {
+  color: white;
 }
 
 main .planos .card .valor {
@@ -103,8 +218,7 @@ main .planos .card .valor p span {
 
 main .planos .card .descricao {
   width: 100%;
-  height: 170px;
-
+  height: 190px;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -119,7 +233,7 @@ main .planos .card .descricao p {
 
 main .planos .card .btn {
   width: 100%;
-  height: 50px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: flex-start;

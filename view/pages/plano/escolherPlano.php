@@ -19,72 +19,43 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/plano/consultar.php');
+  consultar();
   ?>
 
   <main>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
     <h1>Escolher Plano</h1>
 
     <section class="planos">
-      <div class="card">
-        <span>1</span>
-        <div class="title">
-          <p>Premium</p>
+
+      <?php while ($row = $planos->fetch_assoc()) : ?>
+        <div class="card">
+          <span class="efect"></span>
+          <span class="efect"></span>
+          <span class="efect"></span>
+          <span class="efect"></span>
+          <span class="numeracao">1</span>
+          <div class="title">
+            <p><?php echo $row['nome'] ?></p>
+          </div>
+
+          <div class="valor">
+            <p>R$ <?php echo $row['valor'] ?>/<span>MES</span></p>
+          </div>
+
+          <div class="descricao">
+            <p><?php echo $row['descricao'] ?></p>
+          </div>
+
+          <div class="btn">
+            <button>Selecionar</button>
+          </div>
+
         </div>
-
-        <div class="valor">
-          <p>R$ 2.250/<span>MES</span></p>
-        </div>
-
-        <div class="descricao">
-          <p>asda asd asda sd asdasdasd d asmdha a as h hahd ja uas a ojajiyhu yu uhg g u gui t t ygu guy i.</p>
-        </div>
-
-        <div class="btn">
-          <button>Selecionar</button>
-        </div>
-
-      </div>
-
-      <div class="card">
-        <span>2</span>
-        <div class="title">
-          <p>Basic</p>
-        </div>
-
-        <div class="valor">
-          <p>R$ 2.250/<span>MES</span></p>
-        </div>
-
-        <div class="descricao">
-          <p>asda asd asda sd asdasdasd d asmdha a as h hahd ja uas a ojajiyhu yu uhg g u gui t t ygu guy i.</p>
-        </div>
-
-        <div class="btn">
-          <button>Selecionar</button>
-        </div>
-
-      </div>
-
-      <div class="card">
-        <span>3</span>
-        <div class="title">
-          <p>Comum</p>
-        </div>
-
-        <div class="valor">
-          <p>R$ 2.250/<span>MES</span></p>
-        </div>
-
-        <div class="descricao">
-          <p>asda asd asda sd asdasdasd d asmdha a as h hahd ja uas a ojajiyhu yu uhg g u gui t t ygu guy i.</p>
-        </div>
-
-        <div class="btn">
-          <button>Selecionar</button>
-        </div>
-
-      </div>
-
+      <?php endwhile; ?>
     </section>
   </main>
 
@@ -92,6 +63,8 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
   ?>
+
+  <script src="/SMILIPS/view/js/plano/escolherPlano.js"></script>
 </body>
 
 </html>

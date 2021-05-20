@@ -22,6 +22,8 @@ CREATE TABLE propaganda(propagandaID INT AUTO_INCREMENT PRIMARY KEY, propaganda 
 
 CREATE TABLE usuarioPropaganda(usuarioPropagandaID INT AUTO_INCREMENT PRIMARY KEY, usuarioID INT NOT NULL, planoID INT NOT NULL, dataInicio VARCHAR(10) NOT NULL, dataFim VARCHAR(10) NOT NULL, CONSTRAINT fK_usuarioPropaganda_usuario FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID) ON UPDATE CASCADE ON DELETE CASCADE, CONSTRAINT fK_usuarioPropaganda_plano FOREIGN KEY (planoID) REFERENCES plano(planoID) ON UPDATE CASCADE ON DELETE CASCADE);
 
+CREATE TABLE planoUsuario(planoUsuarioID INT AUTO_INCREMENT PRIMARY KEY, usuarioID INT, planoID INT,CONSTRAINT fK_planoUsuario_usuario FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID) ON UPDATE CASCADE ON DELETE CASCADE, CONSTRAINT fK_usuarioPlano_plano FOREIGN KEY (planoID) REFERENCES plano(planoID) ON UPDATE CASCADE ON DELETE CASCADE);
+
 DROP TABLE administrador;
 
 DROP TABLE usuario;
@@ -41,3 +43,5 @@ DROP TABLE servico;
 DROP TABLE propaganda;
 
 DROP TABLE usaurioPropaganda;
+
+DROP TABLE planoUsuario;
