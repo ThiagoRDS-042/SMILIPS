@@ -43,7 +43,7 @@ usuarioLogadoEntra();
           </div>
 
           <div class="valor">
-            <p>R$ <?php echo $row['valor'] ?>/<span>MES</span></p>
+            <p>R$ <?php echo $row['valor'] ?>/<span>MÊS</span></p>
           </div>
 
           <div class="descricao">
@@ -51,7 +51,7 @@ usuarioLogadoEntra();
           </div>
 
           <div class="btn">
-            <button>Selecionar</button>
+            <a href="/SMILIPS/view/pages/plano/efetivarPlano.php?efetivar=<?php echo $row['planoID'] ?>">Selecionar</a>
           </div>
 
         </div>

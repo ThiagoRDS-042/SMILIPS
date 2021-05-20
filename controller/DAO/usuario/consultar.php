@@ -103,7 +103,7 @@ function consultarPlanoUsuario()
 
     global $conexao, $planoUsuario;
 
-    $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID = '$id'") or die($conexao->error);
+    $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID = '$id' AND situacao != 'Em Analise'") or die($conexao->error);
 
     if ($planoUsuario->num_rows == 0) {
         exibirMsg("Escolha e Efetive um Plano para poder Cadastrar Anuncios!", "danger");

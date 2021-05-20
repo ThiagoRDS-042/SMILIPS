@@ -239,23 +239,25 @@ main .planos .card .btn {
   align-items: flex-start;
 }
 
-main .planos .card .btn button {
+main .planos .card .btn a {
   width: 110px;
   height: 35px;
   border-radius: 5px;
   background: white;
-  color: #3498db;
   border: 3px solid #3498db;
-  outline: none;
-
   font-size: 18px;
   font-weight: 600;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3498db;
+  text-decoration: none;
   transition: 0.5s;
+  font-family: "Rubik", sans-serif;
 }
 
-main .planos .card .btn button:hover,
-main .planos .card .btn button:active {
+main .planos .card .btn a:hover,
+main .planos .card .btn a:active {
   background: #3498db;
   color: white;
 }

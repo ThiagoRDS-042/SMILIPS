@@ -1,0 +1,158 @@
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid transparent;
+}
+
+main .alert {
+  top: 80px;
+}
+
+main h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(107, 107, 107);
+  font-family: "Poppins", sans-serif;
+}
+
+main .efetivar_plano {
+  width: 70%;
+  min-width: 631px;
+  margin: 20px auto;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+
+main .efetivar_plano .field_duo {
+  width: 85%;
+  height: 40px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .efetivar_plano .field_duo .field_input_view {
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+main .efetivar_plano .field_duo:first-child .field_input_view:first-child {
+  width: 71%;
+}
+
+main .efetivar_plano .field_duo:first-child .field_input_view:last-child {
+  width: 25%;
+}
+
+main .efetivar_plano .field_duo:nth-child(2) .field_input_view {
+  width: 48%;
+}
+
+main .efetivar_plano .field_input_view:nth-child(3) {
+  width: 85%;
+  margin: 20px auto;
+  height: 100px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  position: relative;
+}
+
+main .efetivar_plano .field_input_view span {
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  background: white;
+  padding: 0 3px;
+  font-size: 14px;
+  color: #ccc;
+  font-family: "Rubik", sans-serif;
+}
+
+main .efetivar_plano .field_input_view .input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  text-align: justify;
+  font-family: "Rubik", sans-serif;
+}
+
+main h1.inst {
+  margin-top: 40px;
+}
+
+main .instrucoes {
+  width: 70%;
+  min-width: 631px;
+  margin: 20px auto 80px auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+main .instrucoes ul {
+  width: 550px;
+  margin: 20px auto;
+  line-height: 30px;
+  text-align: justify;
+}
+
+main .instrucoes ul li {
+  width: 100%;
+  list-style: decimal;
+  font-family: "Rubik", sans-serif;
+}
+
+main .instrucoes .field_input {
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .instrucoes button {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  background: #01baef;
+  border: 3px solid #01baef;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  transition: 0.5s;
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+}
+
+main .instrucoes button:hover,
+main .instrucoes button:active {
+  background: white;
+  color: #01baef;
+}

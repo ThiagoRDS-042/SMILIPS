@@ -55,15 +55,27 @@ admLogadoEntra();
           </div>
         </div>
 
-        <div class="field-input duracao">
-          <!-- se a variavel get editar exisitir passe o valor do plano para o input -->
-          <?php if (isset($_GET['editar'])) : ?>
-            <input type="text" name="duracao" required class="numerico" value="<?php echo $plano['duracao'] ?>">
-          <?php else : ?>
-            <input type="text" name="duracao" required class="numerico">
-          <?php endif; ?>
+        <div class="field-duo duracao">
+          <div class="field-input">
+            <!-- se a variavel get editar exisitir passe o valor do plano para o input -->
+            <?php if (isset($_GET['editar'])) : ?>
+              <input type="text" name="duracao" required class="numerico" value="<?php echo $plano['duracao'] ?>">
+            <?php else : ?>
+              <input type="text" name="duracao" required class="numerico">
+            <?php endif; ?>
 
-          <span class="info-field" data-placeholder="Duração em Dias"></span>
+            <span class="info-field" data-placeholder="Duração em Dias"></span>
+          </div>
+          <div class="field-input">
+            <!-- se a variavel get editar exisitir passe o valor do plano para o input -->
+            <?php if (isset($_GET['editar'])) : ?>
+              <input type="text" name="qtdAnuncio" required class="numerico" value="<?php echo $plano['qtdAnuncio'] ?>">
+            <?php else : ?>
+              <input type="text" name="qtdAnuncio" required class="numerico">
+            <?php endif; ?>
+
+            <span class="info-field" data-placeholder="Quantidade de anúncios"></span>
+          </div>
         </div>
 
         <div class="field-input">

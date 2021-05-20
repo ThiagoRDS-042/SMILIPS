@@ -12,9 +12,10 @@ if (isset($_POST['salvar'])) {
   $valor = $_POST['valor'];
   $descricao = $_POST['descricao'];
   $duracao = $_POST['duracao'];
+  $qtdAnuncio = $_POST['qtdAnuncio'];
 
   // cadastre o plano passado no DB
-  $conexao->query("INSERT INTO plano (nome, descricao, valor, duracao) VALUES ('$nome', '$descricao', '$valor', '$duracao')") or die($conexao->error);
+  $conexao->query("INSERT INTO plano (nome, descricao, valor, duracao, qtdAnuncio) VALUES ('$nome', '$descricao', '$valor', '$duracao', '$qtdAnuncio')") or die($conexao->error);
 
   exibirMsg("Plano Cadastrado com Sucesso!", "success");
   header("location:/SMILIPS/view/pages/administrador/manterPlanos.php");
@@ -35,9 +36,11 @@ if (isset($_POST['salvar'])) {
   $nome = $_POST['nome'];
   $valor = $_POST['valor'];
   $descricao = $_POST['descricao'];
+  $duracao = $_POST['duracao'];
+  $qtdAnuncio = $_POST['qtdAnuncio'];
 
   // atualize o plano setando os valores das variaveis a cima para a tabela de plano apartir do id passado
-  $conexao->query("UPDATE plano SET nome = '$nome', valor = '$valor', descricao = '$descricao' WHERE planoID = '$id'") or die($conexao->error);
+  $conexao->query("UPDATE plano SET nome = '$nome', valor = '$valor', descricao = '$descricao', duracao = '$duracao', qtdAnuncio = '$qtdAnuncio' WHERE planoID = '$id'") or die($conexao->error);
 
   exibirMsg("Plano Editado com Sucesso!", "success");
   header("location:/SMILIPS/view/pages/administrador/manterPlanos.php");

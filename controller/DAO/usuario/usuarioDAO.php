@@ -176,7 +176,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
             // Obtém o tamanho do arquivo para a leitura
             $tamanhoImg = $_FILES['ft-perfil']['size'];
 
-            if ($_FILES['ft-perfil']['size'] <= 1022924) {
+            if ($tamanhoImg <= 1022924) {
                 $ftPerfil = $_FILES['ft-perfil'];
                 $caminhoTemp = $_FILES['ft-perfil']['tmp_name'];
 

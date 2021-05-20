@@ -85,11 +85,8 @@ body::-webkit-scrollbar-thumb {
   font-family: "Rubik", sans-serif;
 }
 
-.cad-plano form .field-input.duracao {
-  width: 20%;
-  min-width: 155px;
-  margin-left: 10%;
-  height: 40px;
+.cad-plano form .duracao .field-input {
+  width: 48.5% !important;
 }
 
 .cad-plano .field-input textarea {

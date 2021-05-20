@@ -197,32 +197,34 @@ usuarioLogadoEntra();
       </section>
     <?php endif; ?>
 
-    <section class="your-adverts">
-      <h1>Suas Propagandas</h1>
+    <?php if ($propagandas->num_rows > 0) : ?>
+      <section class="your-adverts">
+        <h1>Suas Propagandas</h1>
 
-      <div class="adverts">
-        <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
-        <div class="adverts-container">
-          <div class="cards-propaganda">
-            <?php while ($row = $propagandas->fetch_assoc()) : ?>
-              <div class="card <?php echo $row['situacao'] ?>">
-                <div class="image">
-                  <img src="data:image/jpeg;base64,<?php echo base64_encode($row['propaganda']) ?>" alt="image">
+        <div class="adverts">
+          <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
+          <div class="adverts-container">
+            <div class="cards-propaganda">
+              <?php while ($row = $propagandas->fetch_assoc()) : ?>
+                <div class="card <?php echo $row['situacao'] ?>">
+                  <div class="image">
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($row['propaganda']) ?>" alt="image">
+                  </div>
+                  <?php if ($row['situacao'] == 'Desativada') : ?>
+                    <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Ativar</a>
+                  <?php elseif ($row['situacao'] == 'Ativada') : ?>
+                    <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Detalhes</a>
+                  <?php else : ?>
+                    <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Em Analise</a>
+                  <?php endif; ?>
                 </div>
-                <?php if ($row['situacao'] == 'Desativada') : ?>
-                  <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Ativar</a>
-                <?php elseif ($row['situacao'] == 'Ativada') : ?>
-                  <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Detalhes</a>
-                <?php else : ?>
-                  <a href="/SMILIPS/view/pages/propaganda/editar.php?editar=<?php echo $row['propagandaID']  ?>">Em Analise</a>
-                <?php endif; ?>
-              </div>
-            <?php endwhile; ?>
+              <?php endwhile; ?>
+            </div>
           </div>
+          <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
         </div>
-        <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
-      </div>
-    </section>
+      </section>
+    <?php endif; ?>
 
   </main>
 
