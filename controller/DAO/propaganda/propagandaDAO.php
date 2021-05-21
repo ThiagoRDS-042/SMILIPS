@@ -33,7 +33,7 @@ if (isset($_POST['salvar'])) {
       fclose($handle);
 
       exibirMsg("Propaganda Enviada para a Analise!", "success");
-      header("location:/SMILIPS/view/pages/usuario/home.php");
+      header("location:/SMILIPS/view/pages/propaganda/cadastro.php");
     } else {
       exibirMsg("Selecione uma Imagem!", "danger");
       header("location:/SMILIPS/view/pages/propaganda/cadastro.php");

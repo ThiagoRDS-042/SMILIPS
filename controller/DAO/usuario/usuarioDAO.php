@@ -43,21 +43,21 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
 
                 //volta pra tela de cadastro e exibi a mesnsagem
                 exibirMsg("Cadastro bem Sucedido!", "success");
-                header("location:/SMILIPS/view/pages/cadastro.php");
+                header("location:/SMILIPS/view/pages/sistema/cadastro.php");
             } else {
                 //caso o email ja exista, volta pra tela de cadastro e exibi a mesnsagem
                 exibirMsg("Email já Cadastrado", "danger");
-                header("location:/SMILIPS/view/pages/cadastro.php");
+                header("location:/SMILIPS/view/pages/sistema/cadastro.php");
             }
         } else {
             //caso dos sejam invalidos, volta pra tela de cadastro e exibi a mesnsagem
             exibirMsg("Dados Inválidos!", "danger");
-            header("location:/SMILIPS/view/pages/cadastro.php");
+            header("location:/SMILIPS/view/pages/sistema/cadastro.php");
         }
     } else {
         //caso as senhas sejam diferentes, volta pra tela de cadastro e exibi a mesnsagem
         exibirMsg("Senhas Diferentes!", "danger");
-        header("location:/SMILIPS/view/pages/cadastro.php");
+        header("location:/SMILIPS/view/pages/sistema/cadastro.php");
     }
 
     //verificando se a variavel editarinfo existe
@@ -185,6 +185,8 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 // addslashes() - Adiciona barras a uma string, Retorna uma string com barras adicionadas antes de caracteres que precisam ser escapados
                 $handle = fopen($caminhoTemp, "r");
                 $ftPerfil  = addslashes(fread($handle, $tamanhoImg));
+
+                $conexao->query("SET GLOBAL max_allowed_packet=1000000000") or die($conexao->error);
 
                 // atualizando a foto de perfil do usuario
                 $conexao->query("UPDATE  usuario SET ftPerfil = '$ftPerfil' WHERE usuarioID = '$id'") or die($conexao->error);

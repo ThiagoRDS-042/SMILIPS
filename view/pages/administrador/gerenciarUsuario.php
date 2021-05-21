@@ -185,7 +185,7 @@ admLogadoEntra();
           <tbody>
             <?php for ($i = 0; $i < count($arrayServicos); $i++) : ?>
               <?php if ($arraySituacao[$i] == 'Desativado') : ?>
-                <tr class="servico-desativado">
+                <tr>
                   <td><?php echo $arrayTipoServicos[$i] ?> (Desativado)</td>
                 <?php else : ?>
                 <tr>

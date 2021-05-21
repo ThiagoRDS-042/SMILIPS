@@ -22,10 +22,10 @@ if (isset($_POST['salvar'])) {
       $conexao->query("INSERT INTO servico (descricao, situacao, tipoServicoID, usuarioID) VALUES ('$descricao', 'Ativado', '$tipoServicoID', '$idUsuario')") or die($conexao->error);
 
       exibirMsg("Serviço Cadastrado!", "success");
-      header("location:/SMILIPS/view/pages/usuario/home.php");
+      header("location:/SMILIPS/view/pages/servico/cadastro.php");
     } else {
       exibirMsg("Serviço já Existente!", "danger");
-      header("location:/SMILIPS/view/pages/usuario/home.php");
+      header("location:/SMILIPS/view/pages/servico/cadastro.php");
     }
   } else {
     exibirMsg("Selecione um Tipo de Serviço!", "danger");

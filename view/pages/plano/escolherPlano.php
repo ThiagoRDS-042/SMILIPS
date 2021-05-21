@@ -22,7 +22,9 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/plano/consultar.php');
   consultar();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
-  consultarPlanoUsuario()
+  consultarPlanoUsuario();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
+  consultarPlano();
   ?>
 
   <main>

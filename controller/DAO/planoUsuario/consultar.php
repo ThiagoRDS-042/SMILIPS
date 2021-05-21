@@ -29,3 +29,27 @@ function consultarDataFim()
     }
   }
 }
+
+
+function consultarPlano()
+{
+
+  global $conexao, $planoUsuario, $plano;
+  $id = $_SESSION['usuarioID'];
+
+  $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID = '$id' AND situacao != 'Desativado'") or die($conexao->error);
+
+  if ($planoUsuario->num_rows > 0) {
+
+    $url = str_replace("/Novo/", "", $_SERVER["REQUEST_URI"]);
+    if ($url != "/SMILIPS/view/pages/plano/situacaoPlano.php" && $url != '/SMILIPS/view/pages/plano/escolherPlano.php?planoNome') {
+      header("location:/SMILIPS/view/pages/plano/situacaoPlano.php");
+    }
+
+    $planoUsuario = $planoUsuario->fetch_assoc();
+
+    $plano = $conexao->query("SELECT * FROM plano WHERE planoID =" . $planoUsuario['planoID']) or die($conexao->error);
+    $plano  = $plano->fetch_assoc();
+    $plano = $plano['nome'];
+  }
+}

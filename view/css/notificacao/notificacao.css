@@ -23,7 +23,7 @@
   font-weight: 600;
   min-height: 50px;
   height: auto;
-  width: 100%;
+  width: calc(100% - 3px);
   display: flex;
   align-items: center;
   justify-content: center;

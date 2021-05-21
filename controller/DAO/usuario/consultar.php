@@ -108,7 +108,7 @@ function consultarPlanoUsuario()
     if ($planoUsuario->num_rows == 0) {
         exibirMsg("Escolha e Efetive um Plano para poder Cadastrar Anuncios!", "notify");
         $url = str_replace("/Novo/", "", $_SERVER["REQUEST_URI"]);
-        if ($url != "/SMILIPS/view/pages/plano/escolherPlano.php") {
+        if ($url != "/SMILIPS/view/pages/plano/escolherPlano.php" && $url != "/SMILIPS/view/pages/plano/escolherPlano.php?planoNome") {
             header("location:/SMILIPS/view/pages/plano/escolherPlano.php");
         }
         $planoUsuario = $planoUsuario->fetch_assoc();

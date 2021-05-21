@@ -41,3 +41,4 @@ DROP TABLE servico;
 DROP TABLE propaganda;
 
 DROP TABLE planoUsuario;
+
