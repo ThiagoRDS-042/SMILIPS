@@ -81,7 +81,8 @@ usuarioLogadoEntra();
         <ul>
           <li>Efetive seu plano atravez de um deposito, na conta: 1960.013.000245-9;</li>
           <li>Ou efetive seu plano atravez de um pix, para smilips@gmail.com;</li>
-          <li>Tire uma foto do comprovante de deposito ou do pix e anexe abaixo.</li>
+          <li>Tire uma foto do comprovante de deposito ou do pix e anexe abaixo;</li>
+          <li><span>Aviso:</span> Ao clicar em enviar, caso já possua algum plano previamente efetivado, ele será substituído pelo novo.</li>
         </ul>
       </div>
       <div class="field_input">
@@ -89,7 +90,26 @@ usuarioLogadoEntra();
           <input type="hidden" name="planoID" value="<?php echo $_GET['efetivar'] ?>">
           <input type="file" name="comprovante">
 
-          <button type="submit" name="salvar">Enviar</button>
+          <input type="checkbox" id="btnEnviar">
+          <label for="btnEnviar">
+            <h3>Enviar</h3>
+          </label>
+
+          <div class="enviar">
+            <div class="title">
+              <p>Efetivar PLano?</p>
+            </div>
+            <div class="senha">
+              <input type="password" name="senha">
+              <span data-placeholder='Senha' class="info"></span>
+              <span class="icon"><i class="fas fa-eye"></i></span>
+            </div>
+            <div class="buttons">
+              <button type="button">Não</button>
+              <button type="submit" name="salvar">Sim</button>
+            </div>
+          </div>
+
         </form>
       </div>
     </div>
@@ -100,6 +120,8 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
   ?>
+
+  <script src="/SMILIPS/view/js/plano/efetivarPlano.js" type="module"></script>
 </body>
 
 </html>

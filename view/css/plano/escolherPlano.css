@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 body::-webkit-scrollbar {
   width: 10px;
   background: #636e72;
@@ -47,21 +51,10 @@ main .planos .card {
   overflow: hidden;
 }
 
-main .planos .card:hover {
+main .planos .card:hover,
+main .planos .card.active {
   box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
 }
-
-/* main .planos .card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  pointer-events: none;
-  user-select: none;
-  background: rgba(0, 0, 0, 0.1);
-} */
 
 main .planos .card .numeracao {
   width: 40px;
@@ -80,7 +73,8 @@ main .planos .card .numeracao {
   font-family: "Poppins", sans-serif;
 }
 
-main .planos .card:hover .numeracao {
+main .planos .card:hover .numeracao,
+main .planos .card.active .numeracao {
   top: 0;
   opacity: 1;
   color: white;
@@ -90,7 +84,8 @@ main .planos .card:hover .numeracao {
   opacity: 0;
 }
 
-main .planos .card:hover .efect {
+main .planos .card:hover .efect,
+main .planos .card.active .efect {
   opacity: 1;
 }
 
@@ -182,7 +177,8 @@ main .planos .card .title {
   transition: 0.5s;
 }
 
-main .planos .card:hover .title {
+main .planos .card:hover .title,
+main .planos .card.active .title {
   background: #2980b9;
 }
 
@@ -193,7 +189,8 @@ main .planos .card .title p {
   font-family: "Poppins", sans-serif;
 }
 
-main .planos .card:hover .title p {
+main .planos .card:hover .title p,
+main .planos .card.active .title p {
   color: white;
 }
 
@@ -240,7 +237,7 @@ main .planos .card .btn {
 }
 
 main .planos .card .btn a {
-  width: 110px;
+  width: 120px;
   height: 35px;
   border-radius: 5px;
   background: white;
@@ -258,6 +255,11 @@ main .planos .card .btn a {
 
 main .planos .card .btn a:hover,
 main .planos .card .btn a:active {
+  background: #3498db;
+  color: white;
+}
+
+main .planos .card.active .btn a {
   background: #3498db;
   color: white;
 }

@@ -21,6 +21,8 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/plano/consultar.php');
   consultar();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
+  consultarPlanoUsuario()
   ?>
 
   <main>
@@ -32,30 +34,46 @@ usuarioLogadoEntra();
     <section class="planos">
 
       <?php while ($row = $planos->fetch_assoc()) : ?>
-        <div class="card">
-          <span class="efect"></span>
-          <span class="efect"></span>
-          <span class="efect"></span>
-          <span class="efect"></span>
-          <span class="numeracao">1</span>
-          <div class="title">
-            <p><?php echo $row['nome'] ?></p>
-          </div>
+        <?php if ($planoUsuario) :
+          if ($planoName == $row['nome']) : ?>
+            <div class="card active">
+            <?php else : ?>
+              <div class="card">
+              <?php endif; ?>
+            <?php else : ?>
+              <div class="card">
+              <?php endif; ?>
+              <span class="efect"></span>
+              <span class="efect"></span>
+              <span class="efect"></span>
+              <span class="efect"></span>
+              <span class="numeracao">1</span>
+              <div class="title">
+                <p><?php echo $row['nome'] ?></p>
+              </div>
 
-          <div class="valor">
-            <p>R$ <?php echo $row['valor'] ?>/<span>MÊS</span></p>
-          </div>
+              <div class="valor">
+                <p>R$ <?php echo $row['valor'] ?>/<span>MÊS</span></p>
+              </div>
 
-          <div class="descricao">
-            <p><?php echo $row['descricao'] ?></p>
-          </div>
+              <div class="descricao">
+                <p><?php echo $row['descricao'] ?></p>
+              </div>
 
-          <div class="btn">
-            <a href="/SMILIPS/view/pages/plano/efetivarPlano.php?efetivar=<?php echo $row['planoID'] ?>">Selecionar</a>
-          </div>
+              <div class="btn">
+                <?php if ($planoUsuario) :
+                  if ($planoName == $row['nome']) : ?>
+                    <a href="/SMILIPS/view/pages/plano/efetivarPlano.php?efetivar=<?php echo $row['planoID'] ?>">Selecionado</a>
+                  <?php else : ?>
+                    <a href="/SMILIPS/view/pages/plano/efetivarPlano.php?efetivar=<?php echo $row['planoID'] ?>">Selecionar</a>
+                  <?php endif; ?>
+                <?php else : ?>
+                  <a href="/SMILIPS/view/pages/plano/efetivarPlano.php?efetivar=<?php echo $row['planoID'] ?>">Selecionar</a>
+                <?php endif; ?>
+              </div>
 
-        </div>
-      <?php endwhile; ?>
+              </div>
+            <?php endwhile; ?>
     </section>
   </main>
 

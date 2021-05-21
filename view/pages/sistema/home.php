@@ -5,6 +5,8 @@
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
      <?php
      require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
+     require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
+     consultarDataFim();
      ?>
      <link rel="stylesheet" href="/SMILIPS/view/css/sistema/home.css">
      <title>Home</title>

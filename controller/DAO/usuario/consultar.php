@@ -101,12 +101,23 @@ function consultarPlanoUsuario()
 {
     $id = $_SESSION['usuarioID'];
 
-    global $conexao, $planoUsuario;
+    global $conexao, $planoUsuario, $planoName;
 
-    $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID = '$id' AND situacao != 'Em Analise'") or die($conexao->error);
+    $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID = '$id' AND situacao = 'Ativado'") or die($conexao->error);
 
     if ($planoUsuario->num_rows == 0) {
-        exibirMsg("Escolha e Efetive um Plano para poder Cadastrar Anuncios!", "danger");
-        header("location:/SMILIPS/view/pages/plano/escolherPlano.php");
+        exibirMsg("Escolha e Efetive um Plano para poder Cadastrar Anuncios!", "notify");
+        $url = str_replace("/Novo/", "", $_SERVER["REQUEST_URI"]);
+        if ($url != "/SMILIPS/view/pages/plano/escolherPlano.php") {
+            header("location:/SMILIPS/view/pages/plano/escolherPlano.php");
+        }
+        $planoUsuario = $planoUsuario->fetch_assoc();
+        $planoName = '';
+    } else {
+        $planoUsuario = $planoUsuario->fetch_assoc();
+
+        $planoName = $conexao->query("SELECT * FROM plano WHERE planoID = " . $planoUsuario['planoID']) or die($conexao->error);
+        $planoName = $planoName->fetch_assoc();
+        $planoName = $planoName['nome'];
     }
 }

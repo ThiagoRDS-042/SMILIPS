@@ -1,33 +1,45 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/exibirMsg.php');
+
 if (!isset($_SESSION)) {
   session_start();
 }
 
 
 if (isset($_POST['salvar'])) {
+  $id = $_SESSION['usuarioID'];
 
-  if (isset($_FILES['propaganda']['name']) && $_FILES['propaganda']['error'] == 0) {
-    $id = $_SESSION['usuarioID'];
-    $situacao = 'Em Analise';
-    $propaganda = $_FILES['propaganda'];
+  $propagandas = $conexao->query("SELECT * FROM propaganda WHERE usuarioID = '$id'") or die($conexao->error);
+  $qtdAnuncio = $conexao->query("SELECT * FROM planoUsuario INNER JOIN plano ON planoUsuario.usuarioID = '$id' AND plano.planoID = planoUsuario.planoID") or die($conexao->error);
+  $qtdAnuncio = $qtdAnuncio->fetch_assoc();
+  $qtdAnuncio = $qtdAnuncio['qtdAnuncio'];
 
-    $caminhoTemp = $propaganda['tmp_name'];
-    $tamanhoImg = $propaganda['size'];
+  if ($propagandas->num_rows < $qtdAnuncio) {
+    if (isset($_FILES['propaganda']['name']) && $_FILES['propaganda']['error'] == 0) {
 
-    $handle = fopen($caminhoTemp, "r");
-    $propaganda  = addslashes(fread($handle, $tamanhoImg));
+      $situacao = 'Em Analise';
+      $propaganda = $_FILES['propaganda'];
 
-    //salvando o usurio
-    $conexao->query("INSERT INTO propaganda(propaganda, situacao, usuarioID) VALUES ('$propaganda', '$situacao', '$id')") or die($conexao->error);
+      $caminhoTemp = $propaganda['tmp_name'];
+      $tamanhoImg = $propaganda['size'];
 
-    fclose($handle);
+      $handle = fopen($caminhoTemp, "r");
+      $propaganda  = addslashes(fread($handle, $tamanhoImg));
 
-    exibirMsg("Propaganda Enviada para a Analise!", "success");
-    header("location:/SMILIPS/view/pages/usuario/home.php");
+      //salvando o usurio
+      $conexao->query("INSERT INTO propaganda(propaganda, situacao, usuarioID) VALUES ('$propaganda', '$situacao', '$id')") or die($conexao->error);
+
+      fclose($handle);
+
+      exibirMsg("Propaganda Enviada para a Analise!", "success");
+      header("location:/SMILIPS/view/pages/usuario/home.php");
+    } else {
+      exibirMsg("Selecione uma Imagem!", "danger");
+      header("location:/SMILIPS/view/pages/propaganda/cadastro.php");
+    }
   } else {
-    exibirMsg("Selecione uma Imagem!", "danger");
+    exibirMsg("Limite de Propagandas Atingido!", "danger");
     header("location:/SMILIPS/view/pages/propaganda/cadastro.php");
   }
 } else if (isset($_GET['img_propaganda'])) {

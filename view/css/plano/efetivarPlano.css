@@ -124,6 +124,11 @@ main .instrucoes ul li {
   font-family: "Rubik", sans-serif;
 }
 
+main .instrucoes ul li:last-child span {
+  font-weight: bold;
+  color: #c0392b;
+}
+
 main .instrucoes .field_input {
   width: 100%;
   height: 40px;
@@ -133,7 +138,7 @@ main .instrucoes .field_input {
   align-items: center;
 }
 
-main .instrucoes button {
+main .instrucoes h3 {
   width: 80px;
   height: 30px;
   border-radius: 5px;
@@ -142,6 +147,9 @@ main .instrucoes button {
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   font-family: "Rubik", sans-serif;
   transition: 0.5s;
@@ -151,8 +159,151 @@ main .instrucoes button {
   transform: translateX(-50%);
 }
 
-main .instrucoes button:hover,
-main .instrucoes button:active {
+main .instrucoes h3:hover,
+main .instrucoes h3:active {
   background: white;
   color: #01baef;
+}
+
+main .instrucoes input[type="checkbox"] {
+  display: none;
+}
+
+main .instrucoes input[type="checkbox"]:checked ~ .enviar {
+  top: 50%;
+  opacity: 1;
+  pointer-events: all;
+}
+
+main .instrucoes .enviar {
+  width: 250px;
+  height: 150px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+main .instrucoes .enviar .title {
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .instrucoes .enviar .title p {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: rgb(107, 107, 107);
+}
+
+main .instrucoes .enviar .senha {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+main .instrucoes .enviar .senha input {
+  width: 70%;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 0 23px 0 5px;
+  outline: none;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  transition: 0.5s;
+}
+
+main .instrucoes .enviar .senha .info::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 32px;
+  left: 16%;
+  background: white;
+  color: #ccc;
+  padding: 0 3px;
+  pointer-events: none;
+  font-family: "Rubik", sans-serif;
+  transition: 0.5s;
+}
+
+main .instrucoes .enviar .senha .icon {
+  position: absolute;
+  top: 33px;
+  right: 17%;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 15px;
+}
+
+main .instrucoes .enviar .senha input:focus {
+  border-color: #01baef;
+}
+
+main .instrucoes .enviar .senha input:focus ~ .icon {
+  color: #01baef;
+}
+
+main .instrucoes .enviar .senha input:focus ~ .info::before {
+  font-size: 14px;
+  top: 18px;
+  left: 17%;
+  color: #01baef;
+}
+
+main .instrucoes .enviar .buttons {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main .instrucoes .enviar .buttons button {
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: "Rubik", sans-serif;
+}
+
+main .instrucoes .enviar .buttons button:first-child {
+  border: 3px solid #e74c3c;
+  background: #e74c3c;
+}
+
+main .instrucoes .enviar .buttons button:last-child {
+  border: 3px solid #2ecc71;
+  background: #2ecc71;
+}
+
+main .instrucoes .enviar .buttons button:first-child:hover,
+main .instrucoes .enviar .buttons button:first-child:active {
+  color: #e74c3c;
+  background: white;
+}
+
+main .instrucoes .enviar .buttons button:last-child:hover,
+main .instrucoes .enviar .buttons button:last-child:active {
+  background: white;
+  color: #2ecc71;
 }
