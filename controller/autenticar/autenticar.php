@@ -22,6 +22,24 @@ if (isset($_POST['autenticar']) and $_POST['email'] != null and $_POST['senha'] 
         if ($usuario['situacao'] == 'desativada') {
             // ativando a conta
             $conexao->query("UPDATE usuario SET situacao = 'ativada' WHERE emailUsuario = '$email' AND senhaUsuario= '$senha'") or die($conexao->error);
+
+            $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID =" . $usuario['usuarioID']) or die($conexao->error);
+
+            if ($planoUsuario->num_rows > 0) {
+                $planoUsuario = $planoUsuario->fetch_assoc();
+
+                $dataHoje = preg_split("/-/", date("Y-m-d"));
+
+                $dataPlano = preg_split("/-/", $planoUsuario['dataFim']);
+
+                if ($dataPlano[0] > $dataHoje[0]) {
+                    $conexao->query("UPDATE planoUsuario SET situacao = 'Ativado' WHERE usuarioID =" . $usuario['usuarioID']) or die($conexao->error);
+                } else if ($dataPlano[0] == $dataHoje[0] && $dataPlano[1] > $dataHoje[1]) {
+                    $conexao->query("UPDATE planoUsuario SET situacao = 'Ativado' WHERE usuarioID =" . $usuario['usuarioID']) or die($conexao->error);
+                } else if ($dataPlano[0] == $dataHoje[0] && $dataPlano[1] == $dataHoje[1] && $dataPlano[2] >= $dataHoje[2]) {
+                    $conexao->query("UPDATE planoUsuario SET situacao = 'Ativado' WHERE usuarioID =" . $usuario['usuarioID']) or die($conexao->error);
+                }
+            }
         }
         // iniciando uma sessao caso ja n exista uma
         if (!isset($_SESSION)) {

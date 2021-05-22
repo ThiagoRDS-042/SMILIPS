@@ -20,7 +20,7 @@ function consultarImovelUser()
   if (isset($_GET['consultar'])) {
     $imovel = $conexao->query("SELECT * FROM imovel  WHERE usuarioID = '$id' ORDER BY situacao ASC") or die($conexao->error);
   } else if (isset($_SESSION['idAdm'])) {
-    $imovel = $conexao->query("SELECT * FROM imovel WHERE situacao = 'Em Progresso'") or die($conexao->error);
+    $imovel = $conexao->query("SELECT * FROM imovel INNER JOIN usuario ON imovel.situacao = 'Em Analise' AND usuario.situacao = 'ativada' AND imovel.usuarioID = usuario.usuarioID") or die($conexao->error);
   } else {
     $imovel = $conexao->query("SELECT * FROM imovel  WHERE usuarioID = '$id' ORDER BY situacao ASC") or die($conexao->error);
   }

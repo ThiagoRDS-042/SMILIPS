@@ -66,18 +66,29 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/imoveis.php">Gerenciar Imóveis</a>
+          <a href="/SMILIPS/view/pages/administrador/imoveis.php">Validar Imóveis</a>
         </div>
       </div>
 
       <div class="card">
         <div class="content">
           <div class="image">
-            <img src="/SMILIPS/view/images/administrador/denuncia.png" alt="Icone de Denuncias">
+            <img src="/SMILIPS/view/images/administrador/validar_planos.png" alt="Icone de Planos">
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/denuncias.php">Gerenciar Denuncias</a>
+          <a href="/SMILIPS/view/pages/administrador/validarPlanos.php">Validar Planos</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="image">
+            <img src="/SMILIPS/view/images/administrador/validar_propagandas.png" alt="Icone de Propagandas">
+          </div>
+        </div>
+        <div class="title">
+          <a href="/SMILIPS/view/pages/administrador/validarPropagandas.php">Validar Propagandas</a>
         </div>
       </div>
     </div>

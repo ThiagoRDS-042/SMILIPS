@@ -242,6 +242,10 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
     if (md5($_POST['senha']) == $usuario['senhaUsuario']) {
         // atualizando o campo situacao na tabela usuario
         $conexao->query("UPDATE usuario SET situacao = 'desativada' WHERE usuarioID = '$id'") or die($conexao->error);
+        $conexao->query("UPDATE imovel SET situacao = 'Desativado' WHERE usuarioID = '$id' AND situacao = 'Ativado'") or die($conexao->error);
+        $conexao->query("UPDATE propaganda SET situacao = 'Desativada' WHERE usuarioID = '$id' AND situacao = 'Ativada'") or die($conexao->error);
+        $conexao->query("UPDATE servico SET situacao = 'Desativado' WHERE usuarioID = '$id' AND situacao = 'Ativado'") or die($conexao->error);
+        $conexao->query("UPDATE planoUsuario SET situacao = 'Desativado' WHERE usuarioID = '$id' AND situacao = 'Ativado'") or die($conexao->error);
 
         //dando um require em sair e exibindo a mensagem
         exibirMsg("Conta Desativada!", "danger");

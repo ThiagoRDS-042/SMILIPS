@@ -12,6 +12,8 @@ cards.forEach((card) => {
       ? (location = "/SMILIPS/view/pages/administrador/usuarios.php")
       : card === cards[3]
       ? (location = "/SMILIPS/view/pages/administrador/imoveis.php")
-      : (location = "/SMILIPS/view/pages/administrador/denuncias.php");
+      : card === cards[4]
+      ? (location = "/SMILIPS/view/pages/administrador/validarPlanos.php")
+      : (location = "/SMILIPS/view/pages/administrador/validarPropagandas.php");
   });
 });

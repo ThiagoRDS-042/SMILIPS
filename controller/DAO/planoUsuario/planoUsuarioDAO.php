@@ -63,7 +63,8 @@ if (isset($_POST['salvar'])) {
 
           if ($planoUsuario->num_rows > 0) {
             // atualizando a foto de perfil do usuario
-            $conexao->query("UPDATE planoUsuario SET  planoID = '$planoId', dataInicio = '$dataInicio', dataFim = '$dataFim', situacao = '$situacao', comprovante = '$comprovante'") or die($conexao->error);
+            $planoUsuario = $planoUsuario->fetch_assoc();
+            $conexao->query("UPDATE planoUsuario SET  planoID = '$planoId', dataInicio = '$dataInicio', dataFim = '$dataFim', situacao = '$situacao', comprovante = '$comprovante' WHERE planoUsuarioID = " . $planoUsuario['planoUsuarioID']) or die($conexao->error);
           } else {
             // atualizando a foto de perfil do usuario
             $conexao->query("INSERT INTO planoUsuario (usuarioID, planoID, dataInicio, dataFim, situacao, comprovante) VALUES ('$id', '$planoId', '$dataInicio', '$dataFim', '$situacao', '$comprovante')") or die($conexao->error);
