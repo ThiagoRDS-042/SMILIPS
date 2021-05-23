@@ -149,7 +149,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   $idImagens = [];
 
   // att a tabela de imovel
-  $conexao->query("UPDATE imovel SET rua = '$rua', numero = '$numero', bairro = '$bairro', complemento = '$complemento', qtdQuarto = '$qtdQuarto', qtdBanheiro = '$qtdBanheiro', qtdGaragem = '$qtdGaragem', area = '$area', descricao = '$descricao', tipo = '$tipo', valorAluguel = '$valor' WHERE imovelID = '$id'") or die($conexao->error);
+  $conexao->query("UPDATE imovel SET rua = '$rua', numero = '$numero', bairro = '$bairro', complemento = '$complemento', qtdQuarto = '$qtdQuarto', qtdBanheiro = '$qtdBanheiro', qtdGaragem = '$qtdGaragem', area = '$area', descricao = '$descricao', tipo = '$tipo', valorAluguel = '$valor', situacao = 'Em Analise' WHERE imovelID = '$id'") or die($conexao->error);
 
   // pegando todos as img do imovel
   $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = '$id'") or die($conexao->error);

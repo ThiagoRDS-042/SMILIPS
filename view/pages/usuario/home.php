@@ -13,9 +13,13 @@ usuarioLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
   // chamando a funcao consultar nome
   consultarNome();
-  require_once('/xampp/htdocs/SMILIPS/controller/DAO/notificacaoAnaliseImovel/notificacaoAnaliseImovel.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/notificacaoAnaliseImovel/consultar.php');
   // chamando a funcao consultar msg  
   consultarNotificacaoAnaliseImovel();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/notificacaoAnalisePlano/consultar.php');
+  consultarNotificacaoAnalisePlano();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/notificacaoAnalisePropaganda/consultar.php');
+  consultarNotificacaoAnalisePropaganda();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarImovelUser();
@@ -38,6 +42,87 @@ usuarioLogadoEntra();
   ?>
 
   <main>
+    <?php if ($notificacaoAnaliseImovel->num_rows > 0) : ?>
+      <?php while ($row = $notificacaoAnaliseImovel->fetch_assoc()) : ?>
+        <div class="notificacao">
+          <div class="title">
+            <h3>Notificação</h3>
+          </div>
+
+          <div class="content">
+            <?php if ($row['situacao'] == 'Excluido') : ?>
+              <p>Seu Imóvel não foi Aprovado na Analise. Motivo: <?php echo $row['mensagem'] ?></p>
+              <span class="icon_triste"><i class="far fa-frown"></i></span>
+            <?php else : ?>
+              <p>Seu Imóvel foi Aprovado na Analise!</p>
+              <span class="icon_feliz"><i class="far fa-smile"></i></span>
+            <?php endif; ?>
+          </div>
+
+          <div class="button">
+            <form action="/SMILIPS/controller/DAO/notificacaoAnaliseImovel/notificacaoAnaliseImovelDAO.php" method="post">
+              <input type="hidden" name="idNotificacaoAnaliseImovel" value="<?php echo $row['notificacaoAnaliseImovelID'] ?>">
+              <button type="submit" name="edity">Continue</button>
+            </form>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    <?php endif; ?>
+
+    <?php if ($notificacaoAnalisePlano->num_rows > 0) : ?>
+      <?php while ($row = $notificacaoAnalisePlano->fetch_assoc()) : ?>
+        <div class="notificacao">
+          <div class="title">
+            <h3>Notificação</h3>
+          </div>
+
+          <div class="content">
+            <?php if ($row['situacao'] == 'Excluido') : ?>
+              <p>Seu Plano não foi Aprovado na Analise. Motivo: <?php echo $row['mensagem'] ?></p>
+              <span class="icon_triste"><i class="far fa-frown"></i></span>
+            <?php else : ?>
+              <p>Seu Plano foi Aprovado na Analise!</p>
+              <span class="icon_feliz"><i class="far fa-smile"></i></span>
+            <?php endif; ?>
+          </div>
+
+          <div class="button">
+            <form action="/SMILIPS/controller/DAO/notificacaoAnalisePlano/notificacaoAnalisePlanoDAO.php" method="post">
+              <input type="hidden" name="idNotificacaoAnalisePLano" value="<?php echo $row['notificacaoAnalisePlanoID'] ?>">
+              <button type="submit" name="edity">Continue</button>
+            </form>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    <?php endif; ?>
+
+    <?php if ($notificacaoAnalisePropaganda->num_rows > 0) : ?>
+      <?php while ($row = $notificacaoAnalisePropaganda->fetch_assoc()) : ?>
+        <div class="notificacao">
+          <div class="title">
+            <h3>Notificação</h3>
+          </div>
+
+          <div class="content">
+            <?php if ($row['situacao'] == 'Excluido') : ?>
+              <p>Sua Propaganda não foi Aprovado na Analise. Motivo: <?php echo $row['mensagem'] ?></p>
+              <span class="icon_triste"><i class="far fa-frown"></i></span>
+            <?php else : ?>
+              <p>Sua Propaganda foi Aprovada na Analise!</p>
+              <span class="icon_feliz"><i class="far fa-smile"></i></span>
+            <?php endif; ?>
+          </div>
+
+          <div class="button">
+            <form action="/SMILIPS/controller/DAO/notificacaoAnalisePropaganda/notificacaoAnalisePropagandaDAO.php" method="post">
+              <input type="hidden" name="idNotificacaoAnalisePropaganda" value="<?php echo $row['notificacaoAnalisePropagandaID'] ?>">
+              <button type="submit" name="edity">Continue</button>
+            </form>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    <?php endif; ?>
+
     <?php
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
     ?>

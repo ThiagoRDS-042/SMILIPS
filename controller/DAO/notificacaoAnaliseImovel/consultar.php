@@ -3,14 +3,9 @@
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 function consultarNotificacaoAnaliseImovel()
 {
+
   $id = $_SESSION['usuarioID'];
-  global $conexao, $msgImovelInvalido;
+  global $conexao, $notificacaoAnaliseImovel;
 
-  $msgImovelInvalido = $conexao->query("SELECT * FROM msgImovelInvalido WHERE usuarioID = '$id' ORDER BY msgImovelInvalidoID DESC") or die($conexao->error);
-
-  if ($msgImovelInvalido->num_rows > 0) {
-    $msgImovelInvalido = $msgImovelInvalido->fetch_assoc();
-    $msgImovelInvalido = $msgImovelInvalido['mensagem'];
-    // exibirMsg("Seu Imóvel não foi Aceito por apresentar $msgImovelInvalido", "danger");
-  }
+  $notificacaoAnaliseImovel = $conexao->query("SELECT * FROM notificacaoAnaliseImovel WHERE usuarioID = '$id' AND exibida = 0") or die($conexao->error);
 }

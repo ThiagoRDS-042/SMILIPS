@@ -21,23 +21,25 @@ const btnVoltar = document.querySelector(".icon-voltar");
 const slider = document.querySelector(".cards-imovel");
 const cards_imovel = document.querySelectorAll(".list-imovel .card");
 
-// chamando a funcao de avancar ao clicar no btnproximo de a cordo com o largura da tela
-btnProximo.addEventListener("click", () => {
-  window.innerWidth <= 881
-    ? avancar(-290, cards_imovel, slider, 1)
-    : window.innerWidth <= 1306
-    ? avancar(-290, cards_imovel, slider, 2)
-    : avancar(-290, cards_imovel, slider, 3);
-});
+if (btnProximo) {
+  // chamando a funcao de avancar ao clicar no btnproximo de a cordo com o largura da tela
+  btnProximo.addEventListener("click", () => {
+    window.innerWidth <= 881
+      ? avancar(-290, cards_imovel, slider, 1)
+      : window.innerWidth <= 1306
+      ? avancar(-290, cards_imovel, slider, 2)
+      : avancar(-290, cards_imovel, slider, 3);
+  });
 
-// chamando a funcao de voltar ao clicar no btnvoltar de a cordo com o largura da tela
-btnVoltar.addEventListener("click", () => {
-  window.innerWidth <= 881
-    ? retornar(290, cards_imovel, slider, 1)
-    : window.innerWidth <= 1306
-    ? retornar(290, cards_imovel, slider, 2)
-    : retornar(290, cards_imovel, slider, 3);
-});
+  // chamando a funcao de voltar ao clicar no btnvoltar de a cordo com o largura da tela
+  btnVoltar.addEventListener("click", () => {
+    window.innerWidth <= 881
+      ? retornar(290, cards_imovel, slider, 1)
+      : window.innerWidth <= 1306
+      ? retornar(290, cards_imovel, slider, 2)
+      : retornar(290, cards_imovel, slider, 3);
+  });
+}
 
 // capturando os elementos da DOM
 const btnProximoPropaganda = document.querySelector(
@@ -51,23 +53,25 @@ const sliderPropaganda = document.querySelector(
 );
 const cards_propaganda = document.querySelectorAll(".your-adverts .card");
 
-// chamando a funcao de avancar ao clicar no btnproximo de a cordo com o largura da tela
-btnProximoPropaganda.addEventListener("click", () => {
-  window.innerWidth <= 881
-    ? avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 1)
-    : window.innerWidth <= 1306
-    ? avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 2)
-    : avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 3);
-});
+if (btnProximoPropaganda) {
+  // chamando a funcao de avancar ao clicar no btnproximo de a cordo com o largura da tela
+  btnProximoPropaganda.addEventListener("click", () => {
+    window.innerWidth <= 881
+      ? avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 1)
+      : window.innerWidth <= 1306
+      ? avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 2)
+      : avancarPropaganda(-290, cards_propaganda, sliderPropaganda, 3);
+  });
 
-// chamando a funcao de voltar ao clicar no btnvoltar de a cordo com o largura da tela
-btnVoltarPropaganda.addEventListener("click", () => {
-  window.innerWidth <= 881
-    ? retornarPropaganda(290, cards_propaganda, sliderPropaganda, 1)
-    : window.innerWidth <= 1306
-    ? retornarPropaganda(290, cards_propaganda, sliderPropaganda, 2)
-    : retornarPropaganda(290, cards_propaganda, sliderPropaganda, 3);
-});
+  // chamando a funcao de voltar ao clicar no btnvoltar de a cordo com o largura da tela
+  btnVoltarPropaganda.addEventListener("click", () => {
+    window.innerWidth <= 881
+      ? retornarPropaganda(290, cards_propaganda, sliderPropaganda, 1)
+      : window.innerWidth <= 1306
+      ? retornarPropaganda(290, cards_propaganda, sliderPropaganda, 2)
+      : retornarPropaganda(290, cards_propaganda, sliderPropaganda, 3);
+  });
+}
 
 let cont = 0;
 // funcao para avancar as imgs

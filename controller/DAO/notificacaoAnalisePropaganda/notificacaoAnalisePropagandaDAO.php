@@ -35,4 +35,8 @@ if (isset($_POST['avaliar'])) {
       header("location:/SMILIPS/view/pages/administrador/propaganda/validarPropaganda.php?consultar=$idPropaganda");
     }
   }
+} else if (isset($_POST['edity'])) {
+  $idNotificacao = $_POST['idNotificacaoAnalisePropaganda'];
+  $conexao->query("UPDATE notificacaoAnalisePropaganda set exibida = 1 WHERE notificacaoAnalisePropagandaID = '$idNotificacao'") or die($conexao->error);
+  header("location:/SMILIPS/view/pages/usuario/home.php");
 }

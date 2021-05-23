@@ -39,4 +39,8 @@ if (isset($_POST['analisar'])) {
     exibirMsg("Imóvel Ativado!", "success");
     header("location:/SMILIPS/view/pages/administrador/imovel/imoveis.php");
   }
+} else if (isset($_POST['edity'])) {
+  $idNotificacao = $_POST['idNotificacaoAnaliseImovel'];
+  $conexao->query("UPDATE notificacaoAnaliseImovel set exibida = 1 WHERE notificacaoAnaliseImovelID = '$idNotificacao'") or die($conexao->error);
+  header("location:/SMILIPS/view/pages/usuario/home.php");
 }

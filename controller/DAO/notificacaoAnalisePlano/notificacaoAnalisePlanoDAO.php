@@ -56,4 +56,8 @@ if (isset($_POST['avaliar'])) {
       header("location:/SMILIPS/view/pages/administrador/plano/validarPlano.php?consultar=$idPanoUsuario");
     }
   }
+} else if (isset($_POST['edity'])) {
+  $idNotificacao = $_POST['idNotificacaoAnalisePLano'];
+  $conexao->query("UPDATE notificacaoAnalisePlano set exibida = 1 WHERE notificacaoAnalisePlanoID = '$idNotificacao'") or die($conexao->error);
+  header("location:/SMILIPS/view/pages/usuario/home.php");
 }
