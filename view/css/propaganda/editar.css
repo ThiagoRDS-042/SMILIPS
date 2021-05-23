@@ -220,7 +220,7 @@ main form {
 }
 
 main form label {
-  width: 500px;
+  width: 800px;
   height: 400px;
   margin: 20px auto 0 auto;
   border: 2px solid #ccc;
@@ -260,7 +260,7 @@ main .edity .icon i {
   font-size: 50px;
 }
 
-main img {
+main .edity img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
@@ -303,12 +303,12 @@ main form button:active {
   color: #01baef;
 }
 
-@media (max-width: 745px) {
+@media (max-width: 880px) {
   main form label {
-    width: 350px;
+    width: 450px;
     height: 250px;
   }
   main span {
-    width: 350px;
+    width: 450px;
   }
 }

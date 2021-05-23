@@ -42,7 +42,7 @@ main .info_propaganda .propaganda {
 }
 
 main .info_propaganda .propaganda .img_propaganda {
-  width: 350px;
+  width: 90%;
   height: 300px;
   margin: 20px auto;
   border: 2px solid #ccc;

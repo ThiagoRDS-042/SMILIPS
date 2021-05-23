@@ -63,8 +63,10 @@
             }
             if ($matrizImoveis[$i]['qtdGaragem'] > 1) {
               $matrizImoveis[$i]['qtdGaragem'] .= ' Garagens';
-            } else {
+            } else if ($matrizImoveis[$i]['qtdGaragem'] == 1) {
               $matrizImoveis[$i]['qtdGaragem'] .= ' Garagen';
+            } else {
+              $matrizImoveis[$i]['qtdGaragem'] = '';
             }
 
             if ($matrizImoveis[$i]['tipo'] == 'Residencial') {
