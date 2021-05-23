@@ -50,12 +50,12 @@ imoveis.forEach((imovel) => {
     btnProximo.addEventListener("click", () => {
       if (cards.length > 5) {
         window.innerWidth <= 565
-          ? avancar(-296, cards, slider, cards.length - 4)
-          : avancar(-538, cards, slider, cards.length - 4);
+          ? avancar(-400, cards, slider, cards.length - 4)
+          : avancar(-400, cards, slider, cards.length - 4);
       } else {
         window.innerWidth <= 565
-          ? avancar(-296, cards, slider, 1)
-          : avancar(-538, cards, slider, 1);
+          ? avancar(-400, cards, slider, 1)
+          : avancar(-400, cards, slider, 1);
       }
     });
   });
@@ -64,12 +64,12 @@ imoveis.forEach((imovel) => {
     btnVoltar.addEventListener("click", () => {
       if (cards.length > 5) {
         window.innerWidth <= 565
-          ? avancar(296, cards, slider, cards.length - 4)
-          : avancar(538, cards, slider, cards.length - 4);
+          ? avancar(400, cards, slider, cards.length - 4)
+          : avancar(400, cards, slider, cards.length - 4);
       } else {
         window.innerWidth <= 565
-          ? avancar(296, cards, slider, 1)
-          : avancar(538, cards, slider, 1);
+          ? avancar(400, cards, slider, 1)
+          : avancar(400, cards, slider, 1);
       }
     });
   });

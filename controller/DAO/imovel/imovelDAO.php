@@ -71,7 +71,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
         $descricao = $_POST['descricao'];
         $valor = $_POST['valor'];
         $id = $_POST['id'];
-        $situacao = 'Em Progresso';
+        $situacao = 'Em Analise';
 
         // usando regex para add o M² depois dos numeros
         $area = $_POST['area'];
@@ -198,7 +198,7 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
     // comparando se a senha digitada e igual a cadastrada no DB
     if ($senha == $usuario['senhaUsuario']) {
 
-      if ($situacao == 'Em Progresso') {
+      if ($situacao == 'Em Analise') {
         // excluindo o imovel pelo id
         $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
         exibirMsg("Imóvel Excluido com Sucesso!", "success");
