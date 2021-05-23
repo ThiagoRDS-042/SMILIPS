@@ -66,6 +66,7 @@ admLogadoEntra();
         <h1>Imagens do Imóvel</h1>
         <div class="imgs-imovel">
           <input type="hidden" name="id" value="<?php echo $imovel['imovelID'] ?>" id="id">
+          <input type="hidden" value="<?php echo $_GET['usuarioID'] ?>" name="usuarioID">
           <!-- enquanto tiver imgsimoveis, exiba um card para cada img -->
           <?php while ($row = $imgImovel->fetch_assoc()) : ?>
             <label for="<?php echo $row['imgImovelID'] ?>">

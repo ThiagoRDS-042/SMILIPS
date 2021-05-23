@@ -27,7 +27,8 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
 
     exibirMsg("Tamanho de Arquivo Inválido! (Tamanhos Suportados = até 1000KB)", "danger");
     if (isset($_SESSION['idAdm'])) {
-      header("location:/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=$id");
+      $iduser = $_GET['usuarioID'];
+      header("location:/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=$id&&usuarioID=$iduser");
     } else {
       header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
     }
@@ -35,7 +36,8 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
 
     exibirMsg("Fortato de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG)", "danger");
     if (isset($_SESSION['idAdm'])) {
-      header("location:/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=$id");
+      $iduser = $_GET['usuarioID'];
+      header("location:/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=$id&&usuarioID=$iduser");
     } else {
       header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
     }
@@ -178,7 +180,8 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
 
   exibirMsg("Imóvel Editado com Sucesso!", "success");
   if (isset($_SESSION['idAdm'])) {
-    header("location:/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=$id");
+    $idUser = $_POST['usuarioID'];
+    header("location:/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=$id&&usuarioID=$idUser");
   } else {
     header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
   }
@@ -217,6 +220,6 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   } else {
     $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
     exibirMsg("Imóvel Excluido com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$idUser");
+    header("location:/SMILIPS/view/pages/administrador/imovel/gerenciarUsuario.php?consultar=$idUser");
   }
 }

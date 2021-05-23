@@ -39,7 +39,7 @@ admLogadoEntra();
           <tr>
             <td><?php echo $row['nomeUsuario'] ?></td>
             <td><?php echo $row['emailUsuario'] ?></td>
-            <td><a href="/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=<?php echo $row['usuarioID'] ?>">Detalhes</a></td>
+            <td><a href="/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=<?php echo $row['usuarioID'] ?>">Detalhes</a></td>
           </tr>
         <?php endwhile; ?>
       </tbody>

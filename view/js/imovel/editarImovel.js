@@ -14,6 +14,9 @@ const array = [];
 let id = document.querySelector("#id");
 id = id.value;
 
+let idUser = document.querySelector("input[name=usuarioID]");
+idUser = idUser.value;
+
 // interando o array com o src de todos os arquivos passados
 previewImgs.forEach((arr) => {
   array.push(arr.attributes.src.value);
@@ -43,11 +46,11 @@ files.forEach((file, index) => {
           });
         } else {
           // caso o tamanho seja invalido, redireciona para a pagina imovelDAO.php, passando um variavel get
-          location = `/SMILIPS/controller/DAO/imovel/imovelDAO.php?notificacao_imgs_edicao=Tamanho de Arquivo Inválido!&&id=${id}`;
+          location = `/SMILIPS/controller/DAO/imovel/imovelDAO.php?notificacao_imgs_edicao=Tamanho de Arquivo Inválido!&&id=${id}&&usuarioID=${idUser}`;
         }
       } else {
         // caso o formato seja invalido, redireciona para a pagina imovelDAO.php, passando um variavel get
-        location = `/SMILIPS/controller/DAO/imovel/imovelDAO.php?notificacao_imgs_edicao=Formato de Arquivo Inválido!&&id=${id}`;
+        location = `/SMILIPS/controller/DAO/imovel/imovelDAO.php?notificacao_imgs_edicao=Formato de Arquivo Inválido!&&id=${id}&&usuarioID=${idUser}`;
       }
     } else {
       // caso n seja selecionada nenhuma img ele retorna para a q foi cadastrada no DB

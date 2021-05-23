@@ -61,7 +61,7 @@ admLogadoEntra();
             <?php while ($row = $tipoServicos->fetch_assoc()) : ?>
               <tr>
                 <td><?php echo $row['tipoServico'] ?></td>
-                <td><a href="/SMILIPS/view/pages/administrador/manterServicos.php?editar=<?php echo $row['tipoServicoID'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
+                <td><a href="/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php?editar=<?php echo $row['tipoServicoID'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
                 <td>
                   <!-- mesma coisa da pagina manterPlanos, tendo um label e checkbox para cada icone de exclusao q quando clicado abre o popup de exclusao -->
                   <input type="checkbox" id="<?php echo $row['tipoServicoID'] ?>">

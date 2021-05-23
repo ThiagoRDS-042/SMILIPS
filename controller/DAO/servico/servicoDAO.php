@@ -46,7 +46,7 @@ if (isset($_POST['salvar'])) {
 
     exibirMsg("Serviço Atualizado com Sucesso!", "success");
     if (isset($_SESSION['idAdm'])) {
-      header("location:/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
+      header("location:/SMILIPS/view/pages/administrador/servico/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
     } else {
       header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
     }
@@ -58,14 +58,14 @@ if (isset($_POST['salvar'])) {
 
       exibirMsg("Serviço Atualizado com Sucesso!", "success");
       if (isset($_SESSION['idAdm'])) {
-        header("location:/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
+        header("location:/SMILIPS/view/pages/administrador/servico/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
       } else {
         header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
       }
     } else {
       exibirMsg("Serviço Já Existente!", "danger");
       if (isset($_SESSION['idAdm'])) {
-        header("location:/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
+        header("location:/SMILIPS/view/pages/administrador/servico/gerenciarServicos.php?servicoID=$idServico&&usuarioID=$idUsuario");
       } else {
         header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
       }
@@ -80,7 +80,7 @@ if (isset($_POST['salvar'])) {
     $conexao->query("DELETE FROM servico WHERE servicoID = '$id'") or die($conexao->error);
 
     exibirMsg("Serviço Excluido com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$idUsuario");
+    header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUsuario");
   } else {
     $situacao = $_POST['desativar-ativar'];
     $id = $_POST['idServico'];

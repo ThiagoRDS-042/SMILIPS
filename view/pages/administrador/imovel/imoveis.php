@@ -85,7 +85,7 @@ admLogadoEntra();
 
                     <!-- exibindo os detalhes criado a cima -->
                     <p><?php echo $detalhes ?></p>
-                    <a href="/SMILIPS/view/pages/administrador/validarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Detalhes</a>
+                    <a href="/SMILIPS/view/pages/administrador/imovel/validarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Detalhes</a>
                   </div>
                 </div>
               <?php endfor; ?>

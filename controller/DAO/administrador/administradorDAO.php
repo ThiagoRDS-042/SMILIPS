@@ -82,5 +82,5 @@ if (isset($_POST['editar-email'])) {
     exibirMsg("Imóvel Ativado!", "success");
   }
 
-  header("location:/SMILIPS/view/pages/administrador/imoveis.php");
+  header("location:/SMILIPS/view/pages/administrador/imovel/imoveis.php");
 }

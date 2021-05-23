@@ -17,3 +17,10 @@ if (isset($_GET['editar'])) {
   $propagandaUser = $conexao->query("SELECT * FROM propaganda WHERE propagandaID =  '$id'") or die($conexao->error);
   $propagandaUser = $propagandaUser->fetch_assoc();
 }
+
+function consultarPropagandasEmAnalise()
+{
+  global $conexao, $propagandasEmAnalise;
+
+  $propagandasEmAnalise = $conexao->query("SELECT p.propagandaID, p.usuarioID, p.propaganda FROM propaganda as p INNER JOIN planoUsuario as pu ON p.situacao = 'Em analise' AND pu.usuarioID = p.usuarioID AND pu.situacao = 'Ativado'") or die($conexao->error);
+}

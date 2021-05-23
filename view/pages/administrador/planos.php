@@ -11,8 +11,8 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/validarPropagandas.css">
-  <title>Validar Propagandas</title>
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/planos.css">
+  <title>Planos</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@ admLogadoEntra();
   ?>
 
   <main>
-    <h1>Validar Propagandas</h1>
+    <h1>Planos Para a Analise</h1>
   </main>
 
 

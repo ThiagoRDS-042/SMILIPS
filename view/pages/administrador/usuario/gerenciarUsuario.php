@@ -152,11 +152,11 @@ admLogadoEntra();
                     <!-- exibindo os detalhes criado a cima -->
                     <p><?php echo $detalhes ?></p>
                     <?php if ($arrayImovel[$i]['situacao'] == 'Ativado') : ?>
-                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Ativado</a>
+                      <a href="/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Ativado</a>
                     <?php elseif ($arrayImovel[$i]['situacao'] == 'Desativado') : ?>
-                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Desativado</a>
+                      <a href="/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Desativado</a>
                     <?php else : ?>
-                      <a href="/SMILIPS/view/pages/administrador/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Em Analise</a>
+                      <a href="/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Em Analise</a>
                     <?php endif; ?>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ admLogadoEntra();
                   <td><?php echo $arrayTipoServicos[$i] ?></td>
                 <?php endif; ?>
                 <td><?php echo $arrayServicos[$i] ?></td>
-                <td><a href="/SMILIPS/view/pages/administrador/gerenciarServicos.php?servicoID=<?php echo $arrayIdServicos[$i] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
+                <td><a href="/SMILIPS/view/pages/administrador/servico/gerenciarServicos.php?servicoID=<?php echo $arrayIdServicos[$i] ?>&&usuarioID=<?php echo $_GET['consultar'] ?>"><i class="fas fa-pencil-alt"></i></a></td>
                 </tr>
               <?php endfor; ?>
           </tbody>

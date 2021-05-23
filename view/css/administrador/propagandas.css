@@ -1,0 +1,136 @@
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid transparent;
+}
+
+main h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(107, 107, 107);
+  font-family: "Poppins", sans-serif;
+}
+
+main .planos_container {
+  max-width: 1090px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 370px;
+  transition: 0.5s;
+}
+
+main .planos_container .planos_list {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  max-width: 990px;
+}
+
+main .planos_container .planos_list .slider_planos {
+  position: relative;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s;
+  height: 100%;
+}
+
+.icon-voltar,
+.icon-proximo {
+  font-size: 20px;
+  color: #771fd2;
+  cursor: pointer;
+}
+
+main .planos_container .planos_list .slider_planos .card {
+  border: 2px solid #ebebeb;
+  width: 320px;
+  height: 300px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-family: "Rubik", sans-serif;
+  background: white;
+  position: relative;
+}
+
+main .planos_container .planos_list .slider_planos .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+main .planos_container .planos_list .slider_planos .card span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+main .planos_container .planos_list .slider_planos .card span a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+main .planos_container .planos_list .slider_planos .card:hover {
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+main .planos_container .planos_list .slider_planos .card:hover span {
+  opacity: 1;
+}
+
+main .planos_container .planos_list .slider_planos .card:hover span a:hover {
+  color: white;
+}
+
+@media (max-width: 1270px) {
+  main .planos_container {
+    max-width: 760px;
+  }
+
+  main .planos_container .planos_list {
+    max-width: 660px;
+  }
+}
+
+@media (max-width: 930px) {
+  main .planos_container {
+    max-width: 430px;
+  }
+
+  main .planos_container .planos_list {
+    max-width: 330px;
+  }
+}

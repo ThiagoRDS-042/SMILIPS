@@ -27,8 +27,6 @@ const senhas = document.querySelectorAll(".desativar input");
 const checkbox = document.querySelector("input#desativar");
 const btnCancel = document.querySelector(".desativar button[type=button]");
 
-console.log(btns, senhas);
-
 // add um envento de click para mudar o tipo de input de password para text e alternando o icone de visualizacao
 btns.forEach((btn, index) =>
   btn.addEventListener("click", () => trocarIconeSenha(senhas, index, btn))

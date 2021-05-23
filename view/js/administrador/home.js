@@ -7,13 +7,14 @@ cards.forEach((card) => {
     card === cards[0]
       ? (location = "/SMILIPS/view/pages/administrador/manterPlanos.php")
       : card === cards[1]
-      ? (location = "/SMILIPS/view/pages/administrador/manterServicos.php")
+      ? (location =
+          "/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php")
       : card === cards[2]
-      ? (location = "/SMILIPS/view/pages/administrador/usuarios.php")
+      ? (location = "/SMILIPS/view/pages/administrador/usuario/usuarios.php")
       : card === cards[3]
-      ? (location = "/SMILIPS/view/pages/administrador/imoveis.php")
+      ? (location = "/SMILIPS/view/pages/administrador/imovel/imoveis.php")
       : card === cards[4]
-      ? (location = "/SMILIPS/view/pages/administrador/validarPlanos.php")
-      : (location = "/SMILIPS/view/pages/administrador/validarPropagandas.php");
+      ? (location = "/SMILIPS/view/pages/administrador/planos.php")
+      : (location = "/SMILIPS/view/pages/administrador/propagandas.php");
   });
 });

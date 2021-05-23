@@ -93,7 +93,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 // voltando para a tela de perfil com a varivel consultar e seu id e exibindo a mensagem
                 exibirMsg("Edição bem Sucedida!", "success");
                 if (isset($_SESSION['idAdm'])) {
-                    header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+                    header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
                 } else {
                     header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
                 }
@@ -101,7 +101,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 //se ja existe o email ou cpf/cnpj
                 exibirMsg("Email já cadastrado", "danger");
                 if (isset($_SESSION['idAdm'])) {
-                    header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+                    header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
                 } else {
                     header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
                 }
@@ -110,7 +110,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
             // se os dados sao invalidos
             exibirMsg("Dados Inválidos!", "danger");
             if (isset($_SESSION['idAdm'])) {
-                header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+                header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
             } else {
                 header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
             }
@@ -119,7 +119,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         //se ha campos obrigatorios em branco
         exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
         if (isset($_SESSION['idAdm'])) {
-            header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+            header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
         } else {
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }
@@ -197,14 +197,14 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 //volta pra pagina de perfil com a varivel consultar e o id do usuario e exibe a mensagem
                 exibirMsg("Foto Salva Com Sucesso!", "success");
                 if (isset($_SESSION['idAdm'])) {
-                    header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+                    header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
                 } else {
                     header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
                 }
             } else {
                 exibirMsg("Tamanho de Imagem não Suportada! (max : 1000 KB)", "danger");
                 if (isset($_SESSION['idAdm'])) {
-                    header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+                    header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
                 } else {
                     header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
                 }
@@ -213,7 +213,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
             // se a extensao do arquivo selecionado e invalida
             exibirMsg("Extensão Inválida!", "danger");
             if (isset($_SESSION['idAdm'])) {
-                header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+                header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
             } else {
                 header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
             }
@@ -222,7 +222,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         //se nao doi selecionado nenhum arquivo
         exibirMsg("Escolha uma Imagem antes de tentar Salvar!", "danger");
         if (isset($_SESSION['idAdm'])) {
-            header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+            header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
         } else {
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }
@@ -262,7 +262,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         $id = $_GET['id'];
         exibirMsg("Formato de Arquivo Inválido! (Formatos Suportados = PNG, JPG, JPEG)", "danger");
         if (isset($_SESSION['idAdm'])) {
-            header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+            header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
         } else {
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }
@@ -270,7 +270,7 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
         $id = $_GET['id'];
         exibirMsg("Selecione uma Imagem!", "danger");
         if (isset($_SESSION['idAdm'])) {
-            header("location:/SMILIPS/view/pages/administrador/gerenciarUsuario.php?consultar=$id");
+            header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$id");
         } else {
             header("location:/SMILIPS/view/pages/usuario/perfil.php?consultar=$id");
         }

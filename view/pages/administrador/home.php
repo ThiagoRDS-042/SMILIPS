@@ -44,7 +44,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/manterServicos.php">Gerenciar Tipos de Serviços</a>
+          <a href="/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php">Gerenciar Tipos de Serviços</a>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/usuarios.php">Gerenciar Usuários</a>
+          <a href="/SMILIPS/view/pages/administrador/usuario/usuarios.php">Gerenciar Usuários</a>
         </div>
       </div>
 
@@ -66,7 +66,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/imoveis.php">Validar Imóveis</a>
+          <a href="/SMILIPS/view/pages/administrador/imovel/imoveis.php">Validar Imóveis</a>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/validarPlanos.php">Validar Planos</a>
+          <a href="/SMILIPS/view/pages/administrador/planos.php">Validar Planos</a>
         </div>
       </div>
 
@@ -88,7 +88,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/validarPropagandas.php">Validar Propagandas</a>
+          <a href="/SMILIPS/view/pages/administrador/propagandas.php">Validar Propagandas</a>
         </div>
       </div>
     </div>

@@ -18,15 +18,15 @@ if (isset($_POST['salvar'])) {
       $conexao->query("INSERT INTO tipoServico (tipoServico) VALUES ('$tipoServico')") or die($conexao->error);
 
       exibirMsg("Tipo de Serviço Cadastrado com Sucesso!", "success");
-      header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
+      header("location:/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php");
     } else {
       exibirMsg("Tipo de Serviço já Existente!", "danger");
-      header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
+      header("location:/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php");
     }
   } else {
 
     exibirMsg("Preencha o Campo Antes de Salvar!", "danger");
-    header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
+    header("location:/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php");
   }
   // se excluir existir
 } else if (isset($_GET['excluir'])) {
@@ -36,7 +36,7 @@ if (isset($_POST['salvar'])) {
   $conexao->query("DELETE FROM tipoServico WHERE tipoServicoID = '$id'") or die($conexao->error);
 
   exibirMsg("Tipo de Serviço Excluído com Sucesso!", "success");
-  header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
+  header("location:/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php");
 
   // se editar existir
 } else if (isset($_POST['editar'])) {
@@ -47,5 +47,5 @@ if (isset($_POST['salvar'])) {
   $conexao->query("UPDATE tipoServico SET tipoServico = '$tipoServico' WHERE tipoServicoID = '$id'") or die($conexao->error);
 
   exibirMsg("Tipo de Serviço Editado com Sucesso!", "success");
-  header("location:/SMILIPS/view/pages/administrador/manterServicos.php");
+  header("location:/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php");
 }
