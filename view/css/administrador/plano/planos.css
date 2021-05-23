@@ -1,0 +1,63 @@
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid transparent;
+}
+
+main .alert {
+  top: 80px;
+}
+
+main h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(107, 107, 107);
+  font-family: "Poppins", sans-serif;
+}
+
+main table {
+  width: 70%;
+  min-width: 302px;
+  margin: 40px auto;
+  color: #333;
+}
+
+main table tr {
+  border: 2px solid #ccc;
+  height: 40px;
+  line-height: 40px;
+}
+
+main table thead tr th {
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+}
+
+main table tr th,
+main table tbody tr td {
+  border: 2px solid #ccc;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+main table tbody tr td:last-child a {
+  text-decoration: none;
+  color: #333;
+}
+
+main table tbody tr td:last-child a:hover {
+  text-decoration: underline;
+}

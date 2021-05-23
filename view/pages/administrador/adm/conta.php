@@ -11,15 +11,15 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/conta.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/adm/conta.css">
   <title>Conta</title>
 </head>
 
 <body>
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/administrador/consultar.php');
   require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
   ?>
@@ -46,7 +46,7 @@ admLogadoEntra();
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

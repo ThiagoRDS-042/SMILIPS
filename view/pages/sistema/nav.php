@@ -30,7 +30,7 @@ if (!isset($_SESSION)) {
                 </a>
                 <!-- se n, se existe a variavel de sessao idAdm coloque o nome ADM no nav-->
             <?php elseif (isset($_SESSION['idAdm'])) : ?>
-                <a href="/SMILIPS/view/pages/administrador/home.php">
+                <a href="/SMILIPS/view/pages/administrador/adm/home.php">
                     <i class="fas fa-tools"></i> ADM
                 </a>
                 <!-- se n, coloca o nome login -->

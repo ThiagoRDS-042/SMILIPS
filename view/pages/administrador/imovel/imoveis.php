@@ -11,14 +11,14 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/imoveis.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/imovel/imoveis.css">
   <title>Gerenciar Imóveis</title>
 </head>
 
 <body>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarImovelUser();
@@ -85,7 +85,7 @@ admLogadoEntra();
 
                     <!-- exibindo os detalhes criado a cima -->
                     <p><?php echo $detalhes ?></p>
-                    <a href="/SMILIPS/view/pages/administrador/imovel/validarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Detalhes</a>
+                    <a href="/SMILIPS/view/pages/administrador/imovel/validarImovel.php?imovelID=<?php echo $arrayImovel[$i]['imovelID'] ?>">Avaliar</a>
                   </div>
                 </div>
               <?php endfor; ?>
@@ -96,12 +96,12 @@ admLogadoEntra();
         </div>
       </section>
     <?php else : ?>
-      <h1>Nenhum Imóvel Disponivel :(</h1>
+      <h1>Nenhum Imóvel Disponível Para a Analise :(</h1>
     <?php endif; ?>
   </main>
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
   <script src="/SMILIPS/view/js/administrador/imoveis.js" type="module"></script>

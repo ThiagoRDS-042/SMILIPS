@@ -11,23 +11,23 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/planos.css">
-  <title>Planos</title>
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/denuncia/denuncias.css">
+  <title>Gerenciar Denuncias</title>
 </head>
 
 <body>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   ?>
 
   <main>
-    <h1>Planos Para a Analise</h1>
+    <h1>Gerenciar Denuncias</h1>
   </main>
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 </body>
 

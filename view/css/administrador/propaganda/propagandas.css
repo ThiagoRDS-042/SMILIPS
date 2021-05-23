@@ -14,6 +14,10 @@ main {
   border: 1px solid transparent;
 }
 
+main .alert {
+  top: 80px;
+}
+
 main h1 {
   width: 100%;
   text-align: center;
@@ -24,7 +28,7 @@ main h1 {
   font-family: "Poppins", sans-serif;
 }
 
-main .planos_container {
+main .propagandas_container {
   max-width: 1090px;
   margin: 20px auto;
   display: flex;
@@ -34,7 +38,7 @@ main .planos_container {
   transition: 0.5s;
 }
 
-main .planos_container .planos_list {
+main .propagandas_container .propagandas_list {
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -42,7 +46,7 @@ main .planos_container .planos_list {
   max-width: 990px;
 }
 
-main .planos_container .planos_list .slider_planos {
+main .propagandas_container .propagandas_list .slider_propagandas {
   position: relative;
   left: 0;
   display: flex;
@@ -59,7 +63,7 @@ main .planos_container .planos_list .slider_planos {
   cursor: pointer;
 }
 
-main .planos_container .planos_list .slider_planos .card {
+main .propagandas_container .propagandas_list .slider_propagandas .card {
   border: 2px solid #ebebeb;
   width: 320px;
   height: 300px;
@@ -71,14 +75,14 @@ main .planos_container .planos_list .slider_planos .card {
   position: relative;
 }
 
-main .planos_container .planos_list .slider_planos .card img {
+main .propagandas_container .propagandas_list .slider_propagandas .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
 
-main .planos_container .planos_list .slider_planos .card span {
+main .propagandas_container .propagandas_list .slider_propagandas .card span {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -95,7 +99,7 @@ main .planos_container .planos_list .slider_planos .card span {
   transition: 0.5s;
 }
 
-main .planos_container .planos_list .slider_planos .card span a {
+main .propagandas_container .propagandas_list .slider_propagandas .card span a {
   font-size: 20px;
   font-weight: 600;
   color: #ccc;
@@ -103,34 +107,45 @@ main .planos_container .planos_list .slider_planos .card span a {
   transition: 0.5s;
 }
 
-main .planos_container .planos_list .slider_planos .card:hover {
+main .propagandas_container .propagandas_list .slider_propagandas .card:hover {
   box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
 }
 
-main .planos_container .planos_list .slider_planos .card:hover span {
+main
+  .propagandas_container
+  .propagandas_list
+  .slider_propagandas
+  .card:hover
+  span {
   opacity: 1;
 }
 
-main .planos_container .planos_list .slider_planos .card:hover span a:hover {
+main
+  .propagandas_container
+  .propagandas_list
+  .slider_propagandas
+  .card:hover
+  span
+  a:hover {
   color: white;
 }
 
 @media (max-width: 1270px) {
-  main .planos_container {
+  main .propagandas_container {
     max-width: 760px;
   }
 
-  main .planos_container .planos_list {
+  main .propagandas_container .propagandas_list {
     max-width: 660px;
   }
 }
 
 @media (max-width: 930px) {
-  main .planos_container {
+  main .propagandas_container {
     max-width: 430px;
   }
 
-  main .planos_container .planos_list {
+  main .propagandas_container .propagandas_list {
     max-width: 330px;
   }
 }

@@ -18,7 +18,7 @@ if (isset($_POST['salvar'])) {
   $conexao->query("INSERT INTO plano (nome, descricao, valor, duracao, qtdAnuncio) VALUES ('$nome', '$descricao', '$valor', '$duracao', '$qtdAnuncio')") or die($conexao->error);
 
   exibirMsg("Plano Cadastrado com Sucesso!", "success");
-  header("location:/SMILIPS/view/pages/administrador/manterPlanos.php");
+  header("location:/SMILIPS/view/pages/administrador/plano/manterPlanos.php");
 
   // se excluir existir
 } else if (isset($_GET['excluir'])) {
@@ -28,7 +28,7 @@ if (isset($_POST['salvar'])) {
   $conexao->query("DELETE FROM plano WHERE planoID = '$id'") or die($conexao->error);
 
   exibirMsg("Plano Excluído com Sucesso!", "success");
-  header("location:/SMILIPS/view/pages/administrador/manterPlanos.php");
+  header("location:/SMILIPS/view/pages/administrador/plano/manterPlanos.php");
 
   // se editar existir
 } else if (isset($_POST['editar'])) {
@@ -43,5 +43,5 @@ if (isset($_POST['salvar'])) {
   $conexao->query("UPDATE plano SET nome = '$nome', valor = '$valor', descricao = '$descricao', duracao = '$duracao', qtdAnuncio = '$qtdAnuncio' WHERE planoID = '$id'") or die($conexao->error);
 
   exibirMsg("Plano Editado com Sucesso!", "success");
-  header("location:/SMILIPS/view/pages/administrador/manterPlanos.php");
+  header("location:/SMILIPS/view/pages/administrador/plano/manterPlanos.php");
 }

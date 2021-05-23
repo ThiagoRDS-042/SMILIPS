@@ -11,14 +11,14 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/gerenciarUsuario.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/usuario/gerenciarUsuario.css">
   <title>Gerenciar Usuário</title>
 </head>
 
 <body>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   // chamando a funcao consultarImovelUser
@@ -206,7 +206,7 @@ admLogadoEntra();
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
   <script src="/SMILIPS/view/js/administrador/gerenciarUsuario.js" type="module"></script>

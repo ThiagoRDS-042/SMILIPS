@@ -5,7 +5,7 @@ const cards = document.querySelectorAll("main .card");
 cards.forEach((card) => {
   card.addEventListener("click", () => {
     card === cards[0]
-      ? (location = "/SMILIPS/view/pages/administrador/manterPlanos.php")
+      ? (location = "/SMILIPS/view/pages/administrador/plano/manterPlanos.php")
       : card === cards[1]
       ? (location =
           "/SMILIPS/view/pages/administrador/tipoServico/manterServicos.php")
@@ -14,7 +14,8 @@ cards.forEach((card) => {
       : card === cards[3]
       ? (location = "/SMILIPS/view/pages/administrador/imovel/imoveis.php")
       : card === cards[4]
-      ? (location = "/SMILIPS/view/pages/administrador/planos.php")
-      : (location = "/SMILIPS/view/pages/administrador/propagandas.php");
+      ? (location = "/SMILIPS/view/pages/administrador/plano/planos.php")
+      : (location =
+          "/SMILIPS/view/pages/administrador/propaganda/propagandas.php");
   });
 });

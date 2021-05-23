@@ -93,4 +93,17 @@ if (isset($_POST['salvar'])) {
     exibirMsg("Senha invalida!", "danger");
     header("location:/SMILIPS/view/pages/plano/efetivarPlano.php?efetivar=$planoId");
   }
+} else if (isset($_POST['avaliar'])) {
+  $avaliacao = $_POST['avaliar'];
+  $situacao = 'Ativado';
+  $id = $_POST['planoUsuarioID'];
+
+  if ($avaliacao == 'validar') {
+    $conexao->query("UPDATE planoUsuario SET situacao = '$situacao' WHERE planoUsuarioID = '$id'") or die($conexao->error);
+    exibirMsg("Plano Ativado com Sucesso!", "success");
+  } else {
+    $conexao->query("DELETE FROM planoUsuario WHERE planoUsuarioID = '$id'") or die($conexao->error);
+    exibirMsg("Plano Deletado!", "danger");
+  }
+  header("location:/SMILIPS/view/pages/administrador/plano/planos.php");
 }

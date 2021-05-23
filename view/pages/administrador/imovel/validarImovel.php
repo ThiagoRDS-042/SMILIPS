@@ -11,14 +11,14 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/validarImovel.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/imovel/validarImovel.css">
   <title>Válidar Imóvel</title>
 </head>
 
 <body>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   // chamando a funcao consultarImgsImovel
   consultarImgsImovel();
@@ -202,7 +202,7 @@ admLogadoEntra();
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
   <script src="/SMILIPS/view/js/administrador/validarImovel.js" type="module"></script>

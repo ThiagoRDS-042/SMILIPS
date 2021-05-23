@@ -110,4 +110,17 @@ if (isset($_POST['salvar'])) {
     exibirMsg("Senha Invalida!", "danger");
     header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
   }
+} else if (isset($_POST['avaliar'])) {
+  $avaliacao = $_POST['avaliar'];
+  $idPropaganda = $_POST['propagandaID'];
+  $situacao = 'Ativada';
+
+  if ($avaliacao == 'validar') {
+    $conexao->query("UPDATE propaganda SET situacao = '$situacao' WHERE propagandaID = '$idPropaganda'") or die($conexao->error);
+    exibirMsg("Propaganda Ativada com Sucesso!", "success");
+  } else {
+    $conexao->query("DELETE FROM propaganda WHERE propagandaID = '$idPropaganda'") or die($conexao->error);
+    exibirMsg("Propaganda Deletada!", "danger");
+  }
+  header("location:/SMILIPS/view/pages/administrador/propaganda/propagandas.php");
 }

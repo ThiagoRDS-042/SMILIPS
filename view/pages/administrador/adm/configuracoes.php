@@ -11,15 +11,15 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/configuracoes.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/adm/configuracoes.css">
   <title>Configurações</title>
 </head>
 
 <body>
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   ?>
 
   <main>
@@ -29,7 +29,7 @@ admLogadoEntra();
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
   <script src="/SMILIPS/view/js/usuario/configuracoes.js"></script>

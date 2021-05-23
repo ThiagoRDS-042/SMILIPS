@@ -14,14 +14,14 @@ admLogadoEntra();
   // chamando a funcao de consultar
   consultar();
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/manterPlanos.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/plano/manterPlanos.css">
   <title>Manter Planos</title>
 </head>
 
 <body>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   ?>
 
   <main>
@@ -132,7 +132,7 @@ admLogadoEntra();
               <div class="acoes">
 
                 <!-- passando a varival get o id do plano para a edicao -->
-                <a href="/SMILIPS/view/pages/administrador/manterPlanos.php?editar=<?php echo $row['planoID'] ?>"><i class=" fas fa-pencil-alt"></i></a>
+                <a href="/SMILIPS/view/pages/administrador/plano/manterPlanos.php?editar=<?php echo $row['planoID'] ?>"><i class=" fas fa-pencil-alt"></i></a>
 
                 <!-- cada icone de excluir possui um label q quando clicado aciona o checkbox e exibe o popup de exclusao -->
                 <input type="checkbox" id="<?php echo $row['planoID'] ?>">
@@ -159,7 +159,7 @@ admLogadoEntra();
   </main>
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
   <script src="/SMILIPS/view/js/administrador/manterPlanos.js" type="module"></script>

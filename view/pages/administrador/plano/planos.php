@@ -11,44 +11,51 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/usuario/usuarios.css">
-  <title>Usuários</title>
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/plano/planos.css">
+  <title>Planos</title>
 </head>
 
 <body>
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
-  require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
-  consultarUsuarios();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
+  consultarPlanoAnalise();
   ?>
 
   <main>
-    <h1>Usuários</h1>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
 
-    <?php if ($usuarios->num_rows > 0) : ?>
+    <h1>Planos Para a Analise</h1>
+
+    <?php if ($planoUsuarioAnalise->num_rows > 0) : ?>
       <table>
         <thead>
           <tr>
             <th>Nome</th>
             <th>E-mail</th>
-            <th>Detalhes</th>
+            <th>Plano</th>
+            <th>Avaliar</th>
           </tr>
         </thead>
+
         <tbody>
-          <?php while ($row = $usuarios->fetch_assoc()) : ?>
+          <?php while ($row = $planoUsuarioAnalise->fetch_assoc()) : ?>
             <tr>
               <td><?php echo $row['nomeUsuario'] ?></td>
               <td><?php echo $row['emailUsuario'] ?></td>
-              <td><a href="/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=<?php echo $row['usuarioID'] ?>">Detalhes</a></td>
+              <td><?php echo $row['situacao'] ?></td>
+              <td><a href="/SMILIPS/view/pages/administrador/plano/validarPlano.php?consultar=<?php echo $row['planoUsuarioID'] ?>">Avaliar</a></td>
             </tr>
           <?php endwhile; ?>
         </tbody>
-
       </table>
     <?php else : ?>
-      <h1>O Sistema Não Possui Usuários Cadastrados :(</h1>
+      <h1>Nenhum Plano Disponível Para a Analise :(</h1>
     <?php endif; ?>
+
   </main>
 
 

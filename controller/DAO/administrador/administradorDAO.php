@@ -20,10 +20,10 @@ if (isset($_POST['editar-email'])) {
     $conexao->query("UPDATE administrador SET email = '$email' WHERE administradorID = '$id'") or die($conexao->error);
 
     exibirMsg("Email Atualizado com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/administrador/conta.php?consultar=$id");
+    header("location:/SMILIPS/view/pages/administrador/adm/conta.php?consultar=$id");
   } else {
     exibirMsg("Email já Cadastrado!", "danger");
-    header("location:/SMILIPS/view/pages/administrador/conta.php?consultar=$id");
+    header("location:/SMILIPS/view/pages/administrador/adm/conta.php?consultar=$id");
   }
 } else if (isset($_POST['editarSenha'])) {
   //pegando o id do usuario
@@ -44,21 +44,21 @@ if (isset($_POST['editar-email'])) {
 
         //volta pra tela de editar senha e exibi a mensgem
         exibirMsg("Senha Editada com Sucesso!", "success");
-        header("location:/SMILIPS/view/pages/administrador/editarSenha.php");
+        header("location:/SMILIPS/view/pages/administrador/adm/editarSenha.php");
       } else {
         //se a senha e invalida
         exibirMsg("Senha Inválida!", "danger");
-        header("location:/SMILIPS/view/pages/administrador/editarSenha.php");
+        header("location:/SMILIPS/view/pages/administrador/adm/editarSenha.php");
       }
     } else {
       //se as senha sao diferentes
       exibirMsg("Senhas Diferentes!", "danger");
-      header("location:/SMILIPS/view/pages/administrador/editarSenha.php");
+      header("location:/SMILIPS/view/pages/administrador/adm/editarSenha.php");
     }
   } else {
     // se a campos em branco
     exibirMsg("Preencha todos os campos obrigatórios(*)!", "danger");
-    header("location:/SMILIPS/view/pages/administrador/editarSenha.php");
+    header("location:/SMILIPS/view/pages/administrador/adm/editarSenha.php");
   }
 } else if (isset($_POST['analisar'])) {
 

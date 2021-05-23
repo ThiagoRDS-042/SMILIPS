@@ -11,15 +11,15 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/home.css">
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/adm/home.css">
   <title>Administrador</title>
 </head>
 
 <body>
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   ?>
 
   <main>
@@ -33,7 +33,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/manterPlanos.php">Gerenciar Planos</a>
+          <a href="/SMILIPS/view/pages/administrador/plano/manterPlanos.php">Gerenciar Planos</a>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/planos.php">Validar Planos</a>
+          <a href="/SMILIPS/view/pages/administrador/plano/planos.php">Validar Planos</a>
         </div>
       </div>
 
@@ -88,7 +88,7 @@ admLogadoEntra();
           </div>
         </div>
         <div class="title">
-          <a href="/SMILIPS/view/pages/administrador/propagandas.php">Validar Propagandas</a>
+          <a href="/SMILIPS/view/pages/administrador/propaganda/propagandas.php">Validar Propagandas</a>
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@ admLogadoEntra();
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
   <script src="/SMILIPS/view/js/administrador/home.js"></script>

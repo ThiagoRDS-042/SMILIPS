@@ -47,3 +47,20 @@ function consultarPlano()
     $plano = $planoUsuario['nome'];
   }
 }
+
+function consultarPlanoAnalise()
+{
+
+  global $conexao, $planoUsuarioAnalise;
+
+  $planoUsuarioAnalise = $conexao->query("SELECT u.nomeUsuario, u.emailUsuario, pu.situacao, pu.planoUsuarioID FROM planoUsuario AS pu INNER JOIN usuario AS u ON pu.situacao = 'Em Analise' AND u.usuarioID = pu.usuarioID") or die($conexao->error);
+}
+
+
+if (isset($_GET['consultar'])) {
+  $idPlanoUsuario = $_GET['consultar'];
+
+  $planoUsuario = $conexao->query("SELECT * FROM planoUsuario AS pu INNER JOIN usuario AS u ON pu.planoUsuarioID = '$idPlanoUsuario' AND pu.usuarioID = u.usuarioID") or die($conexao->error);
+
+  $planoUsuario = $planoUsuario->fetch_assoc();
+}

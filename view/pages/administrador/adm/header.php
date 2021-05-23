@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/SMILIPS/view/css/administrador/header.css">
+<link rel="stylesheet" href="/SMILIPS/view/css/administrador/adm/header.css">
 <header>
     <div class="logo">
         <a href="/SMILIPS/view/pages/sistema/home.php">SMILIPS</a>

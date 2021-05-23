@@ -1,7 +1,7 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 $propagandaUser = '';
-
+$propagandaUsuario = '';
 
 function consultarPropagandasUser()
 {
@@ -23,4 +23,12 @@ function consultarPropagandasEmAnalise()
   global $conexao, $propagandasEmAnalise;
 
   $propagandasEmAnalise = $conexao->query("SELECT p.propagandaID, p.usuarioID, p.propaganda FROM propaganda as p INNER JOIN planoUsuario as pu ON p.situacao = 'Em analise' AND pu.usuarioID = p.usuarioID AND pu.situacao = 'Ativado'") or die($conexao->error);
+}
+
+if (isset($_GET['consultar'])) {
+  $idPropaganda = $_GET['consultar'];
+
+  $propagandaUsuario = $conexao->query("SELECT * FROM propaganda as p INNER JOIN usuario as u ON p.propagandaID = '$idPropaganda' AND u.usuarioID = p.usuarioID") or die($conexao->error);
+
+  $propagandaUsuario = $propagandaUsuario->fetch_assoc();
 }
