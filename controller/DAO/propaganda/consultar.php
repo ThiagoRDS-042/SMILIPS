@@ -5,7 +5,12 @@ $propagandaUsuario = '';
 
 function consultarPropagandasUser()
 {
-  $id = $_SESSION['usuarioID'];
+  if (isset($_SESSION['usuarioID'])) {
+    $id = $_SESSION['usuarioID'];
+  } else {
+    $id = $_GET['consultar'];
+  }
+
   global $conexao, $propagandas;
 
   $propagandas = $conexao->query("SELECT * FROM propaganda WHERE usuarioID =  '$id' ORDER BY situacao ASC") or die($conexao->error);

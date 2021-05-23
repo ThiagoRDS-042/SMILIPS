@@ -67,7 +67,7 @@ if (isset($_POST['autenticar']) and $_POST['email'] != null and $_POST['senha'] 
         $_SESSION['senhaAdm'] = $administrador['senha'];
 
         // redirecionando para a tela do usuario
-        header("location:/SMILIPS/view/pages/administrador/home.php");
+        header("location:/SMILIPS/view/pages/administrador/adm/home.php");
     } else {
         // exibindo a mensagem de dados invalidos na tela de login
         exibirMsg("Dados Inválidos!", "danger");

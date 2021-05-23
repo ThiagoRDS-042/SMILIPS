@@ -14,11 +14,15 @@ main {
   border: 1px solid transparent;
 }
 
+main .alert {
+  top: 80px;
+}
+
 main h1 {
   width: 70%;
   min-width: 455px;
   text-align: center;
-  margin: 130px auto 30px auto;
+  margin: 150px auto 30px auto;
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);

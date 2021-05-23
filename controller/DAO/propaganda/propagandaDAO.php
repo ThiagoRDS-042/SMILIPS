@@ -6,7 +6,6 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
-
 if (isset($_POST['salvar'])) {
   $id = $_SESSION['usuarioID'];
 
@@ -52,7 +51,12 @@ if (isset($_POST['salvar'])) {
 
   if (isset($_GET['editar'])) {
     $id = $_GET['editar'];
-    header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+    if (isset($_SESSION['idAdm'])) {
+      $idUser = $_POST['idUser'];
+      header("location:/SMILIPS/view/pages/administrador/propaganda/gerenciarPropaganda.php?editar=$id&&usuarioID=$idUser");
+    } else {
+      header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+    }
   } else {
     header("location:/SMILIPS/view/pages/propaganda/cadastro.php");
   }
@@ -74,53 +78,58 @@ if (isset($_POST['salvar'])) {
     fclose($handle);
 
     exibirMsg("Propaganda Enviada para a Analise!", "success");
-    header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+    if (isset($_SESSION['idAdm'])) {
+      $idUser = $_POST['idUser'];
+      header("location:/SMILIPS/view/pages/administrador/propaganda/gerenciarPropaganda.php?editar=$id&&usuarioID=$idUser");
+    } else {
+      header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+    }
   } else {
     $id = $_POST['id'];
     exibirMsg("Propaganda Atualizada com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+    if (isset($_SESSION['idAdm'])) {
+      $idUser = $_POST['idUser'];
+      header("location:/SMILIPS/view/pages/administrador/propaganda/gerenciarPropaganda.php?editar=$id&&usuarioID=$idUser");
+    } else {
+      header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+    }
   }
 } else if (isset($_POST['situacao'])) {
-  $situacao = $_POST['situacao'];
+
   $id  = $_POST['id'];
-  $idUser = $_SESSION['usuarioID'];
-  $senha = md5($_POST['senha']);
+  if (isset($_SESSION['idAdm'])) {
+    $idUser = $_POST['idUser'];
+    $conexao->query("DELETE FROM propaganda WHERE propagandaID = '$id'") or die($conexao->error);
+    exibirMsg("Propaganda Deletada!", "danger");
+    header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser");
+  } else {
+    $idUser = $_SESSION['usuarioID'];
+    $senha = md5($_POST['senha']);
+    $situacao = $_POST['situacao'];
 
-  $senhaUsuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
-  $senhaUsuario = $senhaUsuario->fetch_assoc();
-  $senhaUsuario = $senhaUsuario['senhaUsuario'];
+    $senhaUsuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$idUser'") or die($conexao->error);
+    $senhaUsuario = $senhaUsuario->fetch_assoc();
+    $senhaUsuario = $senhaUsuario['senhaUsuario'];
 
-  if ($senha == $senhaUsuario) {
-    if ($situacao == 'Excluida') {
-      $conexao->query("DELETE FROM propaganda WHERE propagandaID = '$id'") or die($conexao->error);
-      exibirMsg("Propaganda $situacao com Sucesso!", "success");
-      header("location:/SMILIPS/view/pages/usuario/home.php");
-    } else {
-      $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID = '$idUser' AND situacao = 'Ativado'") or die($conexao->error);
-      if ($planoUsuario->num_rows > 0) {
-        $conexao->query("UPDATE propaganda SET situacao = '$situacao' WHERE propagandaID = '$id'") or die($conexao->error);
+    if ($senha == $senhaUsuario) {
+      if ($situacao == 'Excluida') {
+        $conexao->query("DELETE FROM propaganda WHERE propagandaID = '$id'") or die($conexao->error);
         exibirMsg("Propaganda $situacao com Sucesso!", "success");
         header("location:/SMILIPS/view/pages/usuario/home.php");
       } else {
-        exibirMsg("Impossivel Ativar uma Propaganda sem um Plano ativo!", "danger");
-        header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+        $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID = '$idUser' AND situacao = 'Ativado'") or die($conexao->error);
+        if ($planoUsuario->num_rows > 0) {
+          $conexao->query("UPDATE propaganda SET situacao = '$situacao' WHERE propagandaID = '$id'") or die($conexao->error);
+          exibirMsg("Propaganda $situacao com Sucesso!", "success");
+          header("location:/SMILIPS/view/pages/usuario/home.php");
+        } else {
+          exibirMsg("Impossivel Ativar uma Propaganda sem um Plano ativo!", "danger");
+          header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
+        }
       }
+    } else {
+      exibirMsg("Senha Invalida!", "danger");
+      header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
     }
-  } else {
-    exibirMsg("Senha Invalida!", "danger");
-    header("location:/SMILIPS/view/pages/propaganda/editar.php?editar=$id");
   }
-} else if (isset($_POST['avaliar'])) {
-  $avaliacao = $_POST['avaliar'];
-  $idPropaganda = $_POST['propagandaID'];
-  $situacao = 'Ativada';
-
-  if ($avaliacao == 'validar') {
-    $conexao->query("UPDATE propaganda SET situacao = '$situacao' WHERE propagandaID = '$idPropaganda'") or die($conexao->error);
-    exibirMsg("Propaganda Ativada com Sucesso!", "success");
-  } else {
-    $conexao->query("DELETE FROM propaganda WHERE propagandaID = '$idPropaganda'") or die($conexao->error);
-    exibirMsg("Propaganda Deletada!", "danger");
-  }
-  header("location:/SMILIPS/view/pages/administrador/propaganda/propagandas.php");
 }

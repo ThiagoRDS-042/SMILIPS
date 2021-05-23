@@ -1,7 +1,7 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
 // chamando a funcao de admLogadoEntra(), pra n exibir essa tela caso o adm n esteja logado
-usuarioLogadoEntra();
+admLogadoEntra();
 ?>
 
 <!DOCTYPE html>
@@ -11,14 +11,14 @@ usuarioLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/propaganda/editar.css">
-  <title>Editar Anúncio</title>
+  <link rel="stylesheet" href="/SMILIPS/view/css/administrador/propaganda/gerenciarPropaganda.css">
+  <title>Gerenciar Propaganda</title>
 </head>
 
 <body>
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/header.php');
-  require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/menu.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/header.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/menu.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
   ?>
 
@@ -27,53 +27,35 @@ usuarioLogadoEntra();
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
     ?>
     <?php if ($propagandaUser['situacao'] == 'Em Analise') : ?>
-      <h1>Anúncio em Analise</h1>
+      <h1>Propaganda em Analise</h1>
     <?php elseif ($propagandaUser['situacao'] == 'Ativada') : ?>
-      <h1>Anúncio Ativado</h1>
+      <h1>Propaganda Ativada</h1>
     <?php else : ?>
-      <h1>Anúncio Desativado</h1>
+      <h1>Propaganda Desativada</h1>
     <?php endif; ?>
 
     <input type="checkbox" id="delete">
     <label for="delete">
-      <?php if ($propagandaUser['situacao'] == 'Desativada') : ?>
-        <span class="icon_done"><i class="fas fa-check-double"></i></span>
-      <?php else : ?>
-        <span class="icon_delete"><i class="fas fa-trash-alt"></i></span>
-      <?php endif; ?>
+      <span class="icon_delete"><i class="fas fa-trash-alt"></i></span>
+
 
     </label>
 
     <form action="/SMILIPS/controller/DAO/propaganda/propagandaDAO.php" method="post">
       <div class="delete">
         <div class="title">
-          <?php if ($propagandaUser['situacao'] == 'Em Analise') : ?>
-            <h3>Deseja Deletar?</h3>
-          <?php elseif ($propagandaUser['situacao'] == 'Ativada') : ?>
-            <h3>Deseja Desativar?</h3>
-          <?php else : ?>
-            <h3>Deseja Ativar?</h3>
-          <?php endif; ?>
+          <h3>Deseja Deletar?</h3>
         </div>
 
         <div class="field">
           <input type="hidden" name="id" value="<?php echo $propagandaUser['propagandaID'] ?>">
-          <input type="password" name="senha">
-          <span class="icon_senha"><i class="fas fa-eye"></i></span>
-          <span class="icon"><i class="fas fa-unlock-alt"></i></span>
-          <span data-placeholder="Senha" class="info"></span>
+          <input type="hidden" name="idUser" value="<?php echo $_GET['usuarioID'] ?>">
+          <span class="icon"><i class="fas fa-trash-alt"></i></span>
         </div>
 
         <div class="buttons">
           <button type="button">Cancelar</button>
-          <?php if ($propagandaUser['situacao'] == 'Em Analise') : ?>
-            <button type="submite" name="situacao" value="Excluida">Sim</button>
-          <?php elseif ($propagandaUser['situacao'] == 'Ativada') : ?>
-            <button type="submite" name="situacao" value="Desativada">Sim</button>
-          <?php else : ?>
-            <button type="submite" name="situacao" value="Ativada">Sim</button>
-          <?php endif; ?>
-
+          <button type="submite" name="situacao" value="Excluida">Sim</button>
         </div>
 
       </div>
@@ -85,7 +67,7 @@ usuarioLogadoEntra();
           <span class="icon"><i class="fas fa-camera"></i></span>
           <input type="file" name="propaganda" id="edity">
           <input type="hidden" name="id" id="id" value="<?php echo $propagandaUser['propagandaID'] ?>">
-          <input type="hidden" name="idUser" id="idUser" value="<?php echo $_SESSION['usuarioID'] ?>">
+          <input type="hidden" name="idUser" id="idUser" value="<?php echo $_GET['usuarioID'] ?>">
           <img src="data:image/jpeg;base64,<?php echo base64_encode($propagandaUser['propaganda']) ?>" alt="image">
         </div>
       </label>
@@ -97,7 +79,7 @@ usuarioLogadoEntra();
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
   <script src="/SMILIPS/view/js/propaganda/editar.js" type="module"></script>

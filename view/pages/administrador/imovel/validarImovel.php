@@ -25,6 +25,9 @@ admLogadoEntra();
   ?>
 
   <main>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
     <h1>Válidar Imóvel</h1>
 
     <section class="info-imovel">
@@ -172,14 +175,14 @@ admLogadoEntra();
         </div>
       </div>
 
-      <form action="/SMILIPS/controller/DAO/administrador/administradorDAO.php" method="post">
+      <form action="/SMILIPS/controller/DAO/notificacaoAnaliseImovel/notificacaoAnaliseImovelDAO.php" method="post">
         <input type="hidden" name="id" value="<?php echo $imovel['imovelID'] ?>" id="id">
         <input type="checkbox" id="imovel_invalido">
         <label for="imovel_invalido">
           <h3 name="analisar" value="excluir">Inválidar</h3>
         </label>
         <!-- <button type="submit" name="analisar" value="excluir">Inválidar</button> -->
-        <button type="submit" name="analisar" value="validar">Válidar</button>
+        <button type="submit" name="analisar" value="Valido">Válidar</button>
 
         <div class="msg_imovel">
           <div class="title">
@@ -193,7 +196,7 @@ admLogadoEntra();
 
           <div class="buttons">
             <button type="button" name="cancelar">Cancelar</button>
-            <button type="submit" name="analisar" value="excluir">Confirmar</button>
+            <button type="submit" name="analisar" value="Excluido">Confirmar</button>
           </div>
         </div>
       </form>

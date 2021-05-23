@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li>
-                <a href="/SMILIPS/controller/autenticar/adm/sair.php">
+                <a href="/SMILIPS/controller/autenticar/sair.php">
                     <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                     <span class="title">Sair</span>
                 </a>

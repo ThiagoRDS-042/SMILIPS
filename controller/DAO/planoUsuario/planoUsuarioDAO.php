@@ -93,42 +93,4 @@ if (isset($_POST['salvar'])) {
     exibirMsg("Senha invalida!", "danger");
     header("location:/SMILIPS/view/pages/plano/efetivarPlano.php?efetivar=$planoId");
   }
-} else if (isset($_POST['avaliar'])) {
-  $avaliacao = $_POST['avaliar'];
-  $situacao = 'Ativado';
-  $id = $_POST['planoUsuarioID'];
-
-  if ($avaliacao == 'validar') {
-    $plano = $conexao->query("SELECT * FROM planoUsuario AS pu INNER JOIN plano AS p ON pu.planoUsuarioID = '$id' AND pu.planoId = p.planoID") or die($conexao->error);
-    $plano = $plano->fetch_assoc();
-
-    $dataInicio = date("Y-m-d");
-    $dataFim =  preg_split("/-/", $dataInicio);
-    $dataFim[2] += $plano['duracao'];
-    while ($dataFim[2] > 30) {
-      $dataFim[2] -= 30;
-      $dataFim[1] += 1;
-
-      while ($dataFim[1] > 12) {
-        $dataFim[1] -= 12;
-        $dataFim[0] += 1;
-      }
-    }
-
-    if ($dataFim[2] < 10) {
-      $dataFim[2] = '0' . $dataFim[2];
-    }
-    if ($dataFim[1] < 10) {
-      $dataFim[1] = '0' . $dataFim[1];
-    }
-
-    $dataFim = implode("-", $dataFim);
-
-    $conexao->query("UPDATE planoUsuario SET situacao = '$situacao', dataInicio = '$dataInicio', dataFim = '$dataFim' WHERE planoUsuarioID = '$id'") or die($conexao->error);
-    exibirMsg("Plano Ativado com Sucesso!", "success");
-  } else {
-    $conexao->query("DELETE FROM planoUsuario WHERE planoUsuarioID = '$id'") or die($conexao->error);
-    exibirMsg("Plano Deletado!", "danger");
-  }
-  header("location:/SMILIPS/view/pages/administrador/plano/planos.php");
 }

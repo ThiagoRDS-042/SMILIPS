@@ -5,6 +5,8 @@ const preview = document.querySelector(".edity img");
 const imgSrc = preview.src;
 let id = document.querySelector("#id");
 id = id.value;
+let idUser = document.querySelector("#idUser");
+idUser = idUser.value;
 
 //acionado um evento ao ocorrer uma alteração de valor do elemento pelo usuário
 file.addEventListener("change", (e) => {
@@ -27,11 +29,11 @@ file.addEventListener("change", (e) => {
         // Isso disparará o evento reader.onload.
         reader.readAsDataURL(fileToUpload);
       } else {
-        location = `/SMILIPS/controller/DAO/propaganda/propagandaDAO.php?img_propaganda=Tamanho de Arquivo Inválido!&&editar=${id}`;
+        location = `/SMILIPS/controller/DAO/propaganda/propagandaDAO.php?img_propaganda=Tamanho de Arquivo Inválido!&&editar=${id}&&usuarioID=${idUser}`;
       }
     } else {
       // caso o formato seja invalido, redireciona para a pagina usuarioDAO.php, passando um variavel get
-      location = `/SMILIPS/controller/DAO/propaganda/propagandaDAO.php?img_propaganda=Formato de Arquivo Inválido!&&editar=${id}`;
+      location = `/SMILIPS/controller/DAO/propaganda/propagandaDAO.php?img_propaganda=Formato de Arquivo Inválido!&&editar=${id}&&usuarioID=${idUser}`;
     }
   } else {
     // caso n selecione nenhuma img, redireciona para a pagina usuarioDAO.php, passando um variavel get, e alterando a img do preview para a q esta no DB

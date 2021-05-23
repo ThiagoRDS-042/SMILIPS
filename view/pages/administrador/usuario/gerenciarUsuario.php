@@ -26,6 +26,9 @@ admLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/servico/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarServico();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
+  // chamando a funcao consultarImovelUser
+  consultarPropagandasUser();
   ?>
 
   <main>
@@ -199,6 +202,35 @@ admLogadoEntra();
 
         </table>
 
+      </section>
+    <?php endif; ?>
+
+    <?php if ($propagandas->num_rows > 0) : ?>
+      <section class="your-adverts">
+        <h1>Suas Propagandas</h1>
+
+        <div class="adverts">
+          <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
+          <div class="adverts-container">
+            <div class="cards-propaganda">
+              <?php while ($row = $propagandas->fetch_assoc()) : ?>
+                <div class="card">
+                  <div class="image">
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($row['propaganda']) ?>" alt="image">
+                  </div>
+                  <?php if ($row['situacao'] == 'Desativada') : ?>
+                    <a href="/SMILIPS/view/pages/administrador/propaganda/gerenciarPropaganda.php?editar=<?php echo $row['propagandaID']  ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Desativada</a>
+                  <?php elseif ($row['situacao'] == 'Ativada') : ?>
+                    <a href="/SMILIPS/view/pages/administrador/propaganda/gerenciarPropaganda.php?editar=<?php echo $row['propagandaID']  ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Ativada</a>
+                  <?php else : ?>
+                    <a href="/SMILIPS/view/pages/administrador/propaganda/gerenciarPropaganda.php?editar=<?php echo $row['propagandaID']  ?>&&usuarioID=<?php echo $_GET['consultar'] ?>">Em Analise</a>
+                  <?php endif; ?>
+                </div>
+              <?php endwhile; ?>
+            </div>
+          </div>
+          <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
+        </div>
       </section>
     <?php endif; ?>
 
