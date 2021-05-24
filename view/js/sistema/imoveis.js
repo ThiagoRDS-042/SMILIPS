@@ -35,17 +35,20 @@ imoveis.forEach((imovel) => {
     }
   }
 
+  // capturando os elementos da DOM
   const btnsProximo = imovel.querySelectorAll(".icon-proximo");
   const btnsVoltar = imovel.querySelectorAll(".icon-voltar");
   const slider = imovel.querySelector(".imgs");
   const cards = imovel.querySelectorAll(".imgs img");
 
+  // so exiba no maximo 5 imgs
   cards.forEach((card, index) => {
     if (index > 4) {
       card.style.display = "none";
     }
   });
 
+  // adicionando o evento de click a cada botao proximo
   btnsProximo.forEach((btnProximo) => {
     btnProximo.addEventListener("click", () => {
       if (cards.length > 5) {
@@ -60,6 +63,7 @@ imoveis.forEach((imovel) => {
     });
   });
 
+  // adicionando o evento de click a cada botao voltar
   btnsVoltar.forEach((btnVoltar) => {
     btnVoltar.addEventListener("click", () => {
       if (cards.length > 5) {

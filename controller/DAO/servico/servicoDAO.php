@@ -12,13 +12,16 @@ if (isset($_POST['salvar'])) {
     $idUsuario = $_POST['idUser'];
     $descricao = $_POST['descricao'];
 
+    // pesquisa o tipo de serviço
     $tipoServico = $conexao->query("SELECT * FROM tipoServico WHERE tipoServico = '$tipoServico'") or die($conexao->error);
     $tipoServico = $tipoServico->fetch_assoc();
     $tipoServicoID = $tipoServico['tipoServicoID'];
 
+    // pesquisa se o usuairo ja n possui este serviço
     $servicoValido = $conexao->query("SELECT * FROM servico WHERE usuarioID = '$idUsuario' AND tipoServicoID = '$tipoServicoID'") or die($conexao->error);
 
     if ($servicoValido->num_rows == 0) {
+      // cadastra o serviço
       $conexao->query("INSERT INTO servico (descricao, situacao, tipoServicoID, usuarioID) VALUES ('$descricao', 'Ativado', '$tipoServicoID', '$idUsuario')") or die($conexao->error);
 
       exibirMsg("Serviço Cadastrado!", "success");
@@ -37,11 +40,13 @@ if (isset($_POST['salvar'])) {
   $tipoServico = $_POST['type'];
   $descricao = $_POST['descricao'];
 
+  // pesquisa o tipo de serviço
   $tipoServicoID = $conexao->query("SELECT * FROM tipoServico WHERE tipoServico = '$tipoServico'") or die($conexao->error);
   $tipoServicoID = $tipoServicoID->fetch_assoc();
   $tipoServicoID = $tipoServicoID['tipoServicoID'];
 
   if ($_POST['idTipoServico'] == $tipoServicoID) {
+    // atualiza o servico
     $conexao->query("UPDATE servico SET tipoServicoID = '$tipoServicoID', descricao = '$descricao' WHERE servicoID = '$idServico'") or die($conexao->error);
 
     exibirMsg("Serviço Atualizado com Sucesso!", "success");
@@ -51,9 +56,11 @@ if (isset($_POST['salvar'])) {
       header("location:/SMILIPS/view/pages/servico/gerenciarServico.php?editar=$idServico");
     }
   } else {
+    // pesquisa se ja existe o servico cadastrado
     $servicoCadastrado = $conexao->query("SELECT * FROM servico WHERE tipoServicoID = '$tipoServicoID' AND usuarioID = '$idUsuario'") or die($conexao->error);
 
     if ($servicoCadastrado->num_rows == 0) {
+      // se nao atualiza o serviço, ou seja, o usuario nao pode ter dois serviços iguais
       $conexao->query("UPDATE servico SET tipoServicoID = '$tipoServicoID', descricao = '$descricao' WHERE servicoID = '$idServico'") or die($conexao->error);
 
       exibirMsg("Serviço Atualizado com Sucesso!", "success");
@@ -72,6 +79,7 @@ if (isset($_POST['salvar'])) {
     }
   }
 } else if (isset($_POST['desativar-ativar'])) {
+  // ativa, desativa e excluir serviços de acordo com cada situação
 
   if ($_POST['desativar-ativar'] == 'Excluir') {
     $id = $_POST['idServico'];

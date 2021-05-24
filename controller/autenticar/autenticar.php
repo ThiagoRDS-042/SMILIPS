@@ -23,8 +23,10 @@ if (isset($_POST['autenticar']) and $_POST['email'] != null and $_POST['senha'] 
             // ativando a conta
             $conexao->query("UPDATE usuario SET situacao = 'ativada' WHERE emailUsuario = '$email' AND senhaUsuario= '$senha'") or die($conexao->error);
 
+            // pesquisando o plano do usuario
             $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID =" . $usuario['usuarioID']) or die($conexao->error);
 
+            // se ele possuir um plano, verifica se o plano ainda n expirou, caso n tenha expirado, ativa o plano em conjunto com a ativação da conta
             if ($planoUsuario->num_rows > 0) {
                 $planoUsuario = $planoUsuario->fetch_assoc();
 

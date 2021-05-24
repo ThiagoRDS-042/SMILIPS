@@ -10,18 +10,22 @@ if (isset($_POST['salvar'])) {
   $planoId = $_POST['planoID'];
   $id = $_SESSION['usuarioID'];
 
+  // pesquisando a senha do usuario para comparar com a senha informada
   $senhaUsuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
   $senhaUsuario = $senhaUsuario->fetch_assoc();
   $senhaUsuario = $senhaUsuario['senhaUsuario'];
 
   if ($senhaUsuario == $senha) {
+    // verificando se foi enviado o comprovante
     if (isset($_FILES['comprovante']['name']) && $_FILES['comprovante']['error'] == 0) {
 
+      // verificando a extensao valida
       preg_match("/\.(png|jpg|jpeg)$/i", $_FILES['comprovante']['name'], $extensao);
       if ($extensao) {
         // Obtém o tamanho do arquivo para a leitura
         $tamanhoImg = $_FILES['comprovante']['size'];
 
+        // verificando o tamnaho maximo aceito
         if ($tamanhoImg <= 1022924) {
           $comprovante = $_FILES['comprovante'];
           $caminhoTemp = $_FILES['comprovante']['tmp_name'];
@@ -34,6 +38,7 @@ if (isset($_POST['salvar'])) {
           $handle = fopen($caminhoTemp, "r");
           $comprovante  = addslashes(fread($handle, $tamanhoImg));
 
+          // pesquisando o plano selecionado, para utilizar a duração para estipular a data de expriração
           $plano = $conexao->query("SELECT * FROM plano WHERE planoID = '$planoId'") or die($conexao->error);
           $plano = $plano->fetch_assoc();
 
@@ -59,21 +64,21 @@ if (isset($_POST['salvar'])) {
 
           $dataFim = implode("-", $dataFim);
 
+          // pesquisando o plano do usuario
           $planoUsuario = $conexao->query("SELECT * FROM planoUsuario WHERE usuarioID = '$id'") or die($conexao->error);
 
           if ($planoUsuario->num_rows > 0) {
-            // atualizando a foto de perfil do usuario
+            // se ele ja possuir um plano atualiza ele
             $planoUsuario = $planoUsuario->fetch_assoc();
             $conexao->query("UPDATE planoUsuario SET  planoID = '$planoId', dataInicio = '$dataInicio', dataFim = '$dataFim', situacao = '$situacao', comprovante = '$comprovante' WHERE planoUsuarioID = " . $planoUsuario['planoUsuarioID']) or die($conexao->error);
           } else {
-            // atualizando a foto de perfil do usuario
+            // se n cadastra um plano para ele
             $conexao->query("INSERT INTO planoUsuario (usuarioID, planoID, dataInicio, dataFim, situacao, comprovante) VALUES ('$id', '$planoId', '$dataInicio', '$dataFim', '$situacao', '$comprovante')") or die($conexao->error);
           }
 
           // dando close no fopen para parar a leitura do arquivo
           fclose($handle);
 
-          //volta pra pagina de perfil com a varivel consultar e o id do usuario e exibe a mensagem
           exibirMsg("Comprovante Enviado!", "success");
           header("location:/SMILIPS/view/pages/usuario/home.php");
         } else {

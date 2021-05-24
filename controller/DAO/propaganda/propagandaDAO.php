@@ -9,26 +9,31 @@ if (!isset($_SESSION)) {
 if (isset($_POST['salvar'])) {
   $id = $_SESSION['usuarioID'];
 
+  // pesquisa a qtd de anuncios q o usuario possui e quantos anuncios seu plano lhe permite o cadastro
   $propagandas = $conexao->query("SELECT * FROM propaganda WHERE usuarioID = '$id'") or die($conexao->error);
   $qtdAnuncio = $conexao->query("SELECT * FROM planoUsuario INNER JOIN plano ON planoUsuario.usuarioID = '$id' AND plano.planoID = planoUsuario.planoID") or die($conexao->error);
   $qtdAnuncio = $qtdAnuncio->fetch_assoc();
   $qtdAnuncio = $qtdAnuncio['qtdAnuncio'];
 
   if ($propagandas->num_rows < $qtdAnuncio) {
+    // verifica se foi enviada a propaganda
     if (isset($_FILES['propaganda']['name']) && $_FILES['propaganda']['error'] == 0) {
-
+      // setando a situacao
       $situacao = 'Em Analise';
       $propaganda = $_FILES['propaganda'];
 
       $caminhoTemp = $propaganda['tmp_name'];
       $tamanhoImg = $propaganda['size'];
 
+      // abre o arquivo para leitura
       $handle = fopen($caminhoTemp, "r");
+      // prepara o arquivo pra o cadastro
       $propaganda  = addslashes(fread($handle, $tamanhoImg));
 
-      //salvando o usurio
+      // cadastra a propaganda
       $conexao->query("INSERT INTO propaganda(propaganda, situacao, usuarioID) VALUES ('$propaganda', '$situacao', '$id')") or die($conexao->error);
 
+      // fecha
       fclose($handle);
 
       exibirMsg("Propaganda Enviada para a Analise!", "success");
@@ -42,6 +47,7 @@ if (isset($_POST['salvar'])) {
     header("location:/SMILIPS/view/pages/propaganda/cadastro.php");
   }
 } else if (isset($_GET['img_propaganda'])) {
+  // exibindo as mensagens de tamanho ou extencao invalida
   $msg = $_GET['img_propaganda'];
   if ($msg == 'Tamanho de Arquivo Inválido!') {
     exibirMsg("Tamanho de Arquivo Inválido! (Tamanho Máximo = 1000kb)", "danger");
@@ -49,6 +55,7 @@ if (isset($_POST['salvar'])) {
     exibirMsg("Formato de Arquivo Inválido! (Formato Suportado = PNG, JPG, JPEG)", "danger");
   }
 
+  // verifica se esta editando ou cadastrando, para saber para onde redirecionar
   if (isset($_GET['editar'])) {
     $id = $_GET['editar'];
     if (isset($_SESSION['idAdm'])) {
@@ -61,20 +68,25 @@ if (isset($_POST['salvar'])) {
     header("location:/SMILIPS/view/pages/propaganda/cadastro.php");
   }
 } else if (isset($_POST['editar'])) {
+  // verifica se foi enviada a propaganda
   if (isset($_FILES['propaganda']['name']) && $_FILES['propaganda']['error'] == 0) {
     $id = $_POST['id'];
+    // setando a situacao
     $situacao = 'Em Analise';
     $propaganda = $_FILES['propaganda'];
 
     $caminhoTemp = $propaganda['tmp_name'];
     $tamanhoImg = $propaganda['size'];
 
+    // abre o arquivo para leitura
     $handle = fopen($caminhoTemp, "r");
+    // prepara o arquivo pra o cadastro
     $propaganda  = addslashes(fread($handle, $tamanhoImg));
 
-    //salvando o usurio
+    // atualiza a propaganda
     $conexao->query("UPDATE propaganda SET propaganda = '$propaganda', situacao = '$situacao' WHERE propagandaID = '$id'") or die($conexao->error);
 
+    // fecha
     fclose($handle);
 
     exibirMsg("Propaganda Enviada para a Analise!", "success");
@@ -95,7 +107,7 @@ if (isset($_POST['salvar'])) {
     }
   }
 } else if (isset($_POST['situacao'])) {
-
+  // setando a situacao da propaganda, para desativada, ativada, e em casos especificos excluindo ela
   $id  = $_POST['id'];
   if (isset($_SESSION['idAdm'])) {
     $idUser = $_POST['idUser'];

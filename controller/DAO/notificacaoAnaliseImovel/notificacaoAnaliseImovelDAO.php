@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
-
+// cria a notificação de analise de imovel, seja de deleção ou ativação
 if (isset($_POST['analisar'])) {
 
   $situacao = $_POST['analisar'];
@@ -40,6 +40,7 @@ if (isset($_POST['analisar'])) {
     header("location:/SMILIPS/view/pages/administrador/imovel/imoveis.php");
   }
 } else if (isset($_POST['edity'])) {
+  // edita a notificação como ja exibida
   $idNotificacao = $_POST['idNotificacaoAnaliseImovel'];
   $conexao->query("UPDATE notificacaoAnaliseImovel set exibida = 1 WHERE notificacaoAnaliseImovelID = '$idNotificacao'") or die($conexao->error);
   header("location:/SMILIPS/view/pages/usuario/home.php");

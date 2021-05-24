@@ -1,7 +1,7 @@
 // importando as funcoes
 import {
   selecionarUm,
-  fecharPopupExcruir,
+  fecharPopupExcluir,
 } from "/SMILIPS/view/js/modules/checarCheckbox.js";
 
 // capturando todos os checkbox, icones de delecao e os botoes de nao
@@ -15,4 +15,4 @@ const btnsNao = document.querySelectorAll("table tbody tr td .excluir .btnNao");
 
 // chamando as funcoes importadas passando as variveis a cima pelo parametro
 selecionarUm(incosDelete, checkboxs);
-fecharPopupExcruir(btnsNao, checkboxs);
+fecharPopupExcluir(btnsNao, checkboxs);

@@ -45,11 +45,11 @@ files.forEach((file, index) => {
             previewImgs[index].src = e.target.result;
           });
         } else {
-          // caso o tamanho seja invalido, redireciona para a pagina imovelDAO.php, passando um variavel get
+          // caso o tamanho seja invalido, redireciona, passando um variavel get
           location = `/SMILIPS/controller/DAO/imovel/imovelDAO.php?notificacao_imgs_edicao=Tamanho de Arquivo Inválido!&&id=${id}&&usuarioID=${idUser}`;
         }
       } else {
-        // caso o formato seja invalido, redireciona para a pagina imovelDAO.php, passando um variavel get
+        // caso o formato seja invalido, redireciona, passando um variavel get
         location = `/SMILIPS/controller/DAO/imovel/imovelDAO.php?notificacao_imgs_edicao=Formato de Arquivo Inválido!&&id=${id}&&usuarioID=${idUser}`;
       }
     } else {

@@ -1,6 +1,6 @@
 // importando as funcoes
 import {
-  fecharPopupExcruir,
+  fecharPopupExcluir,
   selecionarUm,
 } from "/SMILIPS/view/js/modules/checarCheckbox.js";
 import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
@@ -26,4 +26,4 @@ const btnsNao = document.querySelectorAll(".acoes .excluir .btnNao");
 
 // chamando as funcoes importadas e passando as variaveis atribuidas a cima pelo parametro
 selecionarUm(incosDelete, checkboxs);
-fecharPopupExcruir(btnsNao, checkboxs);
+fecharPopupExcluir(btnsNao, checkboxs);

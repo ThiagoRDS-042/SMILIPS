@@ -2,7 +2,7 @@
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 $plano = '';
 
-// consultando todos os servicos cadastrados no DB
+// consultando todos os planos cadastrados no DB
 function consultar()
 {
   global $conexao, $planos;

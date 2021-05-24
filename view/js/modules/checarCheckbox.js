@@ -17,8 +17,8 @@ function selecionarUm(incosDelete, checkboxs) {
 }
 
 // funcao para fechar o popup ao clicar no btn nao
-function fecharPopupExcruir(btnsNao, checkboxs) {
-    // percorrendo todos os btn nao
+function fecharPopupExcluir(btnsNao, checkboxs) {
+  // percorrendo todos os btn nao
   btnsNao.forEach((btnNao, index) => {
     // adicionando um evento de click ao btn nao
     btnNao.addEventListener("click", () => {
@@ -29,4 +29,4 @@ function fecharPopupExcruir(btnsNao, checkboxs) {
 }
 
 // exportando as duas funcoes
-export { selecionarUm, fecharPopupExcruir };
+export { selecionarUm, fecharPopupExcluir };

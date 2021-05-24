@@ -31,12 +31,12 @@ file.addEventListener("change", (e) => {
           "/SMILIPS/controller/DAO/propaganda/propagandaDAO.php?img_propaganda=Tamanho de Arquivo Inválido!";
       }
     } else {
-      // caso o formato seja invalido, redireciona para a pagina usuarioDAO.php, passando um variavel get
+      // caso o formato seja invalido, redireciona, passando um variavel get
       location =
         "/SMILIPS/controller/DAO/propaganda/propagandaDAO.php?img_propaganda=Formato de Arquivo Inválido!";
     }
   } else {
-    // caso n selecione nenhuma img, redireciona para a pagina usuarioDAO.php, passando um variavel get, e alterando a img do preview para a q esta no DB
+    // caso n selecione nenhuma img, reste tudo
     preview.src = "";
     preview.style.display = "none";
     icon.style.display = "block";

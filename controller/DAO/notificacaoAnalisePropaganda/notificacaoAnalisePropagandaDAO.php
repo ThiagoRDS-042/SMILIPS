@@ -6,6 +6,7 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
+// cria a notificação de analise de plano, seja de deleção ou ativação
 if (isset($_POST['avaliar'])) {
   $situacao = $_POST['avaliar'];
   $idPropaganda = $_POST['propagandaID'];
@@ -36,6 +37,7 @@ if (isset($_POST['avaliar'])) {
     }
   }
 } else if (isset($_POST['edity'])) {
+  // edita a notificação como ja exibida
   $idNotificacao = $_POST['idNotificacaoAnalisePropaganda'];
   $conexao->query("UPDATE notificacaoAnalisePropaganda set exibida = 1 WHERE notificacaoAnalisePropagandaID = '$idNotificacao'") or die($conexao->error);
   header("location:/SMILIPS/view/pages/usuario/home.php");

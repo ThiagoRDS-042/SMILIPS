@@ -6,6 +6,7 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
+// cria a notificação de analise de plano, seja de deleção ou ativação
 if (isset($_POST['avaliar'])) {
   $situacao = $_POST['avaliar'];
   $idPanoUsuario = $_POST['planoUsuarioID'];
@@ -16,6 +17,7 @@ if (isset($_POST['avaliar'])) {
   $idUser = $plano['usuarioID'];
 
   if ($situacao == 'Valido') {
+    // pegando a data atual e manipulando para estipular a expiração do plano
 
     $dataInicio = date("Y-m-d");
     $dataFim =  preg_split("/-/", $dataInicio);
@@ -57,6 +59,7 @@ if (isset($_POST['avaliar'])) {
     }
   }
 } else if (isset($_POST['edity'])) {
+  // edita a notificação como ja exibida
   $idNotificacao = $_POST['idNotificacaoAnalisePLano'];
   $conexao->query("UPDATE notificacaoAnalisePlano set exibida = 1 WHERE notificacaoAnalisePlanoID = '$idNotificacao'") or die($conexao->error);
   header("location:/SMILIPS/view/pages/usuario/home.php");

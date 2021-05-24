@@ -1,6 +1,7 @@
 <?php
 
 require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
+// consulta todos as notificações de analise de plano do usuario
 function consultarNotificacaoAnalisePlano()
 {
   $id = $_SESSION['usuarioID'];

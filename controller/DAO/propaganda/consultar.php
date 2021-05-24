@@ -3,6 +3,7 @@ require_once('/xampp/htdocs/SMILIPS/controller/conexao/conexao.php');
 $propagandaUser = '';
 $propagandaUsuario = '';
 
+// consulta as propagandas do usuario
 function consultarPropagandasUser()
 {
   if (isset($_SESSION['usuarioID'])) {
@@ -13,9 +14,11 @@ function consultarPropagandasUser()
 
   global $conexao, $propagandas;
 
+  // pesquisando as propagandas do usuario
   $propagandas = $conexao->query("SELECT * FROM propaganda WHERE usuarioID =  '$id' ORDER BY situacao ASC") or die($conexao->error);
 }
 
+// se a variavel editar existir, pesquisa a propaganda pelo seu id
 if (isset($_GET['editar'])) {
   $id = $_GET['editar'];
 
@@ -23,13 +26,16 @@ if (isset($_GET['editar'])) {
   $propagandaUser = $propagandaUser->fetch_assoc();
 }
 
+// consulta as propagandas em analise
 function consultarPropagandasEmAnalise()
 {
   global $conexao, $propagandasEmAnalise;
 
+  // pesquisano as propagandas em analise
   $propagandasEmAnalise = $conexao->query("SELECT p.propagandaID, p.usuarioID, p.propaganda FROM propaganda as p INNER JOIN planoUsuario as pu ON p.situacao = 'Em analise' AND pu.usuarioID = p.usuarioID AND pu.situacao = 'Ativado'") or die($conexao->error);
 }
 
+// se consultar existir, pesquisa as propagandas e o usuario pelo id da propaganda
 if (isset($_GET['consultar'])) {
   $idPropaganda = $_GET['consultar'];
 

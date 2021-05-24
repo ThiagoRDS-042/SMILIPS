@@ -29,14 +29,15 @@ file.addEventListener("change", (e) => {
         // Isso disparará o evento reader.onload.
         reader.readAsDataURL(fileToUpload);
       } else {
+        // caso o tamanho seja invalido, redireciona, passando um variavel get
         location = `/SMILIPS/controller/DAO/propaganda/propagandaDAO.php?img_propaganda=Tamanho de Arquivo Inválido!&&editar=${id}&&usuarioID=${idUser}`;
       }
     } else {
-      // caso o formato seja invalido, redireciona para a pagina usuarioDAO.php, passando um variavel get
+      // caso o formato seja invalido, passando um variavel get
       location = `/SMILIPS/controller/DAO/propaganda/propagandaDAO.php?img_propaganda=Formato de Arquivo Inválido!&&editar=${id}&&usuarioID=${idUser}`;
     }
   } else {
-    // caso n selecione nenhuma img, redireciona para a pagina usuarioDAO.php, passando um variavel get, e alterando a img do preview para a q esta no DB
+    // caso n seja selecionada nenhuma img ele retorna para a q foi cadastrada no DB
     preview.src = imgSrc;
   }
 });
