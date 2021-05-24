@@ -104,7 +104,7 @@ usuarioLogadoEntra();
           </div>
 
           <div class="content">
-            <?php if ($row['situacao'] == 'Excluido') : ?>
+            <?php if ($row['situacao'] == 'Excluida') : ?>
               <p>Sua Propaganda não foi Aprovado na Analise. Motivo: <?php echo $row['mensagem'] ?></p>
               <span class="icon_triste"><i class="far fa-frown"></i></span>
             <?php else : ?>
