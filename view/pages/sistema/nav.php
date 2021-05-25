@@ -19,8 +19,8 @@ if (!isset($_SESSION)) {
     <ul>
         <li><a href="/SMILIPS/view/pages/sistema/home.php">Home</a></li>
         <li><a href="/SMILIPS/view/pages/sistema/imoveis.php">Imóveis</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="/SMILIPS/view/pages/sistema/servicos.php">Serviços</a></li>
+        <li><a href="/SMILIPS/view/pages/sistema/contato.php">Contato</a></li>
         <li>
             <!-- se existir a variavel de sessao usuarioID coloque no nav o nome do usuario -->
             <?php if (isset($_SESSION['usuarioID'])) : ?>

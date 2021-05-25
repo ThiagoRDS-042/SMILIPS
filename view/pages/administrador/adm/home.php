@@ -91,6 +91,17 @@ admLogadoEntra();
           <a href="/SMILIPS/view/pages/administrador/propaganda/propagandas.php">Validar Propagandas</a>
         </div>
       </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="image">
+            <img src="/SMILIPS/view/images/administrador/plano.png" alt="Icone de denuncias">
+          </div>
+        </div>
+        <div class="title">
+          <a href="/SMILIPS/view/pages/administrador/denuncia/denuncias.php">Gerenciar Denúncias</a>
+        </div>
+      </div>
     </div>
   </main>
 
