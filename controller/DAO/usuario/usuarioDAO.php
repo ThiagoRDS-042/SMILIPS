@@ -37,9 +37,15 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 $ftPerfil  = addslashes(fread($handle, $tamanho));
 
                 //salvando o usurio
-                $conexao->query("INSERT INTO usuario(nomeUsuario, emailUsuario, senhaUsuario, rua, bairro, complemento, telefone, numero, situacao, ftPerfil) VALUES ('$nome', '$email', '$senha1', '$rua', '$bairro', '$complemento', '$telefone', '$numero', '$situacao', '$ftPerfil')") or die($conexao->error);
+                $conexao->query("INSERT INTO usuario(nomeUsuario, emailUsuario, senhaUsuario, telefone, situacao, ftPerfil) VALUES ('$nome', '$email', '$senha1', '$telefone', '$situacao', '$ftPerfil')") or die($conexao->error);
 
                 fclose($handle);
+
+                $usuario = $conexao->query("SELECT MAX(usuarioID) FROM usuario") or die($conexao->error);
+                $usuario = $usuario->fetch_assoc();
+                $usuarioID =  $usuario['MAX(usuarioID)'];
+
+                $conexao->query("INSERT INTO enderecoUsuario(rua, numero, bairro, complemento, usuarioID) VALUES ('$rua', '$numero', '$bairro', '$complemento', '$usuarioID')") or die($conexao->error);
 
                 //volta pra tela de cadastro e exibi a mesnsagem
                 exibirMsg("Cadastro bem Sucedido!", "success");
@@ -88,7 +94,8 @@ if (isset($_POST['save']) and $_POST['nome'] != null and $_POST['email'] != null
                 $complemento = $_POST['complemento'];
 
                 //atualizando os dados do usuario
-                $conexao->query("UPDATE usuario SET nomeUsuario = '$nome', emailUsuario = '$email', rua = '$rua', bairro = '$bairro', numero = '$numero', complemento = '$complemento', telefone = '$telefone' WHERE usuarioID = '$id'") or die($conexao->error);
+                $conexao->query("UPDATE usuario SET nomeUsuario = '$nome', emailUsuario = '$email', telefone = '$telefone' WHERE usuarioID = '$id'") or die($conexao->error);
+                $conexao->query("UPDATE enderecoUsuario SET rua = '$rua', numero = '$numero', complemento = '$complemento', bairro = '$bairro' WHERE usuarioID = '$id'") or die($conexao->error);
 
                 // voltando para a tela de perfil com a varivel consultar e seu id e exibindo a mensagem
                 exibirMsg("Edição bem Sucedida!", "success");

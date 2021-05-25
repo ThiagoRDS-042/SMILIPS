@@ -39,7 +39,7 @@ function consultarPropagandasEmAnalise()
 if (isset($_GET['consultar'])) {
   $idPropaganda = $_GET['consultar'];
 
-  $propagandaUsuario = $conexao->query("SELECT * FROM propaganda as p INNER JOIN usuario as u ON p.propagandaID = '$idPropaganda' AND u.usuarioID = p.usuarioID") or die($conexao->error);
+  $propagandaUsuario = $conexao->query("SELECT * FROM propaganda as p INNER JOIN usuario as u ON p.propagandaID = '$idPropaganda' AND u.usuarioID = p.usuarioID INNER JOIN enderecoUsuario AS eu ON u.usuarioID = eu.usuarioID") or die($conexao->error);
 
   $propagandaUsuario = $propagandaUsuario->fetch_assoc();
 }

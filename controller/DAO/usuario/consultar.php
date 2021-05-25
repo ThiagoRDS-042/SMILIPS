@@ -16,7 +16,7 @@ $situacao = "";
 if (isset($_GET['consultar'])) {
     $id = $_GET['consultar'];
     //consultando do banco todos os dados do usurio em questao
-    $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID = '$id'") or die($conexao->error);
+    $usuario = $conexao->query("SELECT * FROM usuario AS u INNER JOIN enderecoUsuario AS eu ON u.usuarioID = '$id' AND u.usuarioID = eu.usuarioID") or die($conexao->error);
 
     if ($usuario->num_rows == 1) {
         //verificando se encontrou algo
@@ -80,7 +80,7 @@ function consultarUsuarios()
 {
     global $conexao, $usuarios;
 
-    $usuarios = $conexao->query("SELECT * FROM usuario") or die($conexao->error);
+    $usuarios = $conexao->query("SELECT * FROM usuario AS u INNER JOIN enderecoUsuario AS eu ON u.usuarioID = eu.usuarioID") or die($conexao->error);
 }
 
 function consultarPlanoUsuario()

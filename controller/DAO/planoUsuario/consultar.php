@@ -68,7 +68,7 @@ function consultarPlanoAnalise()
 if (isset($_GET['consultar'])) {
   $idPlanoUsuario = $_GET['consultar'];
 
-  $planoUsuario = $conexao->query("SELECT * FROM planoUsuario AS pu INNER JOIN usuario AS u ON pu.planoUsuarioID = '$idPlanoUsuario' AND pu.usuarioID = u.usuarioID") or die($conexao->error);
+  $planoUsuario = $conexao->query("SELECT * FROM planoUsuario AS pu INNER JOIN usuario AS u ON pu.planoUsuarioID = '$idPlanoUsuario' AND pu.usuarioID = u.usuarioID INNER JOIN enderecoUsuario AS eu ON u.usuarioID = eu.usuarioID") or die($conexao->error);
 
   $planoUsuario = $planoUsuario->fetch_assoc();
 }

@@ -82,12 +82,14 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
         echo $valor;
 
         // cadastrando o imovel
-        $conexao->query("INSERT INTO imovel(rua, numero, cidade, bairro, complemento, tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, situacao, usuarioID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$situacao', '$id')") or die($conexao->error);
+        $conexao->query("INSERT INTO imovel(tipo, valorAluguel, qtdQuarto, qtdBanheiro, qtdGaragem, area, descricao, situacao, usuarioID) VALUES('$tipo_imovel', '$valor', '$qtdQuarto', '$qtdBanheiro', '$qtdGaragem', '$area', '$descricao', '$situacao', '$id')") or die($conexao->error);
 
         // pegando o id do ultimo imovel cadastrado, tranformando em array e armazenando o id na variavel idImovel
         $imovel = $conexao->query("SELECT MAX(imovelID) FROM imovel") or die($conexao->error);
-        $imovel = $imovel->fetch_array();
-        $idImovel =  $imovel[0];
+        $imovel = $imovel->fetch_assoc();
+        $idImovel =  $imovel['MAX(imovelID)'];
+
+        $conexao->query("INSERT INTO enderecoImovel(rua, numero, cidade, bairro, complemento, imovelID) VALUES('$rua', '$numero', 'Icó', '$bairro', '$complemento', '$idImovel')") or die($conexao->error);
 
         // pegando as imgs passadas
         $imgs_imovel = $_FILES['image'];
@@ -138,51 +140,57 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   $tipo = $_POST['type'];
   $valor = $_POST['valor'];
 
-  // usando regex para add o M² depois dos numeros
-  $area = $_POST['area'];
-  preg_match("/(\d+)/", $area, $area);
-  $area = $area[0] . " M²";
+  if ($qtdQuarto != 0 && $qtdBanheiro != 0) {
+    // usando regex para add o M² depois dos numeros
+    $area = $_POST['area'];
+    preg_match("/(\d+)/", $area, $area);
+    $area = $area[0] . " M²";
 
-  $nomeImagens = [];
-  $imagens = '';
-  $imagensJaCadastradas = [];
-  $idImagens = [];
+    $nomeImagens = [];
+    $imagens = '';
+    $imagensJaCadastradas = [];
+    $idImagens = [];
 
-  // att a tabela de imovel
-  $conexao->query("UPDATE imovel SET rua = '$rua', numero = '$numero', bairro = '$bairro', complemento = '$complemento', qtdQuarto = '$qtdQuarto', qtdBanheiro = '$qtdBanheiro', qtdGaragem = '$qtdGaragem', area = '$area', descricao = '$descricao', tipo = '$tipo', valorAluguel = '$valor', situacao = 'Em Analise' WHERE imovelID = '$id'") or die($conexao->error);
+    // att a tabela de imovel
+    $conexao->query("UPDATE imovel SET qtdQuarto = '$qtdQuarto', qtdBanheiro = '$qtdBanheiro', qtdGaragem = '$qtdGaragem', area = '$area', descricao = '$descricao', tipo = '$tipo', valorAluguel = '$valor', situacao = 'Em Analise' WHERE imovelID = '$id'") or die($conexao->error);
+    $conexao->query("UPDATE enderecoImovel SET rua = '$rua', numero = '$numero', bairro = '$bairro', complemento = '$complemento' WHERE imovelID = '$id'") or die($conexao->error);
 
-  // pegando todos as img do imovel
-  $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = '$id'") or die($conexao->error);
+    // pegando todos as img do imovel
+    $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = '$id'") or die($conexao->error);
 
-  // pegando o nome o codigo da imagem e o id de cada img
-  while ($row = $imgImovel->fetch_assoc()) {
-    $nomeImagens[] = "imagem" . $row['imgImovelID'];
-    $imagensJaCadastradas[] = $row['imagem'];
-    $idImagens[] = $row['imgImovelID'];
-  }
-
-  // fazendo a mesma coisa do cadastro so q com cada img
-  for ($i = 0; $i < count($nomeImagens); $i++) {
-    if ($_FILES[$nomeImagens[$i]]['error'] == 0) {
-      $imagens = $_FILES[$nomeImagens[$i]];
-      $caminhoTemp = $imagens['tmp_name'];
-      $tamanhoImg = $imagens['size'];
-      $handle = fopen($caminhoTemp, "r");
-      $imagens  = addslashes(fread($handle, $tamanhoImg));
-      fclose($handle);
-    } else {
-      $imagens = addslashes($imagensJaCadastradas[$i]);
+    // pegando o nome o codigo da imagem e o id de cada img
+    while ($row = $imgImovel->fetch_assoc()) {
+      $nomeImagens[] = "imagem" . $row['imgImovelID'];
+      $imagensJaCadastradas[] = $row['imagem'];
+      $idImagens[] = $row['imgImovelID'];
     }
-    $idImgImovel = $idImagens[$i];
-    // att a tabela de imgImovel
-    $conexao->query("UPDATE imgImovel SET imagem = '$imagens' WHERE imgImovelID = '$idImgImovel'") or die($conexao->error);
-  }
 
-  exibirMsg("Imóvel Editado com Sucesso!", "success");
-  if (isset($_SESSION['idAdm'])) {
-    $idUser = $_POST['usuarioID'];
-    header("location:/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=$id&&usuarioID=$idUser");
+    // fazendo a mesma coisa do cadastro so q com cada img
+    for ($i = 0; $i < count($nomeImagens); $i++) {
+      if ($_FILES[$nomeImagens[$i]]['error'] == 0) {
+        $imagens = $_FILES[$nomeImagens[$i]];
+        $caminhoTemp = $imagens['tmp_name'];
+        $tamanhoImg = $imagens['size'];
+        $handle = fopen($caminhoTemp, "r");
+        $imagens  = addslashes(fread($handle, $tamanhoImg));
+        fclose($handle);
+      } else {
+        $imagens = addslashes($imagensJaCadastradas[$i]);
+      }
+      $idImgImovel = $idImagens[$i];
+      // att a tabela de imgImovel
+      $conexao->query("UPDATE imgImovel SET imagem = '$imagens' WHERE imgImovelID = '$idImgImovel'") or die($conexao->error);
+    }
+
+    exibirMsg("Imóvel Editado com Sucesso!", "success");
+    if (isset($_SESSION['idAdm'])) {
+      $idUser = $_POST['usuarioID'];
+      header("location:/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=$id&&usuarioID=$idUser");
+    } else {
+      header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
+    }
   } else {
+    exibirMsg("Um Imovel Deve Possuir ao Menos um Quarto e um Banheiro!", "danger");
     header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$id");
   }
 } else if (isset($_POST['situacao-imovel'])) {
