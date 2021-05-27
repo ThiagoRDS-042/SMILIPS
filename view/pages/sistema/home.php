@@ -20,11 +20,14 @@
      </header>
 
      <main>
-          <form action="#" method="post">
+          <?php
+          require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+          ?>
+          <form action="/SMILIPS/controller/filtroImoveis/filtrarImoveis.php" method="post">
                <div id="filter">
                     <div class="search">
-                         <input type="text" placeholder="Buscar por Endereço">
-                         <button>Buscar</button>
+                         <input type="text" name="rua" placeholder="Buscar por Endereço">
+                         <button type="submit" name="filtar_imoveis">Buscar</button>
                     </div>
                     <div class="field-input">
 
@@ -41,8 +44,8 @@
 
                                    <label for="casa">
                                         <div class="option type">
-                                             <input type="radio" class="radio" id="casa" name="type" value="casa" />
-                                             <span>Casa</span>
+                                             <input type="radio" class="radio" id="casa" name="type" value="Residensial" />
+                                             <span>Residensial</span>
                                         </div>
                                    </label>
 

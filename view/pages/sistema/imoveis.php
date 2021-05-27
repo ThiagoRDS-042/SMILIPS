@@ -5,7 +5,12 @@
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
-  consultarImoveis();
+  require_once('/xampp/htdocs/SMILIPS/controller/filtroImoveis/filtrarImoveis.php');
+  if (!isset($_GET['filtro'])) {
+    consultarImoveis();
+  } else {
+    filtrarImoveis();
+  }
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/sistema/imoveis.css">
   <title>Imóveis</title>

@@ -69,6 +69,7 @@ function consultarImgsImovel()
 }
 
 // consulta todos os imoveis disponiveis no DB
+
 function consultarImoveis()
 {
   global $conexao, $matrizImoveis, $matrizImgsImovel, $imoveis;

@@ -32,6 +32,10 @@ main {
   position: relative;
 }
 
+main .alert {
+  top: 80px;
+}
+
 main::before {
   content: "";
   position: absolute;

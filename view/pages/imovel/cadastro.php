@@ -52,8 +52,8 @@ usuarioLogadoEntra();
 
             <label for="residencial">
               <div class="option type">
-                <input type="radio" class="radio" id="residencial" name="type" value="Residencial" />
-                <span>Residencial</span>
+                <input type="radio" class="radio" id="residencial" name="type" value="Residensial" />
+                <span>Residensial</span>
               </div>
             </label>
 
