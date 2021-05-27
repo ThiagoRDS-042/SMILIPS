@@ -41,13 +41,6 @@ imoveis.forEach((imovel) => {
   const slider = imovel.querySelector(".imgs");
   const cards = imovel.querySelectorAll(".imgs img");
 
-  // so exiba no maximo 5 imgs
-  cards.forEach((card, index) => {
-    if (index > 4) {
-      card.style.display = "none";
-    }
-  });
-
   // adicionando o evento de click a cada botao proximo
   btnsProximo.forEach((btnProximo) => {
     btnProximo.addEventListener("click", () => {

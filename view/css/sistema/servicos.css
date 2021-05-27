@@ -33,3 +33,92 @@ main h1 {
   color: rgb(107, 107, 107);
   font-family: "Poppins", sans-serif;
 }
+
+main .card {
+  width: 750px;
+  margin: 20px auto 40px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+main .card:hover {
+  box-shadow: 0 5px 15px #ccc;
+}
+
+main .card .ftPerfil {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin: 20px 5px 20px 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #ccc;
+}
+
+main .card .ftPerfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main .card .info_servico {
+  width: 525px;
+  height: 200px;
+  border-radius: 5px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  position: relative;
+  overflow: hidden;
+}
+
+main .card .info_servico .nomeUsuario {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(107, 107, 107);
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 5px;
+}
+
+main .card .info_servico .tipo_servico {
+  font-size: 16px;
+  color: rgb(107, 107, 107);
+  font-family: "Rubik", sans-serif;
+}
+
+main .card .info_servico .descricao {
+  font-size: 16px;
+  height: 130px;
+  color: rgb(107, 107, 107);
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+main .card .info_servico .detalhes {
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+  position: absolute;
+  bottom: -20px;
+  transition: 0.5s;
+}
+
+main .card:hover .info_servico .detalhes {
+  bottom: 5px;
+}
+
+main .card .info_servico .detalhes a {
+  color: rgb(107, 107, 107);
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+main .card .info_servico .detalhes a:hover {
+  color: #ff6914;
+}

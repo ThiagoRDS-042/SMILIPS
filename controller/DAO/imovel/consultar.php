@@ -79,7 +79,7 @@ function consultarImoveis()
   // pesquidando todas as imgs dos imoveis
   for ($i = 0; $i < $imoveis->num_rows; $i++) {
     $matrizImoveis[] = $imoveis->fetch_assoc();
-    $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $matrizImoveis[$i]['imovelID']) or die($conexao->error);
+    $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $matrizImoveis[$i]['imovelID'] . " LIMIT 5") or die($conexao->error);
 
     for ($j = 0; $j < $imgsImovel->num_rows; $j++) {
       $matrizImgsImovel[] = $imgsImovel->fetch_assoc();

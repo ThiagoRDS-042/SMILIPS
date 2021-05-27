@@ -48,3 +48,10 @@ if (isset($_GET['servicoID']) || isset($_GET['editar'])) {
   $servicoTipo = $conexao->query("SELECT * FROM tipoServico WHERE tipoServicoID = '$idTipoServico'") or die($conexao->error);
   $servicoTipo = $servicoTipo->fetch_assoc();
 }
+
+function consultarServicos()
+{
+  global $conexao, $servicos;
+
+  $servicos = $conexao->query("SELECT s.descricao, ts.tipoServico, u.ftPerfil, u.nomeUsuario FROM servico AS s INNER JOIN tipoServico AS ts ON s.tiposervicoID = ts.tiposervicoID INNER JOIN usuario AS u ON s.usuarioID = u.usuarioID") or die($conexao->error);
+}
