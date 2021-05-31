@@ -7,6 +7,8 @@
      require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
      require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
      consultarDataFim();
+     require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
+     consultarBairros();
      ?>
      <link rel="stylesheet" href="/SMILIPS/view/css/sistema/home.css">
      <title>Home</title>
@@ -89,34 +91,16 @@
                          <div class="select-box">
 
                               <div class="list-options">
-
-                                   <label for="bairro1">
-                                        <div class="option bairro">
-                                             <input type="radio" class="radio" id="bairro1" name="bairro" value="bairro1" />
-                                             <span>Bairro1</span>
-                                        </div>
-                                   </label>
-
-                                   <label for="bairro2">
-                                        <div class="option bairro">
-                                             <input type="radio" class="radio" id="bairro2" name="bairro" value="bairro2" />
-                                             <span>Bairro2</span>
-                                        </div>
-                                   </label>
-
-                                   <label for="bairro3">
-                                        <div class="option bairro">
-                                             <input type="radio" class="radio" id="bairro3" name="bairro" value="bairro3" />
-                                             <span>Bairro3</span>
-                                        </div>
-                                   </label>
-
-                                   <label for="bairro4">
-                                        <div class="option bairro">
-                                             <input type="radio" class="radio" id="bairro4" name="bairro" value="bairro4" />
-                                             <span>Bairro4</span>
-                                        </div>
-                                   </label>
+                                   <?php $cont = 0; ?>
+                                   <?php while ($row = $bairros->fetch_assoc()) : ?>
+                                        <?php $cont++; ?>
+                                        <label for="bairro<?php echo $cont; ?>">
+                                             <div class="option bairro">
+                                                  <input type="radio" class="radio" id="bairro<?php echo $cont; ?>" name="bairro" value="<?php echo $row['bairro']; ?>" />
+                                                  <span><?php echo $row['bairro']; ?></span>
+                                             </div>
+                                        </label>
+                                   <?php endwhile; ?>
 
                               </div>
 
@@ -273,92 +257,85 @@
 
                                    <label for="400i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="400i" name="valorI" value="400i" />
-                                             <span>Até R$ 400,00</span>
+                                             <input type="radio" class="radio" id="400i" name="valorI" value="400" />
+                                             <span>R$ 400,00</span>
                                         </div>
                                    </label>
 
                                    <label for="600i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="600i" name="valorI" value="600i" />
+                                             <input type="radio" class="radio" id="600i" name="valorI" value="600" />
                                              <span>R$ 600,00</span>
                                         </div>
                                    </label>
 
                                    <label for="800i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="800i" name="valorI" value="800i" />
+                                             <input type="radio" class="radio" id="800i" name="valorI" value="800" />
                                              <span>R$ 800,00</span>
                                         </div>
                                    </label>
 
                                    <label for="1000i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="1000i" name="valorI" value="1000i" />
+                                             <input type="radio" class="radio" id="1000i" name="valorI" value="1000" />
                                              <span>R$ 1000,00</span>
                                         </div>
                                    </label>
 
                                    <label for="1500i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="1500i" name="valorI" value="1500i" />
+                                             <input type="radio" class="radio" id="1500i" name="valorI" value="1500" />
                                              <span>R$ 1500,00</span>
                                         </div>
                                    </label>
 
                                    <label for="2000i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="2000i" name="valorI" value="2000i" />
+                                             <input type="radio" class="radio" id="2000i" name="valorI" value="2000" />
                                              <span>R$ 2000,00</span>
                                         </div>
                                    </label>
 
                                    <label for="2500i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="2500i" name="valorI" value="2500i" />
+                                             <input type="radio" class="radio" id="2500i" name="valorI" value="2500" />
                                              <span>R$ 2500,00</span>
                                         </div>
                                    </label>
 
                                    <label for="3000i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="3000i" name="valorI" value="3000i" />
+                                             <input type="radio" class="radio" id="3000i" name="valorI" value="3000" />
                                              <span>R$ 3000,00</span>
                                         </div>
                                    </label>
 
                                    <label for="3500i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="3500" name="valorI" value="3500i" />
+                                             <input type="radio" class="radio" id="3500" name="valorI" value="3500" />
                                              <span>R$ 3500,00</span>
                                         </div>
                                    </label>
 
                                    <label for="4000i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="4000i" name="valorI" value="4000i" />
+                                             <input type="radio" class="radio" id="4000i" name="valorI" value="4000" />
                                              <span>R$ 4000,00</span>
                                         </div>
                                    </label>
 
                                    <label for="4500i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="4500" name="valorI" value="4500i" />
+                                             <input type="radio" class="radio" id="4500" name="valorI" value="4500" />
                                              <span>R$ 4500,00</span>
                                         </div>
                                    </label>
 
                                    <label for="5000i">
                                         <div class="option valorI">
-                                             <input type="radio" class="radio" id="5000i" name="valorI" value="5000i" />
+                                             <input type="radio" class="radio" id="5000i" name="valorI" value="5000" />
                                              <span>R$ 5000,00</span>
-                                        </div>
-                                   </label>
-
-                                   <label for="5000i+">
-                                        <div class="option valorI">
-                                             <input type="radio" class="radio" id="5000i+" name="valorI" value="5000i+" />
-                                             <span>+ de R$ 5000,00</span>
                                         </div>
                                    </label>
 
@@ -374,92 +351,85 @@
 
                                    <label for="400f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="400f" name="valorF" value="400f" />
-                                             <span>Até R$ 400,00</span>
+                                             <input type="radio" class="radio" id="400f" name="valorF" value="400" />
+                                             <span>R$ 400,00</span>
                                         </div>
                                    </label>
 
                                    <label for="600f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="600f" name="valorF" value="600f" />
+                                             <input type="radio" class="radio" id="600f" name="valorF" value="600" />
                                              <span>R$ 600,00</span>
                                         </div>
                                    </label>
 
                                    <label for="800f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="800f" name="valorF" value="800f" />
+                                             <input type="radio" class="radio" id="800f" name="valorF" value="800" />
                                              <span>R$ 800,00</span>
                                         </div>
                                    </label>
 
                                    <label for="1000f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="1000f" name="valorF" value="1000f" />
+                                             <input type="radio" class="radio" id="1000f" name="valorF" value="1000" />
                                              <span>R$ 1000,00</span>
                                         </div>
                                    </label>
 
                                    <label for="1500f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="1500f" name="valorF" value="1500f" />
+                                             <input type="radio" class="radio" id="1500f" name="valorF" value="1500" />
                                              <span>R$ 1500,00</span>
                                         </div>
                                    </label>
 
                                    <label for="2000f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="2000f" name="valorF" value="2000f" />
+                                             <input type="radio" class="radio" id="2000f" name="valorF" value="2000" />
                                              <span>R$ 2000,00</span>
                                         </div>
                                    </label>
 
                                    <label for="2500f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="2500f" name="valorF" value="2500f" />
+                                             <input type="radio" class="radio" id="2500f" name="valorF" value="2500" />
                                              <span>R$ 2500,00</span>
                                         </div>
                                    </label>
 
                                    <label for="3000f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="3000f" name="valorF" value="3000f" />
+                                             <input type="radio" class="radio" id="3000f" name="valorF" value="3000" />
                                              <span>R$ 3000,00</span>
                                         </div>
                                    </label>
 
                                    <label for="3500f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="3500f" name="valorF" value="3500f" />
+                                             <input type="radio" class="radio" id="3500f" name="valorF" value="3500" />
                                              <span>R$ 3500,00</span>
                                         </div>
                                    </label>
 
                                    <label for="4000f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="4000f" name="valorF" value="4000f" />
+                                             <input type="radio" class="radio" id="4000f" name="valorF" value="4000" />
                                              <span>R$ 4000,00</span>
                                         </div>
                                    </label>
 
                                    <label for="4500f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="4500f" name="valorF" value="4500f" />
+                                             <input type="radio" class="radio" id="4500f" name="valorF" value="4500" />
                                              <span>R$ 4500,00</span>
                                         </div>
                                    </label>
 
                                    <label for="5000f">
                                         <div class="option valorF">
-                                             <input type="radio" class="radio" id="5000f" name="valorF" value="5000f" />
+                                             <input type="radio" class="radio" id="5000f" name="valorF" value="5000" />
                                              <span>R$ 5000,00</span>
-                                        </div>
-                                   </label>
-
-                                   <label for="5000f+">
-                                        <div class="option valorF">
-                                             <input type="radio" class="radio" id="5000f+" name="valorF" value="5000f+" />
-                                             <span>+ de R$ 5000,00</span>
                                         </div>
                                    </label>
 
@@ -517,7 +487,7 @@
 
                                    <label for="200+">
                                         <div class="option area">
-                                             <input type="radio" class="radio" id="200+" name="area" value="200+" />
+                                             <input type="radio" class="radio" id="200+" name="area" value="200" />
                                              <span>+ de 200m²</span>
                                         </div>
                                    </label>

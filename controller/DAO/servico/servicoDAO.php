@@ -41,11 +41,15 @@ if (isset($_POST['salvar'])) {
   $descricao = $_POST['descricao'];
 
   // pesquisa o tipo de serviço
+  $servicoID = $conexao->query("SELECT * FROM servico WHERE servicoID = '$idServico'") or die($conexao->error);
+  $servicoID = $servicoID->fetch_assoc();
+  $servicoID = $servicoID['tipoServicoID'];
+
   $tipoServicoID = $conexao->query("SELECT * FROM tipoServico WHERE tipoServico = '$tipoServico'") or die($conexao->error);
   $tipoServicoID = $tipoServicoID->fetch_assoc();
   $tipoServicoID = $tipoServicoID['tipoServicoID'];
 
-  if ($_POST['idTipoServico'] == $tipoServicoID) {
+  if ($tipoServicoID == $servicoID) {
     // atualiza o servico
     $conexao->query("UPDATE servico SET tipoServicoID = '$tipoServicoID', descricao = '$descricao' WHERE servicoID = '$idServico'") or die($conexao->error);
 

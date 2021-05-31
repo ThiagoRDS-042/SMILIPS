@@ -75,7 +75,7 @@ function consultarImoveis()
   global $conexao, $matrizImoveis, $matrizImgsImovel, $imoveis;
 
   // pesquisando todos os imoveis do DB 
-  $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID") or die($conexao->error);
+  $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID ORDER BY i.valorAluguel ASC") or die($conexao->error);
 
   // pesquidando todas as imgs dos imoveis
   for ($i = 0; $i < $imoveis->num_rows; $i++) {
@@ -86,4 +86,10 @@ function consultarImoveis()
       $matrizImgsImovel[] = $imgsImovel->fetch_assoc();
     }
   }
+}
+
+function consultarBairros()
+{
+  global $conexao, $bairros;
+  $bairros = $conexao->query("SELECT DISTINCT bairro FROM enderecoImovel") or die($conexao->error);
 }

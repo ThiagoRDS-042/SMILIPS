@@ -60,7 +60,6 @@ usuarioLogadoEntra();
         </div>
 
         <div class="descricao">
-          <input type="hidden" name="idTipoServico" value="<?php echo  $tipoServico['tipoServicoID'] ?>">
           <input type="hidden" name="idServico" value="<?php echo $_GET['editar'] ?>">
           <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['usuarioID'] ?>">
           <textarea name="descricao" id="descricao" cols="30" rows="5" required maxlength="250"><?php echo $editarServico['descricao'] ?></textarea>

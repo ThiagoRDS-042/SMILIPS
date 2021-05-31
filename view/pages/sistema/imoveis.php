@@ -36,7 +36,7 @@
       <p>filtro</p>
     </div>
 
-    <?php if ($imoveis->num_rows > 0) : ?>
+    <?php if ($imoveis != null) : ?>
       <section class="imoveis_disponiveis">
         <?php for ($i = 0; $i < count($matrizImoveis); $i++) : ?>
           <div class="card_imovel">
@@ -100,7 +100,7 @@
         <?php endfor; ?>
       </section>
     <?php else : ?>
-      <h1>Nenhum Imóvel Disponível :(</h1>
+      <h1>Nenhum Resultado Encontrado :(</h1>
     <?php endif; ?>
   </main>
 
