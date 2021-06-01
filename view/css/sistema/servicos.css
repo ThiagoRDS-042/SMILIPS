@@ -24,10 +24,66 @@ main {
   border: 1px solid transparent;
 }
 
+main .alert {
+  top: 80px;
+}
+
+main .search {
+  margin: 150px 40px 0 0;
+  width: 250px;
+  height: 40px;
+  border-radius: 17.5px;
+  position: relative;
+  float: right;
+}
+
+main .search input {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+  border: 2px solid #ccc;
+  padding: 0 15px;
+  transition: 0.5s;
+  font-size: 15px;
+  font-family: "Rubik", sans-serif;
+}
+
+main .search input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+main .search input:focus,
+main .search input:focus ~ button {
+  border-color: #01baef;
+}
+
+main .search button {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  outline: none;
+  border: 2px solid #ccc;
+  transition: 0.5s;
+}
+
+main .search button i {
+  font-size: 20px;
+  color: #01baef;
+}
+
 main h1 {
   width: 100%;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 200px;
   font-weight: 600;
   font-size: 24px;
   color: rgb(107, 107, 107);

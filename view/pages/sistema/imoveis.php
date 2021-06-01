@@ -2,10 +2,11 @@
 <html lang="pt-BR">
 
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
-  require_once('/xampp/htdocs/SMILIPS/controller/filtroImoveis/filtrarImoveis.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/filtros/filtrarImoveis.php');
   if (!isset($_GET['filtro'])) {
     consultarImoveis();
   } else {
@@ -24,20 +25,26 @@
   </header>
 
   <main>
-    <h1>Imóveis</h1>
-
     <input type="checkbox" id="btnFiltro">
     <label for="btnFiltro">
       <h3><i class="fas fa-angle-left"></i> filtro</h3>
     </label>
 
+    <form action="/SMILIPS/controller/filtroImoveis/filtrarImoveis.php" method="post">
+      <div id="filter">
 
-    <div class="filtro">
-      <p>filtro</p>
-    </div>
+        <h3>Filtro de Busca</h3>
+
+        <div class="search">
+          <input type="text" name="rua" placeholder="Pesquise por Rua">
+        </div>
+
+      </div>
+    </form>
 
     <?php if (isset($_GET['filtro'])) : ?>
       <?php if ($imoveis != null and $filtro != null) : ?>
+        <h1>Imóveis</h1>
         <section class="imoveis_disponiveis">
           <?php for ($i = 0; $i < count($matrizImoveis); $i++) : ?>
             <div class="card_imovel">
@@ -105,6 +112,7 @@
       <?php endif; ?>
     <?php else : ?>
       <?php if ($imoveis != null) : ?>
+        <h1>Imóveis</h1>
         <section class="imoveis_disponiveis">
           <?php for ($i = 0; $i < count($matrizImoveis); $i++) : ?>
             <div class="card_imovel">

@@ -78,7 +78,7 @@
 
               <label for="ico">
                 <div class="option cidade">
-                  <input type="radio" class="radio" id="ico" name="cidade" value="ico" />
+                  <input type="radio" class="radio" id="ico" name="cidade" value="Icó" />
                   <span>Icó</span>
                 </div>
               </label>
