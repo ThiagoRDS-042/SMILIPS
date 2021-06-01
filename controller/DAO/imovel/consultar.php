@@ -75,12 +75,23 @@ function consultarImoveis()
   global $conexao, $matrizImoveis, $matrizImgsImovel, $imoveis;
 
   // pesquisando todos os imoveis do DB 
-  $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID ORDER BY i.valorAluguel ASC") or die($conexao->error);
+  $url = str_replace("/Novo/", "", $_SERVER["REQUEST_URI"]);
+  if ($url == "/SMILIPS/view/pages/sistema/home.php") {
+    $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID ORDER BY i.imovelID DESC LIMIT 6") or die($conexao->error);
+  } else {
+    $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID ORDER BY i.valorAluguel ASC") or die($conexao->error);
+  }
 
   // pesquidando todas as imgs dos imoveis
   for ($i = 0; $i < $imoveis->num_rows; $i++) {
     $matrizImoveis[] = $imoveis->fetch_assoc();
-    $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $matrizImoveis[$i]['imovelID'] . " LIMIT 5") or die($conexao->error);
+    global $imgsImovel;
+
+    if ($url == "/SMILIPS/view/pages/sistema/home.php") {
+      $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = " . $matrizImoveis[$i]['imovelID'] . " LIMIT 1") or die($conexao->error);
+    } else {
+      $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = " . $matrizImoveis[$i]['imovelID'] . " LIMIT 5") or die($conexao->error);
+    }
 
     for ($j = 0; $j < $imgsImovel->num_rows; $j++) {
       $matrizImgsImovel[] = $imgsImovel->fetch_assoc();
@@ -91,5 +102,5 @@ function consultarImoveis()
 function consultarBairros()
 {
   global $conexao, $bairros;
-  $bairros = $conexao->query("SELECT DISTINCT bairro FROM enderecoImovel") or die($conexao->error);
+  $bairros = $conexao->query("SELECT DISTINCT bairro FROM enderecoImovel AS ei INNER JOIN imovel AS i ON i.situacao = 'Ativado' AND ei.imovelID = i.imovelID") or die($conexao->error);
 }

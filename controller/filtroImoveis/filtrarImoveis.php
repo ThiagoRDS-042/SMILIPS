@@ -67,148 +67,121 @@ function filtrarImoveis()
   $tipo = $_SESSION['tipo'];
   $cidade = $_SESSION['cidade'];
   $bairro = $_SESSION['bairro'];
-  $filtro = [];
 
-  global $conexao, $matrizImoveis, $matrizImgsImovel, $imoveis;
+  global $conexao, $matrizImoveis, $matrizImgsImovel, $imoveis, $filtro;
 
-  // if (isset($_SESSION['quarto']) and isset($_SESSION['banheiro']) and isset($_SESSION['garagem']) and isset($_SESSION['valorMinimo']) and isset($_SESSION['valorMaximo']) and isset($_SESSION['area'])) {
-  //   if (count($area) == 2) {
-  //     $areaMin = $area[0];
-  //     $areaMax = $area[1];
-  //     $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' AND i.qtdQuarto = '$qtdQuarto' AND i.qtdGaragem = '$qtdGaragem' AND i.qtdBanheiro = '$qtdBanheiro' AND i.valorAluguel >= '$valorMinimo' AND i.valorAluguel <= '$valorMaximo' AND i.area AND i.area >= '$areaMin' AND i.area <= '$areaMax' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  //   } else if ($area[0] == 50) {
-  //     $areaMax = $area[0];
-  //     $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' AND i.qtdQuarto = '$qtdQuarto' AND i.qtdGaragem = '$qtdGaragem' AND i.qtdBanheiro = '$qtdBanheiro' AND i.valorAluguel >= '$valorMinimo' AND i.valorAluguel <= '$valorMaximo' AND i.area AND i.area <= '$areaMax' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  //   } else {
-  //     $areaMax = $area[0];
-  //     $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' AND i.qtdQuarto = '$qtdQuarto' AND i.qtdGaragem = '$qtdGaragem' AND i.qtdBanheiro = '$qtdBanheiro' AND i.valorAluguel >= '$valorMinimo' AND i.valorAluguel <= '$valorMaximo' AND i.area AND i.area <= '$areaMax' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  //   }
-  // } else if (isset($_SESSION['quarto']) and isset($_SESSION['banheiro']) and isset($_SESSION['garagem']) and isset($_SESSION['valorMinimo']) and isset($_SESSION['valorMaximo'])) {
-  //   $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' AND i.qtdQuarto = '$qtdQuarto' AND i.qtdGaragem = '$qtdGaragem' AND i.qtdBanheiro = '$qtdBanheiro' AND i.valorAluguel >= '$valorMinimo' AND i.valorAluguel <= '$valorMaximo' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  // } else if (isset($_SESSION['quarto']) and isset($_SESSION['banheiro']) and isset($_SESSION['garagem']) and isset($_SESSION['valorMinimo'])) {
-  //   $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' AND i.qtdQuarto = '$qtdQuarto' AND i.qtdGaragem = '$qtdGaragem' AND i.qtdBanheiro = '$qtdBanheiro' AND i.valorAluguel >= '$valorMinimo' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  // } else if (isset($_SESSION['quarto']) and isset($_SESSION['banheiro']) and isset($_SESSION['garagem'])) {
-  //   $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' AND i.qtdQuarto = '$qtdQuarto' AND i.qtdGaragem = '$qtdGaragem' AND i.qtdBanheiro = '$qtdBanheiro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  // } else if (isset($_SESSION['quarto']) and isset($_SESSION['banheiro'])) {
-  //   $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' AND i.qtdQuarto = '$qtdQuarto' AND i.qtdGaragem = '$qtdGaragem' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  // } else if (isset($_SESSION['quarto'])) {
-  //   $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' AND i.qtdQuarto = '$qtdQuarto' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  // }
+  $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = '$bairro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
 
-  $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
+  if ($imoveis->num_rows == 0) {
+    $imoveis = null;
+  } else {
 
-  $i = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  $j = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  $k = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  $l = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  $m = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
-  $n = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID WHERE ei.rua = '$rua' AND i.tipo = '$tipo' AND ei.cidade = '$cidade' AND ei.bairro = 'Rua Alto do Cruzeiro' ORDER BY i.valorAluguel ASC") or die($conexao->error);
+    while ($row = $imoveis->fetch_assoc()) {
+      $filtro[] = $row;
+    }
 
-  if (isset($_SESSION['quarto'])) {
-    $qtdQuarto = $_SESSION['quarto'];
-    if ($qtdQuarto != null) {
-      while ($row = $i->fetch_assoc()) {
-        echo "quarto " . $row['qtdQuarto'] . $qtdQuarto;
-        if ($row['qtdQuarto'] != $qtdQuarto) {
-          $imoveis = null;
-          break;
+    if (isset($_SESSION['quarto'])) {
+      $qtd = count($filtro);
+      $qtdQuarto = $_SESSION['quarto'];
+      for ($i = 0; $i < $qtd; $i++) {
+        if ($filtro[$i]['qtdQuarto'] != $qtdQuarto) {
+          unset($filtro[$i]);
         }
+      }
+      $filtro = array_slice($filtro, 0);
+    }
+
+    if (count($filtro) > 0) {
+      if (isset($_SESSION['banheiro'])) {
+        $qtd = count($filtro);
+        $qtdBanheiro = $_SESSION['banheiro'];
+        for ($i = 0; $i < $qtd; $i++) {
+          if ($filtro[$i]['qtdBanheiro'] != $qtdBanheiro) {
+            unset($filtro[$i]);
+          }
+        }
+        $filtro = array_slice($filtro, 0);
+      }
+    }
+
+    if (count($filtro) > 0) {
+      if (isset($_SESSION['garagem'])) {
+        $qtd = count($filtro);
+        $qtdGaragem = $_SESSION['garagem'];
+        for ($i = 0; $i < $qtd; $i++) {
+          if ($filtro[$i]['qtdGaragem'] != $qtdGaragem) {
+            unset($filtro[$i]);
+          }
+        }
+        $filtro = array_slice($filtro, 0);
+      }
+    }
+
+    if (count($filtro) > 0) {
+      if (isset($_SESSION['valorMinimo'])) {
+        $qtd = count($filtro);
+        $valorMinimo = $_SESSION['valorMinimo'];
+        for ($i = 0; $i < $qtd; $i++) {
+          if ($filtro[$i]['valorAluguel'] < $valorMinimo) {
+            unset($filtro[$i]);
+          }
+        }
+        $filtro = array_slice($filtro, 0);
+      }
+    }
+
+    if (count($filtro) > 0) {
+      if (isset($_SESSION['valorMaximo'])) {
+        $qtd = count($filtro);
+        $valorMaximo = $_SESSION['valorMaximo'];
+        for ($i = 0; $i < $qtd; $i++) {
+          if ($filtro[$i]['valorAluguel'] > $valorMaximo) {
+            unset($filtro[$i]);
+          }
+        }
+        $filtro = array_slice($filtro, 0);
+      }
+    }
+
+    if (count($filtro) > 0) {
+      if (isset($_SESSION['area'])) {
+        $qtd = count($filtro);
+        $area = explode("a", $_SESSION['area']);
+        if (count($area) == 2) {
+          $areaMin = $area[0];
+          $areaMax = $area[1];
+          for ($i = 0; $i < $qtd; $i++) {
+            $areaExplode = explode(" ", $filtro[$i]['area']);
+            if ($areaExplode[0] < $areaMin || $filtro[$i]['area'][0] > $areaMax) {
+              unset($filtro[$i]);
+            }
+          }
+        } else if ($area[0] == 50) {
+          for ($i = 0; $i < $qtd; $i++) {
+            $areaExplode = explode(" ", $filtro[$i]['area']);
+            if ($areaExplode[0] > $area[0]) {
+              unset($filtro[$i]);
+            }
+          }
+        } else {
+          for ($i = 0; $i < $qtd; $i++) {
+            $areaExplode = explode(" ", $filtro[$i]['area']);
+            if ($areaExplode[0] < $area[0]) {
+              unset($filtro[$i]);
+            }
+          }
+        }
+        $filtro = array_slice($filtro, 0);
       }
     }
   }
 
-  if (isset($_SESSION['banheiro'])) {
-    $qtdBanheiro = $_SESSION['banheiro'];
-    if ($qtdBanheiro != null) {
-      while ($row = $j->fetch_assoc()) {
-        echo "banheiro " . $row['qtdBanheiro'] . $qtdBanheiro;
-        if ($row['qtdBanheiro'] != $qtdBanheiro) {
-          $imoveis = null;
-          break;
-        }
-      }
-    }
-  }
-
-  if (isset($_SESSION['garagem'])) {
-    $qtdGaragem = $_SESSION['garagem'];
-    if ($qtdGaragem != null) {
-      while ($row = $k->fetch_assoc()) {
-        echo "garagem " . $row['qtdGaragem'] . $qtdGaragem;
-        if ($row['qtdGaragem'] != $qtdGaragem) {
-          $imoveis = null;
-          break;
-        }
-      }
-    }
-  }
-
-  if (isset($_SESSION['valorMinimo'])) {
-    $valorMinimo = $_SESSION['valorMinimo'];
-    if ($valorMinimo != null) {
-      while ($row = $l->fetch_assoc()) {
-        echo "valorMinimo " . $row['valorAluguel'] . $valorMinimo;
-        if ($row['valorAluguel'] < $valorMinimo) {
-          $imoveis = null;
-          break;
-        }
-      }
-    }
-  }
-
-  if (isset($_SESSION['valorMaximo'])) {
-    $valorMaximo = $_SESSION['valorMaximo'];
-    if ($valorMaximo != null) {
-      while ($row = $m->fetch_assoc()) {
-        echo "valorMaximo " . $row['valorAluguel'] . $valorMaximo;
-        if ($row['valorAluguel'] > $valorMaximo) {
-          $imoveis = null;
-          break;
-        }
-      }
-    }
-  }
-
-  if (isset($_SESSION['area'])) {
-    $area = explode("a", $_SESSION['area']);
-
-    if (count($area) == 2) {
-      $areaMin = $area[0];
-      $areaMax = $area[1];
-      while ($row = $n->fetch_assoc()) {
-        $row['area'] = explode(" ", $row['area']);
-        echo "area " . $row['area'][0] . $areaMin . $areaMax;
-        if ($row['area'][0] < $areaMin || $row['area'][0] > $areaMax) {
-          $imoveis = null;
-          break;
-        }
-      }
-    } else if ($area[0] == 50) {
-      while ($row = $n->fetch_assoc()) {
-        $row['area'] = explode(" ", $row['area']);
-        echo "area " . $row['area'][0] . $area[0];
-        if ($row['area'][0] > $area[0]) {
-          $imoveis = null;
-          break;
-        }
-      }
-    } else {
-      while ($row = $n->fetch_assoc()) {
-        $row['area'] = explode(" ", $row['area']);
-        echo "area " . $row['area'][0] . $area[0];
-        if ($row['area'][0] < $area[0]) {
-          $imoveis = null;
-          break;
-        }
-      }
-    }
-  }
-
-  if ($imoveis != null) {
+  if ($imoveis != null and $filtro != null) {
+    $matrizImoveis = $filtro;
     // pesquidando todas as imgs dos imoveis
-    for ($i = 0; $i < $imoveis->num_rows; $i++) {
-      $matrizImoveis[] = $imoveis->fetch_assoc();
-      $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID =" . $matrizImoveis[$i]['imovelID'] . " LIMIT 5") or die($conexao->error);
+    for ($i = 0; $i < count($filtro); $i++) {
+      // $matrizImoveis[] = $imoveis->fetch_assoc();
+      $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = " . $matrizImoveis[$i]['imovelID'] . " LIMIT 5") or die($conexao->error);
 
       for ($j = 0; $j < $imgsImovel->num_rows; $j++) {
         $matrizImgsImovel[] = $imgsImovel->fetch_assoc();

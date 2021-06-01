@@ -454,6 +454,10 @@ section.oqProcura {
   position: relative;
 }
 
+section.oqProcura.active {
+  margin-top: 200px;
+}
+
 section.oqProcura h2 {
   position: absolute;
   width: 100%;
