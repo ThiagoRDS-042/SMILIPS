@@ -53,5 +53,5 @@ function consultarServicos()
 {
   global $conexao, $servicos;
 
-  $servicos = $conexao->query("SELECT s.descricao, ts.tipoServico, u.ftPerfil, u.nomeUsuario FROM servico AS s INNER JOIN tipoServico AS ts ON s.tiposervicoID = ts.tiposervicoID INNER JOIN usuario AS u ON s.usuarioID = u.usuarioID WHERE s.situacao = 'Ativado' ORDER BY ts.tipoServico ASC") or die($conexao->error);
+  $servicos = $conexao->query("SELECT s.servicoID, s.descricao, ts.tipoServico, u.ftPerfil, u.nomeUsuario FROM servico AS s INNER JOIN tipoServico AS ts ON s.tiposervicoID = ts.tiposervicoID INNER JOIN usuario AS u ON s.usuarioID = u.usuarioID WHERE s.situacao = 'Ativado' ORDER BY ts.tipoServico ASC") or die($conexao->error);
 }

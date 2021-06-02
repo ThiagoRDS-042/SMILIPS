@@ -59,7 +59,7 @@
               </div>
 
               <div class="detalhes">
-                <a href="#">Detalhes</a>
+                <a href="/SMILIPS/view/pages/servico/detalhesServico.php?servicoID=<?php echo $row['servicoID']; ?>">Detalhes</a>
               </div>
             </div>
           </div>
