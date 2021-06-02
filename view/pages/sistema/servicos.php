@@ -72,7 +72,7 @@
 
 
   <?php
-  require_once('/xampp/htdocs/SMILIPS/view/pages/usuario/footer.php');
+  require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/footer.php');
   ?>
 </body>
 

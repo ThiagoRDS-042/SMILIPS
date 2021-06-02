@@ -587,7 +587,7 @@
                 <div class="detalhes">
                   <h3>R$ <?php echo $matrizImoveis[$i]['valorAluguel'] ?><span>/mês</span></h3>
                   <p><?php echo $detalhes; ?></p>
-                  <a href="#">Ver Detalhes</a>
+                  <a href="/SMILIPS/view/pages/imovel/detalhesImovel.php?imovelID=<?php echo $matrizImoveis[$i]['imovelID']; ?>">Ver Detalhes</a>
                 </div>
               </div>
             <?php endfor; ?>

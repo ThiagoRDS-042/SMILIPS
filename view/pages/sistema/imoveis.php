@@ -848,7 +848,7 @@
                   <p><?php echo $matrizImoveis[$i]['area']; ?> <?php echo $matrizImoveis[$i]['qtdQuarto']; ?> <?php echo $matrizImoveis[$i]['qtdBanheiro']; ?> <?php echo $matrizImoveis[$i]['qtdGaragem']; ?></p>
                 </div>
                 <div class="detalhes">
-                  <a href="#">Detalhes</a>
+                  <a href="/SMILIPS/view/pages/imovel/detalhesImovel.php?imovelID=<?php echo $matrizImoveis[$i]['imovelID']; ?>">Detalhes</a>
                 </div>
               </div>
             </div>
@@ -916,7 +916,7 @@
                   <p><?php echo $matrizImoveis[$i]['area']; ?> <?php echo $matrizImoveis[$i]['qtdQuarto']; ?> <?php echo $matrizImoveis[$i]['qtdBanheiro']; ?> <?php echo $matrizImoveis[$i]['qtdGaragem']; ?></p>
                 </div>
                 <div class="detalhes">
-                  <a href="#">Detalhes</a>
+                  <a href="/SMILIPS/view/pages/imovel/detalhesImovel.php?imovelID=<?php echo $matrizImoveis[$i]['imovelID']; ?>">Detalhes</a>
                 </div>
               </div>
             </div>

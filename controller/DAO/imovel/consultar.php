@@ -76,10 +76,10 @@ function consultarImoveis()
 
   // pesquisando todos os imoveis do DB 
   $url = str_replace("/Novo/", "", $_SERVER["REQUEST_URI"]);
-  if ($url == "/SMILIPS/view/pages/sistema/home.php") {
-    $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID ORDER BY i.imovelID DESC LIMIT 6") or die($conexao->error);
-  } else {
+  if ($url == "/SMILIPS/view/pages/sistema/imoveis.php") {
     $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID ORDER BY i.valorAluguel ASC") or die($conexao->error);
+  } else {
+    $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID ORDER BY i.imovelID DESC LIMIT 6") or die($conexao->error);
   }
 
   // pesquidando todas as imgs dos imoveis
@@ -87,10 +87,10 @@ function consultarImoveis()
     $matrizImoveis[] = $imoveis->fetch_assoc();
     global $imgsImovel;
 
-    if ($url == "/SMILIPS/view/pages/sistema/home.php") {
-      $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = " . $matrizImoveis[$i]['imovelID'] . " LIMIT 1") or die($conexao->error);
-    } else {
+    if ($url == "/SMILIPS/view/pages/sistema/imoveis.php") {
       $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = " . $matrizImoveis[$i]['imovelID'] . " LIMIT 5") or die($conexao->error);
+    } else {
+      $imgsImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = " . $matrizImoveis[$i]['imovelID'] . " LIMIT 1") or die($conexao->error);
     }
 
     for ($j = 0; $j < $imgsImovel->num_rows; $j++) {

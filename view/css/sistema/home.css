@@ -403,6 +403,7 @@ section.recomendacoes .container-card .card .image {
   height: 170px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  border-bottom: 1.5px solid #ccc;
 }
 
 section.recomendacoes .container-card .card .image img {
@@ -415,7 +416,7 @@ section.recomendacoes .container-card .card .image img {
 
 section.recomendacoes .container-card .card .detalhes {
   position: relative;
-  margin-top: 20px;
+  margin-top: 10px;
   height: 160px;
   line-height: 19px;
   text-align: center;
@@ -441,7 +442,7 @@ section.recomendacoes .container-card .card .detalhes p {
 
 section.recomendacoes .container-card .card .detalhes a {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   color: #333;
   text-decoration: none;
   left: 50%;

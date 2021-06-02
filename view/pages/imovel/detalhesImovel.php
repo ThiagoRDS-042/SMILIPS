@@ -5,8 +5,8 @@
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   ?>
-  <link rel="stylesheet" href="/SMILIPS/view/css/sistema/contato.css">
-  <title>Contato</title>
+  <link rel="stylesheet" href="/SMILIPS/view/css/imovel/detalhesImovel.css">
+  <title>Detalhes do Imóvel</title>
 </head>
 
 <body>
@@ -17,9 +17,8 @@
   </header>
 
   <main>
-    <h1>Contato</h1>
+    <h1>Detalhes do Imóvel</h1>
   </main>
-
 
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/footer.php');
