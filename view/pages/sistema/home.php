@@ -26,11 +26,11 @@
     <?php
     require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
     ?>
-    <form action="/SMILIPS/controller/filtroImoveis/filtrarImoveis.php" method="post">
+    <form action="/SMILIPS/controller/filtros/filtrarImoveis.php" method="post">
       <div id="filter">
         <div class="search">
           <input type="text" name="rua" placeholder="Buscar por Endereço">
-          <button type="submit" name="filtar_imoveis">Buscar</button>
+          <button type="submit" name="filtrar_imoveis">Buscar</button>
         </div>
         <div class="field-input">
 
@@ -40,7 +40,7 @@
 
               <label for="apartamento">
                 <div class="option type">
-                  <input type="radio" class="radio" id="apartamento" name="type" value="apartamento" />
+                  <input type="radio" class="radio" id="apartamento" name="type" value="Apartamento" />
                   <span>Apartamento</span>
                 </div>
               </label>
@@ -54,7 +54,7 @@
 
               <label for="comercial">
                 <div class="option type">
-                  <input type="radio" class="radio" id="comercial" name="type" value="comercial" />
+                  <input type="radio" class="radio" id="comercial" name="type" value="Comercial" />
                   <span>Comercial</span>
                 </div>
               </label>
@@ -455,7 +455,7 @@
               <label for="50">
                 <div class="option area">
                   <input type="radio" class="radio" id="50" name="area" value="50" />
-                  <span>até 50m</span>
+                  <span>até 50m²</span>
                 </div>
               </label>
 

@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 }
 
 
-if (isset($_POST['filtar_imoveis'])) {
+if (isset($_POST['filtrar_imoveis'])) {
 
   if ($_POST['rua'] != null and $_POST['type'] != null and $_POST['cidade'] != null and $_POST['bairro'] != null) {
     $_SESSION['rua'] = $_POST['rua'];
@@ -56,8 +56,13 @@ if (isset($_POST['filtar_imoveis'])) {
     unset($_SESSION['tipo']);
     unset($_SESSION['cidade']);
     unset($_SESSION['bairro']);
+    $url = str_replace("/Novo/", "", $_SERVER["REQUEST_URI"]);
     exibirMsg("Pesquise por rua, tipo de imóvel, cidade e bairro!", "danger");
-    header("location:/SMILIPS/view/pages/sistema/home.php");
+    if ($url == "/SMILIPS/view/pages/sistema/home.php") {
+      header("location:/SMILIPS/view/pages/sistema/home.php");
+    } else {
+      header("location:/SMILIPS/view/pages/sistema/imoveis.php");
+    }
   }
 }
 
