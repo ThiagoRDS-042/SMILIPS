@@ -23,3 +23,59 @@ main h1 {
   color: rgb(107, 107, 107);
   font-family: "Poppins", sans-serif;
 }
+
+main .perguntas {
+  width: 50%;
+  margin: 40px auto 0 auto;
+  text-align: justify;
+  height: auto;
+  color: rgb(107, 107, 107);
+  font-family: "Rubik", sans-serif;
+}
+
+main .perguntas .pergunta {
+  width: 95%;
+  margin: 40px auto;
+  line-height: 20px;
+}
+
+main .perguntas .pergunta h3 {
+  font-size: 18px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+main .perguntas .pergunta h3 i {
+  margin-left: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+main .perguntas .pergunta p {
+  font-size: 16px;
+  color: #333;
+  text-indent: 25px;
+  display: none;
+  transition: 0.5s;
+}
+
+main .perguntas .pergunta.Active p {
+  display: block;
+}
+
+main .perguntas .relatar_problema {
+  width: 95%;
+  margin: 50px auto 10px auto;
+  text-align: center;
+}
+
+main .perguntas .relatar_problema h4 {
+  color: #b41217;
+}
+
+main .perguntas .relatar_problema h4 span {
+  color: rgb(107, 107, 107);
+}
