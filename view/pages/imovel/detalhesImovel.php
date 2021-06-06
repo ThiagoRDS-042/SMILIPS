@@ -5,7 +5,8 @@
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
-  consultarImgsImovel()
+  consultarImgsImovel();
+  consultarImovelEImg();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/imovel/detalhesImovel.css">
   <title>Detalhes do Imóvel</title>
@@ -36,8 +37,27 @@
     </div>
 
     <div class="descricao_imovel">
+      <?php
+      if ($imovel['qtdQuarto'] > 1) {
+        $imovel['qtdQuarto'] .= ' Quartos';
+      } else {
+        $imovel['qtdQuarto'] .= ' Quarto';
+      }
+      if ($imovel['qtdBanheiro'] > 1) {
+        $imovel['qtdBanheiro'] .= ' Banheiros';
+      } else {
+        $imovel['qtdBanheiro'] .= ' Banheiro';
+      }
+      if ($imovel['qtdGaragem'] > 1) {
+        $imovel['qtdGaragem'] .= ' Garagens';
+      } else if ($imovel['qtdGaragem'] == 1) {
+        $imovel['qtdGaragem'] .= ' Garagen';
+      } else {
+        $imovel['qtdGaragem'] = 'Indisponível';
+      }
+      ?>
       <div class="descricao">
-        <h2>02 Dormitórios sendo uma suíte. Sacada com churrasqueira. Living.</h2>
+        <h2><?php echo $imovel['tipo']; ?> com <?php echo $imovel['qtdQuarto']; ?> para Aluguel, <?php echo $imovel['area']; ?></h2>
       </div>
 
       <div class="info">
@@ -57,26 +77,6 @@
               <i class="far fa-clone"></i>
               <p><?php echo $imovel['area']; ?></p>
             </div>
-
-            <?php
-            if ($imovel['qtdQuarto'] > 1) {
-              $imovel['qtdQuarto'] .= ' Quartos';
-            } else {
-              $imovel['qtdQuarto'] .= ' Quarto';
-            }
-            if ($imovel['qtdBanheiro'] > 1) {
-              $imovel['qtdBanheiro'] .= ' Banheiros';
-            } else {
-              $imovel['qtdBanheiro'] .= ' Banheiro';
-            }
-            if ($imovel['qtdGaragem'] > 1) {
-              $imovel['qtdGaragem'] .= ' Garagens';
-            } else if ($imovel['qtdGaragem'] == 1) {
-              $imovel['qtdGaragem'] .= ' Garagen';
-            } else {
-              $imovel['qtdGaragem'] = 'Indisponível';
-            }
-            ?>
 
             <div class="quarto">
               <i class="fas fa-bed"></i>
@@ -115,6 +115,39 @@
       </div>
 
     </div>
+
+    <?php if ($imovel['descricao'] != null) : ?>
+      <div class="caracteristicas">
+        <h3>Descrição</h3>
+        <p><?php echo $imovel['descricao']; ?></p>
+      </div>
+    <?php endif; ?>
+
+    <div class="denunciar">
+      <button>Denunciar Anúncio <i class="fas fa-exclamation-triangle"></i></button>
+    </div>
+
+    <?php if ($imoveis->num_rows > 0) : ?>
+      <h1 class="similares">Imóveis Similares do Mesmo Anunciante</h1>
+      <div class="relacionados">
+        <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
+        <div class="imoveis">
+          <div class="list_cards">
+            <?php while ($row = $imoveis->fetch_assoc()) : ?>
+              <div class="card">
+                <div class="img">
+                  <img src="data:image/jpeg;base64,<?php echo base64_encode($row['imagem']); ?>" alt="imagem do Imóvel">
+                </div>
+                <div class="detalhes">
+                  <a href="/SMILIPS/view/pages/imovel/detalhesImovel.php?imovelID=<?php echo $row['imovelID']; ?>">Detalhes</a>
+                </div>
+              </div>
+            <?php endwhile; ?>
+          </div>
+        </div>
+        <span class="icon-proximo"><i class="fas fa-chevron-right"></i></span>
+      </div>
+    <?php endif; ?>
   </main>
 
   <?php

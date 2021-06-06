@@ -33,7 +33,7 @@ admLogadoEntra();
         <div class="img_comprovante">
           <img src="data:image/jpeg;base64,<?php echo base64_encode($planoUsuario['comprovante']) ?>" alt="Imagem do comprovante de pagamento">
         </div>
-        <a href="/SMILIPS/controller/DAO/planoUsuario/imgComprovante.php?comprovante=<?php echo $planoUsuario['planoUsuarioID'] ?>">Baixar Comprovante</a>
+        <a href="/SMILIPS/controller/DAO/planoUsuario/imgComprovante.php?comprovante=<?php echo $planoUsuario['planoUsuarioID'] ?>">Baixar Comprovante <i class="fas fa-download"></i></a>
       </div>
 
       <h1>Detalhes do Proprietário</h1>

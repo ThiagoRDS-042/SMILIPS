@@ -23,6 +23,12 @@ function consultarImovelUser()
     $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.usuarioID = '$id' AND i.imovelID = ei.imovelID ORDER BY i.situacao ASC") or die($conexao->error);
   } else if (isset($_SESSION['idAdm'])) {
     $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN usuario AS u ON i.situacao = 'Em Analise' AND u.situacao = 'ativada' AND i.usuarioID = u.usuarioID INNER JOIN enderecoImovel AS ei ON i.imovelID = ei.imovelID") or die($conexao->error);
+  } else if (isset($_GET['imovelID'])) {
+
+    $imovelID = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = ei.imovelID WHERE i.imovelID = '$id'") or die($conexao->error);
+    $imovelID =  $imovelID->fetch_assoc();
+
+    $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.usuarioID = " . $imovelID['usuarioID'] . " AND i.imovelID = ei.imovelID AND i.imovelID != " . $imovelID['imovelID']) or die($conexao->error);
   } else {
     $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.usuarioID = '$id' AND i.imovelID = ei.imovelID ORDER BY i.situacao ASC") or die($conexao->error);
   }
@@ -30,13 +36,24 @@ function consultarImovelUser()
   $arrayImgImovel = [];
   $arrayImovel = [];
 
-
   // pegando a primeira img de cada imovel
   while ($row = $imovel->fetch_assoc()) {
     $imgImovel = $conexao->query("SELECT * FROM imgImovel WHERE imovelID = " . $row['imovelID']) or die($conexao->error);
     $arrayImgImovel[] = $imgImovel->fetch_assoc();
     $arrayImovel[] =  $row;
   }
+}
+
+function consultarImovelEImg()
+{
+  global $conexao, $imoveis;
+  $id = $_GET['imovelID'];
+
+  $usuarioID = $conexao->query("SELECT * FROM imovel WHERE imovelID = '$id'") or die($conexao->error);
+  $usuarioID = $usuarioID->fetch_assoc();
+
+
+  $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = ei.imovelID INNER JOIN imgImovel AS ii ON i.imovelID = ii.imovelID WHERE i.imovelID != " . $usuarioID['imovelID'] . " AND i.usuarioID = " . $usuarioID['usuarioID'] . " GROUP BY I.imovelID") or die($conexao->error);
 }
 
 // consulta todos as imgs de um imovel
@@ -87,6 +104,7 @@ function consultarImoveis()
   } else {
     $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.situacao = 'Ativado' AND i.imovelID = ei.imovelID ORDER BY i.imovelID DESC LIMIT 6") or die($conexao->error);
   }
+
 
   // pesquidando todas as imgs dos imoveis
   for ($i = 0; $i < $imoveis->num_rows; $i++) {
