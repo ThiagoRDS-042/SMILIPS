@@ -44,14 +44,10 @@ footer .middle .circle:nth-child(1):hover > .icon {
 }
 
 footer .middle .circle:nth-child(2):hover > .icon {
-  background: #1da1f2;
-}
-
-footer .middle .circle:nth-child(3):hover > .icon {
   background: #e1306c;
 }
 
-footer .middle .circle:nth-child(4):hover > .icon {
+footer .middle .circle:nth-child(3):hover > .icon {
   background: #0077b5;
 }
 
@@ -81,14 +77,10 @@ footer .middle .circle:nth-child(1) > a {
 }
 
 footer .middle .circle:nth-child(2) > a {
-  color: #1da1f2;
-}
-
-footer .middle .circle:nth-child(3) > a {
   color: #e1306c;
 }
 
-footer .middle .circle:nth-child(4) > a {
+footer .middle .circle:nth-child(3) > a {
   color: #0077b5;
 }
 

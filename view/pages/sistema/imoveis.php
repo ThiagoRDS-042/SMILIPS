@@ -35,6 +35,8 @@
       <h3><i class="fas fa-angle-left"></i> filtro</h3>
     </label>
 
+    <div class="teste"></div>
+
     <form action="/SMILIPS/controller/filtros/filtrarImoveis.php" method="post">
       <div id="filter">
 

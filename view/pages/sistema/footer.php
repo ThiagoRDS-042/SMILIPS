@@ -10,12 +10,6 @@
       </div>
       <div class="circle">
         <div class="icon">
-          <i class="fab fa-twitter"></i>
-        </div>
-        <a href="#"><span>Twitter</span></a>
-      </div>
-      <div class="circle">
-        <div class="icon">
           <i class="fab fa-instagram"></i>
         </div>
         <a href="https://www.instagram.com/smilipss/" target="blank"><span>Instagram</span></a>

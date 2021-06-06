@@ -1,0 +1,33 @@
+// importando modulos
+import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";
+
+// capturando os elementos da DOM
+const btnProximo = document.querySelector(".icon-proximo");
+const btnVoltar = document.querySelector(".icon-voltar");
+const slider = document.querySelector(".cards_imovel");
+const cards_imovel = document.querySelectorAll(".cards_imovel .card");
+
+if (btnProximo) {
+  // chamando a funcao de avancar ao clicar no btnproximo de a cordo com o largura da tela
+  btnProximo.addEventListener("click", () => {
+    window.innerWidth <= 881
+      ? avancar(-400, cards_imovel, slider, 1)
+      : window.innerWidth <= 1306
+      ? avancar(-400, cards_imovel, slider, 2)
+      : avancar(-400, cards_imovel, slider, 3);
+  });
+
+  // chamando a funcao de voltar ao clicar no btnvoltar de a cordo com o largura da tela
+  btnVoltar.addEventListener("click", () => {
+    window.innerWidth <= 881
+      ? retornar(400, cards_imovel, slider, 1)
+      : window.innerWidth <= 1306
+      ? retornar(400, cards_imovel, slider, 2)
+      : retornar(400, cards_imovel, slider, 3);
+  });
+}
+
+const info_imovel = document.querySelector(".info_imovel");
+const info_proprietario = document.querySelector(".info_proprietario");
+
+info_proprietario.style.height = `${info_imovel.offsetHeight}px`;
