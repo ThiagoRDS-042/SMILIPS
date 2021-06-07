@@ -354,9 +354,77 @@ main .relacionados .imoveis .list_cards .card .img img {
 main .relacionados .imoveis .list_cards .card .detalhes {
   width: 50%;
   height: 100%;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .descri {
+  width: 100%;
+  height: 57.5px;
+  padding: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .descri {
+  font-size: 14px;
+  color: #333;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .valorAluguel {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .valorAluguel p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .valorAluguel p span {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .caracteristica {
+  width: 100%;
+  height: 57.5px;
+  padding: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .caracteristica p {
+  font-size: 14px;
+  color: #333;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .detal {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .relacionados .imoveis .list_cards .card .detalhes .detal a {
+  font-size: 18px;
+  color: #ff6914;
+  font-weight: bold;
+  text-decoration: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+main .relacionados .imoveis .list_cards .card:hover .detalhes .detal a {
+  opacity: 1;
 }
 
 @media (max-width: 1306px) {
@@ -366,6 +434,16 @@ main .relacionados .imoveis .list_cards .card .detalhes {
 
   main .container_imoveis .slider {
     max-width: 800px;
+  }
+}
+
+@media (max-width: 1060px) {
+  main .relacionados {
+    width: 500px;
+  }
+
+  main .relacionados .imoveis {
+    max-width: 450px;
   }
 }
 

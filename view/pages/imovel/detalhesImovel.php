@@ -139,7 +139,37 @@
                   <img src="data:image/jpeg;base64,<?php echo base64_encode($row['imagem']); ?>" alt="imagem do Imóvel">
                 </div>
                 <div class="detalhes">
-                  <a href="/SMILIPS/view/pages/imovel/detalhesImovel.php?imovelID=<?php echo $row['imovelID']; ?>">Detalhes</a>
+                  <div class="descri">
+                    <p>Rua<?php echo $row['rua']; ?> - <?php echo $row['numero']; ?>, <?php echo $row['bairro']; ?></p>
+                  </div>
+                  <div class="valorAluguel">
+                    <p>R$ <?php echo $row['valorAluguel']; ?> <span>/Mês</span></p>
+                  </div>
+                  <?php
+                  if ($row['qtdQuarto'] > 1) {
+                    $row['qtdQuarto'] .= ' Quartos';
+                  } else {
+                    $row['qtdQuarto'] .= ' Quarto';
+                  }
+                  if ($row['qtdBanheiro'] > 1) {
+                    $row['qtdBanheiro'] .= ' Banheiros';
+                  } else {
+                    $row['qtdBanheiro'] .= ' Banheiro';
+                  }
+                  if ($row['qtdGaragem'] > 1) {
+                    $row['qtdGaragem'] = ' - ' . $row['qtdGaragem'] . ' Garagens';
+                  } else if ($row['qtdGaragem'] == 1) {
+                    $row['qtdGaragem'] = ' - ' . $row['qtdGaragem'] . ' Garagen';
+                  } else {
+                    $row['qtdGaragem'] = '';
+                  }
+                  ?>
+                  <div class="caracteristica">
+                    <p><?php echo $row['area']; ?> - <?php echo $row['qtdQuarto']; ?> - <?php echo $row['qtdBanheiro']; ?><?php echo $row['qtdGaragem']; ?></p>
+                  </div>
+                  <div class="detal">
+                    <a href="/SMILIPS/view/pages/imovel/detalhesImovel.php?imovelID=<?php echo $row['imovelID']; ?>">Detalhes</a>
+                  </div>
                 </div>
               </div>
             <?php endwhile; ?>
