@@ -175,7 +175,6 @@ main .descricao_imovel .detalhes div {
 
 main .descricao_imovel .info_proprietario {
   width: 47%;
-  height: 30px;
   margin: 10px;
   min-width: 350px;
   box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
@@ -443,7 +442,7 @@ main .relacionados .imoveis .list_cards .card:hover .detalhes .detal a {
   }
 
   main .relacionados .imoveis {
-    max-width: 450px;
+    max-width: 440px;
   }
 }
 

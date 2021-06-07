@@ -55,3 +55,23 @@ function consultarServicos()
 
   $servicos = $conexao->query("SELECT s.servicoID, s.descricao, ts.tipoServico, u.ftPerfil, u.nomeUsuario FROM servico AS s INNER JOIN tipoServico AS ts ON s.tiposervicoID = ts.tiposervicoID INNER JOIN usuario AS u ON s.usuarioID = u.usuarioID WHERE s.situacao = 'Ativado' ORDER BY ts.tipoServico ASC") or die($conexao->error);
 }
+
+function consultarServicoAndUser()
+{
+  $servicoID = $_GET['servicoID'];
+  global $conexao, $servico;
+
+  $servico = $conexao->query("SELECT * FROM servico AS s INNER JOIN tipoServico AS ts ON s.tiposervicoID = ts.tiposervicoID INNER JOIN usuario AS u ON s.usuarioID = u.usuarioID WHERE s.servicoID = '$servicoID'") or die($conexao->error);
+  $servico  = $servico->fetch_assoc();
+}
+
+function consultarServicoUser()
+{
+  $servicoID = $_GET['servicoID'];
+  global $conexao, $servicosUser;
+
+  $usuarioID = $conexao->query("SELECT * FROM servico WHERE servicoID = '$servicoID'") or die($conexao->error);
+  $usuarioID = $usuarioID->fetch_assoc();
+
+  $servicosUser = $conexao->query("SELECT * FROM servico AS s INNER JOIN tipoServico AS ts ON s.tiposervicoID = ts.tiposervicoID INNER JOIN usuario AS u ON s.usuarioID = u.usuarioID WHERE s.servicoID != '$servicoID' AND s.situacao = 'Ativado' AND s.usuarioID = " . $usuarioID['usuarioID']) or die($conexao->error);
+}

@@ -52,8 +52,7 @@ function consultarImovelEImg()
   $usuarioID = $conexao->query("SELECT * FROM imovel WHERE imovelID = '$id'") or die($conexao->error);
   $usuarioID = $usuarioID->fetch_assoc();
 
-
-  $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = ei.imovelID INNER JOIN imgImovel AS ii ON i.imovelID = ii.imovelID WHERE i.imovelID != " . $usuarioID['imovelID'] . " AND i.usuarioID = " . $usuarioID['usuarioID'] . " GROUP BY I.imovelID") or die($conexao->error);
+  $imoveis = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = ei.imovelID INNER JOIN imgImovel AS ii ON i.imovelID = ii.imovelID WHERE i.imovelID != " . $usuarioID['imovelID'] . " AND i.usuarioID = " . $usuarioID['usuarioID'] . " AND i.situacao = 'Ativado' GROUP BY i.imovelID") or die($conexao->error);
 }
 
 // consulta todos as imgs de um imovel

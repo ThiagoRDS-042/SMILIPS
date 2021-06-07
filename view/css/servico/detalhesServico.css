@@ -33,3 +33,272 @@ main h1 {
   color: rgb(107, 107, 107);
   font-family: "Poppins", sans-serif;
 }
+
+main .caracteristicas {
+  width: 100%;
+  margin: 20px auto;
+  padding: 5%;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+main .caracteristicas .info_servico {
+  width: 47%;
+  height: 250px;
+  margin: 10px;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main .caracteristicas .info_servico h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(107, 107, 107);
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
+}
+
+main .caracteristicas .info_servico p {
+  font-size: 16px;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  line-height: 20px;
+  text-align: justify;
+}
+
+main .caracteristicas .info_servico p:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+main .caracteristicas .info_prestador {
+  width: 47%;
+  height: 250px;
+  margin: 10px;
+  min-width: 350px;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+  border-radius: 5px;
+  /* background: white; */
+}
+
+main .caracteristicas .info_prestador .detalhes_prestador {
+  width: 95%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .detalhes_prestador .dados {
+  width: 47%;
+  line-height: 25px;
+  text-align: center;
+}
+
+main .detalhes_prestador .dados p {
+  font-size: 18px;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+}
+
+main .detalhes_prestador .dados p:first-child {
+  margin: 20px;
+}
+
+main .detalhes_prestador .dados p:nth-child(2) {
+  font-weight: bold;
+}
+
+main .detalhes_prestador .ftPerfil {
+  width: 47%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .detalhes_prestador .ftPerfil img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+main .info_prestador .contatar {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main .info_prestador .contatar a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ff6914;
+  display: inline-block;
+  width: 250px;
+  height: 45px;
+  border-radius: 22.5px;
+  line-height: 45px;
+  text-align: center;
+}
+
+main .denunciar {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+main .denunciar button {
+  width: 220px;
+  height: 40px;
+  border-radius: 20px;
+  border: 3px solid #ff6914;
+  background: white;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6914;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+main .denunciar button:hover,
+main .denunciar button:active {
+  background: #ff6914;
+  color: white;
+}
+
+main h1.relacionados {
+  margin: 40px auto 0 auto;
+}
+
+main .similares {
+  width: 1000px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 270px;
+}
+
+main .similares .servicos {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  max-width: 885px;
+}
+
+main .similares .servicos .list_servicos {
+  position: relative;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s;
+  height: 100%;
+}
+
+main .similares .servicos .list_servicos .card {
+  border: 2px solid #ebebeb;
+  width: 420px;
+  height: 200px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: 0.3s;
+  display: flex;
+  font-family: "Rubik", sans-serif;
+}
+
+main .similares .servicos .list_servicos .card:hover {
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+}
+
+.icon-voltar,
+.icon-proximo {
+  font-size: 20px;
+  color: #771fd2;
+  cursor: pointer;
+}
+
+main .similares .servicos .list_servicos .card .image {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .similares .servicos .list_servicos .card .image img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+main .similares .servicos .list_servicos .card .detalhes {
+  width: 60%;
+  height: 100%;
+  padding: 15px 10px;
+}
+
+main .similares .servicos .list_servicos .card .detalhes .nome {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 22px;
+}
+
+main .similares .servicos .list_servicos .card .detalhes .nome p:first-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+main .similares .servicos .list_servicos .card .detalhes .nome p:last-child {
+  font-size: 16px;
+}
+
+main .similares .servicos .list_servicos .card .detalhes .descricao {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+main .similares .servicos .list_servicos .card .detalhes .detal {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .similares .servicos .list_servicos .card .detalhes .detal a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ff6914;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+main .similares .servicos .list_servicos .card:hover .detal a {
+  opacity: 1;
+}
+
+@media (max-width: 1060px) {
+  main .similares {
+    width: 500px;
+  }
+
+  main .similares .servicos {
+    max-width: 440px;
+  }
+}
