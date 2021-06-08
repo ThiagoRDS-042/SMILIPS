@@ -2,6 +2,19 @@
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
 // chamando a funcao de admLogadoEntra(), pra n exibir essa tela caso o adm n esteja logado
 admLogadoEntra();
+
+if (!isset($_SESSION)) {
+  session_start();
+}
+
+if (isset($_SESSION['avaliarImovel'])) {
+  unset($_SESSION['avaliarImovel']);
+}
+if (isset($_SESSION['avaliarPlano'])) {
+  unset($_SESSION['avaliarPlano']);
+}
+
+$_SESSION['avaliarPropaganda'] = true;
 ?>
 
 <!DOCTYPE html>
@@ -87,31 +100,10 @@ admLogadoEntra();
         </div>
       </div>
 
-      <form action="/SMILIPS/controller/DAO/notificacaoAnalisePropaganda/notificacaoAnalisePropagandaDAO.php" method="post">
-        <input type="hidden" name="propagandaID" value="<?php echo $_GET['consultar'] ?>">
-        <input type="checkbox" id="propaganda_invalida">
-        <label for="propaganda_invalida">
-          <h3 name="avaliar" value="Excluido">Inválidar</h3>
-        </label>
-        <!-- <button type="submit" name="analisar" value="excluir">Inválidar</button> -->
-        <button type="submit" name="avaliar" value="Valida">Validar</button>
+      <?php
+      require_once('/xampp/htdocs/SMILIPS/view/pages/util/analisar/analisar.php');
+      ?>
 
-        <div class="msg_propaganda">
-          <div class="title">
-            <h1>Inválidar Plano?</h1>
-          </div>
-
-          <div class="content">
-            <textarea name="descricao" id="descricao" cols="30" rows="5" maxlength="250"></textarea>
-            <span data-placeholder='Motivo'></span>
-          </div>
-
-          <div class="buttons">
-            <button type="button" name="cancelar">Cancelar</button>
-            <button type="submit" name="avaliar" value="Excluida">Confirmar</button>
-          </div>
-        </div>
-      </form>
     </section>
   </main>
 
@@ -119,7 +111,6 @@ admLogadoEntra();
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
 
-  <script src="/SMILIPS/view/js/administrador/validarPropaganda.js" type="module"></script>
 </body>
 
 </html>

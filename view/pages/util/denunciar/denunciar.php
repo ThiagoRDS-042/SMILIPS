@@ -17,13 +17,18 @@
         <h3>Enviar Denuncia</h3>
       </div>
       <div class="content">
+        <?php if (isset($_SESSION['denunciarImovel'])) : ?>
+          <input type="hidden" name="id" value="<?php echo $_GET['imovelID']; ?>">
+        <?php else : ?>
+          <input type="hidden" name="id" value="<?php echo $_GET['servicoID']; ?>">
+        <?php endif; ?>
         <textarea name="motivo" id="motivo" cols="30" rows="6" maxlength="250"></textarea>
         <span class="info">Motivo</span>
         <span class="maxlength">250</span>
       </div>
       <div class="buttons">
         <button type="button">Cancelar</button>
-        <button type="submit">Enviar</button>
+        <button type="submit" name="denunciar">Enviar</button>
       </div>
       </form>
 </div>

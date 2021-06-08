@@ -30,6 +30,10 @@ CREATE TABLE notificacaoAnalisePlano(notificacaoAnalisePlanoID INT AUTO_INCREMEN
 
 CREATE TABLE notificacaoAnalisePropaganda(notificacaoAnalisePropagandaID INT AUTO_INCREMENT PRIMARY KEY, mensagem VARCHAR(250), situacao VARCHAR(10) NOT NULL, usuarioID INT NOT NULL, exibida BOOLEAN NOT NULL, CONSTRAINT fK_notificacaoAvaliacaoPropaganda_usuario FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID) ON UPDATE CASCADE ON DELETE CASCADE);
 
+CREATE TABLE denunciaImovel(denunciaImovelID INT AUTO_INCREMENT PRIMARY KEY, usuarioID INT NOT NULL, imovelID INT NOT NULL, motivo VARCHAR(250) NOT NULL, exibida BOOLEAN NOT NULL, CONSTRAINT fK_denunciaImovel_usuario FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID) ON UPDATE CASCADE ON DELETE CASCADE, CONSTRAINT fK_denunciaImovel_imovel FOREIGN KEY (imovelID) REFERENCES imovel(imovelID) ON UPDATE CASCADE ON DELETE CASCADE);
+
+CREATE TABLE denunciaServico(denunciaServicoID INT AUTO_INCREMENT PRIMARY KEY, usuarioID INT NOT NULL, servicoID INT NOT NULL, motivo VARCHAR(250) NOT NULL, exibida BOOLEAN NOT NULL, CONSTRAINT fK_denunciaServico_usuario FOREIGN KEY (usuarioID) REFERENCES usuario(usuarioID) ON UPDATE CASCADE ON DELETE CASCADE, CONSTRAINT fK_denunciaServico_imovel FOREIGN KEY (servicoID) REFERENCES servico(servicoID) ON UPDATE CASCADE ON DELETE CASCADE);
+
 DROP DATABASE SMILIPS;
 
 DROP TABLE administrador;
@@ -59,4 +63,8 @@ DROP TABLE notificacaoAnaliseImovel;
 DROP TABLE notificacaoAnalisePlano;
 
 DROP TABLE notificacaoAnalisePropaganda;
+
+DROP TABLE denunciaImovel;
+
+DROP TABLE denunciaServico;
 

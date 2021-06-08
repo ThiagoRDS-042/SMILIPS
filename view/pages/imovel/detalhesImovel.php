@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)) {
+  session_start();
+}
 if (isset($_SESSION['denunciarServico'])) {
   unset($_SESSION['denunciarServico']);
 }
@@ -29,6 +32,11 @@ $_SESSION['denunciarImovel'] = true;
   </header>
 
   <main>
+
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
+
     <h1>Detalhes do Imóvel</h1>
 
     <div class="container_imoveis">

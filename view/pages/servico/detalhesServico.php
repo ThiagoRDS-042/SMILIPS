@@ -31,6 +31,11 @@ $_SESSION['denunciarServico'] = true;
   </header>
 
   <main>
+
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
+
     <h1>Detalhes do Serviços</h1>
 
     <?php if ($servico['descricao'] != null) : ?>

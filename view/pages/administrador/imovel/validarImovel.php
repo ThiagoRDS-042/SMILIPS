@@ -2,6 +2,19 @@
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
 // chamando a funcao de admLogadoEntra(), pra n exibir essa tela caso o adm n esteja logado
 admLogadoEntra();
+
+if (!isset($_SESSION)) {
+  session_start();
+}
+
+if (isset($_SESSION['avaliarPlano'])) {
+  unset($_SESSION['avaliarPlano']);
+}
+if (isset($_SESSION['avaliarPropaganda'])) {
+  unset($_SESSION['avaliarPropaganda']);
+}
+
+$_SESSION['avaliarImovel'] = true;
 ?>
 
 <!DOCTYPE html>
@@ -175,31 +188,9 @@ admLogadoEntra();
         </div>
       </div>
 
-      <form action="/SMILIPS/controller/DAO/notificacaoAnaliseImovel/notificacaoAnaliseImovelDAO.php" method="post">
-        <input type="hidden" name="id" value="<?php echo $imovel['imovelID'] ?>" id="id">
-        <input type="checkbox" id="imovel_invalido">
-        <label for="imovel_invalido">
-          <h3 name="analisar" value="excluir">Inválidar</h3>
-        </label>
-        <!-- <button type="submit" name="analisar" value="excluir">Inválidar</button> -->
-        <button type="submit" name="analisar" value="Valido">Válidar</button>
-
-        <div class="msg_imovel">
-          <div class="title">
-            <h1>Inválidar Imóvel?</h1>
-          </div>
-
-          <div class="content">
-            <textarea name="descricao" id="descricao" cols="30" rows="5" maxlength="250"></textarea>
-            <span data-placeholder='Motivo'></span>
-          </div>
-
-          <div class="buttons">
-            <button type="button" name="cancelar">Cancelar</button>
-            <button type="submit" name="analisar" value="Excluido">Confirmar</button>
-          </div>
-        </div>
-      </form>
+      <?php
+      require_once('/xampp/htdocs/SMILIPS/view/pages/util/analisar/analisar.php');
+      ?>
     </section>
   </main>
 
@@ -207,8 +198,6 @@ admLogadoEntra();
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');
   ?>
-
-  <script src="/SMILIPS/view/js/administrador/validarImovel.js" type="module"></script>
 </body>
 
 </html>
