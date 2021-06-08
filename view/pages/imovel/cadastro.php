@@ -125,8 +125,9 @@ usuarioLogadoEntra();
         </div>
 
         <div class="field-input">
-          <textarea name="descricao" id="descricao" cols="30" rows="6"></textarea>
+          <textarea name="descricao" id="descricao" cols="30" rows="6" maxlength="200"></textarea>
           <span data-placeholder="Descrição" class="descri info_field"></span>
+          <span class="count">200</span>
         </div>
       </div>
 

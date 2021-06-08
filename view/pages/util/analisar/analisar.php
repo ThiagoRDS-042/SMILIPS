@@ -20,7 +20,8 @@
 
       <div class="content">
         <textarea name="descricao" id="descricao" cols="30" rows="5" maxlength="250"></textarea>
-        <span data-placeholder='Motivo'></span>
+        <span data-placeholder='Motivo' class="info_field"></span>
+        <span class="count">250</span>
       </div>
 
       <div class="buttons">
@@ -51,7 +52,8 @@
 
       <div class="content">
         <textarea name="descricao" id="descricao" cols="30" rows="5" maxlength="250"></textarea>
-        <span data-placeholder='Motivo'></span>
+        <span data-placeholder='Motivo' class="info_field"></span>
+        <span class="count">250</span>
       </div>
 
       <div class="buttons">
@@ -82,7 +84,8 @@
 
       <div class="content">
         <textarea name="descricao" id="descricao" cols="30" rows="5" maxlength="250"></textarea>
-        <span data-placeholder='Motivo'></span>
+        <span data-placeholder='Motivo' class="info_field"></span>
+        <span class="count">250</span>
       </div>
 
       <div class="buttons">

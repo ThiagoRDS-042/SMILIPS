@@ -129,7 +129,7 @@ form .msg .content textarea::-webkit-scrollbar-thumb {
   border-radius: 0 5px 5px 0;
 }
 
-form .msg .content span::before {
+form .msg .content span.info_field::before {
   content: attr(data-placeholder);
   position: absolute;
   top: 50%;
@@ -144,8 +144,22 @@ form .msg .content span::before {
   font-family: "Rubik", sans-serif;
 }
 
+form .msg .content span.count {
+  position: absolute;
+  bottom: 25px;
+  right: 12%;
+  color: #ccc;
+  font-size: 16px;
+  transition: 0.5s;
+  font-family: "Rubik", sans-serif;
+}
+
 form .msg .content textarea:focus {
   border-color: #01baef;
+}
+
+form .msg .content textarea:focus ~ span.count {
+  color: #01baef;
 }
 
 form .msg .content textarea:focus ~ span::before {

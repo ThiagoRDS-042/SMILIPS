@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Rubik", sans-serif;
 }
 
 .denunciar h3 i {

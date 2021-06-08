@@ -2,6 +2,7 @@
 import { focusValidElement } from "/SMILIPS/view/js/modules/focusValid.js";
 import { validarTipoNumerico } from "/SMILIPS/view/js/modules/tiposNumericos.js";
 import { addClass, editSelect } from "/SMILIPS/view/js/modules/select.js";
+import definirMaxLength from "/SMILIPS/view/js/modules/definirMaxLength.js";
 
 // capturando os selct, a lista de options e todos os options do tipo type
 const select = document.querySelector(".select");
@@ -27,3 +28,11 @@ const inputs = document.querySelectorAll(".numerico");
 
 // chamando a funcao importada passado os inputs pelo parametro
 validarTipoNumerico(inputs);
+
+// capturando a texarea o contador e o maxlength
+const inputDescricao = document.querySelector("#descricao");
+const counter = document.querySelector(".count");
+const maxlength = inputDescricao.attributes.maxlength.value;
+
+// chamando a funcao importada passando as varivaeis a cima pelo paramentro
+definirMaxLength(inputDescricao, counter, maxlength);
