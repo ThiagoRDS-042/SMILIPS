@@ -1,5 +1,6 @@
 // importando modulos
 import { avancar, retornar } from "/SMILIPS/view/js/modules/sliderCards.js";
+import definirMaxLength from "/SMILIPS/view/js/modules/definirMaxLength.js";
 
 // capturando os elementos da DOM
 const btnProximo = document.querySelector(".container_imoveis .icon-proximo");
@@ -110,3 +111,32 @@ function retornarRelacionados(deslocamento, arquivos, sliders, qtdCards) {
     cont = file_size;
   }
 }
+
+const textarea = document.querySelector("#motivo");
+
+textarea.addEventListener("focus", () => {
+  textarea.classList.add("active");
+});
+
+textarea.addEventListener("blur", () => {
+  if (textarea.value == "") {
+    textarea.classList.remove("active");
+  }
+});
+
+const btnCancelar = document.querySelector(".buttons button:first-child");
+const checkbox = document.querySelector("#denunciar");
+
+btnCancelar.addEventListener("click", () => {
+  checkbox.checked = false;
+  textarea.value = "";
+  textarea.classList.remove("active");
+});
+
+// capturando a texarea o contador e o maxlength
+const inputDescricao = document.querySelector("#motivo");
+const counter = document.querySelector(".maxlength");
+const maxlength = inputDescricao.attributes.maxlength.value;
+
+// chamando a funcao importada passando as varivaeis a cima pelo paramentro
+definirMaxLength(inputDescricao, counter, maxlength);

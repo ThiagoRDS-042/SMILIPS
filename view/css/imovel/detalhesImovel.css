@@ -265,31 +265,6 @@ main .caracteristicas p {
   text-align: justify;
 }
 
-main .denunciar {
-  width: 90%;
-  margin: 30px auto;
-  text-align: center;
-}
-
-main .denunciar button {
-  width: 220px;
-  height: 40px;
-  border-radius: 20px;
-  border: 3px solid #ff6914;
-  background: white;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ff6914;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-main .denunciar button:hover,
-main .denunciar button:active {
-  background: #ff6914;
-  color: white;
-}
-
 main h1.similares {
   margin-top: 60px;
 }

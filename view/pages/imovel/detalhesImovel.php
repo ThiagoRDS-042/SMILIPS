@@ -1,3 +1,12 @@
+<?php
+if (isset($_SESSION['denunciarServico'])) {
+  unset($_SESSION['denunciarServico']);
+}
+
+$_SESSION['denunciarImovel'] = true;
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -123,9 +132,9 @@
       </div>
     <?php endif; ?>
 
-    <div class="denunciar">
-      <button>Denunciar Anúncio <i class="fas fa-exclamation-triangle"></i></button>
-    </div>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/view/pages/util/denunciar/denunciar.php');
+    ?>
 
     <?php if ($imoveis->num_rows > 0) : ?>
       <h1 class="similares">Imóveis Similares do Mesmo Anunciante</h1>

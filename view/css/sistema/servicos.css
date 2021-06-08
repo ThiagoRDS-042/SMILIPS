@@ -97,6 +97,7 @@ main .card {
   border-radius: 5px;
   display: flex;
   align-items: center;
+  transition: 0.3s;
 }
 
 main .card:hover {
@@ -177,4 +178,51 @@ main .card .info_servico .detalhes a {
 
 main .card .info_servico .detalhes a:hover {
   color: #ff6914;
+}
+
+@media (max-width: 800px) {
+  main .search {
+    margin-top: 130px;
+  }
+
+  main .card {
+    width: 550px;
+  }
+
+  main .card .ftPerfil {
+    width: 150px;
+    height: 150px;
+  }
+
+  main .card .info_servico {
+    width: 400px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 701px) {
+  nav ul {
+    background: #ff6914 !important;
+  }
+}
+
+@media (max-width: 590px) {
+  main .search {
+    left: -40%;
+    transform: translateX(50%);
+  }
+
+  main .card {
+    width: 350px;
+  }
+
+  main .card .ftPerfil {
+    width: 100px;
+    height: 100px;
+  }
+
+  main .card .info_servico {
+    width: 200px;
+    padding: 10px;
+  }
 }

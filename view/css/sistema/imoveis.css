@@ -322,6 +322,7 @@ main .imoveis_disponiveis .card_imovel {
   margin-bottom: 40px;
   cursor: pointer;
   font-family: "Rubik", sans-serif;
+  transition: 0.3s;
 }
 
 main .imoveis_disponiveis .card_imovel:hover {

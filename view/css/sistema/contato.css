@@ -33,3 +33,9 @@ main h1 {
   color: rgb(107, 107, 107);
   font-family: "Poppins", sans-serif;
 }
+
+@media (max-width: 701px) {
+  nav ul {
+    background: #ff6914 !important;
+  }
+}

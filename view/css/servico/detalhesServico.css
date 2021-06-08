@@ -81,7 +81,6 @@ main .caracteristicas .info_prestador {
   min-width: 350px;
   box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
   border-radius: 5px;
-  /* background: white; */
 }
 
 main .caracteristicas .info_prestador .detalhes_prestador {
@@ -143,31 +142,6 @@ main .info_prestador .contatar a {
   border-radius: 22.5px;
   line-height: 45px;
   text-align: center;
-}
-
-main .denunciar {
-  width: 90%;
-  margin: 30px auto;
-  text-align: center;
-}
-
-main .denunciar button {
-  width: 220px;
-  height: 40px;
-  border-radius: 20px;
-  border: 3px solid #ff6914;
-  background: white;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ff6914;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-main .denunciar button:hover,
-main .denunciar button:active {
-  background: #ff6914;
-  color: white;
 }
 
 main h1.relacionados {
