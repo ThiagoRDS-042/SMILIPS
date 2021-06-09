@@ -23,3 +23,30 @@ main h1 {
   color: rgb(107, 107, 107);
   font-family: "Poppins", sans-serif;
 }
+
+main h1.title {
+  width: 100%;
+  margin: 50px 5px 5px 5px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.denuncia {
+  width: 70%;
+  margin: 20px auto;
+  min-width: 455px;
+}
+
+.denuncia .motivo {
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.denuncia .motivo {
+  line-height: 22px;
+  font-size: 18px;
+  color: #333;
+}

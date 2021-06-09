@@ -16,6 +16,15 @@ if (isset($_SESSION['avaliarPropaganda'])) {
 if (isset($_SESSION['detalhesPropaganda'])) {
   unset($_SESSION['detalhesPropaganda']);
 }
+if (isset($_SESSION['detalhesDenuncia'])) {
+  unset($_SESSION['detalhesDenuncia']);
+}
+if (isset($_SESSION['imovel'])) {
+  unset($_SESSION['imovel']);
+}
+if (isset($_SESSION['servico'])) {
+  unset($_SESSION['servico']);
+}
 $_SESSION['detalhesPlano'] = true;
 $_SESSION['avaliarPlano'] = true;
 ?>

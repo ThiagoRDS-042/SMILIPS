@@ -1,7 +1,13 @@
 <?php
 require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
 // chamando a funcao consultarImgsImovel
-consultarImgsImovel();
+
+if (isset($_SESSION['imovel'])) {
+  $imovel = $imovelDenunciado;
+  $imgImovel = $imgsImovelUsuario;
+} else {
+  consultarImgsImovel();
+}
 ?>
 
 <link rel="stylesheet" href="/SMILIPS/view/css/util/detalhes/detalhesImovel.css">
@@ -76,7 +82,7 @@ consultarImgsImovel();
       </div>
       <div class="field">
         <div class="descricao">
-          <?php if ($imovel['complemento'] == '') : ?>
+          <?php if ($imovel['descricao'] == '') : ?>
             <p>Não Informado!</p>
           <?php else : ?>
             <p><?php echo $imovel['descricao'] ?></p>

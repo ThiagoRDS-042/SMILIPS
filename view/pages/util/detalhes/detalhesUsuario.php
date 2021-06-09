@@ -5,6 +5,12 @@ if (isset($_SESSION['detalhesPropaganda'])) {
   $usuario = $propagandaUsuario;
 } else if (isset($_SESSION['detalhesPlano'])) {
   $usuario = $planoUsuario;
+} else if (isset($_SESSION['detalhesDenuncia'])) {
+  if (isset($_SESSION['imovel'])) {
+    $usuario = $denunciaImovel;
+  } else {
+    $usuario = $denunciaServico;
+  }
 } else {
   // chamando a funcao consultarImgsImovel
   consultarImgsImovel();
@@ -14,7 +20,11 @@ if (isset($_SESSION['detalhesPropaganda'])) {
 <link rel="stylesheet" href="/SMILIPS/view/css/util/detalhes/detalhesUsuario.css">
 
 <div class="usuario">
-  <h1>Detalhes do Usuário</h1>
+  <?php if (isset($_SESSION['imovel']) or isset($_SESSION['servico'])) : ?>
+    <h1>Detalhes do Redator</h1>
+  <?php else : ?>
+    <h1>Detalhes do Usuário</h1>
+  <?php endif; ?>
   <div class="detalhes_usuario">
     <div class="img-perfil">
       <img src="data:image/jpeg;base64,<?php echo base64_encode($usuario['ftPerfil']) ?>" alt="">
