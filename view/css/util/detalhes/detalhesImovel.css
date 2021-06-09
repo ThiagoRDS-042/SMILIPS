@@ -1,0 +1,129 @@
+.imovel h1 {
+  width: 100%;
+  margin: 50px 5px 5px 5px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.imgs-imovel {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.imgs-imovel .card {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  margin: 20px 5px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.detalhes-imovel {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.detalhes-imovel h1 {
+  width: 100%;
+  margin: 10px 5px 5px 5px;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.detalhes-imovel .endereco {
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+.detalhes-imovel .endereco .field-duo,
+.detalhes .field-quadruplo,
+.detalhes .field,
+.valor .field {
+  width: 95%;
+  height: auto;
+  margin: 35px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.valor .field {
+  justify-content: center;
+}
+
+.detalhes-imovel .endereco .field-duo div,
+.detalhes .field-quadruplo div,
+.detalhes .field div,
+.valor .field div {
+  width: 48%;
+  height: auto;
+  min-height: 40px;
+  padding: 10px;
+  display: flex;
+  text-align: justify;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  cursor: text;
+  color: #333;
+}
+
+.detalhes .field-quadruplo div {
+  width: 22%;
+}
+
+.detalhes .field div {
+  width: 100%;
+  min-height: 100px;
+}
+
+.valor .field div {
+  width: 40%;
+}
+
+.detalhes-imovel .endereco .field-duo div.rua {
+  width: 76%;
+}
+
+.detalhes-imovel .endereco .field-duo div.numero {
+  width: 20%;
+}
+
+.detalhes-imovel .endereco .field-duo div span,
+.detalhes .field-quadruplo div span,
+.detalhes .field div span,
+.valor .field div span {
+  position: absolute;
+  top: -9px;
+  left: 5px;
+  padding: 0 3px;
+  background: white;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.detalhes {
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+.valor {
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: "Rubik", sans-serif;
+}

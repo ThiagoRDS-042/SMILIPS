@@ -34,6 +34,36 @@ main h1 {
   font-family: "Poppins", sans-serif;
 }
 
+main p {
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+  color: #333;
+  text-indent: 25px;
+  width: 60%;
+  margin: 20px auto;
+  text-align: justify;
+  line-height: 20px;
+}
+
+main .logo {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+}
+
+main .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+main p.contati_nos {
+  text-indent: 0;
+}
+
+main p.contati_nos span {
+  text-decoration: underline;
+}
+
 @media (max-width: 701px) {
   nav ul {
     background: #ff6914 !important;

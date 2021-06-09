@@ -13,6 +13,12 @@ if (isset($_SESSION['avaliarPlano'])) {
 if (isset($_SESSION['avaliarPropaganda'])) {
   unset($_SESSION['avaliarPropaganda']);
 }
+if (isset($_SESSION['detalhesPropaganda'])) {
+  unset($_SESSION['detalhesPropaganda']);
+}
+if (isset($_SESSION['detalhesPlano'])) {
+  unset($_SESSION['detalhesPlano']);
+}
 
 $_SESSION['avaliarImovel'] = true;
 ?>
@@ -44,156 +50,19 @@ $_SESSION['avaliarImovel'] = true;
     <h1>Válidar Imóvel</h1>
 
     <section class="info-imovel">
-      <h1>Imagens do Imóvel</h1>
-      <div class="imgs-imovel">
-        <!-- enquanto tiver imgsimoveis, exiba um card para cada img -->
-        <?php while ($row = $imgImovel->fetch_assoc()) : ?>
-          <div class="card" id="<?php echo $row['imgImovelID'] ?>">
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($row['imagem']) ?>" alt="Imagem de um Imóvel" class="preview-img">
-          </div>
-          <!-- finalizando o while -->
-        <?php endwhile; ?>
-      </div>
+      <?php
+      require_once('/xampp/htdocs/SMILIPS/view/pages/util/detalhes/detalhesImovel.php');
+      ?>
 
-      <h1>Detalhes do Imóvel</h1>
-      <div class="detalhes-imovel">
-        <h1>Endereço</h1>
-        <div class="endereco">
-
-          <div class="field-duo">
-            <div class="rua">
-              <p><?php echo $imovel['rua'] ?></p>
-              <span>Rua</span>
-            </div>
-
-            <div class="numero">
-              <p><?php echo $imovel['numero'] ?></p>
-              <span>Número</span>
-            </div>
-
-          </div>
-
-          <div class="field-duo">
-
-            <div class="bairro">
-              <p><?php echo $imovel['bairro'] ?></p>
-              <span>Bairro</span>
-            </div>
-
-            <div class="complemento">
-              <?php if ($imovel['complemento'] == '') : ?>
-                <p>Não Informado!</p>
-              <?php else : ?>
-                <p><?php echo $imovel['complemento'] ?></p>
-              <?php endif; ?>
-              <span>Complemento</span>
-            </div>
-          </div>
-        </div>
-
-        <h1>Detalhes</h1>
-        <div class="detalhes">
-          <div class="field-quadruplo">
-            <div class="quarto">
-              <p><?php echo $imovel['qtdQuarto'] ?></p>
-              <span>Quartos</span>
-            </div>
-            <div class="banheiro">
-              <p><?php echo $imovel['qtdBanheiro'] ?></p>
-              <span>Banheiros</span>
-            </div>
-            <div class="garagem">
-              <p><?php echo $imovel['qtdGaragem'] ?></p>
-              <span>Garagens</span>
-            </div>
-            <div class="area">
-              <p><?php echo $imovel['area'] ?></p>
-              <span>Área</span>
-            </div>
-          </div>
-          <div class="field">
-            <div class="descricao">
-              <?php if ($imovel['complemento'] == '') : ?>
-                <p>Não Informado!</p>
-              <?php else : ?>
-                <p><?php echo $imovel['descricao'] ?></p>
-              <?php endif; ?>
-              <span>Descrição</span>
-            </div>
-          </div>
-
-        </div>
-
-        <h1>Valor</h1>
-        <div class="valor">
-          <div class="field">
-            <div class="valor-imovel">
-              <p>R$ <?php echo $imovel['valorAluguel'] ?>,00</p>
-              <span>Valor</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <h1>Detalhes do Proprietário</h1>
-      <div class="detalhes-proprietario">
-        <div class="img-perfil">
-          <img src="data:image/jpeg;base64,<?php echo base64_encode($usuario['ftPerfil']) ?>" alt="">
-        </div>
-        <div class="info-user">
-          <div class="field-duo">
-            <div class="nome">
-              <p><?php echo $usuario['nomeUsuario'] ?></p>
-              <span>Nome</span>
-            </div>
-            <div class="telefone">
-              <p><?php echo $usuario['telefone'] ?></p>
-              <span>Telefone</span>
-            </div>
-          </div>
-
-          <div class="field-duo">
-            <div class="rua">
-              <p><?php echo $usuario['rua'] ?></p>
-              <span>Rua</span>
-            </div>
-            <div class="numero">
-              <p><?php echo $usuario['numero'] ?></p>
-              <span>Número</span>
-            </div>
-          </div>
-
-          <div class="field-duo">
-            <div class="bairro">
-              <p><?php echo $usuario['bairro'] ?></p>
-              <span>Bairro</span>
-            </div>
-            <div class="complemento">
-              <?php if ($usuario['complemento'] == '') : ?>
-                <p>Não Informado!</p>
-              <?php else : ?>
-                <p><?php echo $usuario['complemento'] ?></p>
-              <?php endif; ?>
-              <span>Complemento</span>
-            </div>
-          </div>
-
-          <div class="field-duo">
-            <div class="email">
-              <p><?php echo $usuario['emailUsuario'] ?></p>
-              <span>E-mail</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php
+      require_once('/xampp/htdocs/SMILIPS/view/pages/util/detalhes/detalhesUsuario.php');
+      ?>
 
       <?php
       require_once('/xampp/htdocs/SMILIPS/view/pages/util/analisar/analisar.php');
       ?>
     </section>
   </main>
-
 
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/administrador/adm/footer.php');

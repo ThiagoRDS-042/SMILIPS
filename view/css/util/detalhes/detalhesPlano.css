@@ -1,0 +1,41 @@
+.plano {
+  margin: 20px 0;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.plano .img_comprovante {
+  width: 350px;
+  height: 300px;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.plano .img_comprovante img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.plano a {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(107, 107, 107);
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.plano a:hover {
+  color: blue;
+  text-decoration: underline;
+}

@@ -1,0 +1,86 @@
+.usuario h1 {
+  width: 100%;
+  margin: 50px 5px 5px 5px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.detalhes_usuario .info-user .field-duo {
+  width: 95%;
+  height: auto;
+  margin: 35px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detalhes_usuario .info-user .field-duo div {
+  width: 48%;
+  height: auto;
+  min-height: 40px;
+  padding: 10px;
+  display: flex;
+  text-align: justify;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  cursor: text;
+  color: #333;
+}
+
+.detalhes_usuario .info-user .field-duo div span {
+  position: absolute;
+  top: -9px;
+  left: 5px;
+  padding: 0 3px;
+  background: white;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.detalhes_usuario {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Rubik", sans-serif;
+}
+
+.detalhes_usuario .img-perfil {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+  cursor: pointer;
+  margin: 20px 10px;
+}
+
+.detalhes_usuario .img-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.detalhes_usuario .info-user {
+  width: 70%;
+  margin: 20px 10px;
+}
+
+.detalhes_usuario .info-user .field-duo .nome,
+.detalhes_usuario .info-user .field-duo .rua {
+  width: 65%;
+}
+
+.detalhes_usuario .info-user .field-duo .email {
+  width: 100%;
+}
+
+.detalhes_usuario .info-user .field-duo .telefone,
+.detalhes_usuario .info-user .field-duo .numero,
+.detalhes_usuario .info-user .field-duo .senha {
+  width: 31%;
+}
