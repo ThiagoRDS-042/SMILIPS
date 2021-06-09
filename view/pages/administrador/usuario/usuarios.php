@@ -24,6 +24,9 @@ admLogadoEntra();
   ?>
 
   <main>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
     <h1>Usuários</h1>
 
     <?php if ($usuarios->num_rows > 0) : ?>

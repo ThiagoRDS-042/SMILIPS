@@ -87,3 +87,13 @@ function retornarPropaganda(deslocamento, arquivos, sliders, qtdCards) {
     cont = file_size;
   }
 }
+
+const btnCancelar = document.querySelector(
+  ".btn_excluir form button[type=button]"
+);
+
+const checkbox = document.querySelector("#btn_excluir");
+
+btnCancelar.addEventListener("click", () => {
+  checkbox.checked = false;
+});

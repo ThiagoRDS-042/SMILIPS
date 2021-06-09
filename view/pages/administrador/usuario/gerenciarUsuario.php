@@ -38,6 +38,26 @@ admLogadoEntra();
 
     <h1>Gerenciar Usuário</h1>
 
+    <input type="checkbox" id="btn_excluir">
+    <label for="btn_excluir" class="btn">
+      <span class="icon-delete"><i class="fas fa-trash-alt"></i></span>
+    </label>
+    <div class="btn_excluir">
+      <div class="title">
+        <h1>Excluir Usuário?</h1>
+      </div>
+      <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="POST" class="excluir">
+        <div class="senha">
+          <input type="hidden" value="<?php echo $_GET['consultar'] ?>" name="usuarioID">
+          <span class="icon_senha"><i class="fas fa-trash-alt"></i></span>
+        </div>
+        <div class="buttons">
+          <button type="button">Cancelar</button>
+          <Button type="submit" name="deletar_usuario">Confirmar</Button>
+        </div>
+      </form>
+    </div>
+
     <div class="perfil">
       <form action="/SMILIPS/controller/DAO/usuario/usuarioDAO.php" method="post" class="form-img" enctype="multipart/form-data">
         <label for="btn">
@@ -46,7 +66,7 @@ admLogadoEntra();
             <img src="data:image/jpeg;base64,<?php echo base64_encode($ftPerfil) ?>" alt="Imagem do Usuário" class="preview-img">
 
             <!-- passando o id do usuario ao input -->
-            <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+            <input type="hidden" name="id" value="<?php echo $id ?>">
             <span class="selecionar"><input type="file" name="ft-perfil" id="btn" class="file-chooser"></span>
             <span><i class="fas fa-camera"></i></span>
           </div>
@@ -99,7 +119,6 @@ admLogadoEntra();
     </div>
 
     <?php if ($imovel->num_rows > 0) : ?>
-
       <!-- se o usuario tiver algum imovel cadastrado, mostra os imoveis e seus detalhes  -->
       <section class="your-imoveis">
         <h1>Imóveis do Usuário</h1>

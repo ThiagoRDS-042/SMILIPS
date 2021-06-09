@@ -28,6 +28,117 @@ main h1 {
   font-family: "Poppins", sans-serif;
 }
 
+main #btn_excluir {
+  display: none;
+}
+
+main .btn .icon-delete {
+  position: absolute;
+  top: 150px;
+  right: 8%;
+  font-size: 30px;
+  color: #e74c3c;
+  cursor: pointer;
+  z-index: 2;
+}
+
+main .btn_excluir {
+  width: 310px;
+  height: 200px;
+  background: #fff;
+  border-radius: 5px;
+  z-index: 2;
+  position: absolute;
+  top: 120px;
+  right: 200px;
+  transition: 0.5s;
+  box-shadow: rgb(0 0 0 / 20%) 0 4px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+main #btn_excluir:checked ~ .btn_excluir {
+  top: 150px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+main .btn_excluir .title {
+  width: 100%;
+  padding: 10px 5px;
+  border-bottom: 2px solid #ccc;
+}
+
+main .btn_excluir .title h1 {
+  font-size: 16px;
+  margin: 0;
+  width: auto;
+}
+
+main .btn_excluir .icon_senha {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ccc;
+  font-size: 80px;
+  z-index: -1;
+}
+
+main .btn_excluir .buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+main .btn_excluir .buttons button {
+  width: 85px;
+  height: 32px;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  transition: 0.5s;
+  font-family: "Rubik", sans-serif;
+}
+
+main .btn_excluir .buttons button:first-child {
+  background: #e74c3c;
+  border-color: #e74c3c;
+  left: 10px;
+}
+
+main .btn_excluir .buttons button:first-child:hover {
+  background: #fff;
+  color: #e74c3c;
+}
+
+main .btn_excluir .buttons button:first-child:active {
+  background: #bdc3c7;
+  color: #e74c3c;
+}
+
+main .btn_excluir .buttons button:last-child {
+  background: #27ae60;
+  border-color: #27ae60;
+  right: 10px;
+}
+
+main .btn_excluir .buttons button:last-child:hover {
+  background: #fff;
+  color: #27ae60;
+}
+
+main .btn_excluir .buttons button:last-child:active {
+  background: #bdc3c7;
+  color: #27ae60;
+}
+
 .perfil {
   position: relative;
   width: 80%;

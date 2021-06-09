@@ -45,6 +45,7 @@ main .container-planos .card {
   border-radius: 5px;
   margin: 20px 5px;
   font-family: "Rubik", sans-serif;
+  transition: 0.3s;
 }
 
 main .container-planos .card:hover {

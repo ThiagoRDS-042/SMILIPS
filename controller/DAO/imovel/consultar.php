@@ -72,10 +72,17 @@ function consultarImgsImovel()
     $usuario = $conexao->query("SELECT * FROM usuario AS u INNER JOIN enderecoUsuario AS eu ON u.usuarioID = " . $imovel['usuarioID'] . " AND eu.usuarioID = u.usuarioID") or die($conexao->error);
     $usuario = $usuario->fetch_assoc();
   } else if (isset($_SESSION['usuarioID'])) {
+
     // pesquisando imovel pelo seu id e do usuario
     $idUsuario = $_SESSION['usuarioID'];
-    $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = '$idImovel' AND i.usuarioID = '$idUsuario' AND i.imovelID = ei.imovelID") or die($conexao->error);
-    $imovel = $imovel->fetch_assoc();
+    $url = str_replace("/Novo/", "", $_SERVER["REQUEST_URI"]);
+    if ($url == "/SMILIPS/view/pages/imovel/detalhesImovel.php?imovelID=$idImovel") {
+      $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = ei.imovelID WHERE i.imovelID = '$idImovel'") or die($conexao->error);
+      $imovel = $imovel->fetch_assoc();
+    } else {
+      $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = ei.imovelID WHERE i.usuarioID = '$idUsuario' AND i.imovelID = '$idImovel'") or die($conexao->error);
+      $imovel = $imovel->fetch_assoc();
+    }
 
     $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID =" . $imovel['usuarioID']) or die($conexao->error);
     $usuario = $usuario->fetch_assoc();
