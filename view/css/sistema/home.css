@@ -362,6 +362,7 @@ section.recomendacoes .container-card .list-card {
   width: 870px;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   overflow: hidden;
   height: 360px;
   font-family: "Open Sans", sans-serif;

@@ -21,7 +21,7 @@ form h3 {
   font-family: "Rubik", sans-serif;
 }
 
-form button {
+form h3.valido {
   background: #2ecc71;
   border: 3px solid #2ecc71;
   outline: none;
@@ -54,12 +54,14 @@ form button {
   border: 3px solid #2ecc71;
 }
 
-form button:hover {
+form button:hover,
+h3.valido:hover {
   background: white;
   color: #2ecc71;
 }
 
-form button:active {
+form button:active,
+h3.valido:active {
   background: white;
   color: #249754;
   border-color: #249754;
@@ -79,7 +81,19 @@ form .msg {
   top: -350px;
 }
 
-form input[type="checkbox"]:checked ~ .msg {
+form .msg.validar {
+  width: 30%;
+  height: 150px;
+  min-width: 229px;
+}
+
+form #invalidar:checked ~ .msg.invalidar {
+  opacity: 1;
+  pointer-events: all;
+  top: -280px;
+}
+
+form #validar:checked ~ .msg.validar {
   opacity: 1;
   pointer-events: all;
   top: -280px;
