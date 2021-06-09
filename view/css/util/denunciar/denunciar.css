@@ -5,7 +5,8 @@
   justify-content: center;
 }
 
-.denunciar h3 {
+.denunciar h3,
+.denunciar a {
   width: 220px;
   height: 40px;
   border-radius: 20px;
@@ -22,12 +23,19 @@
   font-family: "Rubik", sans-serif;
 }
 
-.denunciar h3 i {
+.denunciar a {
+  text-decoration: none;
+}
+
+.denunciar h3 i,
+.denunciar a i {
   margin: 0 0 3px 5px;
 }
 
 .denunciar h3:hover,
-.denunciar h3:active {
+.denunciar h3:active,
+.denunciar a:hover,
+.denunciar a:active {
   background: #ff6914;
   color: white;
 }

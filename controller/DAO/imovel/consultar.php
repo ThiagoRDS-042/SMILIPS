@@ -76,6 +76,9 @@ function consultarImgsImovel()
     $idUsuario = $_SESSION['usuarioID'];
     $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = '$idImovel' AND i.usuarioID = '$idUsuario' AND i.imovelID = ei.imovelID") or die($conexao->error);
     $imovel = $imovel->fetch_assoc();
+
+    $usuario = $conexao->query("SELECT * FROM usuario WHERE usuarioID =" . $imovel['usuarioID']) or die($conexao->error);
+    $usuario = $usuario->fetch_assoc();
   } else {
     $imovel = $conexao->query("SELECT * FROM imovel AS i INNER JOIN enderecoImovel AS ei ON i.imovelID = '$idImovel' AND i.imovelID = ei.imovelID") or die($conexao->error);
     $imovel = $imovel->fetch_assoc();

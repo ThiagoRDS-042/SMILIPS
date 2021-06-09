@@ -2,6 +2,11 @@
 require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado.php');
 // chamando a funcao de usuarioLogadoEntra(), pra n exibir essa tela caso o usuario n esteja logado
 usuarioLogadoEntra();
+if (isset($_SESSION['url'])) {
+  header("location:" . $_SESSION['url']);
+  unset($_SESSION['url']);
+}
+
 ?>
 
 <!DOCTYPE html>
