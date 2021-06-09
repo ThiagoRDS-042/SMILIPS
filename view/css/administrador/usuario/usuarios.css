@@ -34,7 +34,6 @@ main table {
 main table tr {
   border: 2px solid #ccc;
   height: 40px;
-  line-height: 40px;
 }
 
 main table thead tr th {
@@ -47,6 +46,8 @@ main table tbody tr td {
   border: 2px solid #ccc;
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  line-height: 20px;
+  vertical-align: middle;
 }
 
 main table tbody tr td:last-child a {

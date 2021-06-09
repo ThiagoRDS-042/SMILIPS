@@ -23,3 +23,48 @@ main h1 {
   color: rgb(107, 107, 107);
   font-family: "Poppins", sans-serif;
 }
+
+main table {
+  width: 70%;
+  min-width: 302px;
+  margin: 30px auto;
+  color: #333;
+}
+
+main table tr {
+  border: 2px solid #ccc;
+  height: 40px;
+}
+
+main table thead tr th {
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+}
+
+main table tr th,
+main table tbody tr td {
+  border: 2px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+main table tbody tr td.motivo {
+  text-align: justify;
+}
+
+main table tbody tr td:last-child a {
+  text-decoration: none;
+  color: #333;
+}
+
+main table tbody tr td:last-child a:hover {
+  text-decoration: underline;
+}
+
+main h1.servico {
+  margin-top: 50px;
+}
