@@ -54,7 +54,7 @@ admLogadoEntra();
 
 
     <?php if ($denunciasServico->num_rows > 0) : ?>
-      <h1 class="servico">Denuncias sobre Serviços</h1>
+      <h1>Denuncias sobre Serviços</h1>
 
       <table>
         <thead>

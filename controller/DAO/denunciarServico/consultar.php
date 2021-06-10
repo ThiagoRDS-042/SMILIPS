@@ -16,7 +16,7 @@ if (isset($_GET['denunciaServicoID'])) {
 
   $servicoID = $denunciaServico['servicoID'];
 
-  $prestador = $conexao->query("SELECT * FROM servico AS s INNER JOIN usuario AS u ON s.usuarioID = u.usuarioID INNER JOIN enderecoUsuario AS eu ON u.usuarioID = eu.usuarioID WHERE s.servicoID = '$servicoID'") or die($conexao->error);
+  $prestador = $conexao->query("SELECT * FROM servico AS s INNER JOIN tipoServico AS ts ON s.tipoServicoID = ts.tipoServicoID INNER JOIN usuario AS u ON s.usuarioID = u.usuarioID INNER JOIN enderecoUsuario AS eu ON u.usuarioID = eu.usuarioID WHERE s.servicoID = '$servicoID'") or die($conexao->error);
 
   $_SESSION['servico'] = true;
 

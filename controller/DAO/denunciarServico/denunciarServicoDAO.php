@@ -21,4 +21,12 @@ if (isset($_POST['denunciar'])) {
     exibirMsg("Por Favor Informe o Motivo da Denúcia!", "danger");
     header("location:/SMILIPS/view/pages/servico/detalhesServico.php?servicoID=$id");
   }
+} else if (isset($_GET['marcar_como_vista'])) {
+  $exibida = $_GET['marcar_como_vista'];
+  $id = $_GET['denunciaServicoID'];
+
+  $conexao->query("UPDATE denunciaServico SET exibida = '$exibida' WHERE denunciaServicoID = '$id'") or die($conexao->error);
+
+  exibirMsg("Marcada com Sucesso!", "success");
+  header("location:/SMILIPS/view/pages/administrador/denuncia/detalhesDenuncia.php?denunciaServicoID=$id");
 }

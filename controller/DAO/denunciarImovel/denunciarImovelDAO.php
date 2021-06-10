@@ -32,4 +32,12 @@ if (isset($_POST['denunciar'])) {
 
   exibirMsg("É Necessário está Autenticado(a) para Realizar Denuncias!", "danger");
   header("location:/SMILIPS/view/pages/sistema/login.php");
+} else if (isset($_GET['marcar_como_vista'])) {
+  $exibida = $_GET['marcar_como_vista'];
+  $id = $_GET['denunciaImovelID'];
+
+  $conexao->query("UPDATE denunciaImovel SET exibida = '$exibida' WHERE denunciaImovelID = '$id'") or die($conexao->error);
+
+  exibirMsg("Marcada com Sucesso!", "success");
+  header("location:/SMILIPS/view/pages/administrador/denuncia/detalhesDenuncia.php?denunciaImovelID=$id");
 }

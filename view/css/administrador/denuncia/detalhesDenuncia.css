@@ -14,6 +14,10 @@ main {
   border: 1px solid transparent;
 }
 
+main .alert {
+  top: 80px;
+}
+
 main h1 {
   width: 100%;
   text-align: center;
@@ -37,7 +41,8 @@ main h1.title {
   min-width: 455px;
 }
 
-.denuncia .motivo {
+.denuncia .motivo,
+.denuncia .servico {
   width: 100%;
   padding: 10px;
   margin: 0 auto 20px auto;
@@ -45,8 +50,95 @@ main h1.title {
   border-radius: 5px;
 }
 
-.denuncia .motivo {
+.denuncia .motivo p {
   line-height: 22px;
   font-size: 18px;
   color: #333;
+}
+
+.denuncia .servico .tipo_servico {
+  width: 50%;
+  min-width: 400px;
+  height: 40px;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+  font-family: "Rubik", sans-serif;
+}
+
+.denuncia .servico .descricao_servico {
+  width: 50%;
+  min-width: 420px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  font-family: "Rubik", sans-serif;
+  line-height: 20px;
+  text-align: justify;
+}
+
+.denuncia .servico .tipo_servico span,
+.denuncia .servico .descricao_servico span {
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  font-size: 14px;
+  color: #ccc;
+  font-family: "Rubik", sans-serif;
+  background: white;
+  padding: 0 3px;
+}
+
+.buttons {
+  width: 100%;
+  height: 40px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons a {
+  text-decoration: none;
+  display: inline-block;
+  width: 180px;
+  height: 40px;
+  border: 3px solid;
+  text-align: center;
+  line-height: 34px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.buttons a:first-child,
+.buttons a:last-child {
+  background: white;
+  color: #01baef;
+  border-color: #01baef;
+}
+
+.buttons a:nth-child(2) {
+  background: white;
+  color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.buttons a:first-child:hover,
+.buttons a:last-child:hover,
+.buttons a:first-child:active,
+.buttons a:last-child:active {
+  background: #01baef;
+  color: white;
+}
+
+.buttons a:nth-child(2):hover,
+.buttons a:nth-child(2):active {
+  background: #2ecc71;
+  color: white;
 }

@@ -64,7 +64,3 @@ main table tbody tr td:last-child a {
 main table tbody tr td:last-child a:hover {
   text-decoration: underline;
 }
-
-main h1.servico {
-  margin-top: 50px;
-}

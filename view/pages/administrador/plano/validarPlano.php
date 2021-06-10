@@ -25,6 +25,7 @@ if (isset($_SESSION['imovel'])) {
 if (isset($_SESSION['servico'])) {
   unset($_SESSION['servico']);
 }
+
 $_SESSION['detalhesPlano'] = true;
 $_SESSION['avaliarPlano'] = true;
 ?>
