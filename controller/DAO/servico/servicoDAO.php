@@ -92,7 +92,7 @@ if (isset($_POST['salvar'])) {
 
     if ($_POST['motivo'] != null) {
       $motivo = $_POST['motivo'];
-      // $conexao->query("DELETE FROM servico WHERE servicoID = '$id'") or die($conexao->error);
+      $conexao->query("DELETE FROM servico WHERE servicoID = '$id'") or die($conexao->error);
 
       $conexao->query("INSERT INTO notificacaoServico(mensagem, situacao, usuarioID, exibida) VALUES ('$motivo', 'Excluido', '$idUsuario', 0)") or die($conexao->error);
 
