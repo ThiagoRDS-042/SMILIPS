@@ -77,7 +77,11 @@ admLogadoEntra();
 
         <div class="desativar">
           <h1>Deseja Excluir?</h1>
-          <span><i class="fas fa-trash-alt"></i></span>
+          <div class="motivo">
+            <textarea name="motivo" id="motivo" cols="30" rows="5" maxlength="250"></textarea>
+            <span class="info">Motivo</span>
+            <span class="count">250</span>
+          </div>
           <button type="submit" name="desativar-ativar" value="Excluir">Sim</button>
           <button type="button">Não</button>
         </div>
@@ -92,6 +96,7 @@ admLogadoEntra();
   ?>
 
   <script src="/SMILIPS/view/js/servico/gerenciar.js" type="module"></script>
+  <script src="/SMILIPS/view/js/administrador/manter.js" type="module"></script>
 </body>
 
 </html>

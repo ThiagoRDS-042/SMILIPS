@@ -54,7 +54,11 @@ admLogadoEntra();
             <input type="hidden" value="<?php echo $_GET['imovelID'] ?>" name="imovelID">
             <input type="hidden" value="<?php echo $_GET['usuarioID'] ?>" name="usuarioID">
             <input type="hidden" value="<?php echo $_SERVER['HTTP_REFERER']; ?>" name="url">
-            <span class="icon_senha"><i class="fas fa-trash-alt"></i></span>
+            <div class="motivo">
+              <textarea name="motivo" id="motivo" cols="30" rows="5" maxlength="250"></textarea>
+              <span class="info">Motivo</span>
+              <span class="count">250</span>
+            </div>
           </div>
           <div class="buttons">
             <button type="button">Cancelar</button>
@@ -231,6 +235,8 @@ admLogadoEntra();
   ?>
 
   <script src="/SMILIPS/view/js/imovel/editarImovel.js" type="module"></script>
+
+  <script src="/SMILIPS/view/js/administrador/manter.js" type="module"></script>
 </body>
 
 </html>

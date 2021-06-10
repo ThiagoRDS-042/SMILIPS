@@ -19,8 +19,6 @@ const btnsCancelar = document.querySelectorAll(
 const checkboxs = document.querySelectorAll("form input[type=checkbox]");
 const btnsAnalise = document.querySelectorAll("label h3");
 
-console.log(checkboxs, btnsAnalise, btnsCancelar);
-
 btnsCancelar.forEach((btnCancelar, index) => {
   btnCancelar.addEventListener("click", () => {
     checkboxs[index].checked = false;

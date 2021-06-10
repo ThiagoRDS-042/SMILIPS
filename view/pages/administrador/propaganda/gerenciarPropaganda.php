@@ -37,8 +37,6 @@ admLogadoEntra();
     <input type="checkbox" id="delete">
     <label for="delete">
       <span class="icon_delete"><i class="fas fa-trash-alt"></i></span>
-
-
     </label>
 
     <form action="/SMILIPS/controller/DAO/propaganda/propagandaDAO.php" method="post">
@@ -50,7 +48,11 @@ admLogadoEntra();
         <div class="field">
           <input type="hidden" name="id" value="<?php echo $propagandaUser['propagandaID'] ?>">
           <input type="hidden" name="idUser" value="<?php echo $_GET['usuarioID'] ?>">
-          <span class="icon"><i class="fas fa-trash-alt"></i></span>
+          <div class="motivo">
+            <textarea name="motivo" id="motivo" cols="30" rows="5" maxlength="250"></textarea>
+            <span class="info">Motivo</span>
+            <span class="count">250</span>
+          </div>
         </div>
 
         <div class="buttons">
@@ -83,6 +85,8 @@ admLogadoEntra();
   ?>
 
   <script src="/SMILIPS/view/js/propaganda/editar.js" type="module"></script>
+
+  <script src="/SMILIPS/view/js/administrador/manter.js" type="module"></script>
 </body>
 
 </html>

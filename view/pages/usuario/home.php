@@ -31,6 +31,8 @@ if (isset($_SESSION['url'])) {
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/servico/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarServico();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/notificacaoServico/consultar.php');
+  consultarNotificacaoServico();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
   // chamando a funcao consultarImovelUser
   consultarPropagandasUser();
@@ -56,7 +58,7 @@ if (isset($_SESSION['url'])) {
 
           <div class="content">
             <?php if ($row['situacao'] == 'Excluido') : ?>
-              <p>Seu Imóvel não foi Aprovado na Analise. Motivo: <?php echo $row['mensagem'] ?></p>
+              <p>Seu Imóvel não foi Aprovado. Motivo: <?php echo $row['mensagem'] ?></p>
               <span class="icon_triste"><i class="far fa-frown"></i></span>
             <?php else : ?>
               <p>Seu Imóvel foi Aprovado na Analise!</p>
@@ -83,7 +85,7 @@ if (isset($_SESSION['url'])) {
 
           <div class="content">
             <?php if ($row['situacao'] == 'Excluido') : ?>
-              <p>Seu Plano não foi Aprovado na Analise. Motivo: <?php echo $row['mensagem'] ?></p>
+              <p>Seu Plano não foi Aprovado. Motivo: <?php echo $row['mensagem'] ?></p>
               <span class="icon_triste"><i class="far fa-frown"></i></span>
             <?php else : ?>
               <p>Seu Plano foi Aprovado na Analise!</p>
@@ -110,7 +112,7 @@ if (isset($_SESSION['url'])) {
 
           <div class="content">
             <?php if ($row['situacao'] == 'Excluida') : ?>
-              <p>Sua Propaganda não foi Aprovado na Analise. Motivo: <?php echo $row['mensagem'] ?></p>
+              <p>Sua Propaganda não foi Aprovada. Motivo: <?php echo $row['mensagem'] ?></p>
               <span class="icon_triste"><i class="far fa-frown"></i></span>
             <?php else : ?>
               <p>Sua Propaganda foi Aprovada na Analise!</p>
@@ -121,6 +123,28 @@ if (isset($_SESSION['url'])) {
           <div class="button">
             <form action="/SMILIPS/controller/DAO/notificacaoAnalisePropaganda/notificacaoAnalisePropagandaDAO.php" method="post">
               <input type="hidden" name="idNotificacaoAnalisePropaganda" value="<?php echo $row['notificacaoAnalisePropagandaID'] ?>">
+              <button type="submit" name="edity">Continue</button>
+            </form>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    <?php endif; ?>
+
+    <?php if ($notificacaoServico->num_rows > 0) : ?>
+      <?php while ($row = $notificacaoServico->fetch_assoc()) : ?>
+        <div class="notificacao">
+          <div class="title">
+            <h3>Notificação</h3>
+          </div>
+
+          <div class="content">
+            <p>Seu Serviço foi Deletado!. Motivo: <?php echo $row['mensagem'] ?></p>
+            <span class="icon_triste"><i class="far fa-frown"></i></span>
+          </div>
+
+          <div class="button">
+            <form action="/SMILIPS/controller/DAO/notificacaoServico/notificacaoServicoDAO.php" method="post">
+              <input type="hidden" name="idNotificacaoServico" value="<?php echo $row['notificacaoServicoID'] ?>">
               <button type="submit" name="edity">Continue</button>
             </form>
           </div>

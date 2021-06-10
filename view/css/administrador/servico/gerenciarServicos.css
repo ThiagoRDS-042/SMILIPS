@@ -286,8 +286,8 @@ main .edit-services .desativar {
   top: -30%;
   left: 50%;
   transform: translateX(-50%);
-  width: 250px;
-  height: 150px;
+  width: 350px;
+  height: 250px;
   background: white;
   border: 2px solid #ccc;
   border-radius: 5px;
@@ -311,6 +311,86 @@ main .edit-services .desativar span i {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+main .desativar .motivo {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .desativar .motivo textarea {
+  font-size: 16px;
+  width: 100%;
+  color: #333;
+  padding: 5px 10px;
+  margin-top: 1px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+  resize: none;
+  font-family: "Rubik", sans-serif;
+}
+
+main .desativar .motivo textarea:focus {
+  border-color: #01baef;
+}
+
+main .desativar .motivo span.info {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #ccc;
+  font-family: "Rubik", sans-serif;
+  pointer-events: none;
+  background: white;
+  padding: 0 3px;
+  transition: 0.5s;
+  width: auto;
+}
+
+main .desativar .motivo span.count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #ccc;
+  font-family: "Rubik", sans-serif;
+  pointer-events: none;
+  background: white;
+  padding: 0 3px;
+  transition: 0.5s;
+  font-size: 15px;
+  width: auto;
+}
+
+main .desativar .motivo textarea:focus ~ span.info {
+  color: #01baef;
+  font-size: 14px;
+  top: 1px;
+}
+
+main .desativar .motivo textarea.active ~ span.info {
+  font-size: 14px;
+  top: 1px;
+}
+
+main .desativar .motivo textarea:focus ~ span.count {
+  color: #01baef;
+}
+
+main .desativar .motivo textarea::-webkit-scrollbar {
+  width: 8px;
+  background: #636e72;
+  border-radius: 0 4px 4px 0;
+}
+
+main .desativar .motivo textarea::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 0 5px 5px 0;
 }
 
 main .edit-services .desativar button {

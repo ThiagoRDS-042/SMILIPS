@@ -89,15 +89,22 @@ if (isset($_POST['salvar'])) {
     $id = $_POST['idServico'];
     $idUsuario = $_POST['idUsuario'];
     $url = $_POST['url'];
-    echo $url;
 
-    $conexao->query("DELETE FROM servico WHERE servicoID = '$id'") or die($conexao->error);
+    if ($_POST['motivo'] != null) {
+      $motivo = $_POST['motivo'];
+      // $conexao->query("DELETE FROM servico WHERE servicoID = '$id'") or die($conexao->error);
 
-    exibirMsg("Serviço Excluido com Sucesso!", "success");
-    if ($url == "http://localhost/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUsuario") {
-      header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUsuario");
+      $conexao->query("INSERT INTO notificacaoServico(mensagem, situacao, usuarioID, exibida) VALUES ('$motivo', 'Excluido', '$idUsuario', 0)") or die($conexao->error);
+
+      exibirMsg("Serviço Excluido com Sucesso!", "success");
+      if ($url == "http://localhost/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUsuario") {
+        header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUsuario");
+      } else {
+        header("location:/SMILIPS/view/pages/administrador/denuncia/denuncias.php");
+      }
     } else {
-      header("location:/SMILIPS/view/pages/administrador/denuncia/denuncias.php");
+      exibirMsg("Por Favor Informe o Motivo Para a Deleção do Serviço!", "danger");
+      header("location:/SMILIPS/view/pages/administrador/servico/gerenciarServicos.php?servicoID=$id&&usuarioID=$idUsuario");
     }
   } else {
     $situacao = $_POST['desativar-ativar'];

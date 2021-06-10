@@ -226,13 +226,24 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
       header("location:/SMILIPS/view/pages/imovel/editarImovel.php?imovelID=$idImovel");
     }
   } else {
-    $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
-    exibirMsg("Imóvel Excluido com Sucesso!", "success");
-    $url = $_POST['url'];
-    if ($url == "http://localhost/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser") {
-      header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser");
+
+    if ($_POST['motivo'] != null) {
+      $motivo = $_POST['motivo'];
+
+      $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
+
+      $conexao->query("INSERT INTO notificacaoAnaliseImovel(mensagem, situacao, usuarioID, exibida) VALUES ('$motivo', 'Excluido', '$idUser', 0)") or die($conexao->error);
+
+      exibirMsg("Imóvel Excluido com Sucesso!", "success");
+      $url = $_POST['url'];
+      if ($url == "http://localhost/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser") {
+        header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser");
+      } else {
+        header("location:/SMILIPS/view/pages/administrador/denuncia/denuncias.php");
+      }
     } else {
-      header("location:/SMILIPS/view/pages/administrador/denuncia/denuncias.php");
+      exibirMsg("Por Favor Informe o Motivo Para a Deleção do Imóvel", "danger");
+      header("location:/SMILIPS/view/pages/administrador/imovel/gerenciarImovel.php?imovelID=$idImovel&&usuarioID=$idUser");
     }
   }
 }

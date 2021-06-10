@@ -110,10 +110,22 @@ if (isset($_POST['salvar'])) {
   // setando a situacao da propaganda, para desativada, ativada, e em casos especificos excluindo ela
   $id  = $_POST['id'];
   if (isset($_SESSION['idAdm'])) {
-    $idUser = $_POST['idUser'];
-    $conexao->query("DELETE FROM propaganda WHERE propagandaID = '$id'") or die($conexao->error);
-    exibirMsg("Propaganda Deletada!", "danger");
-    header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser");
+
+    if ($_POST['motivo'] != null) {
+      $motivo = $_POST['motivo'];
+
+      $idUser = $_POST['idUser'];
+
+      $conexao->query("DELETE FROM propaganda WHERE propagandaID = '$id'") or die($conexao->error);
+
+      $conexao->query("INSERT INTO notificacaoAnalisePropaganda(mensagem, situacao, usuarioID, exibida) VALUES ('$motivo', 'Excluida', '$idUser', 0)") or die($conexao->error);
+
+      exibirMsg("Propaganda Deletada!", "success");
+      header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser");
+    } else {
+      exibirMsg("Por Favor Informe o Motivo Para a Deleção da Propaganda", "danger");
+      header("location:/SMILIPS/view/pages/administrador/propaganda/gerenciarPropaganda.php?editar=$id&&usuarioID=$idUser");
+    }
   } else {
     $idUser = $_SESSION['usuarioID'];
     $senha = md5($_POST['senha']);

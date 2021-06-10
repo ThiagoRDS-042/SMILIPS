@@ -45,8 +45,8 @@ main .icon_delete {
 }
 
 main .delete {
-  width: 250px;
-  height: 180px;
+  width: 350px;
+  height: 250px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background: white;
@@ -73,13 +73,90 @@ main .delete .title {
   font-family: "Poppins", sans-serif;
 }
 
-main .delete .field .icon {
-  font-size: 60px;
-  color: #ccc;
+main .field {
+  width: 70%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+main .field .motivo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+main .field .motivo textarea {
+  font-size: 16px;
+  width: 100%;
+  color: #333;
+  padding: 5px 10px;
+  margin-top: 1px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+  resize: none;
+  font-family: "Rubik", sans-serif;
+}
+
+main .field .motivo textarea:focus {
+  border-color: #01baef;
+}
+
+main .field .motivo span.info {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #ccc;
+  font-family: "Rubik", sans-serif;
+  pointer-events: none;
+  background: white;
+  padding: 0 3px;
+  transition: 0.5s;
+  width: auto;
+}
+
+main .field .motivo span.count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #ccc;
+  font-family: "Rubik", sans-serif;
+  pointer-events: none;
+  background: white;
+  padding: 0 3px;
+  transition: 0.5s;
+  font-size: 15px;
+  width: auto;
+}
+
+main .field .motivo textarea:focus ~ span.info {
+  color: #01baef;
+  font-size: 14px;
+  top: 1px;
+}
+
+main .field .motivo textarea.active ~ span.info {
+  font-size: 14px;
+  top: 1px;
+}
+
+main .field .motivo textarea:focus ~ span.count {
+  color: #01baef;
+}
+
+main .field .motivo textarea::-webkit-scrollbar {
+  width: 8px;
+  background: #636e72;
+  border-radius: 0 4px 4px 0;
+}
+
+main .field .motivo textarea::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 0 5px 5px 0;
 }
 
 main .delete .buttons {
