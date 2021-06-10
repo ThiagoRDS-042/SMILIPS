@@ -228,6 +228,11 @@ if (isset($_GET['notificacao_imgs_cadastro'])) {
   } else {
     $conexao->query("DELETE FROM imovel WHERE imovelID = '$idImovel'") or die($conexao->error);
     exibirMsg("Imóvel Excluido com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/administrador/imovel/gerenciarUsuario.php?consultar=$idUser");
+    $url = $_POST['url'];
+    if ($url == "http://localhost/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser") {
+      header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUser");
+    } else {
+      header("location:/SMILIPS/view/pages/administrador/denuncia/denuncias.php");
+    }
   }
 }

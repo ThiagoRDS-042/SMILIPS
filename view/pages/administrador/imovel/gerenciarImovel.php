@@ -53,6 +53,7 @@ admLogadoEntra();
             <!-- passando o id do imovel e do usuario para os inputs -->
             <input type="hidden" value="<?php echo $_GET['imovelID'] ?>" name="imovelID">
             <input type="hidden" value="<?php echo $_GET['usuarioID'] ?>" name="usuarioID">
+            <input type="hidden" value="<?php echo $_SERVER['HTTP_REFERER']; ?>" name="url">
             <span class="icon_senha"><i class="fas fa-trash-alt"></i></span>
           </div>
           <div class="buttons">

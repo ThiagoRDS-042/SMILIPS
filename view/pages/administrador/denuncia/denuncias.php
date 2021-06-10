@@ -26,6 +26,9 @@ admLogadoEntra();
   ?>
 
   <main>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
+    ?>
     <?php if ($denunciasImovel->num_rows > 0) : ?>
       <h1>Denuncias sobre Imóveis</h1>
 

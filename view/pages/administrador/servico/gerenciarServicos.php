@@ -63,6 +63,7 @@ admLogadoEntra();
           <input type="hidden" name="idTipoServico" value="<?php echo  $tipoServico['tipoServicoID'] ?>">
           <input type="hidden" name="idServico" value="<?php echo $_GET['servicoID'] ?>">
           <input type="hidden" name="idUsuario" value="<?php echo $_GET['usuarioID'] ?>">
+          <input type="hidden" value="<?php echo $_SERVER['HTTP_REFERER']; ?>" name="url">
           <textarea name="descricao" id="descricao" cols="30" rows="5" required maxlength="250"><?php echo $editarServico['descricao'] ?></textarea>
           <span data-placeholder="Descrição" class="info_field"></span>
           <span class="contador">250</span>

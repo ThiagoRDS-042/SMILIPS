@@ -88,11 +88,17 @@ if (isset($_POST['salvar'])) {
   if ($_POST['desativar-ativar'] == 'Excluir') {
     $id = $_POST['idServico'];
     $idUsuario = $_POST['idUsuario'];
+    $url = $_POST['url'];
+    echo $url;
 
     $conexao->query("DELETE FROM servico WHERE servicoID = '$id'") or die($conexao->error);
 
     exibirMsg("Serviço Excluido com Sucesso!", "success");
-    header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUsuario");
+    if ($url == "http://localhost/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUsuario") {
+      header("location:/SMILIPS/view/pages/administrador/usuario/gerenciarUsuario.php?consultar=$idUsuario");
+    } else {
+      header("location:/SMILIPS/view/pages/administrador/denuncia/denuncias.php");
+    }
   } else {
     $situacao = $_POST['desativar-ativar'];
     $id = $_POST['idServico'];
