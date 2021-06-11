@@ -217,6 +217,7 @@ main .list-planos .planos .card {
   position: relative;
   background: #ecf0f1;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 main .list-planos .planos .card:hover {

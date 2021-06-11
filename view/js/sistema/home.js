@@ -109,3 +109,29 @@ btnVoltar.addEventListener("click", () => {
     ? retornar(290, cards, slider, 2)
     : retornar(290, cards, slider, 3);
 });
+
+const banner = document.querySelector("section.banner figure");
+const imgs = document.querySelectorAll("section.banner figure img");
+let contador = 0;
+let timer = 3500;
+banner.style.width = `${imgs.length}00%`;
+banner.style.left = "0%";
+
+imgs.forEach((img) => {
+  img.style.width = `${100 / imgs.length}%`;
+});
+
+setInterval(() => {
+  const stylePercent = Number(banner.style.left.replace(/%/, ""));
+
+  contador++;
+
+  if (contador < imgs.length) {
+    banner.style.transition = "1s";
+    banner.style.left = `${stylePercent + -100}%`;
+  } else {
+    banner.style.transition = "none";
+    banner.style.left = "0%";
+    contador = 0;
+  }
+}, timer);

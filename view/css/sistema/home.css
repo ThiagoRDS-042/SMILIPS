@@ -295,45 +295,13 @@ section.banner {
 
 section.banner figure {
   position: relative;
-  width: 500%;
   height: 100%;
-  animation: 20s banner infinite;
 }
 
-section.banner figure a img {
+section.banner figure img {
   width: 20%;
   height: 100%;
   float: left;
-}
-
-@keyframes banner {
-  0% {
-    left: 0;
-  }
-  20% {
-    left: 0;
-  }
-  25% {
-    left: -100%;
-  }
-  45% {
-    left: -100%;
-  }
-  50% {
-    left: -200%;
-  }
-  70% {
-    left: -200%;
-  }
-  75% {
-    left: -300%;
-  }
-  95% {
-    left: -300%;
-  }
-  100% {
-    left: -400%;
-  }
 }
 
 section.recomendacoes {
@@ -362,7 +330,6 @@ section.recomendacoes .container-card .list-card {
   width: 870px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   overflow: hidden;
   height: 360px;
   font-family: "Open Sans", sans-serif;
@@ -390,6 +357,7 @@ section.recomendacoes .container-card .card {
   border-radius: 5px;
   margin: 0 5px;
   background: white;
+  transition: 0.3s;
 }
 
 section.recomendacoes .container-card .card:hover {

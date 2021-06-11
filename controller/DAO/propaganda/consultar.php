@@ -43,3 +43,14 @@ if (isset($_GET['consultar'])) {
 
   $propagandaUsuario = $propagandaUsuario->fetch_assoc();
 }
+
+
+function consultarPropagandasAtivas()
+{
+  global $conexao, $propagandasAtivas, $primeiraPropaganda;
+
+  // pesquisano as propagandas em analise
+  $propagandasAtivas = $conexao->query("SELECT * FROM propaganda WHERE situacao = 'Ativada'") or die($conexao->error);
+  $primeiraPropaganda = $conexao->query("SELECT * FROM propaganda WHERE situacao = 'Ativada' LIMIT 1") or die($conexao->error);
+  $primeiraPropaganda =   $primeiraPropaganda->fetch_assoc();
+}

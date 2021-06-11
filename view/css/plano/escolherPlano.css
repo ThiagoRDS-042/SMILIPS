@@ -45,6 +45,7 @@ main .planos .card {
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 main .planos .card:hover,

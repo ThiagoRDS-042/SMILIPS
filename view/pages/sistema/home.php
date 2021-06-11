@@ -10,6 +10,8 @@
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   consultarBairros();
   consultarImoveis();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
+  consultarPropagandasAtivas();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/sistema/home.css">
   <title>Home</title>
@@ -517,25 +519,17 @@
     </form>
   </main>
 
-  <section class="banner">
-    <figure>
-      <a href="#">
-        <img src="/SMILIPS/view/images/propagandas/propaganda1.jpg" alt="">
-      </a>
-      <a href="#">
-        <img src="/SMILIPS/view/images/propagandas/propaganda2.jpeg" alt="">
-      </a>
-      <a href="#">
-        <img src="/SMILIPS/view/images/propagandas/propaganda3.jpeg" alt="">
-      </a>
-      <a href="#">
-        <img src="/SMILIPS/view/images/propagandas/propaganda4.jpeg" alt="">
-      </a>
-      <a href="#">
-        <img src="/SMILIPS/view/images/propagandas/propaganda1.jpg" alt="">
-      </a>
-    </figure>
-  </section>
+  <?php if ($propagandasAtivas->num_rows > 0) : ?>
+    <section class="banner">
+      <figure>
+        <?php while ($row = $propagandasAtivas->fetch_assoc()) : ?>
+          <img src="data:image/jpeg;base64,<?php echo base64_encode($row['propaganda']) ?>" alt="Imagem da Propaganda">
+        <?php endwhile; ?>
+        <img src="data:image/jpeg;base64,<?php echo base64_encode($primeiraPropaganda['propaganda']) ?>" alt="Imagem da Propaganda">
+      </figure>
+    </section>
+  <?php endif; ?>
+
 
   <?php if ($imoveis->num_rows > 0) : ?>
     <section class="recomendacoes">

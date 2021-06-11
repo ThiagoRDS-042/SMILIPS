@@ -81,6 +81,7 @@ section.your-imoveis .container-imovel .card {
   margin: 0 5px;
   background: white;
   font-family: "Rubik", sans-serif;
+  transition: 0.3s;
 }
 
 section.your-imoveis .container-imovel .card:hover {

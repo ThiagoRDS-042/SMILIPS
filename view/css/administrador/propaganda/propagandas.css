@@ -73,6 +73,7 @@ main .propagandas_container .propagandas_list .slider_propagandas .card {
   font-family: "Rubik", sans-serif;
   background: white;
   position: relative;
+  transition: 0.3s;
 }
 
 main .propagandas_container .propagandas_list .slider_propagandas .card img {
