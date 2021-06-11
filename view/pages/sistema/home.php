@@ -11,7 +11,7 @@
   consultarBairros();
   consultarImoveis();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
-  consultarPropagandasAtivas();
+  consultarPropagandasPremium();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/sistema/home.css">
   <title>Home</title>
@@ -519,10 +519,10 @@
     </form>
   </main>
 
-  <?php if ($propagandasAtivas->num_rows > 0) : ?>
+  <?php if ($propagandasPremium->num_rows > 0) : ?>
     <section class="banner">
       <figure>
-        <?php while ($row = $propagandasAtivas->fetch_assoc()) : ?>
+        <?php while ($row = $propagandasPremium->fetch_assoc()) : ?>
           <img src="data:image/jpeg;base64,<?php echo base64_encode($row['propaganda']) ?>" alt="Imagem da Propaganda">
         <?php endwhile; ?>
         <img src="data:image/jpeg;base64,<?php echo base64_encode($primeiraPropaganda['propaganda']) ?>" alt="Imagem da Propaganda">

@@ -25,6 +25,36 @@ main {
   border: 1px solid transparent;
 }
 
+main .teste1 {
+  width: 350px;
+  height: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 150px;
+  left: 10px;
+}
+
+main .teste2 {
+  width: 350px;
+  height: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 550px;
+  right: 10px;
+}
+
+main .teste3 {
+  width: 350px;
+  height: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 1050px;
+  left: 10px;
+}
+
 main .alert {
   top: 80px;
 }

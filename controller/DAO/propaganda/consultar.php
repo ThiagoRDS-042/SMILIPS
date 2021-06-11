@@ -44,13 +44,20 @@ if (isset($_GET['consultar'])) {
   $propagandaUsuario = $propagandaUsuario->fetch_assoc();
 }
 
+function consultarPropagandasPremium()
+{
+  global $conexao, $propagandasPremium, $primeiraPropaganda;
+
+  // pesquisano as propagandas em analise
+  $propagandasPremium = $conexao->query("SELECT * FROM propaganda AS p INNER JOIN planoUsuario AS pu ON p.usuarioID = pu.usuarioID INNER JOIN plano AS plan ON pu.planoID = plan.planoID WHERE p.situacao = 'Ativada' AND plan.nome = 'Premium'") or die($conexao->error);
+  $primeiraPropaganda = $conexao->query("SELECT * FROM propaganda AS p INNER JOIN planoUsuario AS pu ON p.usuarioID = pu.usuarioID INNER JOIN plano AS plan ON pu.planoID = plan.planoID WHERE p.situacao = 'Ativada' AND plan.nome = 'Premium' LIMIT 1") or die($conexao->error);
+  $primeiraPropaganda =   $primeiraPropaganda->fetch_assoc();
+}
 
 function consultarPropagandasAtivas()
 {
-  global $conexao, $propagandasAtivas, $primeiraPropaganda;
+  global $conexao, $propagandasAtivas;
 
   // pesquisano as propagandas em analise
-  $propagandasAtivas = $conexao->query("SELECT * FROM propaganda WHERE situacao = 'Ativada'") or die($conexao->error);
-  $primeiraPropaganda = $conexao->query("SELECT * FROM propaganda WHERE situacao = 'Ativada' LIMIT 1") or die($conexao->error);
-  $primeiraPropaganda =   $primeiraPropaganda->fetch_assoc();
+  $propagandasAtivas = $conexao->query("SELECT * FROM propaganda ORDER BY RAND() LIMIT 3") or die($conexao->error);
 }
