@@ -29,10 +29,15 @@ main h1 {
 }
 
 main form {
-  width: 70%;
+  width: 50%;
   height: 400px;
   margin: 20px auto;
   position: relative;
+}
+
+main form.premium {
+  width: 80%;
+  height: 400px;
 }
 
 main form .cad_anuncio {
@@ -105,9 +110,20 @@ footer {
   margin-top: 40px;
 }
 
+@media (max-width: 900px) {
+  main form {
+    width: 50%;
+    height: 300px;
+  }
+}
+
 @media (max-width: 805px) {
   main form .cad_anuncio span {
     font-size: 12px;
+  }
+  main form.premium {
+    width: 70%;
+    height: 250px;
   }
 }
 
@@ -115,7 +131,15 @@ footer {
   main form .cad_anuncio span {
     font-size: 10px;
   }
-  main form {
-    height: 300px;
+}
+
+@media (max-width: 600px) {
+  main form.premium {
+    width: 60%;
+    height: 200px;
+  }
+
+  main form.premium .cad_anuncio i {
+    font-size: 120px;
   }
 }

@@ -23,37 +23,38 @@ main {
   min-width: 420px;
   min-height: 100vh;
   border: 1px solid transparent;
+  position: relative;
 }
 
-main .teste1 {
+/* main .propaganda {
   width: 350px;
   height: 250px;
   border: 1px solid #ccc;
   border-radius: 5px;
   position: absolute;
+  cursor: pointer;
+}
+
+main .propaganda.p1 {
   top: 150px;
   left: 10px;
 }
 
-main .teste2 {
-  width: 350px;
-  height: 250px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  position: absolute;
+main .propaganda.p2 {
   top: 550px;
   right: 10px;
 }
 
-main .teste3 {
-  width: 350px;
-  height: 250px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  position: absolute;
+main .propaganda.p3 {
   top: 1050px;
   left: 10px;
 }
+
+main .propaganda img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
 
 main .alert {
   top: 80px;
@@ -522,6 +523,46 @@ main .imoveis_disponiveis .card_imovel .descricao .detalhes a:hover {
   color: #bdc3c7;
 }
 
+/* @media (max-width: 1164px) {
+  main .propaganda {
+    width: 250px;
+    height: 200px;
+  }
+} */
+
+@media (max-width: 944px) {
+  main h1 {
+    margin-top: 400px;
+  }
+  /* main .propaganda.p1 {
+    width: 404px;
+    height: 250px;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+  } */
+  main .card_imovel.middle {
+    margin-bottom: 300px;
+  }
+  /* main .propaganda.p2 {
+    width: 404px;
+    height: 250px;
+    top: calc(50% + 330px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .propaganda.p3 {
+    width: 404px;
+    height: 250px;
+    top: 89%;
+    left: 50%;
+    transform: translateX(-50%);
+  } */
+  main .imoveis_disponiveis {
+    margin-bottom: 350px;
+  }
+}
+
 @media (max-width: 701px) {
   nav ul {
     background: #ff6914 !important;
@@ -529,8 +570,23 @@ main .imoveis_disponiveis .card_imovel .descricao .detalhes a:hover {
 }
 
 @media (max-width: 565px) {
+  /* main .propaganda.p1 {
+    width: 100%;
+    border-radius: 0;
+  }
+  main .propaganda.p2 {
+    width: 100%;
+    top: calc(50% + 265px);
+    border-radius: 0;
+  }
+  main .propaganda.p3 {
+    width: 100%;
+    top: 87%;
+    border-radius: 0;
+  } */
   main .imoveis_disponiveis {
     width: 300px;
+    margin-bottom: 350px;
   }
   main .imoveis_disponiveis .card_imovel .image {
     width: 296px;

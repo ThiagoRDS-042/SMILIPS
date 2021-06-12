@@ -123,3 +123,15 @@ editSelect(optionsListValorI, 6);
 editSelect(optionsListValorF, 7);
 
 editSelect(optionsListArea, 8);
+
+const qtdCards = document.querySelectorAll(".card_imovel");
+
+let indece;
+
+if (qtdCards.length % 2 === 0) {
+  indece = qtdCards.length / 2 - 1;
+} else {
+  indece = Math.round(qtdCards.length / 2) - 1;
+}
+
+qtdCards[indece].classList.add("middle");

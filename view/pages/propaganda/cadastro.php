@@ -4,6 +4,8 @@ require_once('/xampp/htdocs/SMILIPS/controller/autenticar/verificarUsuarioLogado
 usuarioLogadoEntra();
 require_once('/xampp/htdocs/SMILIPS/controller/DAO/usuario/consultar.php');
 consultarPlanoUsuario();
+require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
+consultarTipoPlanoUsuario();
 ?>
 
 <!DOCTYPE html>
@@ -29,17 +31,25 @@ consultarPlanoUsuario();
     ?>
     <h1>Cadastrar Anúncio</h1>
 
-    <form action="/SMILIPS/controller/DAO/propaganda/propagandaDAO.php" method="post" enctype="multipart/form-data">
-      <label for="cad">
-        <div class="cad_anuncio">
-          <i class="far fa-images"></i>
-          <input type="file" name="propaganda" id="cad">
-          <img src="" alt="image">
-          <span>Formatos Suportados: PNG, JPG e JPEG, Tamanho Suportado: até 1000 KB.</span>
-        </div>
-        <button type="submit" name="salvar">Salvar</button>
-      </label>
-    </form>
+    <?php if ($planoUsuario['nome'] == 'Premium') : ?>
+      <form action="/SMILIPS/controller/DAO/propaganda/propagandaDAO.php" method="post" enctype="multipart/form-data" class="premium">
+      <?php else : ?>
+        <form action="/SMILIPS/controller/DAO/propaganda/propagandaDAO.php" method="post" enctype="multipart/form-data">
+        <?php endif; ?>
+        <label for="cad">
+          <div class="cad_anuncio">
+            <i class="far fa-images"></i>
+            <input type="file" name="propaganda" id="cad">
+            <img src="" alt="image">
+            <?php if ($planoUsuario['nome'] == 'Premium') : ?>
+              <span>Formatos Suportados: PNG, JPG e JPEG, Tamanho Suportado: até 1000 KB. Recomendação: 1300x380</span>
+            <?php else : ?>
+              <span>Formatos Suportados: PNG, JPG e JPEG, Tamanho Suportado: até 1000 KB. Recomendação: 350x250</span>
+            <?php endif; ?>
+          </div>
+          <button type="submit" name="salvar">Salvar</button>
+        </label>
+        </form>
 
   </main>
 

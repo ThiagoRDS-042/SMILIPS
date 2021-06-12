@@ -14,6 +14,8 @@
   }
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   consultarBairros();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
+  consultarPropagandasAtivas();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/sistema/imoveis.css">
   <title>Imóveis</title>
@@ -35,9 +37,10 @@
       <h3><i class="fas fa-angle-left"></i> filtro</h3>
     </label>
 
-    <div class="teste1"></div>
-    <div class="teste2"></div>
-    <div class="teste3"></div>
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/view/pages/util/propagandas/propagandas.php');
+    ?>
+
 
     <form action="/SMILIPS/controller/filtros/filtrarImoveis.php" method="post">
       <div id="filter">

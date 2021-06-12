@@ -72,3 +72,15 @@ if (isset($_GET['consultar'])) {
 
   $planoUsuario = $planoUsuario->fetch_assoc();
 }
+
+// consulta os planos em analise
+function consultarTipoPlanoUsuario()
+{
+
+  global $conexao, $planoUsuario;
+  $id = $_SESSION['usuarioID'];
+
+  // peaquisando os planos em analise
+  $planoUsuario = $conexao->query("SELECT * FROM planoUsuario AS pu INNER JOIN plano AS p ON pu.planoID = p.planoID WHERE pu.usuarioID = '$id'") or die($conexao->error);
+  $planoUsuario = $planoUsuario->fetch_assoc();
+}
