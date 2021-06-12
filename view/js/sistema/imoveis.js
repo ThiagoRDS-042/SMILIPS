@@ -125,13 +125,31 @@ editSelect(optionsListValorF, 7);
 editSelect(optionsListArea, 8);
 
 const qtdCards = document.querySelectorAll(".card_imovel");
+const imoveis_disponiveis = document.querySelector(".imoveis_disponiveis");
+const h1 = document.querySelector("main h1");
 
-let indece;
+const p1 = document.querySelector(".propaganda.p1");
+const p2 = document.querySelector(".propaganda.p2");
+const p3 = document.querySelector(".propaganda.p3");
 
-if (qtdCards.length % 2 === 0) {
-  indece = qtdCards.length / 2 - 1;
-} else {
-  indece = Math.round(qtdCards.length / 2) - 1;
+if (p1) {
+  h1.classList.add("top");
+
+  if (p2) {
+    let indece;
+
+    if (qtdCards.length % 2 === 0) {
+      indece = qtdCards.length / 2 - 1;
+    } else {
+      indece = Math.round(qtdCards.length / 2) - 1;
+    }
+
+    qtdCards[indece].classList.add("middle");
+
+    if (p3) {
+      imoveis_disponiveis.classList.add("bottom");
+    } else {
+      p2.classList.add("exist");
+    }
+  }
 }
-
-qtdCards[indece].classList.add("middle");

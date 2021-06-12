@@ -50,6 +50,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .propaganda.p2.exist {
+    width: 404px;
+    height: 250px;
+    top: calc(50% + 480px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   .propaganda.p3 {
     width: 404px;
     height: 250px;
