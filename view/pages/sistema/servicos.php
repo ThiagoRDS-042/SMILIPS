@@ -34,6 +34,10 @@
       </form>
     </div>
 
+    <?php
+    require_once('/xampp/htdocs/SMILIPS/view/pages/util/propagandas/propagandas.php');
+    ?>
+
     <?php if ($servicos->num_rows > 0) : ?>
       <h1>Serviços</h1>
 

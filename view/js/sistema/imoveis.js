@@ -146,7 +146,29 @@ if (p1) {
 
     qtdCards[indece].classList.add("middle");
 
+    let coordenadas = qtdCards[indece].offsetTop;
+
+    document.body.onresize = function () {
+      coordenadas = qtdCards[indece].offsetTop;
+      if (document.body.clientWidth < 935 && document.body.clientWidth > 555) {
+        p2.style.top = `${coordenadas + 655}px`;
+      } else if (document.body.clientWidth < 556) {
+        p2.style.top = `${coordenadas + 530}px`;
+      } else {
+        p2.style.top = `55%`;
+      }
+    };
+
+    if (window.innerWidth < 935 && document.body.clientWidth > 555) {
+      p2.style.top = `${coordenadas + 655}px`;
+    } else if (document.body.clientWidth < 556) {
+      p2.style.top = `${coordenadas + 530}px`;
+    }
+
     if (p3) {
+      if (qtdCards.length === 1) {
+        p3.style.opacity = "0";
+      }
       imoveis_disponiveis.classList.add("bottom");
     } else {
       p2.classList.add("exist");

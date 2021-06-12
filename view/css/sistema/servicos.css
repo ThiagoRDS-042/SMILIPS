@@ -28,6 +28,11 @@ main .alert {
   top: 80px;
 }
 
+.propaganda {
+  width: 270px !important;
+  height: 170px !important;
+}
+
 main .search {
   margin: 150px 40px 0 0;
   width: 250px;
@@ -178,6 +183,9 @@ main .card .info_servico .detalhes a {
 
 main .card .info_servico .detalhes a:hover {
   color: #ff6914;
+}
+
+@media (max-width: 1350px) {
 }
 
 @media (max-width: 800px) {

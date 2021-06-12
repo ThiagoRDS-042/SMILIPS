@@ -37,10 +37,6 @@
       <h3><i class="fas fa-angle-left"></i> filtro</h3>
     </label>
 
-    <?php
-    require_once('/xampp/htdocs/SMILIPS/view/pages/util/propagandas/propagandas.php');
-    ?>
-
 
     <form action="/SMILIPS/controller/filtros/filtrarImoveis.php" method="post">
       <div id="filter">
@@ -799,6 +795,9 @@
     <?php if (isset($_GET['filtro'])) : ?>
       <?php if ($imoveis != null and $filtro != null) : ?>
         <h1>Imóveis</h1>
+        <?php
+        require_once('/xampp/htdocs/SMILIPS/view/pages/util/propagandas/propagandas.php');
+        ?>
         <section class="imoveis_disponiveis">
           <?php for ($i = 0; $i < count($matrizImoveis); $i++) : ?>
             <div class="card_imovel">
@@ -865,8 +864,11 @@
         <h1>Nenhum Resultado Encontrado :(</h1>
       <?php endif; ?>
     <?php else : ?>
-      <?php if ($imoveis != null) : ?>
+      <?php if ($imoveis->num_rows > 0) : ?>
         <h1>Imóveis</h1>
+        <?php
+        require_once('/xampp/htdocs/SMILIPS/view/pages/util/propagandas/propagandas.php');
+        ?>
         <section class="imoveis_disponiveis">
           <?php for ($i = 0; $i < count($matrizImoveis); $i++) : ?>
             <div class="card_imovel">

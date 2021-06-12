@@ -512,6 +512,12 @@ main .imoveis_disponiveis .card_imovel .descricao .detalhes a:hover {
 }
 
 @media (max-width: 565px) {
+  main h1.top {
+    margin-top: 350px;
+  }
+  main .imoveis_disponiveis.bottom {
+    margin-bottom: 300px;
+  }
   main .imoveis_disponiveis {
     width: 300px;
   }
@@ -549,5 +555,14 @@ main .imoveis_disponiveis .card_imovel .descricao .detalhes a:hover {
   }
   main .imoveis_disponiveis .card_imovel .descricao .detalhes a {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  main h1.top {
+    margin-top: 400px;
+  }
+  main .imoveis_disponiveis.bottom {
+    margin-bottom: 350px;
   }
 }

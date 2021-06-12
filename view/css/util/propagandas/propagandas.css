@@ -8,17 +8,18 @@
 }
 
 .propaganda.p1 {
-  top: 150px;
+  top: 100px;
   left: 10px;
 }
 
 .propaganda.p2 {
-  top: 550px;
+  top: 55%;
   right: 10px;
+  transform: translateY(-50%);
 }
 
 .propaganda.p3 {
-  top: 1050px;
+  top: calc(100% - 270px);
   left: 10px;
 }
 
@@ -46,7 +47,7 @@
   .propaganda.p2 {
     width: 404px;
     height: 250px;
-    top: calc(50% + 330px);
+    top: 52.5%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -60,7 +61,7 @@
   .propaganda.p3 {
     width: 404px;
     height: 250px;
-    top: 89%;
+    top: calc(100% - 300px);
     left: 50%;
     transform: translateX(-50%);
   }
@@ -68,17 +69,44 @@
 
 @media (max-width: 565px) {
   .propaganda.p1 {
+    width: 300px;
+    height: 211px;
+  }
+  .propaganda.p2 {
+    width: 300px;
+    height: 211px;
+  }
+  .propaganda.p2.exist {
+    width: 300px;
+    height: 211px;
+  }
+  .propaganda.p3 {
+    width: 300px;
+    height: 211px;
+    top: calc(100% - 250px);
+  }
+}
+
+@media (max-width: 430px) {
+  .propaganda.p1 {
     width: 100%;
+    height: 250px;
     border-radius: 0;
   }
   .propaganda.p2 {
     width: 100%;
-    top: calc(50% + 265px);
+    height: 250px;
+    border-radius: 0;
+  }
+  .propaganda.p2.exist {
+    width: 100%;
+    height: 250px;
     border-radius: 0;
   }
   .propaganda.p3 {
     width: 100%;
-    top: 87%;
+    height: 250px;
     border-radius: 0;
+    top: calc(100% - 300px);
   }
 }
