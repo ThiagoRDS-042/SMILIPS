@@ -20,13 +20,13 @@
     } else {
       consultarServicosFiltro();
     }
+    if (!isset($_SESSION)) {
+      session_start();
+    }
     ?>
   </header>
 
   <main>
-    <?php
-    require_once('/xampp/htdocs/SMILIPS/controller/exibirMsg/notificacao.php');
-    ?>
     <div class="search">
       <form action="/SMILIPS/controller/filtros/filtrarServicos.php" method="post">
         <input type="text" name="pesquisa" placeholder="Pesquise por Serviços">

@@ -56,9 +56,9 @@ if (isset($_POST['filtrar_imoveis'])) {
     unset($_SESSION['tipo']);
     unset($_SESSION['cidade']);
     unset($_SESSION['bairro']);
-    $url = str_replace("/Novo/", "", $_SERVER["REQUEST_URI"]);
+    $url = $_SERVER['HTTP_REFERER'];
     exibirMsg("Pesquise por rua, tipo de imóvel, cidade e bairro!", "danger");
-    if ($url == "/SMILIPS/view/pages/sistema/home.php") {
+    if ($url == "http://localhost/SMILIPS/view/pages/sistema/home.php") {
       header("location:/SMILIPS/view/pages/sistema/home.php");
     } else {
       header("location:/SMILIPS/view/pages/sistema/imoveis.php");

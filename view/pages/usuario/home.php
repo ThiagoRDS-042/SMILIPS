@@ -226,7 +226,7 @@ if (isset($_SESSION['url'])) {
                   <div class="detalhes">
                     <?php
                     // estruturando os detalhes do imovel em uma so variavel
-                    $detalhes = $arrayImovel[$i]['tipo'];
+                    $tipo = $arrayImovel[$i]['tipo'];
                     $qtdQuarto = $arrayImovel[$i]['qtdQuarto'];
                     $qtdBanheiro = $arrayImovel[$i]['qtdBanheiro'];
                     $qtdGaregem = $arrayImovel[$i]['qtdGaragem'];
@@ -234,6 +234,14 @@ if (isset($_SESSION['url'])) {
                     $bairro = $arrayImovel[$i]['bairro'];
                     $rua = $arrayImovel[$i]['rua'];
                     $numero = $arrayImovel[$i]['numero'];
+
+                    if ($tipo == 'Residencial') {
+                      $tipo = 'Residencia';
+                    } else if ($tipo == 'Comercial') {
+                      $tipo = 'Ponto Comercial';
+                    }
+
+                    $detalhes = $tipo;
 
                     if ($qtdQuarto == 1) {
                       $detalhes .= " com $qtdQuarto quarto, ";
@@ -253,7 +261,7 @@ if (isset($_SESSION['url'])) {
                       $detalhes .= "$qtdGaregem garagens, ";
                     }
 
-                    $detalhes .= "com $area para alugar em $bairro, rua $rua, número $numero.";
+                    $detalhes .= " com $area para alugar em $bairro, rua $rua, número $numero.";
                     ?>
 
                     <!-- exibindo o valor do alugel do imovel -->

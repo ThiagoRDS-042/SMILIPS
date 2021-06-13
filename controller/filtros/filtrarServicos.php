@@ -17,7 +17,6 @@ if (isset($_POST['filtrar_servicos'])) {
   }
 }
 
-
 function consultarServicosFiltro()
 {
   global $conexao, $servicos;

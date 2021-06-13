@@ -16,7 +16,7 @@ if (p1) {
     } else if (document.body.clientWidth < 791) {
       p1.style = `top: ${coordenadasp1 + 250}px !important;`;
     } else {
-      p1.style = "top: 100px !important;";
+      p1.style = "top: 140px !important;";
     }
 
     if (qtdCards.length > 2) {

@@ -60,17 +60,25 @@ $_SESSION['denunciarImovel'] = true;
       } else {
         $imovel['qtdQuarto'] .= ' Quarto';
       }
+
       if ($imovel['qtdBanheiro'] > 1) {
         $imovel['qtdBanheiro'] .= ' Banheiros';
       } else {
         $imovel['qtdBanheiro'] .= ' Banheiro';
       }
+
       if ($imovel['qtdGaragem'] > 1) {
         $imovel['qtdGaragem'] .= ' Garagens';
       } else if ($imovel['qtdGaragem'] == 1) {
         $imovel['qtdGaragem'] .= ' Garagen';
       } else {
         $imovel['qtdGaragem'] = 'Indisponível';
+      }
+
+      if ($imovel['tipo'] == 'Residencial') {
+        $imovel['tipo'] = 'Residencia';
+      } else if ($imovel['tipo'] == 'Comercial') {
+        $imovel['tipo'] = 'Ponto Comercial';
       }
       ?>
       <div class="descricao">

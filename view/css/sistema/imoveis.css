@@ -509,6 +509,9 @@ main .imoveis_disponiveis .card_imovel .descricao .detalhes a:hover {
   nav ul {
     background: #ff6914 !important;
   }
+  main .alert {
+    top: 70px;
+  }
 }
 
 @media (max-width: 565px) {

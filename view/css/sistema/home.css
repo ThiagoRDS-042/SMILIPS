@@ -557,6 +557,12 @@ section.oqProcura .selecao .circle img {
   }
 }
 
+@media (max-width: 701px) {
+  main .alert {
+    top: 70px;
+  }
+}
+
 @media (max-width: 685px) {
   section.banner {
     top: 70px;

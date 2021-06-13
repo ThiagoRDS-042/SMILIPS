@@ -25,10 +25,6 @@ main {
   position: relative;
 }
 
-main .alert {
-  top: 80px;
-}
-
 .propaganda {
   width: 270px !important;
   height: 170px !important;
