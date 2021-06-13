@@ -11,10 +11,12 @@ if (p1) {
 
   document.body.onresize = function () {
     coordenadasp1 = qtdCards[0].offsetTop;
-    if (document.body.clientWidth < 1350 && document.body.clientWidth > 800) {
+    if (document.body.clientWidth < 1350 && document.body.clientWidth > 790) {
       p1.style = `top: ${coordenadasp1 + 290}px !important;`;
-    } else if (document.body.clientWidth < 801) {
+    } else if (document.body.clientWidth < 791) {
       p1.style = `top: ${coordenadasp1 + 250}px !important;`;
+    } else {
+      p1.style = "top: 100px !important;";
     }
 
     if (qtdCards.length > 2) {
@@ -31,13 +33,16 @@ if (p1) {
 
         let coordenadas = qtdCards[indece].offsetTop;
 
+        console.log(document.body.clientWidth);
         if (
           document.body.clientWidth < 1350 &&
-          document.body.clientWidth > 800
+          document.body.clientWidth > 790
         ) {
           p2.style = `top: ${coordenadas + 405}px !important;`;
-        } else if (document.body.clientWidth < 801) {
+        } else if (document.body.clientWidth < 791) {
           p2.style = `top: ${coordenadas + 360}px !important;`;
+        } else {
+          p2.style.top = `55%`;
         }
       }
     } else if (qtdCards.length === 2) {
@@ -45,17 +50,19 @@ if (p1) {
 
       qtdCards[1].classList.add("middle");
 
-      if (document.body.clientWidth < 1350 && document.body.clientWidth > 800) {
+      if (document.body.clientWidth < 1350 && document.body.clientWidth > 790) {
         p2.style = `top: ${coordenadas + 405}px !important;`;
-      } else if (document.body.clientWidth < 801) {
+      } else if (document.body.clientWidth < 791) {
         p2.style = `top: ${coordenadas + 360}px !important;`;
+      } else {
+        p2.style.top = `55%`;
       }
     }
   };
 
-  if (document.body.clientWidth < 1350 && document.body.clientWidth > 800) {
+  if (document.body.clientWidth < 1350 && document.body.clientWidth > 790) {
     p1.style = `top: ${coordenadasp1 + 290}px !important;`;
-  } else if (document.body.clientWidth < 801) {
+  } else if (document.body.clientWidth < 791) {
     p1.style = `top: ${coordenadasp1 + 250}px !important;`;
   }
 
@@ -73,9 +80,9 @@ if (p1) {
 
       let coordenadas = qtdCards[indece].offsetTop;
 
-      if (document.body.clientWidth < 1350 && document.body.clientWidth > 800) {
+      if (document.body.clientWidth < 1350 && document.body.clientWidth > 790) {
         p2.style = `top: ${coordenadas + 710}px !important;`;
-      } else if (document.body.clientWidth < 801) {
+      } else if (document.body.clientWidth < 791) {
         p2.style = `top: ${coordenadas + 670}px !important;`;
       }
     } else if (qtdCards.length === 2) {
@@ -83,9 +90,9 @@ if (p1) {
 
       qtdCards[1].classList.add("middle");
 
-      if (document.body.clientWidth < 1350 && document.body.clientWidth > 800) {
+      if (document.body.clientWidth < 1350 && document.body.clientWidth > 790) {
         p2.style = `top: ${coordenadas + 710}px !important;`;
-      } else if (document.body.clientWidth < 801) {
+      } else if (document.body.clientWidth < 791) {
         p2.style = `top: ${coordenadas + 670}px !important;`;
       }
     }
