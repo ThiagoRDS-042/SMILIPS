@@ -34,13 +34,11 @@
       </form>
     </div>
 
-    <?php
-    require_once('/xampp/htdocs/SMILIPS/view/pages/util/propagandas/propagandas.php');
-    ?>
-
     <?php if ($servicos->num_rows > 0) : ?>
       <h1>Serviços</h1>
-
+      <?php
+      require_once('/xampp/htdocs/SMILIPS/view/pages/util/propagandas/propagandas.php');
+      ?>
       <section class="servicos">
         <?php while ($row = $servicos->fetch_assoc()) : ?>
           <div class="card">
@@ -77,6 +75,8 @@
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/footer.php');
   ?>
+
+  <script src="/SMILIPS/view/js/sistema/servicos.js"></script>
 </body>
 
 </html>

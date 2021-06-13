@@ -159,7 +159,7 @@ if (p1) {
       }
     };
 
-    if (window.innerWidth < 935 && document.body.clientWidth > 555) {
+    if (document.body.clientWidth < 935 && document.body.clientWidth > 555) {
       p2.style.top = `${coordenadas + 655}px`;
     } else if (document.body.clientWidth < 556) {
       p2.style.top = `${coordenadas + 530}px`;
@@ -170,8 +170,6 @@ if (p1) {
         p3.style.opacity = "0";
       }
       imoveis_disponiveis.classList.add("bottom");
-    } else {
-      p2.classList.add("exist");
     }
   }
 }

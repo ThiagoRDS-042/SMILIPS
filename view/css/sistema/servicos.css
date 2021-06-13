@@ -22,6 +22,7 @@ main {
   width: 100%;
   min-height: 100vh;
   border: 1px solid transparent;
+  position: relative;
 }
 
 main .alert {
@@ -31,6 +32,10 @@ main .alert {
 .propaganda {
   width: 270px !important;
   height: 170px !important;
+}
+
+.propaganda.p3 {
+  top: calc(100% - 190px) !important;
 }
 
 main .search {
@@ -186,6 +191,43 @@ main .card .info_servico .detalhes a:hover {
 }
 
 @media (max-width: 1350px) {
+  .propaganda.p1 {
+    width: 404px !important;
+    height: 250px !important;
+    top: 120px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .propaganda.p2 {
+    width: 404px !important;
+    height: 250px !important;
+    top: 52.5% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  .propaganda.p2.exist {
+    width: 404px !important;
+    height: 250px !important;
+    top: calc(50% + 480px) !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  .propaganda.p3 {
+    width: 404px !important;
+    height: 250px !important;
+    top: calc(100% - 300px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .servicos.bottom {
+    margin-bottom: 350px;
+  }
+  .card.margin_bottom {
+    margin-bottom: 350px;
+  }
+  .card.middle {
+    margin-bottom: 320px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -232,5 +274,17 @@ main .card .info_servico .detalhes a:hover {
   main .card .info_servico {
     width: 200px;
     padding: 10px;
+  }
+  .propaganda.p1 {
+    width: 350px !important;
+  }
+  .propaganda.p2 {
+    width: 350px !important;
+  }
+  .propaganda.p2.exist {
+    width: 350px !important;
+  }
+  .propaganda.p3 {
+    width: 350px !important;
   }
 }

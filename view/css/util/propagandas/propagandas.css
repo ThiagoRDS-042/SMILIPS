@@ -51,13 +51,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .propaganda.p2.exist {
-    width: 404px;
-    height: 250px;
-    top: calc(50% + 480px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
   .propaganda.p3 {
     width: 404px;
     height: 250px;
@@ -76,10 +69,6 @@
     width: 300px;
     height: 211px;
   }
-  .propaganda.p2.exist {
-    width: 300px;
-    height: 211px;
-  }
   .propaganda.p3 {
     width: 300px;
     height: 211px;
@@ -94,11 +83,6 @@
     border-radius: 0;
   }
   .propaganda.p2 {
-    width: 100%;
-    height: 250px;
-    border-radius: 0;
-  }
-  .propaganda.p2.exist {
     width: 100%;
     height: 250px;
     border-radius: 0;
