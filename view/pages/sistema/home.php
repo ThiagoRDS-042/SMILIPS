@@ -49,8 +49,8 @@
 
               <label for="casa">
                 <div class="option type">
-                  <input type="radio" class="radio" id="casa" name="type" value="Residensial" />
-                  <span>Residensial</span>
+                  <input type="radio" class="radio" id="casa" name="type" value="Residencial" />
+                  <span>Residencial</span>
                 </div>
               </label>
 

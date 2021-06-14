@@ -69,10 +69,10 @@
 
               <label for="casa">
                 <div class="option type">
-                  <?php if (isset($_SESSION['tipo']) and $_SESSION['tipo'] == "Residensial") : ?>
-                    <input type="radio" class="radio" id="casa" name="type" value="Residensial" checked />
+                  <?php if (isset($_SESSION['tipo']) and $_SESSION['tipo'] == "Residencial") : ?>
+                    <input type="radio" class="radio" id="casa" name="type" value="Residencial" checked />
                   <?php else : ?>
-                    <input type="radio" class="radio" id="casa" name="type" value="Residensial" />
+                    <input type="radio" class="radio" id="casa" name="type" value="Residencial" />
                   <?php endif; ?>
                   <span>Residensial</span>
                 </div>
