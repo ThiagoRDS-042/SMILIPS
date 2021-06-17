@@ -60,7 +60,8 @@ if (isset($_POST['avaliar'])) {
   }
 } else if (isset($_POST['edity'])) {
   // edita a notificação como ja exibida
-  $idNotificacao = $_POST['idNotificacaoAnalisePLano'];
+  $idNotificacao = $_POST['id'];
+  $url = $_POST['url'];
   $conexao->query("UPDATE notificacaoAnalisePlano set exibida = 1 WHERE notificacaoAnalisePlanoID = '$idNotificacao'") or die($conexao->error);
-  header("location:/SMILIPS/view/pages/usuario/home.php");
+  header("location:$url");
 }

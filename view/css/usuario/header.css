@@ -65,9 +65,173 @@ header {
   left: 85%;
 }
 
+.notification {
+  position: absolute;
+  top: 10px;
+  right: 90px;
+  width: 50px;
+  height: 60px;
+}
+
+.notification div {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  background: red;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.notification div p {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.notification i {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+#notification {
+  display: none;
+}
+
+#notification:checked ~ .content_notification {
+  transform: scale(1);
+  max-height: 80vh;
+}
+
+.content_notification {
+  width: 300px;
+  transform: scale(0);
+  max-height: 0;
+  background: white;
+  position: absolute;
+  right: 0;
+  top: 80px;
+  box-shadow: 0 5px 15px #ccc;
+  transition: 0.5s;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.content_notification .notificacao {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  line-height: 20px;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.content_notification .notificacao:hover {
+  background: #ccc;
+}
+
+.card_notificacao {
+  width: 60%;
+  max-width: 550px;
+  min-width: 350px;
+  margin: 80px auto;
+  height: 250px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px #ccc;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.card_notificacao.active {
+  opacity: 1;
+  pointer-events: all;
+  margin: 120px auto;
+}
+
+.card_notificacao .title {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_notificacao .title h3 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+  color: rgb(105, 105, 105);
+  line-height: 20px;
+}
+
+.card_notificacao .content {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_notificacao .content p {
+  font-size: 16px;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  line-height: 20px;
+}
+
+.card_notificacao .button {
+  width: 100%;
+  height: 50px;
+}
+
+.card_notificacao .button form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card_notificacao .button form button {
+  width: 90px;
+  height: 35px;
+  border: 3px solid #3498db;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #3498db;
+  font-family: "Rubik", sans-serif;
+  background: white;
+  transition: 0.5s;
+}
+
+.card_notificacao .button form button:hover,
+.card_notificacao .button form button:active {
+  background: #3498db;
+  color: white;
+}
 .user {
   position: absolute;
-  top: 9%;
+  top: 7.5px;
   right: 10px;
   width: 65px;
   height: 65px;

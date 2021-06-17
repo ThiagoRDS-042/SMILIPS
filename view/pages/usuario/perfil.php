@@ -58,7 +58,7 @@ usuarioLogadoEntra();
           <div class="info-user">
 
             <!-- passando todos os dados do usuario para os campos -->
-            <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+            <input type="hidden" name="id" id="idUser" value="<?php echo $id ?>">
             <div class="field-edit">
               <input type="text" class="focus" name="nome" value="<?php echo $nomeUsuario ?>">
               <span class="info" data-placeholder="Nome*"></span>

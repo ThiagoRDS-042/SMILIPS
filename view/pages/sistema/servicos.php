@@ -20,6 +20,8 @@
     } else {
       consultarServicosFiltro();
     }
+    require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
+    consultarDataFim();
     if (!isset($_SESSION)) {
       session_start();
     }

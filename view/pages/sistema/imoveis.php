@@ -16,6 +16,8 @@
   consultarBairros();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
   consultarPropagandasAtivas();
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
+  consultarDataFim();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/sistema/imoveis.css">
   <title>Imóveis</title>

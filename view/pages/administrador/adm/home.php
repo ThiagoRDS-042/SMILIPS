@@ -10,6 +10,8 @@ admLogadoEntra();
 <head>
   <?php
   require_once('/xampp/htdocs/SMILIPS/view/pages/sistema/head.php');
+  require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
+  consultarDataFim();
   ?>
   <link rel="stylesheet" href="/SMILIPS/view/css/administrador/adm/home.css">
   <title>Administrador</title>

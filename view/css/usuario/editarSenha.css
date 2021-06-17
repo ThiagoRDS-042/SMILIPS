@@ -21,7 +21,7 @@ main .alert {
   top: 80px;
 }
 
-form {
+main form {
   width: 30%;
   height: 375px;
   min-width: 226px;
@@ -142,7 +142,7 @@ form {
   color: rgb(107, 107, 107);
 }
 
-form button {
+main form button {
   width: 30%;
   min-width: 70px;
   height: 40px;
@@ -159,7 +159,7 @@ form button {
   font-family: "Rubik", sans-serif;
 }
 
-form button:hover {
+main form button:hover {
   background: #0992b8;
 }
 
@@ -183,7 +183,7 @@ form button:hover {
 }
 
 @media (max-width: 500px) {
-  form {
+  main form {
     margin-left: 30%;
   }
 }
