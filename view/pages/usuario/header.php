@@ -98,7 +98,7 @@ $qtdNotificacoesUsuario = $notificacaoAnaliseImovel->num_rows + $notificacaoAnal
       <form action="" method="post">
         <input type="hidden" name="id" value="">
         <input type="hidden" name="url" value="<?php echo str_replace("Novo/", "", $_SERVER["REQUEST_URI"]); ?>">
-        <button type="submit" name="edity">Continue</button>
+        <button type="submit" name="edity">Ok</button>
       </form>
     </div>
   </div>
