@@ -10,14 +10,20 @@ const type = document.querySelectorAll(
 const action = document.querySelector(".card_notificacao form").attributes
   .action;
 const ids = document.querySelectorAll(".content_notification input[name=id]");
-const id = document.querySelector(".card_notificacao .button input[name=id]");
+const idUsuario = document.querySelector(
+  ".card_notificacao .button input[name=id]"
+);
+const iconsNotification = document.querySelectorAll(
+  ".content_notification .notificacao i"
+);
 
 cards.forEach((card, index) => {
   card.addEventListener("click", () => {
     content_notification.innerText = card.innerText;
+    content_notification.innerHTML += `<i class="${iconsNotification[index].classList.value}"></i>`;
     checkbox.checked = false;
     card_notificacao.classList.add("active");
-    id.value = ids[index].value;
+    idUsuario.value = ids[index].value;
 
     if (type[index].value === "Imovel") {
       action.value =

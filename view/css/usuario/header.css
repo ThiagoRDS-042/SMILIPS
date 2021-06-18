@@ -127,6 +127,18 @@ header {
   overflow: hidden;
   border: 1px solid #ccc;
   border-bottom-left-radius: 5px;
+  overflow-y: visible;
+  z-index: 2;
+}
+
+.content_notification::-webkit-scrollbar {
+  width: 10px;
+  background: #636e72;
+}
+
+.content_notification::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 5px;
 }
 
 .content_notification .notificacao {
@@ -137,6 +149,26 @@ header {
   line-height: 20px;
   text-align: justify;
   cursor: pointer;
+  font-family: inherit;
+}
+
+.content_notification .notificacao p {
+  font-family: "Opens", sans-serif;
+  font-size: 15px;
+  color: #333;
+}
+
+.content_notification .notificacao p i {
+  margin-right: 3px;
+  font-size: 18px;
+}
+
+.content_notification .notificacao p i.fa-exclamation-circle {
+  color: #e74c3c;
+}
+
+.content_notification .notificacao p i.fa-check-circle {
+  color: #2ecc71;
 }
 
 .content_notification .notificacao:hover {
@@ -191,10 +223,29 @@ header {
 }
 
 .card_notificacao .content p {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
   font-family: "Rubik", sans-serif;
   line-height: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.card_notificacao .content p i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  z-index: -1;
+}
+
+.card_notificacao .content p i.fa-exclamation-circle {
+  color: #d86b5f;
+}
+
+.card_notificacao .content p i.fa-check-circle {
+  color: #6cc992;
 }
 
 .card_notificacao .button {

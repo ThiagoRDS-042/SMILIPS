@@ -38,9 +38,9 @@ $qtdNotificacoesUsuario = $notificacaoAnaliseImovel->num_rows + $notificacaoAnal
           <input type="hidden" name="type" value="Imovel">
           <input type="hidden" name="id" value="<?php echo $row['notificacaoAnaliseImovelID'] ?>">
           <?php if ($row['situacao'] == 'Excluido') : ?>
-            <p>Seu Imóvel não foi Aprovado. Motivo: <?php echo $row['mensagem'] ?></p>
+            <p><i class="fas fa-exclamation-circle"></i>Seu Imóvel não foi Aprovado. Motivo: <?php echo $row['mensagem'] ?></p>
           <?php else : ?>
-            <p>Seu Imóvel foi Aprovado na Analise!</p>
+            <p><i class="fas fa-check-circle"></i>Seu Imóvel foi Aprovado na Analise!</p>
           <?php endif; ?>
         </div>
       <?php endwhile; ?>
@@ -52,9 +52,9 @@ $qtdNotificacoesUsuario = $notificacaoAnaliseImovel->num_rows + $notificacaoAnal
           <input type="hidden" name="type" value="Plano">
           <input type="hidden" name="id" value="<?php echo $row['notificacaoAnalisePlanoID'] ?>">
           <?php if ($row['situacao'] == 'Excluido') : ?>
-            <p>Seu Plano não foi Aprovado. Motivo: <?php echo $row['mensagem'] ?></p>
+            <p><i class="fas fa-exclamation-circle"></i>Seu Plano não foi Aprovado. Motivo: <?php echo $row['mensagem'] ?></p>
           <?php else : ?>
-            <p>Seu Plano foi Aprovado na Analise!</p>
+            <p><i class="fas fa-check-circle"></i>Seu Plano foi Aprovado na Analise!</p>
           <?php endif; ?>
         </div>
       <?php endwhile; ?>
@@ -66,9 +66,9 @@ $qtdNotificacoesUsuario = $notificacaoAnaliseImovel->num_rows + $notificacaoAnal
           <input type="hidden" name="type" value="Propaganda">
           <input type="hidden" name="id" value="<?php echo $row['notificacaoAnalisePropagandaID'] ?>">
           <?php if ($row['situacao'] == 'Excluida') : ?>
-            <p>Sua Propaganda não foi Aprovada. Motivo: <?php echo $row['mensagem'] ?></p>
+            <p><i class="fas fa-exclamation-circle"></i>Sua Propaganda não foi Aprovada. Motivo: <?php echo $row['mensagem'] ?></p>
           <?php else : ?>
-            <p>Sua Propaganda foi Aprovada na Analise!</p>
+            <p><i class="fas fa-check-circle"></i>Sua Propaganda foi Aprovada na Analise!</p>
           <?php endif; ?>
         </div>
       <?php endwhile; ?>
@@ -79,10 +79,11 @@ $qtdNotificacoesUsuario = $notificacaoAnaliseImovel->num_rows + $notificacaoAnal
         <div class="notificacao">
           <input type="hidden" name="type" value="Serviço">
           <input type="hidden" name="id" value="<?php echo $row['notificacaoServicoID'] ?>">
-          <p>Seu Serviço foi Deletado!. Motivo: <?php echo $row['mensagem'] ?></p>
+          <p><i class="fas fa-exclamation-circle"></i>Seu Serviço foi Deletado!. Motivo: <?php echo $row['mensagem'] ?></p>
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
+
   </div>
 
   <div class="card_notificacao">
