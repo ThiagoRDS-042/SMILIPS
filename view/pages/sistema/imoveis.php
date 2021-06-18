@@ -14,8 +14,6 @@
   }
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/imovel/consultar.php');
   consultarBairros();
-  require_once('/xampp/htdocs/SMILIPS/controller/DAO/propaganda/consultar.php');
-  consultarPropagandasAtivas();
   require_once('/xampp/htdocs/SMILIPS/controller/DAO/planoUsuario/consultar.php');
   consultarDataFim();
   ?>
@@ -36,14 +34,14 @@
     ?>
     <input type="checkbox" id="btnFiltro">
     <label for="btnFiltro">
-      <h3><i class="fas fa-angle-left"></i> filtro</h3>
+      <h3><i class="fas fa-angle-left"></i> Buscar</h3>
     </label>
 
 
     <form action="/SMILIPS/controller/filtros/filtrarImoveis.php" method="post">
       <div id="filter">
 
-        <h3>Filtro de Busca</h3>
+        <h3>Buscar por Imóveis</h3>
 
         <div class="search">
           <?php if (isset($_SESSION['rua'])) : ?>

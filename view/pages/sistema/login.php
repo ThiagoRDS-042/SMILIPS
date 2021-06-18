@@ -25,7 +25,7 @@ usuarioLogadoNEntra();
       <a href="/SMILIPS/view/pages/sistema/home.php"><i class="fas fa-chevron-left"></i> Voltar</a>
     </div>
     <div class="middle">
-      <h1>Login</h1>
+      <h1>Faça seu Acesso</h1>
       <form action="/SMILIPS/controller/autenticar/autenticar.php" method="POST">
         <div class="field-input">
           <input type="text" name="email" required>

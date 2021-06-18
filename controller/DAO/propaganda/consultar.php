@@ -56,10 +56,8 @@ function consultarPropagandasPremium()
 
 function consultarPropagandasAtivas()
 {
-  global $conexao, $propagandasAtivas, $propagandasAtivasTeste;
+  global $conexao, $propagandasAtivas;
 
   // pesquisano as propagandas em analise
   $propagandasAtivas = $conexao->query("SELECT * FROM propaganda AS p INNER JOIN planoUsuario AS pu ON p.usuarioID = pu.usuarioID INNER JOIN plano AS plan ON pu.planoID = plan.planoID WHERE p.situacao = 'Ativada' AND plan.nome != 'Premium' ORDER BY RAND() LIMIT 3") or die($conexao->error);
-  $propagandasAtivasTeste = $conexao->query("SELECT * FROM propaganda AS p INNER JOIN planoUsuario AS pu ON p.usuarioID = pu.usuarioID INNER JOIN plano AS plan ON pu.planoID = plan.planoID WHERE p.situacao = 'Ativada' AND plan.nome != 'Premium' ORDER BY RAND() LIMIT 3") or die($conexao->error);
-  $propagandasAtivasTeste  =  $propagandasAtivasTeste->fetch_assoc();
 }

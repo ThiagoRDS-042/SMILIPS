@@ -126,6 +126,7 @@ header {
   transition: 0.5s;
   overflow: hidden;
   border: 1px solid #ccc;
+  border-bottom-left-radius: 5px;
 }
 
 .content_notification .notificacao {

@@ -14,3 +14,6 @@ consultarPropagandasAtivas();
     </div>
   <?php endwhile; ?>
 <?php endif; ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/SMILIPS/controller/alterarPropaganda/alterarPropaganda.js"></script>
