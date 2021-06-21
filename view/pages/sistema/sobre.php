@@ -33,7 +33,7 @@
       <img src="/SMILIPS/view/images/logo/logo.png" alt="logo SMILIPS">
     </div>
 
-    <p class="contato">Com o que podemos ajudar? Contacte-nos através do nosso email: <span>projetopi089@gmail.com</span></p>
+    <p class="contato">Relatar Problema</p>
 
     <div class="contate_nos">
       <form action="/SMILIPS/controller/relatarProblema/relatarProblema.php" method="post" class="relatar">
@@ -41,7 +41,7 @@
         <input type="text" name="nome">
         <label>E-mail<span>*</span></label>
         <input type="text" name="email">
-        <label>Relatar Problema<span>*</span></label>
+        <label>Problema<span>*</span></label>
         <textarea name="problema" id="problema" cols="30" rows="7"></textarea>
         <button type="submit" name="enviar_email">Enviar</button>
       </form>

@@ -62,15 +62,15 @@ main .logo img {
 
 main p.contato {
   text-indent: 0;
-}
-
-main p.contato span {
-  text-decoration: underline;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin: 40px auto 10px auto;
 }
 
 main .contate_nos {
   width: 50%;
-  margin: 40px auto 20px auto;
+  margin: 20px auto;
   line-height: 20px;
 }
 
