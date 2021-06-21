@@ -1,3 +1,12 @@
+<?php
+if (!isset($_SESSION)) {
+  session_start();
+}
+if (isset($_SESSION['url'])) {
+  unset($_SESSION['url']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -605,7 +614,7 @@
           <div class="circle">
             <!-- se o usuario estiver logado rederecione ele para a pagina de anunciar imoves, se n, redirecione para a pagina de login -->
             <?php if (isset($_SESSION['usuarioID'])) : ?>
-              <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
+              <a href="/SMILIPS/view/pages/imovel/cadastro.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
             <?php elseif (isset($_SESSION['idAdm'])) : ?>
               <a href="/SMILIPS/view/pages/administrador/adm/home.php"><img src="/SMILIPS/view/images/oqProcura/imovel.jpg" alt="Imóvel"></a>
             <?php else : ?>
@@ -618,7 +627,7 @@
           <div class="circle">
             <!-- se o usuario estiver logado rederecione ele para a pagina de anunciar propagandas, se n, redirecione para a pagina de login -->
             <?php if (isset($_SESSION['usuarioID'])) : ?>
-              <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Anunciante"></a>
+              <a href="/SMILIPS/view/pages/propaganda/cadastro.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Anunciante"></a>
             <?php elseif (isset($_SESSION['idAdm'])) : ?>
               <a href="/SMILIPS/view/pages/administrador/adm/home.php"><img src="/SMILIPS/view/images/oqProcura/anunciante.jpg" alt="Imóvel"></a>
             <?php else : ?>
@@ -631,7 +640,7 @@
           <div class="circle">
             <!-- se o usuario estiver logado rederecione ele para a pagina de anunciar servicos, se n, redirecione para a pagina de login -->
             <?php if (isset($_SESSION['usuarioID'])) : ?>
-              <a href="/SMILIPS/view/pages/usuario/home.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
+              <a href="/SMILIPS/view/pages/servico/cadastro.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Prestação de Serviço"></a>
             <?php elseif (isset($_SESSION['idAdm'])) : ?>
               <a href="/SMILIPS/view/pages/administrador/adm/home.php"><img src="/SMILIPS/view/images/oqProcura/prestacaoServico.jpg" alt="Imóvel"></a>
             <?php else : ?>

@@ -60,7 +60,13 @@ $_SESSION['denunciarServico'] = true;
             </div>
           </div>
           <div class="contatar">
-            <a href="https://web.whatsapp.com/send?phone=<?php echo $servico['telefone']; ?>" target="blank">Contatar Prestador <i class="fab fa-whatsapp"></i></a>
+            <?php if (isset($_SESSION['usuarioID'])) : ?>
+              <a href="https://web.whatsapp.com/send?phone=<?php echo $servico['telefone']; ?>" target="blank">Contatar Prestador <i class="fab fa-whatsapp"></i></a>
+            <?php elseif (isset($_SESSION['idAdm'])) : ?>
+              <a href="https://web.whatsapp.com/send?phone=<?php echo $servico['telefone']; ?>" target="blank">Contatar Prestador <i class="fab fa-whatsapp"></i></a>
+            <?php else : ?>
+              <a href="/SMILIPS/controller/batePapo/batePapo.php">Contatar Proprietário <i class="fab fa-whatsapp"></i></a>
+            <?php endif; ?>
           </div>
         </div>
       </div>

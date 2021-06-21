@@ -127,7 +127,6 @@ header {
   overflow: hidden;
   border: 1px solid #ccc;
   border-bottom-left-radius: 5px;
-  overflow-y: visible;
   z-index: 2;
 }
 

@@ -24,6 +24,10 @@ main {
   border: 1px solid transparent;
 }
 
+main .alert {
+  top: 80px;
+}
+
 main h1 {
   width: 100%;
   text-align: center;
@@ -56,12 +60,103 @@ main .logo img {
   height: 100%;
 }
 
-main p.contati_nos {
+main p.contato {
   text-indent: 0;
 }
 
-main p.contati_nos span {
+main p.contato span {
   text-decoration: underline;
+}
+
+main .contate_nos {
+  width: 50%;
+  margin: 40px auto 20px auto;
+  line-height: 20px;
+}
+
+main form.relatar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main .contate_nos label {
+  width: 80%;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+  color: rgb(107, 107, 107);
+  margin: 15px auto 5px auto;
+  transition: 0.5s;
+  outline: none;
+}
+
+main .contate_nos label span {
+  color: #e74c3c;
+}
+
+main .contate_nos input {
+  width: 80%;
+  height: 35px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin: auto;
+  font-size: 16px;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  padding: 0 5px;
+  transition: 0.5s;
+  outline: none;
+}
+
+main .contate_nos textarea {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  font-family: "Rubik", sans-serif;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  transition: 0.5s;
+  outline: none;
+}
+
+main .contate_nos textarea::-webkit-scrollbar {
+  width: 8px;
+  background: #636e72;
+  border-radius: 0 4px 4px 0;
+}
+
+main .contate_nos textarea::-webkit-scrollbar-thumb {
+  background: #2d3436;
+  border-radius: 0 5px 5px 0;
+}
+
+main .contate_nos input:focus,
+main .contate_nos textarea:focus,
+main .contate_nos label:focus {
+  border-color: #01baef;
+}
+
+main .contate_nos button {
+  width: 80px;
+  height: 35px;
+  margin: 20px auto;
+  background: white;
+  border: 3px solid #01baef;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #01baef;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+main .contate_nos button:hover {
+  background: #01baef;
+  color: white;
 }
 
 @media (max-width: 701px) {
