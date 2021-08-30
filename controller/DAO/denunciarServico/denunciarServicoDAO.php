@@ -29,4 +29,9 @@ if (isset($_POST['denunciar'])) {
 
   exibirMsg("Marcada com Sucesso!", "success");
   header("location:/SMILIPS/view/pages/administrador/denuncia/detalhesDenuncia.php?denunciaServicoID=$id");
+} else if (isset($_GET['denunciaADM'])) {
+  $id = $_GET['denunciaADM'];
+
+  exibirMsg("Funcionalidade Exclusiva para Usuários!", "danger");
+  header("location:/SMILIPS/view/pages/servico/detalhesServico.php?servicoID=$id");
 }

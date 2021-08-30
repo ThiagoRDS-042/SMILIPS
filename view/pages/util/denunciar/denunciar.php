@@ -6,8 +6,10 @@
   <label for="denunciar">
     <?php if (isset($_SESSION['usuarioID'])) : ?>
       <h3>Denunciar Anúncio <i class="fas fa-exclamation-triangle"></i></h3>
-    <?php elseif (isset($_SESSION['idAdm'])) : ?>
+    <?php elseif (isset($_SESSION['idAdm']) && isset($_SESSION['denunciarImovel'])) : ?>
       <a href="/SMILIPS/controller/DAO/denunciarImovel/denunciarImovelDAO.php?denunciaADM=<?php echo $_GET['imovelID'] ?>">Denunciar Anúncio <i class="fas fa-exclamation-triangle"></i></a>
+    <?php elseif (isset($_SESSION['idAdm'])) : ?>
+      <a href="/SMILIPS/controller/DAO/denunciarServico/denunciarServicoDAO.php?denunciaADM=<?php echo $_GET['servicoID'] ?>">Denunciar Anúncio <i class="fas fa-exclamation-triangle"></i></a>
     <?php else : ?>
       <a href="/SMILIPS/controller/DAO/denunciarImovel/denunciarImovelDAO.php?denunciarLogin">Denunciar Anúncio <i class="fas fa-exclamation-triangle"></i></a>
     <?php endif; ?>
