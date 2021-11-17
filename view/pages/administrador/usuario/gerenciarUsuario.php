@@ -226,7 +226,7 @@ admLogadoEntra();
 
     <?php if ($propagandas->num_rows > 0) : ?>
       <section class="your-adverts">
-        <h1>Suas Propagandas</h1>
+        <h1>Propagandas do Usuário</h1>
 
         <div class="adverts">
           <span class="icon-voltar"><i class="fas fa-chevron-left"></i></span>
